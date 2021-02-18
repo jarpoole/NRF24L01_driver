@@ -5,14 +5,21 @@
  * 
  *  Macro options
  *   - NRF24L01_ENABLE_DEBUG_LOGGING     can be defined to enable driver debug logging
- *   - NRF24L01_DEBUGGING_PRINTF         must be defined if debug logging is enabled to provide platform specific 
- *                                       UART interface method
+ *   - NRF24L01_DEBUGGING_LOG            must be defined if debug logging is enabled to provide platform specific 
+ *                                       method for timestamped, tagged, message logging
+ *       Ex: #define NRF24L01_DEBUGGING_LOG( ... )   log(__VA_ARGS__)
  * 
- *  Ex: #define NRF24L01_DEBUGGING_PRINTF( ... )   printf(__VA_ARGS__)
- */
+ * 	 - NRF24L01_DEBUGGING_PRINTF         must be defined if debug logging is enabled to provide platform specific 
+ *                                       UART interface method
+ *       Ex: #define NRF24L01_DEBUGGING_PRINTF( ... )   printf(__VA_ARGS__)
+ */		 
 
 #ifndef NRF24L01_DEFS_H
 #define NRF24L01_DEFS_H
+
+#ifndef SPI_FPTR_RTN_T
+	#define SPI_FPTR_RTN_T int8_t
+#endif
 
 #ifdef NRF24L01_ENABLE_DEBUG_LOGGING
 	#ifndef NRF24L01_DEBUGGING_PRINTF
@@ -230,7 +237,7 @@ typedef enum {
 
 // Error codes for NRF24L01
 typedef enum {
-    NRF24L01_OK,
+    NRF24L01_OK = 0,
     NRF24L01_ERR_UNKNOWN,
     NRF24L01_INVALID_ARG,
     NRF24L01_ERR_DEVICE_NOT_FOUND,
@@ -239,11 +246,11 @@ typedef enum {
 } nrf24l01_err_t;
 
 
-typedef int8_t (*nrf24l01_spi_init_fptr_t)(void*);
-typedef int8_t (*nrf24l01_spi_deinit_fptr_t)(void*);
+typedef SPI_FPTR_RTN_T (*nrf24l01_spi_init_fptr_t)(void*);
+typedef SPI_FPTR_RTN_T (*nrf24l01_spi_deinit_fptr_t)(void*);
 //typedef int8_t (*nrf24l01_read_fptr_t)(uint8_t cmd, uint8_t reg_addr, uint8_t *reg_data, uint32_t len, void* user_ptr);
 //typedef int8_t (*nrf24l01_write_fptr_t)(uint8_t cmd, uint8_t reg_addr, uint8_t *reg_data, uint32_t len, void* user_ptr);
-typedef int8_t (*nrf24l01_spi_exchange_fptr_t)(uint8_t*, uint8_t*, size_t, void*);
+typedef SPI_FPTR_RTN_T (*nrf24l01_spi_exchange_fptr_t)(uint8_t*, uint8_t*, size_t, void*);
 
 typedef struct{
 	nrf24l01_spi_init_fptr_t     spi_init;

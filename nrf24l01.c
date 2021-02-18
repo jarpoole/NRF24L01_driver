@@ -53,15 +53,17 @@ static const uint8_t NRF24L01_ADDR_REGS[7] = {
 static nrf24l01_err_t nrf24l01_read_reg(uint8_t reg_addr, uint8_t* data, nrf24l01_platform_t* platform) {
 
 	if(data == NULL){
-		return -1;
+		return NRF24L01_INVALID_ARG;
 	}
 	uint8_t rx_buf[2];
 	uint8_t tx_buf[2] = { NRF24L01_CMD_R_REGISTER | (reg_addr & NRF24L01_MASK_REG_MAP), NRF24L01_CMD_NOP };
 
-	platform->spi_exchange(&rx_buf[0], &tx_buf[0], sizeof(tx_buf), platform);
+	SPI_FPTR_RTN_T err = platform->spi_exchange(&rx_buf[0], &tx_buf[0], sizeof(tx_buf), platform->spi_user_config);
+	if(err < 0){
+		return NRF24L01_ERR_READ;
+	}
 	*data = rx_buf[1];
-
-	return 0;
+	return NRF24L01_OK;
 }
 
 // Write a new value to register
@@ -73,9 +75,11 @@ static nrf24l01_err_t nrf24l01_write_reg(uint8_t reg_addr, uint8_t data, nrf24l0
 	uint8_t rx_buf[2];
 	uint8_t tx_buf[2] = { NRF24L01_CMD_W_REGISTER | (reg_addr & NRF24L01_MASK_REG_MAP), data };
 
-	platform->spi_exchange(&rx_buf[0], &tx_buf[0], sizeof(tx_buf), platform);
-
-	return 0;
+	SPI_FPTR_RTN_T err = platform->spi_exchange(&rx_buf[0], &tx_buf[0], sizeof(tx_buf), platform->spi_user_config);
+	if(err < 0){
+		return NRF24L01_ERR_WRITE;
+	}
+	return NRF24L01_OK;
 }
 
 // Read a multi-byte register
@@ -85,13 +89,16 @@ static nrf24l01_err_t nrf24l01_write_reg(uint8_t reg_addr, uint8_t data, nrf24l0
 //   count - number of bytes to read
 static nrf24l01_err_t nrf24l01_multi_read_reg(uint8_t reg_addr, uint8_t *data, uint8_t len, nrf24l01_platform_t* platform) {
 	if(data == NULL){
-		return -1;
+		return NRF24L01_INVALID_ARG;
 	}
 	uint8_t tx_buf[64];
 	tx_buf[0] = NRF24L01_CMD_R_REGISTER | (reg_addr & NRF24L01_MASK_REG_MAP);
 
-	platform->spi_exchange(data, &tx_buf[0], len, platform);
-	return 0;
+	SPI_FPTR_RTN_T err = platform->spi_exchange(data, &tx_buf[0], len, platform->spi_user_config);
+	if(err < 0){
+		return NRF24L01_ERR_READ;
+	}
+	return NRF24L01_OK;
 }
 
 // Write a multi-byte register
@@ -101,54 +108,58 @@ static nrf24l01_err_t nrf24l01_multi_read_reg(uint8_t reg_addr, uint8_t *data, u
 //   count - number of bytes to write
 static nrf24l01_err_t nrf24l01_multi_write_reg(uint8_t reg_addr, uint8_t* data, uint8_t len, nrf24l01_platform_t* platform) {
 	if(data == NULL){
-		return -1;
+		return NRF24L01_INVALID_ARG;
 	}
 	uint8_t rx_buf[64];
 	uint8_t tx_buf[64];
 	tx_buf[0] = NRF24L01_CMD_W_REGISTER | (reg_addr & NRF24L01_MASK_REG_MAP);
 	memcpy(&tx_buf[1], data, len);
 
-	platform->spi_exchange(&rx_buf[0], &tx_buf[0], sizeof(tx_buf), platform);
-	return 0;
+	SPI_FPTR_RTN_T err = platform->spi_exchange(&rx_buf[0], &tx_buf[0], sizeof(tx_buf), platform->spi_user_config);
+	if(err < 0){
+		return NRF24L01_ERR_WRITE;
+	}
+	return NRF24L01_OK;
 }
 
 // Set transceiver to it's initial state
 // note: RX/TX pipe addresses remains untouched
-nrf24l01_err_t nrf24l10_init(nrf24l01_platform_t* platform) {
+nrf24l01_err_t nrf24l01_init(nrf24l01_platform_t* platform) {
+	nrf24l01_err_t err = NRF24L01_OK;
 
 	// Initialize the platform SPI controller
 	platform->spi_init(platform->spi_user_config);
 
 	// Write to registers their initial values
-	nrf24l01_write_reg(NRF24L01_CONFIG_REG_ADDR,     0x08, platform);
-	nrf24l01_write_reg(NRF24L01_EN_AA_REG_ADDR,      0x3F, platform);
-	nrf24l01_write_reg(NRF24L01_EN_RX_ADDR_REG_ADDR, 0x03, platform);
-	nrf24l01_write_reg(NRF24L01_SETUP_AW_REG_ADDR,   0x03, platform);
-	nrf24l01_write_reg(NRF24L01_SETUP_RETR_REG_ADDR, 0x03, platform);
-	nrf24l01_write_reg(NRF24L01_RF_CH_REG_ADDR,      0x02, platform);
-	nrf24l01_write_reg(NRF24L01_RF_SETUP_REG_ADDR,   0x0E, platform);
-	nrf24l01_write_reg(NRF24L01_STATUS_REG_ADDR,     0x00, platform);
-	nrf24l01_write_reg(NRF24L01_RX_PW_P0_REG_ADDR,   0x00, platform);
-	nrf24l01_write_reg(NRF24L01_RX_PW_P1_REG_ADDR,   0x00, platform);
-	nrf24l01_write_reg(NRF24L01_RX_PW_P2_REG_ADDR,   0x00, platform);
-	nrf24l01_write_reg(NRF24L01_RX_PW_P3_REG_ADDR,   0x00, platform);
-	nrf24l01_write_reg(NRF24L01_RX_PW_P4_REG_ADDR,   0x00, platform);
-	nrf24l01_write_reg(NRF24L01_RX_PW_P5_REG_ADDR,   0x00, platform);
-	nrf24l01_write_reg(NRF24L01_DYNPD_REG_ADDR,      0x00, platform);
-	nrf24l01_write_reg(NRF24L01_FEATURE_REG_ADDR,    0x00, platform);
+	err |= nrf24l01_write_reg(NRF24L01_CONFIG_REG_ADDR,     0x08, platform);
+	err |= nrf24l01_write_reg(NRF24L01_EN_AA_REG_ADDR,      0x3F, platform);
+	err |= nrf24l01_write_reg(NRF24L01_EN_RX_ADDR_REG_ADDR, 0x03, platform);
+	err |= nrf24l01_write_reg(NRF24L01_SETUP_AW_REG_ADDR,   0x03, platform);
+	err |= nrf24l01_write_reg(NRF24L01_SETUP_RETR_REG_ADDR, 0x03, platform);
+	err |= nrf24l01_write_reg(NRF24L01_RF_CH_REG_ADDR,      0x02, platform);
+	err |= nrf24l01_write_reg(NRF24L01_RF_SETUP_REG_ADDR,   0x0E, platform);
+	err |= nrf24l01_write_reg(NRF24L01_STATUS_REG_ADDR,     0x00, platform);
+	err |= nrf24l01_write_reg(NRF24L01_RX_PW_P0_REG_ADDR,   0x00, platform);
+	err |= nrf24l01_write_reg(NRF24L01_RX_PW_P1_REG_ADDR,   0x00, platform);
+	err |= nrf24l01_write_reg(NRF24L01_RX_PW_P2_REG_ADDR,   0x00, platform);
+	err |= nrf24l01_write_reg(NRF24L01_RX_PW_P3_REG_ADDR,   0x00, platform);
+	err |= nrf24l01_write_reg(NRF24L01_RX_PW_P4_REG_ADDR,   0x00, platform);
+	err |= nrf24l01_write_reg(NRF24L01_RX_PW_P5_REG_ADDR,   0x00, platform);
+	err |= nrf24l01_write_reg(NRF24L01_DYNPD_REG_ADDR,      0x00, platform);
+	err |= nrf24l01_write_reg(NRF24L01_FEATURE_REG_ADDR,    0x00, platform);
 
 	// Clear the FIFO's
-	nrf24l01_flush_rx(platform);
-	nrf24l01_flush_tx(platform);
+	err |= nrf24l01_flush_rx(platform);
+	err |= nrf24l01_flush_tx(platform);
 
 	// Clear any pending interrupt flags
 	uint8_t temp;
-	nrf24l01_get_irq_flags(&temp, platform);
+	err |= nrf24l01_get_irq_flags(&temp, platform);
 
 	// Deassert CSN pin (chip release)
 	//nRF24_CSN_H();
 
-	return NRF24L01_OK;
+	return err;
 }
 
 // Check if the nRF24L01 present
@@ -524,13 +535,15 @@ void nrf24l01_reset_packet_loss_counter(nrf24l01_platform_t* platform) {
 }
 
 // Flush the TX FIFO
-void nrf24l01_flush_tx(nrf24l01_platform_t* platform) {
+nrf24l01_err_t nrf24l01_flush_tx(nrf24l01_platform_t* platform) {
 	nrf24l01_write_reg(NRF24L01_CMD_FLUSH_TX, NRF24L01_CMD_NOP, platform);
+	return NRF24L01_OK;
 }
 
 // Flush the RX FIFO
-void nrf24l01_flush_rx(nrf24l01_platform_t* platform) {
+nrf24l01_err_t nrf24l01_flush_rx(nrf24l01_platform_t* platform) {
 	nrf24l01_write_reg(NRF24L01_CMD_FLUSH_RX, NRF24L01_CMD_NOP, platform);
+	return NRF24L01_OK;
 }
 
 // Clear any pending IRQ flags
@@ -722,7 +735,7 @@ void nrf24l01_print_config(nrf24l01_platform_t* platform) {
 	// RX_ADDR_P0
 	nrf24l01_multi_read_reg(NRF24L01_RX_ADDR_P0_REG_ADDR, buf, aw, platform);
 	NRF24L01_DEBUGGING_PRINTF("[0x%02X] RX_ADDR_P0 \"", NRF24L01_RX_ADDR_P0_REG_ADDR);
-	for (uint8_t i = 0; i < aw; reg_temp++){
+	for (uint8_t i = 0; i < aw; i++){
 		NRF24L01_DEBUGGING_PRINTF("%c", buf[i]);
 	} 
 	NRF24L01_DEBUGGING_PRINTF("\"\r\n");

@@ -40,8 +40,8 @@ nrf24l01_err_t nrf24l01_get_retransmit_counters(uint8_t*, nrf24l01_platform_t*);
 nrf24l01_err_t nrf24l01_get_features(uint8_t*, nrf24l01_platform_t*);
 
 void nrf24l01_reset_packet_loss_counter(nrf24l01_platform_t*);
-void nrf24l01_flush_rx(nrf24l01_platform_t*);
-void nrf24l01_flush_tx(nrf24l01_platform_t*);
+nrf24l01_err_t nrf24l01_flush_rx(nrf24l01_platform_t*);
+nrf24l01_err_t nrf24l01_flush_tx(nrf24l01_platform_t*);
 void nrf24l01_clear_irq_flags(nrf24l01_platform_t*);
 void nrf24l01_activate_features(nrf24l01_platform_t*);
 void nrf24l01_write_payload(uint8_t*, uint8_t, nrf24l01_platform_t*);
