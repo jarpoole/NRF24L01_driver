@@ -53,11 +53,12 @@
 		#define _8BIT_STR(val)  BIT2STR((val),7),BIT2STR((val),6),BIT2STR((val),5),BIT2STR((val),4), \
 		                        BIT2STR((val),3),BIT2STR((val),2),BIT2STR((val),1),BIT2STR((val),0)
 		/****************************************************************************************************************/
+
 	#endif
 #endif
 	
 // COMMAND: NRF24L01 instruction definitions
-#define NRF24L01_CMD_R_REGISTER         (uint8_t)0x00 // Register read
+#define NRF24L01_CMD_R_REGISTER          (uint8_t)0x00 // Register read
 #define NRF24L01_CMD_W_REGISTER         (uint8_t)0x20 // Register write
 #define NRF24L01_CMD_ACTIVATE           (uint8_t)0x50 // (De)Activates R_RX_PL_WID, W_ACK_PAYLOAD, W_TX_PAYLOAD_NOACK features
 #define NRF24L01_CMD_R_RX_PL_WID	    (uint8_t)0x60 // Read RX-payload width for the top R_RX_PAYLOAD in the RX FIFO.
@@ -113,23 +114,41 @@
 #define NRF24L01_FLAG_MAX_RT            (uint8_t)0x10 // MAX_RT bit (maximum number of TX retransmits interrupt)
 
 // Register masks definitions
+#define NRF24L01_MASK_STATUS_IRQ        (uint8_t)0x70 // Mask for IRQ[6:4] interrupt flag bits in STATUS register
+#define NRF24L01_MASK_STATUS_RX_DR      (uint8_t)0x40 // Mask for RX_DR[6] interrupt flag bit in STATUS register
+#define NRF24L01_MASK_STATUS_TX_DS      (uint8_t)0x20 // Mask for TX_DS[5] interrupt flag bit in STATUS register
+#define NRF24L01_MASK_STATUS_MAX_RT     (uint8_t)0x10 // Mask for MAX_RT[4] interrupt flag bit in STATUS register
+#define NRF24L01_MASK_STATUS_RX_P_NO    (uint8_t)0x0E // Mask for RX_P_NO[3:1] pipe number bits in STATUS register
+#define NRF24L01_MASK_STATUS_TX_FULL    (uint8_t)0x01 // Mask for TX_FULL[0] flag bit in STATUS register
+
 #define NRF24L01_MASK_REG_MAP           (uint8_t)0x1F // Mask bits[4:0] for CMD_RREG and CMD_WREG commands
 #define NRF24L01_MASK_CRC               (uint8_t)0x0C // Mask for CRC bits [3:2] in CONFIG register
-#define NRF24L01_MASK_STATUS_IRQ        (uint8_t)0x70 // Mask for all IRQ bits in STATUS register
 #define NRF24L01_MASK_RF_PWR            (uint8_t)0x06 // Mask RF_PWR[2:1] bits in RF_SETUP register
-#define NRF24L01_MASK_RX_P_NO           (uint8_t)0x0E // Mask RX_P_NO[3:1] bits in STATUS register
 #define NRF24L01_MASK_DATARATE          (uint8_t)0x28 // Mask RD_DR_[5,3] bits in RF_SETUP register
 #define NRF24L01_MASK_EN_RX             (uint8_t)0x3F // Mask ERX_P[5:0] bits in EN_RXADDR register
 #define NRF24L01_MASK_RX_PW             (uint8_t)0x3F // Mask [5:0] bits in RX_PW_Px register
 #define NRF24L01_MASK_RETR_ARD          (uint8_t)0xF0 // Mask for ARD[7:4] bits in SETUP_RETR register
 #define NRF24L01_MASK_RETR_ARC          (uint8_t)0x0F // Mask for ARC[3:0] bits in SETUP_RETR register
-#define NRF24L01_MASK_RXFIFO            (uint8_t)0x03 // Mask for RX FIFO status bits [1:0] in FIFO_STATUS register
-#define NRF24L01_MASK_TXFIFO            (uint8_t)0x30 // Mask for TX FIFO status bits [5:4] in FIFO_STATUS register
+
+#define NRF24L01_MASK_TX_FIFO_STATUS    (uint8_t)0x70 // Mask for TX_FIFO[6:4] status bits in FIFO_STATUS register
+#define NRF24L01_MASK_TX_FIFO_REUSE     (uint8_t)0x40 // Mask for TX_REUSE[5] status bit in FIFO_STATUS register
+#define NRF24L01_MASK_TX_FIFO_FULL      (uint8_t)0x20 // Mask for TX_FULL[6] status bit in FIFO_STATUS register
+#define NRF24L01_MASK_TX_FIFO_EMPTY     (uint8_t)0x10 // Mask for TX_EMPTY[4] status bits [5:4] in FIFO_STATUS register
+#define NRF24L01_MASK_RX_FIFO_STATUS    (uint8_t)0x03 // Mask for RX_FIFO[1:0] status bits in FIFO_STATUS register
+#define NRF24L01_MASK_RX_FIFO_FULL      (uint8_t)0x02 // Mask for RX_FULL[1] status bit in FIFO_STATUS register
+#define NRF24L01_MASK_RX_FIFO_EMPTY     (uint8_t)0x01 // Mask for RX_EMPTY[0] status bit in FIFO_STATUS register
+
 #define NRF24L01_MASK_PLOS_CNT          (uint8_t)0xF0 // Mask for PLOS_CNT[7:4] bits in OBSERVE_TX register
 #define NRF24L01_MASK_ARC_CNT           (uint8_t)0x0F // Mask for ARC_CNT[3:0] bits in OBSERVE_TX register
+#define NRF24L01_MASK_ADDR_WIDTH        (uint8_t)0x03 // Mask for AW[1:0] bits in SETUP_AW register
 
-// Fake address to test transceiver presence (5 bytes long)
-#define NRF24L01_TEST_ADDR              "nRF24"
+// Timing requirements
+#define NRF24L01_CE_TX_MINIMUM_PULSE_US 10   // In microseconds
+#define NRF24L01_POWER_UP_US            5000 // In microseconds
+
+// Sizes
+#define NRF24L01_TX_FIFO_LENGTH 32
+
 
 // Retransmit delay
 enum {
@@ -178,6 +197,14 @@ enum {
 enum {
 	NRF24L01_PWR_UP   = (uint8_t)0x02, // Power up
 	NRF24L01_PWR_DOWN = (uint8_t)0x00, // Power down
+};
+
+// 
+enum {
+	NRF24L01_ADDR_WIDTH_INVALID = 0b00, // Invalid address field width
+	NRF24L01_ADDR_WIDTH_3_BYTES = 0b01, // 3 Byte RX/TX address field width
+	NRF24L01_ADDR_WIDTH_4_BYTES = 0b10, // 4 Byte RX/TX address field width
+	NRF24L01_ADDR_WIDTH_5_BYTES = 0b11, // 5 Byte RX/TX address field width
 };
 
 // Transceiver mode
@@ -239,7 +266,8 @@ typedef enum {
 typedef enum {
     NRF24L01_OK = 0,
     NRF24L01_ERR_UNKNOWN,
-    NRF24L01_INVALID_ARG,
+    NRF24L01_ERR_INVALID_ARG,
+	NRF24L01_ERR_INVALID_STATE,
     NRF24L01_ERR_DEVICE_NOT_FOUND,
     NRF24L01_ERR_WRITE,
     NRF24L01_ERR_READ,
@@ -248,17 +276,17 @@ typedef enum {
 
 typedef SPI_FPTR_RTN_T (*nrf24l01_spi_init_fptr_t)(void*);
 typedef SPI_FPTR_RTN_T (*nrf24l01_spi_deinit_fptr_t)(void*);
-//typedef int8_t (*nrf24l01_read_fptr_t)(uint8_t cmd, uint8_t reg_addr, uint8_t *reg_data, uint32_t len, void* user_ptr);
-//typedef int8_t (*nrf24l01_write_fptr_t)(uint8_t cmd, uint8_t reg_addr, uint8_t *reg_data, uint32_t len, void* user_ptr);
-typedef SPI_FPTR_RTN_T (*nrf24l01_spi_exchange_fptr_t)(uint8_t*, uint8_t*, size_t, void*);
+typedef SPI_FPTR_RTN_T (*nrf24l01_spi_exchange_fptr_t)(uint8_t, uint8_t*, uint8_t*, size_t, void*);
+typedef SPI_FPTR_RTN_T (*nrf24l01_gpio_chip_enable_fptr_t)(bool);
+typedef SPI_FPTR_RTN_T (*nrf24l01_delay_us_fptr_t)(uint32_t);
 
 typedef struct{
-	nrf24l01_spi_init_fptr_t     spi_init;
-	nrf24l01_spi_deinit_fptr_t   spi_deinit;
-	//nrf24l01_read_fptr_t       spi_read;
-	//nrf24l01_write_fptr_t      spi_write;
-	nrf24l01_spi_exchange_fptr_t spi_exchange;
-	void*                        spi_user_config;
+	nrf24l01_delay_us_fptr_t         delay_us;
+	nrf24l01_gpio_chip_enable_fptr_t gpio_chip_enable;
+	nrf24l01_spi_init_fptr_t         spi_init;
+	nrf24l01_spi_deinit_fptr_t       spi_deinit;
+	nrf24l01_spi_exchange_fptr_t     spi_exchange;
+	void*                            spi_user_config;
 } nrf24l01_platform_t;
 
 #endif
