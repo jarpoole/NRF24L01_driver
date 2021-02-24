@@ -899,7 +899,7 @@ void nrf24l01_print_config(nrf24l01_platform_t* platform) {
 	NRF24L01_DEBUGGING_PRINTF("[0x%02X] RX_PW_P5=%u\r\n", NRF24L01_RX_PW_P5_REG_ADDR, reg_temp);
 }
 
-void print_status_register(nrf24l01_platform_t* platform){
+void nrf24l01_print_status_register(nrf24l01_platform_t* platform){
 	uint8_t status;
     nrf24l01_get_status(&status, platform);
 
@@ -941,7 +941,7 @@ void print_status_register(nrf24l01_platform_t* platform){
     );
 }
 
-void print_fifo_status_register(nrf24l01_platform_t* platform){
+void nrf24l01_print_fifo_status_register(nrf24l01_platform_t* platform){
 
 	uint8_t rx_status;
 	nrf24l01_get_status_rx_fifo(&rx_status, platform);
