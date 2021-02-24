@@ -59,7 +59,7 @@ static nrf24l01_err_t nrf24l01_read_reg(uint8_t reg_addr, uint8_t* data, nrf24l0
 	}
 	uint8_t command = NRF24L01_CMD_R_REGISTER | (reg_addr & NRF24L01_MASK_REG_MAP);
 
-	SPI_FPTR_RTN_T err = platform->spi_exchange(command, data, NULL, sizeof(uint8_t), platform->spi_user_config);
+	NRF24L01_FPTR_RTN_T err = platform->spi_exchange(command, data, NULL, sizeof(uint8_t), platform->spi_user_config);
 	if(err < 0){
 		return NRF24L01_ERR_READ;
 	}
@@ -72,7 +72,7 @@ static nrf24l01_err_t nrf24l01_read_reg(uint8_t reg_addr, uint8_t* data, nrf24l0
 //   value - value to write
 static nrf24l01_err_t nrf24l01_write_reg(uint8_t reg_addr, uint8_t data, nrf24l01_platform_t* platform) {
 	uint8_t command = NRF24L01_CMD_W_REGISTER | (reg_addr & NRF24L01_MASK_REG_MAP);
-	SPI_FPTR_RTN_T err = platform->spi_exchange(command, NULL, &data, sizeof(uint8_t), platform->spi_user_config);
+	NRF24L01_FPTR_RTN_T err = platform->spi_exchange(command, NULL, &data, sizeof(uint8_t), platform->spi_user_config);
 	if(err < 0){
 		return NRF24L01_ERR_WRITE;
 	}
@@ -90,7 +90,7 @@ static nrf24l01_err_t nrf24l01_multi_read_reg(uint8_t reg_addr, uint8_t *data, u
 	}
 	uint8_t command = NRF24L01_CMD_R_REGISTER | (reg_addr & NRF24L01_MASK_REG_MAP);
 	
-	SPI_FPTR_RTN_T err = platform->spi_exchange(command, data, NULL, len, platform->spi_user_config);
+	NRF24L01_FPTR_RTN_T err = platform->spi_exchange(command, data, NULL, len, platform->spi_user_config);
 	if(err < 0){
 		return NRF24L01_ERR_READ;
 	}
@@ -108,7 +108,7 @@ static nrf24l01_err_t nrf24l01_multi_write_reg(uint8_t reg_addr, uint8_t* data, 
 	}
 	uint8_t command = NRF24L01_CMD_W_REGISTER | (reg_addr & NRF24L01_MASK_REG_MAP);
 
-	SPI_FPTR_RTN_T err = platform->spi_exchange(command, NULL, data, len, platform->spi_user_config);
+	NRF24L01_FPTR_RTN_T err = platform->spi_exchange(command, NULL, data, len, platform->spi_user_config);
 	if(err < 0){
 		return NRF24L01_ERR_WRITE;
 	}
@@ -120,7 +120,7 @@ static nrf24l01_err_t nrf24l01_multi_write_reg(uint8_t reg_addr, uint8_t* data, 
 nrf24l01_err_t nrf24l01_init(nrf24l01_platform_t* platform) {
 	
 	// Initialize the platform SPI controller
-	SPI_FPTR_RTN_T init_err = platform->spi_init(platform->spi_user_config);
+	NRF24L01_FPTR_RTN_T init_err = platform->spi_init(platform->spi_user_config);
 	if(init_err < 0){
 		return NRF24L01_ERR_UNKNOWN;
 	}
@@ -638,7 +638,7 @@ nrf24l01_err_t nrf24l01_write_payload(uint8_t* data, uint8_t len, nrf24l01_platf
 		return err;
 	}
 
-	SPI_FPTR_RTN_T spi_err = platform->spi_exchange(NRF24L01_CMD_W_TX_PAYLOAD, NULL, data, len, platform->spi_user_config);
+	NRF24L01_FPTR_RTN_T spi_err = platform->spi_exchange(NRF24L01_CMD_W_TX_PAYLOAD, NULL, data, len, platform->spi_user_config);
 	if(spi_err < 0){
 		err = NRF24L01_ERR_WRITE;
 	}else{

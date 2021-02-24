@@ -57,12 +57,12 @@ nrf24l01_rx_result nrf24l01_read_payload_dpl(uint8_t*, uint8_t*, nrf24l01_platfo
 
 #ifdef NRF24L01_ENABLE_PRINT_CONFIG
 void nrf24l01_print_config(nrf24l01_platform_t*);
-void print_status_register(nrf24l01_platform_t*);
-void print_fifo_status_register(nrf24l01_platform_t*);
+void nrf24l01_print_status_register(nrf24l01_platform_t*);
+void nrf24l01_print_fifo_status_register(nrf24l01_platform_t*);
 #else
 void nrf24l01_print_config(nrf24l01_platform_t* platform){ return; };
-void print_status_register(nrf24l01_platform_t* platform){ return; };
-void print_fifo_status_register(nrf24l01_platform_t* platform) { return; };
+void nrf24l01_print_status_register(nrf24l01_platform_t* platform){ return; };
+void nrf24l01_print_fifo_status_register(nrf24l01_platform_t* platform) { return; };
 #endif // NRF24L01_ENABLE_PRINT_CONFIG
 
 

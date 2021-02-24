@@ -17,8 +17,8 @@
 #ifndef NRF24L01_DEFS_H
 #define NRF24L01_DEFS_H
 
-#ifndef SPI_FPTR_RTN_T
-	#define SPI_FPTR_RTN_T int8_t
+#ifndef NRF24L01_SPI_FPTR_RTN_T
+	#define NRF24L01_SPI_FPTR_RTN_T int8_t
 #endif
 
 #ifdef NRF24L01_ENABLE_DEBUG_LOGGING
@@ -58,7 +58,7 @@
 #endif
 	
 // COMMAND: NRF24L01 instruction definitions
-#define NRF24L01_CMD_R_REGISTER          (uint8_t)0x00 // Register read
+#define NRF24L01_CMD_R_REGISTER         (uint8_t)0x00 // Register read
 #define NRF24L01_CMD_W_REGISTER         (uint8_t)0x20 // Register write
 #define NRF24L01_CMD_ACTIVATE           (uint8_t)0x50 // (De)Activates R_RX_PL_WID, W_ACK_PAYLOAD, W_TX_PAYLOAD_NOACK features
 #define NRF24L01_CMD_R_RX_PL_WID	    (uint8_t)0x60 // Read RX-payload width for the top R_RX_PAYLOAD in the RX FIFO.
@@ -274,11 +274,11 @@ typedef enum {
 } nrf24l01_err_t;
 
 
-typedef SPI_FPTR_RTN_T (*nrf24l01_spi_init_fptr_t)(void*);
-typedef SPI_FPTR_RTN_T (*nrf24l01_spi_deinit_fptr_t)(void*);
-typedef SPI_FPTR_RTN_T (*nrf24l01_spi_exchange_fptr_t)(uint8_t, uint8_t*, uint8_t*, size_t, void*);
-typedef SPI_FPTR_RTN_T (*nrf24l01_gpio_chip_enable_fptr_t)(bool);
-typedef SPI_FPTR_RTN_T (*nrf24l01_delay_us_fptr_t)(uint32_t);
+typedef NRF24L01_FPTR_RTN_T (*nrf24l01_spi_init_fptr_t)(void*);
+typedef NRF24L01_FPTR_RTN_T (*nrf24l01_spi_deinit_fptr_t)(void*);
+typedef NRF24L01_FPTR_RTN_T (*nrf24l01_spi_exchange_fptr_t)(uint8_t, uint8_t*, uint8_t*, size_t, void*);
+typedef NRF24L01_FPTR_RTN_T (*nrf24l01_gpio_chip_enable_fptr_t)(bool);
+typedef NRF24L01_FPTR_RTN_T (*nrf24l01_delay_us_fptr_t)(uint32_t);
 
 typedef struct{
 	nrf24l01_delay_us_fptr_t         delay_us;
