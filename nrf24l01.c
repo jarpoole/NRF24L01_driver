@@ -1,7 +1,7 @@
 
 /**
  * @file
- * @author  Jared Poole <jarpoole>
+ * @author  Jared Poole
  * @version 1.1.7
  *
  * @section LICENSE

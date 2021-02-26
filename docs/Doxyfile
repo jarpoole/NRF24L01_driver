@@ -1,5 +1,6 @@
 
 # Inspired from a list of options presented here https://flcwiki.desy.de/Doxyfile
+# https://www.doxygen.nl/manual/config.html
 
 PROJECT_NAME = nrf24l01
 PROJECT_BRIEF = "Driver for the nRF24L01(+) transceiver"

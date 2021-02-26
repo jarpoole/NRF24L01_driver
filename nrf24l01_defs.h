@@ -2,7 +2,7 @@
 /**
  * 
  *  @file
- *  @author  Jared Poole <jarpoole>
+ *  @author  Jared Poole
  *  @version 1.1.7
  * 
  *  @section CONFIGURATION
@@ -84,112 +84,112 @@
 #endif
 	
 // COMMAND: NRF24L01 instruction definitions
-#define NRF24L01_CMD_R_REGISTER           (uint8_t)0x00 // Register read
-#define NRF24L01_CMD_W_REGISTER           (uint8_t)0x20 // Register write
-#define NRF24L01_CMD_ACTIVATE             (uint8_t)0x50 // (De)Activates R_RX_PL_WID, W_ACK_PAYLOAD, W_TX_PAYLOAD_NOACK features
-#define NRF24L01_CMD_R_RX_PL_WID	      (uint8_t)0x60 // Read RX-payload width for the top R_RX_PAYLOAD in the RX FIFO.
-#define NRF24L01_CMD_R_RX_PAYLOAD         (uint8_t)0x61 // Read RX payload
-#define NRF24L01_CMD_W_TX_PAYLOAD         (uint8_t)0xA0 // Write TX payload
-#define NRF24L01_CMD_W_ACK_PAYLOAD        (uint8_t)0xA8 // Write ACK payload
-#define NRF24L01_CMD_W_TX_PAYLOAD_NOACK   (uint8_t)0xB0 // Write TX payload and disable AUTOACK
-#define NRF24L01_CMD_FLUSH_TX             (uint8_t)0xE1 // Flush TX FIFO
-#define NRF24L01_CMD_FLUSH_RX             (uint8_t)0xE2 // Flush RX FIFO
-#define NRF24L01_CMD_REUSE_TX_PL          (uint8_t)0xE3 // Reuse TX payload
-#define NRF24L01_CMD_LOCK_UNLOCK          (uint8_t)0x50 // Lock/unlock exclusive features
+#define NRF24L01_CMD_R_REGISTER           (uint8_t)0x00  ///< Register read
+#define NRF24L01_CMD_W_REGISTER           (uint8_t)0x20  ///< Register write
+#define NRF24L01_CMD_ACTIVATE             (uint8_t)0x50  ///< (De)Activates R_RX_PL_WID, W_ACK_PAYLOAD, W_TX_PAYLOAD_NOACK features
+#define NRF24L01_CMD_R_RX_PL_WID	      (uint8_t)0x60  ///< Read RX-payload width for the top R_RX_PAYLOAD in the RX FIFO.
+#define NRF24L01_CMD_R_RX_PAYLOAD         (uint8_t)0x61  ///< Read RX payload
+#define NRF24L01_CMD_W_TX_PAYLOAD         (uint8_t)0xA0  ///< Write TX payload
+#define NRF24L01_CMD_W_ACK_PAYLOAD        (uint8_t)0xA8  ///< Write ACK payload
+#define NRF24L01_CMD_W_TX_PAYLOAD_NOACK   (uint8_t)0xB0  ///< Write TX payload and disable AUTOACK
+#define NRF24L01_CMD_FLUSH_TX             (uint8_t)0xE1  ///< Flush TX FIFO
+#define NRF24L01_CMD_FLUSH_RX             (uint8_t)0xE2  ///< Flush RX FIFO
+#define NRF24L01_CMD_REUSE_TX_PL          (uint8_t)0xE3  ///< Reuse TX payload
+#define NRF24L01_CMD_LOCK_UNLOCK          (uint8_t)0x50  ///< Lock/unlock exclusive features
 // No operation (used for reading status register for example)
 #define NRF24L01_CMD_NOP                  (uint8_t)0xFF
 
 // ADDRESS: NRF24L01 register address definitions
-#define NRF24L01_CONFIG_REG_ADDR          (uint8_t)0x00 // Configuration register address
-#define NRF24L01_EN_AA_REG_ADDR           (uint8_t)0x01 // Enable "Auto acknowledgment" control register address
-#define NRF24L01_EN_RX_ADDR_REG_ADDR      (uint8_t)0x02 // Enable RX addresses register address
-#define NRF24L01_SETUP_AW_REG_ADDR        (uint8_t)0x03 // Setup of address widths register address
-#define NRF24L01_SETUP_RETR_REG_ADDR      (uint8_t)0x04 // Setup of automatic retransmit register address
-#define NRF24L01_RF_CH_REG_ADDR           (uint8_t)0x05 // RF channel register address
-#define NRF24L01_RF_SETUP_REG_ADDR        (uint8_t)0x06 // RF setup register register address
-#define NRF24L01_STATUS_REG_ADDR          (uint8_t)0x07 // Status register address
-#define NRF24L01_OBSERVE_TX_REG_ADDR      (uint8_t)0x08 // Transmit observe register address
-#define NRF24L01_RPD_REG_ADDR             (uint8_t)0x09 // Received power detector register address
-#define NRF24L01_RX_ADDR_P0_REG_ADDR      (uint8_t)0x0A // Receive address data pipe 0 register address
-#define NRF24L01_RX_ADDR_P1_REG_ADDR      (uint8_t)0x0B // Receive address data pipe 1 register address
-#define NRF24L01_RX_ADDR_P2_REG_ADDR      (uint8_t)0x0C // Receive address data pipe 2 register address
-#define NRF24L01_RX_ADDR_P3_REG_ADDR      (uint8_t)0x0D // Receive address data pipe 3 register address
-#define NRF24L01_RX_ADDR_P4_REG_ADDR      (uint8_t)0x0E // Receive address data pipe 4 register address
-#define NRF24L01_RX_ADDR_P5_REG_ADDR      (uint8_t)0x0F // Receive address data pipe 5 register address
-#define NRF24L01_TX_ADDR_REG_ADDR         (uint8_t)0x10 // Transmit address register address
-#define NRF24L01_RX_PW_P0_REG_ADDR        (uint8_t)0x11 // Number of bytes in RX payload in data pipe 0 register address
-#define NRF24L01_RX_PW_P1_REG_ADDR        (uint8_t)0x12 // Number of bytes in RX payload in data pipe 1 register address
-#define NRF24L01_RX_PW_P2_REG_ADDR        (uint8_t)0x13 // Number of bytes in RX payload in data pipe 2 register address
-#define NRF24L01_RX_PW_P3_REG_ADDR        (uint8_t)0x14 // Number of bytes in RX payload in data pipe 3 register address
-#define NRF24L01_RX_PW_P4_REG_ADDR        (uint8_t)0x15 // Number of bytes in RX payload in data pipe 4 register address
-#define NRF24L01_RX_PW_P5_REG_ADDR        (uint8_t)0x16 // Number of bytes in RX payload in data pipe 5 register address
-#define NRF24L01_FIFO_STATUS_REG_ADDR     (uint8_t)0x17 // FIFO status register address
-#define NRF24L01_DYNPD_REG_ADDR           (uint8_t)0x1C // Enable dynamic payload length register address
-#define NRF24L01_FEATURE_REG_ADDR         (uint8_t)0x1D // Feature register address
+#define NRF24L01_CONFIG_REG_ADDR          (uint8_t)0x00  ///< Configuration register address
+#define NRF24L01_EN_AA_REG_ADDR           (uint8_t)0x01  ///< Enable "Auto acknowledgment" control register address
+#define NRF24L01_EN_RX_ADDR_REG_ADDR      (uint8_t)0x02  ///< Enable RX addresses register address
+#define NRF24L01_SETUP_AW_REG_ADDR        (uint8_t)0x03  ///< Setup of address widths register address
+#define NRF24L01_SETUP_RETR_REG_ADDR      (uint8_t)0x04  ///< Setup of automatic retransmit register address
+#define NRF24L01_RF_CH_REG_ADDR           (uint8_t)0x05  ///< RF channel register address
+#define NRF24L01_RF_SETUP_REG_ADDR        (uint8_t)0x06  ///< RF setup register register address
+#define NRF24L01_STATUS_REG_ADDR          (uint8_t)0x07  ///< Status register address
+#define NRF24L01_OBSERVE_TX_REG_ADDR      (uint8_t)0x08  ///< Transmit observe register address
+#define NRF24L01_RPD_REG_ADDR             (uint8_t)0x09  ///< Received power detector register address
+#define NRF24L01_RX_ADDR_P0_REG_ADDR      (uint8_t)0x0A  ///< Receive address data pipe 0 register address
+#define NRF24L01_RX_ADDR_P1_REG_ADDR      (uint8_t)0x0B  ///< Receive address data pipe 1 register address
+#define NRF24L01_RX_ADDR_P2_REG_ADDR      (uint8_t)0x0C  ///< Receive address data pipe 2 register address
+#define NRF24L01_RX_ADDR_P3_REG_ADDR      (uint8_t)0x0D  ///< Receive address data pipe 3 register address
+#define NRF24L01_RX_ADDR_P4_REG_ADDR      (uint8_t)0x0E  ///< Receive address data pipe 4 register address
+#define NRF24L01_RX_ADDR_P5_REG_ADDR      (uint8_t)0x0F  ///< Receive address data pipe 5 register address
+#define NRF24L01_TX_ADDR_REG_ADDR         (uint8_t)0x10  ///< Transmit address register address
+#define NRF24L01_RX_PW_P0_REG_ADDR        (uint8_t)0x11  ///< Number of bytes in RX payload in data pipe 0 register address
+#define NRF24L01_RX_PW_P1_REG_ADDR        (uint8_t)0x12  ///< Number of bytes in RX payload in data pipe 1 register address
+#define NRF24L01_RX_PW_P2_REG_ADDR        (uint8_t)0x13  ///< Number of bytes in RX payload in data pipe 2 register address
+#define NRF24L01_RX_PW_P3_REG_ADDR        (uint8_t)0x14  ///< Number of bytes in RX payload in data pipe 3 register address
+#define NRF24L01_RX_PW_P4_REG_ADDR        (uint8_t)0x15  ///< Number of bytes in RX payload in data pipe 4 register address
+#define NRF24L01_RX_PW_P5_REG_ADDR        (uint8_t)0x16  ///< Number of bytes in RX payload in data pipe 5 register address
+#define NRF24L01_FIFO_STATUS_REG_ADDR     (uint8_t)0x17  ///< FIFO status register address
+#define NRF24L01_DYNPD_REG_ADDR           (uint8_t)0x1C  ///< Enable dynamic payload length register address
+#define NRF24L01_FEATURE_REG_ADDR         (uint8_t)0x1D  ///< Feature register address
 // Special definition for use with commands that don't require an address
 #define NRF24L01_NO_REG_ADDR_REQUIRED     (uint8_t)0x00 
 
 // Register bits definitions
-#define NRF24L01_CONFIG_PRIM_RX           (uint8_t)0x01 // PRIM_RX bit in CONFIG register
-#define NRF24L01_CONFIG_PWR_UP            (uint8_t)0x02 // PWR_UP bit in CONFIG register
-#define NRF24L01_FEATURE_EN_DYN_ACK       (uint8_t)0x01 // EN_DYN_ACK bit in FEATURE register
-#define NRF24L01_FEATURE_EN_ACK_PAY       (uint8_t)0x02 // EN_ACK_PAY bit in FEATURE register
-#define NRF24L01_FEATURE_EN_DPL           (uint8_t)0x04 // EN_DPL bit in FEATURE register
-#define NRF24L01_FLAG_RX_DR               (uint8_t)0x40 // RX_DR bit (data ready RX FIFO interrupt)
-#define NRF24L01_FLAG_TX_DS               (uint8_t)0x20 // TX_DS bit (data sent TX FIFO interrupt)
-#define NRF24L01_FLAG_MAX_RT              (uint8_t)0x10 // MAX_RT bit (maximum number of TX retransmits interrupt)
-#define	NRF24L01_ADDR_WIDTH_INVALID       (uint8_t)0x00 // Invalid address field width
-#define	NRF24L01_ADDR_WIDTH_3_BYTES       (uint8_t)0x01 // 3 Byte RX/TX address field width
-#define	NRF24L01_ADDR_WIDTH_4_BYTES       (uint8_t)0x02 // 4 Byte RX/TX address field width
-#define	NRF24L01_ADDR_WIDTH_5_BYTES       (uint8_t)0x03 // 5 Byte RX/TX address field width
+#define NRF24L01_CONFIG_PRIM_RX           (uint8_t)0x01  ///< PRIM_RX bit in CONFIG register
+#define NRF24L01_CONFIG_PWR_UP            (uint8_t)0x02  ///< PWR_UP bit in CONFIG register
+#define NRF24L01_FEATURE_EN_DYN_ACK       (uint8_t)0x01  ///< EN_DYN_ACK bit in FEATURE register
+#define NRF24L01_FEATURE_EN_ACK_PAY       (uint8_t)0x02  ///< EN_ACK_PAY bit in FEATURE register
+#define NRF24L01_FEATURE_EN_DPL           (uint8_t)0x04  ///< EN_DPL bit in FEATURE register
+#define NRF24L01_FLAG_RX_DR               (uint8_t)0x40  ///< RX_DR bit (data ready RX FIFO interrupt)
+#define NRF24L01_FLAG_TX_DS               (uint8_t)0x20  ///< TX_DS bit (data sent TX FIFO interrupt)
+#define NRF24L01_FLAG_MAX_RT              (uint8_t)0x10  ///< MAX_RT bit (maximum number of TX retransmits interrupt)
+#define	NRF24L01_ADDR_WIDTH_INVALID       (uint8_t)0x00  ///< Invalid address field width
+#define	NRF24L01_ADDR_WIDTH_3_BYTES       (uint8_t)0x01  ///< 3 Byte RX/TX address field width
+#define	NRF24L01_ADDR_WIDTH_4_BYTES       (uint8_t)0x02  ///< 4 Byte RX/TX address field width
+#define	NRF24L01_ADDR_WIDTH_5_BYTES       (uint8_t)0x03  ///< 5 Byte RX/TX address field width
+ 
+// Register masks definitions 
+#define NRF24L01_MASK_STATUS_IRQ          (uint8_t)0x70  ///< Mask for IRQ[6:4] interrupt flag bits in STATUS register
+#define NRF24L01_MASK_STATUS_RX_DR        (uint8_t)0x40  ///< Mask for RX_DR[6] interrupt flag bit in STATUS register
+#define NRF24L01_MASK_STATUS_TX_DS        (uint8_t)0x20  ///< Mask for TX_DS[5] interrupt flag bit in STATUS register
+#define NRF24L01_MASK_STATUS_MAX_RT       (uint8_t)0x10  ///< Mask for MAX_RT[4] interrupt flag bit in STATUS register
+#define NRF24L01_MASK_STATUS_RX_P_NO      (uint8_t)0x0E  ///< Mask for RX_P_NO[3:1] pipe number bits in STATUS register
+#define NRF24L01_MASK_STATUS_TX_FULL      (uint8_t)0x01  ///< Mask for TX_FULL[0] flag bit in STATUS register
 
-// Register masks definitions
-#define NRF24L01_MASK_STATUS_IRQ          (uint8_t)0x70 // Mask for IRQ[6:4] interrupt flag bits in STATUS register
-#define NRF24L01_MASK_STATUS_RX_DR        (uint8_t)0x40 // Mask for RX_DR[6] interrupt flag bit in STATUS register
-#define NRF24L01_MASK_STATUS_TX_DS        (uint8_t)0x20 // Mask for TX_DS[5] interrupt flag bit in STATUS register
-#define NRF24L01_MASK_STATUS_MAX_RT       (uint8_t)0x10 // Mask for MAX_RT[4] interrupt flag bit in STATUS register
-#define NRF24L01_MASK_STATUS_RX_P_NO      (uint8_t)0x0E // Mask for RX_P_NO[3:1] pipe number bits in STATUS register
-#define NRF24L01_MASK_STATUS_TX_FULL      (uint8_t)0x01 // Mask for TX_FULL[0] flag bit in STATUS register
+#define NRF24L01_MASK_OBSERVE_TX_PLOS_CNT (uint8_t)0xF0  ///< Mask for PLOS_CNT[7:4] lost packet count bits
+#define NRF24L01_MASK_OBSERVE_TX_ARC_CNT  (uint8_t)0x0F  ///< Mask for ARC_CNT[3:0] resent packet count bits
 
-#define NRF24L01_MASK_OBSERVE_TX_PLOS_CNT (uint8_t)0xF0 // Mask for PLOS_CNT[7:4] lost packet count bits
-#define NRF24L01_MASK_OBSERVE_TX_ARC_CNT  (uint8_t)0x0F // Mask for ARC_CNT[3:0] resent packet count bits
+#define NRF24L01_MASK_REG_MAP             (uint8_t)0x1F  ///< Mask bits[4:0] for CMD_RREG and CMD_WREG commands
+#define NRF24L01_MASK_CRC                 (uint8_t)0x0C  ///< Mask for CRC bits [3:2] in CONFIG register
+#define NRF24L01_MASK_RF_PWR              (uint8_t)0x06  ///< Mask RF_PWR[2:1] bits in RF_SETUP register
+#define NRF24L01_MASK_DATARATE            (uint8_t)0x28  ///< Mask RD_DR_[5,3] bits in RF_SETUP register
+#define NRF24L01_MASK_EN_RX               (uint8_t)0x3F  ///< Mask ERX_P[5:0] bits in EN_RXADDR register
+#define NRF24L01_MASK_RX_PW               (uint8_t)0x3F  ///< Mask [5:0] bits in RX_PW_Px register
+#define NRF24L01_MASK_RETR_ARD            (uint8_t)0xF0  ///< Mask for ARD[7:4] bits in SETUP_RETR register
+#define NRF24L01_MASK_RETR_ARC            (uint8_t)0x0F  ///< Mask for ARC[3:0] bits in SETUP_RETR register
 
-#define NRF24L01_MASK_REG_MAP             (uint8_t)0x1F // Mask bits[4:0] for CMD_RREG and CMD_WREG commands
-#define NRF24L01_MASK_CRC                 (uint8_t)0x0C // Mask for CRC bits [3:2] in CONFIG register
-#define NRF24L01_MASK_RF_PWR              (uint8_t)0x06 // Mask RF_PWR[2:1] bits in RF_SETUP register
-#define NRF24L01_MASK_DATARATE            (uint8_t)0x28 // Mask RD_DR_[5,3] bits in RF_SETUP register
-#define NRF24L01_MASK_EN_RX               (uint8_t)0x3F // Mask ERX_P[5:0] bits in EN_RXADDR register
-#define NRF24L01_MASK_RX_PW               (uint8_t)0x3F // Mask [5:0] bits in RX_PW_Px register
-#define NRF24L01_MASK_RETR_ARD            (uint8_t)0xF0 // Mask for ARD[7:4] bits in SETUP_RETR register
-#define NRF24L01_MASK_RETR_ARC            (uint8_t)0x0F // Mask for ARC[3:0] bits in SETUP_RETR register
+#define NRF24L01_MASK_TX_FIFO_STATUS      (uint8_t)0x70  ///< Mask for TX_FIFO[6:4] status bits in FIFO_STATUS register
+#define NRF24L01_MASK_TX_FIFO_REUSE       (uint8_t)0x40  ///< Mask for TX_REUSE[5] status bit in FIFO_STATUS register
+#define NRF24L01_MASK_TX_FIFO_FULL        (uint8_t)0x20  ///< Mask for TX_FULL[6] status bit in FIFO_STATUS register
+#define NRF24L01_MASK_TX_FIFO_EMPTY       (uint8_t)0x10  ///< Mask for TX_EMPTY[4] status bits [5:4] in FIFO_STATUS register
+#define NRF24L01_MASK_RX_FIFO_STATUS      (uint8_t)0x03  ///< Mask for RX_FIFO[1:0] status bits in FIFO_STATUS register
+#define NRF24L01_MASK_RX_FIFO_FULL        (uint8_t)0x02  ///< Mask for RX_FULL[1] status bit in FIFO_STATUS register
+#define NRF24L01_MASK_RX_FIFO_EMPTY       (uint8_t)0x01  ///< Mask for RX_EMPTY[0] status bit in FIFO_STATUS register
 
-#define NRF24L01_MASK_TX_FIFO_STATUS      (uint8_t)0x70 // Mask for TX_FIFO[6:4] status bits in FIFO_STATUS register
-#define NRF24L01_MASK_TX_FIFO_REUSE       (uint8_t)0x40 // Mask for TX_REUSE[5] status bit in FIFO_STATUS register
-#define NRF24L01_MASK_TX_FIFO_FULL        (uint8_t)0x20 // Mask for TX_FULL[6] status bit in FIFO_STATUS register
-#define NRF24L01_MASK_TX_FIFO_EMPTY       (uint8_t)0x10 // Mask for TX_EMPTY[4] status bits [5:4] in FIFO_STATUS register
-#define NRF24L01_MASK_RX_FIFO_STATUS      (uint8_t)0x03 // Mask for RX_FIFO[1:0] status bits in FIFO_STATUS register
-#define NRF24L01_MASK_RX_FIFO_FULL        (uint8_t)0x02 // Mask for RX_FULL[1] status bit in FIFO_STATUS register
-#define NRF24L01_MASK_RX_FIFO_EMPTY       (uint8_t)0x01 // Mask for RX_EMPTY[0] status bit in FIFO_STATUS register
-
-#define NRF24L01_MASK_PLOS_CNT            (uint8_t)0xF0 // Mask for PLOS_CNT[7:4] bits in OBSERVE_TX register
-#define NRF24L01_MASK_ARC_CNT             (uint8_t)0x0F // Mask for ARC_CNT[3:0] bits in OBSERVE_TX register
-#define NRF24L01_MASK_ADDR_WIDTH          (uint8_t)0x03 // Mask for AW[1:0] bits in SETUP_AW register
+#define NRF24L01_MASK_PLOS_CNT            (uint8_t)0xF0  ///< Mask for PLOS_CNT[7:4] bits in OBSERVE_TX register
+#define NRF24L01_MASK_ARC_CNT             (uint8_t)0x0F  ///< Mask for ARC_CNT[3:0] bits in OBSERVE_TX register
+#define NRF24L01_MASK_ADDR_WIDTH          (uint8_t)0x03  ///< Mask for AW[1:0] bits in SETUP_AW register
 
 // Timing requirements
 #define NRF24L01_CE_TX_MINIMUM_PULSE_US 10   // In microseconds
 #define NRF24L01_POWER_UP_US            5000 // In microseconds
 
 // Sizes
-#define NRF24L01_TX_FIFO_WIDTH          32 // Each TX FIFO entry is 32 bytes wide
-#define NRF24L01_TX_FIFO_DEPTH          3  // The TX FIFO is 3 entries deep
-#define NRF24L01_RX_FIFO_WIDTH          32 // Each TX FIFO entry is 32 bytes wide
-#define NRF24L01_RX_FIFO_DEPTH          3  // The RX FIFO is 3 entries deep
+#define NRF24L01_TX_FIFO_WIDTH          32  ///< Each TX FIFO entry is 32 bytes wide
+#define NRF24L01_TX_FIFO_DEPTH          3   ///< The TX FIFO is 3 entries deep
+#define NRF24L01_RX_FIFO_WIDTH          32  ///< Each TX FIFO entry is 32 bytes wide
+#define NRF24L01_RX_FIFO_DEPTH          3   ///< The RX FIFO is 3 entries deep
 
 
 
 // Retransmit delay
 typedef enum {
-	NRF24L01_ARD_NONE   = (uint8_t)0x00, // Dummy value for case when retransmission is not used
+	NRF24L01_ARD_NONE   = (uint8_t)0x00,  ///< Dummy value for case when retransmission is not used
 	NRF24L01_ARD_250US  = (uint8_t)0x00,
 	NRF24L01_ARD_500US  = (uint8_t)0x01,
 	NRF24L01_ARD_750US  = (uint8_t)0x02,
@@ -216,30 +216,30 @@ typedef uint8_t nrf24l01_ar_lost_t;
 
 // Data rate
 typedef enum {
-	NRF24L01_DR_250KBPS  = (uint8_t)0x20, // 250kbps data rate
-	NRF24L01_DR_1MBPS    = (uint8_t)0x00, // 1Mbps data rate
-	NRF24L01_DR_2MBPS    = (uint8_t)0x08, // 2Mbps data rate
+	NRF24L01_DR_250KBPS  = (uint8_t)0x20,  ///< 250kbps data rate
+	NRF24L01_DR_1MBPS    = (uint8_t)0x00,  ///< 1Mbps data rate
+	NRF24L01_DR_2MBPS    = (uint8_t)0x08,  ///< 2Mbps data rate
 } nrf24l01_data_rate_t;
 
 // RF output power in TX mode
 typedef enum {
-	NRF24L01_TXPWR_18DBM = (uint8_t)0x00, // -18dBm
-	NRF24L01_TXPWR_12DBM = (uint8_t)0x02, // -12dBm
-	NRF24L01_TXPWR_6DBM  = (uint8_t)0x04, //  -6dBm
-	NRF24L01_TXPWR_0DBM  = (uint8_t)0x06, //   0dBm
+	NRF24L01_TXPWR_18DBM = (uint8_t)0x00,  ///< -18dBm
+	NRF24L01_TXPWR_12DBM = (uint8_t)0x02,  ///< -12dBm
+	NRF24L01_TXPWR_6DBM  = (uint8_t)0x04,  ///< -6dBm
+	NRF24L01_TXPWR_0DBM  = (uint8_t)0x06,  ///<  0dBm
 } nrf24l01_tx_power_t;
 
 // CRC encoding scheme
 typedef enum {
-	NRF24L01_CRC_OFF   = (uint8_t)0x00, // CRC disabled
-	NRF24L01_CRC_1BYTE = (uint8_t)0x08, // 1-byte CRC
-	NRF24L01_CRC_2BYTE = (uint8_t)0x0c, // 2-byte CRC
+	NRF24L01_CRC_OFF   = (uint8_t)0x00,  ///< CRC disabled
+	NRF24L01_CRC_1BYTE = (uint8_t)0x08,  ///< 1-byte CRC
+	NRF24L01_CRC_2BYTE = (uint8_t)0x0c,  ///< 2-byte CRC
 } nrf24l01_crc_scheme_t;
 
 // nRF24L01 power control
 typedef enum {
-	NRF24L01_PWR_DOWN = (uint8_t)0x00, // Power down
-	NRF24L01_PWR_UP   = (uint8_t)0x02, // Power up
+	NRF24L01_PWR_DOWN = (uint8_t)0x00,  ///< Power down
+	NRF24L01_PWR_UP   = (uint8_t)0x02,  ///< Power up
 } nrf24l01_power_mode_t;
 
 // RF channel number
@@ -250,13 +250,13 @@ typedef uint8_t nrf24l01_address_width_t;
 
 // Transceiver mode
 typedef enum {
-	NRF24L01_MODE_RX = (uint8_t)0x01, // PRX
-	NRF24L01_MODE_TX = (uint8_t)0x00, // PTX
+	NRF24L01_MODE_RX = (uint8_t)0x01,  ///< PRX
+	NRF24L01_MODE_TX = (uint8_t)0x00,  ///< PTX
 } nrf24l01_operational_mode_t;
 
 typedef enum {
-	NRF24L01_DPL_OFF = (uint8_t)0x00, // PTX
-	NRF24L01_DPL_ON  = (uint8_t)0x01, // PRX
+	NRF24L01_DPL_OFF = (uint8_t)0x00, ///< PTX
+	NRF24L01_DPL_ON  = (uint8_t)0x01, ///< PRX
 } nrf24l01_dpl_mode_t;
 
 typedef enum {
@@ -272,16 +272,16 @@ typedef enum {
 
 // Status of the RX/TX FIFOs
 typedef enum {
-	NRF24L01_STATUS_FIFO_DATA  = (uint8_t)0x00, // The FIFO contains data and available locations
-	NRF24L01_STATUS_FIFO_EMPTY = (uint8_t)0x01, // The FIFO is empty
-	NRF24L01_STATUS_FIFO_FULL  = (uint8_t)0x02, // The FIFO is full
-	NRF24L01_STATUS_FIFO_ERROR = (uint8_t)0x03, // Impossible state: FIFO cannot be empty and full at the same time
+	NRF24L01_STATUS_FIFO_DATA  = (uint8_t)0x00,  ///< The FIFO contains data and available locations
+	NRF24L01_STATUS_FIFO_EMPTY = (uint8_t)0x01,  ///< The FIFO is empty
+	NRF24L01_STATUS_FIFO_FULL  = (uint8_t)0x02,  ///< The FIFO is full
+	NRF24L01_STATUS_FIFO_ERROR = (uint8_t)0x03,  ///< Impossible state: FIFO cannot be empty and full at the same time
 } nrf24l01_fifo_status_t;
 
 // Type of FIFO
 typedef enum {
-	NRF24L01_RX_FIFO  = (uint8_t)0x00, // RX FIFO
-	NRF24L01_TX_FIFO  = (uint8_t)0x01, // TX_FIFO
+	NRF24L01_RX_FIFO  = (uint8_t)0x00,  ///< RX FIFO
+	NRF24L01_TX_FIFO  = (uint8_t)0x01,  ///< TX_FIFO
 } nrf24l01_fifo_type_t;
 
 // Error codes for NRF24L01
@@ -297,14 +297,14 @@ typedef enum {
 
 // Enumeration of RX pipe addresses and TX address
 typedef enum {
-	NRF24L01_PIPE0        = (uint8_t)0x00, // pipe0
-	NRF24L01_PIPE1        = (uint8_t)0x01, // pipe1
-	NRF24L01_PIPE2        = (uint8_t)0x02, // pipe2
-	NRF24L01_PIPE3        = (uint8_t)0x03, // pipe3
-	NRF24L01_PIPE4        = (uint8_t)0x04, // pipe4
-	NRF24L01_PIPE5        = (uint8_t)0x05, // pipe5
-	NRF24L01_PIPETX       = (uint8_t)0x06, // TX address (not a pipe in fact)
-	NRF24L01_PIPE_UNKNOWN = (uint8_t)0x07, // pipe unknown (usually signifies rx pipe is empty)
+	NRF24L01_PIPE0        = (uint8_t)0x00,  ///< pipe0
+	NRF24L01_PIPE1        = (uint8_t)0x01,  ///< pipe1
+	NRF24L01_PIPE2        = (uint8_t)0x02,  ///< pipe2
+	NRF24L01_PIPE3        = (uint8_t)0x03,  ///< pipe3
+	NRF24L01_PIPE4        = (uint8_t)0x04,  ///< pipe4
+	NRF24L01_PIPE5        = (uint8_t)0x05,  ///< pipe5
+	NRF24L01_PIPETX       = (uint8_t)0x06,  ///< TX address (not a pipe in fact)
+	NRF24L01_PIPE_UNKNOWN = (uint8_t)0x07,  ///< pipe unknown (usually signifies rx pipe is empty)
 } nrf24l01_pipe_t;
 
 #define NRF24L01_IS_RX_PIPE(pipe)    ( (pipe) >= NRF24L01_PIPE0 && (pipe) <= NRF24L01_PIPE5 )
@@ -389,12 +389,12 @@ typedef NRF24L01_FPTR_RTN_T (*nrf24l01_delay_us_fptr_t)(uint32_t delay);
 
 
 typedef struct{
-	nrf24l01_delay_us_fptr_t         delay_us;         // Pointer to a platform specific microsecond delay function
-	nrf24l01_gpio_chip_enable_fptr_t gpio_chip_enable; // Pointer to the platform specific GPIO control function
-	nrf24l01_spi_init_fptr_t         spi_init;         // Pointer to the platform specific hardware initialization function
-	nrf24l01_spi_deinit_fptr_t       spi_deinit;       // Pointer to the platform specific hardware deinitialization function
-	nrf24l01_spi_exchange_fptr_t     spi_exchange;     // Pointer to the platform specific SPI full-duplex transfer function
-	void*                            user_ptr;         // (optional) Pointer to a user-defined hardware configuration struct
+	nrf24l01_delay_us_fptr_t         delay_us;          ///< Pointer to a platform specific microsecond delay function
+	nrf24l01_gpio_chip_enable_fptr_t gpio_chip_enable;  ///< Pointer to the platform specific GPIO control function
+	nrf24l01_spi_init_fptr_t         spi_init;          ///< Pointer to the platform specific hardware initialization function
+	nrf24l01_spi_deinit_fptr_t       spi_deinit;        ///< Pointer to the platform specific hardware deinitialization function
+	nrf24l01_spi_exchange_fptr_t     spi_exchange;      ///< Pointer to the platform specific SPI full-duplex transfer function
+	void*                            user_ptr;          ///< (optional) Pointer to a user-defined hardware configuration struct
 } nrf24l01_platform_t;
 
 #endif
