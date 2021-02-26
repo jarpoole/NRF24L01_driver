@@ -316,6 +316,15 @@ Macros</h2></td></tr>
 <tr class="memitem:ad91228165b46354e0db13612e3fbfcf3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#ad91228165b46354e0db13612e3fbfcf3">NRF24L01_MASK_ADDR_WIDTH</a>&#160;&#160;&#160;(uint8_t)0x03</td></tr>
 <tr class="memdesc:ad91228165b46354e0db13612e3fbfcf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mask for AW[1:0] bits in SETUP_AW register.  <a href="#ad91228165b46354e0db13612e3fbfcf3">More...</a><br /></td></tr>
 <tr class="separator:ad91228165b46354e0db13612e3fbfcf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4075140658538499290f33361b04d4d0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#a4075140658538499290f33361b04d4d0">NRF24L01_MASK_DYNPD</a>&#160;&#160;&#160;(uint8_t)0x3F</td></tr>
+<tr class="memdesc:a4075140658538499290f33361b04d4d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mask for DPL_Px[5:0] bits in DYNPD feature register.  <a href="#a4075140658538499290f33361b04d4d0">More...</a><br /></td></tr>
+<tr class="separator:a4075140658538499290f33361b04d4d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd8e5c2d25c02b20480ad9a1ac65f3f8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#abd8e5c2d25c02b20480ad9a1ac65f3f8">NRF24L01_MASK_EN_AA</a>&#160;&#160;&#160;(uint8_t)0x3F</td></tr>
+<tr class="memdesc:abd8e5c2d25c02b20480ad9a1ac65f3f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mask for ENAA_Px[5:0] bits in EN_AA register.  <a href="#abd8e5c2d25c02b20480ad9a1ac65f3f8">More...</a><br /></td></tr>
+<tr class="separator:abd8e5c2d25c02b20480ad9a1ac65f3f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d8727ced1317714e0e84b89f83a3a26"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#a8d8727ced1317714e0e84b89f83a3a26">NRF24L01_MASK_EN_RX_ADDR</a>&#160;&#160;&#160;(uint8_t)0x3F</td></tr>
+<tr class="memdesc:a8d8727ced1317714e0e84b89f83a3a26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mask for ERX_Px[5:0] bits in EN_RXADDR register.  <a href="#a8d8727ced1317714e0e84b89f83a3a26">More...</a><br /></td></tr>
+<tr class="separator:a8d8727ced1317714e0e84b89f83a3a26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf29d18479a25f17627dd33091093277"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#abf29d18479a25f17627dd33091093277">NRF24L01_CE_TX_MINIMUM_PULSE_US</a>&#160;&#160;&#160;10</td></tr>
 <tr class="separator:abf29d18479a25f17627dd33091093277"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3fc300f15bd4b882e67625ead1071a9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#af3fc300f15bd4b882e67625ead1071a9">NRF24L01_POWER_UP_US</a>&#160;&#160;&#160;5000</td></tr>
@@ -332,7 +341,9 @@ Macros</h2></td></tr>
 <tr class="memitem:a01a7f58ff9244731f1e0bc9282032818"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#a01a7f58ff9244731f1e0bc9282032818">NRF24L01_RX_FIFO_DEPTH</a>&#160;&#160;&#160;3</td></tr>
 <tr class="memdesc:a01a7f58ff9244731f1e0bc9282032818"><td class="mdescLeft">&#160;</td><td class="mdescRight">The RX FIFO is 3 entries deep.  <a href="#a01a7f58ff9244731f1e0bc9282032818">More...</a><br /></td></tr>
 <tr class="separator:a01a7f58ff9244731f1e0bc9282032818"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57117b9936536cdaa2546fe9ee1b3bdb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#a57117b9936536cdaa2546fe9ee1b3bdb">NRF24L01_IS_RX_PIPE</a>(pipe)&#160;&#160;&#160;( (pipe) &gt;= <a class="el" href="nrf24l01__defs_8h.html#ac835ed70d839160974a8a370302ceda4ad5ec0fa4882bf22516a1a91a13602bf0">NRF24L01_PIPE0</a> &amp;&amp; (pipe) &lt;= <a class="el" href="nrf24l01__defs_8h.html#ac835ed70d839160974a8a370302ceda4a65805e1f8ef3a998c7fc40ed3f9e23c7">NRF24L01_PIPE5</a> )</td></tr>
+<tr class="memitem:a7fc704e6c8eb97bf92c75a74fc153ee9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#a7fc704e6c8eb97bf92c75a74fc153ee9">NRF24L01_MAGIC_NUMBER_ACTIVATE</a>&#160;&#160;&#160;(uint8_t)0x73</td></tr>
+<tr class="separator:a7fc704e6c8eb97bf92c75a74fc153ee9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57117b9936536cdaa2546fe9ee1b3bdb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#a57117b9936536cdaa2546fe9ee1b3bdb">NRF24L01_IS_RX_PIPE</a>(pipe)&#160;&#160;&#160;( ((pipe) &gt;= <a class="el" href="nrf24l01__defs_8h.html#ac835ed70d839160974a8a370302ceda4ad5ec0fa4882bf22516a1a91a13602bf0">NRF24L01_PIPE0</a> &amp;&amp; (pipe) &lt;= <a class="el" href="nrf24l01__defs_8h.html#ac835ed70d839160974a8a370302ceda4a65805e1f8ef3a998c7fc40ed3f9e23c7">NRF24L01_PIPE5</a>) || ((pipe) == <a class="el" href="nrf24l01__defs_8h.html#ac835ed70d839160974a8a370302ceda4a3810a4e625c1effcdfb39c6be793df93">NRF24L01_ALL_RX_PIPES</a>) )</td></tr>
 <tr class="separator:a57117b9936536cdaa2546fe9ee1b3bdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a119fd1295521a28a56b4bc79e5e5a586"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#a119fd1295521a28a56b4bc79e5e5a586">NRF24L01_IS_TX_PIPE</a>(pipe)&#160;&#160;&#160;( (pipe) == <a class="el" href="nrf24l01__defs_8h.html#ac835ed70d839160974a8a370302ceda4ab0c07f44da36bff2c76a195d0554f7bb">NRF24L01_PIPETX</a> )</td></tr>
 <tr class="separator:a119fd1295521a28a56b4bc79e5e5a586"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -406,26 +417,6 @@ Enumerations</h2></td></tr>
 <a class="el" href="nrf24l01__defs_8h.html#ae9c5f6baca22b039351da8bae1ec02b7a78b4ab3de75f8bee8cc300bf3785078b">NRF24L01_CRC_2BYTE</a> = (uint8_t)0x0c
  }</td></tr>
 <tr class="separator:ae9c5f6baca22b039351da8bae1ec02b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2969b80f1595f56480834439ce99a90f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#a2969b80f1595f56480834439ce99a90f">nrf24l01_power_mode_t</a> { <a class="el" href="nrf24l01__defs_8h.html#a2969b80f1595f56480834439ce99a90fa301a6b738e9829a2e080d0d09ccaa52f">NRF24L01_PWR_DOWN</a> = (uint8_t)0x00, 
-<a class="el" href="nrf24l01__defs_8h.html#a2969b80f1595f56480834439ce99a90fa7f11c5de95e8d07e3fca776867e6edaf">NRF24L01_PWR_UP</a> = (uint8_t)0x02
- }</td></tr>
-<tr class="separator:a2969b80f1595f56480834439ce99a90f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e35d6210bc14e3010061dcc840f3174"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#a2e35d6210bc14e3010061dcc840f3174">nrf24l01_operational_mode_t</a> { <a class="el" href="nrf24l01__defs_8h.html#a2e35d6210bc14e3010061dcc840f3174a9f1638ad27a6ed6dfc156a65e11106a7">NRF24L01_MODE_RX</a> = (uint8_t)0x01, 
-<a class="el" href="nrf24l01__defs_8h.html#a2e35d6210bc14e3010061dcc840f3174aba92a9ef213fd80d87b0abd16ffeef9f">NRF24L01_MODE_TX</a> = (uint8_t)0x00
- }</td></tr>
-<tr class="separator:a2e35d6210bc14e3010061dcc840f3174"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0713efe0e232d8adca8016d007b1d28e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#a0713efe0e232d8adca8016d007b1d28e">nrf24l01_dpl_mode_t</a> { <a class="el" href="nrf24l01__defs_8h.html#a0713efe0e232d8adca8016d007b1d28ea649cd7927814b419258a569ec972a875">NRF24L01_DPL_OFF</a> = (uint8_t)0x00, 
-<a class="el" href="nrf24l01__defs_8h.html#a0713efe0e232d8adca8016d007b1d28eacc4f714a758ddc2eb9adcec4956df542">NRF24L01_DPL_ON</a> = (uint8_t)0x01
- }</td></tr>
-<tr class="separator:a0713efe0e232d8adca8016d007b1d28e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f8a4b75aa513292f26f863101323039"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#a0f8a4b75aa513292f26f863101323039">nrf24l01_pipe_mode_t</a> { <a class="el" href="nrf24l01__defs_8h.html#a0f8a4b75aa513292f26f863101323039aadc1fe10546b2f0a793b540a3d81ad64">NRF24L01_PIPE_DISABLED</a>, 
-<a class="el" href="nrf24l01__defs_8h.html#a0f8a4b75aa513292f26f863101323039a7f67bd1a4fe870302d78fa0fcf51985b">NRF24L01_PIPE_ENABLED</a>
- }</td></tr>
-<tr class="separator:a0f8a4b75aa513292f26f863101323039"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2018aa2bf9fb336d58f323b71be8f086"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#a2018aa2bf9fb336d58f323b71be8f086">nrf24l01_pipe_aa_mode_t</a> { <a class="el" href="nrf24l01__defs_8h.html#a2018aa2bf9fb336d58f323b71be8f086ace5307121f92e0d42574169ecea7ff60">NRF24L01_AA_OFF</a> = (uint8_t)0x00, 
-<a class="el" href="nrf24l01__defs_8h.html#a2018aa2bf9fb336d58f323b71be8f086a340f1d33ae05661e66d0e7e395981ce0">NRF24L01_AA_ON</a> = (uint8_t)0x01
- }</td></tr>
-<tr class="separator:a2018aa2bf9fb336d58f323b71be8f086"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8fdf71a787afdec43916b7568ee8cd2"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#ab8fdf71a787afdec43916b7568ee8cd2">nrf24l01_fifo_status_t</a> { <a class="el" href="nrf24l01__defs_8h.html#ab8fdf71a787afdec43916b7568ee8cd2a1576011090a0162ec3d73d2ba448f9cc">NRF24L01_STATUS_FIFO_DATA</a> = (uint8_t)0x00, 
 <a class="el" href="nrf24l01__defs_8h.html#ab8fdf71a787afdec43916b7568ee8cd2ad75e1d2ff022203f7bd48c5db76adf3b">NRF24L01_STATUS_FIFO_EMPTY</a> = (uint8_t)0x01, 
 <a class="el" href="nrf24l01__defs_8h.html#ab8fdf71a787afdec43916b7568ee8cd2a78244b1ef673067d7cdffab72e79bc86">NRF24L01_STATUS_FIFO_FULL</a> = (uint8_t)0x02, 
@@ -457,10 +448,44 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="nrf24l01__defs_8h.html#ac835ed70d839160974a8a370302ceda4a82887ccca2045f6ee03ea0ca6e2e1748">NRF24L01_PIPE4</a> = (uint8_t)0x04, 
 <a class="el" href="nrf24l01__defs_8h.html#ac835ed70d839160974a8a370302ceda4a65805e1f8ef3a998c7fc40ed3f9e23c7">NRF24L01_PIPE5</a> = (uint8_t)0x05, 
 <a class="el" href="nrf24l01__defs_8h.html#ac835ed70d839160974a8a370302ceda4ab0c07f44da36bff2c76a195d0554f7bb">NRF24L01_PIPETX</a> = (uint8_t)0x06, 
-<a class="el" href="nrf24l01__defs_8h.html#ac835ed70d839160974a8a370302ceda4ad89fa4ed0168d5ed191152999575e704">NRF24L01_PIPE_UNKNOWN</a> = (uint8_t)0x07
+<a class="el" href="nrf24l01__defs_8h.html#ac835ed70d839160974a8a370302ceda4ad89fa4ed0168d5ed191152999575e704">NRF24L01_PIPE_UNKNOWN</a> = (uint8_t)0x07, 
+<br />
+&#160;&#160;<a class="el" href="nrf24l01__defs_8h.html#ac835ed70d839160974a8a370302ceda4a3810a4e625c1effcdfb39c6be793df93">NRF24L01_ALL_RX_PIPES</a>
 <br />
  }</td></tr>
 <tr class="separator:ac835ed70d839160974a8a370302ceda4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2969b80f1595f56480834439ce99a90f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#a2969b80f1595f56480834439ce99a90f">nrf24l01_power_mode_t</a> { <a class="el" href="nrf24l01__defs_8h.html#a2969b80f1595f56480834439ce99a90fa301a6b738e9829a2e080d0d09ccaa52f">NRF24L01_PWR_DOWN</a> = (uint8_t)0x00, 
+<a class="el" href="nrf24l01__defs_8h.html#a2969b80f1595f56480834439ce99a90fa7f11c5de95e8d07e3fca776867e6edaf">NRF24L01_PWR_UP</a> = (uint8_t)0x02
+ }</td></tr>
+<tr class="separator:a2969b80f1595f56480834439ce99a90f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e35d6210bc14e3010061dcc840f3174"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#a2e35d6210bc14e3010061dcc840f3174">nrf24l01_operational_mode_t</a> { <a class="el" href="nrf24l01__defs_8h.html#a2e35d6210bc14e3010061dcc840f3174a9f1638ad27a6ed6dfc156a65e11106a7">NRF24L01_MODE_RX</a> = (uint8_t)0x01, 
+<a class="el" href="nrf24l01__defs_8h.html#a2e35d6210bc14e3010061dcc840f3174aba92a9ef213fd80d87b0abd16ffeef9f">NRF24L01_MODE_TX</a> = (uint8_t)0x00
+ }</td></tr>
+<tr class="separator:a2e35d6210bc14e3010061dcc840f3174"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f8a4b75aa513292f26f863101323039"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#a0f8a4b75aa513292f26f863101323039">nrf24l01_pipe_mode_t</a> { <a class="el" href="nrf24l01__defs_8h.html#a0f8a4b75aa513292f26f863101323039aadc1fe10546b2f0a793b540a3d81ad64">NRF24L01_PIPE_DISABLED</a>, 
+<a class="el" href="nrf24l01__defs_8h.html#a0f8a4b75aa513292f26f863101323039a7f67bd1a4fe870302d78fa0fcf51985b">NRF24L01_PIPE_ENABLED</a>
+ }</td></tr>
+<tr class="separator:a0f8a4b75aa513292f26f863101323039"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2018aa2bf9fb336d58f323b71be8f086"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#a2018aa2bf9fb336d58f323b71be8f086">nrf24l01_pipe_aa_mode_t</a> { <a class="el" href="nrf24l01__defs_8h.html#a2018aa2bf9fb336d58f323b71be8f086ace5307121f92e0d42574169ecea7ff60">NRF24L01_AA_OFF</a> = (uint8_t)0x00, 
+<a class="el" href="nrf24l01__defs_8h.html#a2018aa2bf9fb336d58f323b71be8f086a340f1d33ae05661e66d0e7e395981ce0">NRF24L01_AA_ON</a> = (uint8_t)0x01
+ }</td></tr>
+<tr class="separator:a2018aa2bf9fb336d58f323b71be8f086"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a303e1160123b0cc33747411d6ccf5fa6"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#a303e1160123b0cc33747411d6ccf5fa6">nrf24l01_feature_mode_t</a> { <a class="el" href="nrf24l01__defs_8h.html#a303e1160123b0cc33747411d6ccf5fa6a00d3e32858453cc3de2a77ebb0f8a251">NRF24L01_FEATURES_OFF</a> = (uint8_t)0x00, 
+<a class="el" href="nrf24l01__defs_8h.html#a303e1160123b0cc33747411d6ccf5fa6a085a2a977cd304189e90618d43e4c73b">NRF24L01_FEATURES_ON</a> = (uint8_t)0x01
+ }</td></tr>
+<tr class="separator:a303e1160123b0cc33747411d6ccf5fa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0713efe0e232d8adca8016d007b1d28e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#a0713efe0e232d8adca8016d007b1d28e">nrf24l01_dpl_mode_t</a> { <a class="el" href="nrf24l01__defs_8h.html#a0713efe0e232d8adca8016d007b1d28ea649cd7927814b419258a569ec972a875">NRF24L01_DPL_OFF</a> = (uint8_t)0x00, 
+<a class="el" href="nrf24l01__defs_8h.html#a0713efe0e232d8adca8016d007b1d28eacc4f714a758ddc2eb9adcec4956df542">NRF24L01_DPL_ON</a> = (uint8_t)0x01
+ }</td></tr>
+<tr class="separator:a0713efe0e232d8adca8016d007b1d28e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab35b7caced2022669af8c4b24b5a913a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#ab35b7caced2022669af8c4b24b5a913a">nrf24l01_dta_mode_t</a> { <a class="el" href="nrf24l01__defs_8h.html#ab35b7caced2022669af8c4b24b5a913aacbdc9d02a0ef22fbb649c54c88bea791">NRF24L01_DTA_OFF</a> = (uint8_t)0x00, 
+<a class="el" href="nrf24l01__defs_8h.html#ab35b7caced2022669af8c4b24b5a913aa5a72942623fc46a87a562c09514081ad">NRF24L01_DTA_ON</a> = (uint8_t)0x01
+ }</td></tr>
+<tr class="separator:ab35b7caced2022669af8c4b24b5a913a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c4d5923051f2412599ab4b292fea85c"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#a7c4d5923051f2412599ab4b292fea85c">ack_payload_mode_t</a> { <a class="el" href="nrf24l01__defs_8h.html#a7c4d5923051f2412599ab4b292fea85ca90d282a59368a31f3037c9568ce92903">NRF24L01_ACK_PAYLOAD_OFF</a> = (uint8_t)0x00, 
+<a class="el" href="nrf24l01__defs_8h.html#a7c4d5923051f2412599ab4b292fea85cacfb6ebdc8b8d850bc0e662480fa5bcdb">NRF24L01_ACK_PAYLOAD_ON</a> = (uint8_t)0x01
+ }</td></tr>
+<tr class="separator:a7c4d5923051f2412599ab4b292fea85c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Jared Poole </dd></dl>
@@ -478,7 +503,8 @@ CONFIGURATION</h1>
 TERMINOLOGY</h1>
 <p>DPL - Dynamic payload length enabled/disabled globally via a feature register when disabled, packet length determined per RX pipe via NRF24L01_RX_PW_Px registers when enabled, packet length determined per packet via</p>
 <p>AA - Automatic Acknowledge</p>
-<p>AR - Automatic Retransmit </p>
+<p>AR - Automatic Retransmit</p>
+<p>DTA - Dynamic Transmit ACK </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="aea609a6ce51d1f9e024d15a6409ddb43"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aea609a6ce51d1f9e024d15a6409ddb43">&#9670;&nbsp;</a></span>NRF24L01_ADDR_WIDTH_3_BYTES</h2>
@@ -1013,7 +1039,7 @@ TERMINOLOGY</h1>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">pipe</td><td>)</td>
-          <td>&#160;&#160;&#160;( (pipe) &gt;= <a class="el" href="nrf24l01__defs_8h.html#ac835ed70d839160974a8a370302ceda4ad5ec0fa4882bf22516a1a91a13602bf0">NRF24L01_PIPE0</a> &amp;&amp; (pipe) &lt;= <a class="el" href="nrf24l01__defs_8h.html#ac835ed70d839160974a8a370302ceda4a65805e1f8ef3a998c7fc40ed3f9e23c7">NRF24L01_PIPE5</a> )</td>
+          <td>&#160;&#160;&#160;( ((pipe) &gt;= <a class="el" href="nrf24l01__defs_8h.html#ac835ed70d839160974a8a370302ceda4ad5ec0fa4882bf22516a1a91a13602bf0">NRF24L01_PIPE0</a> &amp;&amp; (pipe) &lt;= <a class="el" href="nrf24l01__defs_8h.html#ac835ed70d839160974a8a370302ceda4a65805e1f8ef3a998c7fc40ed3f9e23c7">NRF24L01_PIPE5</a>) || ((pipe) == <a class="el" href="nrf24l01__defs_8h.html#ac835ed70d839160974a8a370302ceda4a3810a4e625c1effcdfb39c6be793df93">NRF24L01_ALL_RX_PIPES</a>) )</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1032,6 +1058,20 @@ TERMINOLOGY</h1>
           <td class="paramtype">&#160;</td>
           <td class="paramname">pipe</td><td>)</td>
           <td>&#160;&#160;&#160;( (pipe) == <a class="el" href="nrf24l01__defs_8h.html#ac835ed70d839160974a8a370302ceda4ab0c07f44da36bff2c76a195d0554f7bb">NRF24L01_PIPETX</a> )</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7fc704e6c8eb97bf92c75a74fc153ee9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fc704e6c8eb97bf92c75a74fc153ee9">&#9670;&nbsp;</a></span>NRF24L01_MAGIC_NUMBER_ACTIVATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NRF24L01_MAGIC_NUMBER_ACTIVATE&#160;&#160;&#160;(uint8_t)0x73</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1102,6 +1142,38 @@ TERMINOLOGY</h1>
 
 </div>
 </div>
+<a id="a4075140658538499290f33361b04d4d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4075140658538499290f33361b04d4d0">&#9670;&nbsp;</a></span>NRF24L01_MASK_DYNPD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NRF24L01_MASK_DYNPD&#160;&#160;&#160;(uint8_t)0x3F</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mask for DPL_Px[5:0] bits in DYNPD feature register. </p>
+
+</div>
+</div>
+<a id="abd8e5c2d25c02b20480ad9a1ac65f3f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd8e5c2d25c02b20480ad9a1ac65f3f8">&#9670;&nbsp;</a></span>NRF24L01_MASK_EN_AA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NRF24L01_MASK_EN_AA&#160;&#160;&#160;(uint8_t)0x3F</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mask for ENAA_Px[5:0] bits in EN_AA register. </p>
+
+</div>
+</div>
 <a id="a62a819cf351dc5c41f3ecf4d21cb379e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a62a819cf351dc5c41f3ecf4d21cb379e">&#9670;&nbsp;</a></span>NRF24L01_MASK_EN_RX</h2>
 
@@ -1115,6 +1187,22 @@ TERMINOLOGY</h1>
 </div><div class="memdoc">
 
 <p>Mask ERX_P[5:0] bits in EN_RXADDR register. </p>
+
+</div>
+</div>
+<a id="a8d8727ced1317714e0e84b89f83a3a26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d8727ced1317714e0e84b89f83a3a26">&#9670;&nbsp;</a></span>NRF24L01_MASK_EN_RX_ADDR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NRF24L01_MASK_EN_RX_ADDR&#160;&#160;&#160;(uint8_t)0x3F</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mask for ERX_Px[5:0] bits in EN_RXADDR register. </p>
 
 </div>
 </div>
@@ -2076,6 +2164,24 @@ TERMINOLOGY</h1>
 </div>
 </div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a7c4d5923051f2412599ab4b292fea85c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c4d5923051f2412599ab4b292fea85c">&#9670;&nbsp;</a></span>ack_payload_mode_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="nrf24l01__defs_8h.html#a7c4d5923051f2412599ab4b292fea85c">ack_payload_mode_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a7c4d5923051f2412599ab4b292fea85ca90d282a59368a31f3037c9568ce92903"></a>NRF24L01_ACK_PAYLOAD_OFF&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7c4d5923051f2412599ab4b292fea85cacfb6ebdc8b8d850bc0e662480fa5bcdb"></a>NRF24L01_ACK_PAYLOAD_ON&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
 <a id="a6a3953f2ff4a6ee45e73583401c6d0b2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6a3953f2ff4a6ee45e73583401c6d0b2">&#9670;&nbsp;</a></span>nrf24l01_ar_delay_t</h2>
 
@@ -2166,10 +2272,26 @@ TERMINOLOGY</h1>
       </table>
 </div><div class="memdoc">
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a0713efe0e232d8adca8016d007b1d28ea649cd7927814b419258a569ec972a875"></a>NRF24L01_DPL_OFF&#160;</td><td class="fielddoc"><p>PTX. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a0713efe0e232d8adca8016d007b1d28eacc4f714a758ddc2eb9adcec4956df542"></a>NRF24L01_DPL_ON&#160;</td><td class="fielddoc"><p>PRX. </p>
-</td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a0713efe0e232d8adca8016d007b1d28ea649cd7927814b419258a569ec972a875"></a>NRF24L01_DPL_OFF&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a0713efe0e232d8adca8016d007b1d28eacc4f714a758ddc2eb9adcec4956df542"></a>NRF24L01_DPL_ON&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="ab35b7caced2022669af8c4b24b5a913a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab35b7caced2022669af8c4b24b5a913a">&#9670;&nbsp;</a></span>nrf24l01_dta_mode_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="nrf24l01__defs_8h.html#ab35b7caced2022669af8c4b24b5a913a">nrf24l01_dta_mode_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ab35b7caced2022669af8c4b24b5a913aacbdc9d02a0ef22fbb649c54c88bea791"></a>NRF24L01_DTA_OFF&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab35b7caced2022669af8c4b24b5a913aa5a72942623fc46a87a562c09514081ad"></a>NRF24L01_DTA_ON&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>
@@ -2193,6 +2315,24 @@ TERMINOLOGY</h1>
 <tr><td class="fieldname"><a id="aeb660fd5ed8bfc4a9d5ea587fd9207f0a204f448363988978b4fbf2e67ae27fd5"></a>NRF24L01_ERR_DEVICE_NOT_FOUND&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="aeb660fd5ed8bfc4a9d5ea587fd9207f0a33a4154f489794a3b2ae517df941cf04"></a>NRF24L01_ERR_WRITE&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="aeb660fd5ed8bfc4a9d5ea587fd9207f0acc6319524a5c12224f82c0685041727d"></a>NRF24L01_ERR_READ&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a303e1160123b0cc33747411d6ccf5fa6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a303e1160123b0cc33747411d6ccf5fa6">&#9670;&nbsp;</a></span>nrf24l01_feature_mode_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="nrf24l01__defs_8h.html#a303e1160123b0cc33747411d6ccf5fa6">nrf24l01_feature_mode_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a303e1160123b0cc33747411d6ccf5fa6a00d3e32858453cc3de2a77ebb0f8a251"></a>NRF24L01_FEATURES_OFF&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a303e1160123b0cc33747411d6ccf5fa6a085a2a977cd304189e90618d43e4c73b"></a>NRF24L01_FEATURES_ON&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>
@@ -2324,6 +2464,8 @@ TERMINOLOGY</h1>
 <tr><td class="fieldname"><a id="ac835ed70d839160974a8a370302ceda4ab0c07f44da36bff2c76a195d0554f7bb"></a>NRF24L01_PIPETX&#160;</td><td class="fielddoc"><p>TX address (not a pipe in fact) </p>
 </td></tr>
 <tr><td class="fieldname"><a id="ac835ed70d839160974a8a370302ceda4ad89fa4ed0168d5ed191152999575e704"></a>NRF24L01_PIPE_UNKNOWN&#160;</td><td class="fielddoc"><p>pipe unknown (usually signifies rx pipe is empty) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac835ed70d839160974a8a370302ceda4a3810a4e625c1effcdfb39c6be793df93"></a>NRF24L01_ALL_RX_PIPES&#160;</td><td class="fielddoc"><p>Used for configuring all RX pipes at the same time. </p>
 </td></tr>
 </table>
 
