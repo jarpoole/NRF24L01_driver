@@ -209,6 +209,24 @@ nrf24l01_err_t nrf24l01_check_connectivity(nrf24l01_platform_t* platform) {
 	return err;
 }
 
+nrf24l01_err_t nrf24l01_set_pipe_rx_payload_size(nrf24l01_pipe_t pipe, uint8_t payload_len, nrf24l01_platform_t* platform){
+	if(payload_len > NRF24L01_RX_FIFO_WIDTH || payload_len == 0){
+		return NRF24L01_ERR_INVALID_ARG;
+	}else if( !NRF24L01_IS_RX_PIPE(pipe) ){
+		return NRF24L01_ERR_INVALID_ARG;
+	}
+
+	if(pipe == NRF24L01_ALL_RX_PIPES){
+		nrf24l01_err_t err = NRF24L01_OK;
+		for(uint8_t pipe_index = NRF24L01_PIPE0; pipe_index <= NRF24L01_PIPE5; pipe_index++){
+			err |= nrf24l01_write_reg(NRF24L01_RX_PW_PIPE[pipe_index], payload_len, platform);
+		}
+		return err;
+	}else{
+		return nrf24l01_write_reg(NRF24L01_RX_PW_PIPE[pipe], payload_len, platform);
+	}
+}
+
 // Control transceiver power mode
 // input:
 //   mode - new state of power mode, one of NRF24L01_PWR_xx values
@@ -263,8 +281,8 @@ nrf24l01_err_t nrf24l01_set_crc_scheme(nrf24l01_crc_scheme_t scheme, nrf24l01_pl
 
 	// Configure EN_CRC[3] and CRCO[2] bits of the CONFIG register
 	err |= nrf24l01_read_reg(NRF24L01_CONFIG_REG_ADDR, &reg, platform);
-	reg &= ~NRF24L01_MASK_CRC;
-	reg |= (scheme & NRF24L01_MASK_CRC);
+	reg &= ~NRF24L01_MASK_CONFIG_CRC;
+	reg |= (scheme & NRF24L01_MASK_CONFIG_CRC);
 	err |= nrf24l01_write_reg(NRF24L01_CONFIG_REG_ADDR, reg, platform);
 
 	return err;
@@ -499,6 +517,18 @@ nrf24l01_err_t nrf24l01_get_irq_flags(uint8_t* flags, nrf24l01_platform_t* platf
 	if(err == NRF24L01_OK){
 		*flags = temp & NRF24L01_MASK_STATUS_IRQ;
 	}
+	return err;
+}
+
+nrf24l01_err_t nrf24l01_set_irq_mask(nrf24l01_interrupt_mask_t mask, nrf24l01_platform_t* platform){
+	nrf24l01_err_t err = NRF24L01_OK;
+	uint8_t reg;
+
+	// The PLOS counter is reset after write to RF_CH register
+	err |= nrf24l01_read_reg(NRF24L01_CONFIG_REG_ADDR, &reg, platform);
+	reg &= ~NRF24L01_MASK_CONFIG_INTERRUPTS;
+	reg |= (mask & NRF24L01_MASK_CONFIG_INTERRUPTS);
+	err |= nrf24l01_write_reg(NRF24L01_CONFIG_REG_ADDR, reg, platform);
 	return err;
 }
 
@@ -1090,9 +1120,9 @@ void nrf24l01_print_status_register(nrf24l01_platform_t* platform){
 
 void nrf24l01_print_fifo_status_register(nrf24l01_platform_t* platform){
 
-	uint8_t rx_status;
+	nrf24l01_fifo_status_t rx_status;
 	nrf24l01_get_fifo_status(NRF24L01_RX_FIFO, &rx_status, platform);
-	uint8_t tx_status;
+	nrf24l01_fifo_status_t tx_status;
 	nrf24l01_get_fifo_status(NRF24L01_TX_FIFO, &tx_status, platform);
 	uint8_t fifo_status = (tx_status << 4) | rx_status;
 

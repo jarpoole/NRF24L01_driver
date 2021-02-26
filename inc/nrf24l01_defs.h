@@ -145,6 +145,8 @@
 #define	NRF24L01_ADDR_WIDTH_5_BYTES       (uint8_t)0x03  ///< 5 Byte RX/TX address field width
  
 // Register masks definitions 
+#define NRF24L01_MASK_REG_MAP             (uint8_t)0x1F  ///< Mask for [4:0] for CMD_RREG and CMD_WREG commands
+
 #define NRF24L01_MASK_STATUS_IRQ          (uint8_t)0x70  ///< Mask for IRQ[6:4] interrupt flag bits in STATUS register
 #define NRF24L01_MASK_STATUS_RX_DR        (uint8_t)0x40  ///< Mask for RX_DR[6] interrupt flag bit in STATUS register
 #define NRF24L01_MASK_STATUS_TX_DS        (uint8_t)0x20  ///< Mask for TX_DS[5] interrupt flag bit in STATUS register
@@ -155,12 +157,10 @@
 #define NRF24L01_MASK_OBSERVE_TX_PLOS_CNT (uint8_t)0xF0  ///< Mask for PLOS_CNT[7:4] lost packet count bits
 #define NRF24L01_MASK_OBSERVE_TX_ARC_CNT  (uint8_t)0x0F  ///< Mask for ARC_CNT[3:0] resent packet count bits
 
-#define NRF24L01_MASK_REG_MAP             (uint8_t)0x1F  ///< Mask bits[4:0] for CMD_RREG and CMD_WREG commands
-#define NRF24L01_MASK_CRC                 (uint8_t)0x0C  ///< Mask for CRC bits [3:2] in CONFIG register
-#define NRF24L01_MASK_RF_PWR              (uint8_t)0x06  ///< Mask RF_PWR[2:1] bits in RF_SETUP register
-#define NRF24L01_MASK_DATARATE            (uint8_t)0x28  ///< Mask RD_DR_[5,3] bits in RF_SETUP register
-#define NRF24L01_MASK_EN_RX               (uint8_t)0x3F  ///< Mask ERX_P[5:0] bits in EN_RXADDR register
-#define NRF24L01_MASK_RX_PW               (uint8_t)0x3F  ///< Mask [5:0] bits in RX_PW_Px register
+#define NRF24L01_MASK_CONFIG_INTERRUPTS   (uint8_t)0x70  ///< Mask for INTERRUPT[6:4] bits in CONIF register
+#define NRF24L01_MASK_CONFIG_CRC          (uint8_t)0x0C  ///< Mask for CRC[3:2] bits in CONFIG register
+#define NRF24L01_MASK_RF_PWR              (uint8_t)0x06  ///< Mask for RF_PWR[2:1] bits in RF_SETUP register
+#define NRF24L01_MASK_DATARATE            (uint8_t)0x08  ///< Mask for RD_DR[4] bit in RF_SETUP register
 #define NRF24L01_MASK_RETR_ARD            (uint8_t)0xF0  ///< Mask for ARD[7:4] bits in SETUP_RETR register
 #define NRF24L01_MASK_RETR_ARC            (uint8_t)0x0F  ///< Mask for ARC[3:0] bits in SETUP_RETR register
 
@@ -214,6 +214,17 @@ typedef enum {
 	NRF24L01_ARD_3750US = (uint8_t)0x0E,
 	NRF24L01_ARD_4000US = (uint8_t)0x0F,
 } nrf24l01_ar_delay_t;
+
+// Flags used to mask out interrupt sources. Should be combined with boolean OR
+enum {
+	RX_DR_INTERRUPT_ENABLE   = (uint8_t)0x00,
+	RX_DR_INTERRUPT_DISABLE  = (uint8_t)0x40,
+	TX_DS_INTERRUPT_ENABLE   = (uint8_t)0x00,
+	TX_DS_INTERRUPT_DISABLE  = (uint8_t)0x20,
+	MAX_RT_INTERRUPT_ENABLE  = (uint8_t)0x00,
+	MAX_RT_INTERRUPT_DISABLE = (uint8_t)0x10,
+};
+typedef uint8_t nrf24l01_interrupt_mask_t;
 
 // Retransmit count
 typedef uint8_t nrf24l01_ar_count_t;

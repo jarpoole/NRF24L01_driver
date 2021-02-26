@@ -20,6 +20,11 @@ nrf24l01_err_t nrf24l01_init(nrf24l01_platform_t*);
 nrf24l01_err_t nrf24l01_deinit(nrf24l01_platform_t*);
 nrf24l01_err_t nrf24l01_check_connectivity(nrf24l01_platform_t*);
 
+// Interrupts
+nrf24l01_err_t nrf24l01_get_irq_flags(uint8_t*, nrf24l01_platform_t*);
+nrf24l01_err_t nrf24l01_set_irq_mask(nrf24l01_interrupt_mask_t, nrf24l01_platform_t*);
+nrf24l01_err_t nrf24l01_clear_irq_flags(nrf24l01_platform_t*);
+
 // RF + protocol
 nrf24l01_err_t nrf24l01_set_tx_power(nrf24l01_tx_power_t, nrf24l01_platform_t*);
 nrf24l01_err_t nrf24l01_set_rf_channel(nrf24l01_rf_channel_t, nrf24l01_platform_t*);
@@ -35,8 +40,6 @@ nrf24l01_err_t nrf24l01_flush_rx(nrf24l01_platform_t*);
 nrf24l01_err_t nrf24l01_flush_tx(nrf24l01_platform_t*);
 nrf24l01_err_t nrf24l01_get_status(uint8_t*, nrf24l01_platform_t*);
 nrf24l01_err_t nrf24l01_get_fifo_status(nrf24l01_fifo_type_t, nrf24l01_fifo_status_t*, nrf24l01_platform_t*);
-nrf24l01_err_t nrf24l01_get_irq_flags(uint8_t*, nrf24l01_platform_t*);
-nrf24l01_err_t nrf24l01_clear_irq_flags(nrf24l01_platform_t*);
 nrf24l01_err_t nrf24l01_reset_packet_loss_counter(nrf24l01_platform_t*);
 nrf24l01_err_t nrf24l01_get_retransmit_counters(nrf24l01_ar_count_t*, nrf24l01_ar_lost_t*, nrf24l01_platform_t*);
 
@@ -64,6 +67,7 @@ nrf24l01_err_t nrf24l01_get_features(uint8_t*, nrf24l01_platform_t*);
 // Configure
 nrf24l01_err_t nrf24l01_set_pipe_mode(nrf24l01_pipe_t, nrf24l01_pipe_mode_t, nrf24l01_platform_t*);
 nrf24l01_err_t nrf24l01_set_pipe_aa_mode(nrf24l01_pipe_t, nrf24l01_pipe_aa_mode_t, nrf24l01_platform_t*);
+nrf24l01_err_t nrf24l01_set_pipe_rx_payload_size(nrf24l01_pipe_t, uint8_t, nrf24l01_platform_t*);
 
 // Transmit
 nrf24l01_err_t nrf24l01_write_payload(uint8_t*, uint8_t, nrf24l01_platform_t*);
