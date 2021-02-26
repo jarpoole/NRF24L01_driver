@@ -72,16 +72,22 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:abf435d5e55ddbb219f2954779cc8adb6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="nrf24l01__defs_8h.html#a535ba1bc087e8da8f29f88960d0a64dd">nrf24l01_delay_us_fptr_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnrf24l01__platform__t.html#abf435d5e55ddbb219f2954779cc8adb6">delay_us</a></td></tr>
+<tr class="memdesc:abf435d5e55ddbb219f2954779cc8adb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to a platform specific microsecond delay function.  <a href="#abf435d5e55ddbb219f2954779cc8adb6">More...</a><br /></td></tr>
 <tr class="separator:abf435d5e55ddbb219f2954779cc8adb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f4dc215cd41cb34f4f6208e01c81f9a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="nrf24l01__defs_8h.html#a44097761b67767d2703b6a4240625202">nrf24l01_gpio_chip_enable_fptr_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnrf24l01__platform__t.html#a9f4dc215cd41cb34f4f6208e01c81f9a">gpio_chip_enable</a></td></tr>
+<tr class="memdesc:a9f4dc215cd41cb34f4f6208e01c81f9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the platform specific GPIO control function.  <a href="#a9f4dc215cd41cb34f4f6208e01c81f9a">More...</a><br /></td></tr>
 <tr class="separator:a9f4dc215cd41cb34f4f6208e01c81f9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72265387397d4ea79aff11233bdc0cf0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="nrf24l01__defs_8h.html#aec878ba63c560bcbb720ec348d187fe1">nrf24l01_spi_init_fptr_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnrf24l01__platform__t.html#a72265387397d4ea79aff11233bdc0cf0">spi_init</a></td></tr>
+<tr class="memdesc:a72265387397d4ea79aff11233bdc0cf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the platform specific hardware initialization function.  <a href="#a72265387397d4ea79aff11233bdc0cf0">More...</a><br /></td></tr>
 <tr class="separator:a72265387397d4ea79aff11233bdc0cf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1acce45e6c3e19e65c5013694354f882"><td class="memItemLeft" align="right" valign="top"><a class="el" href="nrf24l01__defs_8h.html#aba7a58ec9b85500a7a3e841a2736af31">nrf24l01_spi_deinit_fptr_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnrf24l01__platform__t.html#a1acce45e6c3e19e65c5013694354f882">spi_deinit</a></td></tr>
+<tr class="memdesc:a1acce45e6c3e19e65c5013694354f882"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the platform specific hardware deinitialization function.  <a href="#a1acce45e6c3e19e65c5013694354f882">More...</a><br /></td></tr>
 <tr class="separator:a1acce45e6c3e19e65c5013694354f882"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adad84cbfcf4873ff02e12c9c0a156acf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="nrf24l01__defs_8h.html#a86465ecff5d0e2cb8872cca95c310e06">nrf24l01_spi_exchange_fptr_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnrf24l01__platform__t.html#adad84cbfcf4873ff02e12c9c0a156acf">spi_exchange</a></td></tr>
+<tr class="memdesc:adad84cbfcf4873ff02e12c9c0a156acf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the platform specific SPI full-duplex transfer function.  <a href="#adad84cbfcf4873ff02e12c9c0a156acf">More...</a><br /></td></tr>
 <tr class="separator:adad84cbfcf4873ff02e12c9c0a156acf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4704b28d567c9987d1a3928b8b92336"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnrf24l01__platform__t.html#af4704b28d567c9987d1a3928b8b92336">user_ptr</a></td></tr>
+<tr class="memdesc:af4704b28d567c9987d1a3928b8b92336"><td class="mdescLeft">&#160;</td><td class="mdescRight">(optional) Pointer to a user-defined hardware configuration struct  <a href="#af4704b28d567c9987d1a3928b8b92336">More...</a><br /></td></tr>
 <tr class="separator:af4704b28d567c9987d1a3928b8b92336"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -97,6 +103,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Pointer to a platform specific microsecond delay function. </p>
+
 </div>
 </div>
 <a id="a9f4dc215cd41cb34f4f6208e01c81f9a"></a>
@@ -110,6 +118,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Pointer to the platform specific GPIO control function. </p>
 
 </div>
 </div>
@@ -125,6 +135,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Pointer to the platform specific hardware deinitialization function. </p>
+
 </div>
 </div>
 <a id="adad84cbfcf4873ff02e12c9c0a156acf"></a>
@@ -138,6 +150,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Pointer to the platform specific SPI full-duplex transfer function. </p>
 
 </div>
 </div>
@@ -153,6 +167,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Pointer to the platform specific hardware initialization function. </p>
+
 </div>
 </div>
 <a id="af4704b28d567c9987d1a3928b8b92336"></a>
@@ -166,6 +182,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>(optional) Pointer to a user-defined hardware configuration struct </p>
 
 </div>
 </div>
