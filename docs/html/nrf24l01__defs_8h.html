@@ -238,6 +238,9 @@ Macros</h2></td></tr>
 <tr class="memitem:aaf0a26f356b7e3dd6825ce696bb2ccfe"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#aaf0a26f356b7e3dd6825ce696bb2ccfe">NRF24L01_ADDR_WIDTH_5_BYTES</a>&#160;&#160;&#160;(uint8_t)0x03</td></tr>
 <tr class="memdesc:aaf0a26f356b7e3dd6825ce696bb2ccfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">5 Byte RX/TX address field width  <a href="#aaf0a26f356b7e3dd6825ce696bb2ccfe">More...</a><br /></td></tr>
 <tr class="separator:aaf0a26f356b7e3dd6825ce696bb2ccfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05553accd20fc08c2ed6e1fe4b0a6949"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#a05553accd20fc08c2ed6e1fe4b0a6949">NRF24L01_MASK_REG_MAP</a>&#160;&#160;&#160;(uint8_t)0x1F</td></tr>
+<tr class="memdesc:a05553accd20fc08c2ed6e1fe4b0a6949"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mask for [4:0] for CMD_RREG and CMD_WREG commands.  <a href="#a05553accd20fc08c2ed6e1fe4b0a6949">More...</a><br /></td></tr>
+<tr class="separator:a05553accd20fc08c2ed6e1fe4b0a6949"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada980b4c20b00e65d827fb72733b054c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#ada980b4c20b00e65d827fb72733b054c">NRF24L01_MASK_STATUS_IRQ</a>&#160;&#160;&#160;(uint8_t)0x70</td></tr>
 <tr class="memdesc:ada980b4c20b00e65d827fb72733b054c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mask for IRQ[6:4] interrupt flag bits in STATUS register.  <a href="#ada980b4c20b00e65d827fb72733b054c">More...</a><br /></td></tr>
 <tr class="separator:ada980b4c20b00e65d827fb72733b054c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -262,24 +265,18 @@ Macros</h2></td></tr>
 <tr class="memitem:a170172b059f54d83d593062059ec4b4e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#a170172b059f54d83d593062059ec4b4e">NRF24L01_MASK_OBSERVE_TX_ARC_CNT</a>&#160;&#160;&#160;(uint8_t)0x0F</td></tr>
 <tr class="memdesc:a170172b059f54d83d593062059ec4b4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mask for ARC_CNT[3:0] resent packet count bits.  <a href="#a170172b059f54d83d593062059ec4b4e">More...</a><br /></td></tr>
 <tr class="separator:a170172b059f54d83d593062059ec4b4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05553accd20fc08c2ed6e1fe4b0a6949"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#a05553accd20fc08c2ed6e1fe4b0a6949">NRF24L01_MASK_REG_MAP</a>&#160;&#160;&#160;(uint8_t)0x1F</td></tr>
-<tr class="memdesc:a05553accd20fc08c2ed6e1fe4b0a6949"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mask bits[4:0] for CMD_RREG and CMD_WREG commands.  <a href="#a05553accd20fc08c2ed6e1fe4b0a6949">More...</a><br /></td></tr>
-<tr class="separator:a05553accd20fc08c2ed6e1fe4b0a6949"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d1f6e286a9756e65f3f2af1b60043a2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#a6d1f6e286a9756e65f3f2af1b60043a2">NRF24L01_MASK_CRC</a>&#160;&#160;&#160;(uint8_t)0x0C</td></tr>
-<tr class="memdesc:a6d1f6e286a9756e65f3f2af1b60043a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mask for CRC bits [3:2] in CONFIG register.  <a href="#a6d1f6e286a9756e65f3f2af1b60043a2">More...</a><br /></td></tr>
-<tr class="separator:a6d1f6e286a9756e65f3f2af1b60043a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab05fdbd87c1b4f59f17fde3f4a2b2b10"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#ab05fdbd87c1b4f59f17fde3f4a2b2b10">NRF24L01_MASK_CONFIG_INTERRUPTS</a>&#160;&#160;&#160;(uint8_t)0x70</td></tr>
+<tr class="memdesc:ab05fdbd87c1b4f59f17fde3f4a2b2b10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mask for INTERRUPT[6:4] bits in CONIF register.  <a href="#ab05fdbd87c1b4f59f17fde3f4a2b2b10">More...</a><br /></td></tr>
+<tr class="separator:ab05fdbd87c1b4f59f17fde3f4a2b2b10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7db7318de1af914614d5566f26cb5183"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#a7db7318de1af914614d5566f26cb5183">NRF24L01_MASK_CONFIG_CRC</a>&#160;&#160;&#160;(uint8_t)0x0C</td></tr>
+<tr class="memdesc:a7db7318de1af914614d5566f26cb5183"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mask for CRC[3:2] bits in CONFIG register.  <a href="#a7db7318de1af914614d5566f26cb5183">More...</a><br /></td></tr>
+<tr class="separator:a7db7318de1af914614d5566f26cb5183"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acad52b017c2113a01a08e66ba3914620"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#acad52b017c2113a01a08e66ba3914620">NRF24L01_MASK_RF_PWR</a>&#160;&#160;&#160;(uint8_t)0x06</td></tr>
-<tr class="memdesc:acad52b017c2113a01a08e66ba3914620"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mask RF_PWR[2:1] bits in RF_SETUP register.  <a href="#acad52b017c2113a01a08e66ba3914620">More...</a><br /></td></tr>
+<tr class="memdesc:acad52b017c2113a01a08e66ba3914620"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mask for RF_PWR[2:1] bits in RF_SETUP register.  <a href="#acad52b017c2113a01a08e66ba3914620">More...</a><br /></td></tr>
 <tr class="separator:acad52b017c2113a01a08e66ba3914620"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b0106e83607ca17ec0b8e21b9aea985"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#a6b0106e83607ca17ec0b8e21b9aea985">NRF24L01_MASK_DATARATE</a>&#160;&#160;&#160;(uint8_t)0x28</td></tr>
-<tr class="memdesc:a6b0106e83607ca17ec0b8e21b9aea985"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mask RD_DR_[5,3] bits in RF_SETUP register.  <a href="#a6b0106e83607ca17ec0b8e21b9aea985">More...</a><br /></td></tr>
+<tr class="memitem:a6b0106e83607ca17ec0b8e21b9aea985"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#a6b0106e83607ca17ec0b8e21b9aea985">NRF24L01_MASK_DATARATE</a>&#160;&#160;&#160;(uint8_t)0x08</td></tr>
+<tr class="memdesc:a6b0106e83607ca17ec0b8e21b9aea985"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mask for RD_DR[4] bit in RF_SETUP register.  <a href="#a6b0106e83607ca17ec0b8e21b9aea985">More...</a><br /></td></tr>
 <tr class="separator:a6b0106e83607ca17ec0b8e21b9aea985"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62a819cf351dc5c41f3ecf4d21cb379e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#a62a819cf351dc5c41f3ecf4d21cb379e">NRF24L01_MASK_EN_RX</a>&#160;&#160;&#160;(uint8_t)0x3F</td></tr>
-<tr class="memdesc:a62a819cf351dc5c41f3ecf4d21cb379e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mask ERX_P[5:0] bits in EN_RXADDR register.  <a href="#a62a819cf351dc5c41f3ecf4d21cb379e">More...</a><br /></td></tr>
-<tr class="separator:a62a819cf351dc5c41f3ecf4d21cb379e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4dbfe60b0d912614d23a5a610e772e44"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#a4dbfe60b0d912614d23a5a610e772e44">NRF24L01_MASK_RX_PW</a>&#160;&#160;&#160;(uint8_t)0x3F</td></tr>
-<tr class="memdesc:a4dbfe60b0d912614d23a5a610e772e44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mask [5:0] bits in RX_PW_Px register.  <a href="#a4dbfe60b0d912614d23a5a610e772e44">More...</a><br /></td></tr>
-<tr class="separator:a4dbfe60b0d912614d23a5a610e772e44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3822a8dc962fbceb221962b9058eaae2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#a3822a8dc962fbceb221962b9058eaae2">NRF24L01_MASK_RETR_ARD</a>&#160;&#160;&#160;(uint8_t)0xF0</td></tr>
 <tr class="memdesc:a3822a8dc962fbceb221962b9058eaae2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mask for ARD[7:4] bits in SETUP_RETR register.  <a href="#a3822a8dc962fbceb221962b9058eaae2">More...</a><br /></td></tr>
 <tr class="separator:a3822a8dc962fbceb221962b9058eaae2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -350,6 +347,8 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
+<tr class="memitem:aeee83db10040c4a2672da6bed2f7ab0d"><td class="memItemLeft" align="right" valign="top">typedef uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#aeee83db10040c4a2672da6bed2f7ab0d">nrf24l01_interrupt_mask_t</a></td></tr>
+<tr class="separator:aeee83db10040c4a2672da6bed2f7ab0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a0764a624e1e8c98cd9ce392f823bc3"><td class="memItemLeft" align="right" valign="top">typedef uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#a8a0764a624e1e8c98cd9ce392f823bc3">nrf24l01_ar_count_t</a></td></tr>
 <tr class="separator:a8a0764a624e1e8c98cd9ce392f823bc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6515f2bdcb1e022ceefb96f440b789d4"><td class="memItemLeft" align="right" valign="top">typedef uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#a6515f2bdcb1e022ceefb96f440b789d4">nrf24l01_ar_lost_t</a></td></tr>
@@ -401,6 +400,17 @@ Enumerations</h2></td></tr>
 <br />
  }</td></tr>
 <tr class="separator:a6a3953f2ff4a6ee45e73583401c6d0b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06fc87d81c62e9abb8790b6e5713c55b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <br />
+&#160;&#160;<a class="el" href="nrf24l01__defs_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba1084f6d21363aafbbb1085a7e8c46bec">RX_DR_INTERRUPT_ENABLE</a> = (uint8_t)0x00, 
+<a class="el" href="nrf24l01__defs_8h.html#a06fc87d81c62e9abb8790b6e5713c55baa881c8a1e9557b19d5789c0612b830fa">RX_DR_INTERRUPT_DISABLE</a> = (uint8_t)0x40, 
+<a class="el" href="nrf24l01__defs_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba6bd907f267c648bb5649f7e474843121">TX_DS_INTERRUPT_ENABLE</a> = (uint8_t)0x00, 
+<a class="el" href="nrf24l01__defs_8h.html#a06fc87d81c62e9abb8790b6e5713c55bac97eb3ca40b25fd3ff8bb8e002c4b460">TX_DS_INTERRUPT_DISABLE</a> = (uint8_t)0x20, 
+<br />
+&#160;&#160;<a class="el" href="nrf24l01__defs_8h.html#a06fc87d81c62e9abb8790b6e5713c55bae0a200cc08bce4d97c47559e0e38c463">MAX_RT_INTERRUPT_ENABLE</a> = (uint8_t)0x00, 
+<a class="el" href="nrf24l01__defs_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba0ea4880f383af085ca01bb97aa14bacd">MAX_RT_INTERRUPT_DISABLE</a> = (uint8_t)0x10
+<br />
+ }</td></tr>
+<tr class="separator:a06fc87d81c62e9abb8790b6e5713c55b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1238bb8b104118e000aac333af1720f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#af1238bb8b104118e000aac333af1720f">nrf24l01_data_rate_t</a> { <a class="el" href="nrf24l01__defs_8h.html#af1238bb8b104118e000aac333af1720fa6232db555edf8cf1fff439c0913c2129">NRF24L01_DR_250KBPS</a> = (uint8_t)0x20, 
 <a class="el" href="nrf24l01__defs_8h.html#af1238bb8b104118e000aac333af1720fa786bbeae7405d3bc55148fb53171ef38">NRF24L01_DR_1MBPS</a> = (uint8_t)0x00, 
 <a class="el" href="nrf24l01__defs_8h.html#af1238bb8b104118e000aac333af1720fa07dc64a8ba3d3222f7ea35de2f81e01d">NRF24L01_DR_2MBPS</a> = (uint8_t)0x08
@@ -1110,19 +1120,35 @@ TERMINOLOGY</h1>
 
 </div>
 </div>
-<a id="a6d1f6e286a9756e65f3f2af1b60043a2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6d1f6e286a9756e65f3f2af1b60043a2">&#9670;&nbsp;</a></span>NRF24L01_MASK_CRC</h2>
+<a id="a7db7318de1af914614d5566f26cb5183"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7db7318de1af914614d5566f26cb5183">&#9670;&nbsp;</a></span>NRF24L01_MASK_CONFIG_CRC</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define NRF24L01_MASK_CRC&#160;&#160;&#160;(uint8_t)0x0C</td>
+          <td class="memname">#define NRF24L01_MASK_CONFIG_CRC&#160;&#160;&#160;(uint8_t)0x0C</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Mask for CRC bits [3:2] in CONFIG register. </p>
+<p>Mask for CRC[3:2] bits in CONFIG register. </p>
+
+</div>
+</div>
+<a id="ab05fdbd87c1b4f59f17fde3f4a2b2b10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab05fdbd87c1b4f59f17fde3f4a2b2b10">&#9670;&nbsp;</a></span>NRF24L01_MASK_CONFIG_INTERRUPTS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NRF24L01_MASK_CONFIG_INTERRUPTS&#160;&#160;&#160;(uint8_t)0x70</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mask for INTERRUPT[6:4] bits in CONIF register. </p>
 
 </div>
 </div>
@@ -1133,12 +1159,12 @@ TERMINOLOGY</h1>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define NRF24L01_MASK_DATARATE&#160;&#160;&#160;(uint8_t)0x28</td>
+          <td class="memname">#define NRF24L01_MASK_DATARATE&#160;&#160;&#160;(uint8_t)0x08</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Mask RD_DR_[5,3] bits in RF_SETUP register. </p>
+<p>Mask for RD_DR[4] bit in RF_SETUP register. </p>
 
 </div>
 </div>
@@ -1171,22 +1197,6 @@ TERMINOLOGY</h1>
 </div><div class="memdoc">
 
 <p>Mask for ENAA_Px[5:0] bits in EN_AA register. </p>
-
-</div>
-</div>
-<a id="a62a819cf351dc5c41f3ecf4d21cb379e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a62a819cf351dc5c41f3ecf4d21cb379e">&#9670;&nbsp;</a></span>NRF24L01_MASK_EN_RX</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define NRF24L01_MASK_EN_RX&#160;&#160;&#160;(uint8_t)0x3F</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Mask ERX_P[5:0] bits in EN_RXADDR register. </p>
 
 </div>
 </div>
@@ -1266,7 +1276,7 @@ TERMINOLOGY</h1>
       </table>
 </div><div class="memdoc">
 
-<p>Mask bits[4:0] for CMD_RREG and CMD_WREG commands. </p>
+<p>Mask for [4:0] for CMD_RREG and CMD_WREG commands. </p>
 
 </div>
 </div>
@@ -1314,7 +1324,7 @@ TERMINOLOGY</h1>
       </table>
 </div><div class="memdoc">
 
-<p>Mask RF_PWR[2:1] bits in RF_SETUP register. </p>
+<p>Mask for RF_PWR[2:1] bits in RF_SETUP register. </p>
 
 </div>
 </div>
@@ -1363,22 +1373,6 @@ TERMINOLOGY</h1>
 </div><div class="memdoc">
 
 <p>Mask for RX_FIFO[1:0] status bits in FIFO_STATUS register. </p>
-
-</div>
-</div>
-<a id="a4dbfe60b0d912614d23a5a610e772e44"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4dbfe60b0d912614d23a5a610e772e44">&#9670;&nbsp;</a></span>NRF24L01_MASK_RX_PW</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define NRF24L01_MASK_RX_PW&#160;&#160;&#160;(uint8_t)0x3F</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Mask [5:0] bits in RX_PW_Px register. </p>
 
 </div>
 </div>
@@ -2058,6 +2052,20 @@ TERMINOLOGY</h1>
 
 </div>
 </div>
+<a id="aeee83db10040c4a2672da6bed2f7ab0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeee83db10040c4a2672da6bed2f7ab0d">&#9670;&nbsp;</a></span>nrf24l01_interrupt_mask_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef uint8_t <a class="el" href="nrf24l01__defs_8h.html#aeee83db10040c4a2672da6bed2f7ab0d">nrf24l01_interrupt_mask_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a791d706e5a3e69a3c41d48690c91b3d8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a791d706e5a3e69a3c41d48690c91b3d8">&#9670;&nbsp;</a></span>nrf24l01_rf_channel_t</h2>
 
@@ -2164,6 +2172,28 @@ TERMINOLOGY</h1>
 </div>
 </div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a06fc87d81c62e9abb8790b6e5713c55b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06fc87d81c62e9abb8790b6e5713c55b">&#9670;&nbsp;</a></span>anonymous enum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a06fc87d81c62e9abb8790b6e5713c55ba1084f6d21363aafbbb1085a7e8c46bec"></a>RX_DR_INTERRUPT_ENABLE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a06fc87d81c62e9abb8790b6e5713c55baa881c8a1e9557b19d5789c0612b830fa"></a>RX_DR_INTERRUPT_DISABLE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a06fc87d81c62e9abb8790b6e5713c55ba6bd907f267c648bb5649f7e474843121"></a>TX_DS_INTERRUPT_ENABLE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a06fc87d81c62e9abb8790b6e5713c55bac97eb3ca40b25fd3ff8bb8e002c4b460"></a>TX_DS_INTERRUPT_DISABLE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a06fc87d81c62e9abb8790b6e5713c55bae0a200cc08bce4d97c47559e0e38c463"></a>MAX_RT_INTERRUPT_ENABLE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a06fc87d81c62e9abb8790b6e5713c55ba0ea4880f383af085ca01bb97aa14bacd"></a>MAX_RT_INTERRUPT_DISABLE&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
 <a id="a7c4d5923051f2412599ab4b292fea85c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7c4d5923051f2412599ab4b292fea85c">&#9670;&nbsp;</a></span>ack_payload_mode_t</h2>
 
