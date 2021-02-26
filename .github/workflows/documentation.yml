@@ -26,6 +26,7 @@ jobs:
       - name: build documentation
         run: |
           sudo apt-get install doxygen
+          chmod +x docs/build.sh
           docs/build.sh
           
       - name: deploy documentation
