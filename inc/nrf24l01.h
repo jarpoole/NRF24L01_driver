@@ -7,13 +7,10 @@
 #include <string.h>
 
 // User provided config directory in directory above submodule
-#include "../nrf24l01_config.h"
+#include "../../nrf24l01_config.h"
 
 // Driver constants and types
 #include "nrf24l01_defs.h"
-
-// Function prototypes
-
 
 
 /*** Device API ***************************************************************************************************/

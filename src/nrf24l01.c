@@ -358,7 +358,7 @@ nrf24l01_err_t nrf24l01_set_address(nrf24l01_pipe_t pipe, const uint8_t* addr, n
 			err = NRF24L01_ERR_INVALID_ARG; 
 		}else{
 			// Write address in reverse order (LSByte first)
-			err = nrf24l01_multi_write_reg(NRF24L01_ADDR_REGS[pipe], addr_width, len, platform);
+			err = nrf24l01_multi_write_reg(NRF24L01_ADDR_REGS[pipe], addr, addr_width, platform);
 		}
 	}
 	else if(pipe == NRF24L01_PIPE2 || pipe == NRF24L01_PIPE3 || pipe == NRF24L01_PIPE4 || pipe == NRF24L01_PIPE5){
@@ -542,7 +542,7 @@ nrf24l01_err_t nrf24l01_get_retransmit_counters(nrf24l01_ar_count_t* ar_count, n
 	}
 
 	uint8_t counters;
-	err = nrf24l01_read_reg(NRF24L01_OBSERVE_TX_REG_ADDR, counters, platform);
+	err = nrf24l01_read_reg(NRF24L01_OBSERVE_TX_REG_ADDR, &counters, platform);
 	if(err != NRF24L01_OK){
 		return err;
 	}
