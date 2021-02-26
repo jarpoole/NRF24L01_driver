@@ -28,7 +28,7 @@ jobs:
           sudo apt-get install doxygen
           cd docs/
           chmod +x build.sh
-          build.sh
+          ./build.sh
           
       - name: deploy documentation
         uses: JamesIves/github-pages-deploy-action@4.0.0
