@@ -62,25 +62,21 @@ $(function() {
 &#160;
 
 <h3><a id="index_n"></a>- n -</h3><ul>
-<li>nrf24l01_activate_features()
-: <a class="el" href="nrf24l01_8c.html#a10cf8485db521efa90c1b65f912c063b">nrf24l01.c</a>
-, <a class="el" href="nrf24l01_8h.html#a0077c10ba0051253812fed0204e4d51b">nrf24l01.h</a>
-</li>
 <li>nrf24l01_check_connectivity()
-: <a class="el" href="nrf24l01_8h.html#a7fbfdbe1cb58e64a0f91e6e85f87151a">nrf24l01.h</a>
-, <a class="el" href="nrf24l01_8c.html#a8ff0f2709890e9d61a04b59628fd07e4">nrf24l01.c</a>
+: <a class="el" href="nrf24l01_8c.html#a8ff0f2709890e9d61a04b59628fd07e4">nrf24l01.c</a>
+, <a class="el" href="nrf24l01_8h.html#a7fbfdbe1cb58e64a0f91e6e85f87151a">nrf24l01.h</a>
 </li>
 <li>nrf24l01_clear_irq_flags()
-: <a class="el" href="nrf24l01_8c.html#ad4fcdef5436ca1da911155de36941372">nrf24l01.c</a>
-, <a class="el" href="nrf24l01_8h.html#a2845ee5e7f262e9758a08c325dd65d77">nrf24l01.h</a>
+: <a class="el" href="nrf24l01_8h.html#a2845ee5e7f262e9758a08c325dd65d77">nrf24l01.h</a>
+, <a class="el" href="nrf24l01_8c.html#ad4fcdef5436ca1da911155de36941372">nrf24l01.c</a>
 </li>
 <li>nrf24l01_deinit()
-: <a class="el" href="nrf24l01_8h.html#a11b69f162283c2228eabdb56c8d6fba8">nrf24l01.h</a>
-, <a class="el" href="nrf24l01_8c.html#a917a7c807d455425671f4678c8ae95b6">nrf24l01.c</a>
+: <a class="el" href="nrf24l01_8c.html#a917a7c807d455425671f4678c8ae95b6">nrf24l01.c</a>
+, <a class="el" href="nrf24l01_8h.html#a11b69f162283c2228eabdb56c8d6fba8">nrf24l01.h</a>
 </li>
 <li>nrf24l01_flush_rx()
-: <a class="el" href="nrf24l01_8c.html#a5f7add32dd4e33ebd74954085b59fe1e">nrf24l01.c</a>
-, <a class="el" href="nrf24l01_8h.html#a5d09412a7080b39e8e90178812186186">nrf24l01.h</a>
+: <a class="el" href="nrf24l01_8h.html#a5d09412a7080b39e8e90178812186186">nrf24l01.h</a>
+, <a class="el" href="nrf24l01_8c.html#a5f7add32dd4e33ebd74954085b59fe1e">nrf24l01.c</a>
 </li>
 <li>nrf24l01_flush_tx()
 : <a class="el" href="nrf24l01_8c.html#a2a0ad7b491d5f0e6c2a090c57b0cb826">nrf24l01.c</a>
@@ -89,6 +85,10 @@ $(function() {
 <li>nrf24l01_get_address_width()
 : <a class="el" href="nrf24l01_8c.html#a733229b39e16be08bc295f0cb23ec3a9">nrf24l01.c</a>
 , <a class="el" href="nrf24l01_8h.html#ab160cda0ba47143dea9daf8f5203fb07">nrf24l01.h</a>
+</li>
+<li>nrf24l01_get_feature_mode()
+: <a class="el" href="nrf24l01_8c.html#a6c3ae200ae75c9a2925e26c0853fb34b">nrf24l01.c</a>
+, <a class="el" href="nrf24l01_8h.html#ae02a0fb3c6ba0f88fb4dd84e3bd2fd65">nrf24l01.h</a>
 </li>
 <li>nrf24l01_get_features()
 : <a class="el" href="nrf24l01_8h.html#a0b9873c723dbf81f23b615c25983b72d">nrf24l01.h</a>
@@ -101,6 +101,14 @@ $(function() {
 <li>nrf24l01_get_irq_flags()
 : <a class="el" href="nrf24l01_8c.html#a79a98965d8ee92602ecd8accc3953ee5">nrf24l01.c</a>
 , <a class="el" href="nrf24l01_8h.html#a37b83343cd8e35b223e2dbc0fca0bbf1">nrf24l01.h</a>
+</li>
+<li>nrf24l01_get_operational_mode()
+: <a class="el" href="nrf24l01_8c.html#a9fde37104138b50df0ddb8fe1f319402">nrf24l01.c</a>
+, <a class="el" href="nrf24l01_8h.html#ad67547d2ab76b760f3d0ee9161f3690c">nrf24l01.h</a>
+</li>
+<li>nrf24l01_get_power_mode()
+: <a class="el" href="nrf24l01_8c.html#a245c1fd1502b1b26f074fcaa3121af06">nrf24l01.c</a>
+, <a class="el" href="nrf24l01_8h.html#a4fe974914a65700f5141b34204c0fe3a">nrf24l01.h</a>
 </li>
 <li>nrf24l01_get_retransmit_counters()
 : <a class="el" href="nrf24l01_8c.html#ab3e93ce9de8d02c7d05c624a13939f44">nrf24l01.c</a>
@@ -115,8 +123,8 @@ $(function() {
 , <a class="el" href="nrf24l01_8h.html#a9b8d9da5cacf067188e1e8e40779fdb9">nrf24l01.h</a>
 </li>
 <li>nrf24l01_init()
-: <a class="el" href="nrf24l01_8c.html#a7d3331ced8c089445074e32bbb60f5ac">nrf24l01.c</a>
-, <a class="el" href="nrf24l01_8h.html#a43b4c85fafbbee705aaafb59066c221c">nrf24l01.h</a>
+: <a class="el" href="nrf24l01_8h.html#a43b4c85fafbbee705aaafb59066c221c">nrf24l01.h</a>
+, <a class="el" href="nrf24l01_8c.html#a7d3331ced8c089445074e32bbb60f5ac">nrf24l01.c</a>
 </li>
 <li>nrf24l01_print_config()
 : <a class="el" href="nrf24l01_8h.html#af0e2c41c55fcd572b57479dbcba9fbb8">nrf24l01.h</a>
@@ -127,65 +135,70 @@ $(function() {
 <li>nrf24l01_print_status_register()
 : <a class="el" href="nrf24l01_8h.html#a7bcd6fee4ac0944e4dc337702547d8c9">nrf24l01.h</a>
 </li>
-<li>nrf24l01_read_dynamic_length_payload()
-: <a class="el" href="nrf24l01_8c.html#a5e718dcf8681c39ee8e51acd244f9ce2">nrf24l01.c</a>
-, <a class="el" href="nrf24l01_8h.html#ad6d628f9f1df0f68747803ecf11e7e6e">nrf24l01.h</a>
-</li>
 <li>nrf24l01_read_payload()
-: <a class="el" href="nrf24l01_8c.html#a260d3896337b25b83c9e2391da44c2aa">nrf24l01.c</a>
-, <a class="el" href="nrf24l01_8h.html#a2145a1de0821e687b030b4366ab43425">nrf24l01.h</a>
+: <a class="el" href="nrf24l01_8c.html#a909711b7c0589f1c269288b4e420afae">nrf24l01.c</a>
+, <a class="el" href="nrf24l01_8h.html#a0ddaef29411d56ad52cebfa48ed37fb9">nrf24l01.h</a>
 </li>
 <li>nrf24l01_reset_packet_loss_counter()
-: <a class="el" href="nrf24l01_8c.html#ab4267179279fa14b48ea47a84775179b">nrf24l01.c</a>
-, <a class="el" href="nrf24l01_8h.html#a7ea991dfff7035b1f64c5588f8617e6c">nrf24l01.h</a>
+: <a class="el" href="nrf24l01_8h.html#a7ea991dfff7035b1f64c5588f8617e6c">nrf24l01.h</a>
+, <a class="el" href="nrf24l01_8c.html#ab4267179279fa14b48ea47a84775179b">nrf24l01.c</a>
+</li>
+<li>nrf24l01_set_ack_payload_mode()
+: <a class="el" href="nrf24l01_8h.html#af904545f9f8a909e438a972d51dfda7a">nrf24l01.h</a>
 </li>
 <li>nrf24l01_set_address()
 : <a class="el" href="nrf24l01_8c.html#af28ce44c14f88b5812f85b1025292e80">nrf24l01.c</a>
 , <a class="el" href="nrf24l01_8h.html#a7e90e2cbb613fa083a4b752997432761">nrf24l01.h</a>
 </li>
 <li>nrf24l01_set_address_width()
-: <a class="el" href="nrf24l01_8c.html#a489265a355faf520b63a15e5350fa791">nrf24l01.c</a>
-, <a class="el" href="nrf24l01_8h.html#a10e39671edfdaac81580661d842bcff7">nrf24l01.h</a>
+: <a class="el" href="nrf24l01_8h.html#a10e39671edfdaac81580661d842bcff7">nrf24l01.h</a>
+, <a class="el" href="nrf24l01_8c.html#a489265a355faf520b63a15e5350fa791">nrf24l01.c</a>
 </li>
 <li>nrf24l01_set_auto_retransmission()
 : <a class="el" href="nrf24l01_8c.html#a70eea81a67cfda1b30cb530a8f0202b8">nrf24l01.c</a>
 , <a class="el" href="nrf24l01_8h.html#a4384b25820eef7cc03ac4236f9fa4987">nrf24l01.h</a>
 </li>
 <li>nrf24l01_set_crc_scheme()
-: <a class="el" href="nrf24l01_8c.html#a5f5111f4477c753ab8bdad954a796a30">nrf24l01.c</a>
-, <a class="el" href="nrf24l01_8h.html#a9067b01f853f8693967181f740585b59">nrf24l01.h</a>
+: <a class="el" href="nrf24l01_8h.html#a9067b01f853f8693967181f740585b59">nrf24l01.h</a>
+, <a class="el" href="nrf24l01_8c.html#a5f5111f4477c753ab8bdad954a796a30">nrf24l01.c</a>
 </li>
 <li>nrf24l01_set_data_rate()
-: <a class="el" href="nrf24l01_8c.html#adb050cb2f6a8a011f8f09d762842d3c5">nrf24l01.c</a>
-, <a class="el" href="nrf24l01_8h.html#a167a2c4a6119ee820085f361a13384ad">nrf24l01.h</a>
+: <a class="el" href="nrf24l01_8h.html#a167a2c4a6119ee820085f361a13384ad">nrf24l01.h</a>
+, <a class="el" href="nrf24l01_8c.html#adb050cb2f6a8a011f8f09d762842d3c5">nrf24l01.c</a>
 </li>
 <li>nrf24l01_set_dpl_mode()
-: <a class="el" href="nrf24l01_8c.html#a3cadd04fb15b339a0dea808f0409a914">nrf24l01.c</a>
-, <a class="el" href="nrf24l01_8h.html#a9f4b25fc294cb8550f3572b54b08fe58">nrf24l01.h</a>
+: <a class="el" href="nrf24l01_8h.html#a9f4b25fc294cb8550f3572b54b08fe58">nrf24l01.h</a>
+</li>
+<li>nrf24l01_set_dta_mode()
+: <a class="el" href="nrf24l01_8h.html#a2b949886212d64e3fbd76ec30cfab889">nrf24l01.h</a>
+</li>
+<li>nrf24l01_set_feature_mode()
+: <a class="el" href="nrf24l01_8h.html#a786f79fce0ce9929961915f323cd658e">nrf24l01.h</a>
+, <a class="el" href="nrf24l01_8c.html#a055cc8955b18455fe9a8be66281b3e31">nrf24l01.c</a>
 </li>
 <li>nrf24l01_set_operational_mode()
-: <a class="el" href="nrf24l01_8h.html#af037709d39e6e20cd6f7e300d2bc68ea">nrf24l01.h</a>
-, <a class="el" href="nrf24l01_8c.html#a83de7fbeec91ec4d2674ed4e23557226">nrf24l01.c</a>
-</li>
-<li>nrf24l01_set_payload_with_ack()
-: <a class="el" href="nrf24l01_8c.html#a3458a4333cc37bdbf7584da850c15d4b">nrf24l01.c</a>
-, <a class="el" href="nrf24l01_8h.html#ab0d31dccb26ea1d0840c16c5d7e8b107">nrf24l01.h</a>
+: <a class="el" href="nrf24l01_8c.html#a83de7fbeec91ec4d2674ed4e23557226">nrf24l01.c</a>
+, <a class="el" href="nrf24l01_8h.html#af037709d39e6e20cd6f7e300d2bc68ea">nrf24l01.h</a>
 </li>
 <li>nrf24l01_set_pipe_aa_mode()
 : <a class="el" href="nrf24l01_8c.html#a68f4e7794f0624566ca4feca7008bdc5">nrf24l01.c</a>
 , <a class="el" href="nrf24l01_8h.html#a82df3ae97ab1943d6c8846af91530c20">nrf24l01.h</a>
 </li>
+<li>nrf24l01_set_pipe_dpl_mode()
+: <a class="el" href="nrf24l01_8h.html#af7370e9534ccbede12d2a8b185180a98">nrf24l01.h</a>
+, <a class="el" href="nrf24l01_8c.html#a7a998bae7120036f4ce0d5ef49948385">nrf24l01.c</a>
+</li>
 <li>nrf24l01_set_pipe_mode()
-: <a class="el" href="nrf24l01_8h.html#a736b0f56f587c118863e9fda079d1bdc">nrf24l01.h</a>
-, <a class="el" href="nrf24l01_8c.html#a1544aef60f5f3c354edcd8beaddc2078">nrf24l01.c</a>
+: <a class="el" href="nrf24l01_8c.html#a1544aef60f5f3c354edcd8beaddc2078">nrf24l01.c</a>
+, <a class="el" href="nrf24l01_8h.html#a736b0f56f587c118863e9fda079d1bdc">nrf24l01.h</a>
 </li>
 <li>nrf24l01_set_power_mode()
-: <a class="el" href="nrf24l01_8c.html#a7e2e74a98891624a5cc81c2ba6c4fbba">nrf24l01.c</a>
-, <a class="el" href="nrf24l01_8h.html#a9952bf8024954a3be966dedba265e2d2">nrf24l01.h</a>
+: <a class="el" href="nrf24l01_8h.html#a9952bf8024954a3be966dedba265e2d2">nrf24l01.h</a>
+, <a class="el" href="nrf24l01_8c.html#a7e2e74a98891624a5cc81c2ba6c4fbba">nrf24l01.c</a>
 </li>
 <li>nrf24l01_set_rf_channel()
-: <a class="el" href="nrf24l01_8c.html#ac795276f68254cd04f610af45884cab6">nrf24l01.c</a>
-, <a class="el" href="nrf24l01_8h.html#ab36d02b77d5aeec5a9d9e2d6ccb7ea3e">nrf24l01.h</a>
+: <a class="el" href="nrf24l01_8h.html#ab36d02b77d5aeec5a9d9e2d6ccb7ea3e">nrf24l01.h</a>
+, <a class="el" href="nrf24l01_8c.html#ac795276f68254cd04f610af45884cab6">nrf24l01.c</a>
 </li>
 <li>nrf24l01_set_tx_power()
 : <a class="el" href="nrf24l01_8h.html#a4247b61e05c9d3d3aa3c4fc98ec88d3e">nrf24l01.h</a>

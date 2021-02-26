@@ -10,7 +10,8 @@ var menudata={children:[
 {text:"File List",url:"files.html"},
 {text:"File Members",url:"globals.html",children:[
 {text:"All",url:"globals.html",children:[
-{text:"n",url:"globals.html#index_n"}]},
+{text:"a",url:"globals.html#index_a"},
+{text:"n",url:"globals_n.html#index_n"}]},
 {text:"Functions",url:"globals_func.html",children:[
 {text:"n",url:"globals_func.html#index_n"}]},
 {text:"Typedefs",url:"globals_type.html"},

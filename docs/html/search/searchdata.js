@@ -1,12 +1,12 @@
 var indexSectionsWithContent =
 {
-  0: "dgnsu",
+  0: "adgnsu",
   1: "n",
   2: "n",
   3: "n",
   4: "dgsu",
   5: "n",
-  6: "n",
+  6: "an",
   7: "n",
   8: "n"
 };

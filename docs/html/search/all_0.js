@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['delay_5fus',['delay_us',['../structnrf24l01__platform__t.html#abf435d5e55ddbb219f2954779cc8adb6',1,'nrf24l01_platform_t']]]
+  ['ack_5fpayload_5fmode_5ft',['ack_payload_mode_t',['../nrf24l01__defs_8h.html#a7c4d5923051f2412599ab4b292fea85c',1,'nrf24l01_defs.h']]]
 ];
