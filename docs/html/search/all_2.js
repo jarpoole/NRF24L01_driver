@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['nrf24l01_5fdriver',['NRF24L01_driver',['../md__home_runner_work_NRF24L01_driver_NRF24L01_driver_README.html',1,'']]],
   ['nrf24l01_2ec',['nrf24l01.c',['../nrf24l01_8c.html',1,'']]],
   ['nrf24l01_2eh',['nrf24l01.h',['../nrf24l01_8h.html',1,'']]],
   ['nrf24l01_5faa_5foff',['NRF24L01_AA_OFF',['../nrf24l01__defs_8h.html#a2018aa2bf9fb336d58f323b71be8f086ace5307121f92e0d42574169ecea7ff60',1,'nrf24l01_defs.h']]],
