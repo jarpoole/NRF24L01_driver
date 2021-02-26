@@ -48,6 +48,13 @@ static const uint8_t NRF24L01_ADDR_REGS[7] = {
 	NRF24L01_TX_ADDR_REG_ADDR,
 };
 
+// Static prototypes
+static nrf24l01_err_t nrf24l01_read_reg(uint8_t, uint8_t*, nrf24l01_platform_t*);
+static nrf24l01_err_t nrf24l01_write_reg(uint8_t, uint8_t, nrf24l01_platform_t*);
+static nrf24l01_err_t nrf24l01_multi_read_reg(uint8_t, uint8_t*, uint8_t, nrf24l01_platform_t*);
+static nrf24l01_err_t nrf24l01_multi_write_reg(uint8_t, uint8_t*, uint8_t, nrf24l01_platform_t*);
+
+
 
 // Read a register
 // input:
@@ -59,8 +66,8 @@ static nrf24l01_err_t nrf24l01_read_reg(uint8_t reg_addr, uint8_t* data, nrf24l0
 	}
 	uint8_t command = NRF24L01_CMD_R_REGISTER | (reg_addr & NRF24L01_MASK_REG_MAP);
 
-	NRF24L01_FPTR_RTN_T err = platform->spi_exchange(command, data, NULL, sizeof(uint8_t), platform->spi_user_config);
-	if(err < 0){
+	NRF24L01_FPTR_RTN_T err = platform->spi_exchange(command, data, NULL, sizeof(uint8_t), platform->user_ptr);
+	if(err != 0){
 		return NRF24L01_ERR_READ;
 	}
 	return NRF24L01_OK;
@@ -72,8 +79,8 @@ static nrf24l01_err_t nrf24l01_read_reg(uint8_t reg_addr, uint8_t* data, nrf24l0
 //   value - value to write
 static nrf24l01_err_t nrf24l01_write_reg(uint8_t reg_addr, uint8_t data, nrf24l01_platform_t* platform) {
 	uint8_t command = NRF24L01_CMD_W_REGISTER | (reg_addr & NRF24L01_MASK_REG_MAP);
-	NRF24L01_FPTR_RTN_T err = platform->spi_exchange(command, NULL, &data, sizeof(uint8_t), platform->spi_user_config);
-	if(err < 0){
+	NRF24L01_FPTR_RTN_T err = platform->spi_exchange(command, NULL, &data, sizeof(uint8_t), platform->user_ptr);
+	if(err != 0){
 		return NRF24L01_ERR_WRITE;
 	}
 	return NRF24L01_OK;
@@ -90,8 +97,8 @@ static nrf24l01_err_t nrf24l01_multi_read_reg(uint8_t reg_addr, uint8_t *data, u
 	}
 	uint8_t command = NRF24L01_CMD_R_REGISTER | (reg_addr & NRF24L01_MASK_REG_MAP);
 	
-	NRF24L01_FPTR_RTN_T err = platform->spi_exchange(command, data, NULL, len, platform->spi_user_config);
-	if(err < 0){
+	NRF24L01_FPTR_RTN_T err = platform->spi_exchange(command, data, NULL, len, platform->user_ptr);
+	if(err != 0){
 		return NRF24L01_ERR_READ;
 	}
 	return NRF24L01_OK;
@@ -108,8 +115,8 @@ static nrf24l01_err_t nrf24l01_multi_write_reg(uint8_t reg_addr, uint8_t* data, 
 	}
 	uint8_t command = NRF24L01_CMD_W_REGISTER | (reg_addr & NRF24L01_MASK_REG_MAP);
 
-	NRF24L01_FPTR_RTN_T err = platform->spi_exchange(command, NULL, data, len, platform->spi_user_config);
-	if(err < 0){
+	NRF24L01_FPTR_RTN_T err = platform->spi_exchange(command, NULL, data, len, platform->user_ptr);
+	if(err != 0){
 		return NRF24L01_ERR_WRITE;
 	}
 	return NRF24L01_OK;
@@ -120,8 +127,8 @@ static nrf24l01_err_t nrf24l01_multi_write_reg(uint8_t reg_addr, uint8_t* data, 
 nrf24l01_err_t nrf24l01_init(nrf24l01_platform_t* platform) {
 	
 	// Initialize the platform SPI controller
-	NRF24L01_FPTR_RTN_T init_err = platform->spi_init(platform->spi_user_config);
-	if(init_err < 0){
+	NRF24L01_FPTR_RTN_T init_err = platform->spi_init(platform->user_ptr);
+	if(init_err != 0){
 		return NRF24L01_ERR_UNKNOWN;
 	}
 
@@ -155,6 +162,17 @@ nrf24l01_err_t nrf24l01_init(nrf24l01_platform_t* platform) {
 	return err;
 }
 
+//Deinitialize the driver and free resources
+nrf24l01_err_t nrf24l01_deinit(nrf24l01_platform_t* platform){
+
+	// deinitialize the platform SPI controller
+	NRF24L01_FPTR_RTN_T deinit_err = platform->spi_deinit(platform->user_ptr);
+	if(deinit_err != 0){
+		return NRF24L01_ERR_UNKNOWN;
+	}
+	return NRF24L01_OK;
+}
+
 // Check if the nRF24L01 present
 // return:
 //   NRF24L01_OK                    - nRF24L01 is online and responding
@@ -184,7 +202,7 @@ nrf24l01_err_t nrf24l01_check_connectivity(nrf24l01_platform_t* platform) {
 // Control transceiver power mode
 // input:
 //   mode - new state of power mode, one of NRF24L01_PWR_xx values
-nrf24l01_err_t nrf24l01_set_power_mode(uint8_t mode, nrf24l01_platform_t* platform) {
+nrf24l01_err_t nrf24l01_set_power_mode(nrf24l01_power_mode_t mode, nrf24l01_platform_t* platform) {
 	nrf24l01_err_t err = NRF24L01_OK;
 	uint8_t reg;
 
@@ -197,7 +215,7 @@ nrf24l01_err_t nrf24l01_set_power_mode(uint8_t mode, nrf24l01_platform_t* platfo
 		
 		platform->delay_us(NRF24L01_POWER_UP_US);
 	} else {
-		platform->gpio_chip_enable(false);
+		platform->gpio_chip_enable(false, platform->user_ptr);
 
 		// Clear the PWR_UP bit of CONFIG register to put the transceiver
 		// into power down mode with consumption about 900nA
@@ -211,7 +229,7 @@ nrf24l01_err_t nrf24l01_set_power_mode(uint8_t mode, nrf24l01_platform_t* platfo
 // Set transceiver operational mode
 // input:
 //   mode - operational mode, one of nRF24_MODE_xx values
-nrf24l01_err_t nrf24l01_set_operational_mode(uint8_t mode, nrf24l01_platform_t* platform) {
+nrf24l01_err_t nrf24l01_set_operational_mode(nrf24l01_operational_mode_t mode, nrf24l01_platform_t* platform) {
 	nrf24l01_err_t err = NRF24L01_OK;
 	uint8_t reg;
 
@@ -226,20 +244,21 @@ nrf24l01_err_t nrf24l01_set_operational_mode(uint8_t mode, nrf24l01_platform_t* 
 
 // Set transceiver DynamicPayloadLength feature for all the pipes
 // input:
-//   mode - status, one of nRF24_DPL_xx values
-nrf24l01_err_t nrf24l01_set_dynamic_payload_length(uint8_t mode, nrf24l01_platform_t* platform) {
+//   dpl_mode - one of nRF24_DPL_xx values
+nrf24l01_err_t nrf24l01_set_dpl_mode(nrf24l01_dpl_mode_t dpl_mode, nrf24l01_platform_t* platform) {
 	nrf24l01_err_t err = NRF24L01_OK;
 	uint8_t reg;
 
 	err |= nrf24l01_read_reg(NRF24L01_FEATURE_REG_ADDR, &reg, platform);
-	if(mode) {
+	if(dpl_mode == NRF24L01_DPL_ON) {
 		err |= nrf24l01_write_reg(NRF24L01_FEATURE_REG_ADDR, reg | NRF24L01_FEATURE_EN_DPL, platform);
 		err |= nrf24l01_write_reg(NRF24L01_DYNPD_REG_ADDR, 0x1F, platform);
-	} else {
+	} else if (dpl_mode == NRF24L01_DPL_OFF) {
 		err |= nrf24l01_write_reg(NRF24L01_FEATURE_REG_ADDR, reg &~ NRF24L01_FEATURE_EN_DPL, platform);
 		err |= nrf24l01_write_reg(NRF24L01_DYNPD_REG_ADDR, 0x0, platform);
+	}else{
+		err = NRF24L01_ERR_INVALID_ARG;
 	}
-
 	return err;
 }
 
@@ -265,7 +284,7 @@ nrf24l01_err_t nrf24l01_set_payload_with_ack(uint8_t mode, nrf24l01_platform_t* 
 //   scheme - CRC scheme, one of nRF24_CRC_xx values
 // note: transceiver will forcibly turn on the CRC in case if auto acknowledgment
 //       enabled for at least one RX pipe
-nrf24l01_err_t nrf24l01_set_crc_scheme(uint8_t scheme, nrf24l01_platform_t* platform) {
+nrf24l01_err_t nrf24l01_set_crc_scheme(nrf24l01_crc_scheme_t scheme, nrf24l01_platform_t* platform) {
 	nrf24l01_err_t err = NRF24L01_OK;
 	uint8_t reg;
 
@@ -294,7 +313,7 @@ nrf24l01_err_t nrf24l01_set_rf_channel(uint8_t channel, nrf24l01_platform_t* pla
 //   ard - auto retransmit delay, one of nRF24_ARD_xx values
 //   arc - count of auto retransmits, value form 0 to 15
 // note: zero arc value means that the automatic retransmission disabled
-nrf24l01_err_t nrf24l01_set_auto_retransmission(uint8_t ard, uint8_t arc, nrf24l01_platform_t* platform) {
+nrf24l01_err_t nrf24l01_set_auto_retransmission(nrf24l01_ar_delay_t ard, nrf24l01_ar_count_t arc, nrf24l01_platform_t* platform) {
 	// Set auto retransmit settings (SETUP_RETR register)
 	nrf24l01_err_t err;
 	err = nrf24l01_write_reg(NRF24L01_SETUP_RETR_REG_ADDR, (uint8_t)((ard << 4) | (arc & NRF24L01_MASK_RETR_ARC)), platform);
@@ -305,7 +324,7 @@ nrf24l01_err_t nrf24l01_set_auto_retransmission(uint8_t ard, uint8_t arc, nrf24l
 // input:
 //   addr_width - RX/TX address field width, value from 3 to 5
 // note: this setting is common for all pipes
-nrf24l01_err_t nrf24l01_set_address_width(uint8_t addr_width, nrf24l01_platform_t* platform) {
+nrf24l01_err_t nrf24l01_set_address_width(nrf24l01_address_width_t addr_width, nrf24l01_platform_t* platform) {
 	uint8_t reg_val;
 	if(addr_width == 3){
 		reg_val = NRF24L01_ADDR_WIDTH_3_BYTES;
@@ -328,25 +347,25 @@ nrf24l01_err_t nrf24l01_set_address_width(uint8_t addr_width, nrf24l01_platform_
 // note: buffer length must be equal to current address width of transceiver
 // note: for pipes[2..5] only first byte of address will be written because
 //       pipes 1-5 share the four most significant address bytes
-nrf24l01_err_t nrf24l01_set_address(uint8_t pipe, const uint8_t* addr, uint8_t len, nrf24l01_platform_t* platform) {
+nrf24l01_err_t nrf24l01_set_address(nrf24l01_pipe_t pipe, const uint8_t* addr, nrf24l01_address_width_t addr_width, nrf24l01_platform_t* platform) {
 	nrf24l01_err_t err;
 	
 	if(pipe == NRF24L01_PIPE0 || pipe == NRF24L01_PIPE1 || pipe == NRF24L01_PIPETX){
 		// Get the devices configured address width
-		uint8_t addr_width;
-		err = nrf24l01_get_address_width(&addr_width, platform);
-		if(addr_width != len){
+		nrf24l01_address_width_t config_addr_width;
+		err = nrf24l01_get_address_width(&config_addr_width, platform);
+		if(config_addr_width != addr_width){
 			err = NRF24L01_ERR_INVALID_ARG; 
 		}else{
 			// Write address in reverse order (LSByte first)
-			err = nrf24l01_multi_write_reg(NRF24L01_ADDR_REGS[pipe], addr, len, platform);
+			err = nrf24l01_multi_write_reg(NRF24L01_ADDR_REGS[pipe], addr_width, len, platform);
 		}
 	}
 	else if(pipe == NRF24L01_PIPE2 || pipe == NRF24L01_PIPE3 || pipe == NRF24L01_PIPE4 || pipe == NRF24L01_PIPE5){
 		// Write address LSBbyte only (first byte from the addr buffer)
 		err = nrf24l01_write_reg(NRF24L01_ADDR_REGS[pipe], *addr, platform);
 	}else{
-		// Incorrect pipe number -> do nothing
+		// Incorrect pipe number
 		err = NRF24L01_ERR_INVALID_ARG;
 	}
 	return err;
@@ -355,14 +374,14 @@ nrf24l01_err_t nrf24l01_set_address(uint8_t pipe, const uint8_t* addr, uint8_t l
 // Configure RF output power in TX mode
 // input:
 //   tx_pwr - RF output power, one of nRF24_TXPWR_xx values
-nrf24l01_err_t nrf24l01_set_tx_power(uint8_t tx_pwr, nrf24l01_platform_t* platform) {
+nrf24l01_err_t nrf24l01_set_tx_power(nrf24l01_tx_power_t tx_power, nrf24l01_platform_t* platform) {
 	nrf24l01_err_t err = NRF24L01_OK;
 	uint8_t reg;
 
 	// Configure RF_PWR[2:1] bits of the RF_SETUP register
 	err |= nrf24l01_read_reg(NRF24L01_RF_SETUP_REG_ADDR, &reg, platform);
 	reg &= ~NRF24L01_MASK_RF_PWR;
-	reg |= tx_pwr;
+	reg |= tx_power;
 	err |= nrf24l01_write_reg(NRF24L01_RF_SETUP_REG_ADDR, reg, platform);
 
 	return err;
@@ -371,7 +390,7 @@ nrf24l01_err_t nrf24l01_set_tx_power(uint8_t tx_pwr, nrf24l01_platform_t* platfo
 // Configure transceiver data rate
 // input:
 //   data_rate - data rate, one of nRF24_DR_xx values
-nrf24l01_err_t nrf24l01_set_data_rate(uint8_t data_rate, nrf24l01_platform_t* platform) {
+nrf24l01_err_t nrf24l01_set_data_rate(nrf24l01_data_rate_t data_rate, nrf24l01_platform_t* platform) {
 	nrf24l01_err_t err = NRF24L01_OK;
 	uint8_t reg;
 
@@ -384,81 +403,52 @@ nrf24l01_err_t nrf24l01_set_data_rate(uint8_t data_rate, nrf24l01_platform_t* pl
 	return err;
 }
 
-// Configure a specified RX pipe
+
+// Enable/disable specified RX pipe
 // input:
-//   pipe - number of the RX pipe, value from 0 to 5
-//   aa_state - state of auto acknowledgment, one of nRF24_AA_xx values
-//   payload_len - payload length in bytes
-nrf24l01_err_t nrf24l01_set_rx_pipe(uint8_t pipe, uint8_t aa_state, uint8_t payload_len, nrf24l01_platform_t* platform) {
+//   pipe - number of RX pipe, value from 0 to 5
+//   mode - NRF24L01_PIPE_ENABLED or NRF24L01_PIPE_DISABLED
+nrf24l01_err_t nrf24l01_set_pipe_mode(nrf24l01_pipe_t pipe, nrf24l01_pipe_mode_t mode, nrf24l01_platform_t* platform) {
 	nrf24l01_err_t err = NRF24L01_OK;
-	uint8_t reg;
-
-	// Enable the specified pipe (EN_RXADDR register)
-	uint8_t temp;
-	err |= nrf24l01_read_reg(NRF24L01_EN_RX_ADDR_REG_ADDR, &temp, platform);
-	reg = (temp | (1 << pipe)) & NRF24L01_MASK_EN_RX;
-	err |= nrf24l01_write_reg(NRF24L01_EN_RX_ADDR_REG_ADDR, reg, platform);
-
-	// Set RX payload length (RX_PW_Px register)
-	err |= nrf24l01_write_reg(NRF24L01_ADDR_REGS[pipe], payload_len & NRF24L01_MASK_RX_PW, platform);
-
-	// Set auto acknowledgment for a specified pipe (EN_AA register)
-	err |= nrf24l01_read_reg(NRF24L01_EN_AA_REG_ADDR, &reg, platform);
-	if (aa_state == NRF24L01_AA_ON) {
-		reg |=  (1 << pipe);
-	} else {
-		reg &= ~(1 << pipe);
+	
+	if( !NRF24L01_IS_RX_PIPE(pipe) ){
+		return NRF24L01_ERR_INVALID_ARG;
 	}
-	err |= nrf24l01_write_reg(NRF24L01_EN_AA_REG_ADDR, reg, platform);
 
-	return err;
-}
-
-// Disable specified RX pipe
-// input:
-//   PIPE - number of RX pipe, value from 0 to 5
-nrf24l01_err_t nrf24l01_close_pipe(uint8_t pipe, nrf24l01_platform_t* platform) {
-	nrf24l01_err_t err = NRF24L01_OK;
 	uint8_t reg;
-
 	err |= nrf24l01_read_reg(NRF24L01_EN_RX_ADDR_REG_ADDR, &reg, platform);
-	reg &= ~(1 << pipe);
+	if(mode == NRF24L01_PIPE_ENABLED){
+		reg |= (1 << pipe);
+	}else if(mode == NRF24L01_PIPE_DISABLED){
+		reg &= ~(1 << pipe);
+	}else{
+		return NRF24L01_ERR_INVALID_ARG;
+	}
 	reg &= NRF24L01_MASK_EN_RX;
 	err |= nrf24l01_write_reg(NRF24L01_EN_RX_ADDR_REG_ADDR, reg, platform);
 
 	return err;
 }
 
-// Enable the auto retransmit (a.k.a. enhanced ShockBurst) for the specified RX pipe
+
+// Configure the auto retransmit (a.k.a. enhanced ShockBurst) for the specified RX pipe
 // input:
 //   pipe - number of the RX pipe, value from 0 to 5
-nrf24l01_err_t nrf24l01_enable_aa(uint8_t pipe, nrf24l01_platform_t* platform) {
+nrf24l01_err_t nrf24l01_set_pipe_aa_mode(nrf24l01_pipe_t pipe, nrf24l01_pipe_aa_mode_t aa_mode, nrf24l01_platform_t* platform){
 	nrf24l01_err_t err = NRF24L01_OK;
-	uint8_t reg;
+	
+	if( !NRF24L01_IS_RX_PIPE(pipe) ){
+		return NRF24L01_ERR_INVALID_ARG;
+	}
 
-	// Set bit in EN_AA register
+	uint8_t reg;
 	err |= nrf24l01_read_reg(NRF24L01_EN_AA_REG_ADDR, &reg, platform);
-	reg |= (1 << pipe);
-	err |= nrf24l01_write_reg(NRF24L01_EN_AA_REG_ADDR, reg, platform);
-
-	return err;
-}
-
-// Disable the auto retransmit (a.k.a. enhanced ShockBurst) for one or all RX pipes
-// input:
-//   pipe - number of the RX pipe, value from 0 to 5, any other value will disable AA for all RX pipes
-nrf24l01_err_t nrf24l01_disable_aa(uint8_t pipe, nrf24l01_platform_t* platform) {
-	nrf24l01_err_t err = NRF24L01_OK;
-	uint8_t reg;
-
-	if (pipe > 5) {
-		// Disable Auto-ACK for ALL pipes
-		err |= nrf24l01_write_reg(NRF24L01_EN_AA_REG_ADDR, 0x00, platform);
-	} else {
-		// Clear bit in the EN_AA register
-		err |= nrf24l01_read_reg(NRF24L01_EN_AA_REG_ADDR, &reg, platform);
+	if(aa_mode == NRF24L01_AA_ON){
+		reg |= (1 << pipe);
+	}else if(aa_mode == NRF24L01_AA_OFF){
 		reg &= ~(1 << pipe);
-		err |= nrf24l01_write_reg(NRF24L01_EN_AA_REG_ADDR, reg, platform);
+	}else{
+		return NRF24L01_ERR_INVALID_ARG;
 	}
 
 	return err;
@@ -494,79 +484,79 @@ nrf24l01_err_t nrf24l01_get_irq_flags(uint8_t* flags, nrf24l01_platform_t* platf
 		*flags = temp & NRF24L01_MASK_STATUS_IRQ;
 	}
 	return err;
-
 }
 
 // Get status of the RX FIFO
 // return: one of the nRF24_STATUS_RXFIFO_xx values
-nrf24l01_err_t nrf24l01_get_status_rx_fifo(uint8_t* status_rx, nrf24l01_platform_t* platform) {
+nrf24l01_err_t nrf24l01_get_fifo_status(nrf24l01_fifo_type_t fifo_type, nrf24l01_fifo_status_t* fifo_status, nrf24l01_platform_t* platform){
 	nrf24l01_err_t err;
-	uint8_t temp;
 
-	if(status_rx == NULL){
-		err = NRF24L01_ERR_INVALID_ARG;
+	if(fifo_status == NULL){
+		return NRF24L01_ERR_INVALID_ARG;
+	}
+
+	uint8_t temp;
+	err = nrf24l01_read_reg(NRF24L01_FIFO_STATUS_REG_ADDR, &temp, platform);
+	if(err == NRF24L01_OK){
+		if(fifo_type == NRF24L01_RX_FIFO){
+			*fifo_status = temp & NRF24L01_MASK_RX_FIFO_STATUS;
+		}else if(fifo_type == NRF24L01_TX_FIFO){
+			*fifo_status = (temp & NRF24L01_MASK_TX_FIFO_STATUS) >> 4;
+		}else{
+			return NRF24L01_ERR_INVALID_ARG;
+		}
+		return NRF24L01_OK;
+	}else{
 		return err;
 	}
-
-	err = nrf24l01_read_reg(NRF24L01_FIFO_STATUS_REG_ADDR, &temp, platform);
-	if(err == NRF24L01_OK){
-		*status_rx = temp & NRF24L01_MASK_RX_FIFO_STATUS;
-	}
-	return err;
 }
 
-// Get status of the TX FIFO
-// return: one of the nRF24_STATUS_TXFIFO_xx values
-// note: the TX_REUSE bit ignored
-nrf24l01_err_t nrf24l01_get_status_tx_fifo(uint8_t* status_rx, nrf24l01_platform_t* platform) {
-	nrf24l01_err_t err;
-	uint8_t temp;
-	err = nrf24l01_read_reg(NRF24L01_FIFO_STATUS_REG_ADDR, &temp, platform);
-	if(err == NRF24L01_OK){
-		*status_rx = (temp & NRF24L01_MASK_TX_FIFO_STATUS) >> 4;
-	}
-	return err;
-}
 
 // Get pipe number for the payload available for reading from RX FIFO
 // return: pipe number or 0x07 if the RX FIFO is empty
-nrf24l01_err_t nrf24l01_get_rx_source(uint8_t* source, nrf24l01_platform_t* platform) {
-	nrf24l01_err_t err;
-	uint8_t temp;
+nrf24l01_err_t nrf24l01_get_rx_pipe(nrf24l01_pipe_t* pipe, nrf24l01_platform_t* platform) {
+	
+	if(pipe == NULL){
+		return NRF24L01_ERR_INVALID_ARG;
+	}
 
-	if(source == NULL){
-		err = NRF24L01_ERR_INVALID_ARG;
+	uint8_t status;
+	nrf24l01_err_t err = nrf24l01_read_reg(NRF24L01_STATUS_REG_ADDR, &status, platform);
+	if(err != NRF24L01_OK){
 		return err;
 	}
 
-	err = nrf24l01_read_reg(NRF24L01_STATUS_REG_ADDR, &temp, platform);
-	if(err == NRF24L01_OK){
-		*source = (temp & NRF24L01_MASK_STATUS_RX_P_NO) >> 1;
-	}
-	return err;
+	*pipe = (status & NRF24L01_MASK_STATUS_RX_P_NO) >> 1;
+	return NRF24L01_OK;
 }
 
 // Get auto retransmit statistic
 // return: value of OBSERVE_TX register which contains two counters encoded in nibbles:
-//   high - lost packets count (max value 15, can be reseted by write to RF_CH register)
-//   low  - retransmitted packets count (max value 15, reseted when new transmission starts)
-nrf24l01_err_t nrf24l01_get_retransmit_counters(uint8_t* counters, nrf24l01_platform_t* platform) {
+//   high - lost packets count (max value 15, can be reset by a write to RF_CH register)
+//   low  - retransmitted packets count (max value 15, resets when a new transmission starts)
+nrf24l01_err_t nrf24l01_get_retransmit_counters(nrf24l01_ar_count_t* ar_count, nrf24l01_ar_lost_t* ar_lost, nrf24l01_platform_t* platform) {
 	nrf24l01_err_t err;
 
-	if(counters == NULL){
-		err = NRF24L01_ERR_INVALID_ARG;
+	if(ar_count == NULL || ar_lost == NULL){
+		return NRF24L01_ERR_INVALID_ARG;
+	}
+
+	uint8_t counters;
+	err = nrf24l01_read_reg(NRF24L01_OBSERVE_TX_REG_ADDR, counters, platform);
+	if(err != NRF24L01_OK){
 		return err;
 	}
 
-	err = nrf24l01_read_reg(NRF24L01_OBSERVE_TX_REG_ADDR, counters, platform);
-	return err;
+	*ar_lost =  (NRF24L01_MASK_OBSERVE_TX_PLOS_CNT & counters) >> 4;
+	*ar_count = NRF24L01_MASK_OBSERVE_TX_ARC_CNT & counters;
+	return NRF24L01_OK;
 }
 
 // Get the configured address width
 // output:
 //   addr_width - RX/TX address field width, value from 3 to 5
 // note: this setting is common for all pipes
-nrf24l01_err_t nrf24l01_get_address_width(uint8_t* addr_width, nrf24l01_platform_t* platform){
+nrf24l01_err_t nrf24l01_get_address_width(nrf24l01_address_width_t* addr_width, nrf24l01_platform_t* platform){
 	nrf24l01_err_t err;
 
 	uint8_t temp;
@@ -638,18 +628,27 @@ nrf24l01_err_t nrf24l01_write_payload(uint8_t* data, uint8_t len, nrf24l01_platf
 		return err;
 	}
 
-	NRF24L01_FPTR_RTN_T spi_err = platform->spi_exchange(NRF24L01_CMD_W_TX_PAYLOAD, NULL, data, len, platform->spi_user_config);
+	NRF24L01_FPTR_RTN_T spi_err = platform->spi_exchange(NRF24L01_CMD_W_TX_PAYLOAD, NULL, data, len, platform->user_ptr);
 	if(spi_err < 0){
 		err = NRF24L01_ERR_WRITE;
 	}else{
 		err = NRF24L01_OK;
 	}
 	
-	platform->gpio_chip_enable(true);
+	platform->gpio_chip_enable(true, platform->user_ptr);
 	platform->delay_us(NRF24L01_CE_TX_MINIMUM_PULSE_US);
-	platform->gpio_chip_enable(false);
+	platform->gpio_chip_enable(false, platform->user_ptr);
 	return err;
 }
+
+/*
+static nrf24l01_err_t nrf24l01_get_rx_pipe(uint8_t* width, nrf24l01_platform_t* platform) {
+	// Extract a payload pipe number from the STATUS register
+	uint8_t temp;
+	nrf24l01_read_reg(NRF24L01_STATUS_REG_ADDR, &temp, platform);
+	pipe = (temp & NRF24L01_MASK_STATUS_RX_P_NO) >> 1;
+}
+*/
 
 static nrf24l01_err_t nrf24l01_get_rx_dpl_payload_width(uint8_t* width, nrf24l01_platform_t* platform) {
 	nrf24l01_err_t err;
@@ -658,55 +657,60 @@ static nrf24l01_err_t nrf24l01_get_rx_dpl_payload_width(uint8_t* width, nrf24l01
 
 }
 
-static nrf24l01_rx_result nrf24l01_read_payload_generic(uint8_t* pBuf, uint8_t* length, uint8_t dpl, nrf24l01_platform_t* platform) {
-	uint8_t pipe;
+static nrf24l01_err_t nrf24l01_read_payload_generic(nrf24l01_pipe_t* pipe, uint8_t* rx_data, uint8_t* len, bool dpl, nrf24l01_platform_t* platform) {
 
 	// Extract a payload pipe number from the STATUS register
-	uint8_t temp;
-	nrf24l01_read_reg(NRF24L01_STATUS_REG_ADDR, &temp, platform);
-	pipe = (temp & NRF24L01_MASK_STATUS_RX_P_NO) >> 1;
+	nrf24l01_get_rx_pipe(pipe, platform);
+
+	// 
+	if(*pipe == NRF24L01_PIPE_UNKNOWN){
+		*len = 0;
+		return NRF24L01_ERR_INVALID_STATE;
+	}
+
+	// Get payload length
+	if(dpl) {
+		nrf24l01_get_rx_dpl_payload_width(len, platform);
+
+		//Check for broken packet
+		if(*len > NRF24L01_RX_FIFO_WIDTH) { 
+			*len = 0;
+			nrf24l01_flush_rx(platform);
+		}
+	}else {
+		nrf24l01_read_reg(NRF24L01_RX_PW_PIPE[*pipe], len, platform);
+	}
+
 
 	// RX FIFO empty?
 	if (pipe < 6) {
-		// Get payload length
-		if(dpl) {
-			nrf24l01_get_rx_dpl_payload_width(length, platform);
-			if(*length>32) { //broken packet
-				*length = 0;
-				nrf24l01_flush_rx(platform);
-			}
-		} else {
-			nrf24l01_read_reg(NRF24L01_RX_PW_PIPE[pipe], length, platform);
-		}
 
 		// Read a payload from the RX FIFO
-		if (*length) {
-			nrf24l01_multi_read_reg(NRF24L01_CMD_R_RX_PAYLOAD, pBuf, *length, platform);
+		if (*len != 0) {
+			nrf24l01_multi_read_reg(NRF24L01_CMD_R_RX_PAYLOAD, rx_data, *len, platform);
 		}
-
-		return ((nrf24l01_rx_result)pipe);
 	}
 
 	// The RX FIFO is empty
-	*length = 0;
-
-	return NRF24L01_RX_EMPTY;
+	
+	return NRF24L01_OK;
 }
 
 // Read top level payload available in the RX FIFO
 // input:
-//   pBuf - pointer to the buffer to store a payload data
+//   rx_data - pointer to the buffer to store a payload data
 //   length - pointer to variable to store a payload length
+//   platform - 
 // return: one of nRF24_RX_xx values
 //   nRF24_RX_PIPEX - packet has been received from the pipe number X
 //   nRF24_RX_EMPTY - the RX FIFO is empty
-nrf24l01_rx_result nrf24l01_read_payload(uint8_t* pBuf, uint8_t* length, nrf24l01_platform_t* platform) {
-	return nrf24l01_read_payload_generic(pBuf, length, 0, platform);
+nrf24l01_err_t nrf24l01_read_payload(nrf24l01_pipe_t* pipe, uint8_t* rx_data, uint8_t* len, nrf24l01_platform_t* platform) {
+	return nrf24l01_read_payload_generic(pipe, rx_data, len, 0, platform);
+}
+nrf24l01_err_t nrf24l01_read_dynamic_length_payload(nrf24l01_pipe_t* pipe, uint8_t* rx_data, uint8_t* len, nrf24l01_platform_t* platform) {
+	return nrf24l01_read_payload_generic(pipe,rx_data, len, 1, platform);
 }
 
-nrf24l01_rx_result nrf24l01_read_payload_dpl(uint8_t* pBuf, uint8_t* length, nrf24l01_platform_t* platform) {
-	return nrf24l01_read_payload_generic(pBuf, length, 1, platform);
-}
 
 nrf24l01_err_t nrf24l01_get_features(uint8_t* features, nrf24l01_platform_t* platform) {
     return nrf24l01_read_reg(NRF24L01_FEATURE_REG_ADDR, features, platform);
@@ -720,17 +724,19 @@ nrf24l01_err_t nrf24l01_activate_features(nrf24l01_platform_t* platform) {
 	*/
 	return NRF24L01_OK;
 }
-nrf24l01_err_t nrf24l01_write_ack_payload(nrf24l01_rx_result pipe, uint8_t* payload, uint8_t len, nrf24l01_platform_t* platform) {
-	/*
+
+/*
+nrf24l01_err_t nrf24l01_write_ack_payload(nrf24l01_pipe_t pipe, uint8_t* payload, uint8_t len, nrf24l01_platform_t* platform) {
+	
 	nrf24l01_CSN_L();
 	nrf24l01_LL_RW(NRF24L01_CMD_W_ACK_PAYLOAD | pipe);
 	while (length--) {
 		nrf24l01_LL_RW((uint8_t)* payload++);
 	}
 	nrf24l01_CSN_H();
-	*/
+	
 
-	/*
+	
 	nrf24l01_err_t err;
 	if(data == NULL){
 		err = NRF24L01_INVALID_ARG;
@@ -738,10 +744,11 @@ nrf24l01_err_t nrf24l01_write_ack_payload(nrf24l01_rx_result pipe, uint8_t* payl
 	}
 	err = nrf24l01_multi_write_reg(NRF24L01_CMD_W_TX_PAYLOAD, data, len, platform);
 	return err;
-	*/
+	
 
 	return NRF24L01_OK;
 }
+*/
 
 
 #ifdef NRF24L01_ENABLE_PRINT_CONFIG
@@ -944,23 +951,20 @@ void nrf24l01_print_status_register(nrf24l01_platform_t* platform){
 void nrf24l01_print_fifo_status_register(nrf24l01_platform_t* platform){
 
 	uint8_t rx_status;
-	nrf24l01_get_status_rx_fifo(&rx_status, platform);
-
+	nrf24l01_get_fifo_status(NRF24L01_RX_FIFO, &rx_status, platform);
 	uint8_t tx_status;
-	nrf24l01_get_status_rx_fifo(&tx_status, platform);
-
+	nrf24l01_get_fifo_status(NRF24L01_TX_FIFO, &tx_status, platform);
 	uint8_t fifo_status = (tx_status << 4) | rx_status;
 
 	NRF24L01_DEBUGGING_PRINTF("[0x%02X] FIFO_STATUS_REG="_8BIT_FMT"=0x%02X (TX_REUSE=%s, TX_FULL=%s, TX_EMPTY=%s, RX_FULL=%s, RX_EMPTY=%s)\r\n",
         NRF24L01_FIFO_STATUS_REG_ADDR,
 		_8BIT_STR(fifo_status), fifo_status, 
-        (fifo_status & NRF24L01_MASK_TX_FIFO_REUSE)  ? "1" : "0", 
+        (fifo_status & NRF24L01_MASK_TX_FIFO_REUSE) ? "1" : "0", 
         (fifo_status & NRF24L01_MASK_TX_FIFO_FULL)  ? "1" : "0",
         (fifo_status & NRF24L01_MASK_TX_FIFO_EMPTY) ? "1" : "0",
-        (fifo_status & NRF24L01_MASK_RX_FIFO_FULL) ? "1" : "0",
+        (fifo_status & NRF24L01_MASK_RX_FIFO_FULL)  ? "1" : "0",
         (fifo_status & NRF24L01_MASK_RX_FIFO_EMPTY) ? "1" : "0"
     );
-
 }
 
 #endif 
