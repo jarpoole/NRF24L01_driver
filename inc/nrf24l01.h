@@ -24,11 +24,11 @@ nrf24l01_err_t nrf24l01_check_connectivity(nrf24l01_platform_t*);
 nrf24l01_err_t nrf24l01_set_tx_power(nrf24l01_tx_power_t, nrf24l01_platform_t*);
 nrf24l01_err_t nrf24l01_set_rf_channel(nrf24l01_rf_channel_t, nrf24l01_platform_t*);
 nrf24l01_err_t nrf24l01_set_data_rate(nrf24l01_data_rate_t, nrf24l01_platform_t*);
-nrf24l01_err_t nrf24l01_set_dpl_mode(nrf24l01_dpl_mode_t, nrf24l01_platform_t*);
 nrf24l01_err_t nrf24l01_set_auto_retransmission(nrf24l01_ar_delay_t, nrf24l01_ar_count_t, nrf24l01_platform_t*);
 nrf24l01_err_t nrf24l01_set_crc_scheme(nrf24l01_crc_scheme_t, nrf24l01_platform_t*);
 nrf24l01_err_t nrf24l01_get_address_width(nrf24l01_address_width_t*, nrf24l01_platform_t*);
 nrf24l01_err_t nrf24l01_set_address_width(nrf24l01_address_width_t, nrf24l01_platform_t*);
+// nrf24l01_err_t nrf24l01_get_carrier_detect(nrf24l01_address_width_t, nrf24l01_platform_t*);
 
 // Host SPI interface
 nrf24l01_err_t nrf24l01_flush_rx(nrf24l01_platform_t*);
@@ -41,12 +41,18 @@ nrf24l01_err_t nrf24l01_reset_packet_loss_counter(nrf24l01_platform_t*);
 nrf24l01_err_t nrf24l01_get_retransmit_counters(nrf24l01_ar_count_t*, nrf24l01_ar_lost_t*, nrf24l01_platform_t*);
 
 // Device state
+nrf24l01_err_t nrf24l01_get_power_mode(nrf24l01_power_mode_t*, nrf24l01_platform_t*);
 nrf24l01_err_t nrf24l01_set_power_mode(nrf24l01_power_mode_t, nrf24l01_platform_t*);
+nrf24l01_err_t nrf24l01_get_operational_mode(nrf24l01_operational_mode_t*, nrf24l01_platform_t*);
 nrf24l01_err_t nrf24l01_set_operational_mode(nrf24l01_operational_mode_t, nrf24l01_platform_t*);
 
 // Features
-nrf24l01_err_t nrf24l01_activate_features(nrf24l01_platform_t*);
-nrf24l01_err_t nrf24l01_set_payload_with_ack(uint8_t, nrf24l01_platform_t*);
+nrf24l01_err_t nrf24l01_get_feature_mode(nrf24l01_feature_mode_t*, nrf24l01_platform_t*);
+nrf24l01_err_t nrf24l01_set_feature_mode(nrf24l01_feature_mode_t, nrf24l01_platform_t*);
+nrf24l01_err_t nrf24l01_set_ack_payload_mode(ack_payload_mode_t, nrf24l01_platform_t*);
+nrf24l01_err_t nrf24l01_set_dpl_mode(nrf24l01_dpl_mode_t, nrf24l01_platform_t*);
+nrf24l01_err_t nrf24l01_set_dta_mode(nrf24l01_dta_mode_t, nrf24l01_platform_t*);
+
 nrf24l01_err_t nrf24l01_get_features(uint8_t*, nrf24l01_platform_t*);
 
 /****************************************************************************************************************/
@@ -65,10 +71,14 @@ nrf24l01_err_t nrf24l01_write_payload(uint8_t*, uint8_t, nrf24l01_platform_t*);
 
 // Receive
 nrf24l01_err_t nrf24l01_get_rx_pipe(nrf24l01_pipe_t*, nrf24l01_platform_t*);
-nrf24l01_err_t nrf24l01_read_payload(nrf24l01_pipe_t*, uint8_t*, uint8_t*, nrf24l01_platform_t*);     // Read from the pipe which received the packet
-nrf24l01_err_t nrf24l01_read_dynamic_length_payload(nrf24l01_pipe_t*, uint8_t*, uint8_t*, nrf24l01_platform_t*); // Read from the pipe which received the dpl packet
+nrf24l01_err_t nrf24l01_read_payload(nrf24l01_pipe_t*, uint8_t*, uint8_t*, bool, nrf24l01_platform_t*);     // Read from the pipe which received the packet
+
+//Features
+nrf24l01_err_t nrf24l01_set_pipe_dpl_mode(nrf24l01_pipe_t, nrf24l01_dpl_mode_t, nrf24l01_platform_t*);
 
 /****************************************************************************************************************/
+
+
 
 nrf24l01_err_t nrf24l01_set_address(nrf24l01_pipe_t, const uint8_t*, uint8_t, nrf24l01_platform_t*);
 

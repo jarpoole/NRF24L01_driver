@@ -56,6 +56,8 @@ static nrf24l01_err_t nrf24l01_multi_write_reg(uint8_t, uint8_t*, uint8_t, nrf24
 
 
 
+
+
 // Read a register
 // input:
 //   reg - number of register to read
@@ -121,6 +123,14 @@ static nrf24l01_err_t nrf24l01_multi_write_reg(uint8_t reg_addr, uint8_t* data, 
 	}
 	return NRF24L01_OK;
 }
+
+
+
+
+
+
+
+
 
 // Set transceiver to it's initial state
 // note: RX/TX pipe addresses remains untouched
@@ -222,7 +232,6 @@ nrf24l01_err_t nrf24l01_set_power_mode(nrf24l01_power_mode_t mode, nrf24l01_plat
 		reg &= ~NRF24L01_CONFIG_PWR_UP;
 		err |= nrf24l01_write_reg(NRF24L01_CONFIG_REG_ADDR, reg, platform);
 	}
-
 	return err;
 }
 
@@ -242,42 +251,6 @@ nrf24l01_err_t nrf24l01_set_operational_mode(nrf24l01_operational_mode_t mode, n
 	return err;
 }
 
-// Set transceiver DynamicPayloadLength feature for all the pipes
-// input:
-//   dpl_mode - one of nRF24_DPL_xx values
-nrf24l01_err_t nrf24l01_set_dpl_mode(nrf24l01_dpl_mode_t dpl_mode, nrf24l01_platform_t* platform) {
-	nrf24l01_err_t err = NRF24L01_OK;
-	uint8_t reg;
-
-	err |= nrf24l01_read_reg(NRF24L01_FEATURE_REG_ADDR, &reg, platform);
-	if(dpl_mode == NRF24L01_DPL_ON) {
-		err |= nrf24l01_write_reg(NRF24L01_FEATURE_REG_ADDR, reg | NRF24L01_FEATURE_EN_DPL, platform);
-		err |= nrf24l01_write_reg(NRF24L01_DYNPD_REG_ADDR, 0x1F, platform);
-	} else if (dpl_mode == NRF24L01_DPL_OFF) {
-		err |= nrf24l01_write_reg(NRF24L01_FEATURE_REG_ADDR, reg &~ NRF24L01_FEATURE_EN_DPL, platform);
-		err |= nrf24l01_write_reg(NRF24L01_DYNPD_REG_ADDR, 0x0, platform);
-	}else{
-		err = NRF24L01_ERR_INVALID_ARG;
-	}
-	return err;
-}
-
-// Enables Payload With Ack. NB Refer to the datasheet for proper retransmit timing.
-// input:
-//   mode - status, 1 or 0
-nrf24l01_err_t nrf24l01_set_payload_with_ack(uint8_t mode, nrf24l01_platform_t* platform) {
-	nrf24l01_err_t err = NRF24L01_OK;
-	uint8_t reg;
-
-	err |= nrf24l01_read_reg(NRF24L01_FEATURE_REG_ADDR, &reg, platform);
-	if(mode) {
-		err |= nrf24l01_write_reg(NRF24L01_FEATURE_REG_ADDR, reg | NRF24L01_FEATURE_EN_ACK_PAY, platform);
-	} else {
-		err |= nrf24l01_write_reg(NRF24L01_FEATURE_REG_ADDR, reg &~ NRF24L01_FEATURE_EN_ACK_PAY, platform);
-	}
-
-	return err;
-}
 
 // Configure transceiver CRC scheme
 // input:
@@ -414,17 +387,23 @@ nrf24l01_err_t nrf24l01_set_pipe_mode(nrf24l01_pipe_t pipe, nrf24l01_pipe_mode_t
 	if( !NRF24L01_IS_RX_PIPE(pipe) ){
 		return NRF24L01_ERR_INVALID_ARG;
 	}
-
 	uint8_t reg;
+	uint8_t changes;
+
+	if(pipe == NRF24L01_ALL_RX_PIPES){
+		changes = NRF24L01_MASK_EN_RX_ADDR;
+	}else{
+		changes = (1 << pipe);
+	}
+
 	err |= nrf24l01_read_reg(NRF24L01_EN_RX_ADDR_REG_ADDR, &reg, platform);
 	if(mode == NRF24L01_PIPE_ENABLED){
-		reg |= (1 << pipe);
+		reg |= changes;
 	}else if(mode == NRF24L01_PIPE_DISABLED){
-		reg &= ~(1 << pipe);
+		reg &= ~changes;
 	}else{
 		return NRF24L01_ERR_INVALID_ARG;
 	}
-	reg &= NRF24L01_MASK_EN_RX;
 	err |= nrf24l01_write_reg(NRF24L01_EN_RX_ADDR_REG_ADDR, reg, platform);
 
 	return err;
@@ -440,19 +419,56 @@ nrf24l01_err_t nrf24l01_set_pipe_aa_mode(nrf24l01_pipe_t pipe, nrf24l01_pipe_aa_
 	if( !NRF24L01_IS_RX_PIPE(pipe) ){
 		return NRF24L01_ERR_INVALID_ARG;
 	}
-
 	uint8_t reg;
+	uint8_t changes;
+
+	if(pipe == NRF24L01_ALL_RX_PIPES){
+		changes = NRF24L01_MASK_EN_AA;
+	}else{
+		changes = (1 << pipe);
+	}
+
 	err |= nrf24l01_read_reg(NRF24L01_EN_AA_REG_ADDR, &reg, platform);
 	if(aa_mode == NRF24L01_AA_ON){
-		reg |= (1 << pipe);
+		reg |= changes;
 	}else if(aa_mode == NRF24L01_AA_OFF){
-		reg &= ~(1 << pipe);
+		reg &= ~changes;
 	}else{
 		return NRF24L01_ERR_INVALID_ARG;
 	}
+	err |= nrf24l01_write_reg(NRF24L01_EN_AA_REG_ADDR, reg, platform);
 
 	return err;
 }
+
+nrf24l01_err_t nrf24l01_set_pipe_dpl_mode(nrf24l01_pipe_t pipe, nrf24l01_dpl_mode_t dpl_mode, nrf24l01_platform_t* platform){
+	nrf24l01_err_t err = NRF24L01_OK;
+	
+	if( !NRF24L01_IS_RX_PIPE(pipe) ){
+		return NRF24L01_ERR_INVALID_ARG;
+	}
+	uint8_t reg;
+	uint8_t changes;
+
+	if(pipe == NRF24L01_ALL_RX_PIPES){
+		changes = NRF24L01_MASK_DYNPD;
+	}else{
+		changes = (1 << pipe);
+	}
+
+	err |= nrf24l01_read_reg(NRF24L01_EN_AA_REG_ADDR, &reg, platform);
+	if(dpl_mode == NRF24L01_DPL_ON){
+		reg |= changes;
+	}else if(dpl_mode == NRF24L01_DPL_OFF){
+		reg &= ~changes;
+	}else{
+		return NRF24L01_ERR_INVALID_ARG;
+	}
+	err |= nrf24l01_write_reg(NRF24L01_EN_AA_REG_ADDR, reg, platform);
+
+	return err;
+}
+
 
 // Get value of the STATUS register
 // return: value of STATUS register
@@ -629,7 +645,7 @@ nrf24l01_err_t nrf24l01_write_payload(uint8_t* data, uint8_t len, nrf24l01_platf
 	}
 
 	NRF24L01_FPTR_RTN_T spi_err = platform->spi_exchange(NRF24L01_CMD_W_TX_PAYLOAD, NULL, data, len, platform->user_ptr);
-	if(spi_err < 0){
+	if(spi_err != 0){
 		err = NRF24L01_ERR_WRITE;
 	}else{
 		err = NRF24L01_OK;
@@ -650,52 +666,50 @@ static nrf24l01_err_t nrf24l01_get_rx_pipe(uint8_t* width, nrf24l01_platform_t* 
 }
 */
 
-static nrf24l01_err_t nrf24l01_get_rx_dpl_payload_width(uint8_t* width, nrf24l01_platform_t* platform) {
-	nrf24l01_err_t err;
-	err = nrf24l01_read_reg(NRF24L01_CMD_R_RX_PL_WID, width, platform);
-	return err;
-
+static nrf24l01_err_t nrf24l01_get_rx_dpl(uint8_t* width, nrf24l01_platform_t* platform) {
+	NRF24L01_FPTR_RTN_T spi_err = platform->spi_exchange(NRF24L01_CMD_R_RX_PL_WID, NULL, width, sizeof(uint8_t), platform->user_ptr);
+	if(spi_err != 0){
+		return NRF24L01_ERR_WRITE;
+	}
+	return NRF24L01_OK;
 }
 
-static nrf24l01_err_t nrf24l01_read_payload_generic(nrf24l01_pipe_t* pipe, uint8_t* rx_data, uint8_t* len, bool dpl, nrf24l01_platform_t* platform) {
+nrf24l01_err_t nrf24l01_read_payload(nrf24l01_pipe_t* pipe, uint8_t* rx_data, uint8_t* len, bool dpl, nrf24l01_platform_t* platform) {
+
+	if(len == NULL){
+		return NRF24L01_ERR_INVALID_ARG;
+	}
 
 	// Extract a payload pipe number from the STATUS register
 	nrf24l01_get_rx_pipe(pipe, platform);
-
-	// 
 	if(*pipe == NRF24L01_PIPE_UNKNOWN){
 		*len = 0;
 		return NRF24L01_ERR_INVALID_STATE;
 	}
 
 	// Get payload length
+	uint8_t payload_len;
 	if(dpl) {
-		nrf24l01_get_rx_dpl_payload_width(len, platform);
+		nrf24l01_get_rx_dpl(&payload_len, platform);
 
 		//Check for broken packet
-		if(*len > NRF24L01_RX_FIFO_WIDTH) { 
-			*len = 0;
+		if(payload_len > NRF24L01_RX_FIFO_WIDTH) { 
 			nrf24l01_flush_rx(platform);
+			return NRF24L01_ERR_UNKNOWN;
 		}
 	}else {
-		nrf24l01_read_reg(NRF24L01_RX_PW_PIPE[*pipe], len, platform);
+		nrf24l01_read_reg(NRF24L01_RX_PW_PIPE[*pipe], &payload_len, platform);
 	}
-
-
-	// RX FIFO empty?
-	if (pipe < 6) {
-
-		// Read a payload from the RX FIFO
-		if (*len != 0) {
-			nrf24l01_multi_read_reg(NRF24L01_CMD_R_RX_PAYLOAD, rx_data, *len, platform);
-		}
-	}
-
-	// The RX FIFO is empty
 	
+	if(rx_data != NULL){
+		nrf24l01_multi_read_reg(NRF24L01_CMD_R_RX_PAYLOAD, rx_data, payload_len, platform);
+	}
+	*len = payload_len;
+
 	return NRF24L01_OK;
 }
 
+/*
 // Read top level payload available in the RX FIFO
 // input:
 //   rx_data - pointer to the buffer to store a payload data
@@ -710,20 +724,102 @@ nrf24l01_err_t nrf24l01_read_payload(nrf24l01_pipe_t* pipe, uint8_t* rx_data, ui
 nrf24l01_err_t nrf24l01_read_dynamic_length_payload(nrf24l01_pipe_t* pipe, uint8_t* rx_data, uint8_t* len, nrf24l01_platform_t* platform) {
 	return nrf24l01_read_payload_generic(pipe,rx_data, len, 1, platform);
 }
+*/
 
 
 nrf24l01_err_t nrf24l01_get_features(uint8_t* features, nrf24l01_platform_t* platform) {
     return nrf24l01_read_reg(NRF24L01_FEATURE_REG_ADDR, features, platform);
 }
-nrf24l01_err_t nrf24l01_activate_features(nrf24l01_platform_t* platform) {
-	/*
-    nrf24l01_CSN_L();
-    nrf24l01_LL_RW(NRF24L01_CMD_ACTIVATE);
-    nrf24l01_LL_RW(0x73);
-    nrf24l01_CSN_H();
-	*/
+
+nrf24l01_err_t nrf24l01_get_power_mode(nrf24l01_power_mode_t* power_mode, nrf24l01_platform_t* platform){
+	nrf24l01_err_t err;
+
+	uint8_t reg;
+	err = nrf24l01_read_reg(NRF24L01_CONFIG_REG_ADDR, &reg, platform);
+	if(err == NRF24L01_OK){
+		if(reg & NRF24L01_CONFIG_PWR_UP){
+			*power_mode = NRF24L01_PWR_UP;
+		}else{
+			*power_mode = NRF24L01_PWR_DOWN;
+		}
+	}
+	return err;
+}
+
+nrf24l01_err_t nrf24l01_get_operational_mode(nrf24l01_operational_mode_t* operational_mode, nrf24l01_platform_t* platform){
+	nrf24l01_err_t err;
+
+	uint8_t reg;
+	err = nrf24l01_read_reg(NRF24L01_CONFIG_REG_ADDR, &reg, platform);
+	if(err == NRF24L01_OK){
+		if(reg & NRF24L01_CONFIG_PRIM_RX){
+			*operational_mode = NRF24L01_MODE_RX;
+		}else{
+			*operational_mode = NRF24L01_MODE_TX;
+		}
+	}
+	return err;
+}
+
+nrf24l01_err_t nrf24l01_get_feature_mode(nrf24l01_feature_mode_t* feature_mode, nrf24l01_platform_t* platform) {
+	// There is no direct way to query if the NRF24L01 extra features have been activated or not
+	//    Read the state of the FEATURES register (will be all zero if features deactivated)
+	//    Attempt to change EN_DYN_ACK (bit 0) of the FEATURES register since it doesn't change the system state in any way except the make an additional command available
+	//    Read back the FEATURES register to see if the bit changed
+	//    If FEATURES register changed, write the original value back
+
+	if(feature_mode == NULL){
+		return NRF24L01_ERR_INVALID_ARG;
+	}
+	nrf24l01_err_t err = NRF24L01_OK;
+
+	// Backupt the features register
+	uint8_t features_reg_backup;
+	err |= nrf24l01_read_reg(NRF24L01_FEATURE_REG_ADDR, &features_reg_backup, platform);
+
+	//Toggle a bit
+	err |= nrf24l01_write_reg(NRF24L01_FEATURE_REG_ADDR, features_reg_backup ^ NRF24L01_FEATURE_EN_DYN_ACK, platform);
+
+	uint8_t features_reg_result;
+	err |= nrf24l01_read_reg(NRF24L01_FEATURE_REG_ADDR, &features_reg_result, platform);
+
+	if(features_reg_result != features_reg_backup){
+		*feature_mode = NRF24L01_FEATURES_ON;
+	}else{
+		*feature_mode = NRF24L01_FEATURES_OFF;
+	}
+
+	//Restore the previous state of the features register
+	err |= nrf24l01_write_reg(NRF24L01_FEATURE_REG_ADDR, features_reg_backup, platform);
+
+	return err;
+
+}
+
+nrf24l01_err_t nrf24l01_set_feature_mode(nrf24l01_feature_mode_t feature_mode, nrf24l01_platform_t* platform) {
+	
+	//Check if we are in power down or standby mode
+	nrf24l01_power_mode_t power_mode;
+	nrf24l01_get_power_mode(&power_mode, platform);
+	if(power_mode != NRF24L01_PWR_DOWN){
+		return NRF24L01_ERR_INVALID_STATE;
+	}
+
+	//Change the feature mode if needed
+	nrf24l01_feature_mode_t current_feature_mode;
+	nrf24l01_get_feature_mode(&current_feature_mode, platform);
+	if(feature_mode != current_feature_mode){
+		//Toggle the feature activation using the ACTIVATE command
+
+		uint8_t magic_number = NRF24L01_MAGIC_NUMBER_ACTIVATE;
+		NRF24L01_FPTR_RTN_T spi_err = platform->spi_exchange(NRF24L01_CMD_ACTIVATE, NULL, &magic_number, sizeof(magic_number), platform->user_ptr);
+		if(spi_err != 0){
+			return NRF24L01_ERR_WRITE;
+		}
+	}
 	return NRF24L01_OK;
 }
+
 
 /*
 nrf24l01_err_t nrf24l01_write_ack_payload(nrf24l01_pipe_t pipe, uint8_t* payload, uint8_t len, nrf24l01_platform_t* platform) {
@@ -749,6 +845,52 @@ nrf24l01_err_t nrf24l01_write_ack_payload(nrf24l01_pipe_t pipe, uint8_t* payload
 	return NRF24L01_OK;
 }
 */
+
+
+
+/*
+// Set transceiver DynamicPayloadLength feature for all the pipes
+// input:
+//   dpl_mode - one of nRF24_DPL_xx values
+nrf24l01_err_t nrf24l01_set_dpl_mode(nrf24l01_dpl_mode_t dpl_mode, nrf24l01_platform_t* platform) {
+	nrf24l01_err_t err = NRF24L01_OK;
+	uint8_t reg;
+
+	err |= nrf24l01_read_reg(NRF24L01_FEATURE_REG_ADDR, &reg, platform);
+	if(dpl_mode == NRF24L01_DPL_ON) {
+		err |= nrf24l01_write_reg(NRF24L01_FEATURE_REG_ADDR, reg | NRF24L01_FEATURE_EN_DPL, platform);
+		err |= nrf24l01_write_reg(NRF24L01_DYNPD_REG_ADDR, 0x1F, platform);
+	} else if (dpl_mode == NRF24L01_DPL_OFF) {
+		err |= nrf24l01_write_reg(NRF24L01_FEATURE_REG_ADDR, reg &~ NRF24L01_FEATURE_EN_DPL, platform);
+		err |= nrf24l01_write_reg(NRF24L01_DYNPD_REG_ADDR, 0x00, platform);
+	}else{
+		err = NRF24L01_ERR_INVALID_ARG;
+	}
+	return err;
+}
+
+// Enables Payload With Ack. NB Refer to the datasheet for proper retransmit timing.
+// input:
+//   mode - status, 1 or 0
+nrf24l01_err_t nrf24l01_set_payload_with_ack_mode(uint8_t mode, nrf24l01_platform_t* platform) {
+	nrf24l01_err_t err = NRF24L01_OK;
+	uint8_t reg;
+
+	err |= nrf24l01_read_reg(NRF24L01_FEATURE_REG_ADDR, &reg, platform);
+	if(mode) {
+		err |= nrf24l01_write_reg(NRF24L01_FEATURE_REG_ADDR, reg | NRF24L01_FEATURE_EN_ACK_PAY, platform);
+	} else {
+		err |= nrf24l01_write_reg(NRF24L01_FEATURE_REG_ADDR, reg &~ NRF24L01_FEATURE_EN_ACK_PAY, platform);
+	}
+
+	return err;
+}
+*/
+
+
+
+
+
 
 
 #ifdef NRF24L01_ENABLE_PRINT_CONFIG
@@ -884,8 +1026,6 @@ void nrf24l01_print_config(nrf24l01_platform_t* platform) {
 		NRF24L01_DEBUGGING_PRINTF("0x%02X%s", buf[i], (i == (address_width - 1)) ? "\"\r\n" : ", ");
 	}
 
-
-
 	// RX_PW_P0
 	nrf24l01_read_reg(NRF24L01_RX_PW_P0_REG_ADDR, &reg_temp, platform);
 	NRF24L01_DEBUGGING_PRINTF("[0x%02X] RX_PW_P0=%u\r\n", NRF24L01_RX_PW_P0_REG_ADDR, reg_temp);
@@ -967,4 +1107,4 @@ void nrf24l01_print_fifo_status_register(nrf24l01_platform_t* platform){
     );
 }
 
-#endif 
+#endif // NRF24L01_ENABLE_PRINT_CONFIG

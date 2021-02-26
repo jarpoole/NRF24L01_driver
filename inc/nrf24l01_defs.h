@@ -36,6 +36,7 @@
  * 
  * 	AR  - Automatic Retransmit 
  * 
+ *  DTA - Dynamic Transmit ACK
  */		 
 
 
@@ -175,17 +176,23 @@
 #define NRF24L01_MASK_ARC_CNT             (uint8_t)0x0F  ///< Mask for ARC_CNT[3:0] bits in OBSERVE_TX register
 #define NRF24L01_MASK_ADDR_WIDTH          (uint8_t)0x03  ///< Mask for AW[1:0] bits in SETUP_AW register
 
+#define NRF24L01_MASK_DYNPD               (uint8_t)0x3F  ///< Mask for DPL_Px[5:0] bits in DYNPD feature register 
+#define NRF24L01_MASK_EN_AA               (uint8_t)0x3F  ///< Mask for ENAA_Px[5:0] bits in EN_AA register 
+#define NRF24L01_MASK_EN_RX_ADDR          (uint8_t)0x3F  ///< Mask for ERX_Px[5:0] bits in EN_RXADDR register 
+
+
 // Timing requirements
-#define NRF24L01_CE_TX_MINIMUM_PULSE_US 10   // In microseconds
-#define NRF24L01_POWER_UP_US            5000 // In microseconds
+#define NRF24L01_CE_TX_MINIMUM_PULSE_US   10   // In microseconds
+#define NRF24L01_POWER_UP_US              5000 // In microseconds
 
 // Sizes
-#define NRF24L01_TX_FIFO_WIDTH          32  ///< Each TX FIFO entry is 32 bytes wide
-#define NRF24L01_TX_FIFO_DEPTH          3   ///< The TX FIFO is 3 entries deep
-#define NRF24L01_RX_FIFO_WIDTH          32  ///< Each TX FIFO entry is 32 bytes wide
-#define NRF24L01_RX_FIFO_DEPTH          3   ///< The RX FIFO is 3 entries deep
+#define NRF24L01_TX_FIFO_WIDTH            32  ///< Each TX FIFO entry is 32 bytes wide
+#define NRF24L01_TX_FIFO_DEPTH            3   ///< The TX FIFO is 3 entries deep
+#define NRF24L01_RX_FIFO_WIDTH            32  ///< Each TX FIFO entry is 32 bytes wide
+#define NRF24L01_RX_FIFO_DEPTH            3   ///< The RX FIFO is 3 entries deep
 
-
+// Magic numbers
+#define NRF24L01_MAGIC_NUMBER_ACTIVATE    (uint8_t)0x73
 
 // Retransmit delay
 typedef enum {
@@ -236,39 +243,11 @@ typedef enum {
 	NRF24L01_CRC_2BYTE = (uint8_t)0x0c,  ///< 2-byte CRC
 } nrf24l01_crc_scheme_t;
 
-// nRF24L01 power control
-typedef enum {
-	NRF24L01_PWR_DOWN = (uint8_t)0x00,  ///< Power down
-	NRF24L01_PWR_UP   = (uint8_t)0x02,  ///< Power up
-} nrf24l01_power_mode_t;
-
 // RF channel number
 typedef uint8_t nrf24l01_rf_channel_t;
 
 // pipe address width
 typedef uint8_t nrf24l01_address_width_t;
-
-// Transceiver mode
-typedef enum {
-	NRF24L01_MODE_RX = (uint8_t)0x01,  ///< PRX
-	NRF24L01_MODE_TX = (uint8_t)0x00,  ///< PTX
-} nrf24l01_operational_mode_t;
-
-typedef enum {
-	NRF24L01_DPL_OFF = (uint8_t)0x00, ///< PTX
-	NRF24L01_DPL_ON  = (uint8_t)0x01, ///< PRX
-} nrf24l01_dpl_mode_t;
-
-typedef enum {
-	NRF24L01_PIPE_DISABLED,
-	NRF24L01_PIPE_ENABLED,
-} nrf24l01_pipe_mode_t;
-
-// State of auto acknowledgment for specified pipe
-typedef enum {
-	NRF24L01_AA_OFF = (uint8_t)0x00,
-	NRF24L01_AA_ON  = (uint8_t)0x01,
-} nrf24l01_pipe_aa_mode_t;
 
 // Status of the RX/TX FIFOs
 typedef enum {
@@ -305,10 +284,58 @@ typedef enum {
 	NRF24L01_PIPE5        = (uint8_t)0x05,  ///< pipe5
 	NRF24L01_PIPETX       = (uint8_t)0x06,  ///< TX address (not a pipe in fact)
 	NRF24L01_PIPE_UNKNOWN = (uint8_t)0x07,  ///< pipe unknown (usually signifies rx pipe is empty)
+	NRF24L01_ALL_RX_PIPES,                  ///< Used for configuring all RX pipes at the same time
 } nrf24l01_pipe_t;
 
-#define NRF24L01_IS_RX_PIPE(pipe)    ( (pipe) >= NRF24L01_PIPE0 && (pipe) <= NRF24L01_PIPE5 )
+#define NRF24L01_IS_RX_PIPE(pipe)    ( ((pipe) >= NRF24L01_PIPE0 && (pipe) <= NRF24L01_PIPE5) || ((pipe) == NRF24L01_ALL_RX_PIPES) )
 #define NRF24L01_IS_TX_PIPE(pipe)    ( (pipe) == NRF24L01_PIPETX )
+
+
+
+// nRF24L01 power control
+typedef enum {
+	NRF24L01_PWR_DOWN = (uint8_t)0x00,  ///< Power down
+	NRF24L01_PWR_UP   = (uint8_t)0x02,  ///< Power up
+} nrf24l01_power_mode_t;
+
+// Transceiver mode
+typedef enum {
+	NRF24L01_MODE_RX = (uint8_t)0x01,  ///< PRX
+	NRF24L01_MODE_TX = (uint8_t)0x00,  ///< PTX
+} nrf24l01_operational_mode_t;
+
+// Describes if pipe is active or not
+typedef enum {
+	NRF24L01_PIPE_DISABLED,
+	NRF24L01_PIPE_ENABLED,
+} nrf24l01_pipe_mode_t;
+
+// State of auto acknowledgment for specified pipe
+typedef enum {
+	NRF24L01_AA_OFF = (uint8_t)0x00,
+	NRF24L01_AA_ON  = (uint8_t)0x01,
+} nrf24l01_pipe_aa_mode_t;
+
+// State of the NRF24L01 special features
+typedef enum {
+	NRF24L01_FEATURES_OFF = (uint8_t)0x00,
+	NRF24L01_FEATURES_ON  = (uint8_t)0x01,
+} nrf24l01_feature_mode_t;
+
+typedef enum {
+	NRF24L01_DPL_OFF = (uint8_t)0x00,
+	NRF24L01_DPL_ON  = (uint8_t)0x01,
+} nrf24l01_dpl_mode_t;
+
+typedef enum {
+	NRF24L01_DTA_OFF = (uint8_t)0x00, 
+	NRF24L01_DTA_ON  = (uint8_t)0x01,
+} nrf24l01_dta_mode_t;
+
+typedef enum {
+	NRF24L01_ACK_PAYLOAD_OFF = (uint8_t)0x00, 
+	NRF24L01_ACK_PAYLOAD_ON  = (uint8_t)0x01,
+} ack_payload_mode_t;
 
 
 /*!
