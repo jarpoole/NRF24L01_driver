@@ -28,7 +28,7 @@
 #define NRF24L01_TEST_ADDR "nRF24"
 
 // Address lookup table for the RX_PW_P# registers
-static const uint8_t NRF24L01_RX_PW_PIPE[6] = {
+static const uint8_t NRF24L01_RX_PW_PIPE[] = {
 	NRF24L01_RX_PW_P0_REG_ADDR,
 	NRF24L01_RX_PW_P1_REG_ADDR,
 	NRF24L01_RX_PW_P2_REG_ADDR,
@@ -38,7 +38,7 @@ static const uint8_t NRF24L01_RX_PW_PIPE[6] = {
 };
 
 // Address lookup table for the address registers
-static const uint8_t NRF24L01_ADDR_REGS[7] = {
+static const uint8_t NRF24L01_ADDR_REGS[] = {
 	NRF24L01_RX_ADDR_P0_REG_ADDR,
 	NRF24L01_RX_ADDR_P1_REG_ADDR,
 	NRF24L01_RX_ADDR_P2_REG_ADDR,
@@ -137,7 +137,7 @@ static nrf24l01_err_t nrf24l01_multi_write_reg(uint8_t reg_addr, uint8_t* data, 
 nrf24l01_err_t nrf24l01_init(nrf24l01_platform_t* platform) {
 	
 	// Initialize the platform SPI controller
-	NRF24L01_FPTR_RTN_T init_err = platform->spi_init(platform->user_ptr);
+	NRF24L01_FPTR_RTN_T init_err = platform->platform_init(platform->user_ptr);
 	if(init_err != 0){
 		return NRF24L01_ERR_UNKNOWN;
 	}
@@ -176,7 +176,7 @@ nrf24l01_err_t nrf24l01_init(nrf24l01_platform_t* platform) {
 nrf24l01_err_t nrf24l01_deinit(nrf24l01_platform_t* platform){
 
 	// deinitialize the platform SPI controller
-	NRF24L01_FPTR_RTN_T deinit_err = platform->spi_deinit(platform->user_ptr);
+	NRF24L01_FPTR_RTN_T deinit_err = platform->platform_deinit(platform->user_ptr);
 	if(deinit_err != 0){
 		return NRF24L01_ERR_UNKNOWN;
 	}
@@ -706,14 +706,10 @@ static nrf24l01_err_t nrf24l01_get_rx_dpl(uint8_t* width, nrf24l01_platform_t* p
 
 nrf24l01_err_t nrf24l01_read_payload(nrf24l01_pipe_t* pipe, uint8_t* rx_data, uint8_t* len, bool dpl, nrf24l01_platform_t* platform) {
 
-	if(len == NULL){
-		return NRF24L01_ERR_INVALID_ARG;
-	}
-
 	// Extract a payload pipe number from the STATUS register
-	nrf24l01_get_rx_pipe(pipe, platform);
-	if(*pipe == NRF24L01_PIPE_UNKNOWN){
-		*len = 0;
+	nrf24l01_pipe_t payload_pipe;
+	nrf24l01_get_rx_pipe(&payload_pipe, platform);
+	if(payload_pipe == NRF24L01_PIPE_UNKNOWN){
 		return NRF24L01_ERR_INVALID_STATE;
 	}
 
@@ -728,14 +724,23 @@ nrf24l01_err_t nrf24l01_read_payload(nrf24l01_pipe_t* pipe, uint8_t* rx_data, ui
 			return NRF24L01_ERR_UNKNOWN;
 		}
 	}else {
-		nrf24l01_read_reg(NRF24L01_RX_PW_PIPE[*pipe], &payload_len, platform);
+		nrf24l01_read_reg(NRF24L01_RX_PW_PIPE[payload_pipe], &payload_len, platform);
 	}
 	
+	// Return data
 	if(rx_data != NULL){
+		//If buffer size was passed in, check that it is large enough before reading
+		if(len != NULL && *len < payload_len){
+			return NRF24L01_ERR_INVALID_ARG;
+		}
 		nrf24l01_multi_read_reg(NRF24L01_CMD_R_RX_PAYLOAD, rx_data, payload_len, platform);
 	}
-	*len = payload_len;
-
+	if(len != NULL){
+		*len = payload_len;
+	}
+	if(pipe != NULL){
+		*pipe = payload_pipe;
+	}
 	return NRF24L01_OK;
 }
 
@@ -1138,3 +1143,74 @@ void nrf24l01_print_fifo_status_register(nrf24l01_platform_t* platform){
 }
 
 #endif // NRF24L01_ENABLE_PRINT_CONFIG
+
+
+
+
+
+/*!
+ * @brief Check for interrupt function pointer which should be called often by the user
+ * to ensure that radio events are triggered
+ *
+ * @param[in] delay      : Number of microseconds to delay
+ *
+ * @retval 0        -> Interrupt triggered
+ * @retval Non zero -> No interrupt
+ */
+
+void nrf24l01_loop(nrf24l01_platform_t* platform){
+	NRF24L01_FPTR_RTN_T rtn = platform->check_for_interrupt(platform->user_ptr);
+
+	if(rtn == 0){
+		//Process interrupt and call all registered callbacks
+
+		uint8_t irq_flags;
+		nrf24l01_get_irq_flags(&irq_flags, platform);
+		if( (irq_flags | NRF24L01_MASK_STATUS_RX_DR) != 0 ){
+
+			if(platform->callbacks.rx_dr_callback != NULL){
+				platform->callbacks.rx_dr_callback(32, 0, platform->callbacks.rx_dr_callback_user_ptr, platform);
+			}
+
+		}else if( (irq_flags | NRF24L01_MASK_STATUS_TX_DS) != 0 ){
+
+			if(platform->callbacks.tx_ds_callback != NULL){
+				platform->callbacks.tx_ds_callback(0, platform->callbacks.tx_ds_callback_user_ptr, platform);
+			}
+
+		}else if( (irq_flags | NRF24L01_MASK_STATUS_MAX_RT) != 0 ){
+
+			if(platform->callbacks.max_rt_callback != NULL){
+				platform->callbacks.max_rt_callback(platform->callbacks.max_rt_callback_user_ptr, platform);
+			}
+
+		}
+
+		return;
+	}else{
+		return;
+	}
+}
+
+
+
+nrf24l01_err_t nrf24l01_register_rx_dr_callback(nrf24l01_rx_dr_callback_fptr_t callback, void* user_ptr, nrf24l01_platform_t* platform){
+	platform->callbacks.rx_dr_callback = callback;
+	platform->callbacks.rx_dr_callback_user_ptr = user_ptr;
+
+	return NRF24L01_OK;
+}
+
+nrf24l01_err_t nrf24l01_register_tx_ds_callback(nrf24l01_tx_ds_callback_fptr_t callback, void* user_ptr, nrf24l01_platform_t* platform){
+	platform->callbacks.tx_ds_callback = callback;
+	platform->callbacks.tx_ds_callback_user_ptr = user_ptr;
+
+	return NRF24L01_OK;
+}
+
+nrf24l01_err_t nrf24l01_register_max_rt_callback(nrf24l01_max_rt_callback_fptr_t callback, void* user_ptr, nrf24l01_platform_t* platform){
+	platform->callbacks.max_rt_callback = callback;
+	platform->callbacks.max_rt_callback_user_ptr = user_ptr;
+
+	return NRF24L01_OK;
+}

@@ -24,6 +24,9 @@ nrf24l01_err_t nrf24l01_check_connectivity(nrf24l01_platform_t*);
 nrf24l01_err_t nrf24l01_get_irq_flags(uint8_t*, nrf24l01_platform_t*);
 nrf24l01_err_t nrf24l01_set_irq_mask(nrf24l01_interrupt_mask_t, nrf24l01_platform_t*);
 nrf24l01_err_t nrf24l01_clear_irq_flags(nrf24l01_platform_t*);
+nrf24l01_err_t nrf24l01_register_rx_dr_callback(nrf24l01_rx_dr_callback_fptr_t, void*, nrf24l01_platform_t*);
+nrf24l01_err_t nrf24l01_register_tx_ds_callback(nrf24l01_tx_ds_callback_fptr_t, void*, nrf24l01_platform_t*);
+nrf24l01_err_t nrf24l01_register_max_rt_callback(nrf24l01_max_rt_callback_fptr_t, void*, nrf24l01_platform_t*);
 
 // RF + protocol
 nrf24l01_err_t nrf24l01_set_tx_power(nrf24l01_tx_power_t, nrf24l01_platform_t*);
@@ -83,6 +86,7 @@ nrf24l01_err_t nrf24l01_set_pipe_dpl_mode(nrf24l01_pipe_t, nrf24l01_dpl_mode_t, 
 /****************************************************************************************************************/
 
 
+void nrf24l01_loop(nrf24l01_platform_t*);
 
 nrf24l01_err_t nrf24l01_set_address(nrf24l01_pipe_t, const uint8_t*, uint8_t, nrf24l01_platform_t*);
 

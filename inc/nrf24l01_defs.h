@@ -84,21 +84,34 @@
 	#endif
 #endif
 	
-// COMMAND: NRF24L01 instruction definitions
-#define NRF24L01_CMD_R_REGISTER           (uint8_t)0x00  ///< Register read
-#define NRF24L01_CMD_W_REGISTER           (uint8_t)0x20  ///< Register write
-#define NRF24L01_CMD_ACTIVATE             (uint8_t)0x50  ///< (De)Activates R_RX_PL_WID, W_ACK_PAYLOAD, W_TX_PAYLOAD_NOACK features
-#define NRF24L01_CMD_R_RX_PL_WID	      (uint8_t)0x60  ///< Read RX-payload width for the top R_RX_PAYLOAD in the RX FIFO.
+	
+/** @addtogroup commands
+ * 	@brief NRF24L01 general command definitions
+ * 	Format is <b>NRF24L01_CMD_x<b> where x is the name assigned to the command by the datasheet
+ * 	@{
+ */
+#define NRF24L01_CMD_R_REGISTER           (uint8_t)0x00  ///< Register read 0b000XXXXX where XXXXX = 5 bit Register Map Address
+#define NRF24L01_CMD_W_REGISTER           (uint8_t)0x20  ///< Register write 0b001XXXXX where XXXXX = 5 bit Register Map Address
 #define NRF24L01_CMD_R_RX_PAYLOAD         (uint8_t)0x61  ///< Read RX payload
 #define NRF24L01_CMD_W_TX_PAYLOAD         (uint8_t)0xA0  ///< Write TX payload
-#define NRF24L01_CMD_W_ACK_PAYLOAD        (uint8_t)0xA8  ///< Write ACK payload
-#define NRF24L01_CMD_W_TX_PAYLOAD_NOACK   (uint8_t)0xB0  ///< Write TX payload and disable AUTOACK
 #define NRF24L01_CMD_FLUSH_TX             (uint8_t)0xE1  ///< Flush TX FIFO
 #define NRF24L01_CMD_FLUSH_RX             (uint8_t)0xE2  ///< Flush RX FIFO
 #define NRF24L01_CMD_REUSE_TX_PL          (uint8_t)0xE3  ///< Reuse TX payload
-#define NRF24L01_CMD_LOCK_UNLOCK          (uint8_t)0x50  ///< Lock/unlock exclusive features
-// No operation (used for reading status register for example)
-#define NRF24L01_CMD_NOP                  (uint8_t)0xFF
+#define NRF24L01_CMD_ACTIVATE             (uint8_t)0x50  ///< (De)Activates R_RX_PL_WID, W_ACK_PAYLOAD, W_TX_PAYLOAD_NOACK features
+#define NRF24L01_CMD_NOP                  (uint8_t)0xFF  ///< No operation (used for reading status register for example)
+// @}
+
+/** @addtogroup commands
+ * 	@brief NRF24L01 special feature command definitions
+ * 	Format is <b>NRF24L01_FEATURE_CMD_x<b> where x is the name assigned to the command by the datasheet
+ *  @{
+ */
+#define NRF24L01_FEATURE_CMD_R_RX_PL_WID	     (uint8_t)0x60  ///< Read RX-payload width for the top R_RX_PAYLOAD in the RX FIFO.
+#define NRF24L01_FEATURE_CMD_W_ACK_PAYLOAD       (uint8_t)0xA8  ///< Write ACK payload 0b10101XXX where XXX = 3 bit pipe identifier
+#define NRF24L01_FEATURE_CMD_W_TX_PAYLOAD_NOACK  (uint8_t)0xB0  ///< Write TX payload and disable AUTOACK
+// @}
+
+
 
 // ADDRESS: NRF24L01 register address definitions
 #define NRF24L01_CONFIG_REG_ADDR          (uint8_t)0x00  ///< Configuration register address
@@ -193,6 +206,10 @@
 
 // Magic numbers
 #define NRF24L01_MAGIC_NUMBER_ACTIVATE    (uint8_t)0x73
+
+
+// Must forward declare nrf24l01_platform_t struct as it will be used throughout the following definitions
+typedef struct nrf24l01_platform_t nrf24l01_platform_t;
 
 // Retransmit delay
 typedef enum {
@@ -350,15 +367,17 @@ typedef enum {
 
 
 /*!
- * @brief SPI Bus initialization function pointer which should be used to configure the
+ * @brief Hardware initialization function pointer which should be used to configure the
  * hardware before communication is attempted
+ * 
+ * IRQ pin is active-low. Interrupt pin should be triggered on negative-edge. Pull-up resistor needed
  *
  * @param[in] user_ptr      : Pointer to user-defined hardware configuration struct
  *
  * @retval 0        -> Success
  * @retval Non zero -> Fail
  */
-typedef NRF24L01_FPTR_RTN_T (*nrf24l01_spi_init_fptr_t)(void* user_ptr);
+typedef NRF24L01_FPTR_RTN_T (*nrf24l01_platform_init_fptr_t)(void* user_ptr);
 
 
 /*!
@@ -370,7 +389,7 @@ typedef NRF24L01_FPTR_RTN_T (*nrf24l01_spi_init_fptr_t)(void* user_ptr);
  * @retval 0        -> Success
  * @retval Non zero -> Fail
  */
-typedef NRF24L01_FPTR_RTN_T (*nrf24l01_spi_deinit_fptr_t)(void* user_ptr);
+typedef NRF24L01_FPTR_RTN_T (*nrf24l01_platform_deinit_fptr_t)(void* user_ptr);
 
 
 /*!
@@ -397,15 +416,10 @@ typedef NRF24L01_FPTR_RTN_T (*nrf24l01_spi_exchange_fptr_t)(uint8_t command, uin
 
 
 /*!
- * @brief SPI Bus initialization function pointer which should be mapped to
- * the platform specific write functions of the user
+ * @brief Set the state of Chip enable GPIO function pointer
  *
- * @param[in] reg_addr      : Register address to which the data is written.
- * @param[in] reg_data      : Pointer to data buffer in which data to be written
- *                            is stored.
- * @param[in] len           : Number of bytes of data to be written.
- * @param[in, out] intf_ptr : Void pointer that can enable the linking of descriptors
- *                            for interface related call backs
+ * @param[in] state         : Desired state of the chip enable GPIO
+ * @param[in] user_ptr      : Pointer to user-defined hardware configuration struct
  *
  * @retval 0        -> Success
  * @retval Non zero -> Fail
@@ -425,14 +439,56 @@ typedef NRF24L01_FPTR_RTN_T (*nrf24l01_gpio_chip_enable_fptr_t)(bool state, void
 typedef NRF24L01_FPTR_RTN_T (*nrf24l01_delay_us_fptr_t)(uint32_t delay);
 
 
+/*!
+ * @brief Check for interrupt function pointer
+ *
+ * @param[in] delay      : Number of microseconds to delay
+ *
+ * @retval 0        -> Interrupt triggered and waiting to be processed
+ * @retval Non zero -> No interrupt
+ */
+typedef NRF24L01_FPTR_RTN_T (*nrf24l01_check_for_interrupt_fptr_t)(void* user_ptr);
 
-typedef struct{
-	nrf24l01_delay_us_fptr_t         delay_us;          ///< Pointer to a platform specific microsecond delay function
-	nrf24l01_gpio_chip_enable_fptr_t gpio_chip_enable;  ///< Pointer to the platform specific GPIO control function
-	nrf24l01_spi_init_fptr_t         spi_init;          ///< Pointer to the platform specific hardware initialization function
-	nrf24l01_spi_deinit_fptr_t       spi_deinit;        ///< Pointer to the platform specific hardware deinitialization function
-	nrf24l01_spi_exchange_fptr_t     spi_exchange;      ///< Pointer to the platform specific SPI full-duplex transfer function
-	void*                            user_ptr;          ///< (optional) Pointer to a user-defined hardware configuration struct
-} nrf24l01_platform_t;
+
+
+
+
+/*!
+ * @brief User supplied callback function pointer
+ *
+ * @param[in] delay      : Number of microseconds to delay
+ * 
+ */
+typedef void (*nrf24l01_rx_dr_callback_fptr_t)(uint8_t message_len, nrf24l01_pipe_t pipe, void* user_ptr, nrf24l01_platform_t* platform);
+
+
+typedef void (*nrf24l01_tx_ds_callback_fptr_t)(nrf24l01_pipe_t pipe, void* user_ptr, nrf24l01_platform_t* platform);
+
+
+typedef void (*nrf24l01_max_rt_callback_fptr_t)(void* user_ptr, nrf24l01_platform_t* platform);
+
+
+
+
+struct nrf24l01_platform_t{
+	nrf24l01_delay_us_fptr_t            delay_us;            ///< Pointer to a platform specific microsecond delay function
+	nrf24l01_gpio_chip_enable_fptr_t    gpio_chip_enable;    ///< Pointer to the platform specific GPIO control function
+	nrf24l01_platform_init_fptr_t       platform_init;       ///< Pointer to the platform specific hardware initialization function
+	nrf24l01_platform_deinit_fptr_t     platform_deinit;     ///< Pointer to the platform specific hardware deinitialization function
+	nrf24l01_spi_exchange_fptr_t        spi_exchange;        ///< Pointer to the platform specific SPI full-duplex transfer function
+	nrf24l01_check_for_interrupt_fptr_t check_for_interrupt; ///< Pointer to the platform specific
+	struct {
+		nrf24l01_rx_dr_callback_fptr_t  rx_dr_callback;
+		void*                           rx_dr_callback_user_ptr;
+		nrf24l01_tx_ds_callback_fptr_t  tx_ds_callback;
+		void*                           tx_ds_callback_user_ptr;
+		nrf24l01_max_rt_callback_fptr_t max_rt_callback;
+		void*                           max_rt_callback_user_ptr;
+	} callbacks;
+	void*                               user_ptr;            ///< (optional) Pointer to a user-defined hardware configuration struct
+};
 
 #endif
+
+
+
