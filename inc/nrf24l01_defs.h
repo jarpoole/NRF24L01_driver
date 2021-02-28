@@ -88,8 +88,8 @@
 /** @name general commands
  * 	@brief NRF24L01 general command definitions
  * 	Format is <b>NRF24L01_CMD_x</b> where x is the name assigned to the command by the datasheet
- * 	@{
  */
+/// @{
 #define NRF24L01_CMD_R_REGISTER           (uint8_t)0x00  ///< Register read 0b000XXXXX where XXXXX = 5 bit Register Map Address
 #define NRF24L01_CMD_W_REGISTER           (uint8_t)0x20  ///< Register write 0b001XXXXX where XXXXX = 5 bit Register Map Address
 #define NRF24L01_CMD_R_RX_PAYLOAD         (uint8_t)0x61  ///< Read RX payload
@@ -103,9 +103,9 @@
 
 /** @name feature commands
  * 	@brief NRF24L01 special feature command definitions
- * 	Format is <b>NRF24L01_FEATURE_CMD_x<b> where x is the name assigned to the command by the datasheet
- *  @{
+ * 	Format is <b>NRF24L01_FEATURE_CMD_x</b> where x is the name assigned to the command by the datasheet
  */
+/// @{
 #define NRF24L01_FEATURE_CMD_R_RX_PL_WID	     (uint8_t)0x60  ///< Read RX-payload width for the top R_RX_PAYLOAD in the RX FIFO.
 #define NRF24L01_FEATURE_CMD_W_ACK_PAYLOAD       (uint8_t)0xA8  ///< Write ACK payload 0b10101XXX where XXX = 3 bit pipe identifier
 #define NRF24L01_FEATURE_CMD_W_TX_PAYLOAD_NOACK  (uint8_t)0xB0  ///< Write TX payload and disable AUTOACK
