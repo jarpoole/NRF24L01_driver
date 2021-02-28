@@ -85,23 +85,23 @@
 #endif
 	
 	
-/** @name general commands
+/** @name General Commands
  * 	@brief NRF24L01 general command definitions
  * 	Format is <b>NRF24L01_CMD_x</b> where x is the name assigned to the command by the datasheet
  */
 /// @{
-#define NRF24L01_CMD_R_REGISTER           (uint8_t)0x00  ///< Register read 0b000XXXXX where XXXXX = 5 bit Register Map Address
-#define NRF24L01_CMD_W_REGISTER           (uint8_t)0x20  ///< Register write 0b001XXXXX where XXXXX = 5 bit Register Map Address
-#define NRF24L01_CMD_R_RX_PAYLOAD         (uint8_t)0x61  ///< Read RX payload
-#define NRF24L01_CMD_W_TX_PAYLOAD         (uint8_t)0xA0  ///< Write TX payload
-#define NRF24L01_CMD_FLUSH_TX             (uint8_t)0xE1  ///< Flush TX FIFO
-#define NRF24L01_CMD_FLUSH_RX             (uint8_t)0xE2  ///< Flush RX FIFO
-#define NRF24L01_CMD_REUSE_TX_PL          (uint8_t)0xE3  ///< Reuse TX payload
-#define NRF24L01_CMD_ACTIVATE             (uint8_t)0x50  ///< (De)Activates R_RX_PL_WID, W_ACK_PAYLOAD, W_TX_PAYLOAD_NOACK features
-#define NRF24L01_CMD_NOP                  (uint8_t)0xFF  ///< No operation (used for reading status register for example)
+#define NRF24L01_CMD_R_REGISTER    (uint8_t)0x00  ///< Register read 0b000XXXXX where XXXXX = 5 bit Register Map Address
+#define NRF24L01_CMD_W_REGISTER    (uint8_t)0x20  ///< Register write 0b001XXXXX where XXXXX = 5 bit Register Map Address
+#define NRF24L01_CMD_R_RX_PAYLOAD  (uint8_t)0x61  ///< Read RX payload
+#define NRF24L01_CMD_W_TX_PAYLOAD  (uint8_t)0xA0  ///< Write TX payload
+#define NRF24L01_CMD_FLUSH_TX      (uint8_t)0xE1  ///< Flush TX FIFO
+#define NRF24L01_CMD_FLUSH_RX      (uint8_t)0xE2  ///< Flush RX FIFO
+#define NRF24L01_CMD_REUSE_TX_PL   (uint8_t)0xE3  ///< Reuse TX payload
+#define NRF24L01_CMD_ACTIVATE      (uint8_t)0x50  ///< (De)Activates R_RX_PL_WID, W_ACK_PAYLOAD, W_TX_PAYLOAD_NOACK features
+#define NRF24L01_CMD_NOP           (uint8_t)0xFF  ///< No operation (used for reading status register for example)
 /// @}
 
-/** @name feature commands
+/** @name Feature Commands
  * 	@brief NRF24L01 special feature command definitions
  * 	Format is <b>NRF24L01_FEATURE_CMD_x</b> where x is the name assigned to the command by the datasheet
  */
@@ -111,37 +111,46 @@
 #define NRF24L01_FEATURE_CMD_W_TX_PAYLOAD_NOACK  (uint8_t)0xB0  ///< Write TX payload and disable AUTOACK
 /// @}
 
+/** @name General Register Addresses
+ * 	@brief NRF24L01 register address definitions
+ * 	Format is <b>NRF24L01_REG_ADDR_x</b> where x is the name assigned to the register by the datasheet
+ */
+/// @{
+#define NRF24L01_REG_ADDR_CONFIG       (uint8_t)0x00  ///< Configuration register address
+#define NRF24L01_REG_ADDR_EN_AA        (uint8_t)0x01  ///< Enable "Auto acknowledgment" control register address
+#define NRF24L01_REG_ADDR_EN_RXADDR    (uint8_t)0x02  ///< Enable RX addresses register address
+#define NRF24L01_REG_ADDR_SETUP_AW     (uint8_t)0x03  ///< Setup of address widths register address
+#define NRF24L01_REG_ADDR_SETUP_RETR   (uint8_t)0x04  ///< Setup of automatic retransmit register address
+#define NRF24L01_REG_ADDR_RF_CH        (uint8_t)0x05  ///< RF channel register address
+#define NRF24L01_REG_ADDR_RF_SETUP     (uint8_t)0x06  ///< RF setup register register address
+#define NRF24L01_REG_ADDR_STATUS       (uint8_t)0x07  ///< Status register address
+#define NRF24L01_REG_ADDR_OBSERVE_TX   (uint8_t)0x08  ///< Transmit observe register address
+#define NRF24L01_REG_ADDR_CD           (uint8_t)0x09  ///< Received power detector register address
+#define NRF24L01_REG_ADDR_RX_ADDR_P0   (uint8_t)0x0A  ///< Receive address data pipe 0 register address
+#define NRF24L01_REG_ADDR_RX_ADDR_P1   (uint8_t)0x0B  ///< Receive address data pipe 1 register address
+#define NRF24L01_REG_ADDR_RX_ADDR_P2   (uint8_t)0x0C  ///< Receive address data pipe 2 register address
+#define NRF24L01_REG_ADDR_RX_ADDR_P3   (uint8_t)0x0D  ///< Receive address data pipe 3 register address
+#define NRF24L01_REG_ADDR_RX_ADDR_P4   (uint8_t)0x0E  ///< Receive address data pipe 4 register address
+#define NRF24L01_REG_ADDR_RX_ADDR_P5   (uint8_t)0x0F  ///< Receive address data pipe 5 register address
+#define NRF24L01_REG_ADDR_TX_ADDR      (uint8_t)0x10  ///< Transmit address register address
+#define NRF24L01_REG_ADDR_RX_PW_P0     (uint8_t)0x11  ///< Number of bytes in RX payload in data pipe 0 register address
+#define NRF24L01_REG_ADDR_RX_PW_P1     (uint8_t)0x12  ///< Number of bytes in RX payload in data pipe 1 register address
+#define NRF24L01_REG_ADDR_RX_PW_P2     (uint8_t)0x13  ///< Number of bytes in RX payload in data pipe 2 register address
+#define NRF24L01_REG_ADDR_RX_PW_P3     (uint8_t)0x14  ///< Number of bytes in RX payload in data pipe 3 register address
+#define NRF24L01_REG_ADDR_RX_PW_P4     (uint8_t)0x15  ///< Number of bytes in RX payload in data pipe 4 register address
+#define NRF24L01_REG_ADDR_RX_PW_P5     (uint8_t)0x16  ///< Number of bytes in RX payload in data pipe 5 register address
+#define NRF24L01_REG_ADDR_FIFO_STATUS  (uint8_t)0x17  ///< FIFO status register address
+/// @}
 
+/** @name Special Feature Register Addresses
+ * 	@brief NRF24L01 special feature register address definitions
+ * 	Format is <b>NRF24L01_FEATURE_REG_ADDR_x</b> where x is the name assigned to the special feature register by the datasheet
+ */
+/// @{
+#define NRF24L01_FEATURE_REG_ADDR_DYNPD    (uint8_t)0x1C  ///< Enable dynamic payload length register address
+#define NRF24L01_FEATURE_REG_ADDR_FEATURE  (uint8_t)0x1D  ///< Feature register address
+/// @}
 
-// ADDRESS: NRF24L01 register address definitions
-#define NRF24L01_CONFIG_REG_ADDR          (uint8_t)0x00  ///< Configuration register address
-#define NRF24L01_EN_AA_REG_ADDR           (uint8_t)0x01  ///< Enable "Auto acknowledgment" control register address
-#define NRF24L01_EN_RX_ADDR_REG_ADDR      (uint8_t)0x02  ///< Enable RX addresses register address
-#define NRF24L01_SETUP_AW_REG_ADDR        (uint8_t)0x03  ///< Setup of address widths register address
-#define NRF24L01_SETUP_RETR_REG_ADDR      (uint8_t)0x04  ///< Setup of automatic retransmit register address
-#define NRF24L01_RF_CH_REG_ADDR           (uint8_t)0x05  ///< RF channel register address
-#define NRF24L01_RF_SETUP_REG_ADDR        (uint8_t)0x06  ///< RF setup register register address
-#define NRF24L01_STATUS_REG_ADDR          (uint8_t)0x07  ///< Status register address
-#define NRF24L01_OBSERVE_TX_REG_ADDR      (uint8_t)0x08  ///< Transmit observe register address
-#define NRF24L01_RPD_REG_ADDR             (uint8_t)0x09  ///< Received power detector register address
-#define NRF24L01_RX_ADDR_P0_REG_ADDR      (uint8_t)0x0A  ///< Receive address data pipe 0 register address
-#define NRF24L01_RX_ADDR_P1_REG_ADDR      (uint8_t)0x0B  ///< Receive address data pipe 1 register address
-#define NRF24L01_RX_ADDR_P2_REG_ADDR      (uint8_t)0x0C  ///< Receive address data pipe 2 register address
-#define NRF24L01_RX_ADDR_P3_REG_ADDR      (uint8_t)0x0D  ///< Receive address data pipe 3 register address
-#define NRF24L01_RX_ADDR_P4_REG_ADDR      (uint8_t)0x0E  ///< Receive address data pipe 4 register address
-#define NRF24L01_RX_ADDR_P5_REG_ADDR      (uint8_t)0x0F  ///< Receive address data pipe 5 register address
-#define NRF24L01_TX_ADDR_REG_ADDR         (uint8_t)0x10  ///< Transmit address register address
-#define NRF24L01_RX_PW_P0_REG_ADDR        (uint8_t)0x11  ///< Number of bytes in RX payload in data pipe 0 register address
-#define NRF24L01_RX_PW_P1_REG_ADDR        (uint8_t)0x12  ///< Number of bytes in RX payload in data pipe 1 register address
-#define NRF24L01_RX_PW_P2_REG_ADDR        (uint8_t)0x13  ///< Number of bytes in RX payload in data pipe 2 register address
-#define NRF24L01_RX_PW_P3_REG_ADDR        (uint8_t)0x14  ///< Number of bytes in RX payload in data pipe 3 register address
-#define NRF24L01_RX_PW_P4_REG_ADDR        (uint8_t)0x15  ///< Number of bytes in RX payload in data pipe 4 register address
-#define NRF24L01_RX_PW_P5_REG_ADDR        (uint8_t)0x16  ///< Number of bytes in RX payload in data pipe 5 register address
-#define NRF24L01_FIFO_STATUS_REG_ADDR     (uint8_t)0x17  ///< FIFO status register address
-#define NRF24L01_DYNPD_REG_ADDR           (uint8_t)0x1C  ///< Enable dynamic payload length register address
-#define NRF24L01_FEATURE_REG_ADDR         (uint8_t)0x1D  ///< Feature register address
-// Special definition for use with commands that don't require an address
-#define NRF24L01_NO_REG_ADDR_REQUIRED     (uint8_t)0x00 
 
 // Register bits definitions
 #define NRF24L01_CONFIG_PRIM_RX           (uint8_t)0x01  ///< PRIM_RX bit in CONFIG register
