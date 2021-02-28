@@ -152,6 +152,12 @@ $(function() {
 <li>NRF24L01_ARD_NONE
 : <a class="el" href="nrf24l01__defs_8h.html#a6a3953f2ff4a6ee45e73583401c6d0b2ab2bcaa9077a430ab790e59b2a629d1d0">nrf24l01_defs.h</a>
 </li>
+<li>NRF24L01_CD_MASK_REG
+: <a class="el" href="nrf24l01__defs_8h.html#a1bed277a8a0f3095f24098066a045557">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_CD_REG_BIT_CD
+: <a class="el" href="nrf24l01__defs_8h.html#ab0f3db1fbf3ef0b7f9ac2d5079186118">nrf24l01_defs.h</a>
+</li>
 <li>NRF24L01_CE_TX_MINIMUM_PULSE_US
 : <a class="el" href="nrf24l01__defs_8h.html#abf29d18479a25f17627dd33091093277">nrf24l01_defs.h</a>
 </li>
@@ -193,11 +199,35 @@ $(function() {
 <li>NRF24L01_CMD_W_TX_PAYLOAD
 : <a class="el" href="nrf24l01__defs_8h.html#a39d8f4753c730f1f89a815632afc68cb">nrf24l01_defs.h</a>
 </li>
-<li>NRF24L01_CONFIG_PRIM_RX
-: <a class="el" href="nrf24l01__defs_8h.html#abb9026083a6b1f529c0be0b07037e5b3">nrf24l01_defs.h</a>
+<li>NRF24L01_CONFIG_MASK_CRC
+: <a class="el" href="nrf24l01__defs_8h.html#ad6d7c9521fa1081e2e8fe0a58174da57">nrf24l01_defs.h</a>
 </li>
-<li>NRF24L01_CONFIG_PWR_UP
-: <a class="el" href="nrf24l01__defs_8h.html#aa1bde03d527ed46ecacc12ab5eb5d1a1">nrf24l01_defs.h</a>
+<li>NRF24L01_CONFIG_MASK_INTERRUPT_MASKS
+: <a class="el" href="nrf24l01__defs_8h.html#acb6a1aa06e4ebbc4cb47b95733673b71">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_CONFIG_MASK_REG
+: <a class="el" href="nrf24l01__defs_8h.html#ad4b0e603d7d7516285f0dd714c46d30f">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_CONFIG_REG_BIT_CRCO
+: <a class="el" href="nrf24l01__defs_8h.html#a86c93150a41fc94e5c71dcb94014f6af">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_CONFIG_REG_BIT_EN_CRC
+: <a class="el" href="nrf24l01__defs_8h.html#ab47cc5e8cbc0ab4ce27d17922243c53d">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_CONFIG_REG_BIT_MASK_MAX_RT
+: <a class="el" href="nrf24l01__defs_8h.html#a5583dfd06a0bf72e08fa6d70fbf5bec2">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_CONFIG_REG_BIT_MASK_RX_DR
+: <a class="el" href="nrf24l01__defs_8h.html#af07a996a70a3bee7953b416d1a32b002">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_CONFIG_REG_BIT_MASK_TX_DS
+: <a class="el" href="nrf24l01__defs_8h.html#af4f3994a6d6ab185a8924c6abf8eaa9e">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_CONFIG_REG_BIT_PRIM_RX
+: <a class="el" href="nrf24l01__defs_8h.html#aaa8ba84687af61aa404bc4c55d8bea58">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_CONFIG_REG_BIT_PWR_UP
+: <a class="el" href="nrf24l01__defs_8h.html#aaa23d4f4f3baf923f14efaf6c4a81634">nrf24l01_defs.h</a>
 </li>
 <li>NRF24L01_CRC_1BYTE
 : <a class="el" href="nrf24l01__defs_8h.html#ae9c5f6baca22b039351da8bae1ec02b7a89a58deb038ed360bdb6d7aa224ecbd3">nrf24l01_defs.h</a>
@@ -215,8 +245,8 @@ $(function() {
 : <a class="el" href="nrf24l01__defs_8h.html#af1238bb8b104118e000aac333af1720f">nrf24l01_defs.h</a>
 </li>
 <li>nrf24l01_deinit()
-: <a class="el" href="nrf24l01_8c.html#a917a7c807d455425671f4678c8ae95b6">nrf24l01.c</a>
-, <a class="el" href="nrf24l01_8h.html#a11b69f162283c2228eabdb56c8d6fba8">nrf24l01.h</a>
+: <a class="el" href="nrf24l01_8h.html#a11b69f162283c2228eabdb56c8d6fba8">nrf24l01.h</a>
+, <a class="el" href="nrf24l01_8c.html#a917a7c807d455425671f4678c8ae95b6">nrf24l01.c</a>
 </li>
 <li>nrf24l01_delay_us_fptr_t
 : <a class="el" href="nrf24l01__defs_8h.html#a535ba1bc087e8da8f29f88960d0a64dd">nrf24l01_defs.h</a>
@@ -248,6 +278,69 @@ $(function() {
 <li>NRF24L01_DTA_ON
 : <a class="el" href="nrf24l01__defs_8h.html#ab35b7caced2022669af8c4b24b5a913aa5a72942623fc46a87a562c09514081ad">nrf24l01_defs.h</a>
 </li>
+<li>NRF24L01_DYNPD_MASK_REG
+: <a class="el" href="nrf24l01__defs_8h.html#a20ca31bba48c198e02249c3c9e44bbb6">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_DYNPD_REG_BIT_DPL_P0
+: <a class="el" href="nrf24l01__defs_8h.html#a53517492dc16ee2f186aec29b00208f1">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_DYNPD_REG_BIT_DPL_P1
+: <a class="el" href="nrf24l01__defs_8h.html#ab81a4fe1bfdb985b3d70c6177d0193ea">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_DYNPD_REG_BIT_DPL_P2
+: <a class="el" href="nrf24l01__defs_8h.html#aab81cb4636b051ee82d369429c3dfc97">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_DYNPD_REG_BIT_DPL_P3
+: <a class="el" href="nrf24l01__defs_8h.html#a5b907ad1b65bae1c84c1025741a305c0">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_DYNPD_REG_BIT_DPL_P4
+: <a class="el" href="nrf24l01__defs_8h.html#a624204a11f1a8bf5cc8f706f85da1ca7">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_DYNPD_REG_BIT_DPL_P5
+: <a class="el" href="nrf24l01__defs_8h.html#a1b2f06df93ea13f904f12a38e9d18b8e">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_EN_AA_MASK_REG
+: <a class="el" href="nrf24l01__defs_8h.html#a05bf3963b795f309058d9a92ca8a5520">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_EN_AA_REG_BIT_ENAA_P0
+: <a class="el" href="nrf24l01__defs_8h.html#ac2b508cebf1521e07d4a03657443bf9f">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_EN_AA_REG_BIT_ENAA_P1
+: <a class="el" href="nrf24l01__defs_8h.html#a4b0b5a0edf62ea3223e1a7c442155a64">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_EN_AA_REG_BIT_ENAA_P2
+: <a class="el" href="nrf24l01__defs_8h.html#a69624aff4d39f013e27d2de3f0570c96">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_EN_AA_REG_BIT_ENAA_P3
+: <a class="el" href="nrf24l01__defs_8h.html#abd053e5d74243e0631e0c7c2d490cfa4">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_EN_AA_REG_BIT_ENAA_P4
+: <a class="el" href="nrf24l01__defs_8h.html#a1f955ff7e6783511cef35bcafb90ef2c">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_EN_AA_REG_BIT_ENAA_P5
+: <a class="el" href="nrf24l01__defs_8h.html#acbf49029ffa1a2ebc51a1d701318734e">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_EN_RXADDR_MASK_REG
+: <a class="el" href="nrf24l01__defs_8h.html#a82d253030685cb1f3f422f17f396e98c">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_EN_RXADDR_REG_BIT_ERX_P0
+: <a class="el" href="nrf24l01__defs_8h.html#ab3e77e8cf2f8480c38d5f0911d09db0b">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_EN_RXADDR_REG_BIT_ERX_P1
+: <a class="el" href="nrf24l01__defs_8h.html#a0055fa74ca23ed1298c775ed5d3c6f8a">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_EN_RXADDR_REG_BIT_ERX_P2
+: <a class="el" href="nrf24l01__defs_8h.html#af19a2bbb619d22d23361d6fb337ee696">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_EN_RXADDR_REG_BIT_ERX_P3
+: <a class="el" href="nrf24l01__defs_8h.html#a667807ef7dcd76644bf962e2f9201214">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_EN_RXADDR_REG_BIT_ERX_P4
+: <a class="el" href="nrf24l01__defs_8h.html#a35644cd0fae11474735e7d1c6fa02d46">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_EN_RXADDR_REG_BIT_ERX_P5
+: <a class="el" href="nrf24l01__defs_8h.html#a110a62b986c828e8fb33224456bc7701">nrf24l01_defs.h</a>
+</li>
 <li>NRF24L01_ERR_DEVICE_NOT_FOUND
 : <a class="el" href="nrf24l01__defs_8h.html#aeb660fd5ed8bfc4a9d5ea587fd9207f0a204f448363988978b4fbf2e67ae27fd5">nrf24l01_defs.h</a>
 </li>
@@ -278,14 +371,8 @@ $(function() {
 <li>NRF24L01_FEATURE_CMD_W_TX_PAYLOAD_NOACK
 : <a class="el" href="nrf24l01__defs_8h.html#a4176b84376e1aeaf2c5ca663fa129a91">nrf24l01_defs.h</a>
 </li>
-<li>NRF24L01_FEATURE_EN_ACK_PAY
-: <a class="el" href="nrf24l01__defs_8h.html#af24cee3ffe9d3d2fc84ba31798674d85">nrf24l01_defs.h</a>
-</li>
-<li>NRF24L01_FEATURE_EN_DPL
-: <a class="el" href="nrf24l01__defs_8h.html#a8fa276b477fa8cb5f8c8da17061d718f">nrf24l01_defs.h</a>
-</li>
-<li>NRF24L01_FEATURE_EN_DYN_ACK
-: <a class="el" href="nrf24l01__defs_8h.html#a530c3593d20a34946735a94cf5ca61af">nrf24l01_defs.h</a>
+<li>NRF24L01_FEATURE_MASK_REG
+: <a class="el" href="nrf24l01__defs_8h.html#adef555b549150409d5dbeca12f4cbbea">nrf24l01_defs.h</a>
 </li>
 <li>nrf24l01_feature_mode_t
 : <a class="el" href="nrf24l01__defs_8h.html#a303e1160123b0cc33747411d6ccf5fa6">nrf24l01_defs.h</a>
@@ -296,11 +383,44 @@ $(function() {
 <li>NRF24L01_FEATURE_REG_ADDR_FEATURE
 : <a class="el" href="nrf24l01__defs_8h.html#a13e43ef8cf5d46bc466b43f1c01a759d">nrf24l01_defs.h</a>
 </li>
+<li>NRF24L01_FEATURE_REG_BIT_EN_ACK_PAY
+: <a class="el" href="nrf24l01__defs_8h.html#a28198919ed370728c240b5b54a724a5a">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_FEATURE_REG_BIT_EN_DPL
+: <a class="el" href="nrf24l01__defs_8h.html#a4b85a513bebb44da033bb14ceb9f0a78">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_FEATURE_REG_BIT_EN_DYN_ACK
+: <a class="el" href="nrf24l01__defs_8h.html#a40bc85952ef764e0e62b756e3a86bd2f">nrf24l01_defs.h</a>
+</li>
 <li>NRF24L01_FEATURES_OFF
 : <a class="el" href="nrf24l01__defs_8h.html#a303e1160123b0cc33747411d6ccf5fa6a00d3e32858453cc3de2a77ebb0f8a251">nrf24l01_defs.h</a>
 </li>
 <li>NRF24L01_FEATURES_ON
 : <a class="el" href="nrf24l01__defs_8h.html#a303e1160123b0cc33747411d6ccf5fa6a085a2a977cd304189e90618d43e4c73b">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_FIFO_STATUS_MASK_REG
+: <a class="el" href="nrf24l01__defs_8h.html#a5d111b14ef0248315017c75d3644533b">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_FIFO_STATUS_MASK_RX_FLAGS
+: <a class="el" href="nrf24l01__defs_8h.html#a126c535baa29906a93377d73a7606b88">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_FIFO_STATUS_MASK_TX_FLAGS
+: <a class="el" href="nrf24l01__defs_8h.html#a6ebc498d12f20e62032b4e09895eed72">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_FIFO_STATUS_REG_BIT_RX_EMPTY
+: <a class="el" href="nrf24l01__defs_8h.html#afc82f1b356f7e93f59691d7055faf111">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_FIFO_STATUS_REG_BIT_RX_FULL
+: <a class="el" href="nrf24l01__defs_8h.html#a5fb8820dd499ab41d2f03eefa4c4a4ab">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_FIFO_STATUS_REG_BIT_TX_EMPTY
+: <a class="el" href="nrf24l01__defs_8h.html#a8a7a179f3f0746249c7a1dc354fac1a6">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_FIFO_STATUS_REG_BIT_TX_FULL
+: <a class="el" href="nrf24l01__defs_8h.html#ae7baf256acf0559807dc0caf2479a4e2">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_FIFO_STATUS_REG_BIT_TX_REUSE
+: <a class="el" href="nrf24l01__defs_8h.html#afb58388c5ed1aa20f6c59fded51a1e83">nrf24l01_defs.h</a>
 </li>
 <li>nrf24l01_fifo_status_t
 : <a class="el" href="nrf24l01__defs_8h.html#ab8fdf71a787afdec43916b7568ee8cd2">nrf24l01_defs.h</a>
@@ -308,22 +428,13 @@ $(function() {
 <li>nrf24l01_fifo_type_t
 : <a class="el" href="nrf24l01__defs_8h.html#ad0ece904a0fd6784cf7675ce277c5221">nrf24l01_defs.h</a>
 </li>
-<li>NRF24L01_FLAG_MAX_RT
-: <a class="el" href="nrf24l01__defs_8h.html#a5e7cf05639e743a5bef897e2acc43e20">nrf24l01_defs.h</a>
-</li>
-<li>NRF24L01_FLAG_RX_DR
-: <a class="el" href="nrf24l01__defs_8h.html#a9ffded2d23d320d35706eda49770ffac">nrf24l01_defs.h</a>
-</li>
-<li>NRF24L01_FLAG_TX_DS
-: <a class="el" href="nrf24l01__defs_8h.html#a3b7c20203dfb2186f52085375ed4a50b">nrf24l01_defs.h</a>
-</li>
 <li>nrf24l01_flush_rx()
 : <a class="el" href="nrf24l01_8c.html#a5f7add32dd4e33ebd74954085b59fe1e">nrf24l01.c</a>
 , <a class="el" href="nrf24l01_8h.html#a5d09412a7080b39e8e90178812186186">nrf24l01.h</a>
 </li>
 <li>nrf24l01_flush_tx()
-: <a class="el" href="nrf24l01_8c.html#a2a0ad7b491d5f0e6c2a090c57b0cb826">nrf24l01.c</a>
-, <a class="el" href="nrf24l01_8h.html#aa09fd11c251226eeb47a6adab2e23e14">nrf24l01.h</a>
+: <a class="el" href="nrf24l01_8h.html#aa09fd11c251226eeb47a6adab2e23e14">nrf24l01.h</a>
+, <a class="el" href="nrf24l01_8c.html#a2a0ad7b491d5f0e6c2a090c57b0cb826">nrf24l01.c</a>
 </li>
 <li>NRF24L01_FPTR_RTN_T
 : <a class="el" href="nrf24l01__defs_8h.html#af225fdd9e1094009aec9eae23523138d">nrf24l01_defs.h</a>
@@ -391,90 +502,6 @@ $(function() {
 <li>NRF24L01_MAGIC_NUMBER_ACTIVATE
 : <a class="el" href="nrf24l01__defs_8h.html#a7fc704e6c8eb97bf92c75a74fc153ee9">nrf24l01_defs.h</a>
 </li>
-<li>NRF24L01_MASK_ADDR_WIDTH
-: <a class="el" href="nrf24l01__defs_8h.html#ad91228165b46354e0db13612e3fbfcf3">nrf24l01_defs.h</a>
-</li>
-<li>NRF24L01_MASK_ARC_CNT
-: <a class="el" href="nrf24l01__defs_8h.html#a25f810700c3ee512128532776e595ddf">nrf24l01_defs.h</a>
-</li>
-<li>NRF24L01_MASK_CONFIG_CRC
-: <a class="el" href="nrf24l01__defs_8h.html#a7db7318de1af914614d5566f26cb5183">nrf24l01_defs.h</a>
-</li>
-<li>NRF24L01_MASK_CONFIG_INTERRUPTS
-: <a class="el" href="nrf24l01__defs_8h.html#ab05fdbd87c1b4f59f17fde3f4a2b2b10">nrf24l01_defs.h</a>
-</li>
-<li>NRF24L01_MASK_DATARATE
-: <a class="el" href="nrf24l01__defs_8h.html#a6b0106e83607ca17ec0b8e21b9aea985">nrf24l01_defs.h</a>
-</li>
-<li>NRF24L01_MASK_DYNPD
-: <a class="el" href="nrf24l01__defs_8h.html#a4075140658538499290f33361b04d4d0">nrf24l01_defs.h</a>
-</li>
-<li>NRF24L01_MASK_EN_AA
-: <a class="el" href="nrf24l01__defs_8h.html#abd8e5c2d25c02b20480ad9a1ac65f3f8">nrf24l01_defs.h</a>
-</li>
-<li>NRF24L01_MASK_EN_RX_ADDR
-: <a class="el" href="nrf24l01__defs_8h.html#a8d8727ced1317714e0e84b89f83a3a26">nrf24l01_defs.h</a>
-</li>
-<li>NRF24L01_MASK_OBSERVE_TX_ARC_CNT
-: <a class="el" href="nrf24l01__defs_8h.html#a170172b059f54d83d593062059ec4b4e">nrf24l01_defs.h</a>
-</li>
-<li>NRF24L01_MASK_OBSERVE_TX_PLOS_CNT
-: <a class="el" href="nrf24l01__defs_8h.html#a5d2718dec5290dafd8fcb7fcb38d6258">nrf24l01_defs.h</a>
-</li>
-<li>NRF24L01_MASK_PLOS_CNT
-: <a class="el" href="nrf24l01__defs_8h.html#a68f2dd8a85597deb0b163190b6daf705">nrf24l01_defs.h</a>
-</li>
-<li>NRF24L01_MASK_REG_MAP
-: <a class="el" href="nrf24l01__defs_8h.html#a05553accd20fc08c2ed6e1fe4b0a6949">nrf24l01_defs.h</a>
-</li>
-<li>NRF24L01_MASK_RETR_ARC
-: <a class="el" href="nrf24l01__defs_8h.html#afc76c09ff3366b5082259b815eeb01f1">nrf24l01_defs.h</a>
-</li>
-<li>NRF24L01_MASK_RETR_ARD
-: <a class="el" href="nrf24l01__defs_8h.html#a3822a8dc962fbceb221962b9058eaae2">nrf24l01_defs.h</a>
-</li>
-<li>NRF24L01_MASK_RF_PWR
-: <a class="el" href="nrf24l01__defs_8h.html#acad52b017c2113a01a08e66ba3914620">nrf24l01_defs.h</a>
-</li>
-<li>NRF24L01_MASK_RX_FIFO_EMPTY
-: <a class="el" href="nrf24l01__defs_8h.html#acf4cbaec306f9425003df7e7f2af0456">nrf24l01_defs.h</a>
-</li>
-<li>NRF24L01_MASK_RX_FIFO_FULL
-: <a class="el" href="nrf24l01__defs_8h.html#a1679e93e74dec163b1ad06bc2baed0fc">nrf24l01_defs.h</a>
-</li>
-<li>NRF24L01_MASK_RX_FIFO_STATUS
-: <a class="el" href="nrf24l01__defs_8h.html#af6636df92920a65c54e2489db37deea3">nrf24l01_defs.h</a>
-</li>
-<li>NRF24L01_MASK_STATUS_IRQ
-: <a class="el" href="nrf24l01__defs_8h.html#ada980b4c20b00e65d827fb72733b054c">nrf24l01_defs.h</a>
-</li>
-<li>NRF24L01_MASK_STATUS_MAX_RT
-: <a class="el" href="nrf24l01__defs_8h.html#a9b90782286f8dc645af946102716d1d8">nrf24l01_defs.h</a>
-</li>
-<li>NRF24L01_MASK_STATUS_RX_DR
-: <a class="el" href="nrf24l01__defs_8h.html#a5a86784cc980ae60c30b98ed35d37d9b">nrf24l01_defs.h</a>
-</li>
-<li>NRF24L01_MASK_STATUS_RX_P_NO
-: <a class="el" href="nrf24l01__defs_8h.html#a02785e7a8fc319c551e16ba71a5facea">nrf24l01_defs.h</a>
-</li>
-<li>NRF24L01_MASK_STATUS_TX_DS
-: <a class="el" href="nrf24l01__defs_8h.html#a0d6869aa1b0f2f38519dc9aacd26261e">nrf24l01_defs.h</a>
-</li>
-<li>NRF24L01_MASK_STATUS_TX_FULL
-: <a class="el" href="nrf24l01__defs_8h.html#ab44554407f07504eece07b37cf775952">nrf24l01_defs.h</a>
-</li>
-<li>NRF24L01_MASK_TX_FIFO_EMPTY
-: <a class="el" href="nrf24l01__defs_8h.html#a5315b61413856c3ab8cfa21eb8ea9c6b">nrf24l01_defs.h</a>
-</li>
-<li>NRF24L01_MASK_TX_FIFO_FULL
-: <a class="el" href="nrf24l01__defs_8h.html#a63871c229620959f46dad78889818351">nrf24l01_defs.h</a>
-</li>
-<li>NRF24L01_MASK_TX_FIFO_REUSE
-: <a class="el" href="nrf24l01__defs_8h.html#af37462164d27059a99782072199d2ec9">nrf24l01_defs.h</a>
-</li>
-<li>NRF24L01_MASK_TX_FIFO_STATUS
-: <a class="el" href="nrf24l01__defs_8h.html#abe6be3af5c702f21a53d95be94db9904">nrf24l01_defs.h</a>
-</li>
 <li>nrf24l01_max_rt_callback_fptr_t
 : <a class="el" href="nrf24l01__defs_8h.html#af3a3bced5aa40c9e8ea6ea75fd56b1b7">nrf24l01_defs.h</a>
 </li>
@@ -483,6 +510,15 @@ $(function() {
 </li>
 <li>NRF24L01_MODE_TX
 : <a class="el" href="nrf24l01__defs_8h.html#a2e35d6210bc14e3010061dcc840f3174aba92a9ef213fd80d87b0abd16ffeef9f">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_OBSERVE_TX_MASK_REG
+: <a class="el" href="nrf24l01__defs_8h.html#a58da17119f4d8a23ba58ca18eefa590f">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_OBSERVE_TX_REG_BITS_ARC_CNT
+: <a class="el" href="nrf24l01__defs_8h.html#a8b58638de626b7edbbbb339295c39d71">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_OBSERVE_TX_REG_BITS_PLOS_CNT
+: <a class="el" href="nrf24l01__defs_8h.html#aba57489490c88664da4969efbd8bebcf">nrf24l01_defs.h</a>
 </li>
 <li>NRF24L01_OK
 : <a class="el" href="nrf24l01__defs_8h.html#aeb660fd5ed8bfc4a9d5ea587fd9207f0adb5c2e034ea26a6bd62836f397d57da8">nrf24l01_defs.h</a>
@@ -635,6 +671,9 @@ $(function() {
 <li>NRF24L01_REG_ADDR_TX_ADDR
 : <a class="el" href="nrf24l01__defs_8h.html#adaa7beac7057eefcb850614cbe658a07">nrf24l01_defs.h</a>
 </li>
+<li>NRF24L01_REG_BIT_REG_MAP
+: <a class="el" href="nrf24l01__defs_8h.html#a7beece87d1aa21544adca078939220bd">nrf24l01_defs.h</a>
+</li>
 <li>nrf24l01_register_max_rt_callback()
 : <a class="el" href="nrf24l01_8c.html#af5bea22dabe55e3170763a0cbc3ea9db">nrf24l01.c</a>
 , <a class="el" href="nrf24l01_8h.html#ae94ce0fe9852c9730abee9a4dda8fa18">nrf24l01.h</a>
@@ -651,8 +690,29 @@ $(function() {
 : <a class="el" href="nrf24l01_8c.html#ab4267179279fa14b48ea47a84775179b">nrf24l01.c</a>
 , <a class="el" href="nrf24l01_8h.html#a7ea991dfff7035b1f64c5588f8617e6c">nrf24l01.h</a>
 </li>
+<li>NRF24L01_RF_CH_MASK_REG
+: <a class="el" href="nrf24l01__defs_8h.html#a2fa80a1d3906f9b5b8733ead96c3133e">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_RF_CH_REG_BITS_RF_CH
+: <a class="el" href="nrf24l01__defs_8h.html#ae876cf8ae818b8ce339491beaa187f75">nrf24l01_defs.h</a>
+</li>
 <li>nrf24l01_rf_channel_t
 : <a class="el" href="nrf24l01__defs_8h.html#a791d706e5a3e69a3c41d48690c91b3d8">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_RF_SETUP_MASK_REG
+: <a class="el" href="nrf24l01__defs_8h.html#a3d14c145be751bbc3a81afe59a976373">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_RF_SETUP_REG_BIT_LNA_HCURR
+: <a class="el" href="nrf24l01__defs_8h.html#a796c669655b7fe2c98ac33159dc09b7d">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_RF_SETUP_REG_BIT_PLL_LOCK
+: <a class="el" href="nrf24l01__defs_8h.html#aef9765800247b3682b53571ec1befebe">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_RF_SETUP_REG_BIT_RF_DR
+: <a class="el" href="nrf24l01__defs_8h.html#a495f104a00541af9187c9609b81f425e">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_RF_SETUP_REG_BITS_RF_PWR
+: <a class="el" href="nrf24l01__defs_8h.html#a53c3e47c67cd0f3ab4810ac49cec823d">nrf24l01_defs.h</a>
 </li>
 <li>nrf24l01_rx_dr_callback_fptr_t
 : <a class="el" href="nrf24l01__defs_8h.html#aad3d32443bfdef413552894313db6fd9">nrf24l01_defs.h</a>
@@ -666,28 +726,64 @@ $(function() {
 <li>NRF24L01_RX_FIFO_WIDTH
 : <a class="el" href="nrf24l01__defs_8h.html#a9f7fd381aaa6ab49343fc6d33c36159c">nrf24l01_defs.h</a>
 </li>
+<li>NRF24L01_RX_PW_P0_MASK_REG
+: <a class="el" href="nrf24l01__defs_8h.html#ae50f69a3e72e9808c870d92582e6487b">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_RX_PW_P0_REG_BITS_RX_PW_P0
+: <a class="el" href="nrf24l01__defs_8h.html#a56e635d8d7242ac91bf3bab50bc65824">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_RX_PW_P1_MASK_REG
+: <a class="el" href="nrf24l01__defs_8h.html#aefbb94c758edbd4a4b8b2440df595eaa">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_RX_PW_P1_REG_BITS_RX_PW_P1
+: <a class="el" href="nrf24l01__defs_8h.html#a3be8522e7e611ff4d9ff89833b48f615">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_RX_PW_P2_MASK_REG
+: <a class="el" href="nrf24l01__defs_8h.html#a8319e11869023d015d6e8704c708a9cf">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_RX_PW_P2_REG_BITS_RX_PW_P2
+: <a class="el" href="nrf24l01__defs_8h.html#a90bb195381ac44c201b873adce47b4c0">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_RX_PW_P3_MASK_REG
+: <a class="el" href="nrf24l01__defs_8h.html#a9d351694874655eaa9e96b525e8547e1">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_RX_PW_P3_REG_BITS_RX_PW_P3
+: <a class="el" href="nrf24l01__defs_8h.html#acdd6fb18d96503fa63ff289c5d256ee9">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_RX_PW_P4_MASK_REG
+: <a class="el" href="nrf24l01__defs_8h.html#a26dda8b375e7dea8b778f166bdba1c61">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_RX_PW_P4_REG_BITS_RX_PW_P4
+: <a class="el" href="nrf24l01__defs_8h.html#ab2f7dbb934f21ae896d371d71886db85">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_RX_PW_P5_MASK_REG
+: <a class="el" href="nrf24l01__defs_8h.html#a2c40fc97a4e727d5b2e557599cd744ea">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_RX_PW_P5_REG_BITS_RX_PW_P5
+: <a class="el" href="nrf24l01__defs_8h.html#a6b74786d8514062858134d1844ff4909">nrf24l01_defs.h</a>
+</li>
 <li>nrf24l01_set_ack_payload_mode()
 : <a class="el" href="nrf24l01_8h.html#af904545f9f8a909e438a972d51dfda7a">nrf24l01.h</a>
 </li>
 <li>nrf24l01_set_address()
-: <a class="el" href="nrf24l01_8c.html#af28ce44c14f88b5812f85b1025292e80">nrf24l01.c</a>
-, <a class="el" href="nrf24l01_8h.html#a7e90e2cbb613fa083a4b752997432761">nrf24l01.h</a>
+: <a class="el" href="nrf24l01_8h.html#a7e90e2cbb613fa083a4b752997432761">nrf24l01.h</a>
+, <a class="el" href="nrf24l01_8c.html#af28ce44c14f88b5812f85b1025292e80">nrf24l01.c</a>
 </li>
 <li>nrf24l01_set_address_width()
-: <a class="el" href="nrf24l01_8h.html#a10e39671edfdaac81580661d842bcff7">nrf24l01.h</a>
-, <a class="el" href="nrf24l01_8c.html#a489265a355faf520b63a15e5350fa791">nrf24l01.c</a>
+: <a class="el" href="nrf24l01_8c.html#a489265a355faf520b63a15e5350fa791">nrf24l01.c</a>
+, <a class="el" href="nrf24l01_8h.html#a10e39671edfdaac81580661d842bcff7">nrf24l01.h</a>
 </li>
 <li>nrf24l01_set_auto_retransmission()
-: <a class="el" href="nrf24l01_8c.html#a70eea81a67cfda1b30cb530a8f0202b8">nrf24l01.c</a>
-, <a class="el" href="nrf24l01_8h.html#a4384b25820eef7cc03ac4236f9fa4987">nrf24l01.h</a>
+: <a class="el" href="nrf24l01_8h.html#a4384b25820eef7cc03ac4236f9fa4987">nrf24l01.h</a>
+, <a class="el" href="nrf24l01_8c.html#a70eea81a67cfda1b30cb530a8f0202b8">nrf24l01.c</a>
 </li>
 <li>nrf24l01_set_crc_scheme()
 : <a class="el" href="nrf24l01_8c.html#a5f5111f4477c753ab8bdad954a796a30">nrf24l01.c</a>
 , <a class="el" href="nrf24l01_8h.html#a9067b01f853f8693967181f740585b59">nrf24l01.h</a>
 </li>
 <li>nrf24l01_set_data_rate()
-: <a class="el" href="nrf24l01_8h.html#a167a2c4a6119ee820085f361a13384ad">nrf24l01.h</a>
-, <a class="el" href="nrf24l01_8c.html#adb050cb2f6a8a011f8f09d762842d3c5">nrf24l01.c</a>
+: <a class="el" href="nrf24l01_8c.html#adb050cb2f6a8a011f8f09d762842d3c5">nrf24l01.c</a>
+, <a class="el" href="nrf24l01_8h.html#a167a2c4a6119ee820085f361a13384ad">nrf24l01.h</a>
 </li>
 <li>nrf24l01_set_dpl_mode()
 : <a class="el" href="nrf24l01_8h.html#a9f4b25fc294cb8550f3572b54b08fe58">nrf24l01.h</a>
@@ -696,32 +792,32 @@ $(function() {
 : <a class="el" href="nrf24l01_8h.html#a2b949886212d64e3fbd76ec30cfab889">nrf24l01.h</a>
 </li>
 <li>nrf24l01_set_feature_mode()
-: <a class="el" href="nrf24l01_8c.html#a055cc8955b18455fe9a8be66281b3e31">nrf24l01.c</a>
-, <a class="el" href="nrf24l01_8h.html#a786f79fce0ce9929961915f323cd658e">nrf24l01.h</a>
+: <a class="el" href="nrf24l01_8h.html#a786f79fce0ce9929961915f323cd658e">nrf24l01.h</a>
+, <a class="el" href="nrf24l01_8c.html#a055cc8955b18455fe9a8be66281b3e31">nrf24l01.c</a>
 </li>
 <li>nrf24l01_set_irq_mask()
 : <a class="el" href="nrf24l01_8h.html#ac353f88e185c79871e9ee5708843cd81">nrf24l01.h</a>
 , <a class="el" href="nrf24l01_8c.html#acf8b7a94deb4e4cfaacdedd1213368c8">nrf24l01.c</a>
 </li>
 <li>nrf24l01_set_operational_mode()
-: <a class="el" href="nrf24l01_8h.html#af037709d39e6e20cd6f7e300d2bc68ea">nrf24l01.h</a>
-, <a class="el" href="nrf24l01_8c.html#a83de7fbeec91ec4d2674ed4e23557226">nrf24l01.c</a>
+: <a class="el" href="nrf24l01_8c.html#a83de7fbeec91ec4d2674ed4e23557226">nrf24l01.c</a>
+, <a class="el" href="nrf24l01_8h.html#af037709d39e6e20cd6f7e300d2bc68ea">nrf24l01.h</a>
 </li>
 <li>nrf24l01_set_pipe_aa_mode()
-: <a class="el" href="nrf24l01_8h.html#a82df3ae97ab1943d6c8846af91530c20">nrf24l01.h</a>
-, <a class="el" href="nrf24l01_8c.html#a68f4e7794f0624566ca4feca7008bdc5">nrf24l01.c</a>
+: <a class="el" href="nrf24l01_8c.html#a68f4e7794f0624566ca4feca7008bdc5">nrf24l01.c</a>
+, <a class="el" href="nrf24l01_8h.html#a82df3ae97ab1943d6c8846af91530c20">nrf24l01.h</a>
 </li>
 <li>nrf24l01_set_pipe_dpl_mode()
-: <a class="el" href="nrf24l01_8h.html#af7370e9534ccbede12d2a8b185180a98">nrf24l01.h</a>
-, <a class="el" href="nrf24l01_8c.html#a7a998bae7120036f4ce0d5ef49948385">nrf24l01.c</a>
+: <a class="el" href="nrf24l01_8c.html#a7a998bae7120036f4ce0d5ef49948385">nrf24l01.c</a>
+, <a class="el" href="nrf24l01_8h.html#af7370e9534ccbede12d2a8b185180a98">nrf24l01.h</a>
 </li>
 <li>nrf24l01_set_pipe_mode()
-: <a class="el" href="nrf24l01_8h.html#a736b0f56f587c118863e9fda079d1bdc">nrf24l01.h</a>
-, <a class="el" href="nrf24l01_8c.html#a1544aef60f5f3c354edcd8beaddc2078">nrf24l01.c</a>
+: <a class="el" href="nrf24l01_8c.html#a1544aef60f5f3c354edcd8beaddc2078">nrf24l01.c</a>
+, <a class="el" href="nrf24l01_8h.html#a736b0f56f587c118863e9fda079d1bdc">nrf24l01.h</a>
 </li>
 <li>nrf24l01_set_pipe_rx_payload_size()
-: <a class="el" href="nrf24l01_8c.html#aa8bbde277d274e75c5dcca5e51547ea8">nrf24l01.c</a>
-, <a class="el" href="nrf24l01_8h.html#a278481ec6a4aa4db0fc5953b6aceae8b">nrf24l01.h</a>
+: <a class="el" href="nrf24l01_8h.html#a278481ec6a4aa4db0fc5953b6aceae8b">nrf24l01.h</a>
+, <a class="el" href="nrf24l01_8c.html#aa8bbde277d274e75c5dcca5e51547ea8">nrf24l01.c</a>
 </li>
 <li>nrf24l01_set_power_mode()
 : <a class="el" href="nrf24l01_8h.html#a9952bf8024954a3be966dedba265e2d2">nrf24l01.h</a>
@@ -732,8 +828,23 @@ $(function() {
 , <a class="el" href="nrf24l01_8c.html#ac795276f68254cd04f610af45884cab6">nrf24l01.c</a>
 </li>
 <li>nrf24l01_set_tx_power()
-: <a class="el" href="nrf24l01_8h.html#a4247b61e05c9d3d3aa3c4fc98ec88d3e">nrf24l01.h</a>
-, <a class="el" href="nrf24l01_8c.html#a3c388c74bc32fde488aca33b667a35eb">nrf24l01.c</a>
+: <a class="el" href="nrf24l01_8c.html#a3c388c74bc32fde488aca33b667a35eb">nrf24l01.c</a>
+, <a class="el" href="nrf24l01_8h.html#a4247b61e05c9d3d3aa3c4fc98ec88d3e">nrf24l01.h</a>
+</li>
+<li>NRF24L01_SETUP_AW_MASK_REG
+: <a class="el" href="nrf24l01__defs_8h.html#a041619332e10394c0c2ce2b00f89bbc8">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_SETUP_AW_REG_BITS_AW
+: <a class="el" href="nrf24l01__defs_8h.html#a842a6568877c432e0602aa58a3c1e090">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_SETUP_RETR_MASK_REG
+: <a class="el" href="nrf24l01__defs_8h.html#aed2587ff5be89d74eb9e2b8bd104087c">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_SETUP_RETR_REG_BITS_ARC
+: <a class="el" href="nrf24l01__defs_8h.html#a37ad5787c92303338675bf2567b452e2">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_SETUP_RETR_REG_BITS_ARD
+: <a class="el" href="nrf24l01__defs_8h.html#a172d9d8a92a7d01c2bb099c119924097">nrf24l01_defs.h</a>
 </li>
 <li>nrf24l01_spi_exchange_fptr_t
 : <a class="el" href="nrf24l01__defs_8h.html#a86465ecff5d0e2cb8872cca95c310e06">nrf24l01_defs.h</a>
@@ -749,6 +860,27 @@ $(function() {
 </li>
 <li>NRF24L01_STATUS_FIFO_FULL
 : <a class="el" href="nrf24l01__defs_8h.html#ab8fdf71a787afdec43916b7568ee8cd2a78244b1ef673067d7cdffab72e79bc86">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_STATUS_MASK_IRQ_FLAGS
+: <a class="el" href="nrf24l01__defs_8h.html#a65308c300f8760ae900a7ee93bad1f31">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_STATUS_MASK_REG
+: <a class="el" href="nrf24l01__defs_8h.html#a9b3f68550ed4db25487d9d8d1ebc2584">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_STATUS_REG_BIT_MAX_RT
+: <a class="el" href="nrf24l01__defs_8h.html#a420b4a05f738b72880dbcef809dc9ce0">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_STATUS_REG_BIT_RX_DR
+: <a class="el" href="nrf24l01__defs_8h.html#a87cdeb4d1a693f8a60a474cdc726a541">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_STATUS_REG_BIT_TX_DS
+: <a class="el" href="nrf24l01__defs_8h.html#a9d52b8ddcff97ff40c2809687da106d8">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_STATUS_REG_BIT_TX_FULL
+: <a class="el" href="nrf24l01__defs_8h.html#a9bc0e8f67ae6f89af0797280511f28e1">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_STATUS_REG_BITS_RX_P_NO
+: <a class="el" href="nrf24l01__defs_8h.html#aaef3b9cc042253007cc2da9110a26311">nrf24l01_defs.h</a>
 </li>
 <li>NRF24L01_TEST_ADDR
 : <a class="el" href="nrf24l01_8c.html#a0adde16a6253944083b670d5ae93dee1">nrf24l01.c</a>
@@ -781,8 +913,8 @@ $(function() {
 : <a class="el" href="nrf24l01__defs_8h.html#a1f6226bf9c94a81ffa0edc12beb3bb58ad1ed4ab70c88f3753a7c1f32b9ef60fc">nrf24l01_defs.h</a>
 </li>
 <li>nrf24l01_write_payload()
-: <a class="el" href="nrf24l01_8c.html#aab8bc7ba0dc3a574feb1ab41f2f4dde2">nrf24l01.c</a>
-, <a class="el" href="nrf24l01_8h.html#a993a327bc069340404c5dbb7a7dd443f">nrf24l01.h</a>
+: <a class="el" href="nrf24l01_8h.html#a993a327bc069340404c5dbb7a7dd443f">nrf24l01.h</a>
+, <a class="el" href="nrf24l01_8c.html#aab8bc7ba0dc3a574feb1ab41f2f4dde2">nrf24l01.c</a>
 </li>
 </ul>
 </div><!-- contents -->
