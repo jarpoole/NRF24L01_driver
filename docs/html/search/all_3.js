@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['max_5frt_5finterrupt_5fdisable',['MAX_RT_INTERRUPT_DISABLE',['../nrf24l01__defs_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba0ea4880f383af085ca01bb97aa14bacd',1,'nrf24l01_defs.h']]],
-  ['max_5frt_5finterrupt_5fenable',['MAX_RT_INTERRUPT_ENABLE',['../nrf24l01__defs_8h.html#a06fc87d81c62e9abb8790b6e5713c55bae0a200cc08bce4d97c47559e0e38c463',1,'nrf24l01_defs.h']]]
+  ['gpio_5fchip_5fenable',['gpio_chip_enable',['../structnrf24l01__platform__t.html#a9f4dc215cd41cb34f4f6208e01c81f9a',1,'nrf24l01_platform_t']]]
 ];
