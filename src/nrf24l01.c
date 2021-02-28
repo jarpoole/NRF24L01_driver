@@ -941,8 +941,10 @@ void nrf24l01_print_config(nrf24l01_platform_t* platform) {
 
 	// CONFIG
 	nrf24l01_read_reg(NRF24L01_CONFIG_REG_ADDR, &reg_temp, platform);
-	NRF24L01_DEBUGGING_PRINTF("[0x%02X] 0x%02X MASK:"_3BIT_FMT" CRC:"_2BIT_FMT" PWR:%s MODE:P%s\r\n",
-		NRF24L01_CONFIG_REG_ADDR, reg_temp, _3BIT_STR(reg_temp >> 4), _2BIT_STR((reg_temp & 0x0c) >> 2), (reg_temp & 0x02) ? "ON" : "OFF", (reg_temp & 0x01) ? "RX" : "TX"
+	NRF24L01_DEBUGGING_PRINTF("[0x%02X] 0x%02X INT MASK="_3BIT_FMT" (RX_DR INT %s, TX_DS INT %s, MAX_RT INT %s) CRC="_2BIT_FMT" (%s) PWR:%s MODE:P%s\r\n",
+		NRF24L01_CONFIG_REG_ADDR, reg_temp,
+		_3BIT_STR((reg_temp & NRF24L01_MASK_STATUS_IRQ) >> 4),
+		_2BIT_STR((reg_temp & 0x0c) >> 2), (reg_temp & 0x02) ? "ON" : "OFF", (reg_temp & 0x01) ? "RX" : "TX"
 	);
 	// EN_AA
 	nrf24l01_read_reg(NRF24L01_EN_AA_REG_ADDR, &reg_temp, platform);

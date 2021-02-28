@@ -99,7 +99,7 @@
 #define NRF24L01_CMD_REUSE_TX_PL          (uint8_t)0xE3  ///< Reuse TX payload
 #define NRF24L01_CMD_ACTIVATE             (uint8_t)0x50  ///< (De)Activates R_RX_PL_WID, W_ACK_PAYLOAD, W_TX_PAYLOAD_NOACK features
 #define NRF24L01_CMD_NOP                  (uint8_t)0xFF  ///< No operation (used for reading status register for example)
-// @}
+/// @}
 
 /** @addtogroup commands
  * 	@brief NRF24L01 special feature command definitions
@@ -109,7 +109,7 @@
 #define NRF24L01_FEATURE_CMD_R_RX_PL_WID	     (uint8_t)0x60  ///< Read RX-payload width for the top R_RX_PAYLOAD in the RX FIFO.
 #define NRF24L01_FEATURE_CMD_W_ACK_PAYLOAD       (uint8_t)0xA8  ///< Write ACK payload 0b10101XXX where XXX = 3 bit pipe identifier
 #define NRF24L01_FEATURE_CMD_W_TX_PAYLOAD_NOACK  (uint8_t)0xB0  ///< Write TX payload and disable AUTOACK
-// @}
+/// @}
 
 
 
