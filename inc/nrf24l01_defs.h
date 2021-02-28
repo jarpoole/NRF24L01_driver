@@ -85,9 +85,9 @@
 #endif
 	
 	
-/** @addtogroup commands
+/** @name general commands
  * 	@brief NRF24L01 general command definitions
- * 	Format is <b>NRF24L01_CMD_x<b> where x is the name assigned to the command by the datasheet
+ * 	Format is <b>NRF24L01_CMD_x</b> where x is the name assigned to the command by the datasheet
  * 	@{
  */
 #define NRF24L01_CMD_R_REGISTER           (uint8_t)0x00  ///< Register read 0b000XXXXX where XXXXX = 5 bit Register Map Address
@@ -101,7 +101,7 @@
 #define NRF24L01_CMD_NOP                  (uint8_t)0xFF  ///< No operation (used for reading status register for example)
 /// @}
 
-/** @addtogroup commands
+/** @name feature commands
  * 	@brief NRF24L01 special feature command definitions
  * 	Format is <b>NRF24L01_FEATURE_CMD_x<b> where x is the name assigned to the command by the datasheet
  *  @{
