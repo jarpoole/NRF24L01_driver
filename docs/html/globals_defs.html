@@ -110,18 +110,6 @@ $(function() {
 <li>NRF24L01_CONFIG_PWR_UP
 : <a class="el" href="nrf24l01__defs_8h.html#aa1bde03d527ed46ecacc12ab5eb5d1a1">nrf24l01_defs.h</a>
 </li>
-<li>NRF24L01_CONFIG_REG_ADDR
-: <a class="el" href="nrf24l01__defs_8h.html#a7a3918d2a40d59aa48427b41f3c615db">nrf24l01_defs.h</a>
-</li>
-<li>NRF24L01_DYNPD_REG_ADDR
-: <a class="el" href="nrf24l01__defs_8h.html#ae963d63387481b0231e93fed665722ba">nrf24l01_defs.h</a>
-</li>
-<li>NRF24L01_EN_AA_REG_ADDR
-: <a class="el" href="nrf24l01__defs_8h.html#a37f246fa7b8f3e39e37f23881cb7fb5d">nrf24l01_defs.h</a>
-</li>
-<li>NRF24L01_EN_RX_ADDR_REG_ADDR
-: <a class="el" href="nrf24l01__defs_8h.html#a632074c5c96be35f3080248751249c89">nrf24l01_defs.h</a>
-</li>
 <li>NRF24L01_FEATURE_CMD_R_RX_PL_WID
 : <a class="el" href="nrf24l01__defs_8h.html#a23354b25401efb48063e7f1ec59fb5b1">nrf24l01_defs.h</a>
 </li>
@@ -140,11 +128,11 @@ $(function() {
 <li>NRF24L01_FEATURE_EN_DYN_ACK
 : <a class="el" href="nrf24l01__defs_8h.html#a530c3593d20a34946735a94cf5ca61af">nrf24l01_defs.h</a>
 </li>
-<li>NRF24L01_FEATURE_REG_ADDR
-: <a class="el" href="nrf24l01__defs_8h.html#a84ac52cead831fae218cfed9b953f5da">nrf24l01_defs.h</a>
+<li>NRF24L01_FEATURE_REG_ADDR_DYNPD
+: <a class="el" href="nrf24l01__defs_8h.html#ac33baebb7e321d5058a57fa1a52f039f">nrf24l01_defs.h</a>
 </li>
-<li>NRF24L01_FIFO_STATUS_REG_ADDR
-: <a class="el" href="nrf24l01__defs_8h.html#a6fd5107d62634363fafd11d0c5d572b0">nrf24l01_defs.h</a>
+<li>NRF24L01_FEATURE_REG_ADDR_FEATURE
+: <a class="el" href="nrf24l01__defs_8h.html#a13e43ef8cf5d46bc466b43f1c01a759d">nrf24l01_defs.h</a>
 </li>
 <li>NRF24L01_FLAG_MAX_RT
 : <a class="el" href="nrf24l01__defs_8h.html#a5e7cf05639e743a5bef897e2acc43e20">nrf24l01_defs.h</a>
@@ -251,41 +239,80 @@ $(function() {
 <li>NRF24L01_MASK_TX_FIFO_STATUS
 : <a class="el" href="nrf24l01__defs_8h.html#abe6be3af5c702f21a53d95be94db9904">nrf24l01_defs.h</a>
 </li>
-<li>NRF24L01_NO_REG_ADDR_REQUIRED
-: <a class="el" href="nrf24l01__defs_8h.html#a50507330182f6236dcec8a8a284c5080">nrf24l01_defs.h</a>
-</li>
-<li>NRF24L01_OBSERVE_TX_REG_ADDR
-: <a class="el" href="nrf24l01__defs_8h.html#a7ec367400cc3da370fd44a72f387d32f">nrf24l01_defs.h</a>
-</li>
 <li>NRF24L01_POWER_UP_US
 : <a class="el" href="nrf24l01__defs_8h.html#af3fc300f15bd4b882e67625ead1071a9">nrf24l01_defs.h</a>
 </li>
-<li>NRF24L01_RF_CH_REG_ADDR
-: <a class="el" href="nrf24l01__defs_8h.html#ae83be54b0265085a77d697a365f231ad">nrf24l01_defs.h</a>
+<li>NRF24L01_REG_ADDR_CD
+: <a class="el" href="nrf24l01__defs_8h.html#a23d52e3c4eb4a90cb1368cc6e67881c4">nrf24l01_defs.h</a>
 </li>
-<li>NRF24L01_RF_SETUP_REG_ADDR
-: <a class="el" href="nrf24l01__defs_8h.html#abb1bfacd5bc6fed9950e9abe77effa75">nrf24l01_defs.h</a>
+<li>NRF24L01_REG_ADDR_CONFIG
+: <a class="el" href="nrf24l01__defs_8h.html#af9b6813868e69f06812df143bc1e9c09">nrf24l01_defs.h</a>
 </li>
-<li>NRF24L01_RPD_REG_ADDR
-: <a class="el" href="nrf24l01__defs_8h.html#a50ec4f631028fd005c9831c3642d5701">nrf24l01_defs.h</a>
+<li>NRF24L01_REG_ADDR_EN_AA
+: <a class="el" href="nrf24l01__defs_8h.html#a8bfb92680d52df8cb1ad8e7d8df066ec">nrf24l01_defs.h</a>
 </li>
-<li>NRF24L01_RX_ADDR_P0_REG_ADDR
-: <a class="el" href="nrf24l01__defs_8h.html#a4096076e835c20f4ce8c350f4311c96b">nrf24l01_defs.h</a>
+<li>NRF24L01_REG_ADDR_EN_RXADDR
+: <a class="el" href="nrf24l01__defs_8h.html#a28678ddf6949c2026854e9b404a1af29">nrf24l01_defs.h</a>
 </li>
-<li>NRF24L01_RX_ADDR_P1_REG_ADDR
-: <a class="el" href="nrf24l01__defs_8h.html#a817b20aad8089f09170c675926f75224">nrf24l01_defs.h</a>
+<li>NRF24L01_REG_ADDR_FIFO_STATUS
+: <a class="el" href="nrf24l01__defs_8h.html#a936ce6b83167af0504bb5d180d618297">nrf24l01_defs.h</a>
 </li>
-<li>NRF24L01_RX_ADDR_P2_REG_ADDR
-: <a class="el" href="nrf24l01__defs_8h.html#a3ff3722de474c7dd984b69ce5dc2d67e">nrf24l01_defs.h</a>
+<li>NRF24L01_REG_ADDR_OBSERVE_TX
+: <a class="el" href="nrf24l01__defs_8h.html#aedf9ac0cb6ee51926c35ba002173c5b5">nrf24l01_defs.h</a>
 </li>
-<li>NRF24L01_RX_ADDR_P3_REG_ADDR
-: <a class="el" href="nrf24l01__defs_8h.html#a71a18f2440ba3dbdf5a4e15d80cfa58a">nrf24l01_defs.h</a>
+<li>NRF24L01_REG_ADDR_RF_CH
+: <a class="el" href="nrf24l01__defs_8h.html#ace5d56b7757db40e3684ed42e4592eeb">nrf24l01_defs.h</a>
 </li>
-<li>NRF24L01_RX_ADDR_P4_REG_ADDR
-: <a class="el" href="nrf24l01__defs_8h.html#a7c655acee24219ffc3049369094da9e2">nrf24l01_defs.h</a>
+<li>NRF24L01_REG_ADDR_RF_SETUP
+: <a class="el" href="nrf24l01__defs_8h.html#a7c979421f40217c292f9bf3ec0deae4b">nrf24l01_defs.h</a>
 </li>
-<li>NRF24L01_RX_ADDR_P5_REG_ADDR
-: <a class="el" href="nrf24l01__defs_8h.html#a3830476b3ebbca164f2c5fb427053547">nrf24l01_defs.h</a>
+<li>NRF24L01_REG_ADDR_RX_ADDR_P0
+: <a class="el" href="nrf24l01__defs_8h.html#a3329e377c51c6d0bf7783ab1f8fc76d1">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_REG_ADDR_RX_ADDR_P1
+: <a class="el" href="nrf24l01__defs_8h.html#a8deb24dbbb6a1a292a3df285fea1f581">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_REG_ADDR_RX_ADDR_P2
+: <a class="el" href="nrf24l01__defs_8h.html#aa680b3cb3393fa13858d60835417eeb5">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_REG_ADDR_RX_ADDR_P3
+: <a class="el" href="nrf24l01__defs_8h.html#a9f003ede3b8a9d9fd0a98fa61d6b8aea">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_REG_ADDR_RX_ADDR_P4
+: <a class="el" href="nrf24l01__defs_8h.html#ab3a0a38360542797b9f43efcc2a99d70">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_REG_ADDR_RX_ADDR_P5
+: <a class="el" href="nrf24l01__defs_8h.html#ae67a73fced728134288c8910257b5770">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_REG_ADDR_RX_PW_P0
+: <a class="el" href="nrf24l01__defs_8h.html#a8974e3b638032fa46b56c393337b49d9">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_REG_ADDR_RX_PW_P1
+: <a class="el" href="nrf24l01__defs_8h.html#a8494d0a27a0e898aa901f424f907db7b">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_REG_ADDR_RX_PW_P2
+: <a class="el" href="nrf24l01__defs_8h.html#acf22f3eb2fdaea09af64c87162f86b1d">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_REG_ADDR_RX_PW_P3
+: <a class="el" href="nrf24l01__defs_8h.html#a383ec7b2b1e31528de6fa50a80fb6e9a">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_REG_ADDR_RX_PW_P4
+: <a class="el" href="nrf24l01__defs_8h.html#abc58b07aee743041c981316e6a54ea3b">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_REG_ADDR_RX_PW_P5
+: <a class="el" href="nrf24l01__defs_8h.html#a50e43d9b82c8aa0b43a0e5a4fb0dda68">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_REG_ADDR_SETUP_AW
+: <a class="el" href="nrf24l01__defs_8h.html#a107670c831b1c49a0740dac1ce4f8071">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_REG_ADDR_SETUP_RETR
+: <a class="el" href="nrf24l01__defs_8h.html#a2a732f8ddc3ca102bb1934b2653bc80b">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_REG_ADDR_STATUS
+: <a class="el" href="nrf24l01__defs_8h.html#ab0401595a37a4bbb13b5af0639ff3300">nrf24l01_defs.h</a>
+</li>
+<li>NRF24L01_REG_ADDR_TX_ADDR
+: <a class="el" href="nrf24l01__defs_8h.html#adaa7beac7057eefcb850614cbe658a07">nrf24l01_defs.h</a>
 </li>
 <li>NRF24L01_RX_FIFO_DEPTH
 : <a class="el" href="nrf24l01__defs_8h.html#a01a7f58ff9244731f1e0bc9282032818">nrf24l01_defs.h</a>
@@ -293,38 +320,8 @@ $(function() {
 <li>NRF24L01_RX_FIFO_WIDTH
 : <a class="el" href="nrf24l01__defs_8h.html#a9f7fd381aaa6ab49343fc6d33c36159c">nrf24l01_defs.h</a>
 </li>
-<li>NRF24L01_RX_PW_P0_REG_ADDR
-: <a class="el" href="nrf24l01__defs_8h.html#aacf74fe5e589ffdc5e559d5582f63f57">nrf24l01_defs.h</a>
-</li>
-<li>NRF24L01_RX_PW_P1_REG_ADDR
-: <a class="el" href="nrf24l01__defs_8h.html#a50a99de1a617f466eb3679fb145eca8c">nrf24l01_defs.h</a>
-</li>
-<li>NRF24L01_RX_PW_P2_REG_ADDR
-: <a class="el" href="nrf24l01__defs_8h.html#a4a5ce27c04af4a88c41905ca2f95cb5e">nrf24l01_defs.h</a>
-</li>
-<li>NRF24L01_RX_PW_P3_REG_ADDR
-: <a class="el" href="nrf24l01__defs_8h.html#a5db4c211f48d28eb0b89fb4857f602db">nrf24l01_defs.h</a>
-</li>
-<li>NRF24L01_RX_PW_P4_REG_ADDR
-: <a class="el" href="nrf24l01__defs_8h.html#a94a3fa0c205708a2fb725de33e7d04fa">nrf24l01_defs.h</a>
-</li>
-<li>NRF24L01_RX_PW_P5_REG_ADDR
-: <a class="el" href="nrf24l01__defs_8h.html#a1fa995f8957d9f1275d715c47ab59b1f">nrf24l01_defs.h</a>
-</li>
-<li>NRF24L01_SETUP_AW_REG_ADDR
-: <a class="el" href="nrf24l01__defs_8h.html#a741d530a70e4ba767da433003ce3acb4">nrf24l01_defs.h</a>
-</li>
-<li>NRF24L01_SETUP_RETR_REG_ADDR
-: <a class="el" href="nrf24l01__defs_8h.html#acd347e6ef2cfd7f3a015defbfb33f76e">nrf24l01_defs.h</a>
-</li>
-<li>NRF24L01_STATUS_REG_ADDR
-: <a class="el" href="nrf24l01__defs_8h.html#afb34b43b8b4c38679325cf8ba8534951">nrf24l01_defs.h</a>
-</li>
 <li>NRF24L01_TEST_ADDR
 : <a class="el" href="nrf24l01_8c.html#a0adde16a6253944083b670d5ae93dee1">nrf24l01.c</a>
-</li>
-<li>NRF24L01_TX_ADDR_REG_ADDR
-: <a class="el" href="nrf24l01__defs_8h.html#aa02faca8b5aa10b55dee463558ce7f91">nrf24l01_defs.h</a>
 </li>
 <li>NRF24L01_TX_FIFO_DEPTH
 : <a class="el" href="nrf24l01__defs_8h.html#a142a834dbfc4ceb8c2c556e9624f29f2">nrf24l01_defs.h</a>
