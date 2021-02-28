@@ -1,0 +1,1 @@
+Retrieved from [octopart](https://datasheet.octopart.com/NRF24L01-Nordic-Semiconductor-datasheet-10541936.pdf) on Febuary 28th, 2021

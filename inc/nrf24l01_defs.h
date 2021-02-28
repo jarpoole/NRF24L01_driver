@@ -87,7 +87,9 @@
 	
 /** @name General Commands
  * 	@brief NRF24L01 general command definitions
- * 	Format is <b>NRF24L01_CMD_x</b> where x is the name assigned to the command by the datasheet
+ * 
+ *  These commands should be shifted out over MOSI directly after asserting CSN
+ * 	Format is <b>NRF24L01_CMD_x</b> where <b>x</b> is the name assigned to the command by the datasheet
  */
 /// @{
 #define NRF24L01_CMD_R_REGISTER    (uint8_t)0x00  ///< Register read 0b000XXXXX where XXXXX = 5 bit Register Map Address
@@ -103,7 +105,9 @@
 
 /** @name Feature Commands
  * 	@brief NRF24L01 special feature command definitions
- * 	Format is <b>NRF24L01_FEATURE_CMD_x</b> where x is the name assigned to the command by the datasheet
+ * 
+ * 	These commands are only valid after the ACTIVATE command has been send to toggle on the NRF24L01 special features
+ * 	Format is <b>NRF24L01_FEATURE_CMD_x</b> where <b>x</b> is the name assigned to the command by the datasheet
  */
 /// @{
 #define NRF24L01_FEATURE_CMD_R_RX_PL_WID	     (uint8_t)0x60  ///< Read RX-payload width for the top R_RX_PAYLOAD in the RX FIFO.
@@ -113,7 +117,8 @@
 
 /** @name General Register Addresses
  * 	@brief NRF24L01 register address definitions
- * 	Format is <b>NRF24L01_REG_ADDR_x</b> where x is the name assigned to the register by the datasheet
+ * 
+ * 	Format is <b>NRF24L01_REG_ADDR_r</b> where <b>r</b> is the name assigned to the register by the datasheet
  */
 /// @{
 #define NRF24L01_REG_ADDR_CONFIG       (uint8_t)0x00  ///< Configuration register address
@@ -144,7 +149,7 @@
 
 /** @name Special Feature Register Addresses
  * 	@brief NRF24L01 special feature register address definitions
- * 	Format is <b>NRF24L01_FEATURE_REG_ADDR_x</b> where x is the name assigned to the special feature register by the datasheet
+ * 	Format is <b>NRF24L01_FEATURE_REG_ADDR_x</b> where <b>x</b> is the name assigned to the special feature register by the datasheet
  */
 /// @{
 #define NRF24L01_FEATURE_REG_ADDR_DYNPD    (uint8_t)0x1C  ///< Enable dynamic payload length register address
@@ -154,7 +159,7 @@
 
 /** @name Register Bits
  * 	@brief NRF24L01 register bit definitions
- * 	Format is <b>NRF24L01_r_REG_BIT_x</b> where r is the register name where the bit is found and x is the name assigned to the register bit by the datasheet
+ * 	Format is <b>NRF24L01_r_REG_BIT_x</b> where <b>r</b> is the register name where the bit is found and <b>x</b> is the name assigned to the register bit by the datasheet
  *  If register contains a bit field then REG_BITS is plural
  */
 /// @{
@@ -236,7 +241,7 @@
 
 /** @name Register masks
  * 	@brief NRF24L01 register mask definitions
- * 	Format is <b>NRF24L01_r_MASK_x</b> where r is the register name where the bit is found and x an arbitrary assigned name
+ * 	Format is <b>NRF24L01_r_MASK_x</b> where <b>r</b> is the register name where the bit is found and <b>x</b> an arbitrary assigned name
  *  Each register also has a full mask defined for it under the name NRF24L01_r_MASK_REG
  */
 /// @{
