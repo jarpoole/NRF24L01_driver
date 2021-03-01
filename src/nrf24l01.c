@@ -253,6 +253,18 @@ nrf24l01_err_t nrf24l01_set_power_mode(nrf24l01_power_mode_t mode, nrf24l01_plat
 	return err;
 }
 
+nrf24l01_err_t nrf24l01_start_listening(nrf24l01_platform_t* platform){
+	NRF24L01_FPTR_RTN_T platform_err = 0;
+	platform_err |= platform->gpio_chip_enable(true, platform->user_ptr);
+	platform_err |= platform->delay_us(NRF24L01_TIMING_RF_SETTLING);
+	return ( (platform_err == 0) ? NRF24L01_OK : NRF24L01_ERR_UNKNOWN );
+}
+nrf24l01_err_t nrf24l01_stop_listening(nrf24l01_platform_t* platform){
+	NRF24L01_FPTR_RTN_T platform_err = 0;
+	platform_err |= platform->gpio_chip_enable(false, platform->user_ptr);
+	return ( (platform_err == 0) ? NRF24L01_OK : NRF24L01_ERR_UNKNOWN );
+}
+
 // Set transceiver operational mode
 // input:
 //   mode - operational mode, one of nRF24_MODE_xx values
@@ -689,7 +701,7 @@ nrf24l01_err_t nrf24l01_write_payload(uint8_t* data, uint8_t len, nrf24l01_platf
 
 
 static nrf24l01_err_t nrf24l01_get_rx_dpl(uint8_t* width, nrf24l01_platform_t* platform) {
-	NRF24L01_FPTR_RTN_T spi_err = platform->spi_exchange(NRF24L01_FEATURE_CMD_R_RX_PL_WID, NULL, width, sizeof(uint8_t), platform->user_ptr);
+	NRF24L01_FPTR_RTN_T spi_err = platform->spi_exchange(NRF24L01_FEATURE_CMD_R_RX_PL_WID, width, NULL, sizeof(uint8_t), platform->user_ptr);
 	if(spi_err != 0){
 		return NRF24L01_ERR_WRITE;
 	}
@@ -697,6 +709,8 @@ static nrf24l01_err_t nrf24l01_get_rx_dpl(uint8_t* width, nrf24l01_platform_t* p
 }
 
 nrf24l01_err_t nrf24l01_read_payload(nrf24l01_pipe_t* pipe, uint8_t* rx_data, uint8_t* len, bool dpl, nrf24l01_platform_t* platform) {
+
+	nrf24l01_err_t err;
 
 	// Extract a payload pipe number from the STATUS register
 	nrf24l01_pipe_t payload_pipe;
@@ -725,7 +739,13 @@ nrf24l01_err_t nrf24l01_read_payload(nrf24l01_pipe_t* pipe, uint8_t* rx_data, ui
 		if(len != NULL && *len < payload_len){
 			return NRF24L01_ERR_INVALID_ARG;
 		}
-		nrf24l01_multi_read_reg(NRF24L01_CMD_R_RX_PAYLOAD, rx_data, payload_len, platform);
+
+		NRF24L01_FPTR_RTN_T spi_err = platform->spi_exchange(NRF24L01_CMD_R_RX_PAYLOAD, rx_data, NULL, payload_len, platform->user_ptr);
+		if(spi_err != 0){
+			err = NRF24L01_ERR_WRITE;
+		}else{
+			err = NRF24L01_OK;
+		}
 	}
 	if(len != NULL){
 		*len = payload_len;
@@ -978,7 +998,7 @@ void nrf24l01_print_config(nrf24l01_platform_t* platform) {
 		(reg_temp & NRF24L01_EN_AA_MASK_REG)  ? "ON" : "OFF"
 	);
 	for (int8_t i = 5; i >= 0; i--) {
-		NRF24L01_DEBUGGING_PRINTF("PIPE%1u=%s%s", i, (reg_temp & (1 << i)) ? "YES" : "NO", (i == 0) ? "\n" : " ,");
+		NRF24L01_DEBUGGING_PRINTF("PIPE%1u=%s%s", i, (reg_temp & (1 << i)) ? "YES" : "NO", (i == 0) ? "\n" : ", ");
 	}
 
 	// EN_RX_ADDR
@@ -1331,6 +1351,7 @@ void nrf24l01_loop(nrf24l01_platform_t* platform){
 			}
 
 		}
+		nrf24l01_clear_irq_flags(platform);
 
 		return;
 	}else{

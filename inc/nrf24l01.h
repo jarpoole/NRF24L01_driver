@@ -64,7 +64,6 @@ nrf24l01_err_t nrf24l01_get_features(uint8_t*, nrf24l01_platform_t*);
 /****************************************************************************************************************/
     
 
-
 /*** Pipe API ***************************************************************************************************/
 
 // Configure
@@ -84,6 +83,9 @@ nrf24l01_err_t nrf24l01_read_payload(nrf24l01_pipe_t*, uint8_t*, uint8_t*, bool,
 nrf24l01_err_t nrf24l01_set_pipe_dpl_mode(nrf24l01_pipe_t, nrf24l01_dpl_mode_t, nrf24l01_platform_t*);
 
 /****************************************************************************************************************/
+
+nrf24l01_err_t nrf24l01_start_listening(nrf24l01_platform_t*);
+nrf24l01_err_t nrf24l01_stop_listening(nrf24l01_platform_t*);
 
 
 void nrf24l01_loop(nrf24l01_platform_t*);

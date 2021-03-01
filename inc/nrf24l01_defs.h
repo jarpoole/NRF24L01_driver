@@ -408,6 +408,7 @@
 // Timing requirements
 #define NRF24L01_CE_TX_MINIMUM_PULSE_US   10   // In microseconds
 #define NRF24L01_POWER_UP_US              5000 // In microseconds
+#define NRF24L01_TIMING_RF_SETTLING       130  // In microseconds
 
 // Sizes
 #define NRF24L01_TX_FIFO_WIDTH            32  ///< Each TX FIFO entry is 32 bytes wide
