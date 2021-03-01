@@ -84,9 +84,12 @@ Classes</h2></td></tr>
 Macros</h2></td></tr>
 <tr class="memitem:af225fdd9e1094009aec9eae23523138d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#af225fdd9e1094009aec9eae23523138d">NRF24L01_FPTR_RTN_T</a>&#160;&#160;&#160;int8_t</td></tr>
 <tr class="separator:af225fdd9e1094009aec9eae23523138d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7beece87d1aa21544adca078939220bd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#a7beece87d1aa21544adca078939220bd">NRF24L01_REG_BIT_REG_MAP</a>&#160;&#160;&#160;(uint8_t)0x1F</td></tr>
-<tr class="memdesc:a7beece87d1aa21544adca078939220bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mask for [4:0] for CMD_RREG and CMD_WREG commands.  <a href="#a7beece87d1aa21544adca078939220bd">More...</a><br /></td></tr>
-<tr class="separator:a7beece87d1aa21544adca078939220bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a022e4f4b24fde7306e66310daa1332c4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#a022e4f4b24fde7306e66310daa1332c4">NRF24L01_COMMAND_MASK_REG_ADDR</a>&#160;&#160;&#160;(uint8_t)0x1F</td></tr>
+<tr class="memdesc:a022e4f4b24fde7306e66310daa1332c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mask for AAAAA[4:0] register address bits for CMD_RREG and CMD_WREG commands.  <a href="#a022e4f4b24fde7306e66310daa1332c4">More...</a><br /></td></tr>
+<tr class="separator:a022e4f4b24fde7306e66310daa1332c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cdb55dc4a1146cfd4330c8eed20779c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#a9cdb55dc4a1146cfd4330c8eed20779c">NRF24L01_COMMAND_MASK_PIPE</a>&#160;&#160;&#160;(uint8_t)0x07</td></tr>
+<tr class="memdesc:a9cdb55dc4a1146cfd4330c8eed20779c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mask for PPP[2:0] pipe specifier bits for W_ACK_PAYLOAD command.  <a href="#a9cdb55dc4a1146cfd4330c8eed20779c">More...</a><br /></td></tr>
+<tr class="separator:a9cdb55dc4a1146cfd4330c8eed20779c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12208e9bca3e4fe9709a44140f7efdbf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#a12208e9bca3e4fe9709a44140f7efdbf">NRF24L01_ADDR_WIDTH_INVALID</a>&#160;&#160;&#160;(uint8_t)0x00</td></tr>
 <tr class="memdesc:a12208e9bca3e4fe9709a44140f7efdbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid address field width.  <a href="#a12208e9bca3e4fe9709a44140f7efdbf">More...</a><br /></td></tr>
 <tr class="separator:a12208e9bca3e4fe9709a44140f7efdbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -99,6 +102,18 @@ Macros</h2></td></tr>
 <tr class="memitem:aaf0a26f356b7e3dd6825ce696bb2ccfe"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#aaf0a26f356b7e3dd6825ce696bb2ccfe">NRF24L01_ADDR_WIDTH_5_BYTES</a>&#160;&#160;&#160;(uint8_t)0x03</td></tr>
 <tr class="memdesc:aaf0a26f356b7e3dd6825ce696bb2ccfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">5 Byte RX/TX address field width  <a href="#aaf0a26f356b7e3dd6825ce696bb2ccfe">More...</a><br /></td></tr>
 <tr class="separator:aaf0a26f356b7e3dd6825ce696bb2ccfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec6cf643e37a7039c542e969a5bc810d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#aec6cf643e37a7039c542e969a5bc810d">NRF24L01_TX_PWR_18DBM</a>&#160;&#160;&#160;(uint8_t)0x00</td></tr>
+<tr class="memdesc:aec6cf643e37a7039c542e969a5bc810d"><td class="mdescLeft">&#160;</td><td class="mdescRight">-18dBm  <a href="#aec6cf643e37a7039c542e969a5bc810d">More...</a><br /></td></tr>
+<tr class="separator:aec6cf643e37a7039c542e969a5bc810d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1d02c0e1c4e0418293b84e5ef3830ea"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#af1d02c0e1c4e0418293b84e5ef3830ea">NRF24L01_TX_PWR_12DBM</a>&#160;&#160;&#160;(uint8_t)0x02</td></tr>
+<tr class="memdesc:af1d02c0e1c4e0418293b84e5ef3830ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">-12dBm  <a href="#af1d02c0e1c4e0418293b84e5ef3830ea">More...</a><br /></td></tr>
+<tr class="separator:af1d02c0e1c4e0418293b84e5ef3830ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a836b7e271e504395207756e042ed916d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#a836b7e271e504395207756e042ed916d">NRF24L01_TX_PWR_6DBM</a>&#160;&#160;&#160;(uint8_t)0x04</td></tr>
+<tr class="memdesc:a836b7e271e504395207756e042ed916d"><td class="mdescLeft">&#160;</td><td class="mdescRight">-6dBm  <a href="#a836b7e271e504395207756e042ed916d">More...</a><br /></td></tr>
+<tr class="separator:a836b7e271e504395207756e042ed916d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8a74f6cf9bc25b1b63f6fcf77279b9e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#ae8a74f6cf9bc25b1b63f6fcf77279b9e">NRF24L01_TX_PWR_0DBM</a>&#160;&#160;&#160;(uint8_t)0x06</td></tr>
+<tr class="memdesc:ae8a74f6cf9bc25b1b63f6fcf77279b9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">0dBm  <a href="#ae8a74f6cf9bc25b1b63f6fcf77279b9e">More...</a><br /></td></tr>
+<tr class="separator:ae8a74f6cf9bc25b1b63f6fcf77279b9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf29d18479a25f17627dd33091093277"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#abf29d18479a25f17627dd33091093277">NRF24L01_CE_TX_MINIMUM_PULSE_US</a>&#160;&#160;&#160;10</td></tr>
 <tr class="separator:abf29d18479a25f17627dd33091093277"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3fc300f15bd4b882e67625ead1071a9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#af3fc300f15bd4b882e67625ead1071a9">NRF24L01_POWER_UP_US</a>&#160;&#160;&#160;5000</td></tr>
@@ -531,8 +546,7 @@ Enumerations</h2></td></tr>
 <br />
  }</td></tr>
 <tr class="separator:a06fc87d81c62e9abb8790b6e5713c55b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1238bb8b104118e000aac333af1720f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#af1238bb8b104118e000aac333af1720f">nrf24l01_data_rate_t</a> { <a class="el" href="nrf24l01__defs_8h.html#af1238bb8b104118e000aac333af1720fa6232db555edf8cf1fff439c0913c2129">NRF24L01_DR_250KBPS</a> = (uint8_t)0x20, 
-<a class="el" href="nrf24l01__defs_8h.html#af1238bb8b104118e000aac333af1720fa786bbeae7405d3bc55148fb53171ef38">NRF24L01_DR_1MBPS</a> = (uint8_t)0x00, 
+<tr class="memitem:af1238bb8b104118e000aac333af1720f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#af1238bb8b104118e000aac333af1720f">nrf24l01_data_rate_t</a> { <a class="el" href="nrf24l01__defs_8h.html#af1238bb8b104118e000aac333af1720fa786bbeae7405d3bc55148fb53171ef38">NRF24L01_DR_1MBPS</a> = (uint8_t)0x00, 
 <a class="el" href="nrf24l01__defs_8h.html#af1238bb8b104118e000aac333af1720fa07dc64a8ba3d3222f7ea35de2f81e01d">NRF24L01_DR_2MBPS</a> = (uint8_t)0x08
  }</td></tr>
 <tr class="separator:af1238bb8b104118e000aac333af1720f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -885,6 +899,38 @@ TERMINOLOGY</h1>
 </div><div class="memdoc">
 
 <p>Write TX payload. </p>
+
+</div>
+</div>
+<a id="a9cdb55dc4a1146cfd4330c8eed20779c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cdb55dc4a1146cfd4330c8eed20779c">&#9670;&nbsp;</a></span>NRF24L01_COMMAND_MASK_PIPE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NRF24L01_COMMAND_MASK_PIPE&#160;&#160;&#160;(uint8_t)0x07</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mask for PPP[2:0] pipe specifier bits for W_ACK_PAYLOAD command. </p>
+
+</div>
+</div>
+<a id="a022e4f4b24fde7306e66310daa1332c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a022e4f4b24fde7306e66310daa1332c4">&#9670;&nbsp;</a></span>NRF24L01_COMMAND_MASK_REG_ADDR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NRF24L01_COMMAND_MASK_REG_ADDR&#160;&#160;&#160;(uint8_t)0x1F</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mask for AAAAA[4:0] register address bits for CMD_RREG and CMD_WREG commands. </p>
 
 </div>
 </div>
@@ -2163,22 +2209,6 @@ TERMINOLOGY</h1>
 
 </div>
 </div>
-<a id="a7beece87d1aa21544adca078939220bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7beece87d1aa21544adca078939220bd">&#9670;&nbsp;</a></span>NRF24L01_REG_BIT_REG_MAP</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define NRF24L01_REG_BIT_REG_MAP&#160;&#160;&#160;(uint8_t)0x1F</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Mask for [4:0] for CMD_RREG and CMD_WREG commands. </p>
-
-</div>
-</div>
 <a id="a2fa80a1d3906f9b5b8733ead96c3133e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2fa80a1d3906f9b5b8733ead96c3133e">&#9670;&nbsp;</a></span>NRF24L01_RF_CH_MASK_REG</h2>
 
@@ -2721,6 +2751,70 @@ TERMINOLOGY</h1>
 
 </div>
 </div>
+<a id="ae8a74f6cf9bc25b1b63f6fcf77279b9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8a74f6cf9bc25b1b63f6fcf77279b9e">&#9670;&nbsp;</a></span>NRF24L01_TX_PWR_0DBM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NRF24L01_TX_PWR_0DBM&#160;&#160;&#160;(uint8_t)0x06</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>0dBm </p>
+
+</div>
+</div>
+<a id="af1d02c0e1c4e0418293b84e5ef3830ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1d02c0e1c4e0418293b84e5ef3830ea">&#9670;&nbsp;</a></span>NRF24L01_TX_PWR_12DBM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NRF24L01_TX_PWR_12DBM&#160;&#160;&#160;(uint8_t)0x02</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>-12dBm </p>
+
+</div>
+</div>
+<a id="aec6cf643e37a7039c542e969a5bc810d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec6cf643e37a7039c542e969a5bc810d">&#9670;&nbsp;</a></span>NRF24L01_TX_PWR_18DBM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NRF24L01_TX_PWR_18DBM&#160;&#160;&#160;(uint8_t)0x00</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>-18dBm </p>
+
+</div>
+</div>
+<a id="a836b7e271e504395207756e042ed916d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a836b7e271e504395207756e042ed916d">&#9670;&nbsp;</a></span>NRF24L01_TX_PWR_6DBM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NRF24L01_TX_PWR_6DBM&#160;&#160;&#160;(uint8_t)0x04</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>-6dBm </p>
+
+</div>
+</div>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="a31b08d7577c5f71132a568693a91278d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a31b08d7577c5f71132a568693a91278d">&#9670;&nbsp;</a></span>nrf24l01_address_width_t</h2>
@@ -3145,9 +3239,7 @@ TERMINOLOGY</h1>
       </table>
 </div><div class="memdoc">
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="af1238bb8b104118e000aac333af1720fa6232db555edf8cf1fff439c0913c2129"></a>NRF24L01_DR_250KBPS&#160;</td><td class="fielddoc"><p>250kbps data rate </p>
-</td></tr>
-<tr><td class="fieldname"><a id="af1238bb8b104118e000aac333af1720fa786bbeae7405d3bc55148fb53171ef38"></a>NRF24L01_DR_1MBPS&#160;</td><td class="fielddoc"><p>1Mbps data rate </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="af1238bb8b104118e000aac333af1720fa786bbeae7405d3bc55148fb53171ef38"></a>NRF24L01_DR_1MBPS&#160;</td><td class="fielddoc"><p>1Mbps data rate </p>
 </td></tr>
 <tr><td class="fieldname"><a id="af1238bb8b104118e000aac333af1720fa07dc64a8ba3d3222f7ea35de2f81e01d"></a>NRF24L01_DR_2MBPS&#160;</td><td class="fielddoc"><p>2Mbps data rate </p>
 </td></tr>

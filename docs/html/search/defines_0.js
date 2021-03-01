@@ -16,6 +16,8 @@ var searchData=
   ['nrf24l01_5fcmd_5freuse_5ftx_5fpl',['NRF24L01_CMD_REUSE_TX_PL',['../nrf24l01__defs_8h.html#ac0684d6c09cc47538eedbeb1babbd72c',1,'nrf24l01_defs.h']]],
   ['nrf24l01_5fcmd_5fw_5fregister',['NRF24L01_CMD_W_REGISTER',['../nrf24l01__defs_8h.html#aafb2cf802c07e6e69817126c120081a6',1,'nrf24l01_defs.h']]],
   ['nrf24l01_5fcmd_5fw_5ftx_5fpayload',['NRF24L01_CMD_W_TX_PAYLOAD',['../nrf24l01__defs_8h.html#a39d8f4753c730f1f89a815632afc68cb',1,'nrf24l01_defs.h']]],
+  ['nrf24l01_5fcommand_5fmask_5fpipe',['NRF24L01_COMMAND_MASK_PIPE',['../nrf24l01__defs_8h.html#a9cdb55dc4a1146cfd4330c8eed20779c',1,'nrf24l01_defs.h']]],
+  ['nrf24l01_5fcommand_5fmask_5freg_5faddr',['NRF24L01_COMMAND_MASK_REG_ADDR',['../nrf24l01__defs_8h.html#a022e4f4b24fde7306e66310daa1332c4',1,'nrf24l01_defs.h']]],
   ['nrf24l01_5fconfig_5fmask_5fcrc',['NRF24L01_CONFIG_MASK_CRC',['../nrf24l01__defs_8h.html#ad6d7c9521fa1081e2e8fe0a58174da57',1,'nrf24l01_defs.h']]],
   ['nrf24l01_5fconfig_5fmask_5finterrupt_5fmasks',['NRF24L01_CONFIG_MASK_INTERRUPT_MASKS',['../nrf24l01__defs_8h.html#acb6a1aa06e4ebbc4cb47b95733673b71',1,'nrf24l01_defs.h']]],
   ['nrf24l01_5fconfig_5fmask_5freg',['NRF24L01_CONFIG_MASK_REG',['../nrf24l01__defs_8h.html#ad4b0e603d7d7516285f0dd714c46d30f',1,'nrf24l01_defs.h']]],
@@ -96,7 +98,6 @@ var searchData=
   ['nrf24l01_5freg_5faddr_5fsetup_5fretr',['NRF24L01_REG_ADDR_SETUP_RETR',['../nrf24l01__defs_8h.html#a2a732f8ddc3ca102bb1934b2653bc80b',1,'nrf24l01_defs.h']]],
   ['nrf24l01_5freg_5faddr_5fstatus',['NRF24L01_REG_ADDR_STATUS',['../nrf24l01__defs_8h.html#ab0401595a37a4bbb13b5af0639ff3300',1,'nrf24l01_defs.h']]],
   ['nrf24l01_5freg_5faddr_5ftx_5faddr',['NRF24L01_REG_ADDR_TX_ADDR',['../nrf24l01__defs_8h.html#adaa7beac7057eefcb850614cbe658a07',1,'nrf24l01_defs.h']]],
-  ['nrf24l01_5freg_5fbit_5freg_5fmap',['NRF24L01_REG_BIT_REG_MAP',['../nrf24l01__defs_8h.html#a7beece87d1aa21544adca078939220bd',1,'nrf24l01_defs.h']]],
   ['nrf24l01_5frf_5fch_5fmask_5freg',['NRF24L01_RF_CH_MASK_REG',['../nrf24l01__defs_8h.html#a2fa80a1d3906f9b5b8733ead96c3133e',1,'nrf24l01_defs.h']]],
   ['nrf24l01_5frf_5fch_5freg_5fbits_5frf_5fch',['NRF24L01_RF_CH_REG_BITS_RF_CH',['../nrf24l01__defs_8h.html#ae876cf8ae818b8ce339491beaa187f75',1,'nrf24l01_defs.h']]],
   ['nrf24l01_5frf_5fsetup_5fmask_5freg',['NRF24L01_RF_SETUP_MASK_REG',['../nrf24l01__defs_8h.html#a3d14c145be751bbc3a81afe59a976373',1,'nrf24l01_defs.h']]],
@@ -132,5 +133,9 @@ var searchData=
   ['nrf24l01_5fstatus_5freg_5fbits_5frx_5fp_5fno',['NRF24L01_STATUS_REG_BITS_RX_P_NO',['../nrf24l01__defs_8h.html#aaef3b9cc042253007cc2da9110a26311',1,'nrf24l01_defs.h']]],
   ['nrf24l01_5ftest_5faddr',['NRF24L01_TEST_ADDR',['../nrf24l01_8c.html#a0adde16a6253944083b670d5ae93dee1',1,'nrf24l01.c']]],
   ['nrf24l01_5ftx_5ffifo_5fdepth',['NRF24L01_TX_FIFO_DEPTH',['../nrf24l01__defs_8h.html#a142a834dbfc4ceb8c2c556e9624f29f2',1,'nrf24l01_defs.h']]],
-  ['nrf24l01_5ftx_5ffifo_5fwidth',['NRF24L01_TX_FIFO_WIDTH',['../nrf24l01__defs_8h.html#a1cb8f1a8cddbe978f058503c113a5b8e',1,'nrf24l01_defs.h']]]
+  ['nrf24l01_5ftx_5ffifo_5fwidth',['NRF24L01_TX_FIFO_WIDTH',['../nrf24l01__defs_8h.html#a1cb8f1a8cddbe978f058503c113a5b8e',1,'nrf24l01_defs.h']]],
+  ['nrf24l01_5ftx_5fpwr_5f0dbm',['NRF24L01_TX_PWR_0DBM',['../nrf24l01__defs_8h.html#ae8a74f6cf9bc25b1b63f6fcf77279b9e',1,'nrf24l01_defs.h']]],
+  ['nrf24l01_5ftx_5fpwr_5f12dbm',['NRF24L01_TX_PWR_12DBM',['../nrf24l01__defs_8h.html#af1d02c0e1c4e0418293b84e5ef3830ea',1,'nrf24l01_defs.h']]],
+  ['nrf24l01_5ftx_5fpwr_5f18dbm',['NRF24L01_TX_PWR_18DBM',['../nrf24l01__defs_8h.html#aec6cf643e37a7039c542e969a5bc810d',1,'nrf24l01_defs.h']]],
+  ['nrf24l01_5ftx_5fpwr_5f6dbm',['NRF24L01_TX_PWR_6DBM',['../nrf24l01__defs_8h.html#a836b7e271e504395207756e042ed916d',1,'nrf24l01_defs.h']]]
 ];
