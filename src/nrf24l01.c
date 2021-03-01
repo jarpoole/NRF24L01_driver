@@ -29,23 +29,23 @@
 
 // Address lookup table for the RX_PW_P# registers
 static const uint8_t NRF24L01_RX_PW_PIPE[] = {
-	NRF24L01_RX_PW_P0_REG_ADDR,
-	NRF24L01_RX_PW_P1_REG_ADDR,
-	NRF24L01_RX_PW_P2_REG_ADDR,
-	NRF24L01_RX_PW_P3_REG_ADDR,
-	NRF24L01_RX_PW_P4_REG_ADDR,
-	NRF24L01_RX_PW_P5_REG_ADDR,
+	NRF24L01_REG_ADDR_RX_PW_P0,
+	NRF24L01_REG_ADDR_RX_PW_P1,
+	NRF24L01_REG_ADDR_RX_PW_P2,
+	NRF24L01_REG_ADDR_RX_PW_P3,
+	NRF24L01_REG_ADDR_RX_PW_P4,
+	NRF24L01_REG_ADDR_RX_PW_P5,
 };
 
-// Address lookup table for the address registers
+// Address lookup table for the RX_ADDR_P# address registers
 static const uint8_t NRF24L01_ADDR_REGS[] = {
-	NRF24L01_RX_ADDR_P0_REG_ADDR,
-	NRF24L01_RX_ADDR_P1_REG_ADDR,
-	NRF24L01_RX_ADDR_P2_REG_ADDR,
-	NRF24L01_RX_ADDR_P3_REG_ADDR,
-	NRF24L01_RX_ADDR_P4_REG_ADDR,
-	NRF24L01_RX_ADDR_P5_REG_ADDR,
-	NRF24L01_TX_ADDR_REG_ADDR,
+	NRF24L01_REG_ADDR_RX_ADDR_P0,
+	NRF24L01_REG_ADDR_RX_ADDR_P1,
+	NRF24L01_REG_ADDR_RX_ADDR_P2,
+	NRF24L01_REG_ADDR_RX_ADDR_P3,
+	NRF24L01_REG_ADDR_RX_ADDR_P4,
+	NRF24L01_REG_ADDR_RX_ADDR_P5,
+	NRF24L01_REG_ADDR_TX_ADDR,
 };
 
 // Static prototypes
@@ -66,7 +66,7 @@ static nrf24l01_err_t nrf24l01_read_reg(uint8_t reg_addr, uint8_t* data, nrf24l0
 	if(data == NULL){
 		return NRF24L01_ERR_INVALID_ARG;
 	}
-	uint8_t command = NRF24L01_CMD_R_REGISTER | (reg_addr & NRF24L01_MASK_REG_MAP);
+	uint8_t command = NRF24L01_CMD_R_REGISTER | (reg_addr & NRF24L01_COMMAND_MASK_REG_ADDR);
 
 	NRF24L01_FPTR_RTN_T err = platform->spi_exchange(command, data, NULL, sizeof(uint8_t), platform->user_ptr);
 	if(err != 0){
@@ -80,7 +80,7 @@ static nrf24l01_err_t nrf24l01_read_reg(uint8_t reg_addr, uint8_t* data, nrf24l0
 //   reg - number of register to write
 //   value - value to write
 static nrf24l01_err_t nrf24l01_write_reg(uint8_t reg_addr, uint8_t data, nrf24l01_platform_t* platform) {
-	uint8_t command = NRF24L01_CMD_W_REGISTER | (reg_addr & NRF24L01_MASK_REG_MAP);
+	uint8_t command = NRF24L01_CMD_W_REGISTER | (reg_addr & NRF24L01_COMMAND_MASK_REG_ADDR);
 	NRF24L01_FPTR_RTN_T err = platform->spi_exchange(command, NULL, &data, sizeof(uint8_t), platform->user_ptr);
 	if(err != 0){
 		return NRF24L01_ERR_WRITE;
@@ -97,7 +97,7 @@ static nrf24l01_err_t nrf24l01_multi_read_reg(uint8_t reg_addr, uint8_t *data, u
 	if(data == NULL){
 		return NRF24L01_ERR_INVALID_ARG;
 	}
-	uint8_t command = NRF24L01_CMD_R_REGISTER | (reg_addr & NRF24L01_MASK_REG_MAP);
+	uint8_t command = NRF24L01_CMD_R_REGISTER | (reg_addr & NRF24L01_COMMAND_MASK_REG_ADDR);
 	
 	NRF24L01_FPTR_RTN_T err = platform->spi_exchange(command, data, NULL, len, platform->user_ptr);
 	if(err != 0){
@@ -115,7 +115,7 @@ static nrf24l01_err_t nrf24l01_multi_write_reg(uint8_t reg_addr, uint8_t* data, 
 	if(data == NULL){
 		return NRF24L01_ERR_INVALID_ARG;
 	}
-	uint8_t command = NRF24L01_CMD_W_REGISTER | (reg_addr & NRF24L01_MASK_REG_MAP);
+	uint8_t command = NRF24L01_CMD_W_REGISTER | (reg_addr & NRF24L01_COMMAND_MASK_REG_ADDR);
 
 	NRF24L01_FPTR_RTN_T err = platform->spi_exchange(command, NULL, data, len, platform->user_ptr);
 	if(err != 0){
@@ -144,22 +144,22 @@ nrf24l01_err_t nrf24l01_init(nrf24l01_platform_t* platform) {
 
 	// Write to registers their initial values
 	nrf24l01_err_t err = NRF24L01_OK;
-	err |= nrf24l01_write_reg(NRF24L01_CONFIG_REG_ADDR,     0x08, platform);
-	err |= nrf24l01_write_reg(NRF24L01_EN_AA_REG_ADDR,      0x3F, platform);
-	err |= nrf24l01_write_reg(NRF24L01_EN_RX_ADDR_REG_ADDR, 0x03, platform);
-	err |= nrf24l01_write_reg(NRF24L01_SETUP_AW_REG_ADDR,   0x03, platform);
-	err |= nrf24l01_write_reg(NRF24L01_SETUP_RETR_REG_ADDR, 0x03, platform);
-	err |= nrf24l01_write_reg(NRF24L01_RF_CH_REG_ADDR,      0x02, platform);
-	err |= nrf24l01_write_reg(NRF24L01_RF_SETUP_REG_ADDR,   0x0E, platform);
-	err |= nrf24l01_write_reg(NRF24L01_STATUS_REG_ADDR,     0x00, platform);
-	err |= nrf24l01_write_reg(NRF24L01_RX_PW_P0_REG_ADDR,   0x00, platform);
-	err |= nrf24l01_write_reg(NRF24L01_RX_PW_P1_REG_ADDR,   0x00, platform);
-	err |= nrf24l01_write_reg(NRF24L01_RX_PW_P2_REG_ADDR,   0x00, platform);
-	err |= nrf24l01_write_reg(NRF24L01_RX_PW_P3_REG_ADDR,   0x00, platform);
-	err |= nrf24l01_write_reg(NRF24L01_RX_PW_P4_REG_ADDR,   0x00, platform);
-	err |= nrf24l01_write_reg(NRF24L01_RX_PW_P5_REG_ADDR,   0x00, platform);
-	err |= nrf24l01_write_reg(NRF24L01_DYNPD_REG_ADDR,      0x00, platform);
-	err |= nrf24l01_write_reg(NRF24L01_FEATURE_REG_ADDR,    0x00, platform);
+	err |= nrf24l01_write_reg(NRF24L01_REG_ADDR_CONFIG,     0x08, platform);
+	err |= nrf24l01_write_reg(NRF24L01_REG_ADDR_EN_AA,      0x3F, platform);
+	err |= nrf24l01_write_reg(NRF24L01_REG_ADDR_EN_RXADDR,  0x03, platform);
+	err |= nrf24l01_write_reg(NRF24L01_REG_ADDR_SETUP_AW,   0x03, platform);
+	err |= nrf24l01_write_reg(NRF24L01_REG_ADDR_SETUP_RETR, 0x03, platform);
+	err |= nrf24l01_write_reg(NRF24L01_REG_ADDR_RF_CH,      0x02, platform);
+	err |= nrf24l01_write_reg(NRF24L01_REG_ADDR_RF_SETUP,   0x0E, platform);
+	err |= nrf24l01_write_reg(NRF24L01_REG_ADDR_STATUS,     0x00, platform);
+	err |= nrf24l01_write_reg(NRF24L01_REG_ADDR_RX_PW_P0,   0x00, platform);
+	err |= nrf24l01_write_reg(NRF24L01_REG_ADDR_RX_PW_P1,   0x00, platform);
+	err |= nrf24l01_write_reg(NRF24L01_REG_ADDR_RX_PW_P2,   0x00, platform);
+	err |= nrf24l01_write_reg(NRF24L01_REG_ADDR_RX_PW_P3,   0x00, platform);
+	err |= nrf24l01_write_reg(NRF24L01_REG_ADDR_RX_PW_P4,   0x00, platform);
+	err |= nrf24l01_write_reg(NRF24L01_REG_ADDR_RX_PW_P5,   0x00, platform);
+	//err |= nrf24l01_write_reg(NRF24L01_FEATURE_REG_ADDR_DYNPD,   0x00, platform);
+	//err |= nrf24l01_write_reg(NRF24L01_FEATURE_REG_ADDR_FEATURE, 0x00, platform);
 
 	// Clear the FIFO's
 	err |= nrf24l01_flush_rx(platform);
@@ -192,11 +192,11 @@ nrf24l01_err_t nrf24l01_check_connectivity(nrf24l01_platform_t* platform) {
 
 	// Write test TX address
 	uint8_t *ptr = (uint8_t *)NRF24L01_TEST_ADDR;
-	err |= nrf24l01_multi_write_reg(NRF24L01_TX_ADDR_REG_ADDR, ptr, sizeof(NRF24L01_TEST_ADDR) - 1, platform);
+	err |= nrf24l01_multi_write_reg(NRF24L01_REG_ADDR_TX_ADDR, ptr, sizeof(NRF24L01_TEST_ADDR) - 1, platform);
 
 	//Read TX_ADDR register
 	uint8_t rxbuf[5];
-	err |= nrf24l01_multi_read_reg(NRF24L01_TX_ADDR_REG_ADDR, &rxbuf[0], sizeof(rxbuf), platform);
+	err |= nrf24l01_multi_read_reg(NRF24L01_REG_ADDR_TX_ADDR, &rxbuf[0], sizeof(rxbuf), platform);
 
 	// Compare buffers, return error on first mismatch
 	for (uint8_t i = 0; i < 5; i++) {
@@ -234,12 +234,12 @@ nrf24l01_err_t nrf24l01_set_power_mode(nrf24l01_power_mode_t mode, nrf24l01_plat
 	nrf24l01_err_t err = NRF24L01_OK;
 	uint8_t reg;
 
-	err |= nrf24l01_read_reg(NRF24L01_CONFIG_REG_ADDR, &reg, platform);
+	err |= nrf24l01_read_reg(NRF24L01_REG_ADDR_CONFIG, &reg, platform);
 	if (mode == NRF24L01_PWR_UP) {
 		// Set the PWR_UP bit of CONFIG register to wake the transceiver
 		// It goes into Stanby-I mode with consumption about 26uA
-		reg |= NRF24L01_CONFIG_PWR_UP;
-		err |= nrf24l01_write_reg(NRF24L01_CONFIG_REG_ADDR, reg, platform);
+		reg |= NRF24L01_CONFIG_REG_BIT_PWR_UP;
+		err |= nrf24l01_write_reg(NRF24L01_REG_ADDR_CONFIG, reg, platform);
 		
 		platform->delay_us(NRF24L01_POWER_UP_US);
 	} else {
@@ -247,8 +247,8 @@ nrf24l01_err_t nrf24l01_set_power_mode(nrf24l01_power_mode_t mode, nrf24l01_plat
 
 		// Clear the PWR_UP bit of CONFIG register to put the transceiver
 		// into power down mode with consumption about 900nA
-		reg &= ~NRF24L01_CONFIG_PWR_UP;
-		err |= nrf24l01_write_reg(NRF24L01_CONFIG_REG_ADDR, reg, platform);
+		reg &= ~NRF24L01_CONFIG_REG_BIT_PWR_UP;
+		err |= nrf24l01_write_reg(NRF24L01_REG_ADDR_CONFIG, reg, platform);
 	}
 	return err;
 }
@@ -261,10 +261,10 @@ nrf24l01_err_t nrf24l01_set_operational_mode(nrf24l01_operational_mode_t mode, n
 	uint8_t reg;
 
 	// Configure PRIM_RX bit of the CONFIG register
-	err |= nrf24l01_read_reg(NRF24L01_CONFIG_REG_ADDR, &reg, platform);
-	reg &= ~NRF24L01_CONFIG_PRIM_RX;
-	reg |= (mode & NRF24L01_CONFIG_PRIM_RX);
-	err |= nrf24l01_write_reg(NRF24L01_CONFIG_REG_ADDR, reg, platform);
+	err |= nrf24l01_read_reg(NRF24L01_REG_ADDR_CONFIG, &reg, platform);
+	reg &= ~NRF24L01_CONFIG_REG_BIT_PRIM_RX;
+	reg |= (mode & NRF24L01_CONFIG_REG_BIT_PRIM_RX);
+	err |= nrf24l01_write_reg(NRF24L01_REG_ADDR_CONFIG, reg, platform);
 
 	return err;
 }
@@ -280,10 +280,10 @@ nrf24l01_err_t nrf24l01_set_crc_scheme(nrf24l01_crc_scheme_t scheme, nrf24l01_pl
 	uint8_t reg;
 
 	// Configure EN_CRC[3] and CRCO[2] bits of the CONFIG register
-	err |= nrf24l01_read_reg(NRF24L01_CONFIG_REG_ADDR, &reg, platform);
-	reg &= ~NRF24L01_MASK_CONFIG_CRC;
-	reg |= (scheme & NRF24L01_MASK_CONFIG_CRC);
-	err |= nrf24l01_write_reg(NRF24L01_CONFIG_REG_ADDR, reg, platform);
+	err |= nrf24l01_read_reg(NRF24L01_REG_ADDR_CONFIG, &reg, platform);
+	reg &= ~NRF24L01_CONFIG_MASK_CRC;
+	reg |= (scheme & NRF24L01_CONFIG_MASK_CRC);
+	err |= nrf24l01_write_reg(NRF24L01_REG_ADDR_CONFIG, reg, platform);
 
 	return err;
 }
@@ -295,7 +295,7 @@ nrf24l01_err_t nrf24l01_set_crc_scheme(nrf24l01_crc_scheme_t scheme, nrf24l01_pl
 // note: PLOS_CNT[7:4] bits of the OBSERVER_TX register will be reset
 nrf24l01_err_t nrf24l01_set_rf_channel(uint8_t channel, nrf24l01_platform_t* platform) {
 	nrf24l01_err_t err;
-	err = nrf24l01_write_reg(NRF24L01_RF_CH_REG_ADDR, channel, platform);
+	err = nrf24l01_write_reg(NRF24L01_REG_ADDR_RF_CH, channel, platform);
 	return err;
 }
 
@@ -307,7 +307,7 @@ nrf24l01_err_t nrf24l01_set_rf_channel(uint8_t channel, nrf24l01_platform_t* pla
 nrf24l01_err_t nrf24l01_set_auto_retransmission(nrf24l01_ar_delay_t ard, nrf24l01_ar_count_t arc, nrf24l01_platform_t* platform) {
 	// Set auto retransmit settings (SETUP_RETR register)
 	nrf24l01_err_t err;
-	err = nrf24l01_write_reg(NRF24L01_SETUP_RETR_REG_ADDR, (uint8_t)((ard << 4) | (arc & NRF24L01_MASK_RETR_ARC)), platform);
+	err = nrf24l01_write_reg(NRF24L01_REG_ADDR_SETUP_RETR, (uint8_t)((ard << 4) | (arc & NRF24L01_SETUP_RETR_REG_BITS_ARC)), platform);
 	return err;
 }
 
@@ -326,7 +326,7 @@ nrf24l01_err_t nrf24l01_set_address_width(nrf24l01_address_width_t addr_width, n
 	}else{
 		return NRF24L01_ERR_INVALID_ARG;
 	}
-	nrf24l01_err_t err = nrf24l01_write_reg(NRF24L01_SETUP_AW_REG_ADDR, reg_val, platform);
+	nrf24l01_err_t err = nrf24l01_write_reg(NRF24L01_REG_ADDR_SETUP_AW, reg_val, platform);
 	return err;
 }
 
@@ -370,10 +370,10 @@ nrf24l01_err_t nrf24l01_set_tx_power(nrf24l01_tx_power_t tx_power, nrf24l01_plat
 	uint8_t reg;
 
 	// Configure RF_PWR[2:1] bits of the RF_SETUP register
-	err |= nrf24l01_read_reg(NRF24L01_RF_SETUP_REG_ADDR, &reg, platform);
-	reg &= ~NRF24L01_MASK_RF_PWR;
+	err |= nrf24l01_read_reg(NRF24L01_REG_ADDR_RF_SETUP, &reg, platform);
+	reg &= ~NRF24L01_RF_SETUP_REG_BITS_RF_PWR;
 	reg |= tx_power;
-	err |= nrf24l01_write_reg(NRF24L01_RF_SETUP_REG_ADDR, reg, platform);
+	err |= nrf24l01_write_reg(NRF24L01_REG_ADDR_RF_SETUP, reg, platform);
 
 	return err;
 }
@@ -386,10 +386,10 @@ nrf24l01_err_t nrf24l01_set_data_rate(nrf24l01_data_rate_t data_rate, nrf24l01_p
 	uint8_t reg;
 
 	// Configure RF_DR_LOW[5] and RF_DR_HIGH[3] bits of the RF_SETUP register
-	err |= nrf24l01_read_reg(NRF24L01_RF_SETUP_REG_ADDR, &reg, platform);
-	reg &= ~NRF24L01_MASK_DATARATE;
+	err |= nrf24l01_read_reg(NRF24L01_REG_ADDR_RF_SETUP, &reg, platform);
+	reg &= ~NRF24L01_RF_SETUP_REG_BIT_RF_DR;
 	reg |= data_rate;
-	err |= nrf24l01_write_reg(NRF24L01_RF_SETUP_REG_ADDR, reg, platform);
+	err |= nrf24l01_write_reg(NRF24L01_REG_ADDR_RF_SETUP, reg, platform);
 
 	return err;
 }
@@ -409,12 +409,12 @@ nrf24l01_err_t nrf24l01_set_pipe_mode(nrf24l01_pipe_t pipe, nrf24l01_pipe_mode_t
 	uint8_t changes;
 
 	if(pipe == NRF24L01_ALL_RX_PIPES){
-		changes = NRF24L01_MASK_EN_RX_ADDR;
+		changes = NRF24L01_EN_RXADDR_MASK_REG;
 	}else{
 		changes = (1 << pipe);
 	}
 
-	err |= nrf24l01_read_reg(NRF24L01_EN_RX_ADDR_REG_ADDR, &reg, platform);
+	err |= nrf24l01_read_reg(NRF24L01_REG_ADDR_EN_RXADDR, &reg, platform);
 	if(mode == NRF24L01_PIPE_ENABLED){
 		reg |= changes;
 	}else if(mode == NRF24L01_PIPE_DISABLED){
@@ -422,7 +422,7 @@ nrf24l01_err_t nrf24l01_set_pipe_mode(nrf24l01_pipe_t pipe, nrf24l01_pipe_mode_t
 	}else{
 		return NRF24L01_ERR_INVALID_ARG;
 	}
-	err |= nrf24l01_write_reg(NRF24L01_EN_RX_ADDR_REG_ADDR, reg, platform);
+	err |= nrf24l01_write_reg(NRF24L01_REG_ADDR_EN_RXADDR, reg, platform);
 
 	return err;
 }
@@ -441,12 +441,12 @@ nrf24l01_err_t nrf24l01_set_pipe_aa_mode(nrf24l01_pipe_t pipe, nrf24l01_pipe_aa_
 	uint8_t changes;
 
 	if(pipe == NRF24L01_ALL_RX_PIPES){
-		changes = NRF24L01_MASK_EN_AA;
+		changes = NRF24L01_EN_AA_MASK_REG;
 	}else{
 		changes = (1 << pipe);
 	}
 
-	err |= nrf24l01_read_reg(NRF24L01_EN_AA_REG_ADDR, &reg, platform);
+	err |= nrf24l01_read_reg(NRF24L01_REG_ADDR_EN_AA, &reg, platform);
 	if(aa_mode == NRF24L01_AA_ON){
 		reg |= changes;
 	}else if(aa_mode == NRF24L01_AA_OFF){
@@ -454,7 +454,7 @@ nrf24l01_err_t nrf24l01_set_pipe_aa_mode(nrf24l01_pipe_t pipe, nrf24l01_pipe_aa_
 	}else{
 		return NRF24L01_ERR_INVALID_ARG;
 	}
-	err |= nrf24l01_write_reg(NRF24L01_EN_AA_REG_ADDR, reg, platform);
+	err |= nrf24l01_write_reg(NRF24L01_REG_ADDR_EN_AA, reg, platform);
 
 	return err;
 }
@@ -469,12 +469,12 @@ nrf24l01_err_t nrf24l01_set_pipe_dpl_mode(nrf24l01_pipe_t pipe, nrf24l01_dpl_mod
 	uint8_t changes;
 
 	if(pipe == NRF24L01_ALL_RX_PIPES){
-		changes = NRF24L01_MASK_DYNPD;
+		changes = NRF24L01_DYNPD_MASK_REG;
 	}else{
 		changes = (1 << pipe);
 	}
 
-	err |= nrf24l01_read_reg(NRF24L01_EN_AA_REG_ADDR, &reg, platform);
+	err |= nrf24l01_read_reg(NRF24L01_FEATURE_REG_ADDR_DYNPD, &reg, platform);
 	if(dpl_mode == NRF24L01_DPL_ON){
 		reg |= changes;
 	}else if(dpl_mode == NRF24L01_DPL_OFF){
@@ -482,7 +482,7 @@ nrf24l01_err_t nrf24l01_set_pipe_dpl_mode(nrf24l01_pipe_t pipe, nrf24l01_dpl_mod
 	}else{
 		return NRF24L01_ERR_INVALID_ARG;
 	}
-	err |= nrf24l01_write_reg(NRF24L01_EN_AA_REG_ADDR, reg, platform);
+	err |= nrf24l01_write_reg(NRF24L01_FEATURE_REG_ADDR_DYNPD, reg, platform);
 
 	return err;
 }
@@ -498,7 +498,7 @@ nrf24l01_err_t nrf24l01_get_status(uint8_t* status, nrf24l01_platform_t* platfor
 		return err;
 	}
 	// The status register is shifted out on MISO regardless of address provided on MOSI so the status register address is provided primarily for debugging visibility here
-	err = nrf24l01_read_reg(NRF24L01_STATUS_REG_ADDR, status, platform);
+	err = nrf24l01_read_reg(NRF24L01_REG_ADDR_STATUS, status, platform);
 	return err;
 }
 
@@ -513,9 +513,9 @@ nrf24l01_err_t nrf24l01_get_irq_flags(uint8_t* flags, nrf24l01_platform_t* platf
 		return err;
 	}
 
-	err = nrf24l01_read_reg(NRF24L01_STATUS_REG_ADDR, &temp, platform);
+	err = nrf24l01_read_reg(NRF24L01_REG_ADDR_STATUS, &temp, platform);
 	if(err == NRF24L01_OK){
-		*flags = temp & NRF24L01_MASK_STATUS_IRQ;
+		*flags = temp & NRF24L01_STATUS_MASK_IRQ_FLAGS;
 	}
 	return err;
 }
@@ -525,10 +525,10 @@ nrf24l01_err_t nrf24l01_set_irq_mask(nrf24l01_interrupt_mask_t mask, nrf24l01_pl
 	uint8_t reg;
 
 	// The PLOS counter is reset after write to RF_CH register
-	err |= nrf24l01_read_reg(NRF24L01_CONFIG_REG_ADDR, &reg, platform);
-	reg &= ~NRF24L01_MASK_CONFIG_INTERRUPTS;
-	reg |= (mask & NRF24L01_MASK_CONFIG_INTERRUPTS);
-	err |= nrf24l01_write_reg(NRF24L01_CONFIG_REG_ADDR, reg, platform);
+	err |= nrf24l01_read_reg(NRF24L01_REG_ADDR_CONFIG, &reg, platform);
+	reg &= ~NRF24L01_CONFIG_MASK_INTERRUPT_MASKS;
+	reg |= (mask & NRF24L01_CONFIG_MASK_INTERRUPT_MASKS);
+	err |= nrf24l01_write_reg(NRF24L01_REG_ADDR_CONFIG, reg, platform);
 	return err;
 }
 
@@ -542,12 +542,12 @@ nrf24l01_err_t nrf24l01_get_fifo_status(nrf24l01_fifo_type_t fifo_type, nrf24l01
 	}
 
 	uint8_t temp;
-	err = nrf24l01_read_reg(NRF24L01_FIFO_STATUS_REG_ADDR, &temp, platform);
+	err = nrf24l01_read_reg(NRF24L01_REG_ADDR_FIFO_STATUS, &temp, platform);
 	if(err == NRF24L01_OK){
 		if(fifo_type == NRF24L01_RX_FIFO){
-			*fifo_status = temp & NRF24L01_MASK_RX_FIFO_STATUS;
+			*fifo_status = temp & NRF24L01_FIFO_STATUS_MASK_RX_FLAGS;
 		}else if(fifo_type == NRF24L01_TX_FIFO){
-			*fifo_status = (temp & NRF24L01_MASK_TX_FIFO_STATUS) >> 4;
+			*fifo_status = (temp & NRF24L01_FIFO_STATUS_MASK_TX_FLAGS) >> 4;
 		}else{
 			return NRF24L01_ERR_INVALID_ARG;
 		}
@@ -567,12 +567,12 @@ nrf24l01_err_t nrf24l01_get_rx_pipe(nrf24l01_pipe_t* pipe, nrf24l01_platform_t* 
 	}
 
 	uint8_t status;
-	nrf24l01_err_t err = nrf24l01_read_reg(NRF24L01_STATUS_REG_ADDR, &status, platform);
+	nrf24l01_err_t err = nrf24l01_read_reg(NRF24L01_REG_ADDR_STATUS, &status, platform);
 	if(err != NRF24L01_OK){
 		return err;
 	}
 
-	*pipe = (status & NRF24L01_MASK_STATUS_RX_P_NO) >> 1;
+	*pipe = (status & NRF24L01_STATUS_REG_BITS_RX_P_NO) >> 1;
 	return NRF24L01_OK;
 }
 
@@ -588,13 +588,13 @@ nrf24l01_err_t nrf24l01_get_retransmit_counters(nrf24l01_ar_count_t* ar_count, n
 	}
 
 	uint8_t counters;
-	err = nrf24l01_read_reg(NRF24L01_OBSERVE_TX_REG_ADDR, &counters, platform);
+	err = nrf24l01_read_reg(NRF24L01_REG_ADDR_OBSERVE_TX, &counters, platform);
 	if(err != NRF24L01_OK){
 		return err;
 	}
 
-	*ar_lost =  (NRF24L01_MASK_OBSERVE_TX_PLOS_CNT & counters) >> 4;
-	*ar_count = NRF24L01_MASK_OBSERVE_TX_ARC_CNT & counters;
+	*ar_lost =  (NRF24L01_OBSERVE_TX_REG_BITS_PLOS_CNT & counters) >> 4;
+	*ar_count = NRF24L01_OBSERVE_TX_REG_BITS_ARC_CNT & counters;
 	return NRF24L01_OK;
 }
 
@@ -606,8 +606,8 @@ nrf24l01_err_t nrf24l01_get_address_width(nrf24l01_address_width_t* addr_width, 
 	nrf24l01_err_t err;
 
 	uint8_t temp;
-	err = nrf24l01_read_reg(NRF24L01_SETUP_AW_REG_ADDR, &temp, platform);
-	temp = temp & NRF24L01_MASK_ADDR_WIDTH;
+	err = nrf24l01_read_reg(NRF24L01_REG_ADDR_SETUP_AW, &temp, platform);
+	temp = temp & NRF24L01_SETUP_AW_REG_BITS_AW;
 
 	if(temp == NRF24L01_ADDR_WIDTH_3_BYTES){
 		*addr_width = 3;
@@ -627,8 +627,8 @@ nrf24l01_err_t nrf24l01_reset_packet_loss_counter(nrf24l01_platform_t* platform)
 	uint8_t reg;
 
 	// The PLOS counter is reset after write to RF_CH register
-	err |= nrf24l01_read_reg(NRF24L01_RF_CH_REG_ADDR, &reg, platform);
-	err |= nrf24l01_write_reg(NRF24L01_RF_CH_REG_ADDR, reg, platform);
+	err |= nrf24l01_read_reg(NRF24L01_REG_ADDR_RF_CH, &reg, platform);
+	err |= nrf24l01_write_reg(NRF24L01_REG_ADDR_RF_CH, reg, platform);
 	return err;
 }
 
@@ -652,9 +652,9 @@ nrf24l01_err_t nrf24l01_clear_irq_flags(nrf24l01_platform_t* platform) {
 	
 	// Clear RX_DR, TX_DS and MAX_RT bits of the STATUS register
 	uint8_t reg;
-	err |= nrf24l01_read_reg(NRF24L01_STATUS_REG_ADDR, &reg, platform);
-	reg |= NRF24L01_MASK_STATUS_IRQ;
-	err |= nrf24l01_write_reg(NRF24L01_STATUS_REG_ADDR, reg, platform);
+	err |= nrf24l01_read_reg(NRF24L01_REG_ADDR_STATUS, &reg, platform);
+	reg |= NRF24L01_STATUS_MASK_IRQ_FLAGS;
+	err |= nrf24l01_write_reg(NRF24L01_REG_ADDR_STATUS, reg, platform);
 
 	return err;
 }
@@ -697,7 +697,7 @@ static nrf24l01_err_t nrf24l01_get_rx_pipe(uint8_t* width, nrf24l01_platform_t* 
 */
 
 static nrf24l01_err_t nrf24l01_get_rx_dpl(uint8_t* width, nrf24l01_platform_t* platform) {
-	NRF24L01_FPTR_RTN_T spi_err = platform->spi_exchange(NRF24L01_CMD_R_RX_PL_WID, NULL, width, sizeof(uint8_t), platform->user_ptr);
+	NRF24L01_FPTR_RTN_T spi_err = platform->spi_exchange(NRF24L01_FEATURE_CMD_R_RX_PL_WID, NULL, width, sizeof(uint8_t), platform->user_ptr);
 	if(spi_err != 0){
 		return NRF24L01_ERR_WRITE;
 	}
@@ -763,16 +763,16 @@ nrf24l01_err_t nrf24l01_read_dynamic_length_payload(nrf24l01_pipe_t* pipe, uint8
 
 
 nrf24l01_err_t nrf24l01_get_features(uint8_t* features, nrf24l01_platform_t* platform) {
-    return nrf24l01_read_reg(NRF24L01_FEATURE_REG_ADDR, features, platform);
+    return nrf24l01_read_reg(NRF24L01_FEATURE_REG_ADDR_FEATURE, features, platform);
 }
 
 nrf24l01_err_t nrf24l01_get_power_mode(nrf24l01_power_mode_t* power_mode, nrf24l01_platform_t* platform){
 	nrf24l01_err_t err;
 
 	uint8_t reg;
-	err = nrf24l01_read_reg(NRF24L01_CONFIG_REG_ADDR, &reg, platform);
+	err = nrf24l01_read_reg(NRF24L01_REG_ADDR_CONFIG, &reg, platform);
 	if(err == NRF24L01_OK){
-		if(reg & NRF24L01_CONFIG_PWR_UP){
+		if(reg & NRF24L01_CONFIG_REG_BIT_PWR_UP){
 			*power_mode = NRF24L01_PWR_UP;
 		}else{
 			*power_mode = NRF24L01_PWR_DOWN;
@@ -785,9 +785,9 @@ nrf24l01_err_t nrf24l01_get_operational_mode(nrf24l01_operational_mode_t* operat
 	nrf24l01_err_t err;
 
 	uint8_t reg;
-	err = nrf24l01_read_reg(NRF24L01_CONFIG_REG_ADDR, &reg, platform);
+	err = nrf24l01_read_reg(NRF24L01_REG_ADDR_CONFIG, &reg, platform);
 	if(err == NRF24L01_OK){
-		if(reg & NRF24L01_CONFIG_PRIM_RX){
+		if(reg & NRF24L01_CONFIG_REG_BIT_PRIM_RX){
 			*operational_mode = NRF24L01_MODE_RX;
 		}else{
 			*operational_mode = NRF24L01_MODE_TX;
@@ -810,13 +810,13 @@ nrf24l01_err_t nrf24l01_get_feature_mode(nrf24l01_feature_mode_t* feature_mode, 
 
 	// Backupt the features register
 	uint8_t features_reg_backup;
-	err |= nrf24l01_read_reg(NRF24L01_FEATURE_REG_ADDR, &features_reg_backup, platform);
+	err |= nrf24l01_read_reg(NRF24L01_FEATURE_REG_ADDR_FEATURE, &features_reg_backup, platform);
 
 	//Toggle a bit
-	err |= nrf24l01_write_reg(NRF24L01_FEATURE_REG_ADDR, features_reg_backup ^ NRF24L01_FEATURE_EN_DYN_ACK, platform);
+	err |= nrf24l01_write_reg(NRF24L01_FEATURE_REG_ADDR_FEATURE, features_reg_backup ^ NRF24L01_FEATURE_REG_BIT_EN_DYN_ACK, platform);
 
 	uint8_t features_reg_result;
-	err |= nrf24l01_read_reg(NRF24L01_FEATURE_REG_ADDR, &features_reg_result, platform);
+	err |= nrf24l01_read_reg(NRF24L01_FEATURE_REG_ADDR_FEATURE, &features_reg_result, platform);
 
 	if(features_reg_result != features_reg_backup){
 		*feature_mode = NRF24L01_FEATURES_ON;
@@ -825,7 +825,7 @@ nrf24l01_err_t nrf24l01_get_feature_mode(nrf24l01_feature_mode_t* feature_mode, 
 	}
 
 	//Restore the previous state of the features register
-	err |= nrf24l01_write_reg(NRF24L01_FEATURE_REG_ADDR, features_reg_backup, platform);
+	err |= nrf24l01_write_reg(NRF24L01_FEATURE_REG_ADDR_FEATURE, features_reg_backup, platform);
 
 	return err;
 
@@ -932,155 +932,332 @@ nrf24l01_err_t nrf24l01_set_payload_with_ack_mode(uint8_t mode, nrf24l01_platfor
 
 // Print nRF24L01+ current configuration (for debug purposes)
 void nrf24l01_print_config(nrf24l01_platform_t* platform) {
-	uint8_t aw;
-	uint8_t buf[5];
+	
+	uint8_t reg_temp; //Useful when reading single register
+	uint8_t buf[5];   //Useful when reading set of registers
 
-	uint8_t reg_temp;
+	//Field widths (Does not include single-space padding on either side of data)
+	int addr_width = 5;
+	int name_width = 12;
+	int hex_width = 8;
+	int bin_width = 12;
+	int bits_width = 10;
+	int details_width = 40;
 
-	// Dump nRF24L01+ configuration registers
+	//Horizontal divider (must be long enough to account for the larger column width above)
+	const char* divider = "----------------------------------------"; //40 chars
+
+	// Print horizontal divider
+	NRF24L01_DEBUGGING_PRINTF("+%.*s+%.*s+%.*s+%.*s+%.*s\n",
+		addr_width+2, divider, name_width+2, divider, hex_width+2, divider, bin_width+2, divider, details_width+2, divider
+	);
+
+	// Print header
+	NRF24L01_DEBUGGING_PRINTF("| %-*s | %-*s | %-*s | %-*s | %-*s \n",
+		addr_width, "addr",
+		name_width, "name",
+		hex_width, "raw hex", 
+		bin_width, "raw bin",
+		details_width, "details"
+	);
+	// Print horizontal divider
+	NRF24L01_DEBUGGING_PRINTF("+%.*s+%.*s+%.*s+%.*s+%.*s\n",
+		addr_width+2, divider, name_width+2, divider, hex_width+2, divider, bin_width+2, divider, details_width+2, divider
+	);
 
 	// CONFIG
-	nrf24l01_read_reg(NRF24L01_CONFIG_REG_ADDR, &reg_temp, platform);
-	NRF24L01_DEBUGGING_PRINTF("[0x%02X] 0x%02X INT MASK="_3BIT_FMT" (RX_DR INT %s, TX_DS INT %s, MAX_RT INT %s) CRC="_2BIT_FMT" (%s) PWR:%s MODE:P%s\r\n",
-		NRF24L01_CONFIG_REG_ADDR, reg_temp,
-		_3BIT_STR((reg_temp & NRF24L01_MASK_STATUS_IRQ) >> 4),
-		_2BIT_STR((reg_temp & 0x0c) >> 2), (reg_temp & 0x02) ? "ON" : "OFF", (reg_temp & 0x01) ? "RX" : "TX"
+	nrf24l01_read_reg(NRF24L01_REG_ADDR_CONFIG, &reg_temp, platform);	
+	NRF24L01_DEBUGGING_PRINTF(
+		"| 0x%-*.2X | %-*s | 0x%-*.2X | "_8BIT_FMT"%*s | INT MASK="_3BIT_FMT" (RX_DR=%s, TX_DS=%s, MAX_RT=%s), CRC="_2BIT_FMT" (%s), PWR=%s, MODE=%s\n",
+		addr_width-2, NRF24L01_REG_ADDR_CONFIG,
+		name_width, "CONFIG",
+		hex_width-2, reg_temp,
+		_8BIT_STR(reg_temp), bin_width-10, "",
+		/*Details*/
+		_3BIT_STR((reg_temp & NRF24L01_CONFIG_MASK_INTERRUPT_MASKS) >> 4), 
+		(reg_temp & NRF24L01_CONFIG_REG_BIT_MASK_RX_DR)  ? "OFF" : "ON",
+		(reg_temp & NRF24L01_CONFIG_REG_BIT_MASK_TX_DS)  ? "OFF" : "ON",
+		(reg_temp & NRF24L01_CONFIG_REG_BIT_MASK_MAX_RT) ? "OFF" : "ON",
+		_2BIT_STR((reg_temp & NRF24L01_CONFIG_MASK_CRC) >> 2), (reg_temp & NRF24L01_CONFIG_REG_BIT_EN_CRC) ? ( (reg_temp & NRF24L01_CONFIG_REG_BIT_CRCO) ? "2 BYTES": "1 BYTE"): "DISABLED",
+		(reg_temp & NRF24L01_CONFIG_REG_BIT_PWR_UP) ? "POWER UP" : "POWER DOWN", (reg_temp & NRF24L01_CONFIG_REG_BIT_PRIM_RX) ? "RX" : "TX"
 	);
-	// EN_AA
-	nrf24l01_read_reg(NRF24L01_EN_AA_REG_ADDR, &reg_temp, platform);
-	NRF24L01_DEBUGGING_PRINTF("[0x%02X] 0x%02X ENAA: ", NRF24L01_EN_AA_REG_ADDR, reg_temp);
-	for (uint8_t i = 0; i < 6; i++) {
-		NRF24L01_DEBUGGING_PRINTF("[P%1u%s]%s", i, (reg_temp & (1 << i)) ? "+" : "-", (i == 5) ? "\r\n" : " ");
-	}
-	// EN_RX_ADDR
-	nrf24l01_read_reg(NRF24L01_EN_RX_ADDR_REG_ADDR, &reg_temp, platform);
-	NRF24L01_DEBUGGING_PRINTF("[0x%02X] 0x%02X EN_RXADDR: ", NRF24L01_EN_RX_ADDR_REG_ADDR, reg_temp);
-	for (uint8_t i = 0; i < 6; i++) {
-		NRF24L01_DEBUGGING_PRINTF("[P%1u%s]%s", i, (reg_temp & (1 << i)) ? "+" : "-", (i == 5) ? "\r\n" : " ");
-	}
-	// SETUP_AW
-	nrf24l01_read_reg(NRF24L01_SETUP_AW_REG_ADDR, &reg_temp, platform);
-	aw = (reg_temp & 0x03) + 2;
-	NRF24L01_DEBUGGING_PRINTF("[0x%02X] 0x%02X EN_RXADDR="_6BIT_FMT" (address width = %u)\r\n", NRF24L01_SETUP_AW_REG_ADDR, reg_temp, _6BIT_STR(reg_temp & 0x03), aw);
-	// SETUP_RETR
-	nrf24l01_read_reg(NRF24L01_SETUP_RETR_REG_ADDR, &reg_temp, platform);
-	NRF24L01_DEBUGGING_PRINTF("[0x%02X] 0x%02X ARD="_4BIT_FMT" ARC="_4BIT_FMT" (retr.delay=%uus, count=%u)\r\n",
-		NRF24L01_SETUP_RETR_REG_ADDR, reg_temp, _4BIT_STR(reg_temp >> 4), _4BIT_STR(reg_temp & 0x0F), ((reg_temp >> 4) * 250) + 250, reg_temp & 0x0F
-	);
-	// RF_CH
-	nrf24l01_read_reg(NRF24L01_RF_CH_REG_ADDR, &reg_temp, platform);
-	NRF24L01_DEBUGGING_PRINTF("[0x%02X] 0x%02X (%.3uGHz)\r\n", NRF24L01_RF_CH_REG_ADDR, reg_temp, 2400 + reg_temp);
-	// RF_SETUP
-	nrf24l01_read_reg(NRF24L01_RF_SETUP_REG_ADDR, &reg_temp, platform);
-	NRF24L01_DEBUGGING_PRINTF("[0x%02X] 0x%02X CONT_WAVE:%s PLL_LOCK:%s DataRate=",
-		NRF24L01_RF_SETUP_REG_ADDR, reg_temp, (reg_temp & 0x80) ? "ON" : "OFF", (reg_temp & 0x80) ? "ON" : "OFF"
-	);
-	switch ((reg_temp & 0x28) >> 3) {
-		case 0x00:
-			NRF24L01_DEBUGGING_PRINTF("1M");
-			break;
-		case 0x01:
-			NRF24L01_DEBUGGING_PRINTF("2M");
-			break;
-		case 0x04:
-			NRF24L01_DEBUGGING_PRINTF("250k");
-			break;
-		default:
-			NRF24L01_DEBUGGING_PRINTF("???");
-			break;
-	}
-	NRF24L01_DEBUGGING_PRINTF("pbs RF_PWR=");
-	switch ((reg_temp & 0x06) >> 1) {
-		case 0x00:
-			NRF24L01_DEBUGGING_PRINTF("-18");
-			break;
-		case 0x01:
-			NRF24L01_DEBUGGING_PRINTF("-12");
-			break;
-		case 0x02:
-			NRF24L01_DEBUGGING_PRINTF("-6");
-			break;
-		case 0x03:
-			NRF24L01_DEBUGGING_PRINTF("0");
-			break;
-		default:
-			NRF24L01_DEBUGGING_PRINTF("???");
-			break;
-	}
-	NRF24L01_DEBUGGING_PRINTF("dBm\r\n");
-	// STATUS
-	nrf24l01_read_reg(NRF24L01_STATUS_REG_ADDR, &reg_temp, platform);
-	NRF24L01_DEBUGGING_PRINTF("[0x%02X] 0x%02X IRQ:"_3BIT_FMT" RX_PIPE:%u TX_FULL:%s\r\n",
-		NRF24L01_STATUS_REG_ADDR, reg_temp, _3BIT_STR((reg_temp & 0x70) >> 4), (reg_temp & 0x0E) >> 1, (reg_temp & 0x01) ? "YES" : "NO"
-	);
-	// OBSERVE_TX
-	nrf24l01_read_reg(NRF24L01_OBSERVE_TX_REG_ADDR, &reg_temp, platform);
-	NRF24L01_DEBUGGING_PRINTF("[0x%02X] 0x%02X PLOS_CNT=%u ARC_CNT=%u\r\n", NRF24L01_OBSERVE_TX_REG_ADDR, reg_temp, reg_temp >> 4, reg_temp & 0x0F);
-	// RPD
-	nrf24l01_read_reg(NRF24L01_RPD_REG_ADDR, &reg_temp, platform);
-	NRF24L01_DEBUGGING_PRINTF("[0x%02X] 0x%02X RPD=%s\r\n", NRF24L01_RPD_REG_ADDR, reg_temp, (reg_temp & 0x01) ? "YES" : "NO");
 	
+	// EN_AA
+	nrf24l01_read_reg(NRF24L01_REG_ADDR_EN_AA, &reg_temp, platform);
+	NRF24L01_DEBUGGING_PRINTF(
+		"| 0x%-*.2X | %-*s | 0x%-*.2X | "_8BIT_FMT"%*s | Enhanced ShockBurst AA=%s, ",
+		addr_width-2, NRF24L01_REG_ADDR_EN_AA,
+		name_width, "EN_AA",
+		hex_width-2, reg_temp,
+		_8BIT_STR(reg_temp), bin_width-10, "",
+		/*Details*/
+		(reg_temp & NRF24L01_EN_AA_MASK_REG)  ? "ON" : "OFF"
+	);
+	for (int8_t i = 5; i >= 0; i--) {
+		NRF24L01_DEBUGGING_PRINTF("PIPE%1u=%s%s", i, (reg_temp & (1 << i)) ? "YES" : "NO", (i == 0) ? "\n" : " ,");
+	}
 
+	// EN_RX_ADDR
+	nrf24l01_read_reg(NRF24L01_REG_ADDR_EN_RXADDR, &reg_temp, platform);
+	NRF24L01_DEBUGGING_PRINTF(
+		"| 0x%-*.2X | %-*s | 0x%-*.2X | "_8BIT_FMT"%*s | Enabled pipes are ",
+		addr_width-2, NRF24L01_REG_ADDR_EN_RXADDR,
+		name_width, "EN_RXADDR",
+		hex_width-2, reg_temp,
+		_8BIT_STR(reg_temp), bin_width-10, ""
+	);
+	for (int8_t i = 5; i >= 0; i--) {
+		NRF24L01_DEBUGGING_PRINTF("PIPE%1u=%s%s", i, (reg_temp & (1 << i)) ? "EN" : "DIS", (i == 0) ? "\n" : ", ");
+	}
+
+	// SETUP_AW
+	nrf24l01_read_reg(NRF24L01_REG_ADDR_SETUP_AW, &reg_temp, platform);
+	NRF24L01_DEBUGGING_PRINTF(
+		"| 0x%-*.2X | %-*s | 0x%-*.2X | "_8BIT_FMT"%*s | AW="_2BIT_FMT" ",
+		addr_width-2, NRF24L01_REG_ADDR_SETUP_AW,
+		name_width, "SETUP_AW",
+		hex_width-2, reg_temp,
+		_8BIT_STR(reg_temp), bin_width-10, "",
+		/*Details*/
+		_2BIT_STR(reg_temp & NRF24L01_SETUP_AW_REG_BITS_AW)
+	);
+	switch(reg_temp & NRF24L01_SETUP_AW_REG_BITS_AW){
+		case NRF24L01_ADDR_WIDTH_INVALID:
+			NRF24L01_DEBUGGING_PRINTF("(Illegal)\n");
+			break;
+		case NRF24L01_ADDR_WIDTH_3_BYTES:
+			NRF24L01_DEBUGGING_PRINTF("(3 byte address)\n");
+			break;
+		case NRF24L01_ADDR_WIDTH_4_BYTES:
+			NRF24L01_DEBUGGING_PRINTF("(4 byte address)\n");
+			break;
+		case NRF24L01_ADDR_WIDTH_5_BYTES:
+			NRF24L01_DEBUGGING_PRINTF("(5 byte address)\n");
+			break;
+	}
+
+	// SETUP_RETR
+	nrf24l01_read_reg(NRF24L01_REG_ADDR_SETUP_RETR, &reg_temp, platform);
+	NRF24L01_DEBUGGING_PRINTF(
+		"| 0x%-*.2X | %-*s | 0x%-*.2X | "_8BIT_FMT"%*s | ARD="_4BIT_FMT" (wait %d+86us), ARC="_4BIT_FMT" (up to %d retransmits)\n",
+		addr_width-2, NRF24L01_REG_ADDR_SETUP_RETR,
+		name_width, "SETUP_RETR",
+		hex_width-2, reg_temp,
+		_8BIT_STR(reg_temp), bin_width-10, "",
+		/*Details*/
+		_4BIT_STR(reg_temp & NRF24L01_SETUP_RETR_REG_BITS_ARD), 250*(reg_temp & NRF24L01_SETUP_RETR_REG_BITS_ARD)+250,
+		_4BIT_STR(reg_temp & NRF24L01_SETUP_RETR_REG_BITS_ARC), reg_temp & NRF24L01_SETUP_RETR_REG_BITS_ARC
+	);
+
+	// RF_CH
+	nrf24l01_read_reg(NRF24L01_REG_ADDR_RF_CH, &reg_temp, platform);
+	NRF24L01_DEBUGGING_PRINTF(
+		"| 0x%-*.2X | %-*s | 0x%-*.2X | "_8BIT_FMT"%*s | CHANNEL=%d (%.3uMHz)\n",
+		addr_width-2, NRF24L01_REG_ADDR_RF_CH,
+		name_width, "RF_CH",
+		hex_width-2, reg_temp,
+		_8BIT_STR(reg_temp), bin_width-10, "",
+		/*Details*/
+		(reg_temp & NRF24L01_RF_CH_REG_BITS_RF_CH), 2400 + (reg_temp & NRF24L01_RF_CH_REG_BITS_RF_CH)
+	);
+
+	// RF_SETUP
+	nrf24l01_read_reg(NRF24L01_REG_ADDR_RF_SETUP, &reg_temp, platform);
+	NRF24L01_DEBUGGING_PRINTF(
+		"| 0x%-*.2X | %-*s | 0x%-*.2X | "_8BIT_FMT"%*s | PLL_LOCK=%s, RF_DR=%s, ",
+		addr_width-2, NRF24L01_REG_ADDR_RF_SETUP,
+		name_width, "RF_SETUP",
+		hex_width-2, reg_temp,
+		_8BIT_STR(reg_temp), bin_width-10, "",
+		/*Details*/
+		(reg_temp & NRF24L01_RF_SETUP_REG_BIT_PLL_LOCK) ? "EN" : "DIS",
+		(reg_temp & NRF24L01_RF_SETUP_REG_BIT_RF_DR) ? "2 Mbps" : "1 Mbps"
+	);
+	switch (reg_temp & NRF24L01_RF_SETUP_REG_BITS_RF_PWR) {
+		case NRF24L01_TX_PWR_18DBM:
+			NRF24L01_DEBUGGING_PRINTF("RF_PWR=-18dBm, ");
+			break;
+		case NRF24L01_TX_PWR_12DBM:
+			NRF24L01_DEBUGGING_PRINTF("RF_PWR=-12dBm, ");
+			break;
+		case NRF24L01_TX_PWR_6DBM:
+			NRF24L01_DEBUGGING_PRINTF("RF_PWR=-6dBm, ");
+			break;
+		case NRF24L01_TX_PWR_0DBM:
+			NRF24L01_DEBUGGING_PRINTF("RF_PWR=0dBm, ");
+			break;
+	}
+	NRF24L01_DEBUGGING_PRINTF("LNA_HCURR=%s\n", (reg_temp & NRF24L01_RF_SETUP_REG_BIT_LNA_HCURR) ? "YES" : "NO");
+
+	// STATUS
+	nrf24l01_read_reg(NRF24L01_REG_ADDR_STATUS, &reg_temp, platform);
+	NRF24L01_DEBUGGING_PRINTF(
+		"| 0x%-*.2X | %-*s | 0x%-*.2X | "_8BIT_FMT"%*s | INT FLAGS="_3BIT_FMT" (RX_DR=%s, TX_DS=%s, MAX_RT=%s), RX_P_NO="_3BIT_FMT" ",
+		addr_width-2, NRF24L01_REG_ADDR_STATUS,
+		name_width, "STATUS",
+		hex_width-2, reg_temp,
+		_8BIT_STR(reg_temp), bin_width-10, "",
+		/*Details*/
+		_3BIT_STR((reg_temp & NRF24L01_STATUS_MASK_IRQ_FLAGS) >> 4), 
+		(reg_temp & NRF24L01_STATUS_REG_BIT_RX_DR)  ? "INT" : "NO",
+		(reg_temp & NRF24L01_STATUS_REG_BIT_TX_DS)  ? "INT" : "NO",
+		(reg_temp & NRF24L01_STATUS_REG_BIT_MAX_RT) ? "INT" : "NO",
+		_3BIT_STR((reg_temp & NRF24L01_STATUS_REG_BITS_RX_P_NO) >> 1)
+	);
+	switch ((reg_temp & NRF24L01_STATUS_REG_BITS_RX_P_NO) >> 1) {
+        case 0: NRF24L01_DEBUGGING_PRINTF("(PIPE0), "); break;
+        case 1: NRF24L01_DEBUGGING_PRINTF("(PIPE1), "); break;
+		case 2: NRF24L01_DEBUGGING_PRINTF("(PIPE2), "); break;
+		case 3: NRF24L01_DEBUGGING_PRINTF("(PIPE3), "); break;
+		case 4: NRF24L01_DEBUGGING_PRINTF("(PIPE4), "); break;
+		case 5: NRF24L01_DEBUGGING_PRINTF("(PIPE0), "); break;
+		case 7: NRF24L01_DEBUGGING_PRINTF("(RX FIFO Empty), "); break;
+        default: NRF24L01_DEBUGGING_PRINTF("(Unknown), "); break;
+    }
+	NRF24L01_DEBUGGING_PRINTF("TX_FULL=%s\n", (reg_temp & NRF24L01_STATUS_REG_BIT_TX_FULL) ? "YES" : "NO");
+
+	// OBSERVE_TX
+	nrf24l01_read_reg(NRF24L01_REG_ADDR_OBSERVE_TX, &reg_temp, platform);
+	NRF24L01_DEBUGGING_PRINTF(
+		"| 0x%-*.2X | %-*s | 0x%-*.2X | "_8BIT_FMT"%*s | PLOS_CNT="_4BIT_FMT", ARC_CNT="_4BIT_FMT"\n",
+		addr_width-2, NRF24L01_REG_ADDR_OBSERVE_TX,
+		name_width, "OBSERVE_TX",
+		hex_width-2, reg_temp,
+		_8BIT_STR(reg_temp), bin_width-10, "",
+		/*Details*/
+		_4BIT_STR(reg_temp & NRF24L01_OBSERVE_TX_REG_BITS_PLOS_CNT),
+		_4BIT_STR(reg_temp & NRF24L01_OBSERVE_TX_REG_BITS_ARC_CNT)
+	);
+
+	// CD
+	nrf24l01_read_reg(NRF24L01_REG_ADDR_CD, &reg_temp, platform);
+	NRF24L01_DEBUGGING_PRINTF(
+		"| 0x%-*.2X | %-*s | 0x%-*.2X | "_8BIT_FMT"%*s | CD=%s\n",
+		addr_width-2, NRF24L01_REG_ADDR_CD,
+		name_width, "CD",
+		hex_width-2, reg_temp,
+		_8BIT_STR(reg_temp), bin_width-10, "",
+		/*Details*/
+		(reg_temp & NRF24L01_CD_REG_BIT_CD) ? "YES" : "NO"
+	);
+
+	// Get the configured pipe address width and cache it
 	uint8_t address_width;
 	nrf24l01_get_address_width(&address_width, platform);
-
-	// RX_ADDR_P0
-	nrf24l01_multi_read_reg(NRF24L01_RX_ADDR_P0_REG_ADDR, buf, address_width, platform);
-	NRF24L01_DEBUGGING_PRINTF("[0x%02X] RX_ADDR_P0 \"", NRF24L01_RX_ADDR_P0_REG_ADDR);
-	for (uint8_t i = 0; i < address_width; i++){
-		NRF24L01_DEBUGGING_PRINTF("0x%02X%s", buf[i], (i == (address_width - 1)) ? "\"\r\n" : ", ");
-	}
-	// RX_ADDR_P1
-	nrf24l01_multi_read_reg(NRF24L01_RX_ADDR_P1_REG_ADDR, buf, aw, platform);
-	NRF24L01_DEBUGGING_PRINTF("[0x%02X] RX_ADDR_P1 \"", NRF24L01_RX_ADDR_P1_REG_ADDR);
-	for (uint8_t i = 0; i < address_width; i++){
-		NRF24L01_DEBUGGING_PRINTF("0x%02X%s", buf[i], (i == (address_width - 1)) ? "\"\r\n" : ", ");
-	}
-	// RX_ADDR_P2
-	NRF24L01_DEBUGGING_PRINTF("[0x%02X] RX_ADDR_P2 \"", NRF24L01_RX_ADDR_P2_REG_ADDR);
-	for (uint8_t i = 0; i < aw - 1; i++) NRF24L01_DEBUGGING_PRINTF("%c", buf[i]);
-	nrf24l01_read_reg(NRF24L01_RX_ADDR_P2_REG_ADDR, &reg_temp, platform);
-	NRF24L01_DEBUGGING_PRINTF("%c\"\r\n", reg_temp);
-	// RX_ADDR_P3
-	NRF24L01_DEBUGGING_PRINTF("[0x%02X] RX_ADDR_P3 \"", NRF24L01_RX_ADDR_P3_REG_ADDR);
-	for (uint8_t i = 0; i < aw - 1; i++) NRF24L01_DEBUGGING_PRINTF("%c", buf[i]);
-	nrf24l01_read_reg(NRF24L01_RX_ADDR_P3_REG_ADDR, &reg_temp, platform);
-	NRF24L01_DEBUGGING_PRINTF("%c\"\r\n", reg_temp);
-	// RX_ADDR_P4
-	NRF24L01_DEBUGGING_PRINTF("[0x%02X] RX_ADDR_P4 \"", NRF24L01_RX_ADDR_P4_REG_ADDR);
-	for (uint8_t i = 0; i < aw - 1; i++) NRF24L01_DEBUGGING_PRINTF("%c", buf[i]);
-	nrf24l01_read_reg(NRF24L01_RX_ADDR_P4_REG_ADDR, &reg_temp, platform);
-	NRF24L01_DEBUGGING_PRINTF("%c\"\r\n", reg_temp);
-	// RX_ADDR_P5
-	NRF24L01_DEBUGGING_PRINTF("[0x%02X] RX_ADDR_P5 \"", NRF24L01_RX_ADDR_P5_REG_ADDR);
-	for (uint8_t i = 0; i < aw - 1; i++) NRF24L01_DEBUGGING_PRINTF("%c", buf[i]);
-	nrf24l01_read_reg(NRF24L01_RX_ADDR_P5_REG_ADDR, &reg_temp, platform);
-	NRF24L01_DEBUGGING_PRINTF("%c\"\r\n", reg_temp);
-	// TX_ADDR
-	nrf24l01_multi_read_reg(NRF24L01_TX_ADDR_REG_ADDR, buf, address_width, platform);
-	NRF24L01_DEBUGGING_PRINTF("[0x%02X] TX_ADDR    \"", NRF24L01_TX_ADDR_REG_ADDR);
-	for (uint8_t i = 0; i < address_width; i++){
-		NRF24L01_DEBUGGING_PRINTF("0x%02X%s", buf[i], (i == (address_width - 1)) ? "\"\r\n" : ", ");
+	
+	//Print out all the pipe rx pipe addresses
+	for(uint8_t i = 0; i <= 5; i++){
+		const int name_buf_len = sizeof("RX_ADDR_Px");
+		char name_buf[name_buf_len];
+		if(i == 0 || i == 1){
+			nrf24l01_multi_read_reg(NRF24L01_REG_ADDR_RX_ADDR_P0 + i, buf, address_width, platform);
+		}else{
+			nrf24l01_read_reg(NRF24L01_REG_ADDR_RX_ADDR_P0 + i, &buf[address_width-1], platform);
+		}
+		snprintf(name_buf, name_buf_len, "RX_ADDR_P%d", i);
+		NRF24L01_DEBUGGING_PRINTF(
+			"| 0x%-*.2X | %-*s | -%*s | -%*s | RX PIPE%d ADDRESS=[",
+			addr_width-2, NRF24L01_REG_ADDR_RX_ADDR_P0 + i,
+			name_width, name_buf,
+			hex_width-1, "",
+			bin_width-1, "",
+			/*Details*/
+			i
+		);
+		for (uint8_t i = 0; i < address_width; i++){
+			NRF24L01_DEBUGGING_PRINTF("0x%02X%s", buf[i], (i == (address_width - 1)) ? "]\n" : ", ");
+		}
 	}
 
-	// RX_PW_P0
-	nrf24l01_read_reg(NRF24L01_RX_PW_P0_REG_ADDR, &reg_temp, platform);
-	NRF24L01_DEBUGGING_PRINTF("[0x%02X] RX_PW_P0=%u\r\n", NRF24L01_RX_PW_P0_REG_ADDR, reg_temp);
-	// RX_PW_P1
-	nrf24l01_read_reg(NRF24L01_RX_PW_P1_REG_ADDR, &reg_temp, platform);
-	NRF24L01_DEBUGGING_PRINTF("[0x%02X] RX_PW_P1=%u\r\n", NRF24L01_RX_PW_P1_REG_ADDR, reg_temp);
-	// RX_PW_P2
-	nrf24l01_read_reg(NRF24L01_RX_PW_P2_REG_ADDR, &reg_temp, platform);
-	NRF24L01_DEBUGGING_PRINTF("[0x%02X] RX_PW_P2=%u\r\n", NRF24L01_RX_PW_P2_REG_ADDR, reg_temp);
-	// RX_PW_P3
-	nrf24l01_read_reg(NRF24L01_RX_PW_P3_REG_ADDR, &reg_temp, platform);
-	NRF24L01_DEBUGGING_PRINTF("[0x%02X] RX_PW_P3=%u\r\n", NRF24L01_RX_PW_P3_REG_ADDR, reg_temp);
-	// RX_PW_P4
-	nrf24l01_read_reg(NRF24L01_RX_PW_P4_REG_ADDR, &reg_temp, platform);
-	NRF24L01_DEBUGGING_PRINTF("[0x%02X] RX_PW_P4=%u\r\n", NRF24L01_RX_PW_P4_REG_ADDR, reg_temp);
-	// RX_PW_P5
-	nrf24l01_read_reg(NRF24L01_RX_PW_P5_REG_ADDR, &reg_temp, platform);
-	NRF24L01_DEBUGGING_PRINTF("[0x%02X] RX_PW_P5=%u\r\n", NRF24L01_RX_PW_P5_REG_ADDR, reg_temp);
+	//Print out the tx pipe address
+	nrf24l01_multi_read_reg(NRF24L01_REG_ADDR_TX_ADDR, buf, address_width, platform);
+	NRF24L01_DEBUGGING_PRINTF(
+		"| 0x%-*.2X | %-*s | -%*s | -%*s | TX PIPE ADDRESS=[",
+		addr_width-2, NRF24L01_REG_ADDR_TX_ADDR,
+		name_width, "TX_ADDR",
+		hex_width-1, "",
+		bin_width-1, ""
+	);
+	for (uint8_t i = 0; i < address_width; i++){
+		NRF24L01_DEBUGGING_PRINTF("0x%02X%s", buf[i], (i == (address_width - 1)) ? "]\n" : ", ");
+	}
+
+	//Print out all the pipe rx payload lengths
+	for(uint8_t i = 0; i <= 5; i++){
+		const int name_buf_len = sizeof("RX_PW_Px");
+		char name_buf[name_buf_len];
+		nrf24l01_read_reg(NRF24L01_REG_ADDR_RX_PW_P0 + i, &reg_temp, platform);
+		snprintf(name_buf, name_buf_len, "RX_PW_P%d", i);
+		NRF24L01_DEBUGGING_PRINTF(
+			"| 0x%-*.2X | %-*s | 0x%-*.2X | "_8BIT_FMT"%*s | PIPE%d RX PAYLOAD LENGTH=%d\n",
+			addr_width-2, NRF24L01_REG_ADDR_RX_PW_P0 + i,
+			name_width, name_buf,
+			hex_width-2, reg_temp,
+			_8BIT_STR(reg_temp), bin_width-10, "",
+			/*Details*/
+			i, reg_temp & NRF24L01_RX_PW_P0_REG_BITS_RX_PW_P0
+		);
+	}
+
+	// FIFO_STATUS
+	nrf24l01_read_reg(NRF24L01_REG_ADDR_FIFO_STATUS, &reg_temp, platform);
+	NRF24L01_DEBUGGING_PRINTF(
+		"| 0x%-*.2X | %-*s | 0x%-*.2X | "_8BIT_FMT"%*s | TX_REUSE=%s, TX_FULL=%s, TX_EMPTY=%s, RX_FULL=%s, RX_EMPTY=%s\n",
+		addr_width-2, NRF24L01_REG_ADDR_FIFO_STATUS,
+		name_width, "FIFO_STATUS",
+		hex_width-2, reg_temp,
+		_8BIT_STR(reg_temp), bin_width-10, "",
+		/*Details*/
+        (reg_temp & NRF24L01_FIFO_STATUS_REG_BIT_TX_REUSE) ? "YES" : "NO", 
+        (reg_temp & NRF24L01_FIFO_STATUS_REG_BIT_TX_FULL)  ? "YES" : "NO",
+        (reg_temp & NRF24L01_FIFO_STATUS_REG_BIT_TX_EMPTY) ? "YES" : "NO",
+        (reg_temp & NRF24L01_FIFO_STATUS_REG_BIT_RX_FULL)  ? "YES" : "NO",
+        (reg_temp & NRF24L01_FIFO_STATUS_REG_BIT_RX_EMPTY) ? "YES" : "NO"
+	);
+
+	// Print horizontal divider
+	NRF24L01_DEBUGGING_PRINTF("+%.*s+%.*s+%.*s+%.*s+%.*s\n",
+		addr_width+2, divider, name_width+2, divider, hex_width+2, divider, bin_width+2, divider, details_width+2, divider
+	);
+
+	//Check if special features are active
+	nrf24l01_feature_mode_t feature_mode;
+	nrf24l01_get_feature_mode(&feature_mode, platform);
+	if(feature_mode == NRF24L01_FEATURES_OFF){
+		NRF24L01_DEBUGGING_PRINTF("| Special Features Disabled\n");
+	}else{
+		// DYNPD
+		nrf24l01_read_reg(NRF24L01_FEATURE_REG_ADDR_DYNPD, &reg_temp, platform);
+		NRF24L01_DEBUGGING_PRINTF(
+			"| 0x%-*.2X | %-*s | 0x%-*.2X | "_8BIT_FMT"%*s | Dynamic payloads  ",
+			addr_width-2, NRF24L01_FEATURE_REG_ADDR_DYNPD,
+			name_width, "DYNPD",
+			hex_width-2, reg_temp,
+			_8BIT_STR(reg_temp), bin_width-10, ""
+		);
+		for (int8_t i = 5; i >= 0; i--) {
+			NRF24L01_DEBUGGING_PRINTF("DPL_P%1u=%s%s", i, (reg_temp & (1 << i)) ? "EN" : "DIS", (i == 0) ? "\n" : ", ");
+		}
+
+		// FEATURE
+		nrf24l01_read_reg(NRF24L01_FEATURE_REG_ADDR_FEATURE, &reg_temp, platform);
+		NRF24L01_DEBUGGING_PRINTF(
+			"| 0x%-*.2X | %-*s | 0x%-*.2X | "_8BIT_FMT"%*s | Features  EN_DPL=%s, EN_ACK_PAY=%s, EN_DYN_ACK=%s\n",
+			addr_width-2, NRF24L01_FEATURE_REG_ADDR_FEATURE,
+			name_width, "FEATURE",
+			hex_width-2, reg_temp,
+			_8BIT_STR(reg_temp), bin_width-10, "",
+			(reg_temp & NRF24L01_FEATURE_REG_BIT_EN_DPL) ? "EN" : "DIS",
+			(reg_temp & NRF24L01_FEATURE_REG_BIT_EN_ACK_PAY) ? "EN" : "DIS",
+			(reg_temp & NRF24L01_FEATURE_REG_BIT_EN_DYN_ACK) ? "EN" : "DIS"
+		);
+	}
+
+	// Print horizontal divider
+	NRF24L01_DEBUGGING_PRINTF("+%.*s+%.*s+%.*s+%.*s+%.*s\n",
+		addr_width+2, divider, name_width+2, divider, hex_width+2, divider, bin_width+2, divider, details_width+2, divider
+	);
+
 }
 
 void nrf24l01_print_status_register(nrf24l01_platform_t* platform){
@@ -1088,40 +1265,24 @@ void nrf24l01_print_status_register(nrf24l01_platform_t* platform){
     nrf24l01_get_status(&status, platform);
 
     char* pipe_number;
-    switch((status & NRF24L01_MASK_STATUS_RX_P_NO) >> 1){
-        case 0:
-            pipe_number = "0";
-            break;
-        case 1:
-            pipe_number = "1";
-        	break;
-        case 2:
-            pipe_number = "2";
-            break;
-        case 3:
-            pipe_number = "3";
-            break;
-        case 4:
-            pipe_number = "4";
-            break;
-        case 5:
-            pipe_number = "5";
-            break;
-        case 7:
-            pipe_number = "RX FIFO Empty";
-            break;
-        default:
-            pipe_number = "?";
-            break;
+    switch((status & NRF24L01_STATUS_REG_BITS_RX_P_NO) >> 1){
+        case 0: pipe_number = "0"; break;
+        case 1: pipe_number = "1"; break;
+        case 2: pipe_number = "2"; break;
+        case 3: pipe_number = "3"; break;
+        case 4: pipe_number = "4"; break;
+        case 5: pipe_number = "5"; break;
+        case 7: pipe_number = "RX FIFO Empty"; break;
+        default: pipe_number = "?"; break;
     }
     NRF24L01_DEBUGGING_PRINTF("[0x%02X] STATUS_REG="_8BIT_FMT"=0x%02X (RX_DR=%s, TX_DS=%s, MAX_RT=%s, RX_P_NO=%s, TX_FULL=%s)\r\n",
-        NRF24L01_STATUS_REG_ADDR,
+        NRF24L01_REG_ADDR_STATUS,
 		_8BIT_STR(status), status, 
-        (status & NRF24L01_MASK_STATUS_RX_DR)  ? "1" : "0", 
-        (status & NRF24L01_MASK_STATUS_TX_DS)  ? "1" : "0",
-        (status & NRF24L01_MASK_STATUS_MAX_RT) ? "1" : "0",
+        (status & NRF24L01_STATUS_REG_BIT_RX_DR)  ? "1" : "0", 
+        (status & NRF24L01_STATUS_REG_BIT_TX_DS)  ? "1" : "0",
+        (status & NRF24L01_STATUS_REG_BIT_MAX_RT) ? "1" : "0",
         pipe_number,
-        (status & NRF24L01_MASK_STATUS_TX_FULL) ? "1" : "0"
+        (status & NRF24L01_STATUS_REG_BIT_TX_FULL) ? "1" : "0"
     );
 }
 
@@ -1134,15 +1295,16 @@ void nrf24l01_print_fifo_status_register(nrf24l01_platform_t* platform){
 	uint8_t fifo_status = (tx_status << 4) | rx_status;
 
 	NRF24L01_DEBUGGING_PRINTF("[0x%02X] FIFO_STATUS_REG="_8BIT_FMT"=0x%02X (TX_REUSE=%s, TX_FULL=%s, TX_EMPTY=%s, RX_FULL=%s, RX_EMPTY=%s)\r\n",
-        NRF24L01_FIFO_STATUS_REG_ADDR,
+        NRF24L01_REG_ADDR_FIFO_STATUS,
 		_8BIT_STR(fifo_status), fifo_status, 
-        (fifo_status & NRF24L01_MASK_TX_FIFO_REUSE) ? "1" : "0", 
-        (fifo_status & NRF24L01_MASK_TX_FIFO_FULL)  ? "1" : "0",
-        (fifo_status & NRF24L01_MASK_TX_FIFO_EMPTY) ? "1" : "0",
-        (fifo_status & NRF24L01_MASK_RX_FIFO_FULL)  ? "1" : "0",
-        (fifo_status & NRF24L01_MASK_RX_FIFO_EMPTY) ? "1" : "0"
+        (fifo_status & NRF24L01_FIFO_STATUS_REG_BIT_TX_REUSE) ? "1" : "0", 
+        (fifo_status & NRF24L01_FIFO_STATUS_REG_BIT_TX_FULL)  ? "1" : "0",
+        (fifo_status & NRF24L01_FIFO_STATUS_REG_BIT_TX_EMPTY) ? "1" : "0",
+        (fifo_status & NRF24L01_FIFO_STATUS_REG_BIT_RX_FULL)  ? "1" : "0",
+        (fifo_status & NRF24L01_FIFO_STATUS_REG_BIT_RX_EMPTY) ? "1" : "0"
     );
 }
+
 
 #endif // NRF24L01_ENABLE_PRINT_CONFIG
 
@@ -1168,19 +1330,19 @@ void nrf24l01_loop(nrf24l01_platform_t* platform){
 
 		uint8_t irq_flags;
 		nrf24l01_get_irq_flags(&irq_flags, platform);
-		if( (irq_flags | NRF24L01_MASK_STATUS_RX_DR) != 0 ){
+		if( (irq_flags | NRF24L01_STATUS_REG_BIT_RX_DR) != 0 ){
 
 			if(platform->callbacks.rx_dr_callback != NULL){
 				platform->callbacks.rx_dr_callback(32, 0, platform->callbacks.rx_dr_callback_user_ptr, platform);
 			}
 
-		}else if( (irq_flags | NRF24L01_MASK_STATUS_TX_DS) != 0 ){
+		}else if( (irq_flags | NRF24L01_STATUS_REG_BIT_TX_DS) != 0 ){
 
 			if(platform->callbacks.tx_ds_callback != NULL){
 				platform->callbacks.tx_ds_callback(0, platform->callbacks.tx_ds_callback_user_ptr, platform);
 			}
 
-		}else if( (irq_flags | NRF24L01_MASK_STATUS_MAX_RT) != 0 ){
+		}else if( (irq_flags | NRF24L01_STATUS_REG_BIT_MAX_RT) != 0 ){
 
 			if(platform->callbacks.max_rt_callback != NULL){
 				platform->callbacks.max_rt_callback(platform->callbacks.max_rt_callback_user_ptr, platform);

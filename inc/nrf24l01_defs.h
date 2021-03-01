@@ -380,8 +380,9 @@
 
 
 
+#define NRF24L01_COMMAND_MASK_REG_ADDR    (uint8_t)0x1F  ///< Mask for AAAAA[4:0] register address bits for CMD_RREG and CMD_WREG commands
+#define NRF24L01_COMMAND_MASK_PIPE        (uint8_t)0x07  ///< Mask for PPP[2:0] pipe specifier bits for W_ACK_PAYLOAD command
 
-#define NRF24L01_REG_BIT_REG_MAP          (uint8_t)0x1F  ///< Mask for [4:0] for CMD_RREG and CMD_WREG commands
 
 // CRC
 #define	NRF24L01_ADDR_WIDTH_INVALID       (uint8_t)0x00  ///< Invalid address field width
@@ -389,6 +390,12 @@
 #define	NRF24L01_ADDR_WIDTH_4_BYTES       (uint8_t)0x02  ///< 4 Byte RX/TX address field width
 #define	NRF24L01_ADDR_WIDTH_5_BYTES       (uint8_t)0x03  ///< 5 Byte RX/TX address field width
  
+// RF_PWR
+#define	NRF24L01_TX_PWR_18DBM              (uint8_t)0x00  ///< -18dBm
+#define	NRF24L01_TX_PWR_12DBM              (uint8_t)0x02  ///< -12dBm
+#define	NRF24L01_TX_PWR_6DBM               (uint8_t)0x04  ///< -6dBm
+#define	NRF24L01_TX_PWR_0DBM               (uint8_t)0x06  ///<  0dBm
+
 // Timing requirements
 #define NRF24L01_CE_TX_MINIMUM_PULSE_US   10   // In microseconds
 #define NRF24L01_POWER_UP_US              5000 // In microseconds
@@ -447,7 +454,6 @@ typedef uint8_t nrf24l01_ar_lost_t;
 
 // Data rate
 typedef enum {
-	NRF24L01_DR_250KBPS  = (uint8_t)0x20,  ///< 250kbps data rate
 	NRF24L01_DR_1MBPS    = (uint8_t)0x00,  ///< 1Mbps data rate
 	NRF24L01_DR_2MBPS    = (uint8_t)0x08,  ///< 2Mbps data rate
 } nrf24l01_data_rate_t;
