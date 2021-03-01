@@ -687,14 +687,6 @@ nrf24l01_err_t nrf24l01_write_payload(uint8_t* data, uint8_t len, nrf24l01_platf
 	return err;
 }
 
-/*
-static nrf24l01_err_t nrf24l01_get_rx_pipe(uint8_t* width, nrf24l01_platform_t* platform) {
-	// Extract a payload pipe number from the STATUS register
-	uint8_t temp;
-	nrf24l01_read_reg(NRF24L01_STATUS_REG_ADDR, &temp, platform);
-	pipe = (temp & NRF24L01_MASK_STATUS_RX_P_NO) >> 1;
-}
-*/
 
 static nrf24l01_err_t nrf24l01_get_rx_dpl(uint8_t* width, nrf24l01_platform_t* platform) {
 	NRF24L01_FPTR_RTN_T spi_err = platform->spi_exchange(NRF24L01_FEATURE_CMD_R_RX_PL_WID, NULL, width, sizeof(uint8_t), platform->user_ptr);
@@ -855,6 +847,20 @@ nrf24l01_err_t nrf24l01_set_feature_mode(nrf24l01_feature_mode_t feature_mode, n
 	return NRF24L01_OK;
 }
 
+nrf24l01_err_t nrf24l01_set_dpl_mode(nrf24l01_dpl_mode_t dpl_mode, nrf24l01_platform_t* platform){
+
+	nrf24l01_err_t err = NRF24L01_OK;
+
+	uint8_t features_reg;
+	err |= nrf24l01_read_reg(NRF24L01_FEATURE_REG_ADDR_FEATURE, &features_reg, platform);
+	if(dpl_mode == NRF24L01_DPL_ON){
+		features_reg |= NRF24L01_FEATURE_REG_BIT_EN_DPL;
+	}else{
+		features_reg &= ~NRF24L01_FEATURE_REG_BIT_EN_DPL;
+	}
+	err |= nrf24l01_write_reg(NRF24L01_FEATURE_REG_ADDR_FEATURE, features_reg, platform);
+	return err;
+}
 
 /*
 nrf24l01_err_t nrf24l01_write_ack_payload(nrf24l01_pipe_t pipe, uint8_t* payload, uint8_t len, nrf24l01_platform_t* platform) {
@@ -882,28 +888,7 @@ nrf24l01_err_t nrf24l01_write_ack_payload(nrf24l01_pipe_t pipe, uint8_t* payload
 */
 
 
-
 /*
-// Set transceiver DynamicPayloadLength feature for all the pipes
-// input:
-//   dpl_mode - one of nRF24_DPL_xx values
-nrf24l01_err_t nrf24l01_set_dpl_mode(nrf24l01_dpl_mode_t dpl_mode, nrf24l01_platform_t* platform) {
-	nrf24l01_err_t err = NRF24L01_OK;
-	uint8_t reg;
-
-	err |= nrf24l01_read_reg(NRF24L01_FEATURE_REG_ADDR, &reg, platform);
-	if(dpl_mode == NRF24L01_DPL_ON) {
-		err |= nrf24l01_write_reg(NRF24L01_FEATURE_REG_ADDR, reg | NRF24L01_FEATURE_EN_DPL, platform);
-		err |= nrf24l01_write_reg(NRF24L01_DYNPD_REG_ADDR, 0x1F, platform);
-	} else if (dpl_mode == NRF24L01_DPL_OFF) {
-		err |= nrf24l01_write_reg(NRF24L01_FEATURE_REG_ADDR, reg &~ NRF24L01_FEATURE_EN_DPL, platform);
-		err |= nrf24l01_write_reg(NRF24L01_DYNPD_REG_ADDR, 0x00, platform);
-	}else{
-		err = NRF24L01_ERR_INVALID_ARG;
-	}
-	return err;
-}
-
 // Enables Payload With Ack. NB Refer to the datasheet for proper retransmit timing.
 // input:
 //   mode - status, 1 or 0

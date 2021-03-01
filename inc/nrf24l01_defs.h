@@ -245,6 +245,7 @@
  *  Each register also has a full mask defined for it under the name NRF24L01_r_MASK_REG
  */
 /// @{
+///< Mask for all defined bits[6:0] in CONFIG register 
 #define NRF24L01_CONFIG_MASK_REG              	(uint8_t)(                                \
 													NRF24L01_CONFIG_REG_BIT_MASK_RX_DR  | \
 													NRF24L01_CONFIG_REG_BIT_MASK_TX_DS  | \
@@ -254,18 +255,20 @@
 													NRF24L01_CONFIG_REG_BIT_PWR_UP      | \
 													NRF24L01_CONFIG_REG_BIT_PRIM_RX       \
 											  	)
+///< Mask for CRC[3:2] bits in CONFIG register 
 #define NRF24L01_CONFIG_MASK_INTERRUPT_MASKS  	(uint8_t)(                                \
 													NRF24L01_CONFIG_REG_BIT_MASK_RX_DR  | \
 													NRF24L01_CONFIG_REG_BIT_MASK_TX_DS  | \
 													NRF24L01_CONFIG_REG_BIT_MASK_MAX_RT   \
 											  	)
+///< Mask for CRC[3:2] bits in EN_AA register 
 #define NRF24L01_CONFIG_MASK_CRC   			 	(uint8_t)(                                \
 													NRF24L01_CONFIG_REG_BIT_EN_CRC      | \
 													NRF24L01_CONFIG_REG_BIT_CRCO          \
 											  	)
 
 
-///< Mask for ENAA_Px[5:0] bits in EN_AA register 
+///< Mask for all defined bits[5:0] in EN_AA register 
 #define NRF24L01_EN_AA_MASK_REG              	(uint8_t)(   							  \
 													NRF24L01_EN_AA_REG_BIT_ENAA_P5      | \
 													NRF24L01_EN_AA_REG_BIT_ENAA_P4      | \
@@ -276,7 +279,7 @@
 												)
 
 
-///< Mask for ERX_Px[5:0] bits in EN_RXADDR register 
+///< Mask for all defined bits[5:0] in EN_RXADDR register 
 #define NRF24L01_EN_RXADDR_MASK_REG             (uint8_t)(   							  \
 													NRF24L01_EN_RXADDR_REG_BIT_ERX_P5   | \
 													NRF24L01_EN_RXADDR_REG_BIT_ERX_P4   | \
@@ -287,18 +290,22 @@
 												)
 
 
+///< Mask for all defined bits[1:0] in AW register
 #define NRF24L01_SETUP_AW_MASK_REG              (uint8_t)NRF24L01_SETUP_AW_REG_BITS_AW
 
 
+///< Mask for all defined bits[7:0] in SETUP_RETR register 
 #define NRF24L01_SETUP_RETR_MASK_REG            (uint8_t)(								  \
 													NRF24L01_SETUP_RETR_REG_BITS_ARD    | \
 													NRF24L01_SETUP_RETR_REG_BITS_ARC      \
 												)
 
 
+///< Mask for all defined bits[6:0] in RF_CH register 
 #define NRF24L01_RF_CH_MASK_REG                 (uint8_t)NRF24L01_RF_CH_REG_BITS_RF_CH
 
 
+///< Mask for all defined bits[4:0] in RF_SETUP register 
 #define NRF24L01_RF_SETUP_MASK_REG              (uint8_t)(								  \
 													NRF24L01_RF_SETUP_REG_BIT_PLL_LOCK  | \
 													NRF24L01_RF_SETUP_REG_BIT_RF_DR     | \
@@ -307,6 +314,7 @@
 												)
 
 
+///< Mask for all defined bits[6:0] in STATUS register 
 #define NRF24L01_STATUS_MASK_REG 				(uint8_t)(								  \
 													NRF24L01_STATUS_REG_BIT_RX_DR       | \
 													NRF24L01_STATUS_REG_BIT_TX_DS       | \
@@ -322,6 +330,7 @@
 												)
 
 
+///< Mask for all defined bits[7:0] in OBSERVE_TX register 
 #define NRF24L01_OBSERVE_TX_MASK_REG            (uint8_t)(								    \
 													NRF24L01_OBSERVE_TX_REG_BITS_PLOS_CNT | \
 													NRF24L01_OBSERVE_TX_REG_BITS_ARC_CNT    \
