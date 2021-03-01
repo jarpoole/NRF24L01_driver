@@ -926,7 +926,6 @@ void nrf24l01_print_config(nrf24l01_platform_t* platform) {
 	int name_width = 12;
 	int hex_width = 8;
 	int bin_width = 12;
-	int bits_width = 10;
 	int details_width = 40;
 
 	//Horizontal divider (must be long enough to account for the larger column width above)
@@ -1132,14 +1131,13 @@ void nrf24l01_print_config(nrf24l01_platform_t* platform) {
 	
 	//Print out all the pipe rx pipe addresses
 	for(uint8_t i = 0; i <= 5; i++){
-		const int name_buf_len = sizeof("RX_ADDR_Px");
-		char name_buf[name_buf_len];
+		char name_buf[] = "RX_ADDR_Px";
 		if(i == 0 || i == 1){
 			nrf24l01_multi_read_reg(NRF24L01_REG_ADDR_RX_ADDR_P0 + i, buf, address_width, platform);
 		}else{
 			nrf24l01_read_reg(NRF24L01_REG_ADDR_RX_ADDR_P0 + i, &buf[address_width-1], platform);
 		}
-		snprintf(name_buf, name_buf_len, "RX_ADDR_P%d", i);
+		name_buf[9] = (char) i+48; //Convert the index to a character and replace 'x'
 		NRF24L01_DEBUGGING_PRINTF(
 			"| 0x%-*.2X | %-*s | -%*s | -%*s | RX PIPE%d ADDRESS=[",
 			addr_width-2, NRF24L01_REG_ADDR_RX_ADDR_P0 + i,
@@ -1169,10 +1167,9 @@ void nrf24l01_print_config(nrf24l01_platform_t* platform) {
 
 	//Print out all the pipe rx payload lengths
 	for(uint8_t i = 0; i <= 5; i++){
-		const int name_buf_len = sizeof("RX_PW_Px");
-		char name_buf[name_buf_len];
+		char name_buf[] = "RX_PW_Px";
 		nrf24l01_read_reg(NRF24L01_REG_ADDR_RX_PW_P0 + i, &reg_temp, platform);
-		snprintf(name_buf, name_buf_len, "RX_PW_P%d", i);
+		name_buf[7] = (char) i+48; //Convert the index to a character and replace 'x'
 		NRF24L01_DEBUGGING_PRINTF(
 			"| 0x%-*.2X | %-*s | 0x%-*.2X | "_8BIT_FMT"%*s | PIPE%d RX PAYLOAD LENGTH=%d\n",
 			addr_width-2, NRF24L01_REG_ADDR_RX_PW_P0 + i,
