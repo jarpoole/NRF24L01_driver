@@ -28,7 +28,6 @@ var searchData=
   ['nrf24l01_5fdpl_5foff',['NRF24L01_DPL_OFF',['../nrf24l01__defs_8h.html#a0713efe0e232d8adca8016d007b1d28ea649cd7927814b419258a569ec972a875',1,'nrf24l01_defs.h']]],
   ['nrf24l01_5fdpl_5fon',['NRF24L01_DPL_ON',['../nrf24l01__defs_8h.html#a0713efe0e232d8adca8016d007b1d28eacc4f714a758ddc2eb9adcec4956df542',1,'nrf24l01_defs.h']]],
   ['nrf24l01_5fdr_5f1mbps',['NRF24L01_DR_1MBPS',['../nrf24l01__defs_8h.html#af1238bb8b104118e000aac333af1720fa786bbeae7405d3bc55148fb53171ef38',1,'nrf24l01_defs.h']]],
-  ['nrf24l01_5fdr_5f250kbps',['NRF24L01_DR_250KBPS',['../nrf24l01__defs_8h.html#af1238bb8b104118e000aac333af1720fa6232db555edf8cf1fff439c0913c2129',1,'nrf24l01_defs.h']]],
   ['nrf24l01_5fdr_5f2mbps',['NRF24L01_DR_2MBPS',['../nrf24l01__defs_8h.html#af1238bb8b104118e000aac333af1720fa07dc64a8ba3d3222f7ea35de2f81e01d',1,'nrf24l01_defs.h']]],
   ['nrf24l01_5fdta_5foff',['NRF24L01_DTA_OFF',['../nrf24l01__defs_8h.html#ab35b7caced2022669af8c4b24b5a913aacbdc9d02a0ef22fbb649c54c88bea791',1,'nrf24l01_defs.h']]],
   ['nrf24l01_5fdta_5fon',['NRF24L01_DTA_ON',['../nrf24l01__defs_8h.html#ab35b7caced2022669af8c4b24b5a913aa5a72942623fc46a87a562c09514081ad',1,'nrf24l01_defs.h']]],
