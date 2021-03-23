@@ -33,8 +33,8 @@
  *  in the parent directory
  * 
  *  Macro options
- *   - `NRF24L01_ENABLE_DEBUG_LOGGING`     can be defined to enable driver debug logging
- *   - `NRF24L01_DEBUGGING_LOG`            must be defined if debug logging is enabled to provide platform specific 
+ *   - `NRF24L01_ENABLE_DEBUG_LOGGING`   can be defined to enable driver debug logging
+ *   - `NRF24L01_DEBUGGING_LOG`          must be defined if debug logging is enabled to provide platform specific 
  *                                       method for timestamped, tagged, message logging
  *       Ex: #define NRF24L01_DEBUGGING_LOG( ... )   log(__VA_ARGS__)
  * 
@@ -42,23 +42,24 @@
  *     must be defined if debug logging is enabled to provide platform specific UART interface method
  *     Ex: `#define NRF24L01_DEBUGGING_PRINTF( ... )   printf(__VA_ARGS__)`
  * 
- *   - `NRF24L01_FPTR_RTN_T`               used to specify the return type for the platform specific SPI functions
- * 								         If this option is not provided, a signed 8-bit integer type is assumed
+ *   - `NRF24L01_FPTR_RTN_T`        used to specify the return type for the platform specific SPI functions
+ * 								    If this option is not provided, a signed 8-bit integer type is assumed
  * 
  * 
  * 
  *  @section IMPORTANT TERMINOLOGY
  * 
- *  DPL - Dynamic payload length
- * 				enabled/disabled globally via a feature register
- *              when disabled, packet length determined per RX pipe via NRF24L01_RX_PW_Px registers
- * 				when enabled, packet length determined per packet via
+ *   - **DPL** (Dynamic payload length)  
+ * 	   enabled/disabled globally via a feature register  
+ *     when disabled, packet length determined per RX pipe via NRF24L01_RX_PW_Px registers  
+ * 	   when enabled, packet length determined per packet via
  * 
- *  AA  - Automatic Acknowledge
+ *   - **AA** (Automatic Acknowledge)
+ * 	   NRF24L01 can automatically acknowledge packets in enhanced Shortburst mode
  * 
- * 	AR  - Automatic Retransmit 
+ * 	 - **AR** (Automatic Retransmit) 
  * 
- *  DTA - Dynamic Transmit ACK
+ *   - **DTA** (Dynamic Transmit ACK)
  */		 
 
 
