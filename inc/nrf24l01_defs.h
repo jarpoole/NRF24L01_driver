@@ -22,7 +22,7 @@
  *  | 7          | MISO     | Master In Slave Out | Port through which data is clocked out of the module                             |
  *  | 8          | IRQ      | Interrupt           | Active low, fires when MCU assistance is needed                                  |
  * 
- *  @image html NRF24L01_pinout.png
+ *  @image{inline} html NRF24L01_pinout.png
  * 
  * 
  *  @section CONFIGURATION
