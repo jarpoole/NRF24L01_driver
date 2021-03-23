@@ -67,18 +67,18 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="toc"><h3>Table of Contents</h3>
-<ul><li class="level1"><a href="#physical">&quot;Physical device&quot;</a><ul><li class="level2"><a href="#pinout">&quot;Pinout&quot;</a></li>
-<li class="level2"><a href="#module">&quot;Module&quot;</a></li>
+<ul><li class="level1"><a href="#physical">Physical device</a><ul><li class="level2"><a href="#pinout">Pinout</a></li>
+<li class="level2"><a href="#module">Module</a></li>
 </ul>
 </li>
-<li class="level1"><a href="#CONFIGURATION">CONFIGURATION</a></li>
+<li class="level1"><a href="#config">Driver configuration</a></li>
 <li class="level1"><a href="#IMPORTANT">TERMINOLOGY</a></li>
 </ul>
 </div>
 <div class="textblock"><h1><a class="anchor" id="physical"></a>
-"Physical device"</h1>
+Physical device</h1>
 <h2><a class="anchor" id="pinout"></a>
-"Pinout"</h2>
+Pinout</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Pin Number </th><th class="markdownTableHeadNone">Pin Name </th><th class="markdownTableHeadNone">Full Name </th><th class="markdownTableHeadNone">Function  </th></tr>
@@ -100,16 +100,17 @@ $(function() {
 <td class="markdownTableBodyNone">8 </td><td class="markdownTableBodyNone">IRQ </td><td class="markdownTableBodyNone">Interrupt </td><td class="markdownTableBodyNone">Active low, fires when MCU assistance is needed  </td></tr>
 </table>
 <h2><a class="anchor" id="module"></a>
-"Module"</h2>
+Module</h2>
 <p><img src="NRF24L01_pinout.png" alt="" class="inline"/></p>
-<h1><a class="anchor" id="CONFIGURATION"></a>
-CONFIGURATION</h1>
+<h1><a class="anchor" id="config"></a>
+Driver configuration</h1>
 <p>User options are exposed through macro definitions provided in the user supplied "nrf24l01_config.h" file in the parent directory</p>
 <p>Macro options</p><ul>
-<li>NRF24L01_ENABLE_DEBUG_LOGGING can be defined to enable driver debug logging</li>
-<li>NRF24L01_DEBUGGING_LOG must be defined if debug logging is enabled to provide platform specific method for timestamped, tagged, message logging Ex: define NRF24L01_DEBUGGING_LOG( ... ) log(<b>VA_ARGS</b>)</li>
-<li>NRF24L01_DEBUGGING_PRINTF must be defined if debug logging is enabled to provide platform specific UART interface method Ex: define NRF24L01_DEBUGGING_PRINTF( ... ) printf(<b>VA_ARGS</b>)</li>
-<li>NRF24L01_FPTR_RTN_T used to specify the return type for the platform specific SPI functions If this option is not provided, a signed 8-bit integer type is assumed</li>
+<li><code>NRF24L01_ENABLE_DEBUG_LOGGING</code> can be defined to enable driver debug logging</li>
+<li><code>NRF24L01_DEBUGGING_LOG</code> must be defined if debug logging is enabled to provide platform specific method for timestamped, tagged, message logging Ex: define NRF24L01_DEBUGGING_LOG( ... ) log(<b>VA_ARGS</b>)</li>
+<li><code>NRF24L01_DEBUGGING_PRINTF</code> <br  />
+ must be defined if debug logging is enabled to provide platform specific UART interface method Ex: <code>#define NRF24L01_DEBUGGING_PRINTF( ... ) printf(__VA_ARGS__)</code></li>
+<li><code>NRF24L01_FPTR_RTN_T</code> used to specify the return type for the platform specific SPI functions If this option is not provided, a signed 8-bit integer type is assumed</li>
 </ul>
 <h1><a class="anchor" id="IMPORTANT"></a>
 TERMINOLOGY</h1>
