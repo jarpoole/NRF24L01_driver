@@ -89,21 +89,24 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:adad84cbfcf4873ff02e12c9c0a156acf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="nrf24l01__defs_8h.html#a86465ecff5d0e2cb8872cca95c310e06">nrf24l01_spi_exchange_fptr_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnrf24l01__platform__t.html#adad84cbfcf4873ff02e12c9c0a156acf">spi_exchange</a></td></tr>
 <tr class="memdesc:adad84cbfcf4873ff02e12c9c0a156acf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the platform specific SPI full-duplex transfer function.  <a href="structnrf24l01__platform__t.html#adad84cbfcf4873ff02e12c9c0a156acf">More...</a><br /></td></tr>
 <tr class="separator:adad84cbfcf4873ff02e12c9c0a156acf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a14b4c6c1143a2d9fbe68c87883265808"><td class="memItemLeft" align="right" valign="top"><a class="el" href="nrf24l01__defs_8h.html#a47eddbd6cc5e2128f56ec7994b9e066c">nrf24l01_check_for_interrupt_fptr_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnrf24l01__platform__t.html#a14b4c6c1143a2d9fbe68c87883265808">check_for_interrupt</a></td></tr>
-<tr class="memdesc:a14b4c6c1143a2d9fbe68c87883265808"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the platform specific.  <a href="structnrf24l01__platform__t.html#a14b4c6c1143a2d9fbe68c87883265808">More...</a><br /></td></tr>
-<tr class="separator:a14b4c6c1143a2d9fbe68c87883265808"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4382e8da69d0b669320b5009fb2df42"><td class="memItemLeft" >struct {</td></tr>
 <tr class="memitem:ae7d0bd598c013f761097e301ddec8e04"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="nrf24l01__defs_8h.html#aad3d32443bfdef413552894313db6fd9">nrf24l01_rx_dr_callback_fptr_t</a>&#160;&#160;&#160;<a class="el" href="structnrf24l01__platform__t.html#a000143d3495d4fe39a6ca1fb3a43ceb4">rx_dr_callback</a></td></tr>
+<tr class="memdesc:ae7d0bd598c013f761097e301ddec8e04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback function pointer to be called when RX data is received and the IRQ interrupt is asserted.  <a href="structnrf24l01__platform__t_1_1_0d1.html#ae7d0bd598c013f761097e301ddec8e04">More...</a><br /></td></tr>
 <tr class="separator:ae7d0bd598c013f761097e301ddec8e04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a742eb70f24dda7397c70cee3ae1dbafa"><td class="memItemLeft" >&#160;&#160;&#160;void *&#160;&#160;&#160;<a class="el" href="structnrf24l01__platform__t.html#a6f944428baa03e7864a0a7088e162424">rx_dr_callback_user_ptr</a></td></tr>
+<tr class="memdesc:a742eb70f24dda7397c70cee3ae1dbafa"><td class="mdescLeft">&#160;</td><td class="mdescRight">User-defined pointer to be passed along when calling rx_dr_callback.  <a href="structnrf24l01__platform__t_1_1_0d1.html#a742eb70f24dda7397c70cee3ae1dbafa">More...</a><br /></td></tr>
 <tr class="separator:a742eb70f24dda7397c70cee3ae1dbafa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92aa1972fb4e55990311433bf667ea66"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="nrf24l01__defs_8h.html#acbaf981637ef9ef2e0d15fc2886135b5">nrf24l01_tx_ds_callback_fptr_t</a>&#160;&#160;&#160;<a class="el" href="structnrf24l01__platform__t.html#acc6e5dabd30ec87d7eea688d2bfcca8c">tx_ds_callback</a></td></tr>
+<tr class="memdesc:a92aa1972fb4e55990311433bf667ea66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback function pointer to be called when TX data is sent and the IRQ interrupt is asserted.  <a href="structnrf24l01__platform__t_1_1_0d1.html#a92aa1972fb4e55990311433bf667ea66">More...</a><br /></td></tr>
 <tr class="separator:a92aa1972fb4e55990311433bf667ea66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a468c5762921c9efb4d1f8550952ae2ce"><td class="memItemLeft" >&#160;&#160;&#160;void *&#160;&#160;&#160;<a class="el" href="structnrf24l01__platform__t.html#ac4efe0276c326f5f3711c0c27e9784e8">tx_ds_callback_user_ptr</a></td></tr>
+<tr class="memdesc:a468c5762921c9efb4d1f8550952ae2ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">User-defined pointer to be passed along when calling tx_ds_callback.  <a href="structnrf24l01__platform__t_1_1_0d1.html#a468c5762921c9efb4d1f8550952ae2ce">More...</a><br /></td></tr>
 <tr class="separator:a468c5762921c9efb4d1f8550952ae2ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a225e3a814ae9fe56ef497541ab38f66e"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="nrf24l01__defs_8h.html#af3a3bced5aa40c9e8ea6ea75fd56b1b7">nrf24l01_max_rt_callback_fptr_t</a>&#160;&#160;&#160;<a class="el" href="structnrf24l01__platform__t.html#abbe06f5152b49ef00761ae87b980179f">max_rt_callback</a></td></tr>
+<tr class="memdesc:a225e3a814ae9fe56ef497541ab38f66e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback function pointer to be called when the maximum number of packet transmission retries has been exceeded and the IRQ interrupt is asserted.  <a href="structnrf24l01__platform__t_1_1_0d1.html#a225e3a814ae9fe56ef497541ab38f66e">More...</a><br /></td></tr>
 <tr class="separator:a225e3a814ae9fe56ef497541ab38f66e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a63239d01b78c76e7f0d77d39c1b25533"><td class="memItemLeft" >&#160;&#160;&#160;void *&#160;&#160;&#160;<a class="el" href="structnrf24l01__platform__t.html#a11a29e75b9ef15f922bed46c7d054b71">max_rt_callback_user_ptr</a></td></tr>
+<tr class="memdesc:a63239d01b78c76e7f0d77d39c1b25533"><td class="mdescLeft">&#160;</td><td class="mdescRight">User-defined pointer to be passed along when calling max_rt_callback.  <a href="structnrf24l01__platform__t_1_1_0d1.html#a63239d01b78c76e7f0d77d39c1b25533">More...</a><br /></td></tr>
 <tr class="separator:a63239d01b78c76e7f0d77d39c1b25533"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4382e8da69d0b669320b5009fb2df42"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnrf24l01__platform__t.html#ae4382e8da69d0b669320b5009fb2df42">callbacks</a></td></tr>
 <tr class="separator:ae4382e8da69d0b669320b5009fb2df42"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -123,22 +126,6 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-</div>
-</div>
-<a id="a14b4c6c1143a2d9fbe68c87883265808"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a14b4c6c1143a2d9fbe68c87883265808">&#9670;&nbsp;</a></span>check_for_interrupt</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="nrf24l01__defs_8h.html#a47eddbd6cc5e2128f56ec7994b9e066c">nrf24l01_check_for_interrupt_fptr_t</a> nrf24l01_platform_t::check_for_interrupt</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Pointer to the platform specific. </p>
 
 </div>
 </div>
@@ -186,6 +173,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Callback function pointer to be called when the maximum number of packet transmission retries has been exceeded and the IRQ interrupt is asserted. </p>
+
 </div>
 </div>
 <a id="a11a29e75b9ef15f922bed46c7d054b71"></a>
@@ -199,6 +188,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>User-defined pointer to be passed along when calling max_rt_callback. </p>
 
 </div>
 </div>
@@ -246,6 +237,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Callback function pointer to be called when RX data is received and the IRQ interrupt is asserted. </p>
+
 </div>
 </div>
 <a id="a6f944428baa03e7864a0a7088e162424"></a>
@@ -259,6 +252,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>User-defined pointer to be passed along when calling rx_dr_callback. </p>
 
 </div>
 </div>
@@ -290,6 +285,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Callback function pointer to be called when TX data is sent and the IRQ interrupt is asserted. </p>
+
 </div>
 </div>
 <a id="ac4efe0276c326f5f3711c0c27e9784e8"></a>
@@ -303,6 +300,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>User-defined pointer to be passed along when calling tx_ds_callback. </p>
 
 </div>
 </div>
