@@ -5,6 +5,11 @@
  *  @author  Jared Poole
  *  @version 1.1.7
  * 
+ *  @mainpage NRF24L01 driver documentation
+ * 
+ *  @tableofcontents
+ * 
+ * 
  *  @section CONFIGURATION
  * 
  *  User options are exposed through macro definitions provided in the user supplied "nrf24l01_config.h" file
