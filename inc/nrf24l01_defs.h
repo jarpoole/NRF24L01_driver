@@ -9,7 +9,8 @@
  * 
  *  @tableofcontents
  * 
- *  @section Pinout
+ *  @section physical "Physical device"
+ *  @subsection pinout "Pinout" 
  * 
  *  | Pin Number | Pin Name | Full Name           | Function                                                                         |
  *  |------------|----------|---------------------|----------------------------------------------------------------------------------|
@@ -22,6 +23,7 @@
  *  | 7          | MISO     | Master In Slave Out | Port through which data is clocked out of the module                             |
  *  | 8          | IRQ      | Interrupt           | Active low, fires when MCU assistance is needed                                  |
  * 
+ *  @subsection module "Module"
  *  @image{inline} html NRF24L01_pinout.png
  * 
  * 
