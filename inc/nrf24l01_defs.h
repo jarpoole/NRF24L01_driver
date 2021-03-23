@@ -9,6 +9,21 @@
  * 
  *  @tableofcontents
  * 
+ *  @section Pinout
+ * 
+ *  | Pin Number | Pin Name | Full Name           | Function                                                                         |
+ *  |------------|----------|---------------------|----------------------------------------------------------------------------------|
+ *  | 1          | GND      | Ground              | Module ground (digital)                                                          |
+ *  | 2          | VCC      | Power               | 3.3v module power rail                                                           |
+ *  | 3          | CE       | Chip Enable         | Active high, places module in RX or TX operating mode from Standby-I             |
+ *  | 4          | CSN      | Chip Select Not     | Selects the NRF24L01 on the SPI bus if multiple devices are present, active low  |
+ *  | 5          | SCK      | Serial Clock        | SPI bus clock (max 8MHz)                                                         |
+ *  | 6          | MOSI     | Master Out Slave In | Port through which data is clocked into the module                               |
+ *  | 7          | MISO     | Master In Slave Out | Port through which data is clocked out of the module                             |
+ *  | 8          | IRQ      | Interrupt           | Active low, fires when MCU assistance is needed                                  |
+ * 
+ *  @image html NRF24L01_pinout.png
+ * 
  * 
  *  @section CONFIGURATION
  * 
