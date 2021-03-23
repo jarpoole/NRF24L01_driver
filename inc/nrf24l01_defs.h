@@ -9,6 +9,7 @@
  * 
  *  @tableofcontents
  * 
+ * 
  *  @section physical   Physical device
  *  @subsection pinout  Pinout
  * 
@@ -47,15 +48,13 @@
  * 
  * 
  * 
- *  @section IMPORTANT TERMINOLOGY
+ *  @section terms   Important terminology
  * 
- *   - **DPL** (Dynamic payload length)  
- * 	   enabled/disabled globally via a feature register  
- *     when disabled, packet length determined per RX pipe via NRF24L01_RX_PW_Px registers  
- * 	   when enabled, packet length determined per packet via
+ *   - **DPL** (Dynamic payload length) enabled/disabled globally via a feature register  
+ *      + when disabled, packet length determined per RX pipe via NRF24L01_RX_PW_Px registers  
+ * 	    + when enabled, packet length determined per packet via
  * 
- *   - **AA** (Automatic Acknowledge)
- * 	   NRF24L01 can automatically acknowledge packets in enhanced Shortburst mode
+ *   - **AA** (Automatic Acknowledge) packets can be automatically acknowledged in enhanced Shortburst mode
  * 
  * 	 - **AR** (Automatic Retransmit) 
  * 
@@ -537,7 +536,10 @@ typedef enum {
     NRF24L01_ERR_READ,
 } nrf24l01_err_t;
 
-// Enumeration of RX pipe addresses and TX address
+/** @brief Enumeration of RX pipe addresses and TX address
+ *  
+ *  Described in @link ./datasheet/nRF24L01_product_specifications.pdf
+ */ 
 typedef enum {
 	NRF24L01_PIPE0        = (uint8_t)0x00,  ///< pipe0
 	NRF24L01_PIPE1        = (uint8_t)0x01,  ///< pipe1
@@ -547,7 +549,7 @@ typedef enum {
 	NRF24L01_PIPE5        = (uint8_t)0x05,  ///< pipe5
 	NRF24L01_PIPETX       = (uint8_t)0x06,  ///< TX address (not a pipe in fact)
 	NRF24L01_PIPE_UNKNOWN = (uint8_t)0x07,  ///< pipe unknown (usually signifies rx pipe is empty)
-	NRF24L01_ALL_RX_PIPES,                  ///< Used for configuring all RX pipes at the same time
+	NRF24L01_ALL_RX_PIPES,                  ///< Used in the API to configure all RX pipes at the same time
 } nrf24l01_pipe_t;
 
 #define NRF24L01_IS_RX_PIPE(pipe)    ( ((pipe) >= NRF24L01_PIPE0 && (pipe) <= NRF24L01_PIPE5) || ((pipe) == NRF24L01_ALL_RX_PIPES) )
@@ -601,7 +603,7 @@ typedef enum {
 } ack_payload_mode_t;
 
 
-/*!
+/**
  * @brief Hardware initialization function pointer which should be used to configure the
  * hardware before communication is attempted
  * 
@@ -615,7 +617,7 @@ typedef enum {
 typedef NRF24L01_FPTR_RTN_T (*nrf24l01_platform_init_fptr_t)(void* user_ptr);
 
 
-/*!
+/**
  * @brief SPI Bus deinitialization function pointer which should be used to release the
  * hardware when the driver is deinitialized
  *
@@ -627,7 +629,7 @@ typedef NRF24L01_FPTR_RTN_T (*nrf24l01_platform_init_fptr_t)(void* user_ptr);
 typedef NRF24L01_FPTR_RTN_T (*nrf24l01_platform_deinit_fptr_t)(void* user_ptr);
 
 
-/*!
+/**
  * @brief SPI Bus exchange function pointer which should be mapped to
  * the platform specific write functions of the user
  *
@@ -650,7 +652,7 @@ typedef NRF24L01_FPTR_RTN_T (*nrf24l01_platform_deinit_fptr_t)(void* user_ptr);
 typedef NRF24L01_FPTR_RTN_T (*nrf24l01_spi_exchange_fptr_t)(uint8_t command, uint8_t* rx_data, uint8_t* tx_data, uint8_t len, void* user_ptr);
 
 
-/*!
+/**
  * @brief Set the state of Chip enable GPIO function pointer
  *
  * @param[in] state         : Desired state of the chip enable GPIO
@@ -662,7 +664,7 @@ typedef NRF24L01_FPTR_RTN_T (*nrf24l01_spi_exchange_fptr_t)(uint8_t command, uin
 typedef NRF24L01_FPTR_RTN_T (*nrf24l01_gpio_chip_enable_fptr_t)(bool state, void* user_ptr);
 
 
-/*!
+/**
  * @brief Microsecond delay function pointer which should be mapped to
  * the platform specific delay function of the user
  *
@@ -674,21 +676,11 @@ typedef NRF24L01_FPTR_RTN_T (*nrf24l01_gpio_chip_enable_fptr_t)(bool state, void
 typedef NRF24L01_FPTR_RTN_T (*nrf24l01_delay_us_fptr_t)(uint32_t delay);
 
 
-/*!
- * @brief Check for interrupt function pointer
- *
- * @param[in] delay      : Number of microseconds to delay
- *
- * @retval 0        -> Interrupt triggered and waiting to be processed
- * @retval Non zero -> No interrupt
- */
-typedef NRF24L01_FPTR_RTN_T (*nrf24l01_check_for_interrupt_fptr_t)(void* user_ptr);
 
 
 
 
-
-/*!
+/**
  * @brief User supplied callback function pointer
  *
  * @param[in] delay      : Number of microseconds to delay
@@ -700,27 +692,34 @@ typedef void (*nrf24l01_rx_dr_callback_fptr_t)(uint8_t message_len, nrf24l01_pip
 typedef void (*nrf24l01_tx_ds_callback_fptr_t)(nrf24l01_pipe_t pipe, void* user_ptr, nrf24l01_platform_t* platform);
 
 
+/**
+ * @brief Check for interrupt function pointer
+ *
+ * @param[in] delay      : Number of microseconds to delay
+ *
+ * @retval 0        -> Interrupt triggered and waiting to be processed
+ * @retval Non zero -> No interrupt
+ */
 typedef void (*nrf24l01_max_rt_callback_fptr_t)(void* user_ptr, nrf24l01_platform_t* platform);
 
 
 
 
 struct nrf24l01_platform_t{
-	nrf24l01_delay_us_fptr_t            delay_us;            ///< Pointer to a platform specific microsecond delay function
-	nrf24l01_gpio_chip_enable_fptr_t    gpio_chip_enable;    ///< Pointer to the platform specific GPIO control function
-	nrf24l01_platform_init_fptr_t       platform_init;       ///< Pointer to the platform specific hardware initialization function
-	nrf24l01_platform_deinit_fptr_t     platform_deinit;     ///< Pointer to the platform specific hardware deinitialization function
-	nrf24l01_spi_exchange_fptr_t        spi_exchange;        ///< Pointer to the platform specific SPI full-duplex transfer function
-	nrf24l01_check_for_interrupt_fptr_t check_for_interrupt; ///< Pointer to the platform specific
+	nrf24l01_delay_us_fptr_t            delay_us;                 ///< Pointer to a platform specific microsecond delay function
+	nrf24l01_gpio_chip_enable_fptr_t    gpio_chip_enable;         ///< Pointer to the platform specific GPIO control function
+	nrf24l01_platform_init_fptr_t       platform_init;            ///< Pointer to the platform specific hardware initialization function
+	nrf24l01_platform_deinit_fptr_t     platform_deinit;          ///< Pointer to the platform specific hardware deinitialization function
+	nrf24l01_spi_exchange_fptr_t        spi_exchange;             ///< Pointer to the platform specific SPI full-duplex transfer function
 	struct {
-		nrf24l01_rx_dr_callback_fptr_t  rx_dr_callback;
-		void*                           rx_dr_callback_user_ptr;
-		nrf24l01_tx_ds_callback_fptr_t  tx_ds_callback;
-		void*                           tx_ds_callback_user_ptr;
-		nrf24l01_max_rt_callback_fptr_t max_rt_callback;
-		void*                           max_rt_callback_user_ptr;
+		nrf24l01_rx_dr_callback_fptr_t  rx_dr_callback;           ///< Callback function pointer to be called when RX data is received and the IRQ interrupt is asserted
+		void*                           rx_dr_callback_user_ptr;  ///< User-defined pointer to be passed along when calling rx_dr_callback
+		nrf24l01_tx_ds_callback_fptr_t  tx_ds_callback;           ///< Callback function pointer to be called when TX data is sent and the IRQ interrupt is asserted
+		void*                           tx_ds_callback_user_ptr;  ///< User-defined pointer to be passed along when calling tx_ds_callback
+		nrf24l01_max_rt_callback_fptr_t max_rt_callback;          ///< Callback function pointer to be called when the maximum number of packet transmission retries has been exceeded and the IRQ interrupt is asserted
+		void*                           max_rt_callback_user_ptr; ///< User-defined pointer to be passed along when calling max_rt_callback
 	} callbacks;
-	void*                               user_ptr;            ///< (optional) Pointer to a user-defined hardware configuration struct
+	void*                               user_ptr;                 ///< (optional) Pointer to a user-defined hardware configuration struct
 };
 
 #endif

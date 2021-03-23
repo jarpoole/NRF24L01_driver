@@ -843,7 +843,13 @@ nrf24l01_err_t nrf24l01_get_feature_mode(nrf24l01_feature_mode_t* feature_mode, 
 
 }
 
-nrf24l01_err_t nrf24l01_set_feature_mode(nrf24l01_feature_mode_t feature_mode, nrf24l01_platform_t* platform) {
+/** @brief 
+ * 
+ *  @param
+ *  @param[in] platform : 
+ * 
+ */
+nrf24l01_err_t nrf24l01_set_feature_mode(nrf24l01_feature_mode_t feature_mode, nrf24l01_platform_t* platform){
 	
 	//Check if we are in power down or standby mode
 	nrf24l01_power_mode_t power_mode;
@@ -1306,7 +1312,6 @@ void nrf24l01_print_fifo_status_register(nrf24l01_platform_t* platform){
         (fifo_status & NRF24L01_FIFO_STATUS_REG_BIT_RX_EMPTY) ? "1" : "0"
     );
 }
-
 
 #endif // NRF24L01_ENABLE_PRINT_CONFIG
 
