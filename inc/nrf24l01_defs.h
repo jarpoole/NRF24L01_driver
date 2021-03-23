@@ -9,8 +9,8 @@
  * 
  *  @tableofcontents
  * 
- *  @section physical "Physical device"
- *  @subsection pinout "Pinout" 
+ *  @section physical   Physical device
+ *  @subsection pinout  Pinout
  * 
  *  | Pin Number | Pin Name | Full Name           | Function                                                                         |
  *  |------------|----------|---------------------|----------------------------------------------------------------------------------|
@@ -23,26 +23,26 @@
  *  | 7          | MISO     | Master In Slave Out | Port through which data is clocked out of the module                             |
  *  | 8          | IRQ      | Interrupt           | Active low, fires when MCU assistance is needed                                  |
  * 
- *  @subsection module "Module"
- *  @image{inline} html NRF24L01_pinout.png
+ *  @subsection module   Module
+ *  @image{inline} html  NRF24L01_pinout.png
  * 
  * 
- *  @section CONFIGURATION
+ *  @section config   Driver configuration
  * 
  *  User options are exposed through macro definitions provided in the user supplied "nrf24l01_config.h" file
  *  in the parent directory
  * 
  *  Macro options
- *   - NRF24L01_ENABLE_DEBUG_LOGGING     can be defined to enable driver debug logging
- *   - NRF24L01_DEBUGGING_LOG            must be defined if debug logging is enabled to provide platform specific 
+ *   - `NRF24L01_ENABLE_DEBUG_LOGGING`     can be defined to enable driver debug logging
+ *   - `NRF24L01_DEBUGGING_LOG`            must be defined if debug logging is enabled to provide platform specific 
  *                                       method for timestamped, tagged, message logging
  *       Ex: #define NRF24L01_DEBUGGING_LOG( ... )   log(__VA_ARGS__)
  * 
- * 	 - NRF24L01_DEBUGGING_PRINTF         must be defined if debug logging is enabled to provide platform specific 
- *                                       UART interface method
- *       Ex: #define NRF24L01_DEBUGGING_PRINTF( ... )   printf(__VA_ARGS__)
+ * 	 - `NRF24L01_DEBUGGING_PRINTF`         
+ *     must be defined if debug logging is enabled to provide platform specific UART interface method
+ *     Ex: `#define NRF24L01_DEBUGGING_PRINTF( ... )   printf(__VA_ARGS__)`
  * 
- *   - NRF24L01_FPTR_RTN_T               used to specify the return type for the platform specific SPI functions
+ *   - `NRF24L01_FPTR_RTN_T`               used to specify the return type for the platform specific SPI functions
  * 								         If this option is not provided, a signed 8-bit integer type is assumed
  * 
  * 
