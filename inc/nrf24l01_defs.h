@@ -224,10 +224,10 @@
 /// @defgroup reg_bits   SPI Register Bit Definitions  
 /// @{ 
 
-/** @name config_bits   Configuration Register (CONFIG)
+/** @name Configuration Register (CONFIG)
  *  
  *  @brief Contains IRQ masks, CRC options, and operating mode controls
- *  @details <a href="nRF24L01_product_specifications.pdf#page=53&search=%22CONFIG%22">View in datasheet</a>
+ *  @details <a href="nRF24L01_product_specifications.pdf#page=53&search=%22CONFIG%22"><b><u>View details in datasheet</u></b></a> for more information
  */ 
 /// @{
 #define NRF24L01_CONFIG_REG_BIT_MASK_RX_DR    	(uint8_t)0x40  ///< RX_DR[6] bit in CONFIG register
@@ -239,10 +239,10 @@
 #define NRF24L01_CONFIG_REG_BIT_PRIM_RX       	(uint8_t)0x01  ///< PRIM_RX[0] bit in CONFIG register
 /// @}
 
-/** @name en_aa_bits   Enhanced ShockBurst™ Enable Register (EN_AA)
+/** @name Enhanced ShockBurst™ Enable Register (EN_AA)
  *  
  *  @brief Contains enable bits for Enhanced ShockBurst™ on each RX pipe
- *  @details <a href="nRF24L01_product_specifications.pdf#page=53&search=%22EN_AA%22">View in datasheet</a>
+ *  @details <a href="nRF24L01_product_specifications.pdf#page=53&search=%22EN_AA%22"><b><u>View details in datasheet</u></b></a> for more information
  */ 
 /// @{
 #define NRF24L01_EN_AA_REG_BIT_ENAA_P5        	(uint8_t)0x20  ///< ENAA_P5[5] bit in EN_AA register
