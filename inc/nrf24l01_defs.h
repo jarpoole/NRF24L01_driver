@@ -9,6 +9,29 @@
  * 
  *  @tableofcontents
  * 
+ * 	@section summary    Summary
+ * 
+ * 	The NRF24L01 is a low-cost single chip 2.4GHz transceiver 
+ * 
+ *  Key features (as outlined by the datasheet) are
+ *   - Worldwide 2.4GHz ISM band operation
+ *   - Up to 2Mbps on air data rate
+ *   - Ultra low power operation
+ *   - 11.3mA TX at 0dBm output power
+ *   - 12.3mA RX at 2Mbps air data rate
+ *   - 900nA in power down
+ *   - 22µA in standby-I
+ *   - On chip voltage regulator
+ *   - 1.9 to 3.6V supply range
+ *   - Enhanced ShockBurst™
+ *   - Automatic packet handling
+ *   - Auto packet transaction handling
+ *   - 6 data pipe MultiCeiver™
+ *   - Air compatible with nRF2401A, 02, E1 and E2
+ *   - Low cost BOM
+ *   - ±60ppm 16MHz crystal
+ *   - 5V tolerant inputs
+ *   - Compact 20-pin 4x4mm QFN package
  * 
  *  @section physical   Physical device
  *  @subsection pinout  Pinout
@@ -23,6 +46,9 @@
  *  | 6          | MOSI     | Master Out Slave In | Port through which data is clocked into the module                               |
  *  | 7          | MISO     | Master In Slave Out | Port through which data is clocked out of the module                             |
  *  | 8          | IRQ      | Interrupt           | Active low, fires when MCU assistance is needed                                  |
+ * 
+ * 	Detailed information on the SPI interface can be found @htmlonly <a href="nRF24L01_product_specifications.pdf#nameddef=8+Data+and+Control+Interface">here</a> @endhtmlonly
+ * 
  * 
  *  @subsection module   Module
  *  @image{inline} html  NRF24L01_pinout.png
@@ -538,7 +564,7 @@ typedef enum {
 
 /** @brief Enumeration of RX pipe addresses and TX address
  *  
- *  Described in the datasheet as @htmlonly <a href="nRF24L01_product_specifications.pdf#page=55&search=%22RX_P_NO%22">RX_P_NO[3:1] bits in STATUS register</a> @endhtmlonly
+ *  Found in datasheet as @htmlonly <a href="nRF24L01_product_specifications.pdf#page=55&search=%22RX_P_NO%22">RX_P_NO[3:1] bits in STATUS register</a> @endhtmlonly
  */ 
 typedef enum {
 	NRF24L01_PIPE0        = (uint8_t)0x00,  ///< pipe0
@@ -647,7 +673,7 @@ typedef NRF24L01_FPTR_RTN_T (*nrf24l01_platform_deinit_fptr_t)(void* user_ptr);
  * @param[in] user_ptr     : Pointer to user-defined hardware configuration struct
  *
  * @retval 0        -> Success
- * @retval Non zero -> Fail
+ * @retval Non-zero -> Fail
  */
 typedef NRF24L01_FPTR_RTN_T (*nrf24l01_spi_exchange_fptr_t)(uint8_t command, uint8_t* rx_data, uint8_t* tx_data, uint8_t len, void* user_ptr);
 
