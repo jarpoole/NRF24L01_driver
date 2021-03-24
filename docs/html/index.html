@@ -67,7 +67,8 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="toc"><h3>Table of Contents</h3>
-<ul><li class="level1"><a href="#physical">Physical device</a><ul><li class="level2"><a href="#pinout">Pinout</a></li>
+<ul><li class="level1"><a href="#summary">Summary</a></li>
+<li class="level1"><a href="#physical">Physical device</a><ul><li class="level2"><a href="#pinout">Pinout</a></li>
 <li class="level2"><a href="#module">Module</a></li>
 </ul>
 </li>
@@ -75,7 +76,30 @@ $(function() {
 <li class="level1"><a href="#terms">Important terminology</a></li>
 </ul>
 </div>
-<div class="textblock"><h1><a class="anchor" id="physical"></a>
+<div class="textblock"><h1><a class="anchor" id="summary"></a>
+Summary</h1>
+<p>The NRF24L01 is a low-cost single chip 2.4GHz transceiver</p>
+<p>Key features (as outlined by the datasheet) are</p><ul>
+<li>Worldwide 2.4GHz ISM band operation</li>
+<li>Up to 2Mbps on air data rate</li>
+<li>Ultra low power operation</li>
+<li>11.3mA TX at 0dBm output power</li>
+<li>12.3mA RX at 2Mbps air data rate</li>
+<li>900nA in power down</li>
+<li>22µA in standby-I</li>
+<li>On chip voltage regulator</li>
+<li>1.9 to 3.6V supply range</li>
+<li>Enhanced ShockBurst™</li>
+<li>Automatic packet handling</li>
+<li>Auto packet transaction handling</li>
+<li>6 data pipe MultiCeiver™</li>
+<li>Air compatible with nRF2401A, 02, E1 and E2</li>
+<li>Low cost BOM</li>
+<li>±60ppm 16MHz crystal</li>
+<li>5V tolerant inputs</li>
+<li>Compact 20-pin 4x4mm QFN package</li>
+</ul>
+<h1><a class="anchor" id="physical"></a>
 Physical device</h1>
 <h2><a class="anchor" id="pinout"></a>
 Pinout</h2>
@@ -99,6 +123,7 @@ Pinout</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">8 </td><td class="markdownTableBodyNone">IRQ </td><td class="markdownTableBodyNone">Interrupt </td><td class="markdownTableBodyNone">Active low, fires when MCU assistance is needed  </td></tr>
 </table>
+<p>Detailed information on the SPI interface can be found <a href="nRF24L01_product_specifications.pdf#nameddef=8+Data+and+Control+Interface">here</a> </p>
 <h2><a class="anchor" id="module"></a>
 Module</h2>
 <p><img src="NRF24L01_pinout.png" alt="" class="inline"/></p>
