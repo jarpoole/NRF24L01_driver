@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gpio_5fchip_5fenable_4',['gpio_chip_enable',['../structnrf24l01__platform__t.html#a9f4dc215cd41cb34f4f6208e01c81f9a',1,'nrf24l01_platform_t']]]
+  ['enhanced_20shockburst™_20enable_20register_20_28en_5faa_29_5',['Enhanced ShockBurst™ Enable Register (EN_AA)',['../group__en__aa.html',1,'']]]
 ];
