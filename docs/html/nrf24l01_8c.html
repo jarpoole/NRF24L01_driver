@@ -165,6 +165,7 @@ Functions</h2></td></tr>
 <tr class="memitem:gae02a0fb3c6ba0f88fb4dd84e3bd2fd65"><td class="memItemLeft" align="right" valign="top"><a class="el" href="nrf24l01__defs_8h.html#aeb660fd5ed8bfc4a9d5ea587fd9207f0">nrf24l01_err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__device__api.html#gae02a0fb3c6ba0f88fb4dd84e3bd2fd65">nrf24l01_get_feature_mode</a> (<a class="el" href="nrf24l01__defs_8h.html#a303e1160123b0cc33747411d6ccf5fa6">nrf24l01_feature_mode_t</a> *feature_mode, <a class="el" href="structnrf24l01__platform__t.html">nrf24l01_platform_t</a> *platform)</td></tr>
 <tr class="separator:gae02a0fb3c6ba0f88fb4dd84e3bd2fd65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga786f79fce0ce9929961915f323cd658e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="nrf24l01__defs_8h.html#aeb660fd5ed8bfc4a9d5ea587fd9207f0">nrf24l01_err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__device__api.html#ga786f79fce0ce9929961915f323cd658e">nrf24l01_set_feature_mode</a> (<a class="el" href="nrf24l01__defs_8h.html#a303e1160123b0cc33747411d6ccf5fa6">nrf24l01_feature_mode_t</a> feature_mode, <a class="el" href="structnrf24l01__platform__t.html">nrf24l01_platform_t</a> *platform)</td></tr>
+<tr class="memdesc:ga786f79fce0ce9929961915f323cd658e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables/disables special devices features.  <a href="group__device__api.html#ga786f79fce0ce9929961915f323cd658e">More...</a><br /></td></tr>
 <tr class="separator:ga786f79fce0ce9929961915f323cd658e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9f4b25fc294cb8550f3572b54b08fe58"><td class="memItemLeft" align="right" valign="top"><a class="el" href="nrf24l01__defs_8h.html#aeb660fd5ed8bfc4a9d5ea587fd9207f0">nrf24l01_err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__device__api.html#ga9f4b25fc294cb8550f3572b54b08fe58">nrf24l01_set_dpl_mode</a> (<a class="el" href="nrf24l01__defs_8h.html#a0713efe0e232d8adca8016d007b1d28e">nrf24l01_dpl_mode_t</a> dpl_mode, <a class="el" href="structnrf24l01__platform__t.html">nrf24l01_platform_t</a> *platform)</td></tr>
 <tr class="separator:ga9f4b25fc294cb8550f3572b54b08fe58"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -266,17 +267,11 @@ DESCRIPTION</h1>
 <p>Check for interrupt function pointer which should be called often by the user to ensure that radio events are triggered. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">delay</td><td>: Number of microseconds to delay</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">platform</td><td>: Driver instance configuration struct</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">0</td><td>-&gt; Interrupt triggered </td></tr>
-    <tr><td class="paramname">Non</td><td>zero -&gt; No interrupt </td></tr>
-  </table>
-  </dd>
-</dl>
+<dl class="section return"><dt>Returns</dt><dd>none </dd></dl>
 
 </div>
 </div>
@@ -423,7 +418,7 @@ DESCRIPTION</h1>
     <tr><td class="paramname">reg_addr</td><td>: The 8-bit SPI register address <br  />
  Valid addresses can be found here <a class="el" href="group__reg__addr.html">here</a> </td></tr>
     <tr><td class="paramname">data</td><td>: The register contents </td></tr>
-    <tr><td class="paramname">platform</td><td>: Driver instance configuration</td></tr>
+    <tr><td class="paramname">platform</td><td>: Driver instance configuration struct</td></tr>
   </table>
   </dd>
 </dl>
