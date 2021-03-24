@@ -9,7 +9,7 @@ var indexSectionsWithContent =
   6: "an",
   7: "mnrt",
   8: "n",
-  9: "dps",
+  9: "dnps",
   10: "n"
 };
 

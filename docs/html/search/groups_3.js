@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['pipe_5fapi_615',['Pipe_api',['../group__pipe__api.html',1,'']]]
+  ['spi_20commands_592',['SPI Commands',['../group__commands.html',1,'']]],
+  ['spi_20register_20addresses_593',['SPI Register Addresses',['../group__reg__addr.html',1,'']]]
 ];
