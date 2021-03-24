@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['configuration_20register_20_28config_29_612',['Configuration Register (CONFIG)',['../group__config__reg.html',1,'']]]
+  ['device_5fapi_623',['Device_api',['../group__device__api.html',1,'']]]
 ];
