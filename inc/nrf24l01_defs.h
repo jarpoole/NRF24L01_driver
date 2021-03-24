@@ -223,9 +223,9 @@
 
 
 /** @name Configuration Register (CONFIG)
+ *  @ingroup reg_bits
  *  @brief Contains IRQ masks, CRC options, and operating mode controls
  *  @details <a href="nRF24L01_product_specifications.pdf#page=53&search=%22CONFIG%22">View in datasheet</a>
- * 	@ingroup reg_bits
  */ 
 /// @{
 #define NRF24L01_CONFIG_REG_BIT_MASK_RX_DR    	(uint8_t)0x40  ///< RX_DR[6] bit in CONFIG register
