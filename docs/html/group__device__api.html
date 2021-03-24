@@ -126,6 +126,7 @@ Functions</h2></td></tr>
 <tr class="memitem:gae02a0fb3c6ba0f88fb4dd84e3bd2fd65"><td class="memItemLeft" align="right" valign="top"><a class="el" href="nrf24l01__defs_8h.html#aeb660fd5ed8bfc4a9d5ea587fd9207f0">nrf24l01_err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__device__api.html#gae02a0fb3c6ba0f88fb4dd84e3bd2fd65">nrf24l01_get_feature_mode</a> (<a class="el" href="nrf24l01__defs_8h.html#a303e1160123b0cc33747411d6ccf5fa6">nrf24l01_feature_mode_t</a> *, <a class="el" href="structnrf24l01__platform__t.html">nrf24l01_platform_t</a> *)</td></tr>
 <tr class="separator:gae02a0fb3c6ba0f88fb4dd84e3bd2fd65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga786f79fce0ce9929961915f323cd658e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="nrf24l01__defs_8h.html#aeb660fd5ed8bfc4a9d5ea587fd9207f0">nrf24l01_err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__device__api.html#ga786f79fce0ce9929961915f323cd658e">nrf24l01_set_feature_mode</a> (<a class="el" href="nrf24l01__defs_8h.html#a303e1160123b0cc33747411d6ccf5fa6">nrf24l01_feature_mode_t</a>, <a class="el" href="structnrf24l01__platform__t.html">nrf24l01_platform_t</a> *)</td></tr>
+<tr class="memdesc:ga786f79fce0ce9929961915f323cd658e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables/disables special devices features.  <a href="group__device__api.html#ga786f79fce0ce9929961915f323cd658e">More...</a><br /></td></tr>
 <tr class="separator:ga786f79fce0ce9929961915f323cd658e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf904545f9f8a909e438a972d51dfda7a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="nrf24l01__defs_8h.html#aeb660fd5ed8bfc4a9d5ea587fd9207f0">nrf24l01_err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__device__api.html#gaf904545f9f8a909e438a972d51dfda7a">nrf24l01_set_ack_payload_mode</a> (<a class="el" href="nrf24l01__defs_8h.html#a7c4d5923051f2412599ab4b292fea85c">ack_payload_mode_t</a>, <a class="el" href="structnrf24l01__platform__t.html">nrf24l01_platform_t</a> *)</td></tr>
 <tr class="separator:gaf904545f9f8a909e438a972d51dfda7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -857,9 +858,12 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Enables/disables special devices features. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"></td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">feature_mode</td><td>: Desired feature mode </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">platform</td><td>: Driver instance configuration struct </td></tr>
   </table>
   </dd>
 </dl>
