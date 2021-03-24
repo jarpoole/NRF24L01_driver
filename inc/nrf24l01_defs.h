@@ -163,7 +163,7 @@
 #define NRF24L01_FEATURE_CMD_W_TX_PAYLOAD_NOACK  (uint8_t)0xB0  ///< Write TX payload and disable AUTOACK
 /// @}
 
-/** @name reg_addr
+/** @name regaddr
  * 	@brief NRF24L01 register address definitions
  * 
  * 	Format is <b>NRF24L01_REG_ADDR_r</b> where <b>r</b> is the name assigned to the register by the datasheet
@@ -195,7 +195,7 @@
 #define NRF24L01_REG_ADDR_FIFO_STATUS  (uint8_t)0x17  ///< FIFO status register address
 /// @}
 
-/** @name sfr_addr
+/** @name sfraddr
  * 	@brief NRF24L01 special feature register address definitions
  * 	Format is <b>NRF24L01_FEATURE_REG_ADDR_x</b> where <b>x</b> is the name assigned to the special feature register by the datasheet
  */
