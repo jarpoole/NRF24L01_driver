@@ -132,12 +132,9 @@
 	#endif
 #endif
 	
-/// @defgroup commands "SPI Commands"
-
-/// @defgroup reg_addr "SPI Register Addresses"
-
-/// @defgroup reg_bits "SPI Register Bit Definitions"
-
+/// @defgroup commands    SPI Commands  
+/// @defgroup reg_addr    SPI Register Addresses  
+/// @defgroup reg_bits    SPI Register Bit Definitions  
 
 
 /** @name General Commands
@@ -240,7 +237,9 @@
 #define NRF24L01_CONFIG_REG_BIT_PRIM_RX       	(uint8_t)0x01  ///< PRIM_RX[0] bit in CONFIG register
 /// @}
 
-/** @name Enhanced ShockBurst™ Enable Register (EN_AA)
+//@name Enhanced ShockBurst™ Enable Register (EN_AA)
+
+/** 
  *  @brief Contains enable bits for Enhanced ShockBurst™ on each RX pipe
  *  @details <a href="nRF24L01_product_specifications.pdf#page=53&search=%22EN_AA%22">View in datasheet</a>
  * 	@ingroup reg_bits
