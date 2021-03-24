@@ -134,7 +134,6 @@
 	
 /// @defgroup commands    SPI Commands  
 /// @defgroup reg_addr    SPI Register Addresses  
-/// @defgroup reg_bits    SPI Register Bit Definitions  
 
 
 /** @name General Commands
@@ -218,13 +217,14 @@
 #define NRF24L01_FEATURE_REG_ADDR_FEATURE  (uint8_t)0x1D  ///< Feature register address
 /// @}
 
-//@defgroup config_reg   
 
-/// @ingroup reg_bits
+
+
+ 
+/// @defgroup reg_bits   SPI Register Bit Definitions  
 /// @{ 
 
-/** 
- *  @name Configuration Register (CONFIG)
+/** @section config_bits   Configuration Register (CONFIG)
  * 
  *  @brief Contains IRQ masks, CRC options, and operating mode controls
  *  @details <a href="nRF24L01_product_specifications.pdf#page=53&search=%22CONFIG%22">View in datasheet</a>
@@ -239,11 +239,7 @@
 #define NRF24L01_CONFIG_REG_BIT_PRIM_RX       	(uint8_t)0x01  ///< PRIM_RX[0] bit in CONFIG register
 /// @}
 
-//@defgroup en_aa
-
-
-/** 
- *  @name Enhanced ShockBurst™ Enable Register (EN_AA)
+/** @section en_aa_bits   Enhanced ShockBurst™ Enable Register (EN_AA)
  * 
  *  @brief Contains enable bits for Enhanced ShockBurst™ on each RX pipe
  *  @details <a href="nRF24L01_product_specifications.pdf#page=53&search=%22EN_AA%22">View in datasheet</a>
