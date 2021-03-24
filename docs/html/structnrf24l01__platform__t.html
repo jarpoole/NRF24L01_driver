@@ -66,7 +66,7 @@ $(function() {
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structnrf24l01__platform__t-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">nrf24l01_platform_t Struct Reference<div class="ingroups"><a class="el" href="group__commands.html">Commands</a> &raquo; <a class="el" href="group__reg__addr.html">Reg_addr</a></div></div>  </div>
+<div class="title">nrf24l01_platform_t Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -77,50 +77,257 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:gabf435d5e55ddbb219f2954779cc8adb6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__reg__addr.html#ga535ba1bc087e8da8f29f88960d0a64dd">nrf24l01_delay_us_fptr_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__reg__addr.html#gabf435d5e55ddbb219f2954779cc8adb6">delay_us</a></td></tr>
-<tr class="memdesc:gabf435d5e55ddbb219f2954779cc8adb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to a platform specific microsecond delay function.  <a href="group__reg__addr.html#gabf435d5e55ddbb219f2954779cc8adb6">More...</a><br /></td></tr>
-<tr class="separator:gabf435d5e55ddbb219f2954779cc8adb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9f4dc215cd41cb34f4f6208e01c81f9a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__reg__addr.html#ga44097761b67767d2703b6a4240625202">nrf24l01_gpio_chip_enable_fptr_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__reg__addr.html#ga9f4dc215cd41cb34f4f6208e01c81f9a">gpio_chip_enable</a></td></tr>
-<tr class="memdesc:ga9f4dc215cd41cb34f4f6208e01c81f9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the platform specific chip enable GPIO control function.  <a href="group__reg__addr.html#ga9f4dc215cd41cb34f4f6208e01c81f9a">More...</a><br /></td></tr>
-<tr class="separator:ga9f4dc215cd41cb34f4f6208e01c81f9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabe203f817fe86f25764587b59baa568f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__reg__addr.html#ga9d35a298e2d3ba026f62779ba5988120">nrf24l01_platform_init_fptr_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__reg__addr.html#gabe203f817fe86f25764587b59baa568f">platform_init</a></td></tr>
-<tr class="memdesc:gabe203f817fe86f25764587b59baa568f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the platform specific hardware initialization function.  <a href="group__reg__addr.html#gabe203f817fe86f25764587b59baa568f">More...</a><br /></td></tr>
-<tr class="separator:gabe203f817fe86f25764587b59baa568f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae5b99c252f64ff39fa24ef88ec33800a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__reg__addr.html#ga5197eefaacf7da11248254a9e3290124">nrf24l01_platform_deinit_fptr_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__reg__addr.html#gae5b99c252f64ff39fa24ef88ec33800a">platform_deinit</a></td></tr>
-<tr class="memdesc:gae5b99c252f64ff39fa24ef88ec33800a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the platform specific hardware deinitialization function.  <a href="group__reg__addr.html#gae5b99c252f64ff39fa24ef88ec33800a">More...</a><br /></td></tr>
-<tr class="separator:gae5b99c252f64ff39fa24ef88ec33800a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadad84cbfcf4873ff02e12c9c0a156acf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__reg__addr.html#ga86465ecff5d0e2cb8872cca95c310e06">nrf24l01_spi_exchange_fptr_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__reg__addr.html#gadad84cbfcf4873ff02e12c9c0a156acf">spi_exchange</a></td></tr>
-<tr class="memdesc:gadad84cbfcf4873ff02e12c9c0a156acf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the platform specific SPI full-duplex transfer function.  <a href="group__reg__addr.html#gadad84cbfcf4873ff02e12c9c0a156acf">More...</a><br /></td></tr>
-<tr class="separator:gadad84cbfcf4873ff02e12c9c0a156acf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae4382e8da69d0b669320b5009fb2df42"><td class="memItemLeft" >struct {</td></tr>
-<tr class="memitem:gae7d0bd598c013f761097e301ddec8e04"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="group__reg__addr.html#ga870b44260a83ed804d9c94dfecc8be8a">nrf24l01_rx_dr_callback_fptr_t</a>&#160;&#160;&#160;<a class="el" href="group__reg__addr.html#ga000143d3495d4fe39a6ca1fb3a43ceb4">nrf24l01_platform_t::rx_dr_callback</a></td></tr>
-<tr class="memdesc:gae7d0bd598c013f761097e301ddec8e04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback function pointer to be called when RX data is received and the IRQ interrupt is asserted.  <a href="group__reg__addr.html#gae7d0bd598c013f761097e301ddec8e04">More...</a><br /></td></tr>
-<tr class="separator:gae7d0bd598c013f761097e301ddec8e04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga742eb70f24dda7397c70cee3ae1dbafa"><td class="memItemLeft" >&#160;&#160;&#160;void *&#160;&#160;&#160;<a class="el" href="group__reg__addr.html#ga6f944428baa03e7864a0a7088e162424">nrf24l01_platform_t::rx_dr_callback_user_ptr</a></td></tr>
-<tr class="memdesc:ga742eb70f24dda7397c70cee3ae1dbafa"><td class="mdescLeft">&#160;</td><td class="mdescRight">User-defined pointer to be passed along when calling rx_dr_callback.  <a href="group__reg__addr.html#ga742eb70f24dda7397c70cee3ae1dbafa">More...</a><br /></td></tr>
-<tr class="separator:ga742eb70f24dda7397c70cee3ae1dbafa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga92aa1972fb4e55990311433bf667ea66"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="group__reg__addr.html#gacbaf981637ef9ef2e0d15fc2886135b5">nrf24l01_tx_ds_callback_fptr_t</a>&#160;&#160;&#160;<a class="el" href="group__reg__addr.html#gacc6e5dabd30ec87d7eea688d2bfcca8c">nrf24l01_platform_t::tx_ds_callback</a></td></tr>
-<tr class="memdesc:ga92aa1972fb4e55990311433bf667ea66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback function pointer to be called when TX data is sent and the IRQ interrupt is asserted.  <a href="group__reg__addr.html#ga92aa1972fb4e55990311433bf667ea66">More...</a><br /></td></tr>
-<tr class="separator:ga92aa1972fb4e55990311433bf667ea66"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga468c5762921c9efb4d1f8550952ae2ce"><td class="memItemLeft" >&#160;&#160;&#160;void *&#160;&#160;&#160;<a class="el" href="group__reg__addr.html#gac4efe0276c326f5f3711c0c27e9784e8">nrf24l01_platform_t::tx_ds_callback_user_ptr</a></td></tr>
-<tr class="memdesc:ga468c5762921c9efb4d1f8550952ae2ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">User-defined pointer to be passed along when calling tx_ds_callback.  <a href="group__reg__addr.html#ga468c5762921c9efb4d1f8550952ae2ce">More...</a><br /></td></tr>
-<tr class="separator:ga468c5762921c9efb4d1f8550952ae2ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga225e3a814ae9fe56ef497541ab38f66e"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="group__reg__addr.html#gaf3a3bced5aa40c9e8ea6ea75fd56b1b7">nrf24l01_max_rt_callback_fptr_t</a>&#160;&#160;&#160;<a class="el" href="group__reg__addr.html#gabbe06f5152b49ef00761ae87b980179f">nrf24l01_platform_t::max_rt_callback</a></td></tr>
-<tr class="memdesc:ga225e3a814ae9fe56ef497541ab38f66e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback function pointer to be called when the maximum number of packet transmission retries has been exceeded and the IRQ interrupt is asserted.  <a href="group__reg__addr.html#ga225e3a814ae9fe56ef497541ab38f66e">More...</a><br /></td></tr>
-<tr class="separator:ga225e3a814ae9fe56ef497541ab38f66e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga63239d01b78c76e7f0d77d39c1b25533"><td class="memItemLeft" >&#160;&#160;&#160;void *&#160;&#160;&#160;<a class="el" href="group__reg__addr.html#ga11a29e75b9ef15f922bed46c7d054b71">nrf24l01_platform_t::max_rt_callback_user_ptr</a></td></tr>
-<tr class="memdesc:ga63239d01b78c76e7f0d77d39c1b25533"><td class="mdescLeft">&#160;</td><td class="mdescRight">User-defined pointer to be passed along when calling max_rt_callback.  <a href="group__reg__addr.html#ga63239d01b78c76e7f0d77d39c1b25533">More...</a><br /></td></tr>
-<tr class="separator:ga63239d01b78c76e7f0d77d39c1b25533"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae4382e8da69d0b669320b5009fb2df42"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__reg__addr.html#gae4382e8da69d0b669320b5009fb2df42">callbacks</a></td></tr>
-<tr class="separator:gae4382e8da69d0b669320b5009fb2df42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf4704b28d567c9987d1a3928b8b92336"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__reg__addr.html#gaf4704b28d567c9987d1a3928b8b92336">user_ptr</a></td></tr>
-<tr class="memdesc:gaf4704b28d567c9987d1a3928b8b92336"><td class="mdescLeft">&#160;</td><td class="mdescRight">(optional) Pointer to a user-defined hardware configuration struct  <a href="group__reg__addr.html#gaf4704b28d567c9987d1a3928b8b92336">More...</a><br /></td></tr>
-<tr class="separator:gaf4704b28d567c9987d1a3928b8b92336"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf435d5e55ddbb219f2954779cc8adb6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="nrf24l01__defs_8h.html#a535ba1bc087e8da8f29f88960d0a64dd">nrf24l01_delay_us_fptr_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnrf24l01__platform__t.html#abf435d5e55ddbb219f2954779cc8adb6">delay_us</a></td></tr>
+<tr class="memdesc:abf435d5e55ddbb219f2954779cc8adb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to a platform specific microsecond delay function.  <a href="structnrf24l01__platform__t.html#abf435d5e55ddbb219f2954779cc8adb6">More...</a><br /></td></tr>
+<tr class="separator:abf435d5e55ddbb219f2954779cc8adb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f4dc215cd41cb34f4f6208e01c81f9a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="nrf24l01__defs_8h.html#a44097761b67767d2703b6a4240625202">nrf24l01_gpio_chip_enable_fptr_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnrf24l01__platform__t.html#a9f4dc215cd41cb34f4f6208e01c81f9a">gpio_chip_enable</a></td></tr>
+<tr class="memdesc:a9f4dc215cd41cb34f4f6208e01c81f9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the platform specific chip enable GPIO control function.  <a href="structnrf24l01__platform__t.html#a9f4dc215cd41cb34f4f6208e01c81f9a">More...</a><br /></td></tr>
+<tr class="separator:a9f4dc215cd41cb34f4f6208e01c81f9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe203f817fe86f25764587b59baa568f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="nrf24l01__defs_8h.html#a9d35a298e2d3ba026f62779ba5988120">nrf24l01_platform_init_fptr_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnrf24l01__platform__t.html#abe203f817fe86f25764587b59baa568f">platform_init</a></td></tr>
+<tr class="memdesc:abe203f817fe86f25764587b59baa568f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the platform specific hardware initialization function.  <a href="structnrf24l01__platform__t.html#abe203f817fe86f25764587b59baa568f">More...</a><br /></td></tr>
+<tr class="separator:abe203f817fe86f25764587b59baa568f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5b99c252f64ff39fa24ef88ec33800a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="nrf24l01__defs_8h.html#a5197eefaacf7da11248254a9e3290124">nrf24l01_platform_deinit_fptr_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnrf24l01__platform__t.html#ae5b99c252f64ff39fa24ef88ec33800a">platform_deinit</a></td></tr>
+<tr class="memdesc:ae5b99c252f64ff39fa24ef88ec33800a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the platform specific hardware deinitialization function.  <a href="structnrf24l01__platform__t.html#ae5b99c252f64ff39fa24ef88ec33800a">More...</a><br /></td></tr>
+<tr class="separator:ae5b99c252f64ff39fa24ef88ec33800a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adad84cbfcf4873ff02e12c9c0a156acf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="nrf24l01__defs_8h.html#a86465ecff5d0e2cb8872cca95c310e06">nrf24l01_spi_exchange_fptr_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnrf24l01__platform__t.html#adad84cbfcf4873ff02e12c9c0a156acf">spi_exchange</a></td></tr>
+<tr class="memdesc:adad84cbfcf4873ff02e12c9c0a156acf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the platform specific SPI full-duplex transfer function.  <a href="structnrf24l01__platform__t.html#adad84cbfcf4873ff02e12c9c0a156acf">More...</a><br /></td></tr>
+<tr class="separator:adad84cbfcf4873ff02e12c9c0a156acf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4382e8da69d0b669320b5009fb2df42"><td class="memItemLeft" >struct {</td></tr>
+<tr class="memitem:ae7d0bd598c013f761097e301ddec8e04"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="nrf24l01__defs_8h.html#a870b44260a83ed804d9c94dfecc8be8a">nrf24l01_rx_dr_callback_fptr_t</a>&#160;&#160;&#160;<a class="el" href="structnrf24l01__platform__t.html#a000143d3495d4fe39a6ca1fb3a43ceb4">rx_dr_callback</a></td></tr>
+<tr class="memdesc:ae7d0bd598c013f761097e301ddec8e04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback function pointer to be called when RX data is received and the IRQ interrupt is asserted.  <a href="structnrf24l01__platform__t_1_1_0d1.html#ae7d0bd598c013f761097e301ddec8e04">More...</a><br /></td></tr>
+<tr class="separator:ae7d0bd598c013f761097e301ddec8e04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a742eb70f24dda7397c70cee3ae1dbafa"><td class="memItemLeft" >&#160;&#160;&#160;void *&#160;&#160;&#160;<a class="el" href="structnrf24l01__platform__t.html#a6f944428baa03e7864a0a7088e162424">rx_dr_callback_user_ptr</a></td></tr>
+<tr class="memdesc:a742eb70f24dda7397c70cee3ae1dbafa"><td class="mdescLeft">&#160;</td><td class="mdescRight">User-defined pointer to be passed along when calling rx_dr_callback.  <a href="structnrf24l01__platform__t_1_1_0d1.html#a742eb70f24dda7397c70cee3ae1dbafa">More...</a><br /></td></tr>
+<tr class="separator:a742eb70f24dda7397c70cee3ae1dbafa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92aa1972fb4e55990311433bf667ea66"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="nrf24l01__defs_8h.html#acbaf981637ef9ef2e0d15fc2886135b5">nrf24l01_tx_ds_callback_fptr_t</a>&#160;&#160;&#160;<a class="el" href="structnrf24l01__platform__t.html#acc6e5dabd30ec87d7eea688d2bfcca8c">tx_ds_callback</a></td></tr>
+<tr class="memdesc:a92aa1972fb4e55990311433bf667ea66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback function pointer to be called when TX data is sent and the IRQ interrupt is asserted.  <a href="structnrf24l01__platform__t_1_1_0d1.html#a92aa1972fb4e55990311433bf667ea66">More...</a><br /></td></tr>
+<tr class="separator:a92aa1972fb4e55990311433bf667ea66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a468c5762921c9efb4d1f8550952ae2ce"><td class="memItemLeft" >&#160;&#160;&#160;void *&#160;&#160;&#160;<a class="el" href="structnrf24l01__platform__t.html#ac4efe0276c326f5f3711c0c27e9784e8">tx_ds_callback_user_ptr</a></td></tr>
+<tr class="memdesc:a468c5762921c9efb4d1f8550952ae2ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">User-defined pointer to be passed along when calling tx_ds_callback.  <a href="structnrf24l01__platform__t_1_1_0d1.html#a468c5762921c9efb4d1f8550952ae2ce">More...</a><br /></td></tr>
+<tr class="separator:a468c5762921c9efb4d1f8550952ae2ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a225e3a814ae9fe56ef497541ab38f66e"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="nrf24l01__defs_8h.html#af3a3bced5aa40c9e8ea6ea75fd56b1b7">nrf24l01_max_rt_callback_fptr_t</a>&#160;&#160;&#160;<a class="el" href="structnrf24l01__platform__t.html#abbe06f5152b49ef00761ae87b980179f">max_rt_callback</a></td></tr>
+<tr class="memdesc:a225e3a814ae9fe56ef497541ab38f66e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback function pointer to be called when the maximum number of packet transmission retries has been exceeded and the IRQ interrupt is asserted.  <a href="structnrf24l01__platform__t_1_1_0d1.html#a225e3a814ae9fe56ef497541ab38f66e">More...</a><br /></td></tr>
+<tr class="separator:a225e3a814ae9fe56ef497541ab38f66e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63239d01b78c76e7f0d77d39c1b25533"><td class="memItemLeft" >&#160;&#160;&#160;void *&#160;&#160;&#160;<a class="el" href="structnrf24l01__platform__t.html#a11a29e75b9ef15f922bed46c7d054b71">max_rt_callback_user_ptr</a></td></tr>
+<tr class="memdesc:a63239d01b78c76e7f0d77d39c1b25533"><td class="mdescLeft">&#160;</td><td class="mdescRight">User-defined pointer to be passed along when calling max_rt_callback.  <a href="structnrf24l01__platform__t_1_1_0d1.html#a63239d01b78c76e7f0d77d39c1b25533">More...</a><br /></td></tr>
+<tr class="separator:a63239d01b78c76e7f0d77d39c1b25533"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4382e8da69d0b669320b5009fb2df42"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnrf24l01__platform__t.html#ae4382e8da69d0b669320b5009fb2df42">callbacks</a></td></tr>
+<tr class="separator:ae4382e8da69d0b669320b5009fb2df42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4704b28d567c9987d1a3928b8b92336"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnrf24l01__platform__t.html#af4704b28d567c9987d1a3928b8b92336">user_ptr</a></td></tr>
+<tr class="memdesc:af4704b28d567c9987d1a3928b8b92336"><td class="mdescLeft">&#160;</td><td class="mdescRight">(optional) Pointer to a user-defined hardware configuration struct  <a href="structnrf24l01__platform__t.html#af4704b28d567c9987d1a3928b8b92336">More...</a><br /></td></tr>
+<tr class="separator:af4704b28d567c9987d1a3928b8b92336"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Driver instance configuration information. </p>
 <p>Encapsulates an entire NRF24L01 driver instance to avoid the need for dynamic memory allocation. The application is responsible for keeping this structure in scope while the driver instance is in use </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="ae4382e8da69d0b669320b5009fb2df42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4382e8da69d0b669320b5009fb2df42">&#9670;&nbsp;</a></span>callbacks</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct { ... }  nrf24l01_platform_t::callbacks</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abf435d5e55ddbb219f2954779cc8adb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf435d5e55ddbb219f2954779cc8adb6">&#9670;&nbsp;</a></span>delay_us</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="nrf24l01__defs_8h.html#a535ba1bc087e8da8f29f88960d0a64dd">nrf24l01_delay_us_fptr_t</a> nrf24l01_platform_t::delay_us</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pointer to a platform specific microsecond delay function. </p>
+
+</div>
+</div>
+<a id="a9f4dc215cd41cb34f4f6208e01c81f9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f4dc215cd41cb34f4f6208e01c81f9a">&#9670;&nbsp;</a></span>gpio_chip_enable</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="nrf24l01__defs_8h.html#a44097761b67767d2703b6a4240625202">nrf24l01_gpio_chip_enable_fptr_t</a> nrf24l01_platform_t::gpio_chip_enable</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pointer to the platform specific chip enable GPIO control function. </p>
+
+</div>
+</div>
+<a id="abbe06f5152b49ef00761ae87b980179f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbe06f5152b49ef00761ae87b980179f">&#9670;&nbsp;</a></span>max_rt_callback</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="nrf24l01__defs_8h.html#af3a3bced5aa40c9e8ea6ea75fd56b1b7">nrf24l01_max_rt_callback_fptr_t</a> nrf24l01_platform_t::max_rt_callback</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Callback function pointer to be called when the maximum number of packet transmission retries has been exceeded and the IRQ interrupt is asserted. </p>
+
+</div>
+</div>
+<a id="a11a29e75b9ef15f922bed46c7d054b71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11a29e75b9ef15f922bed46c7d054b71">&#9670;&nbsp;</a></span>max_rt_callback_user_ptr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* nrf24l01_platform_t::max_rt_callback_user_ptr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>User-defined pointer to be passed along when calling max_rt_callback. </p>
+
+</div>
+</div>
+<a id="ae5b99c252f64ff39fa24ef88ec33800a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5b99c252f64ff39fa24ef88ec33800a">&#9670;&nbsp;</a></span>platform_deinit</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="nrf24l01__defs_8h.html#a5197eefaacf7da11248254a9e3290124">nrf24l01_platform_deinit_fptr_t</a> nrf24l01_platform_t::platform_deinit</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pointer to the platform specific hardware deinitialization function. </p>
+
+</div>
+</div>
+<a id="abe203f817fe86f25764587b59baa568f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe203f817fe86f25764587b59baa568f">&#9670;&nbsp;</a></span>platform_init</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="nrf24l01__defs_8h.html#a9d35a298e2d3ba026f62779ba5988120">nrf24l01_platform_init_fptr_t</a> nrf24l01_platform_t::platform_init</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pointer to the platform specific hardware initialization function. </p>
+
+</div>
+</div>
+<a id="a000143d3495d4fe39a6ca1fb3a43ceb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a000143d3495d4fe39a6ca1fb3a43ceb4">&#9670;&nbsp;</a></span>rx_dr_callback</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="nrf24l01__defs_8h.html#a870b44260a83ed804d9c94dfecc8be8a">nrf24l01_rx_dr_callback_fptr_t</a> nrf24l01_platform_t::rx_dr_callback</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Callback function pointer to be called when RX data is received and the IRQ interrupt is asserted. </p>
+
+</div>
+</div>
+<a id="a6f944428baa03e7864a0a7088e162424"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f944428baa03e7864a0a7088e162424">&#9670;&nbsp;</a></span>rx_dr_callback_user_ptr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* nrf24l01_platform_t::rx_dr_callback_user_ptr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>User-defined pointer to be passed along when calling rx_dr_callback. </p>
+
+</div>
+</div>
+<a id="adad84cbfcf4873ff02e12c9c0a156acf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adad84cbfcf4873ff02e12c9c0a156acf">&#9670;&nbsp;</a></span>spi_exchange</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="nrf24l01__defs_8h.html#a86465ecff5d0e2cb8872cca95c310e06">nrf24l01_spi_exchange_fptr_t</a> nrf24l01_platform_t::spi_exchange</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pointer to the platform specific SPI full-duplex transfer function. </p>
+
+</div>
+</div>
+<a id="acc6e5dabd30ec87d7eea688d2bfcca8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc6e5dabd30ec87d7eea688d2bfcca8c">&#9670;&nbsp;</a></span>tx_ds_callback</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="nrf24l01__defs_8h.html#acbaf981637ef9ef2e0d15fc2886135b5">nrf24l01_tx_ds_callback_fptr_t</a> nrf24l01_platform_t::tx_ds_callback</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Callback function pointer to be called when TX data is sent and the IRQ interrupt is asserted. </p>
+
+</div>
+</div>
+<a id="ac4efe0276c326f5f3711c0c27e9784e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4efe0276c326f5f3711c0c27e9784e8">&#9670;&nbsp;</a></span>tx_ds_callback_user_ptr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* nrf24l01_platform_t::tx_ds_callback_user_ptr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>User-defined pointer to be passed along when calling tx_ds_callback. </p>
+
+</div>
+</div>
+<a id="af4704b28d567c9987d1a3928b8b92336"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4704b28d567c9987d1a3928b8b92336">&#9670;&nbsp;</a></span>user_ptr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* nrf24l01_platform_t::user_ptr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(optional) Pointer to a user-defined hardware configuration struct </p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/<a class="el" href="nrf24l01__defs_8h_source.html">nrf24l01_defs.h</a></li>
 </ul>
 </div><!-- contents -->
