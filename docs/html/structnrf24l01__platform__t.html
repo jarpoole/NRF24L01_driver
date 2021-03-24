@@ -70,6 +70,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Driver instance configuration information.  
+ <a href="structnrf24l01__platform__t.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="nrf24l01__defs_8h_source.html">nrf24l01_defs.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -78,7 +81,7 @@ Public Attributes</h2></td></tr>
 <tr class="memdesc:abf435d5e55ddbb219f2954779cc8adb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to a platform specific microsecond delay function.  <a href="structnrf24l01__platform__t.html#abf435d5e55ddbb219f2954779cc8adb6">More...</a><br /></td></tr>
 <tr class="separator:abf435d5e55ddbb219f2954779cc8adb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f4dc215cd41cb34f4f6208e01c81f9a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="nrf24l01__defs_8h.html#a44097761b67767d2703b6a4240625202">nrf24l01_gpio_chip_enable_fptr_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnrf24l01__platform__t.html#a9f4dc215cd41cb34f4f6208e01c81f9a">gpio_chip_enable</a></td></tr>
-<tr class="memdesc:a9f4dc215cd41cb34f4f6208e01c81f9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the platform specific GPIO control function.  <a href="structnrf24l01__platform__t.html#a9f4dc215cd41cb34f4f6208e01c81f9a">More...</a><br /></td></tr>
+<tr class="memdesc:a9f4dc215cd41cb34f4f6208e01c81f9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the platform specific chip enable GPIO control function.  <a href="structnrf24l01__platform__t.html#a9f4dc215cd41cb34f4f6208e01c81f9a">More...</a><br /></td></tr>
 <tr class="separator:a9f4dc215cd41cb34f4f6208e01c81f9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe203f817fe86f25764587b59baa568f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="nrf24l01__defs_8h.html#a9d35a298e2d3ba026f62779ba5988120">nrf24l01_platform_init_fptr_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnrf24l01__platform__t.html#abe203f817fe86f25764587b59baa568f">platform_init</a></td></tr>
 <tr class="memdesc:abe203f817fe86f25764587b59baa568f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the platform specific hardware initialization function.  <a href="structnrf24l01__platform__t.html#abe203f817fe86f25764587b59baa568f">More...</a><br /></td></tr>
@@ -90,7 +93,7 @@ Public Attributes</h2></td></tr>
 <tr class="memdesc:adad84cbfcf4873ff02e12c9c0a156acf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the platform specific SPI full-duplex transfer function.  <a href="structnrf24l01__platform__t.html#adad84cbfcf4873ff02e12c9c0a156acf">More...</a><br /></td></tr>
 <tr class="separator:adad84cbfcf4873ff02e12c9c0a156acf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4382e8da69d0b669320b5009fb2df42"><td class="memItemLeft" >struct {</td></tr>
-<tr class="memitem:ae7d0bd598c013f761097e301ddec8e04"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="nrf24l01__defs_8h.html#aad3d32443bfdef413552894313db6fd9">nrf24l01_rx_dr_callback_fptr_t</a>&#160;&#160;&#160;<a class="el" href="structnrf24l01__platform__t.html#a000143d3495d4fe39a6ca1fb3a43ceb4">rx_dr_callback</a></td></tr>
+<tr class="memitem:ae7d0bd598c013f761097e301ddec8e04"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="nrf24l01__defs_8h.html#a870b44260a83ed804d9c94dfecc8be8a">nrf24l01_rx_dr_callback_fptr_t</a>&#160;&#160;&#160;<a class="el" href="structnrf24l01__platform__t.html#a000143d3495d4fe39a6ca1fb3a43ceb4">rx_dr_callback</a></td></tr>
 <tr class="memdesc:ae7d0bd598c013f761097e301ddec8e04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback function pointer to be called when RX data is received and the IRQ interrupt is asserted.  <a href="structnrf24l01__platform__t_1_1_0d1.html#ae7d0bd598c013f761097e301ddec8e04">More...</a><br /></td></tr>
 <tr class="separator:ae7d0bd598c013f761097e301ddec8e04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a742eb70f24dda7397c70cee3ae1dbafa"><td class="memItemLeft" >&#160;&#160;&#160;void *&#160;&#160;&#160;<a class="el" href="structnrf24l01__platform__t.html#a6f944428baa03e7864a0a7088e162424">rx_dr_callback_user_ptr</a></td></tr>
@@ -114,7 +117,10 @@ Public Attributes</h2></td></tr>
 <tr class="memdesc:af4704b28d567c9987d1a3928b8b92336"><td class="mdescLeft">&#160;</td><td class="mdescRight">(optional) Pointer to a user-defined hardware configuration struct  <a href="structnrf24l01__platform__t.html#af4704b28d567c9987d1a3928b8b92336">More...</a><br /></td></tr>
 <tr class="separator:af4704b28d567c9987d1a3928b8b92336"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Data Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Driver instance configuration information. </p>
+<p>Encapsulates an entire NRF24L01 driver instance to avoid the need for dynamic memory allocation. The application is responsible for keeping this structure in scope while the driver instance is in use </p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="ae4382e8da69d0b669320b5009fb2df42"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae4382e8da69d0b669320b5009fb2df42">&#9670;&nbsp;</a></span>callbacks</h2>
 
@@ -157,7 +163,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Pointer to the platform specific GPIO control function. </p>
+<p>Pointer to the platform specific chip enable GPIO control function. </p>
 
 </div>
 </div>
@@ -232,7 +238,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="nrf24l01__defs_8h.html#aad3d32443bfdef413552894313db6fd9">nrf24l01_rx_dr_callback_fptr_t</a> nrf24l01_platform_t::rx_dr_callback</td>
+          <td class="memname"><a class="el" href="nrf24l01__defs_8h.html#a870b44260a83ed804d9c94dfecc8be8a">nrf24l01_rx_dr_callback_fptr_t</a> nrf24l01_platform_t::rx_dr_callback</td>
         </tr>
       </table>
 </div><div class="memdoc">
