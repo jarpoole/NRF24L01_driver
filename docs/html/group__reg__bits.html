@@ -73,10 +73,8 @@ $(function() {
 <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
-config</h2></td></tr>
-<tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrp2245023265ae4cf87d02c8b6ba991139"></a>Contains IRQ masks, CRC options, and operating mode controls</p>
-<h1><a class="anchor" id="config_bits"></a>
-Configuration Register (CONFIG)</h1>
+config_bits Configuration Register (CONFIG)</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrpd7f218557a5a22a49465267fbb08032b"></a>Contains IRQ masks, CRC options, and operating mode controls</p>
 <p><a href="nRF24L01_product_specifications.pdf#page=53&amp;search=%22CONFIG%22">View in datasheet</a> </p>
 </td></tr>
 <tr class="memitem:gaf07a996a70a3bee7953b416d1a32b002"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__reg__bits.html#gaf07a996a70a3bee7953b416d1a32b002">NRF24L01_CONFIG_REG_BIT_MASK_RX_DR</a>&#160;&#160;&#160;(uint8_t)0x40</td></tr>
@@ -100,8 +98,14 @@ Configuration Register (CONFIG)</h1>
 <tr class="memitem:gaaa8ba84687af61aa404bc4c55d8bea58"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__reg__bits.html#gaaa8ba84687af61aa404bc4c55d8bea58">NRF24L01_CONFIG_REG_BIT_PRIM_RX</a>&#160;&#160;&#160;(uint8_t)0x01</td></tr>
 <tr class="memdesc:gaaa8ba84687af61aa404bc4c55d8bea58"><td class="mdescLeft">&#160;</td><td class="mdescRight">PRIM_RX[0] bit in CONFIG register.  <a href="group__reg__bits.html#gaaa8ba84687af61aa404bc4c55d8bea58">More...</a><br /></td></tr>
 <tr class="separator:gaaa8ba84687af61aa404bc4c55d8bea58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+en_aa_bits Enhanced ShockBurst™ Enable Register (EN_AA)</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrp2089e5f34e0d47529c12dfda106ef581"></a>Contains enable bits for Enhanced ShockBurst™ on each RX pipe</p>
+<p><a href="nRF24L01_product_specifications.pdf#page=53&amp;search=%22EN_AA%22">View in datasheet</a> </p>
+</td></tr>
 <tr class="memitem:gacbf49029ffa1a2ebc51a1d701318734e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__reg__bits.html#gacbf49029ffa1a2ebc51a1d701318734e">NRF24L01_EN_AA_REG_BIT_ENAA_P5</a>&#160;&#160;&#160;(uint8_t)0x20</td></tr>
-<tr class="memdesc:gacbf49029ffa1a2ebc51a1d701318734e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains enable bits for Enhanced ShockBurst™ on each RX pipe.  <a href="group__reg__bits.html#gacbf49029ffa1a2ebc51a1d701318734e">More...</a><br /></td></tr>
+<tr class="memdesc:gacbf49029ffa1a2ebc51a1d701318734e"><td class="mdescLeft">&#160;</td><td class="mdescRight">ENAA_P5[5] bit in EN_AA register.  <a href="group__reg__bits.html#gacbf49029ffa1a2ebc51a1d701318734e">More...</a><br /></td></tr>
 <tr class="separator:gacbf49029ffa1a2ebc51a1d701318734e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1f955ff7e6783511cef35bcafb90ef2c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__reg__bits.html#ga1f955ff7e6783511cef35bcafb90ef2c">NRF24L01_EN_AA_REG_BIT_ENAA_P4</a>&#160;&#160;&#160;(uint8_t)0x10</td></tr>
 <tr class="memdesc:ga1f955ff7e6783511cef35bcafb90ef2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">ENAA_P4[4] bit in EN_AA register.  <a href="group__reg__bits.html#ga1f955ff7e6783511cef35bcafb90ef2c">More...</a><br /></td></tr>
@@ -329,10 +333,7 @@ Configuration Register (CONFIG)</h1>
       </table>
 </div><div class="memdoc">
 
-<p>Contains enable bits for Enhanced ShockBurst™ on each RX pipe. </p>
-<h1><a class="anchor" id="en_aa_bits"></a>
-Enhanced ShockBurst™ Enable Register (EN_AA)</h1>
-<p><a href="nRF24L01_product_specifications.pdf#page=53&amp;search=%22EN_AA%22">View in datasheet</a> ENAA_P5[5] bit in EN_AA register </p>
+<p>ENAA_P5[5] bit in EN_AA register. </p>
 
 </div>
 </div>
