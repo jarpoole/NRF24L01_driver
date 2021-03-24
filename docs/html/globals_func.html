@@ -117,6 +117,9 @@ $(function() {
 : <a class="el" href="group__device__api.html#gae95e9b0c9d5eb8d3ba12077f24bd900a">nrf24l01.c</a>
 , <a class="el" href="group__device__api.html#gae95e9b0c9d5eb8d3ba12077f24bd900a">nrf24l01.h</a>
 </li>
+<li>nrf24l01_get_rx_dpl()
+: <a class="el" href="nrf24l01_8c.html#a4298460d2b1e9909e77dbe47afd65cee">nrf24l01.c</a>
+</li>
 <li>nrf24l01_get_rx_pipe()
 : <a class="el" href="group__pipe__api.html#ga813ffbf96c9a76b15d463154085df739">nrf24l01.c</a>
 , <a class="el" href="group__pipe__api.html#ga813ffbf96c9a76b15d463154085df739">nrf24l01.h</a>
@@ -126,12 +129,18 @@ $(function() {
 , <a class="el" href="group__device__api.html#ga9b8d9da5cacf067188e1e8e40779fdb9">nrf24l01.h</a>
 </li>
 <li>nrf24l01_init()
-: <a class="el" href="group__device__api.html#ga43b4c85fafbbee705aaafb59066c221c">nrf24l01.h</a>
-, <a class="el" href="group__device__api.html#ga43b4c85fafbbee705aaafb59066c221c">nrf24l01.c</a>
+: <a class="el" href="group__device__api.html#ga43b4c85fafbbee705aaafb59066c221c">nrf24l01.c</a>
+, <a class="el" href="group__device__api.html#ga43b4c85fafbbee705aaafb59066c221c">nrf24l01.h</a>
 </li>
 <li>nrf24l01_loop()
 : <a class="el" href="nrf24l01_8c.html#a1276cb39cab75cf822260204742fb0bc">nrf24l01.c</a>
 , <a class="el" href="nrf24l01_8h.html#af42df863e295873efd13ddb4ccbde454">nrf24l01.h</a>
+</li>
+<li>nrf24l01_multi_read_reg()
+: <a class="el" href="nrf24l01_8c.html#acc784e9708f84b3d01a6f58f3e177e79">nrf24l01.c</a>
+</li>
+<li>nrf24l01_multi_write_reg()
+: <a class="el" href="nrf24l01_8c.html#a9bd05819edf60b5298804db639b97815">nrf24l01.c</a>
 </li>
 <li>nrf24l01_print_config()
 : <a class="el" href="nrf24l01_8h.html#af0e2c41c55fcd572b57479dbcba9fbb8">nrf24l01.h</a>
@@ -146,6 +155,9 @@ $(function() {
 : <a class="el" href="group__pipe__api.html#ga0ddaef29411d56ad52cebfa48ed37fb9">nrf24l01.c</a>
 , <a class="el" href="group__pipe__api.html#ga0ddaef29411d56ad52cebfa48ed37fb9">nrf24l01.h</a>
 </li>
+<li>nrf24l01_read_reg()
+: <a class="el" href="nrf24l01_8c.html#a812aa11c8bbf190e4811cbd284b6d81c">nrf24l01.c</a>
+</li>
 <li>nrf24l01_register_max_rt_callback()
 : <a class="el" href="group__device__api.html#gae94ce0fe9852c9730abee9a4dda8fa18">nrf24l01.c</a>
 , <a class="el" href="group__device__api.html#gae94ce0fe9852c9730abee9a4dda8fa18">nrf24l01.h</a>
@@ -159,8 +171,8 @@ $(function() {
 , <a class="el" href="group__device__api.html#gaf4b8f3c50c981110f0c6fbc1df354bfa">nrf24l01.h</a>
 </li>
 <li>nrf24l01_reset_packet_loss_counter()
-: <a class="el" href="group__device__api.html#ga7ea991dfff7035b1f64c5588f8617e6c">nrf24l01.h</a>
-, <a class="el" href="group__device__api.html#ga7ea991dfff7035b1f64c5588f8617e6c">nrf24l01.c</a>
+: <a class="el" href="group__device__api.html#ga7ea991dfff7035b1f64c5588f8617e6c">nrf24l01.c</a>
+, <a class="el" href="group__device__api.html#ga7ea991dfff7035b1f64c5588f8617e6c">nrf24l01.h</a>
 </li>
 <li>nrf24l01_set_ack_payload_mode()
 : <a class="el" href="group__device__api.html#gaf904545f9f8a909e438a972d51dfda7a">nrf24l01.h</a>
@@ -186,8 +198,8 @@ $(function() {
 , <a class="el" href="group__device__api.html#ga167a2c4a6119ee820085f361a13384ad">nrf24l01.h</a>
 </li>
 <li>nrf24l01_set_dpl_mode()
-: <a class="el" href="group__device__api.html#ga9f4b25fc294cb8550f3572b54b08fe58">nrf24l01.c</a>
-, <a class="el" href="group__device__api.html#ga9f4b25fc294cb8550f3572b54b08fe58">nrf24l01.h</a>
+: <a class="el" href="group__device__api.html#ga9f4b25fc294cb8550f3572b54b08fe58">nrf24l01.h</a>
+, <a class="el" href="group__device__api.html#ga9f4b25fc294cb8550f3572b54b08fe58">nrf24l01.c</a>
 </li>
 <li>nrf24l01_set_dta_mode()
 : <a class="el" href="group__device__api.html#ga2b949886212d64e3fbd76ec30cfab889">nrf24l01.h</a>
@@ -201,16 +213,16 @@ $(function() {
 , <a class="el" href="group__device__api.html#gac353f88e185c79871e9ee5708843cd81">nrf24l01.h</a>
 </li>
 <li>nrf24l01_set_operational_mode()
-: <a class="el" href="group__device__api.html#gaf037709d39e6e20cd6f7e300d2bc68ea">nrf24l01.c</a>
-, <a class="el" href="group__device__api.html#gaf037709d39e6e20cd6f7e300d2bc68ea">nrf24l01.h</a>
+: <a class="el" href="group__device__api.html#gaf037709d39e6e20cd6f7e300d2bc68ea">nrf24l01.h</a>
+, <a class="el" href="group__device__api.html#gaf037709d39e6e20cd6f7e300d2bc68ea">nrf24l01.c</a>
 </li>
 <li>nrf24l01_set_pipe_aa_mode()
 : <a class="el" href="group__pipe__api.html#ga82df3ae97ab1943d6c8846af91530c20">nrf24l01.c</a>
 , <a class="el" href="group__pipe__api.html#ga82df3ae97ab1943d6c8846af91530c20">nrf24l01.h</a>
 </li>
 <li>nrf24l01_set_pipe_dpl_mode()
-: <a class="el" href="group__pipe__api.html#gaf7370e9534ccbede12d2a8b185180a98">nrf24l01.h</a>
-, <a class="el" href="group__pipe__api.html#gaf7370e9534ccbede12d2a8b185180a98">nrf24l01.c</a>
+: <a class="el" href="group__pipe__api.html#gaf7370e9534ccbede12d2a8b185180a98">nrf24l01.c</a>
+, <a class="el" href="group__pipe__api.html#gaf7370e9534ccbede12d2a8b185180a98">nrf24l01.h</a>
 </li>
 <li>nrf24l01_set_pipe_mode()
 : <a class="el" href="group__pipe__api.html#ga736b0f56f587c118863e9fda079d1bdc">nrf24l01.c</a>
@@ -229,8 +241,8 @@ $(function() {
 , <a class="el" href="group__device__api.html#gab36d02b77d5aeec5a9d9e2d6ccb7ea3e">nrf24l01.c</a>
 </li>
 <li>nrf24l01_set_tx_power()
-: <a class="el" href="group__device__api.html#ga4247b61e05c9d3d3aa3c4fc98ec88d3e">nrf24l01.c</a>
-, <a class="el" href="group__device__api.html#ga4247b61e05c9d3d3aa3c4fc98ec88d3e">nrf24l01.h</a>
+: <a class="el" href="group__device__api.html#ga4247b61e05c9d3d3aa3c4fc98ec88d3e">nrf24l01.h</a>
+, <a class="el" href="group__device__api.html#ga4247b61e05c9d3d3aa3c4fc98ec88d3e">nrf24l01.c</a>
 </li>
 <li>nrf24l01_start_listening()
 : <a class="el" href="nrf24l01_8h.html#a0d4846399bb76424fc894348f0cd4f14">nrf24l01.h</a>
@@ -241,8 +253,11 @@ $(function() {
 , <a class="el" href="nrf24l01_8h.html#a2c46ba5569ed05dd5747ad2853ce3c51">nrf24l01.h</a>
 </li>
 <li>nrf24l01_write_payload()
-: <a class="el" href="group__pipe__api.html#ga993a327bc069340404c5dbb7a7dd443f">nrf24l01.c</a>
-, <a class="el" href="group__pipe__api.html#ga993a327bc069340404c5dbb7a7dd443f">nrf24l01.h</a>
+: <a class="el" href="group__pipe__api.html#ga993a327bc069340404c5dbb7a7dd443f">nrf24l01.h</a>
+, <a class="el" href="group__pipe__api.html#ga993a327bc069340404c5dbb7a7dd443f">nrf24l01.c</a>
+</li>
+<li>nrf24l01_write_reg()
+: <a class="el" href="nrf24l01_8c.html#a152c4093612f1a962e19aade9fbba86c">nrf24l01.c</a>
 </li>
 </ul>
 </div><!-- contents -->
