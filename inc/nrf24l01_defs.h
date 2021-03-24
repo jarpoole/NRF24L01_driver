@@ -131,15 +131,10 @@
 
 	#endif
 #endif
-	
-/// @defgroup commands    SPI Commands  
-/// @defgroup reg_addr    SPI Register Addresses  
 
 
 /** @name General Commands
  * 	@brief NRF24L01 general command definitions
- * 
- *  @ingroup commands
  * 
  *  These commands should be shifted out over MOSI directly after asserting CSN
  * 	Format is <b>NRF24L01_CMD_x</b> where <b>x</b> is the name assigned to the command by the datasheet
@@ -158,8 +153,6 @@
 
 /** @name Feature Commands
  * 	@brief NRF24L01 special feature command definitions
- *  
- *  @ingroup commands
  * 
  * 	These commands are only valid after the ACTIVATE command has been send to toggle on the NRF24L01 special features
  * 	Format is <b>NRF24L01_FEATURE_CMD_x</b> where <b>x</b> is the name assigned to the command by the datasheet
@@ -173,8 +166,6 @@
 
 /** @name General Register Addresses
  * 	@brief NRF24L01 register address definitions
- * 
- *  @ingroup reg_addr
  * 
  * 	Format is <b>NRF24L01_REG_ADDR_r</b> where <b>r</b> is the name assigned to the register by the datasheet
  */
@@ -208,8 +199,6 @@
 /** @name Feature Registers
  * 	@brief NRF24L01 special feature register address definitions
  * 
- *  @ingroup reg_addr
- * 
  * 	Format is <b>NRF24L01_FEATURE_REG_ADDR_x</b> where <b>x</b> is the name assigned to the special feature register by the datasheet
  */
 /// @{
@@ -228,7 +217,7 @@
  *  The naming convention for all definitions is <b>NRF24L01_r_REG_BIT_x</b> where <b>r</b> is the register name where the bit is found and <b>x</b> is the name assigned to the register bit by the datasheet
  *  If register contains a bit field then REG_BIT is pluralized to REG_BITS
  */ 
-/// @{ 
+/// @{
 
 /** @name Configuration Register (CONFIG)
  *  @brief Contains IRQ masks, CRC options, and operating mode controls
@@ -422,12 +411,22 @@
 
 
 
-/** @name Register masks
- * 	@brief NRF24L01 register mask definitions
- * 	Format is <b>NRF24L01_r_MASK_x</b> where <b>r</b> is the register name where the bit is found and <b>x</b> an arbitrary assigned name
- *  Each register also has a full mask defined for it under the name NRF24L01_r_MASK_REG
+/** @defgroup reg_masks   NRF24L01 SPI Register Mask Definitions  
+ *  
+ *  These definitions should be used when trying to mask out on or more properties of the NRF24L01. For individual bit definitions  see @ref reg_bits
+ * 
+ *  The naming convention for all definitions is <b>NRF24L01_r_MASK_x</b> where <b>r</b> is the register name where the bit is found and <b>x</b> an arbitrary assigned name
+ *  Each register also has a full mask defined for it under the name <b>NRF24L01_r_MASK_REG</b>
+ */ 
+/// @{
+
+
+/** @name Configuration Register (CONFIG) 
+ * 	@brief Provides a register mask, an interrupt mask and a CRC mask
+ *  @details <a href="nRF24L01_product_specifications.pdf#page=53&search=%22CONFIG%22"><b><u>View details in datasheet</u></b></a> for more information
  */
 /// @{
+
 ///< Mask for all defined bits[6:0] in CONFIG register 
 #define NRF24L01_CONFIG_MASK_REG              	(uint8_t)(                                \
 													NRF24L01_CONFIG_REG_BIT_MASK_RX_DR  | \
@@ -438,18 +437,25 @@
 													NRF24L01_CONFIG_REG_BIT_PWR_UP      | \
 													NRF24L01_CONFIG_REG_BIT_PRIM_RX       \
 											  	)
-///< Mask for CRC[3:2] bits in CONFIG register 
+///< Mask for INTERRUPT[6:4] bits in CONFIG register 
 #define NRF24L01_CONFIG_MASK_INTERRUPT_MASKS  	(uint8_t)(                                \
 													NRF24L01_CONFIG_REG_BIT_MASK_RX_DR  | \
 													NRF24L01_CONFIG_REG_BIT_MASK_TX_DS  | \
 													NRF24L01_CONFIG_REG_BIT_MASK_MAX_RT   \
 											  	)
-///< Mask for CRC[3:2] bits in EN_AA register 
+///< Mask for CRC[3:2] bits in CONFIG register 
 #define NRF24L01_CONFIG_MASK_CRC   			 	(uint8_t)(                                \
 													NRF24L01_CONFIG_REG_BIT_EN_CRC      | \
 													NRF24L01_CONFIG_REG_BIT_CRCO          \
 											  	)
+/// @}
 
+
+/** @name Enhanced ShockBurst™ Enable Register (EN_AA)
+ *  @brief Provides a register mask
+ *  @details <a href="nRF24L01_product_specifications.pdf#page=53&search=%22EN_AA%22"><b><u>View details in datasheet</u></b></a> for more information
+ */ 
+/// @{
 
 ///< Mask for all defined bits[5:0] in EN_AA register 
 #define NRF24L01_EN_AA_MASK_REG              	(uint8_t)(   							  \
@@ -460,7 +466,14 @@
 													NRF24L01_EN_AA_REG_BIT_ENAA_P1      | \
 													NRF24L01_EN_AA_REG_BIT_ENAA_P0        \
 												)
+/// @}
 
+
+/** @name RX Pipe Enable Register (EN_RXADDR)
+ *  @brief Provides a register mask
+ *  @details <a href="nRF24L01_product_specifications.pdf#page=53&search=%22EN_RXADDR%22"><b><u>View details in datasheet</u></b></a> for more information
+ */ 
+/// @{
 
 ///< Mask for all defined bits[5:0] in EN_RXADDR register 
 #define NRF24L01_EN_RXADDR_MASK_REG             (uint8_t)(   							  \
@@ -471,22 +484,50 @@
 													NRF24L01_EN_RXADDR_REG_BIT_ERX_P1   | \
 													NRF24L01_EN_RXADDR_REG_BIT_ERX_P0     \
 												)
+/// @}
 
+
+/** @name Pipe Address Width Common Configuration Register (SETUP_AW)
+ *  @brief Provides a register mask
+ *  @details <a href="nRF24L01_product_specifications.pdf#page=54&search=%22SETUP_AW%22"><b><u>View details in datasheet</u></b></a> for more information
+ */ 
+/// @{
 
 ///< Mask for all defined bits[1:0] in AW register
 #define NRF24L01_SETUP_AW_MASK_REG              (uint8_t)NRF24L01_SETUP_AW_REG_BITS_AW
+/// @}
 
+
+/** @name Automatic Retransmission Configuration Register (SETUP_RETR)
+ *  @brief Provides a register mask
+ *  @details <a href="nRF24L01_product_specifications.pdf#page=54&search=%22SETUP_RETR%22"><b><u>View details in datasheet</u></b></a> for more information
+ */
+/// @{
 
 ///< Mask for all defined bits[7:0] in SETUP_RETR register 
 #define NRF24L01_SETUP_RETR_MASK_REG            (uint8_t)(								  \
 													NRF24L01_SETUP_RETR_REG_BITS_ARD    | \
 													NRF24L01_SETUP_RETR_REG_BITS_ARC      \
 												)
+/// @}
 
+
+/** @name RF Channel Configuration Register (RF_CH)
+ *  @brief Provides a register mask
+ *  @details <a href="nRF24L01_product_specifications.pdf#page=54&search=%22RF_CH%22"><b><u>View details in datasheet</u></b></a> for more information
+ */
+/// @{
 
 ///< Mask for all defined bits[6:0] in RF_CH register 
 #define NRF24L01_RF_CH_MASK_REG                 (uint8_t)NRF24L01_RF_CH_REG_BITS_RF_CH
+/// @}
 
+
+/** @name RF Configuration Register (RF_SETUP)
+ *  @brief Provides a register mask
+ *  @details <a href="nRF24L01_product_specifications.pdf#page=54&search=%22RF_SETUP%22"><b><u>View details in datasheet</u></b></a> for more information
+ */
+/// @{
 
 ///< Mask for all defined bits[4:0] in RF_SETUP register 
 #define NRF24L01_RF_SETUP_MASK_REG              (uint8_t)(								  \
@@ -495,7 +536,14 @@
 													NRF24L01_RF_SETUP_REG_BITS_RF_PWR   | \
 													NRF24L01_RF_SETUP_REG_BIT_LNA_HCURR   \
 												)
+/// @}
 
+
+/** @name Device Status Register (STATUS)
+ *  @brief Provides a register mask and an IRQ flags mask
+ *  @details <a href="nRF24L01_product_specifications.pdf#page=55&search=%22STATUS%22"><b><u>View details in datasheet</u></b></a> for more information
+ */
+/// @{
 
 ///< Mask for all defined bits[6:0] in STATUS register 
 #define NRF24L01_STATUS_MASK_REG 				(uint8_t)(								  \
@@ -511,16 +559,25 @@
 													NRF24L01_STATUS_REG_BIT_TX_DS       | \
 													NRF24L01_STATUS_REG_BIT_MAX_RT        \
 												)
+/// @}
 
+
+/** @name Transmission Observation Register (OBSERVE_TX)
+ *  @brief Provides a register mask
+ *  @details <a href="nRF24L01_product_specifications.pdf#page=55&search=%22OBSERVE_TX%22"><b><u>View details in datasheet</u></b></a> for more information
+ */
+/// @{
 
 ///< Mask for all defined bits[7:0] in OBSERVE_TX register 
 #define NRF24L01_OBSERVE_TX_MASK_REG            (uint8_t)(								    \
 													NRF24L01_OBSERVE_TX_REG_BITS_PLOS_CNT | \
 													NRF24L01_OBSERVE_TX_REG_BITS_ARC_CNT    \
 												)
+/// @}
 
 
 #define NRF24L01_CD_MASK_REG                    (uint8_t)NRF24L01_CD_REG_BIT_CD
+/// @}
 
 
 #define NRF24L01_RX_PW_P0_MASK_REG              (uint8_t)NRF24L01_RX_PW_P0_REG_BITS_RX_PW_P0
@@ -569,7 +626,7 @@
 												)											
 /// @}
 
-
+/// @} reg_masks
 
 
 #define NRF24L01_COMMAND_MASK_REG_ADDR    (uint8_t)0x1F  ///< Mask for AAAAA[4:0] register address bits for CMD_RREG and CMD_WREG commands
