@@ -163,7 +163,7 @@
 #define NRF24L01_FEATURE_CMD_W_TX_PAYLOAD_NOACK  (uint8_t)0xB0  ///< Write TX payload and disable AUTOACK
 /// @}
 
-/** @name General Register Addresses
+/** @name reg_addr
  * 	@brief NRF24L01 register address definitions
  * 
  * 	Format is <b>NRF24L01_REG_ADDR_r</b> where <b>r</b> is the name assigned to the register by the datasheet
@@ -195,7 +195,7 @@
 #define NRF24L01_REG_ADDR_FIFO_STATUS  (uint8_t)0x17  ///< FIFO status register address
 /// @}
 
-/** @name Special Feature Register Addresses
+/** @name sfr_addr
  * 	@brief NRF24L01 special feature register address definitions
  * 	Format is <b>NRF24L01_FEATURE_REG_ADDR_x</b> where <b>x</b> is the name assigned to the special feature register by the datasheet
  */
@@ -630,15 +630,16 @@ typedef enum {
 
 
 /**
- * @brief Hardware initialization function pointer which should be used to configure the
- * hardware before communication is attempted
- * 
- * IRQ pin is active-low. Interrupt pin should be triggered on negative-edge. Pull-up resistor needed
+ *  @brief Hardware initialization function pointer which should be used to configure the
+ *  hardware before communication is attempted
+ *  
+ *  Responsibilities
+ *   - Configure IRQ MCU input. IRQ output pin is active-low. Interrupt pin should be triggered on negative-edge. Pull-up resistor needed
  *
- * @param[in] user_ptr      : Pointer to user-defined hardware configuration struct
+ *  @param[in] user_ptr      : Pointer to user-defined hardware configuration struct
  *
- * @retval 0        -> Success
- * @retval Non zero -> Fail
+ *  @retval 0        -> Success
+ *  @retval Non-zero -> Fail
  */
 typedef NRF24L01_FPTR_RTN_T (*nrf24l01_platform_init_fptr_t)(void* user_ptr);
 
@@ -650,7 +651,7 @@ typedef NRF24L01_FPTR_RTN_T (*nrf24l01_platform_init_fptr_t)(void* user_ptr);
  * @param[in] user_ptr      : Pointer to user-defined hardware configuration struct
  *
  * @retval 0        -> Success
- * @retval Non zero -> Fail
+ * @retval Non-zero -> Fail
  */
 typedef NRF24L01_FPTR_RTN_T (*nrf24l01_platform_deinit_fptr_t)(void* user_ptr);
 
@@ -685,7 +686,7 @@ typedef NRF24L01_FPTR_RTN_T (*nrf24l01_spi_exchange_fptr_t)(uint8_t command, uin
  * @param[in] user_ptr      : Pointer to user-defined hardware configuration struct
  *
  * @retval 0        -> Success
- * @retval Non zero -> Fail
+ * @retval Non-zero -> Fail
  */
 typedef NRF24L01_FPTR_RTN_T (*nrf24l01_gpio_chip_enable_fptr_t)(bool state, void* user_ptr);
 
@@ -697,43 +698,50 @@ typedef NRF24L01_FPTR_RTN_T (*nrf24l01_gpio_chip_enable_fptr_t)(bool state, void
  * @param[in] delay      : Number of microseconds to delay
  *
  * @retval 0        -> Success
- * @retval Non zero -> Fail
+ * @retval Non-zero -> Fail
  */
 typedef NRF24L01_FPTR_RTN_T (*nrf24l01_delay_us_fptr_t)(uint32_t delay);
 
 
 
 
-
-
-/**
- * @brief User supplied callback function pointer
- *
- * @param[in] delay      : Number of microseconds to delay
- * 
+/** @brief User supplied RX data received callback function pointer
+ *  
+ *  @param[in] message_size : Length of the received message in bytes
+ *  @param[in] pipe         : The RX pipe from which the data was received
+ *  @param[in] user_ptr     : The user-defined pointer which was provided when the callback was registered
+ *  @param[in] platform     : Driver instance configuration
  */
-typedef void (*nrf24l01_rx_dr_callback_fptr_t)(uint8_t message_len, nrf24l01_pipe_t pipe, void* user_ptr, nrf24l01_platform_t* platform);
+typedef void (*nrf24l01_rx_dr_callback_fptr_t)(uint8_t message_size, nrf24l01_pipe_t pipe, void* user_ptr, nrf24l01_platform_t* platform);
 
 
+/** @brief User supplied TX data sent callback function pointer
+ *  
+ *  @param[in] pipe         : 
+ *  @param[in] user_ptr     : The user-defined pointer which was provided when the callback was registered
+ *  @param[in] platform     : Driver instance configuration
+ */
 typedef void (*nrf24l01_tx_ds_callback_fptr_t)(nrf24l01_pipe_t pipe, void* user_ptr, nrf24l01_platform_t* platform);
 
 
-/**
- * @brief Check for interrupt function pointer
- *
- * @param[in] delay      : Number of microseconds to delay
- *
- * @retval 0        -> Interrupt triggered and waiting to be processed
- * @retval Non zero -> No interrupt
+/** @brief User supplied maximum retries exceeded callback function pointer
+ *  
+ *  @param[in] user_ptr     : The user-defined pointer which was provided when the callback was registered
+ *  @param[in] platform     : Driver instance configuration
  */
 typedef void (*nrf24l01_max_rt_callback_fptr_t)(void* user_ptr, nrf24l01_platform_t* platform);
 
 
 
 
+/** @brief Driver instance configuration information
+ * 
+ *  Encapsulates an entire NRF24L01 driver instance to avoid the need for dynamic memory allocation. The application is responsible for
+ *  keeping this structure in scope while the driver instance is in use
+ */ 
 struct nrf24l01_platform_t{
 	nrf24l01_delay_us_fptr_t            delay_us;                 ///< Pointer to a platform specific microsecond delay function
-	nrf24l01_gpio_chip_enable_fptr_t    gpio_chip_enable;         ///< Pointer to the platform specific GPIO control function
+	nrf24l01_gpio_chip_enable_fptr_t    gpio_chip_enable;         ///< Pointer to the platform specific chip enable GPIO control function
 	nrf24l01_platform_init_fptr_t       platform_init;            ///< Pointer to the platform specific hardware initialization function
 	nrf24l01_platform_deinit_fptr_t     platform_deinit;          ///< Pointer to the platform specific hardware deinitialization function
 	nrf24l01_spi_exchange_fptr_t        spi_exchange;             ///< Pointer to the platform specific SPI full-duplex transfer function

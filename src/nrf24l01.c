@@ -55,13 +55,20 @@ static nrf24l01_err_t nrf24l01_multi_read_reg(uint8_t, uint8_t*, uint8_t, nrf24l
 static nrf24l01_err_t nrf24l01_multi_write_reg(uint8_t, uint8_t*, uint8_t, nrf24l01_platform_t*);
 
 
-
-
-
-// Read a register
-// input:
-//   reg - number of register to read
-// return: value of register
+/** @brief Wrapper around platform multi-register read
+ * 
+ *  Reads a single byte from the provided register address. Interprets platform error codes into NRF24L01 internal error codes
+ * 
+ *  @param reg_addr : The 8-bit SPI register address
+ * 			          @see reg_addr
+ *                    @see sfr_addr
+ *  @param data     : The register contents
+ *  @param platform : Driver instance configuration
+ * 
+ *  @retval NRF24L01_ERR_INVALID_ARG :
+ *  @retval NRF24L01_ERR_READ        :
+ *  @retval NRF24L01_OK              :
+ */ 
 static nrf24l01_err_t nrf24l01_read_reg(uint8_t reg_addr, uint8_t* data, nrf24l01_platform_t* platform) {
 	if(data == NULL){
 		return NRF24L01_ERR_INVALID_ARG;
