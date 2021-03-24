@@ -222,12 +222,7 @@
 /// @}
 
 
-/** @name Register Bits
- * 	@brief NRF24L01 register bit definitions
- *  
- *  Format is <b>NRF24L01_r_REG_BIT_x</b> where <b>r</b> is the register name where the bit is found and <b>x</b> is the name assigned to the register bit by the datasheet
- *  If register contains a bit field then REG_BITS is plural
- */
+
 
 
 /** @name Configuration Register (CONFIG)
@@ -259,6 +254,13 @@
 #define NRF24L01_EN_AA_REG_BIT_ENAA_P0        	(uint8_t)0x01  ///< ENAA_P0[0] bit in EN_AA register
 /// @}
 
+
+/** @name Register Bits
+ * 	@brief NRF24L01 register bit definitions
+ *  
+ *  Format is <b>NRF24L01_r_REG_BIT_x</b> where <b>r</b> is the register name where the bit is found and <b>x</b> is the name assigned to the register bit by the datasheet
+ *  If register contains a bit field then REG_BITS is plural
+ */
 #define NRF24L01_EN_RXADDR_REG_BIT_ERX_P5     	(uint8_t)0x20  ///<
 #define NRF24L01_EN_RXADDR_REG_BIT_ERX_P4     	(uint8_t)0x10  ///<
 #define NRF24L01_EN_RXADDR_REG_BIT_ERX_P3     	(uint8_t)0x08  ///<
@@ -317,7 +319,7 @@
 #define NRF24L01_FEATURE_REG_BIT_EN_DPL       	(uint8_t)0x04  ///< EN_DPL[2] bit in FEATURE register
 #define NRF24L01_FEATURE_REG_BIT_EN_ACK_PAY   	(uint8_t)0x02  ///< EN_ACK_PAY[1] bit in FEATURE register
 #define NRF24L01_FEATURE_REG_BIT_EN_DYN_ACK   	(uint8_t)0x01  ///< EN_DYN_ACK[0] bit in FEATURE register
-/// @}
+
 
 
 /** @name Register masks
