@@ -59,14 +59,14 @@ static nrf24l01_err_t nrf24l01_multi_write_reg(uint8_t, uint8_t*, uint8_t, nrf24
  * 
  *  Reads a single byte from the provided register address. Interprets platform error codes into NRF24L01 internal error codes
  * 
- *  @param reg_addr : The 8-bit SPI register address
- * 			          @ref physical @ref reg_addr
+ *  @param reg_addr : The 8-bit SPI register address  
+ * 			          Valid addresses can be found here @ref reg_addr "here"
  *  @param data     : The register contents
  *  @param platform : Driver instance configuration
  * 
- *  @retval NRF24L01_ERR_INVALID_ARG :
- *  @retval NRF24L01_ERR_READ        :
- *  @retval NRF24L01_OK              :
+ *  @retval #NRF24L01_ERR_INVALID_ARG : The data pointer is not valid
+ *  @retval #NRF24L01_ERR_READ        : SPI transaction unsuccessful
+ *  @retval #NRF24L01_OK              : SPI transaction successful
  */ 
 static nrf24l01_err_t nrf24l01_read_reg(uint8_t reg_addr, uint8_t* data, nrf24l01_platform_t* platform) {
 	if(data == NULL){

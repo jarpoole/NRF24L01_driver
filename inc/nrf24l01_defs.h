@@ -136,6 +136,8 @@
 /** @name General Commands
  * 	@brief NRF24L01 general command definitions
  * 
+ *  @addtogroup commands
+ * 
  *  These commands should be shifted out over MOSI directly after asserting CSN
  * 	Format is <b>NRF24L01_CMD_x</b> where <b>x</b> is the name assigned to the command by the datasheet
  */
@@ -153,6 +155,8 @@
 
 /** @name Feature Commands
  * 	@brief NRF24L01 special feature command definitions
+ *  
+ *  @addtogroup commands
  * 
  * 	These commands are only valid after the ACTIVATE command has been send to toggle on the NRF24L01 special features
  * 	Format is <b>NRF24L01_FEATURE_CMD_x</b> where <b>x</b> is the name assigned to the command by the datasheet
@@ -163,11 +167,10 @@
 #define NRF24L01_FEATURE_CMD_W_TX_PAYLOAD_NOACK  (uint8_t)0xB0  ///< Write TX payload and disable AUTOACK
 /// @}
 
-
-/// @anchor reg_addr
 /** @name General Register Addresses
- * 
  * 	@brief NRF24L01 register address definitions
+ * 
+ *  @addtogroup reg_addr
  * 
  * 	Format is <b>NRF24L01_REG_ADDR_r</b> where <b>r</b> is the name assigned to the register by the datasheet
  */
@@ -198,8 +201,11 @@
 #define NRF24L01_REG_ADDR_FIFO_STATUS  (uint8_t)0x17  ///< FIFO status register address
 /// @}
 
-/** @name sfraddr
+/** @name Feature Registers
  * 	@brief NRF24L01 special feature register address definitions
+ * 
+ *  @addtogroup reg_addr
+ * 
  * 	Format is <b>NRF24L01_FEATURE_REG_ADDR_x</b> where <b>x</b> is the name assigned to the special feature register by the datasheet
  */
 /// @{
