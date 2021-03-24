@@ -538,7 +538,7 @@ typedef enum {
 
 /** @brief Enumeration of RX pipe addresses and TX address
  *  
- *  Described in [datasheet](nRF24L01_product_specifications.pdf)
+ *  Described in the datasheet as ["RX_P_NO[3:1] bits in STATUS register"](nRF24L01_product_specifications.pdf#page=55&search="RX_P_NO")
  */ 
 typedef enum {
 	NRF24L01_PIPE0        = (uint8_t)0x00,  ///< pipe0
