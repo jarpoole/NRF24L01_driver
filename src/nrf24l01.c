@@ -62,7 +62,7 @@ static nrf24l01_err_t nrf24l01_multi_write_reg(uint8_t, uint8_t*, uint8_t, nrf24
  *  @param reg_addr : The 8-bit SPI register address  
  *                    Valid addresses can be found here @ref reg_addr "here"
  *  @param data     : The register contents
- *  @param platform : Driver instance configuration
+ *  @param platform : Driver instance configuration struct
  * 
  *  @retval #NRF24L01_ERR_INVALID_ARG : The data pointer is not valid
  *  @retval #NRF24L01_ERR_READ        : SPI transaction unsuccessful
@@ -849,11 +849,10 @@ nrf24l01_err_t nrf24l01_get_feature_mode(nrf24l01_feature_mode_t* feature_mode, 
 
 }
 
-/** @brief 
+/** @brief Enables/disables special devices features
  * 
- *  @param
- *  @param[in] platform : 
- * 
+ *  @param[in] feature_mode : Desired feature mode
+ *  @param[in] platform     : Driver instance configuration struct
  */
 nrf24l01_err_t nrf24l01_set_feature_mode(nrf24l01_feature_mode_t feature_mode, nrf24l01_platform_t* platform){
 	
@@ -1329,12 +1328,10 @@ void nrf24l01_print_fifo_status_register(nrf24l01_platform_t* platform){
  * @brief Check for interrupt function pointer which should be called often by the user
  * to ensure that radio events are triggered
  *
- * @param[in] delay      : Number of microseconds to delay
+ * @param[in] platform : Driver instance configuration struct
  *
- * @retval 0        -> Interrupt triggered
- * @retval Non zero -> No interrupt
+ * @return none
  */
-
 void nrf24l01_loop(nrf24l01_platform_t* platform){
 	NRF24L01_FPTR_RTN_T rtn = platform->check_for_interrupt(platform->user_ptr);
 
