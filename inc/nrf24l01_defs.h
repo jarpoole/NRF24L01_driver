@@ -132,11 +132,18 @@
 	#endif
 #endif
 	
-	
+/// @defgroup commands "SPI Commands"
+
+/// @defgroup reg_addr "SPI Register Addresses"
+
+/// @defgroup reg_bits "SPI Register Bit Definitions"
+
+
+
 /** @name General Commands
  * 	@brief NRF24L01 general command definitions
  * 
- *  @addtogroup commands
+ *  @ingroup commands
  * 
  *  These commands should be shifted out over MOSI directly after asserting CSN
  * 	Format is <b>NRF24L01_CMD_x</b> where <b>x</b> is the name assigned to the command by the datasheet
@@ -156,7 +163,7 @@
 /** @name Feature Commands
  * 	@brief NRF24L01 special feature command definitions
  *  
- *  @addtogroup commands
+ *  @ingroup commands
  * 
  * 	These commands are only valid after the ACTIVATE command has been send to toggle on the NRF24L01 special features
  * 	Format is <b>NRF24L01_FEATURE_CMD_x</b> where <b>x</b> is the name assigned to the command by the datasheet
@@ -167,10 +174,11 @@
 #define NRF24L01_FEATURE_CMD_W_TX_PAYLOAD_NOACK  (uint8_t)0xB0  ///< Write TX payload and disable AUTOACK
 /// @}
 
+
 /** @name General Register Addresses
  * 	@brief NRF24L01 register address definitions
  * 
- *  @addtogroup reg_addr
+ *  @ingroup reg_addr
  * 
  * 	Format is <b>NRF24L01_REG_ADDR_r</b> where <b>r</b> is the name assigned to the register by the datasheet
  */
@@ -204,7 +212,7 @@
 /** @name Feature Registers
  * 	@brief NRF24L01 special feature register address definitions
  * 
- *  @addtogroup reg_addr
+ *  @ingroup reg_addr
  * 
  * 	Format is <b>NRF24L01_FEATURE_REG_ADDR_x</b> where <b>x</b> is the name assigned to the special feature register by the datasheet
  */
@@ -216,9 +224,17 @@
 
 /** @name Register Bits
  * 	@brief NRF24L01 register bit definitions
- * 	Format is <b>NRF24L01_r_REG_BIT_x</b> where <b>r</b> is the register name where the bit is found and <b>x</b> is the name assigned to the register bit by the datasheet
+ *  
+ *  Format is <b>NRF24L01_r_REG_BIT_x</b> where <b>r</b> is the register name where the bit is found and <b>x</b> is the name assigned to the register bit by the datasheet
  *  If register contains a bit field then REG_BITS is plural
  */
+
+
+/** @name Configuration Register (CONFIG)
+ *  @brief Contains IRQ masks, CRC options, and operating mode controls
+ *  @details <a href="nRF24L01_product_specifications.pdf#page=53&search=%22CONFIG%22">View in datasheet</a>
+ * 	@ingroup reg_bits
+ */ 
 /// @{
 #define NRF24L01_CONFIG_REG_BIT_MASK_RX_DR    	(uint8_t)0x40  ///< RX_DR[6] bit in CONFIG register
 #define NRF24L01_CONFIG_REG_BIT_MASK_TX_DS    	(uint8_t)0x20  ///< TX_DS[5] bit in CONFIG register
@@ -227,13 +243,21 @@
 #define NRF24L01_CONFIG_REG_BIT_CRCO          	(uint8_t)0x04  ///< CRCO[2] bit in CONFIG register
 #define NRF24L01_CONFIG_REG_BIT_PWR_UP        	(uint8_t)0x02  ///< PWR_UP[1] bit in CONFIG register
 #define NRF24L01_CONFIG_REG_BIT_PRIM_RX       	(uint8_t)0x01  ///< PRIM_RX[0] bit in CONFIG register
+/// @}
 
-#define NRF24L01_EN_AA_REG_BIT_ENAA_P5        	(uint8_t)0x20  ///< 
-#define NRF24L01_EN_AA_REG_BIT_ENAA_P4        	(uint8_t)0x10  ///<
-#define NRF24L01_EN_AA_REG_BIT_ENAA_P3        	(uint8_t)0x08  ///<
-#define NRF24L01_EN_AA_REG_BIT_ENAA_P2        	(uint8_t)0x04  ///<
-#define NRF24L01_EN_AA_REG_BIT_ENAA_P1        	(uint8_t)0x02  ///<
-#define NRF24L01_EN_AA_REG_BIT_ENAA_P0        	(uint8_t)0x01  ///<
+/** @name Enhanced ShockBurst™ Enable Register (EN_AA)
+ *  @brief Contains enable bits for Enhanced ShockBurst™ on each RX pipe
+ *  @details <a href="nRF24L01_product_specifications.pdf#page=53&search=%22EN_AA%22">View in datasheet</a>
+ * 	@ingroup reg_bits
+ */ 
+/// @{
+#define NRF24L01_EN_AA_REG_BIT_ENAA_P5        	(uint8_t)0x20  ///< ENAA_P5[5] bit in EN_AA register
+#define NRF24L01_EN_AA_REG_BIT_ENAA_P4        	(uint8_t)0x10  ///< ENAA_P4[4] bit in EN_AA register
+#define NRF24L01_EN_AA_REG_BIT_ENAA_P3        	(uint8_t)0x08  ///< ENAA_P3[3] bit in EN_AA register
+#define NRF24L01_EN_AA_REG_BIT_ENAA_P2        	(uint8_t)0x04  ///< ENAA_P2[2] bit in EN_AA register
+#define NRF24L01_EN_AA_REG_BIT_ENAA_P1        	(uint8_t)0x02  ///< ENAA_P1[1] bit in EN_AA register
+#define NRF24L01_EN_AA_REG_BIT_ENAA_P0        	(uint8_t)0x01  ///< ENAA_P0[0] bit in EN_AA register
+/// @}
 
 #define NRF24L01_EN_RXADDR_REG_BIT_ERX_P5     	(uint8_t)0x20  ///<
 #define NRF24L01_EN_RXADDR_REG_BIT_ERX_P4     	(uint8_t)0x10  ///<
