@@ -81,6 +81,7 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnrf24l01__platform__t.html">nrf24l01_platform_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver instance configuration information.  <a href="structnrf24l01__platform__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
@@ -185,7 +186,7 @@ Macros</h2></td></tr>
 <tr class="memitem:a4176b84376e1aeaf2c5ca663fa129a91"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#a4176b84376e1aeaf2c5ca663fa129a91">NRF24L01_FEATURE_CMD_W_TX_PAYLOAD_NOACK</a>&#160;&#160;&#160;(uint8_t)0xB0</td></tr>
 <tr class="memdesc:a4176b84376e1aeaf2c5ca663fa129a91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write TX payload and disable AUTOACK.  <a href="nrf24l01__defs_8h.html#a4176b84376e1aeaf2c5ca663fa129a91">More...</a><br /></td></tr>
 <tr class="separator:a4176b84376e1aeaf2c5ca663fa129a91"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader">General Register Addresses</div></td></tr>
+<tr><td colspan="2"><div class="groupHeader">reg_addr</div></td></tr>
 <tr><td colspan="2"><div class="groupText"><p>NRF24L01 register address definitions</p>
 <p>Format is <b>NRF24L01_REG_ADDR_r</b> where <b>r</b> is the name assigned to the register by the datasheet </p>
 </div></td></tr>
@@ -261,7 +262,7 @@ Macros</h2></td></tr>
 <tr class="memitem:a936ce6b83167af0504bb5d180d618297"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#a936ce6b83167af0504bb5d180d618297">NRF24L01_REG_ADDR_FIFO_STATUS</a>&#160;&#160;&#160;(uint8_t)0x17</td></tr>
 <tr class="memdesc:a936ce6b83167af0504bb5d180d618297"><td class="mdescLeft">&#160;</td><td class="mdescRight">FIFO status register address.  <a href="nrf24l01__defs_8h.html#a936ce6b83167af0504bb5d180d618297">More...</a><br /></td></tr>
 <tr class="separator:a936ce6b83167af0504bb5d180d618297"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader">Special Feature Register Addresses</div></td></tr>
+<tr><td colspan="2"><div class="groupHeader">sfr_addr</div></td></tr>
 <tr><td colspan="2"><div class="groupText"><p>NRF24L01 special feature register address definitions Format is <b>NRF24L01_FEATURE_REG_ADDR_x</b> where <b>x</b> is the name assigned to the special feature register by the datasheet </p>
 </div></td></tr>
 <tr class="memitem:ac33baebb7e321d5058a57fa1a52f039f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#ac33baebb7e321d5058a57fa1a52f039f">NRF24L01_FEATURE_REG_ADDR_DYNPD</a>&#160;&#160;&#160;(uint8_t)0x1C</td></tr>
@@ -510,13 +511,14 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a535ba1bc087e8da8f29f88960d0a64dd"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="nrf24l01__defs_8h.html#af225fdd9e1094009aec9eae23523138d">NRF24L01_FPTR_RTN_T</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#a535ba1bc087e8da8f29f88960d0a64dd">nrf24l01_delay_us_fptr_t</a>) (uint32_t delay)</td></tr>
 <tr class="memdesc:a535ba1bc087e8da8f29f88960d0a64dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Microsecond delay function pointer which should be mapped to the platform specific delay function of the user.  <a href="nrf24l01__defs_8h.html#a535ba1bc087e8da8f29f88960d0a64dd">More...</a><br /></td></tr>
 <tr class="separator:a535ba1bc087e8da8f29f88960d0a64dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad3d32443bfdef413552894313db6fd9"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#aad3d32443bfdef413552894313db6fd9">nrf24l01_rx_dr_callback_fptr_t</a>) (uint8_t message_len, <a class="el" href="nrf24l01__defs_8h.html#ac835ed70d839160974a8a370302ceda4">nrf24l01_pipe_t</a> pipe, void *user_ptr, <a class="el" href="structnrf24l01__platform__t.html">nrf24l01_platform_t</a> *platform)</td></tr>
-<tr class="memdesc:aad3d32443bfdef413552894313db6fd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">User supplied callback function pointer.  <a href="nrf24l01__defs_8h.html#aad3d32443bfdef413552894313db6fd9">More...</a><br /></td></tr>
-<tr class="separator:aad3d32443bfdef413552894313db6fd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a870b44260a83ed804d9c94dfecc8be8a"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#a870b44260a83ed804d9c94dfecc8be8a">nrf24l01_rx_dr_callback_fptr_t</a>) (uint8_t message_size, <a class="el" href="nrf24l01__defs_8h.html#ac835ed70d839160974a8a370302ceda4">nrf24l01_pipe_t</a> pipe, void *user_ptr, <a class="el" href="structnrf24l01__platform__t.html">nrf24l01_platform_t</a> *platform)</td></tr>
+<tr class="memdesc:a870b44260a83ed804d9c94dfecc8be8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">User supplied RX data received callback function pointer.  <a href="nrf24l01__defs_8h.html#a870b44260a83ed804d9c94dfecc8be8a">More...</a><br /></td></tr>
+<tr class="separator:a870b44260a83ed804d9c94dfecc8be8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acbaf981637ef9ef2e0d15fc2886135b5"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#acbaf981637ef9ef2e0d15fc2886135b5">nrf24l01_tx_ds_callback_fptr_t</a>) (<a class="el" href="nrf24l01__defs_8h.html#ac835ed70d839160974a8a370302ceda4">nrf24l01_pipe_t</a> pipe, void *user_ptr, <a class="el" href="structnrf24l01__platform__t.html">nrf24l01_platform_t</a> *platform)</td></tr>
+<tr class="memdesc:acbaf981637ef9ef2e0d15fc2886135b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">User supplied TX data sent callback function pointer.  <a href="nrf24l01__defs_8h.html#acbaf981637ef9ef2e0d15fc2886135b5">More...</a><br /></td></tr>
 <tr class="separator:acbaf981637ef9ef2e0d15fc2886135b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3a3bced5aa40c9e8ea6ea75fd56b1b7"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#af3a3bced5aa40c9e8ea6ea75fd56b1b7">nrf24l01_max_rt_callback_fptr_t</a>) (void *user_ptr, <a class="el" href="structnrf24l01__platform__t.html">nrf24l01_platform_t</a> *platform)</td></tr>
-<tr class="memdesc:af3a3bced5aa40c9e8ea6ea75fd56b1b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check for interrupt function pointer.  <a href="nrf24l01__defs_8h.html#af3a3bced5aa40c9e8ea6ea75fd56b1b7">More...</a><br /></td></tr>
+<tr class="memdesc:af3a3bced5aa40c9e8ea6ea75fd56b1b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">User supplied maximum retries exceeded callback function pointer.  <a href="nrf24l01__defs_8h.html#af3a3bced5aa40c9e8ea6ea75fd56b1b7">More...</a><br /></td></tr>
 <tr class="separator:af3a3bced5aa40c9e8ea6ea75fd56b1b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
@@ -2936,7 +2938,7 @@ Enumerations</h2></td></tr>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
     <tr><td class="paramname">0</td><td>-&gt; Success </td></tr>
-    <tr><td class="paramname">Non</td><td>zero -&gt; Fail </td></tr>
+    <tr><td class="paramname">Non-zero</td><td>-&gt; Fail </td></tr>
   </table>
   </dd>
 </dl>
@@ -2966,7 +2968,7 @@ Enumerations</h2></td></tr>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
     <tr><td class="paramname">0</td><td>-&gt; Success </td></tr>
-    <tr><td class="paramname">Non</td><td>zero -&gt; Fail </td></tr>
+    <tr><td class="paramname">Non-zero</td><td>-&gt; Fail </td></tr>
   </table>
   </dd>
 </dl>
@@ -2999,17 +3001,11 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Check for interrupt function pointer. </p>
+<p>User supplied maximum retries exceeded callback function pointer. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">delay</td><td>: Number of microseconds to delay</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">0</td><td>-&gt; Interrupt triggered and waiting to be processed </td></tr>
-    <tr><td class="paramname">Non</td><td>zero -&gt; No interrupt </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_ptr</td><td>: The user-defined pointer which was provided when the callback was registered </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">platform</td><td>: Driver instance configuration </td></tr>
   </table>
   </dd>
 </dl>
@@ -3038,7 +3034,7 @@ Enumerations</h2></td></tr>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
     <tr><td class="paramname">0</td><td>-&gt; Success </td></tr>
-    <tr><td class="paramname">Non</td><td>zero -&gt; Fail </td></tr>
+    <tr><td class="paramname">Non-zero</td><td>-&gt; Fail </td></tr>
   </table>
   </dd>
 </dl>
@@ -3058,7 +3054,9 @@ Enumerations</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Hardware initialization function pointer which should be used to configure the hardware before communication is attempted. </p>
-<p>IRQ pin is active-low. Interrupt pin should be triggered on negative-edge. Pull-up resistor needed</p>
+<p>Responsibilities</p><ul>
+<li>Configure IRQ MCU input. IRQ output pin is active-low. Interrupt pin should be triggered on negative-edge. Pull-up resistor needed</li>
+</ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">user_ptr</td><td>: Pointer to user-defined hardware configuration struct</td></tr>
@@ -3068,7 +3066,7 @@ Enumerations</h2></td></tr>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
     <tr><td class="paramname">0</td><td>-&gt; Success </td></tr>
-    <tr><td class="paramname">Non</td><td>zero -&gt; Fail </td></tr>
+    <tr><td class="paramname">Non-zero</td><td>-&gt; Fail </td></tr>
   </table>
   </dd>
 </dl>
@@ -3103,22 +3101,25 @@ Enumerations</h2></td></tr>
 
 </div>
 </div>
-<a id="aad3d32443bfdef413552894313db6fd9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad3d32443bfdef413552894313db6fd9">&#9670;&nbsp;</a></span>nrf24l01_rx_dr_callback_fptr_t</h2>
+<a id="a870b44260a83ed804d9c94dfecc8be8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a870b44260a83ed804d9c94dfecc8be8a">&#9670;&nbsp;</a></span>nrf24l01_rx_dr_callback_fptr_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void(* nrf24l01_rx_dr_callback_fptr_t) (uint8_t message_len, <a class="el" href="nrf24l01__defs_8h.html#ac835ed70d839160974a8a370302ceda4">nrf24l01_pipe_t</a> pipe, void *user_ptr, <a class="el" href="structnrf24l01__platform__t.html">nrf24l01_platform_t</a> *platform)</td>
+          <td class="memname">typedef void(* nrf24l01_rx_dr_callback_fptr_t) (uint8_t message_size, <a class="el" href="nrf24l01__defs_8h.html#ac835ed70d839160974a8a370302ceda4">nrf24l01_pipe_t</a> pipe, void *user_ptr, <a class="el" href="structnrf24l01__platform__t.html">nrf24l01_platform_t</a> *platform)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>User supplied callback function pointer. </p>
+<p>User supplied RX data received callback function pointer. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">delay</td><td>: Number of microseconds to delay </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">message_size</td><td>: Length of the received message in bytes </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pipe</td><td>: The RX pipe from which the data was received </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_ptr</td><td>: The user-defined pointer which was provided when the callback was registered </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">platform</td><td>: Driver instance configuration </td></tr>
   </table>
   </dd>
 </dl>
@@ -3169,6 +3170,16 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>User supplied TX data sent callback function pointer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pipe</td><td>: </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_ptr</td><td>: The user-defined pointer which was provided when the callback was registered </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">platform</td><td>: Driver instance configuration </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
