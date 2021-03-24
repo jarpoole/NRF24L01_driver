@@ -262,7 +262,7 @@
  *  @details <a href="nRF24L01_product_specifications.pdf#page=53&search=%22EN_RXADDR%22"><b><u>View details in datasheet</u></b></a> for more information
  */ 
 /// @{
-#define NRF24L01_EN_RXADDR_REG_BIT_ERX_P5     	(uint8_t)0x20  ///<
+#define NRF24L01_EN_RXADDR_REG_BIT_ERX_P5     	(uint8_t)0x20  ///< 
 #define NRF24L01_EN_RXADDR_REG_BIT_ERX_P4     	(uint8_t)0x10  ///<
 #define NRF24L01_EN_RXADDR_REG_BIT_ERX_P3     	(uint8_t)0x08  ///<
 #define NRF24L01_EN_RXADDR_REG_BIT_ERX_P2     	(uint8_t)0x04  ///<
@@ -270,7 +270,7 @@
 #define NRF24L01_EN_RXADDR_REG_BIT_ERX_P0     	(uint8_t)0x01  ///<
 /// @}
 
-/** @name Pipe Address Width Common Configuration (SETUP_AW)
+/** @name Pipe Address Width Common Configuration Register (SETUP_AW)
  *  @brief Contains the common address width configuration bits which apply to all pipes
  *  @details <a href="nRF24L01_product_specifications.pdf#page=54&search=%22SETUP_AW%22"><b><u>View details in datasheet</u></b></a> for more information
  */ 
@@ -278,7 +278,7 @@
 #define NRF24L01_SETUP_AW_REG_BITS_AW         	(uint8_t)0x03  ///< AW[1:0] bits in SETUP_AW register
 /// @}
 
-/** @name Automatic Retransmission Configuration (SETUP_RETR)
+/** @name Automatic Retransmission Configuration Register (SETUP_RETR)
  *  @brief Contains the automatic retransmit delay configuration and the automatic retransmit count configuration
  *  @details <a href="nRF24L01_product_specifications.pdf#page=54&search=%22SETUP_RETR%22"><b><u>View details in datasheet</u></b></a> for more information
  */
@@ -287,16 +287,16 @@
 #define NRF24L01_SETUP_RETR_REG_BITS_ARC      	(uint8_t)0x0F  ///< ARC[3:0] bits in SETUP_RETR register
 /// @}
 
-/** @name RF Channel Configuration (RF_CH)
- *  @brief  Contains the nRF24L01 operating channel frequency as an offset of 2400MHz
+/** @name RF Channel Configuration Register (RF_CH)
+ *  @brief Contains the nRF24L01 operating channel frequency as an offset of 2400MHz
  *  @details <a href="nRF24L01_product_specifications.pdf#page=54&search=%22RF_CH%22"><b><u>View details in datasheet</u></b></a> for more information
  */
 /// @{
 #define NRF24L01_RF_CH_REG_BITS_RF_CH         	(uint8_t)0x7F  ///< RF_CH[6:0] bits in RF_CH register
 /// @}
 
-/** @name RF Configuration (RF_SETUP)
- *  @brief  Contains the PLL force bit, the RF TX output power bits, and the LNA gain configuration bits
+/** @name RF Configuration Register (RF_SETUP)
+ *  @brief Contains the PLL force bit, the RF TX output power bits, and the LNA gain configuration bits
  *  @details <a href="nRF24L01_product_specifications.pdf#page=54&search=%22RF_SETUP%22"><b><u>View details in datasheet</u></b></a> for more information
  */
 /// @{
@@ -306,8 +306,8 @@
 #define NRF24L01_RF_SETUP_REG_BIT_LNA_HCURR   	(uint8_t)0x01  ///< LNA_HCURR[0] bit in RF_SETUP register
 /// @}
 
-/** @name Device Status (STATUS)
- *  @brief  Contains the RX data ready, TX data sent and maximum retransmits exceeded interrupt assertion bits, the RX active data pipe bits, and the TX FIFO full bit
+/** @name Device Status Register (STATUS)
+ *  @brief Contains the RX data ready, TX data sent and maximum retransmits exceeded interrupt assertion bits, the RX active data pipe bits, and the TX FIFO full bit
  *  @details <a href="nRF24L01_product_specifications.pdf#page=55&search=%22STATUS%22"><b><u>View details in datasheet</u></b></a> for more information
  */
 /// @{
@@ -318,31 +318,76 @@
 #define NRF24L01_STATUS_REG_BIT_TX_FULL       	(uint8_t)0x01  ///< TX_FULL[0] flag bit in STATUS register
 /// @}
 
+/** @name Transmission Observation Register (OBSERVE_TX)
+ *  @brief Contains the lost packet count bits and packet retransmission count bits
+ *  @details <a href="nRF24L01_product_specifications.pdf#page=55&search=%22OBSERVE_TX%22"><b><u>View details in datasheet</u></b></a> for more information
+ */
+/// @{
 #define NRF24L01_OBSERVE_TX_REG_BITS_PLOS_CNT 	(uint8_t)0xF0  ///< PLOS_CNT[7:4] lost packet count bits in OBSERVE_TX register
 #define NRF24L01_OBSERVE_TX_REG_BITS_ARC_CNT  	(uint8_t)0x0F  ///< ARC_CNT[3:0] resent packet count bits in OBSERVE_TX register
 /// @}
 
+/** @name Carrier Detect Register (CD)
+ *  @brief Contains the carrier detect bit which is used to detect channel interference
+ *  @details <a href="nRF24L01_product_specifications.pdf#page=55&search=%22CD%22"><b><u>View details in datasheet</u></b></a> for more information
+ */
+/// @{
 #define NRF24L01_CD_REG_BIT_CD                	(uint8_t)0x01  ///< CD[0] bit in CD register
 /// @}
 
-#define NRF24L01_RX_PW_P0_REG_BITS_RX_PW_P0   	(uint8_t)0x3F  ///<
+/** @name RX Pipe 0 Payload Width Register (RX_PW_P0)
+ *  @brief Contains the number of bytes in RX payload in data pipe 0 (1 to 32 bytes)
+ *  @details <a href="nRF24L01_product_specifications.pdf#page=56&search=%22RX_PW_P0%22"><b><u>View details in datasheet</u></b></a> for more information
+ */
+/// @{
+#define NRF24L01_RX_PW_P0_REG_BITS_RX_PW_P0   	(uint8_t)0x3F  ///< RX_PW_P0[5:0] bits in RX_PW_P0 register
 /// @}
 
-#define NRF24L01_RX_PW_P1_REG_BITS_RX_PW_P1   	(uint8_t)0x3F  ///<
+/** @name RX Pipe 1 Payload Width Register (RX_PW_P1)
+ *  @brief Contains the number of bytes in RX payload in data pipe 1 (1 to 32 bytes)
+ *  @details <a href="nRF24L01_product_specifications.pdf#page=56&search=%22RX_PW_P1%22"><b><u>View details in datasheet</u></b></a> for more information
+ */
+/// @{
+#define NRF24L01_RX_PW_P1_REG_BITS_RX_PW_P1   	(uint8_t)0x3F  ///< RX_PW_P1[5:0] bits in RX_PW_P1 register
 /// @}
 
-#define NRF24L01_RX_PW_P2_REG_BITS_RX_PW_P2   	(uint8_t)0x3F  ///<
+/** @name RX Pipe 2 Payload Width Register (RX_PW_P2)
+ *  @brief Contains the number of bytes in RX payload in data pipe 2 (1 to 32 bytes)
+ *  @details <a href="nRF24L01_product_specifications.pdf#page=56&search=%22RX_PW_P2%22"><b><u>View details in datasheet</u></b></a> for more information
+ */
+/// @{
+#define NRF24L01_RX_PW_P2_REG_BITS_RX_PW_P2   	(uint8_t)0x3F  ///< RX_PW_P2[5:0] bits in RX_PW_P2 register
 /// @}
 
-#define NRF24L01_RX_PW_P3_REG_BITS_RX_PW_P3   	(uint8_t)0x3F  ///<
+/** @name RX Pipe 3 Payload Width Register (RX_PW_P3)
+ *  @brief Contains the number of bytes in RX payload in data pipe 3 (1 to 32 bytes)
+ *  @details <a href="nRF24L01_product_specifications.pdf#page=56&search=%22RX_PW_P3%22"><b><u>View details in datasheet</u></b></a> for more information
+ */
+/// @{
+#define NRF24L01_RX_PW_P3_REG_BITS_RX_PW_P3   	(uint8_t)0x3F  ///< RX_PW_P3[5:0] bits in RX_PW_P3 register
 /// @}
 
-#define NRF24L01_RX_PW_P4_REG_BITS_RX_PW_P4   	(uint8_t)0x3F  ///<
+/** @name RX Pipe 4 Payload Width Register (RX_PW_P4)
+ *  @brief Contains the number of bytes in RX payload in data pipe 4 (1 to 32 bytes)
+ *  @details <a href="nRF24L01_product_specifications.pdf#page=56&search=%22RX_PW_P4%22"><b><u>View details in datasheet</u></b></a> for more information
+ */
+/// @{
+#define NRF24L01_RX_PW_P4_REG_BITS_RX_PW_P4   	(uint8_t)0x3F  ///< RX_PW_P4[5:0] bits in RX_PW_P4 register
 /// @}
 
-#define NRF24L01_RX_PW_P5_REG_BITS_RX_PW_P5   	(uint8_t)0x3F  ///<
+/** @name RX Pipe 5 Payload Width Register (RX_PW_P5)
+ *  @brief Contains the number of bytes in RX payload in data pipe 5 (1 to 32 bytes)
+ *  @details <a href="nRF24L01_product_specifications.pdf#page=57&search=%22RX_PW_P5%22"><b><u>View details in datasheet</u></b></a> for more information
+ */
+/// @{
+#define NRF24L01_RX_PW_P5_REG_BITS_RX_PW_P5   	(uint8_t)0x3F  ///< RX_PW_P5[5:0] bits in RX_PW_P5 register
 /// @}
 
+/** @name FIFO Status Register (FIFO_STATUS)
+ *  @brief Contains the TX packet in reuse flag bit, the TX FIFO full flag bit, the TX FIFO empty flag bit, the RX FIFO full flag bit, and the RX FIFO empty flag bit
+ *  @details <a href="nRF24L01_product_specifications.pdf#page=57&search=%22FIFO_STATUS%22"><b><u>View details in datasheet</u></b></a> for more information
+ */
+/// @{
 #define NRF24L01_FIFO_STATUS_REG_BIT_TX_REUSE 	(uint8_t)0x40  ///< TX_REUSE[5] status bit in FIFO_STATUS register
 #define NRF24L01_FIFO_STATUS_REG_BIT_TX_FULL  	(uint8_t)0x20  ///< TX_FULL[6] status bit in FIFO_STATUS register
 #define NRF24L01_FIFO_STATUS_REG_BIT_TX_EMPTY 	(uint8_t)0x10  ///< TX_EMPTY[4] status bits [5:4] in FIFO_STATUS register
@@ -350,6 +395,11 @@
 #define NRF24L01_FIFO_STATUS_REG_BIT_RX_EMPTY 	(uint8_t)0x01  ///< RX_EMPTY[0] status bit in FIFO_STATUS register
 /// @}
 
+/** @name Dynamic Payload Length Enable Configuration Register (DYNPD)
+ *  @brief Contains the dynamic payload length enable bits for each pipe
+ *  @details <a href="nRF24L01_product_specifications.pdf#page=58&search=%22DYNPD%22"><b><u>View details in datasheet</u></b></a> for more information
+ */
+/// @{
 #define NRF24L01_DYNPD_REG_BIT_DPL_P5         	(uint8_t)0x20  ///<
 #define NRF24L01_DYNPD_REG_BIT_DPL_P4         	(uint8_t)0x10  ///<
 #define NRF24L01_DYNPD_REG_BIT_DPL_P3         	(uint8_t)0x08  ///<
@@ -358,6 +408,11 @@
 #define NRF24L01_DYNPD_REG_BIT_DPL_P0         	(uint8_t)0x01  ///<
 /// @}
 
+/** @name Special Feature Register (FEATURE)
+ *  @brief Contains the enable bits for the NRF24L01 special features
+ *  @details <a href="nRF24L01_product_specifications.pdf#page=58&search=%22FEATURE%22"><b><u>View details in datasheet</u></b></a> for more information
+ */
+/// @{
 #define NRF24L01_FEATURE_REG_BIT_EN_DPL       	(uint8_t)0x04  ///< EN_DPL[2] bit in FEATURE register
 #define NRF24L01_FEATURE_REG_BIT_EN_ACK_PAY   	(uint8_t)0x02  ///< EN_ACK_PAY[1] bit in FEATURE register
 #define NRF24L01_FEATURE_REG_BIT_EN_DYN_ACK   	(uint8_t)0x01  ///< EN_DYN_ACK[0] bit in FEATURE register
