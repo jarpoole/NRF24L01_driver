@@ -163,8 +163,8 @@
 #define NRF24L01_FEATURE_CMD_W_TX_PAYLOAD_NOACK  (uint8_t)0xB0  ///< Write TX payload and disable AUTOACK
 /// @}
 
-/** @name General Register Addresses
- *  @anchor reg_addr
+/** @anchor reg_addr
+ *  @name General Register Addresses
  * 
  * 	@brief NRF24L01 register address definitions
  * 
