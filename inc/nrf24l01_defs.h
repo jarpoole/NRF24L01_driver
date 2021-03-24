@@ -224,8 +224,10 @@
 /// @defgroup reg_bits   SPI Register Bit Definitions  
 /// @{ 
 
-/** @section config_bits   Configuration Register (CONFIG)
- * 
+/// @section config_bits   Configuration Register (CONFIG)
+
+/** 
+ *  @name config
  *  @brief Contains IRQ masks, CRC options, and operating mode controls
  *  @details <a href="nRF24L01_product_specifications.pdf#page=53&search=%22CONFIG%22">View in datasheet</a>
  */ 
@@ -240,7 +242,7 @@
 /// @}
 
 /** @section en_aa_bits   Enhanced ShockBurst™ Enable Register (EN_AA)
- * 
+ *  
  *  @brief Contains enable bits for Enhanced ShockBurst™ on each RX pipe
  *  @details <a href="nRF24L01_product_specifications.pdf#page=53&search=%22EN_AA%22">View in datasheet</a>
  */ 
