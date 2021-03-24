@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['spi_5fexchange_363',['spi_exchange',['../structnrf24l01__platform__t.html#adad84cbfcf4873ff02e12c9c0a156acf',1,'nrf24l01_platform_t']]]
+  ['rx_5fdr_5fcallback_375',['rx_dr_callback',['../structnrf24l01__platform__t.html#a000143d3495d4fe39a6ca1fb3a43ceb4',1,'nrf24l01_platform_t']]],
+  ['rx_5fdr_5fcallback_5fuser_5fptr_376',['rx_dr_callback_user_ptr',['../structnrf24l01__platform__t.html#a6f944428baa03e7864a0a7088e162424',1,'nrf24l01_platform_t']]]
 ];

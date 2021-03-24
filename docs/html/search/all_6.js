@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['pipe_5fapi_291',['Pipe_api',['../group__pipe__api.html',1,'']]],
-  ['platform_5fdeinit_292',['platform_deinit',['../structnrf24l01__platform__t.html#ae5b99c252f64ff39fa24ef88ec33800a',1,'nrf24l01_platform_t']]],
-  ['platform_5finit_293',['platform_init',['../structnrf24l01__platform__t.html#abe203f817fe86f25764587b59baa568f',1,'nrf24l01_platform_t']]]
+  ['pipe_5fapi_298',['Pipe_api',['../group__pipe__api.html',1,'']]],
+  ['platform_5fdeinit_299',['platform_deinit',['../structnrf24l01__platform__t.html#ae5b99c252f64ff39fa24ef88ec33800a',1,'nrf24l01_platform_t']]],
+  ['platform_5finit_300',['platform_init',['../structnrf24l01__platform__t.html#abe203f817fe86f25764587b59baa568f',1,'nrf24l01_platform_t']]]
 ];

@@ -77,6 +77,9 @@ $(function() {
 <li>NRF24L01_ACK_PAYLOAD_ON
 : <a class="el" href="nrf24l01__defs_8h.html#a7c4d5923051f2412599ab4b292fea85cacfb6ebdc8b8d850bc0e662480fa5bcdb">nrf24l01_defs.h</a>
 </li>
+<li>NRF24L01_ADDR_REGS
+: <a class="el" href="nrf24l01_8c.html#ae0720c1299008feb1ea63bf8785fe7d1">nrf24l01.c</a>
+</li>
 <li>NRF24L01_ADDR_WIDTH_3_BYTES
 : <a class="el" href="nrf24l01__defs_8h.html#aea609a6ce51d1f9e024d15a6409ddb43">nrf24l01_defs.h</a>
 </li>
@@ -436,8 +439,8 @@ $(function() {
 , <a class="el" href="group__device__api.html#ga5d09412a7080b39e8e90178812186186">nrf24l01.h</a>
 </li>
 <li>nrf24l01_flush_tx()
-: <a class="el" href="group__device__api.html#gaa09fd11c251226eeb47a6adab2e23e14">nrf24l01.h</a>
-, <a class="el" href="group__device__api.html#gaa09fd11c251226eeb47a6adab2e23e14">nrf24l01.c</a>
+: <a class="el" href="group__device__api.html#gaa09fd11c251226eeb47a6adab2e23e14">nrf24l01.c</a>
+, <a class="el" href="group__device__api.html#gaa09fd11c251226eeb47a6adab2e23e14">nrf24l01.h</a>
 </li>
 <li>NRF24L01_FPTR_RTN_T
 : <a class="el" href="nrf24l01__defs_8h.html#af225fdd9e1094009aec9eae23523138d">nrf24l01_defs.h</a>
@@ -473,6 +476,9 @@ $(function() {
 <li>nrf24l01_get_retransmit_counters()
 : <a class="el" href="group__device__api.html#gae95e9b0c9d5eb8d3ba12077f24bd900a">nrf24l01.c</a>
 , <a class="el" href="group__device__api.html#gae95e9b0c9d5eb8d3ba12077f24bd900a">nrf24l01.h</a>
+</li>
+<li>nrf24l01_get_rx_dpl()
+: <a class="el" href="nrf24l01_8c.html#a4298460d2b1e9909e77dbe47afd65cee">nrf24l01.c</a>
 </li>
 <li>nrf24l01_get_rx_pipe()
 : <a class="el" href="group__pipe__api.html#ga813ffbf96c9a76b15d463154085df739">nrf24l01.c</a>
@@ -513,6 +519,12 @@ $(function() {
 </li>
 <li>NRF24L01_MODE_TX
 : <a class="el" href="nrf24l01__defs_8h.html#a2e35d6210bc14e3010061dcc840f3174aba92a9ef213fd80d87b0abd16ffeef9f">nrf24l01_defs.h</a>
+</li>
+<li>nrf24l01_multi_read_reg()
+: <a class="el" href="nrf24l01_8c.html#acc784e9708f84b3d01a6f58f3e177e79">nrf24l01.c</a>
+</li>
+<li>nrf24l01_multi_write_reg()
+: <a class="el" href="nrf24l01_8c.html#a9bd05819edf60b5298804db639b97815">nrf24l01.c</a>
 </li>
 <li>NRF24L01_OBSERVE_TX_MASK_REG
 : <a class="el" href="nrf24l01__defs_8h.html#a58da17119f4d8a23ba58ca18eefa590f">nrf24l01_defs.h</a>
@@ -599,8 +611,11 @@ $(function() {
 : <a class="el" href="nrf24l01__defs_8h.html#a2969b80f1595f56480834439ce99a90fa7f11c5de95e8d07e3fca776867e6edaf">nrf24l01_defs.h</a>
 </li>
 <li>nrf24l01_read_payload()
-: <a class="el" href="group__pipe__api.html#ga0ddaef29411d56ad52cebfa48ed37fb9">nrf24l01.h</a>
-, <a class="el" href="group__pipe__api.html#ga0ddaef29411d56ad52cebfa48ed37fb9">nrf24l01.c</a>
+: <a class="el" href="group__pipe__api.html#ga0ddaef29411d56ad52cebfa48ed37fb9">nrf24l01.c</a>
+, <a class="el" href="group__pipe__api.html#ga0ddaef29411d56ad52cebfa48ed37fb9">nrf24l01.h</a>
+</li>
+<li>nrf24l01_read_reg()
+: <a class="el" href="nrf24l01_8c.html#a812aa11c8bbf190e4811cbd284b6d81c">nrf24l01.c</a>
 </li>
 <li>NRF24L01_REG_ADDR_CD
 : <a class="el" href="nrf24l01__defs_8h.html#a23d52e3c4eb4a90cb1368cc6e67881c4">nrf24l01_defs.h</a>
@@ -675,16 +690,16 @@ $(function() {
 : <a class="el" href="nrf24l01__defs_8h.html#adaa7beac7057eefcb850614cbe658a07">nrf24l01_defs.h</a>
 </li>
 <li>nrf24l01_register_max_rt_callback()
-: <a class="el" href="group__device__api.html#gae94ce0fe9852c9730abee9a4dda8fa18">nrf24l01.h</a>
-, <a class="el" href="group__device__api.html#gae94ce0fe9852c9730abee9a4dda8fa18">nrf24l01.c</a>
+: <a class="el" href="group__device__api.html#gae94ce0fe9852c9730abee9a4dda8fa18">nrf24l01.c</a>
+, <a class="el" href="group__device__api.html#gae94ce0fe9852c9730abee9a4dda8fa18">nrf24l01.h</a>
 </li>
 <li>nrf24l01_register_rx_dr_callback()
 : <a class="el" href="group__device__api.html#ga6be0b13e069c4e270640b34c65c6c58b">nrf24l01.c</a>
 , <a class="el" href="group__device__api.html#ga6be0b13e069c4e270640b34c65c6c58b">nrf24l01.h</a>
 </li>
 <li>nrf24l01_register_tx_ds_callback()
-: <a class="el" href="group__device__api.html#gaf4b8f3c50c981110f0c6fbc1df354bfa">nrf24l01.h</a>
-, <a class="el" href="group__device__api.html#gaf4b8f3c50c981110f0c6fbc1df354bfa">nrf24l01.c</a>
+: <a class="el" href="group__device__api.html#gaf4b8f3c50c981110f0c6fbc1df354bfa">nrf24l01.c</a>
+, <a class="el" href="group__device__api.html#gaf4b8f3c50c981110f0c6fbc1df354bfa">nrf24l01.h</a>
 </li>
 <li>nrf24l01_reset_packet_loss_counter()
 : <a class="el" href="group__device__api.html#ga7ea991dfff7035b1f64c5588f8617e6c">nrf24l01.c</a>
@@ -762,28 +777,31 @@ $(function() {
 <li>NRF24L01_RX_PW_P5_REG_BITS_RX_PW_P5
 : <a class="el" href="nrf24l01__defs_8h.html#a6b74786d8514062858134d1844ff4909">nrf24l01_defs.h</a>
 </li>
+<li>NRF24L01_RX_PW_PIPE
+: <a class="el" href="nrf24l01_8c.html#aa08ee4c813e302494e4d211fb0e86891">nrf24l01.c</a>
+</li>
 <li>nrf24l01_set_ack_payload_mode()
 : <a class="el" href="group__device__api.html#gaf904545f9f8a909e438a972d51dfda7a">nrf24l01.h</a>
 </li>
 <li>nrf24l01_set_address()
-: <a class="el" href="nrf24l01_8c.html#af28ce44c14f88b5812f85b1025292e80">nrf24l01.c</a>
-, <a class="el" href="nrf24l01_8h.html#a7e90e2cbb613fa083a4b752997432761">nrf24l01.h</a>
+: <a class="el" href="nrf24l01_8h.html#a7e90e2cbb613fa083a4b752997432761">nrf24l01.h</a>
+, <a class="el" href="nrf24l01_8c.html#af28ce44c14f88b5812f85b1025292e80">nrf24l01.c</a>
 </li>
 <li>nrf24l01_set_address_width()
 : <a class="el" href="group__device__api.html#ga10e39671edfdaac81580661d842bcff7">nrf24l01.c</a>
 , <a class="el" href="group__device__api.html#ga10e39671edfdaac81580661d842bcff7">nrf24l01.h</a>
 </li>
 <li>nrf24l01_set_auto_retransmission()
-: <a class="el" href="group__device__api.html#ga4384b25820eef7cc03ac4236f9fa4987">nrf24l01.c</a>
-, <a class="el" href="group__device__api.html#ga4384b25820eef7cc03ac4236f9fa4987">nrf24l01.h</a>
+: <a class="el" href="group__device__api.html#ga4384b25820eef7cc03ac4236f9fa4987">nrf24l01.h</a>
+, <a class="el" href="group__device__api.html#ga4384b25820eef7cc03ac4236f9fa4987">nrf24l01.c</a>
 </li>
 <li>nrf24l01_set_crc_scheme()
-: <a class="el" href="group__device__api.html#ga9067b01f853f8693967181f740585b59">nrf24l01.h</a>
-, <a class="el" href="group__device__api.html#ga9067b01f853f8693967181f740585b59">nrf24l01.c</a>
+: <a class="el" href="group__device__api.html#ga9067b01f853f8693967181f740585b59">nrf24l01.c</a>
+, <a class="el" href="group__device__api.html#ga9067b01f853f8693967181f740585b59">nrf24l01.h</a>
 </li>
 <li>nrf24l01_set_data_rate()
-: <a class="el" href="group__device__api.html#ga167a2c4a6119ee820085f361a13384ad">nrf24l01.c</a>
-, <a class="el" href="group__device__api.html#ga167a2c4a6119ee820085f361a13384ad">nrf24l01.h</a>
+: <a class="el" href="group__device__api.html#ga167a2c4a6119ee820085f361a13384ad">nrf24l01.h</a>
+, <a class="el" href="group__device__api.html#ga167a2c4a6119ee820085f361a13384ad">nrf24l01.c</a>
 </li>
 <li>nrf24l01_set_dpl_mode()
 : <a class="el" href="group__device__api.html#ga9f4b25fc294cb8550f3572b54b08fe58">nrf24l01.h</a>
@@ -813,8 +831,8 @@ $(function() {
 , <a class="el" href="group__pipe__api.html#gaf7370e9534ccbede12d2a8b185180a98">nrf24l01.h</a>
 </li>
 <li>nrf24l01_set_pipe_mode()
-: <a class="el" href="group__pipe__api.html#ga736b0f56f587c118863e9fda079d1bdc">nrf24l01.c</a>
-, <a class="el" href="group__pipe__api.html#ga736b0f56f587c118863e9fda079d1bdc">nrf24l01.h</a>
+: <a class="el" href="group__pipe__api.html#ga736b0f56f587c118863e9fda079d1bdc">nrf24l01.h</a>
+, <a class="el" href="group__pipe__api.html#ga736b0f56f587c118863e9fda079d1bdc">nrf24l01.c</a>
 </li>
 <li>nrf24l01_set_pipe_rx_payload_size()
 : <a class="el" href="group__pipe__api.html#ga278481ec6a4aa4db0fc5953b6aceae8b">nrf24l01.c</a>
@@ -825,8 +843,8 @@ $(function() {
 , <a class="el" href="group__device__api.html#ga9952bf8024954a3be966dedba265e2d2">nrf24l01.h</a>
 </li>
 <li>nrf24l01_set_rf_channel()
-: <a class="el" href="group__device__api.html#gab36d02b77d5aeec5a9d9e2d6ccb7ea3e">nrf24l01.h</a>
-, <a class="el" href="group__device__api.html#gab36d02b77d5aeec5a9d9e2d6ccb7ea3e">nrf24l01.c</a>
+: <a class="el" href="group__device__api.html#gab36d02b77d5aeec5a9d9e2d6ccb7ea3e">nrf24l01.c</a>
+, <a class="el" href="group__device__api.html#gab36d02b77d5aeec5a9d9e2d6ccb7ea3e">nrf24l01.h</a>
 </li>
 <li>nrf24l01_set_tx_power()
 : <a class="el" href="group__device__api.html#ga4247b61e05c9d3d3aa3c4fc98ec88d3e">nrf24l01.c</a>
@@ -851,8 +869,8 @@ $(function() {
 : <a class="el" href="nrf24l01__defs_8h.html#a86465ecff5d0e2cb8872cca95c310e06">nrf24l01_defs.h</a>
 </li>
 <li>nrf24l01_start_listening()
-: <a class="el" href="nrf24l01_8h.html#a0d4846399bb76424fc894348f0cd4f14">nrf24l01.h</a>
-, <a class="el" href="nrf24l01_8c.html#a5db9b3e9fe566f46a1a3091c2cbce21e">nrf24l01.c</a>
+: <a class="el" href="nrf24l01_8c.html#a5db9b3e9fe566f46a1a3091c2cbce21e">nrf24l01.c</a>
+, <a class="el" href="nrf24l01_8h.html#a0d4846399bb76424fc894348f0cd4f14">nrf24l01.h</a>
 </li>
 <li>NRF24L01_STATUS_FIFO_DATA
 : <a class="el" href="nrf24l01__defs_8h.html#ab8fdf71a787afdec43916b7568ee8cd2a1576011090a0162ec3d73d2ba448f9cc">nrf24l01_defs.h</a>
@@ -888,8 +906,8 @@ $(function() {
 : <a class="el" href="nrf24l01__defs_8h.html#aaef3b9cc042253007cc2da9110a26311">nrf24l01_defs.h</a>
 </li>
 <li>nrf24l01_stop_listening()
-: <a class="el" href="nrf24l01_8h.html#a2c46ba5569ed05dd5747ad2853ce3c51">nrf24l01.h</a>
-, <a class="el" href="nrf24l01_8c.html#a90b382dde849873fda197cb0baac9241">nrf24l01.c</a>
+: <a class="el" href="nrf24l01_8c.html#a90b382dde849873fda197cb0baac9241">nrf24l01.c</a>
+, <a class="el" href="nrf24l01_8h.html#a2c46ba5569ed05dd5747ad2853ce3c51">nrf24l01.h</a>
 </li>
 <li>NRF24L01_TEST_ADDR
 : <a class="el" href="nrf24l01_8c.html#a0adde16a6253944083b670d5ae93dee1">nrf24l01.c</a>
@@ -937,8 +955,11 @@ $(function() {
 : <a class="el" href="nrf24l01__defs_8h.html#a1f6226bf9c94a81ffa0edc12beb3bb58ad1ed4ab70c88f3753a7c1f32b9ef60fc">nrf24l01_defs.h</a>
 </li>
 <li>nrf24l01_write_payload()
-: <a class="el" href="group__pipe__api.html#ga993a327bc069340404c5dbb7a7dd443f">nrf24l01.h</a>
-, <a class="el" href="group__pipe__api.html#ga993a327bc069340404c5dbb7a7dd443f">nrf24l01.c</a>
+: <a class="el" href="group__pipe__api.html#ga993a327bc069340404c5dbb7a7dd443f">nrf24l01.c</a>
+, <a class="el" href="group__pipe__api.html#ga993a327bc069340404c5dbb7a7dd443f">nrf24l01.h</a>
+</li>
+<li>nrf24l01_write_reg()
+: <a class="el" href="nrf24l01_8c.html#a152c4093612f1a962e19aade9fbba86c">nrf24l01.c</a>
 </li>
 </ul>
 </div><!-- contents -->

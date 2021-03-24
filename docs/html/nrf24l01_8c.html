@@ -68,7 +68,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">nrf24l01.c File Reference</div>  </div>
 </div><!--header-->
@@ -82,6 +83,15 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a812aa11c8bbf190e4811cbd284b6d81c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="nrf24l01__defs_8h.html#aeb660fd5ed8bfc4a9d5ea587fd9207f0">nrf24l01_err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01_8c.html#a812aa11c8bbf190e4811cbd284b6d81c">nrf24l01_read_reg</a> (uint8_t reg_addr, uint8_t *data, <a class="el" href="structnrf24l01__platform__t.html">nrf24l01_platform_t</a> *platform)</td></tr>
+<tr class="memdesc:a812aa11c8bbf190e4811cbd284b6d81c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper around platform multi-register read.  <a href="nrf24l01_8c.html#a812aa11c8bbf190e4811cbd284b6d81c">More...</a><br /></td></tr>
+<tr class="separator:a812aa11c8bbf190e4811cbd284b6d81c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a152c4093612f1a962e19aade9fbba86c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="nrf24l01__defs_8h.html#aeb660fd5ed8bfc4a9d5ea587fd9207f0">nrf24l01_err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01_8c.html#a152c4093612f1a962e19aade9fbba86c">nrf24l01_write_reg</a> (uint8_t, uint8_t, <a class="el" href="structnrf24l01__platform__t.html">nrf24l01_platform_t</a> *)</td></tr>
+<tr class="separator:a152c4093612f1a962e19aade9fbba86c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc784e9708f84b3d01a6f58f3e177e79"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="nrf24l01__defs_8h.html#aeb660fd5ed8bfc4a9d5ea587fd9207f0">nrf24l01_err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01_8c.html#acc784e9708f84b3d01a6f58f3e177e79">nrf24l01_multi_read_reg</a> (uint8_t, uint8_t *, uint8_t, <a class="el" href="structnrf24l01__platform__t.html">nrf24l01_platform_t</a> *)</td></tr>
+<tr class="separator:acc784e9708f84b3d01a6f58f3e177e79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bd05819edf60b5298804db639b97815"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="nrf24l01__defs_8h.html#aeb660fd5ed8bfc4a9d5ea587fd9207f0">nrf24l01_err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01_8c.html#a9bd05819edf60b5298804db639b97815">nrf24l01_multi_write_reg</a> (uint8_t, uint8_t *, uint8_t, <a class="el" href="structnrf24l01__platform__t.html">nrf24l01_platform_t</a> *)</td></tr>
+<tr class="separator:a9bd05819edf60b5298804db639b97815"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga43b4c85fafbbee705aaafb59066c221c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="nrf24l01__defs_8h.html#aeb660fd5ed8bfc4a9d5ea587fd9207f0">nrf24l01_err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__device__api.html#ga43b4c85fafbbee705aaafb59066c221c">nrf24l01_init</a> (<a class="el" href="structnrf24l01__platform__t.html">nrf24l01_platform_t</a> *platform)</td></tr>
 <tr class="separator:ga43b4c85fafbbee705aaafb59066c221c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga11b69f162283c2228eabdb56c8d6fba8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="nrf24l01__defs_8h.html#aeb660fd5ed8bfc4a9d5ea587fd9207f0">nrf24l01_err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__device__api.html#ga11b69f162283c2228eabdb56c8d6fba8">nrf24l01_deinit</a> (<a class="el" href="structnrf24l01__platform__t.html">nrf24l01_platform_t</a> *platform)</td></tr>
@@ -142,6 +152,8 @@ Functions</h2></td></tr>
 <tr class="separator:ga2845ee5e7f262e9758a08c325dd65d77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga993a327bc069340404c5dbb7a7dd443f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="nrf24l01__defs_8h.html#aeb660fd5ed8bfc4a9d5ea587fd9207f0">nrf24l01_err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pipe__api.html#ga993a327bc069340404c5dbb7a7dd443f">nrf24l01_write_payload</a> (uint8_t *data, uint8_t len, <a class="el" href="structnrf24l01__platform__t.html">nrf24l01_platform_t</a> *platform)</td></tr>
 <tr class="separator:ga993a327bc069340404c5dbb7a7dd443f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4298460d2b1e9909e77dbe47afd65cee"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="nrf24l01__defs_8h.html#aeb660fd5ed8bfc4a9d5ea587fd9207f0">nrf24l01_err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01_8c.html#a4298460d2b1e9909e77dbe47afd65cee">nrf24l01_get_rx_dpl</a> (uint8_t *width, <a class="el" href="structnrf24l01__platform__t.html">nrf24l01_platform_t</a> *platform)</td></tr>
+<tr class="separator:a4298460d2b1e9909e77dbe47afd65cee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0ddaef29411d56ad52cebfa48ed37fb9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="nrf24l01__defs_8h.html#aeb660fd5ed8bfc4a9d5ea587fd9207f0">nrf24l01_err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pipe__api.html#ga0ddaef29411d56ad52cebfa48ed37fb9">nrf24l01_read_payload</a> (<a class="el" href="nrf24l01__defs_8h.html#ac835ed70d839160974a8a370302ceda4">nrf24l01_pipe_t</a> *pipe, uint8_t *rx_data, uint8_t *len, bool dpl, <a class="el" href="structnrf24l01__platform__t.html">nrf24l01_platform_t</a> *platform)</td></tr>
 <tr class="separator:ga0ddaef29411d56ad52cebfa48ed37fb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0b9873c723dbf81f23b615c25983b72d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="nrf24l01__defs_8h.html#aeb660fd5ed8bfc4a9d5ea587fd9207f0">nrf24l01_err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__device__api.html#ga0b9873c723dbf81f23b615c25983b72d">nrf24l01_get_features</a> (uint8_t *features, <a class="el" href="structnrf24l01__platform__t.html">nrf24l01_platform_t</a> *platform)</td></tr>
@@ -165,6 +177,13 @@ Functions</h2></td></tr>
 <tr class="separator:gaf4b8f3c50c981110f0c6fbc1df354bfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae94ce0fe9852c9730abee9a4dda8fa18"><td class="memItemLeft" align="right" valign="top"><a class="el" href="nrf24l01__defs_8h.html#aeb660fd5ed8bfc4a9d5ea587fd9207f0">nrf24l01_err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__device__api.html#gae94ce0fe9852c9730abee9a4dda8fa18">nrf24l01_register_max_rt_callback</a> (<a class="el" href="nrf24l01__defs_8h.html#af3a3bced5aa40c9e8ea6ea75fd56b1b7">nrf24l01_max_rt_callback_fptr_t</a> callback, void *user_ptr, <a class="el" href="structnrf24l01__platform__t.html">nrf24l01_platform_t</a> *platform)</td></tr>
 <tr class="separator:gae94ce0fe9852c9730abee9a4dda8fa18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:aa08ee4c813e302494e4d211fb0e86891"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01_8c.html#aa08ee4c813e302494e4d211fb0e86891">NRF24L01_RX_PW_PIPE</a> []</td></tr>
+<tr class="separator:aa08ee4c813e302494e4d211fb0e86891"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0720c1299008feb1ea63bf8785fe7d1"><td class="memItemLeft" align="right" valign="top">static const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01_8c.html#ae0720c1299008feb1ea63bf8785fe7d1">NRF24L01_ADDR_REGS</a> []</td></tr>
+<tr class="separator:ae0720c1299008feb1ea63bf8785fe7d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Jared Poole </dd></dl>
@@ -192,6 +211,42 @@ DESCRIPTION</h1>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a4298460d2b1e9909e77dbe47afd65cee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4298460d2b1e9909e77dbe47afd65cee">&#9670;&nbsp;</a></span>nrf24l01_get_rx_dpl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="nrf24l01__defs_8h.html#aeb660fd5ed8bfc4a9d5ea587fd9207f0">nrf24l01_err_t</a> nrf24l01_get_rx_dpl </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structnrf24l01__platform__t.html">nrf24l01_platform_t</a> *&#160;</td>
+          <td class="paramname"><em>platform</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a1276cb39cab75cf822260204742fb0bc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1276cb39cab75cf822260204742fb0bc">&#9670;&nbsp;</a></span>nrf24l01_loop()</h2>
 
@@ -219,6 +274,171 @@ DESCRIPTION</h1>
   <table class="retval">
     <tr><td class="paramname">0</td><td>-&gt; Interrupt triggered </td></tr>
     <tr><td class="paramname">Non</td><td>zero -&gt; No interrupt </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="acc784e9708f84b3d01a6f58f3e177e79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc784e9708f84b3d01a6f58f3e177e79">&#9670;&nbsp;</a></span>nrf24l01_multi_read_reg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="nrf24l01__defs_8h.html#aeb660fd5ed8bfc4a9d5ea587fd9207f0">nrf24l01_err_t</a> nrf24l01_multi_read_reg </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>reg_addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structnrf24l01__platform__t.html">nrf24l01_platform_t</a> *&#160;</td>
+          <td class="paramname"><em>platform</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9bd05819edf60b5298804db639b97815"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bd05819edf60b5298804db639b97815">&#9670;&nbsp;</a></span>nrf24l01_multi_write_reg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="nrf24l01__defs_8h.html#aeb660fd5ed8bfc4a9d5ea587fd9207f0">nrf24l01_err_t</a> nrf24l01_multi_write_reg </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>reg_addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structnrf24l01__platform__t.html">nrf24l01_platform_t</a> *&#160;</td>
+          <td class="paramname"><em>platform</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a812aa11c8bbf190e4811cbd284b6d81c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a812aa11c8bbf190e4811cbd284b6d81c">&#9670;&nbsp;</a></span>nrf24l01_read_reg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="nrf24l01__defs_8h.html#aeb660fd5ed8bfc4a9d5ea587fd9207f0">nrf24l01_err_t</a> nrf24l01_read_reg </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>reg_addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structnrf24l01__platform__t.html">nrf24l01_platform_t</a> *&#160;</td>
+          <td class="paramname"><em>platform</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wrapper around platform multi-register read. </p>
+<p>Reads a single byte from the provided register address. Interprets platform error codes into NRF24L01 internal error codes</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reg_addr</td><td>: The 8-bit SPI register address </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd>reg_addr </dd>
+<dd>
+sfr_addr </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>: The register contents </td></tr>
+    <tr><td class="paramname">platform</td><td>: Driver instance configuration</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">NRF24L01_ERR_INVALID_ARG</td><td>: </td></tr>
+    <tr><td class="paramname">NRF24L01_ERR_READ</td><td>: </td></tr>
+    <tr><td class="paramname">NRF24L01_OK</td><td>: </td></tr>
   </table>
   </dd>
 </dl>
@@ -301,7 +521,124 @@ DESCRIPTION</h1>
 
 </div>
 </div>
+<a id="a152c4093612f1a962e19aade9fbba86c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a152c4093612f1a962e19aade9fbba86c">&#9670;&nbsp;</a></span>nrf24l01_write_reg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="nrf24l01__defs_8h.html#aeb660fd5ed8bfc4a9d5ea587fd9207f0">nrf24l01_err_t</a> nrf24l01_write_reg </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>reg_addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structnrf24l01__platform__t.html">nrf24l01_platform_t</a> *&#160;</td>
+          <td class="paramname"><em>platform</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="ae0720c1299008feb1ea63bf8785fe7d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0720c1299008feb1ea63bf8785fe7d1">&#9670;&nbsp;</a></span>NRF24L01_ADDR_REGS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint8_t NRF24L01_ADDR_REGS[]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    <a class="code" href="nrf24l01__defs_8h.html#a3329e377c51c6d0bf7783ab1f8fc76d1">NRF24L01_REG_ADDR_RX_ADDR_P0</a>,</div>
+<div class="line">    <a class="code" href="nrf24l01__defs_8h.html#a8deb24dbbb6a1a292a3df285fea1f581">NRF24L01_REG_ADDR_RX_ADDR_P1</a>,</div>
+<div class="line">    <a class="code" href="nrf24l01__defs_8h.html#aa680b3cb3393fa13858d60835417eeb5">NRF24L01_REG_ADDR_RX_ADDR_P2</a>,</div>
+<div class="line">    <a class="code" href="nrf24l01__defs_8h.html#a9f003ede3b8a9d9fd0a98fa61d6b8aea">NRF24L01_REG_ADDR_RX_ADDR_P3</a>,</div>
+<div class="line">    <a class="code" href="nrf24l01__defs_8h.html#ab3a0a38360542797b9f43efcc2a99d70">NRF24L01_REG_ADDR_RX_ADDR_P4</a>,</div>
+<div class="line">    <a class="code" href="nrf24l01__defs_8h.html#ae67a73fced728134288c8910257b5770">NRF24L01_REG_ADDR_RX_ADDR_P5</a>,</div>
+<div class="line">    <a class="code" href="nrf24l01__defs_8h.html#adaa7beac7057eefcb850614cbe658a07">NRF24L01_REG_ADDR_TX_ADDR</a>,</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa08ee4c813e302494e4d211fb0e86891"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa08ee4c813e302494e4d211fb0e86891">&#9670;&nbsp;</a></span>NRF24L01_RX_PW_PIPE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint8_t NRF24L01_RX_PW_PIPE[]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    <a class="code" href="nrf24l01__defs_8h.html#a8974e3b638032fa46b56c393337b49d9">NRF24L01_REG_ADDR_RX_PW_P0</a>,</div>
+<div class="line">    <a class="code" href="nrf24l01__defs_8h.html#a8494d0a27a0e898aa901f424f907db7b">NRF24L01_REG_ADDR_RX_PW_P1</a>,</div>
+<div class="line">    <a class="code" href="nrf24l01__defs_8h.html#acf22f3eb2fdaea09af64c87162f86b1d">NRF24L01_REG_ADDR_RX_PW_P2</a>,</div>
+<div class="line">    <a class="code" href="nrf24l01__defs_8h.html#a383ec7b2b1e31528de6fa50a80fb6e9a">NRF24L01_REG_ADDR_RX_PW_P3</a>,</div>
+<div class="line">    <a class="code" href="nrf24l01__defs_8h.html#abc58b07aee743041c981316e6a54ea3b">NRF24L01_REG_ADDR_RX_PW_P4</a>,</div>
+<div class="line">    <a class="code" href="nrf24l01__defs_8h.html#a50e43d9b82c8aa0b43a0e5a4fb0dda68">NRF24L01_REG_ADDR_RX_PW_P5</a>,</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
 </div><!-- contents -->
+<div class="ttc" id="anrf24l01__defs_8h_html_a50e43d9b82c8aa0b43a0e5a4fb0dda68"><div class="ttname"><a href="nrf24l01__defs_8h.html#a50e43d9b82c8aa0b43a0e5a4fb0dda68">NRF24L01_REG_ADDR_RX_PW_P5</a></div><div class="ttdeci">#define NRF24L01_REG_ADDR_RX_PW_P5</div><div class="ttdoc">Number of bytes in RX payload in data pipe 5 register address.</div><div class="ttdef"><b>Definition:</b> nrf24l01_defs.h:194</div></div>
+<div class="ttc" id="anrf24l01__defs_8h_html_abc58b07aee743041c981316e6a54ea3b"><div class="ttname"><a href="nrf24l01__defs_8h.html#abc58b07aee743041c981316e6a54ea3b">NRF24L01_REG_ADDR_RX_PW_P4</a></div><div class="ttdeci">#define NRF24L01_REG_ADDR_RX_PW_P4</div><div class="ttdoc">Number of bytes in RX payload in data pipe 4 register address.</div><div class="ttdef"><b>Definition:</b> nrf24l01_defs.h:193</div></div>
+<div class="ttc" id="anrf24l01__defs_8h_html_ae67a73fced728134288c8910257b5770"><div class="ttname"><a href="nrf24l01__defs_8h.html#ae67a73fced728134288c8910257b5770">NRF24L01_REG_ADDR_RX_ADDR_P5</a></div><div class="ttdeci">#define NRF24L01_REG_ADDR_RX_ADDR_P5</div><div class="ttdoc">Receive address data pipe 5 register address.</div><div class="ttdef"><b>Definition:</b> nrf24l01_defs.h:187</div></div>
+<div class="ttc" id="anrf24l01__defs_8h_html_a8deb24dbbb6a1a292a3df285fea1f581"><div class="ttname"><a href="nrf24l01__defs_8h.html#a8deb24dbbb6a1a292a3df285fea1f581">NRF24L01_REG_ADDR_RX_ADDR_P1</a></div><div class="ttdeci">#define NRF24L01_REG_ADDR_RX_ADDR_P1</div><div class="ttdoc">Receive address data pipe 1 register address.</div><div class="ttdef"><b>Definition:</b> nrf24l01_defs.h:183</div></div>
+<div class="ttc" id="anrf24l01__defs_8h_html_acf22f3eb2fdaea09af64c87162f86b1d"><div class="ttname"><a href="nrf24l01__defs_8h.html#acf22f3eb2fdaea09af64c87162f86b1d">NRF24L01_REG_ADDR_RX_PW_P2</a></div><div class="ttdeci">#define NRF24L01_REG_ADDR_RX_PW_P2</div><div class="ttdoc">Number of bytes in RX payload in data pipe 2 register address.</div><div class="ttdef"><b>Definition:</b> nrf24l01_defs.h:191</div></div>
+<div class="ttc" id="anrf24l01__defs_8h_html_a8494d0a27a0e898aa901f424f907db7b"><div class="ttname"><a href="nrf24l01__defs_8h.html#a8494d0a27a0e898aa901f424f907db7b">NRF24L01_REG_ADDR_RX_PW_P1</a></div><div class="ttdeci">#define NRF24L01_REG_ADDR_RX_PW_P1</div><div class="ttdoc">Number of bytes in RX payload in data pipe 1 register address.</div><div class="ttdef"><b>Definition:</b> nrf24l01_defs.h:190</div></div>
+<div class="ttc" id="anrf24l01__defs_8h_html_a8974e3b638032fa46b56c393337b49d9"><div class="ttname"><a href="nrf24l01__defs_8h.html#a8974e3b638032fa46b56c393337b49d9">NRF24L01_REG_ADDR_RX_PW_P0</a></div><div class="ttdeci">#define NRF24L01_REG_ADDR_RX_PW_P0</div><div class="ttdoc">Number of bytes in RX payload in data pipe 0 register address.</div><div class="ttdef"><b>Definition:</b> nrf24l01_defs.h:189</div></div>
+<div class="ttc" id="anrf24l01__defs_8h_html_aa680b3cb3393fa13858d60835417eeb5"><div class="ttname"><a href="nrf24l01__defs_8h.html#aa680b3cb3393fa13858d60835417eeb5">NRF24L01_REG_ADDR_RX_ADDR_P2</a></div><div class="ttdeci">#define NRF24L01_REG_ADDR_RX_ADDR_P2</div><div class="ttdoc">Receive address data pipe 2 register address.</div><div class="ttdef"><b>Definition:</b> nrf24l01_defs.h:184</div></div>
+<div class="ttc" id="anrf24l01__defs_8h_html_ab3a0a38360542797b9f43efcc2a99d70"><div class="ttname"><a href="nrf24l01__defs_8h.html#ab3a0a38360542797b9f43efcc2a99d70">NRF24L01_REG_ADDR_RX_ADDR_P4</a></div><div class="ttdeci">#define NRF24L01_REG_ADDR_RX_ADDR_P4</div><div class="ttdoc">Receive address data pipe 4 register address.</div><div class="ttdef"><b>Definition:</b> nrf24l01_defs.h:186</div></div>
+<div class="ttc" id="anrf24l01__defs_8h_html_adaa7beac7057eefcb850614cbe658a07"><div class="ttname"><a href="nrf24l01__defs_8h.html#adaa7beac7057eefcb850614cbe658a07">NRF24L01_REG_ADDR_TX_ADDR</a></div><div class="ttdeci">#define NRF24L01_REG_ADDR_TX_ADDR</div><div class="ttdoc">Transmit address register address.</div><div class="ttdef"><b>Definition:</b> nrf24l01_defs.h:188</div></div>
+<div class="ttc" id="anrf24l01__defs_8h_html_a9f003ede3b8a9d9fd0a98fa61d6b8aea"><div class="ttname"><a href="nrf24l01__defs_8h.html#a9f003ede3b8a9d9fd0a98fa61d6b8aea">NRF24L01_REG_ADDR_RX_ADDR_P3</a></div><div class="ttdeci">#define NRF24L01_REG_ADDR_RX_ADDR_P3</div><div class="ttdoc">Receive address data pipe 3 register address.</div><div class="ttdef"><b>Definition:</b> nrf24l01_defs.h:185</div></div>
+<div class="ttc" id="anrf24l01__defs_8h_html_a3329e377c51c6d0bf7783ab1f8fc76d1"><div class="ttname"><a href="nrf24l01__defs_8h.html#a3329e377c51c6d0bf7783ab1f8fc76d1">NRF24L01_REG_ADDR_RX_ADDR_P0</a></div><div class="ttdeci">#define NRF24L01_REG_ADDR_RX_ADDR_P0</div><div class="ttdoc">Receive address data pipe 0 register address.</div><div class="ttdef"><b>Definition:</b> nrf24l01_defs.h:182</div></div>
+<div class="ttc" id="anrf24l01__defs_8h_html_a383ec7b2b1e31528de6fa50a80fb6e9a"><div class="ttname"><a href="nrf24l01__defs_8h.html#a383ec7b2b1e31528de6fa50a80fb6e9a">NRF24L01_REG_ADDR_RX_PW_P3</a></div><div class="ttdeci">#define NRF24L01_REG_ADDR_RX_PW_P3</div><div class="ttdoc">Number of bytes in RX payload in data pipe 3 register address.</div><div class="ttdef"><b>Definition:</b> nrf24l01_defs.h:192</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
