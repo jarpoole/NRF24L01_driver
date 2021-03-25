@@ -930,6 +930,8 @@ typedef void (*nrf24l01_tx_ds_callback_fptr_t)(nrf24l01_pipe_t pipe, void* user_
 typedef void (*nrf24l01_max_rt_callback_fptr_t)(void* user_ptr, nrf24l01_platform_t* platform);
 
 
+typedef NRF24L01_FPTR_RTN_T (*nrf24l01_check_for_interrupt_fptr_t)(void* user_ptr);
+
 
 
 /** @brief Driver instance configuration information
@@ -943,6 +945,7 @@ struct nrf24l01_platform_t{
 	nrf24l01_platform_init_fptr_t       platform_init;            ///< Pointer to the platform specific hardware initialization function
 	nrf24l01_platform_deinit_fptr_t     platform_deinit;          ///< Pointer to the platform specific hardware deinitialization function
 	nrf24l01_spi_exchange_fptr_t        spi_exchange;             ///< Pointer to the platform specific SPI full-duplex transfer function
+	nrf24l01_check_for_interrupt_fptr_t check_for_interrupt;      ///< 
 	struct {
 		nrf24l01_rx_dr_callback_fptr_t  rx_dr_callback;           ///< Callback function pointer to be called when RX data is received and the IRQ interrupt is asserted
 		void*                           rx_dr_callback_user_ptr;  ///< User-defined pointer to be passed along when calling rx_dr_callback
