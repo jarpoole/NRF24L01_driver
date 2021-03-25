@@ -458,7 +458,7 @@
 /// @{
 
 ///< Mask for all defined bits[5:0] in EN_AA register 
-#define NRF24L01_EN_AA_MASK_REG              	(uint8_t)(   							  \
+#define NRF24L01_EN_AA_MASK_REG              	(uint8_t)(                                \
 													NRF24L01_EN_AA_REG_BIT_ENAA_P5      | \
 													NRF24L01_EN_AA_REG_BIT_ENAA_P4      | \
 													NRF24L01_EN_AA_REG_BIT_ENAA_P3      | \
@@ -476,7 +476,7 @@
 /// @{
 
 ///< Mask for all defined bits[5:0] in EN_RXADDR register 
-#define NRF24L01_EN_RXADDR_MASK_REG             (uint8_t)(   							  \
+#define NRF24L01_EN_RXADDR_MASK_REG             (uint8_t)(                                \
 													NRF24L01_EN_RXADDR_REG_BIT_ERX_P5   | \
 													NRF24L01_EN_RXADDR_REG_BIT_ERX_P4   | \
 													NRF24L01_EN_RXADDR_REG_BIT_ERX_P3   | \
@@ -505,7 +505,7 @@
 /// @{
 
 ///< Mask for all defined bits[7:0] in SETUP_RETR register 
-#define NRF24L01_SETUP_RETR_MASK_REG            (uint8_t)(								  \
+#define NRF24L01_SETUP_RETR_MASK_REG            (uint8_t)(                                \
 													NRF24L01_SETUP_RETR_REG_BITS_ARD    | \
 													NRF24L01_SETUP_RETR_REG_BITS_ARC      \
 												)
@@ -530,7 +530,7 @@
 /// @{
 
 ///< Mask for all defined bits[4:0] in RF_SETUP register 
-#define NRF24L01_RF_SETUP_MASK_REG              (uint8_t)(								  \
+#define NRF24L01_RF_SETUP_MASK_REG              (uint8_t)(                                \
 													NRF24L01_RF_SETUP_REG_BIT_PLL_LOCK  | \
 													NRF24L01_RF_SETUP_REG_BIT_RF_DR     | \
 													NRF24L01_RF_SETUP_REG_BITS_RF_PWR   | \
@@ -546,7 +546,7 @@
 /// @{
 
 ///< Mask for all defined bits[6:0] in STATUS register 
-#define NRF24L01_STATUS_MASK_REG 				(uint8_t)(								  \
+#define NRF24L01_STATUS_MASK_REG 				(uint8_t)(                                \
 													NRF24L01_STATUS_REG_BIT_RX_DR       | \
 													NRF24L01_STATUS_REG_BIT_TX_DS       | \
 													NRF24L01_STATUS_REG_BIT_MAX_RT      | \
@@ -554,7 +554,7 @@
 													NRF24L01_STATUS_REG_BIT_TX_FULL       \
 												)
 ///< Mask for IRQ[6:4] interrupt flag bits in STATUS register
-#define NRF24L01_STATUS_MASK_IRQ_FLAGS			(uint8_t)(								  \
+#define NRF24L01_STATUS_MASK_IRQ_FLAGS			(uint8_t)(                                \
 													NRF24L01_STATUS_REG_BIT_RX_DR       | \
 													NRF24L01_STATUS_REG_BIT_TX_DS       | \
 													NRF24L01_STATUS_REG_BIT_MAX_RT        \
@@ -569,13 +569,20 @@
 /// @{
 
 ///< Mask for all defined bits[7:0] in OBSERVE_TX register 
-#define NRF24L01_OBSERVE_TX_MASK_REG            (uint8_t)(								    \
+#define NRF24L01_OBSERVE_TX_MASK_REG            (uint8_t)(                                  \
 													NRF24L01_OBSERVE_TX_REG_BITS_PLOS_CNT | \
 													NRF24L01_OBSERVE_TX_REG_BITS_ARC_CNT    \
 												)
 /// @}
 
 
+/** @name Carrier Detect Register (CD)
+ *  @brief Provides a register mask
+ *  @details <a href="nRF24L01_product_specifications.pdf#page=55&search=%22CD%22"><b><u>View details in datasheet</u></b></a> for more information
+ */
+/// @{
+
+///< Mask for all defined bits[0:0] in CD register 
 #define NRF24L01_CD_MASK_REG                    (uint8_t)NRF24L01_CD_REG_BIT_CD
 /// @}
 
@@ -589,7 +596,7 @@
 
 
 ///< Mask for all defined bits in FIFO_STATUS register
-#define NRF24L01_FIFO_STATUS_MASK_REG 			(uint8_t)(								     \
+#define NRF24L01_FIFO_STATUS_MASK_REG 			(uint8_t)(                                   \
 													NRF24L01_FIFO_STATUS_REG_BIT_TX_REUSE  | \
 													NRF24L01_FIFO_STATUS_REG_BIT_TX_FULL   | \
 													NRF24L01_FIFO_STATUS_REG_BIT_TX_EMPTY  | \
@@ -597,19 +604,19 @@
 													NRF24L01_FIFO_STATUS_REG_BIT_RX_EMPTY    \
 												)
 ///< Mask for RX_FIFO[1:0] status bits in FIFO_STATUS register
-#define NRF24L01_FIFO_STATUS_MASK_RX_FLAGS      (uint8_t)(								     \
+#define NRF24L01_FIFO_STATUS_MASK_RX_FLAGS      (uint8_t)(                                   \
 													NRF24L01_FIFO_STATUS_REG_BIT_RX_FULL   | \
 													NRF24L01_FIFO_STATUS_REG_BIT_RX_EMPTY    \
 												)
 ///< Mask for TX_FIFO[6:4] status bits in FIFO_STATUS register
-#define NRF24L01_FIFO_STATUS_MASK_TX_FLAGS      (uint8_t)(								     \
+#define NRF24L01_FIFO_STATUS_MASK_TX_FLAGS      (uint8_t)(                                   \
 													NRF24L01_FIFO_STATUS_REG_BIT_TX_REUSE  | \
 													NRF24L01_FIFO_STATUS_REG_BIT_TX_FULL   | \
 													NRF24L01_FIFO_STATUS_REG_BIT_TX_EMPTY    \
 												)
 
 ///< Mask for DPL_Px[5:0] bits in DYNPD feature register 
-#define NRF24L01_DYNPD_MASK_REG             	(uint8_t)(   						  \
+#define NRF24L01_DYNPD_MASK_REG             	(uint8_t)(                            \
 													NRF24L01_DYNPD_REG_BIT_DPL_P5   | \
 													NRF24L01_DYNPD_REG_BIT_DPL_P4   | \
 													NRF24L01_DYNPD_REG_BIT_DPL_P3   | \
@@ -619,12 +626,11 @@
 												)
 
 
-#define NRF24L01_FEATURE_MASK_REG           	(uint8_t)(								  \
+#define NRF24L01_FEATURE_MASK_REG           	(uint8_t)(                                \
 													NRF24L01_FEATURE_REG_BIT_EN_DPL     | \
 													NRF24L01_FEATURE_REG_BIT_EN_ACK_PAY | \
 													NRF24L01_FEATURE_REG_BIT_EN_DYN_ACK   \
 												)											
-/// @}
 
 /// @} reg_masks
 
