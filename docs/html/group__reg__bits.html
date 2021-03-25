@@ -73,7 +73,7 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
 Configuration Register (CONFIG)</h2></td></tr>
-<tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrp6fd658ddb186c3859e5e165e430daf91"></a>Contains IRQ masks, CRC options, and operating mode controls</p>
+<tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrp6fd658ddb186c3859e5e165e430daf91"></a>Provides a register mask, an interrupt mask and a CRC mask</p>
 <p><a href="nRF24L01_product_specifications.pdf#page=53&amp;search=%22CONFIG%22"><b><u>View details in datasheet</u></b></a> for more information </p>
 </td></tr>
 <tr class="memitem:gaf07a996a70a3bee7953b416d1a32b002"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__reg__bits.html#gaf07a996a70a3bee7953b416d1a32b002">NRF24L01_CONFIG_REG_BIT_MASK_RX_DR</a>&#160;&#160;&#160;(uint8_t)0x40</td></tr>
@@ -97,10 +97,19 @@ Configuration Register (CONFIG)</h2></td></tr>
 <tr class="memitem:gaaa8ba84687af61aa404bc4c55d8bea58"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__reg__bits.html#gaaa8ba84687af61aa404bc4c55d8bea58">NRF24L01_CONFIG_REG_BIT_PRIM_RX</a>&#160;&#160;&#160;(uint8_t)0x01</td></tr>
 <tr class="memdesc:gaaa8ba84687af61aa404bc4c55d8bea58"><td class="mdescLeft">&#160;</td><td class="mdescRight">PRIM_RX[0] bit in CONFIG register.  <a href="group__reg__bits.html#gaaa8ba84687af61aa404bc4c55d8bea58">More...</a><br /></td></tr>
 <tr class="separator:gaaa8ba84687af61aa404bc4c55d8bea58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad4b0e603d7d7516285f0dd714c46d30f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__reg__bits.html#gad4b0e603d7d7516285f0dd714c46d30f">NRF24L01_CONFIG_MASK_REG</a></td></tr>
+<tr class="memdesc:gad4b0e603d7d7516285f0dd714c46d30f"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; Mask for all defined bits[6:0] in CONFIG register  <a href="group__reg__bits.html#gad4b0e603d7d7516285f0dd714c46d30f">More...</a><br /></td></tr>
+<tr class="separator:gad4b0e603d7d7516285f0dd714c46d30f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacb6a1aa06e4ebbc4cb47b95733673b71"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__reg__bits.html#gacb6a1aa06e4ebbc4cb47b95733673b71">NRF24L01_CONFIG_MASK_INTERRUPT_MASKS</a></td></tr>
+<tr class="memdesc:gacb6a1aa06e4ebbc4cb47b95733673b71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mask for CRC[3:2] bits in CONFIG register.  <a href="group__reg__bits.html#gacb6a1aa06e4ebbc4cb47b95733673b71">More...</a><br /></td></tr>
+<tr class="separator:gacb6a1aa06e4ebbc4cb47b95733673b71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad6d7c9521fa1081e2e8fe0a58174da57"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__reg__bits.html#gad6d7c9521fa1081e2e8fe0a58174da57">NRF24L01_CONFIG_MASK_CRC</a></td></tr>
+<tr class="memdesc:gad6d7c9521fa1081e2e8fe0a58174da57"><td class="mdescLeft">&#160;</td><td class="mdescRight">RX_DR[6] bit in CONFIG register.  <a href="group__reg__bits.html#gad6d7c9521fa1081e2e8fe0a58174da57">More...</a><br /></td></tr>
+<tr class="separator:gad6d7c9521fa1081e2e8fe0a58174da57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
 Enhanced ShockBurst™ Enable Register (EN_AA)</h2></td></tr>
-<tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrpda1aedb8b49d5c3aa6284862ed1740f8"></a>Contains enable bits for Enhanced ShockBurst™ on each RX pipe</p>
+<tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrpda1aedb8b49d5c3aa6284862ed1740f8"></a>Provides a register mask</p>
 <p><a href="nRF24L01_product_specifications.pdf#page=53&amp;search=%22EN_AA%22"><b><u>View details in datasheet</u></b></a> for more information </p>
 </td></tr>
 <tr class="memitem:gacbf49029ffa1a2ebc51a1d701318734e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__reg__bits.html#gacbf49029ffa1a2ebc51a1d701318734e">NRF24L01_EN_AA_REG_BIT_ENAA_P5</a>&#160;&#160;&#160;(uint8_t)0x20</td></tr>
@@ -121,37 +130,52 @@ Enhanced ShockBurst™ Enable Register (EN_AA)</h2></td></tr>
 <tr class="memitem:gac2b508cebf1521e07d4a03657443bf9f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__reg__bits.html#gac2b508cebf1521e07d4a03657443bf9f">NRF24L01_EN_AA_REG_BIT_ENAA_P0</a>&#160;&#160;&#160;(uint8_t)0x01</td></tr>
 <tr class="memdesc:gac2b508cebf1521e07d4a03657443bf9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">ENAA_P0[0] bit in EN_AA register.  <a href="group__reg__bits.html#gac2b508cebf1521e07d4a03657443bf9f">More...</a><br /></td></tr>
 <tr class="separator:gac2b508cebf1521e07d4a03657443bf9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga05bf3963b795f309058d9a92ca8a5520"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__reg__bits.html#ga05bf3963b795f309058d9a92ca8a5520">NRF24L01_EN_AA_MASK_REG</a></td></tr>
+<tr class="memdesc:ga05bf3963b795f309058d9a92ca8a5520"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; Mask for all defined bits[5:0] in EN_AA register  <a href="group__reg__bits.html#ga05bf3963b795f309058d9a92ca8a5520">More...</a><br /></td></tr>
+<tr class="separator:ga05bf3963b795f309058d9a92ca8a5520"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
 RX Pipe Enable Register (EN_RXADDR)</h2></td></tr>
-<tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrp961505815e86fbad96e18c99e351a9c5"></a>Contains enable bits for each RX pipe</p>
+<tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrp961505815e86fbad96e18c99e351a9c5"></a>Provides a register mask</p>
 <p><a href="nRF24L01_product_specifications.pdf#page=53&amp;search=%22EN_RXADDR%22"><b><u>View details in datasheet</u></b></a> for more information </p>
 </td></tr>
 <tr class="memitem:ga110a62b986c828e8fb33224456bc7701"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__reg__bits.html#ga110a62b986c828e8fb33224456bc7701">NRF24L01_EN_RXADDR_REG_BIT_ERX_P5</a>&#160;&#160;&#160;(uint8_t)0x20</td></tr>
+<tr class="memdesc:ga110a62b986c828e8fb33224456bc7701"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; Mask for all defined bits[5:0] in EN_RXADDR register  <a href="group__reg__bits.html#ga110a62b986c828e8fb33224456bc7701">More...</a><br /></td></tr>
 <tr class="separator:ga110a62b986c828e8fb33224456bc7701"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga35644cd0fae11474735e7d1c6fa02d46"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__reg__bits.html#ga35644cd0fae11474735e7d1c6fa02d46">NRF24L01_EN_RXADDR_REG_BIT_ERX_P4</a>&#160;&#160;&#160;(uint8_t)0x10</td></tr>
+<tr class="memdesc:ga35644cd0fae11474735e7d1c6fa02d46"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; Mask for all defined bits[5:0] in EN_RXADDR register  <a href="group__reg__bits.html#ga35644cd0fae11474735e7d1c6fa02d46">More...</a><br /></td></tr>
 <tr class="separator:ga35644cd0fae11474735e7d1c6fa02d46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga667807ef7dcd76644bf962e2f9201214"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__reg__bits.html#ga667807ef7dcd76644bf962e2f9201214">NRF24L01_EN_RXADDR_REG_BIT_ERX_P3</a>&#160;&#160;&#160;(uint8_t)0x08</td></tr>
+<tr class="memdesc:ga667807ef7dcd76644bf962e2f9201214"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; Mask for all defined bits[5:0] in EN_RXADDR register  <a href="group__reg__bits.html#ga667807ef7dcd76644bf962e2f9201214">More...</a><br /></td></tr>
 <tr class="separator:ga667807ef7dcd76644bf962e2f9201214"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf19a2bbb619d22d23361d6fb337ee696"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__reg__bits.html#gaf19a2bbb619d22d23361d6fb337ee696">NRF24L01_EN_RXADDR_REG_BIT_ERX_P2</a>&#160;&#160;&#160;(uint8_t)0x04</td></tr>
+<tr class="memdesc:gaf19a2bbb619d22d23361d6fb337ee696"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; Mask for all defined bits[5:0] in EN_RXADDR register  <a href="group__reg__bits.html#gaf19a2bbb619d22d23361d6fb337ee696">More...</a><br /></td></tr>
 <tr class="separator:gaf19a2bbb619d22d23361d6fb337ee696"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0055fa74ca23ed1298c775ed5d3c6f8a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__reg__bits.html#ga0055fa74ca23ed1298c775ed5d3c6f8a">NRF24L01_EN_RXADDR_REG_BIT_ERX_P1</a>&#160;&#160;&#160;(uint8_t)0x02</td></tr>
+<tr class="memdesc:ga0055fa74ca23ed1298c775ed5d3c6f8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; Mask for all defined bits[5:0] in EN_RXADDR register  <a href="group__reg__bits.html#ga0055fa74ca23ed1298c775ed5d3c6f8a">More...</a><br /></td></tr>
 <tr class="separator:ga0055fa74ca23ed1298c775ed5d3c6f8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab3e77e8cf2f8480c38d5f0911d09db0b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__reg__bits.html#gab3e77e8cf2f8480c38d5f0911d09db0b">NRF24L01_EN_RXADDR_REG_BIT_ERX_P0</a>&#160;&#160;&#160;(uint8_t)0x01</td></tr>
+<tr class="memdesc:gab3e77e8cf2f8480c38d5f0911d09db0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; Mask for all defined bits[5:0] in EN_RXADDR register  <a href="group__reg__bits.html#gab3e77e8cf2f8480c38d5f0911d09db0b">More...</a><br /></td></tr>
 <tr class="separator:gab3e77e8cf2f8480c38d5f0911d09db0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga82d253030685cb1f3f422f17f396e98c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__reg__bits.html#ga82d253030685cb1f3f422f17f396e98c">NRF24L01_EN_RXADDR_MASK_REG</a></td></tr>
+<tr class="memdesc:ga82d253030685cb1f3f422f17f396e98c"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; Mask for all defined bits[5:0] in EN_RXADDR register  <a href="group__reg__bits.html#ga82d253030685cb1f3f422f17f396e98c">More...</a><br /></td></tr>
+<tr class="separator:ga82d253030685cb1f3f422f17f396e98c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
 Pipe Address Width Common Configuration Register (SETUP_AW)</h2></td></tr>
-<tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrpd29b448d97d5b6764c396e0a0a477cd0"></a>Contains the common address width configuration bits which apply to all pipes</p>
+<tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrpd29b448d97d5b6764c396e0a0a477cd0"></a>Provides a register mask</p>
 <p><a href="nRF24L01_product_specifications.pdf#page=54&amp;search=%22SETUP_AW%22"><b><u>View details in datasheet</u></b></a> for more information </p>
 </td></tr>
 <tr class="memitem:ga842a6568877c432e0602aa58a3c1e090"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__reg__bits.html#ga842a6568877c432e0602aa58a3c1e090">NRF24L01_SETUP_AW_REG_BITS_AW</a>&#160;&#160;&#160;(uint8_t)0x03</td></tr>
 <tr class="memdesc:ga842a6568877c432e0602aa58a3c1e090"><td class="mdescLeft">&#160;</td><td class="mdescRight">AW[1:0] bits in SETUP_AW register.  <a href="group__reg__bits.html#ga842a6568877c432e0602aa58a3c1e090">More...</a><br /></td></tr>
 <tr class="separator:ga842a6568877c432e0602aa58a3c1e090"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga041619332e10394c0c2ce2b00f89bbc8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__reg__bits.html#ga041619332e10394c0c2ce2b00f89bbc8">NRF24L01_SETUP_AW_MASK_REG</a>&#160;&#160;&#160;(uint8_t)<a class="el" href="group__reg__bits.html#ga842a6568877c432e0602aa58a3c1e090">NRF24L01_SETUP_AW_REG_BITS_AW</a></td></tr>
+<tr class="memdesc:ga041619332e10394c0c2ce2b00f89bbc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; Mask for all defined bits[1:0] in AW register  <a href="group__reg__bits.html#ga041619332e10394c0c2ce2b00f89bbc8">More...</a><br /></td></tr>
+<tr class="separator:ga041619332e10394c0c2ce2b00f89bbc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
 Automatic Retransmission Configuration Register (SETUP_RETR)</h2></td></tr>
-<tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrp9f025f7e0c3af8abaa3e6236b306b29f"></a>Contains the automatic retransmit delay configuration and the automatic retransmit count configuration</p>
+<tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrp9f025f7e0c3af8abaa3e6236b306b29f"></a>Provides a register mask</p>
 <p><a href="nRF24L01_product_specifications.pdf#page=54&amp;search=%22SETUP_RETR%22"><b><u>View details in datasheet</u></b></a> for more information </p>
 </td></tr>
 <tr class="memitem:ga172d9d8a92a7d01c2bb099c119924097"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__reg__bits.html#ga172d9d8a92a7d01c2bb099c119924097">NRF24L01_SETUP_RETR_REG_BITS_ARD</a>&#160;&#160;&#160;(uint8_t)0xF0</td></tr>
@@ -160,19 +184,25 @@ Automatic Retransmission Configuration Register (SETUP_RETR)</h2></td></tr>
 <tr class="memitem:ga37ad5787c92303338675bf2567b452e2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__reg__bits.html#ga37ad5787c92303338675bf2567b452e2">NRF24L01_SETUP_RETR_REG_BITS_ARC</a>&#160;&#160;&#160;(uint8_t)0x0F</td></tr>
 <tr class="memdesc:ga37ad5787c92303338675bf2567b452e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">ARC[3:0] bits in SETUP_RETR register.  <a href="group__reg__bits.html#ga37ad5787c92303338675bf2567b452e2">More...</a><br /></td></tr>
 <tr class="separator:ga37ad5787c92303338675bf2567b452e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaed2587ff5be89d74eb9e2b8bd104087c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__reg__bits.html#gaed2587ff5be89d74eb9e2b8bd104087c">NRF24L01_SETUP_RETR_MASK_REG</a></td></tr>
+<tr class="memdesc:gaed2587ff5be89d74eb9e2b8bd104087c"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; Mask for all defined bits[7:0] in SETUP_RETR register  <a href="group__reg__bits.html#gaed2587ff5be89d74eb9e2b8bd104087c">More...</a><br /></td></tr>
+<tr class="separator:gaed2587ff5be89d74eb9e2b8bd104087c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
 RF Channel Configuration Register (RF_CH)</h2></td></tr>
-<tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrp15080122e469b5f9fcb11bdfcaa28745"></a>Contains the nRF24L01 operating channel frequency as an offset of 2400MHz</p>
+<tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrp15080122e469b5f9fcb11bdfcaa28745"></a>Provides a register mask</p>
 <p><a href="nRF24L01_product_specifications.pdf#page=54&amp;search=%22RF_CH%22"><b><u>View details in datasheet</u></b></a> for more information </p>
 </td></tr>
 <tr class="memitem:gae876cf8ae818b8ce339491beaa187f75"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__reg__bits.html#gae876cf8ae818b8ce339491beaa187f75">NRF24L01_RF_CH_REG_BITS_RF_CH</a>&#160;&#160;&#160;(uint8_t)0x7F</td></tr>
 <tr class="memdesc:gae876cf8ae818b8ce339491beaa187f75"><td class="mdescLeft">&#160;</td><td class="mdescRight">RF_CH[6:0] bits in RF_CH register.  <a href="group__reg__bits.html#gae876cf8ae818b8ce339491beaa187f75">More...</a><br /></td></tr>
 <tr class="separator:gae876cf8ae818b8ce339491beaa187f75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2fa80a1d3906f9b5b8733ead96c3133e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__reg__bits.html#ga2fa80a1d3906f9b5b8733ead96c3133e">NRF24L01_RF_CH_MASK_REG</a>&#160;&#160;&#160;(uint8_t)<a class="el" href="group__reg__bits.html#gae876cf8ae818b8ce339491beaa187f75">NRF24L01_RF_CH_REG_BITS_RF_CH</a></td></tr>
+<tr class="memdesc:ga2fa80a1d3906f9b5b8733ead96c3133e"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; Mask for all defined bits[6:0] in RF_CH register  <a href="group__reg__bits.html#ga2fa80a1d3906f9b5b8733ead96c3133e">More...</a><br /></td></tr>
+<tr class="separator:ga2fa80a1d3906f9b5b8733ead96c3133e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
 RF Configuration Register (RF_SETUP)</h2></td></tr>
-<tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrpf948f4152ad50be31a32cf93e48ceab7"></a>Contains the PLL force bit, the RF TX output power bits, and the LNA gain configuration bits</p>
+<tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrpf948f4152ad50be31a32cf93e48ceab7"></a>Provides a register mask</p>
 <p><a href="nRF24L01_product_specifications.pdf#page=54&amp;search=%22RF_SETUP%22"><b><u>View details in datasheet</u></b></a> for more information </p>
 </td></tr>
 <tr class="memitem:gaef9765800247b3682b53571ec1befebe"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__reg__bits.html#gaef9765800247b3682b53571ec1befebe">NRF24L01_RF_SETUP_REG_BIT_PLL_LOCK</a>&#160;&#160;&#160;(uint8_t)0x10</td></tr>
@@ -187,10 +217,13 @@ RF Configuration Register (RF_SETUP)</h2></td></tr>
 <tr class="memitem:ga796c669655b7fe2c98ac33159dc09b7d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__reg__bits.html#ga796c669655b7fe2c98ac33159dc09b7d">NRF24L01_RF_SETUP_REG_BIT_LNA_HCURR</a>&#160;&#160;&#160;(uint8_t)0x01</td></tr>
 <tr class="memdesc:ga796c669655b7fe2c98ac33159dc09b7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">LNA_HCURR[0] bit in RF_SETUP register.  <a href="group__reg__bits.html#ga796c669655b7fe2c98ac33159dc09b7d">More...</a><br /></td></tr>
 <tr class="separator:ga796c669655b7fe2c98ac33159dc09b7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3d14c145be751bbc3a81afe59a976373"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__reg__bits.html#ga3d14c145be751bbc3a81afe59a976373">NRF24L01_RF_SETUP_MASK_REG</a></td></tr>
+<tr class="memdesc:ga3d14c145be751bbc3a81afe59a976373"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; Mask for all defined bits[4:0] in RF_SETUP register  <a href="group__reg__bits.html#ga3d14c145be751bbc3a81afe59a976373">More...</a><br /></td></tr>
+<tr class="separator:ga3d14c145be751bbc3a81afe59a976373"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
 Device Status Register (STATUS)</h2></td></tr>
-<tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrpfacc00c81cbd1fe1e95aa8adedd52a47"></a>Contains the RX data ready, TX data sent and maximum retransmits exceeded interrupt assertion bits, the RX active data pipe bits, and the TX FIFO full bit</p>
+<tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrpfacc00c81cbd1fe1e95aa8adedd52a47"></a>Provides a register mask and an IRQ flags mask</p>
 <p><a href="nRF24L01_product_specifications.pdf#page=55&amp;search=%22STATUS%22"><b><u>View details in datasheet</u></b></a> for more information </p>
 </td></tr>
 <tr class="memitem:ga87cdeb4d1a693f8a60a474cdc726a541"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__reg__bits.html#ga87cdeb4d1a693f8a60a474cdc726a541">NRF24L01_STATUS_REG_BIT_RX_DR</a>&#160;&#160;&#160;(uint8_t)0x40</td></tr>
@@ -208,10 +241,16 @@ Device Status Register (STATUS)</h2></td></tr>
 <tr class="memitem:ga9bc0e8f67ae6f89af0797280511f28e1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__reg__bits.html#ga9bc0e8f67ae6f89af0797280511f28e1">NRF24L01_STATUS_REG_BIT_TX_FULL</a>&#160;&#160;&#160;(uint8_t)0x01</td></tr>
 <tr class="memdesc:ga9bc0e8f67ae6f89af0797280511f28e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">TX_FULL[0] flag bit in STATUS register.  <a href="group__reg__bits.html#ga9bc0e8f67ae6f89af0797280511f28e1">More...</a><br /></td></tr>
 <tr class="separator:ga9bc0e8f67ae6f89af0797280511f28e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9b3f68550ed4db25487d9d8d1ebc2584"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__reg__bits.html#ga9b3f68550ed4db25487d9d8d1ebc2584">NRF24L01_STATUS_MASK_REG</a></td></tr>
+<tr class="memdesc:ga9b3f68550ed4db25487d9d8d1ebc2584"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; Mask for all defined bits[6:0] in STATUS register  <a href="group__reg__bits.html#ga9b3f68550ed4db25487d9d8d1ebc2584">More...</a><br /></td></tr>
+<tr class="separator:ga9b3f68550ed4db25487d9d8d1ebc2584"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga65308c300f8760ae900a7ee93bad1f31"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__reg__bits.html#ga65308c300f8760ae900a7ee93bad1f31">NRF24L01_STATUS_MASK_IRQ_FLAGS</a></td></tr>
+<tr class="memdesc:ga65308c300f8760ae900a7ee93bad1f31"><td class="mdescLeft">&#160;</td><td class="mdescRight">RX_DR[6] interrupt flag bit in STATUS register.  <a href="group__reg__bits.html#ga65308c300f8760ae900a7ee93bad1f31">More...</a><br /></td></tr>
+<tr class="separator:ga65308c300f8760ae900a7ee93bad1f31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
 Transmission Observation Register (OBSERVE_TX)</h2></td></tr>
-<tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrpb1358a2aeae19a44379ba7b85d7a8318"></a>Contains the lost packet count bits and packet retransmission count bits</p>
+<tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrpb1358a2aeae19a44379ba7b85d7a8318"></a>Provides a register mask</p>
 <p><a href="nRF24L01_product_specifications.pdf#page=55&amp;search=%22OBSERVE_TX%22"><b><u>View details in datasheet</u></b></a> for more information </p>
 </td></tr>
 <tr class="memitem:gaba57489490c88664da4969efbd8bebcf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__reg__bits.html#gaba57489490c88664da4969efbd8bebcf">NRF24L01_OBSERVE_TX_REG_BITS_PLOS_CNT</a>&#160;&#160;&#160;(uint8_t)0xF0</td></tr>
@@ -220,6 +259,9 @@ Transmission Observation Register (OBSERVE_TX)</h2></td></tr>
 <tr class="memitem:ga8b58638de626b7edbbbb339295c39d71"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__reg__bits.html#ga8b58638de626b7edbbbb339295c39d71">NRF24L01_OBSERVE_TX_REG_BITS_ARC_CNT</a>&#160;&#160;&#160;(uint8_t)0x0F</td></tr>
 <tr class="memdesc:ga8b58638de626b7edbbbb339295c39d71"><td class="mdescLeft">&#160;</td><td class="mdescRight">ARC_CNT[3:0] resent packet count bits in OBSERVE_TX register.  <a href="group__reg__bits.html#ga8b58638de626b7edbbbb339295c39d71">More...</a><br /></td></tr>
 <tr class="separator:ga8b58638de626b7edbbbb339295c39d71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga58da17119f4d8a23ba58ca18eefa590f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__reg__bits.html#ga58da17119f4d8a23ba58ca18eefa590f">NRF24L01_OBSERVE_TX_MASK_REG</a></td></tr>
+<tr class="memdesc:ga58da17119f4d8a23ba58ca18eefa590f"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; Mask for all defined bits[7:0] in OBSERVE_TX register  <a href="group__reg__bits.html#ga58da17119f4d8a23ba58ca18eefa590f">More...</a><br /></td></tr>
+<tr class="separator:ga58da17119f4d8a23ba58ca18eefa590f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
 Carrier Detect Register (CD)</h2></td></tr>
@@ -341,7 +383,7 @@ Special Feature Register (FEATURE)</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p><br  />
  </p>
-<p>These definitions should be used when trying to control a specific property of the NRF24L01 which could be represented by one of more bits. For definitions designed for masking see reg_masks</p>
+<p>These definitions should be used when trying to control a specific property of the NRF24L01 which could be represented by one of more bits. For definitions designed for masking see <a class="el" href="group__reg__masks.html">NRF24L01 SPI Register Mask Definitions</a></p>
 <p>The naming convention for all definitions is <b>NRF24L01_r_REG_BIT_x</b> where <b>r</b> is the register name where the bit is found and <b>x</b> is the name assigned to the register bit by the datasheet If register contains a bit field then REG_BIT is pluralized to REG_BITS </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="gab0f3db1fbf3ef0b7f9ac2d5079186118"></a>
@@ -357,6 +399,73 @@ Special Feature Register (FEATURE)</h2></td></tr>
 </div><div class="memdoc">
 
 <p>CD[0] bit in CD register. </p>
+
+</div>
+</div>
+<a id="gad6d7c9521fa1081e2e8fe0a58174da57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad6d7c9521fa1081e2e8fe0a58174da57">&#9670;&nbsp;</a></span>NRF24L01_CONFIG_MASK_CRC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NRF24L01_CONFIG_MASK_CRC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">                                                    (uint8_t)(                                \</div>
+<div class="line">                                                    <a class="code" href="group__reg__bits.html#gab47cc5e8cbc0ab4ce27d17922243c53d">NRF24L01_CONFIG_REG_BIT_EN_CRC</a>      | \</div>
+<div class="line">                                                    <a class="code" href="group__reg__bits.html#ga86c93150a41fc94e5c71dcb94014f6af">NRF24L01_CONFIG_REG_BIT_CRCO</a>          \</div>
+<div class="line">                                                )</div>
+</div><!-- fragment -->
+<p>RX_DR[6] bit in CONFIG register. </p>
+
+</div>
+</div>
+<a id="gacb6a1aa06e4ebbc4cb47b95733673b71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacb6a1aa06e4ebbc4cb47b95733673b71">&#9670;&nbsp;</a></span>NRF24L01_CONFIG_MASK_INTERRUPT_MASKS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NRF24L01_CONFIG_MASK_INTERRUPT_MASKS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">                                                    (uint8_t)(                                \</div>
+<div class="line">                                                    <a class="code" href="group__reg__bits.html#gaf07a996a70a3bee7953b416d1a32b002">NRF24L01_CONFIG_REG_BIT_MASK_RX_DR</a>  | \</div>
+<div class="line">                                                    <a class="code" href="group__reg__bits.html#gaf4f3994a6d6ab185a8924c6abf8eaa9e">NRF24L01_CONFIG_REG_BIT_MASK_TX_DS</a>  | \</div>
+<div class="line">                                                    <a class="code" href="group__reg__bits.html#ga5583dfd06a0bf72e08fa6d70fbf5bec2">NRF24L01_CONFIG_REG_BIT_MASK_MAX_RT</a>   \</div>
+<div class="line">                                                )</div>
+</div><!-- fragment -->
+<p>Mask for CRC[3:2] bits in CONFIG register. </p>
+
+</div>
+</div>
+<a id="gad4b0e603d7d7516285f0dd714c46d30f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad4b0e603d7d7516285f0dd714c46d30f">&#9670;&nbsp;</a></span>NRF24L01_CONFIG_MASK_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NRF24L01_CONFIG_MASK_REG</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">                                                    (uint8_t)(                                \</div>
+<div class="line">                                                    <a class="code" href="group__reg__bits.html#gaf07a996a70a3bee7953b416d1a32b002">NRF24L01_CONFIG_REG_BIT_MASK_RX_DR</a>  | \</div>
+<div class="line">                                                    <a class="code" href="group__reg__bits.html#gaf4f3994a6d6ab185a8924c6abf8eaa9e">NRF24L01_CONFIG_REG_BIT_MASK_TX_DS</a>  | \</div>
+<div class="line">                                                    <a class="code" href="group__reg__bits.html#ga5583dfd06a0bf72e08fa6d70fbf5bec2">NRF24L01_CONFIG_REG_BIT_MASK_MAX_RT</a> | \</div>
+<div class="line">                                                    <a class="code" href="group__reg__bits.html#gab47cc5e8cbc0ab4ce27d17922243c53d">NRF24L01_CONFIG_REG_BIT_EN_CRC</a>      | \</div>
+<div class="line">                                                    <a class="code" href="group__reg__bits.html#ga86c93150a41fc94e5c71dcb94014f6af">NRF24L01_CONFIG_REG_BIT_CRCO</a>        | \</div>
+<div class="line">                                                    <a class="code" href="group__reg__bits.html#gaaa23d4f4f3baf923f14efaf6c4a81634">NRF24L01_CONFIG_REG_BIT_PWR_UP</a>      | \</div>
+<div class="line">                                                    <a class="code" href="group__reg__bits.html#gaaa8ba84687af61aa404bc4c55d8bea58">NRF24L01_CONFIG_REG_BIT_PRIM_RX</a>       \</div>
+<div class="line">                                                )</div>
+</div><!-- fragment -->
+<p>&lt; Mask for all defined bits[6:0] in CONFIG register </p>
+<p>Mask for INTERRUPT[6:4] bits in CONFIG register </p>
 
 </div>
 </div>
@@ -556,6 +665,30 @@ Special Feature Register (FEATURE)</h2></td></tr>
 
 </div>
 </div>
+<a id="ga05bf3963b795f309058d9a92ca8a5520"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga05bf3963b795f309058d9a92ca8a5520">&#9670;&nbsp;</a></span>NRF24L01_EN_AA_MASK_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NRF24L01_EN_AA_MASK_REG</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">                                                    (uint8_t)(                                \</div>
+<div class="line">                                                    <a class="code" href="group__reg__bits.html#gacbf49029ffa1a2ebc51a1d701318734e">NRF24L01_EN_AA_REG_BIT_ENAA_P5</a>      | \</div>
+<div class="line">                                                    <a class="code" href="group__reg__bits.html#ga1f955ff7e6783511cef35bcafb90ef2c">NRF24L01_EN_AA_REG_BIT_ENAA_P4</a>      | \</div>
+<div class="line">                                                    <a class="code" href="group__reg__bits.html#gabd053e5d74243e0631e0c7c2d490cfa4">NRF24L01_EN_AA_REG_BIT_ENAA_P3</a>      | \</div>
+<div class="line">                                                    <a class="code" href="group__reg__bits.html#ga69624aff4d39f013e27d2de3f0570c96">NRF24L01_EN_AA_REG_BIT_ENAA_P2</a>      | \</div>
+<div class="line">                                                    <a class="code" href="group__reg__bits.html#ga4b0b5a0edf62ea3223e1a7c442155a64">NRF24L01_EN_AA_REG_BIT_ENAA_P1</a>      | \</div>
+<div class="line">                                                    <a class="code" href="group__reg__bits.html#gac2b508cebf1521e07d4a03657443bf9f">NRF24L01_EN_AA_REG_BIT_ENAA_P0</a>        \</div>
+<div class="line">                                                )</div>
+</div><!-- fragment -->
+<p>&lt; Mask for all defined bits[5:0] in EN_AA register </p>
+
+</div>
+</div>
 <a id="gac2b508cebf1521e07d4a03657443bf9f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gac2b508cebf1521e07d4a03657443bf9f">&#9670;&nbsp;</a></span>NRF24L01_EN_AA_REG_BIT_ENAA_P0</h2>
 
@@ -652,6 +785,30 @@ Special Feature Register (FEATURE)</h2></td></tr>
 
 </div>
 </div>
+<a id="ga82d253030685cb1f3f422f17f396e98c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga82d253030685cb1f3f422f17f396e98c">&#9670;&nbsp;</a></span>NRF24L01_EN_RXADDR_MASK_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NRF24L01_EN_RXADDR_MASK_REG</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">                                                    (uint8_t)(                                \</div>
+<div class="line">                                                    <a class="code" href="group__reg__bits.html#ga110a62b986c828e8fb33224456bc7701">NRF24L01_EN_RXADDR_REG_BIT_ERX_P5</a>   | \</div>
+<div class="line">                                                    <a class="code" href="group__reg__bits.html#ga35644cd0fae11474735e7d1c6fa02d46">NRF24L01_EN_RXADDR_REG_BIT_ERX_P4</a>   | \</div>
+<div class="line">                                                    <a class="code" href="group__reg__bits.html#ga667807ef7dcd76644bf962e2f9201214">NRF24L01_EN_RXADDR_REG_BIT_ERX_P3</a>   | \</div>
+<div class="line">                                                    <a class="code" href="group__reg__bits.html#gaf19a2bbb619d22d23361d6fb337ee696">NRF24L01_EN_RXADDR_REG_BIT_ERX_P2</a>   | \</div>
+<div class="line">                                                    <a class="code" href="group__reg__bits.html#ga0055fa74ca23ed1298c775ed5d3c6f8a">NRF24L01_EN_RXADDR_REG_BIT_ERX_P1</a>   | \</div>
+<div class="line">                                                    <a class="code" href="group__reg__bits.html#gab3e77e8cf2f8480c38d5f0911d09db0b">NRF24L01_EN_RXADDR_REG_BIT_ERX_P0</a>     \</div>
+<div class="line">                                                )</div>
+</div><!-- fragment -->
+<p>&lt; Mask for all defined bits[5:0] in EN_RXADDR register </p>
+
+</div>
+</div>
 <a id="gab3e77e8cf2f8480c38d5f0911d09db0b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gab3e77e8cf2f8480c38d5f0911d09db0b">&#9670;&nbsp;</a></span>NRF24L01_EN_RXADDR_REG_BIT_ERX_P0</h2>
 
@@ -663,6 +820,8 @@ Special Feature Register (FEATURE)</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>&lt; Mask for all defined bits[5:0] in EN_RXADDR register </p>
 
 </div>
 </div>
@@ -678,6 +837,8 @@ Special Feature Register (FEATURE)</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>&lt; Mask for all defined bits[5:0] in EN_RXADDR register </p>
+
 </div>
 </div>
 <a id="gaf19a2bbb619d22d23361d6fb337ee696"></a>
@@ -691,6 +852,8 @@ Special Feature Register (FEATURE)</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>&lt; Mask for all defined bits[5:0] in EN_RXADDR register </p>
 
 </div>
 </div>
@@ -706,6 +869,8 @@ Special Feature Register (FEATURE)</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>&lt; Mask for all defined bits[5:0] in EN_RXADDR register </p>
+
 </div>
 </div>
 <a id="ga35644cd0fae11474735e7d1c6fa02d46"></a>
@@ -720,6 +885,8 @@ Special Feature Register (FEATURE)</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>&lt; Mask for all defined bits[5:0] in EN_RXADDR register </p>
+
 </div>
 </div>
 <a id="ga110a62b986c828e8fb33224456bc7701"></a>
@@ -733,6 +900,8 @@ Special Feature Register (FEATURE)</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>&lt; Mask for all defined bits[5:0] in EN_RXADDR register </p>
 
 </div>
 </div>
@@ -864,6 +1033,26 @@ Special Feature Register (FEATURE)</h2></td></tr>
 
 </div>
 </div>
+<a id="ga58da17119f4d8a23ba58ca18eefa590f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga58da17119f4d8a23ba58ca18eefa590f">&#9670;&nbsp;</a></span>NRF24L01_OBSERVE_TX_MASK_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NRF24L01_OBSERVE_TX_MASK_REG</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">                                                    (uint8_t)(                                  \</div>
+<div class="line">                                                    <a class="code" href="group__reg__bits.html#gaba57489490c88664da4969efbd8bebcf">NRF24L01_OBSERVE_TX_REG_BITS_PLOS_CNT</a> | \</div>
+<div class="line">                                                    <a class="code" href="group__reg__bits.html#ga8b58638de626b7edbbbb339295c39d71">NRF24L01_OBSERVE_TX_REG_BITS_ARC_CNT</a>    \</div>
+<div class="line">                                                )</div>
+</div><!-- fragment -->
+<p>&lt; Mask for all defined bits[7:0] in OBSERVE_TX register </p>
+
+</div>
+</div>
 <a id="ga8b58638de626b7edbbbb339295c39d71"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga8b58638de626b7edbbbb339295c39d71">&#9670;&nbsp;</a></span>NRF24L01_OBSERVE_TX_REG_BITS_ARC_CNT</h2>
 
@@ -896,6 +1085,22 @@ Special Feature Register (FEATURE)</h2></td></tr>
 
 </div>
 </div>
+<a id="ga2fa80a1d3906f9b5b8733ead96c3133e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2fa80a1d3906f9b5b8733ead96c3133e">&#9670;&nbsp;</a></span>NRF24L01_RF_CH_MASK_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NRF24L01_RF_CH_MASK_REG&#160;&#160;&#160;(uint8_t)<a class="el" href="group__reg__bits.html#gae876cf8ae818b8ce339491beaa187f75">NRF24L01_RF_CH_REG_BITS_RF_CH</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>&lt; Mask for all defined bits[6:0] in RF_CH register </p>
+
+</div>
+</div>
 <a id="gae876cf8ae818b8ce339491beaa187f75"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gae876cf8ae818b8ce339491beaa187f75">&#9670;&nbsp;</a></span>NRF24L01_RF_CH_REG_BITS_RF_CH</h2>
 
@@ -909,6 +1114,28 @@ Special Feature Register (FEATURE)</h2></td></tr>
 </div><div class="memdoc">
 
 <p>RF_CH[6:0] bits in RF_CH register. </p>
+
+</div>
+</div>
+<a id="ga3d14c145be751bbc3a81afe59a976373"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3d14c145be751bbc3a81afe59a976373">&#9670;&nbsp;</a></span>NRF24L01_RF_SETUP_MASK_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NRF24L01_RF_SETUP_MASK_REG</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">                                                    (uint8_t)(                                \</div>
+<div class="line">                                                    <a class="code" href="group__reg__bits.html#gaef9765800247b3682b53571ec1befebe">NRF24L01_RF_SETUP_REG_BIT_PLL_LOCK</a>  | \</div>
+<div class="line">                                                    <a class="code" href="group__reg__bits.html#ga495f104a00541af9187c9609b81f425e">NRF24L01_RF_SETUP_REG_BIT_RF_DR</a>     | \</div>
+<div class="line">                                                    <a class="code" href="group__reg__bits.html#ga53c3e47c67cd0f3ab4810ac49cec823d">NRF24L01_RF_SETUP_REG_BITS_RF_PWR</a>   | \</div>
+<div class="line">                                                    <a class="code" href="group__reg__bits.html#ga796c669655b7fe2c98ac33159dc09b7d">NRF24L01_RF_SETUP_REG_BIT_LNA_HCURR</a>   \</div>
+<div class="line">                                                )</div>
+</div><!-- fragment -->
+<p>&lt; Mask for all defined bits[4:0] in RF_SETUP register </p>
 
 </div>
 </div>
@@ -1072,6 +1299,22 @@ Special Feature Register (FEATURE)</h2></td></tr>
 
 </div>
 </div>
+<a id="ga041619332e10394c0c2ce2b00f89bbc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga041619332e10394c0c2ce2b00f89bbc8">&#9670;&nbsp;</a></span>NRF24L01_SETUP_AW_MASK_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NRF24L01_SETUP_AW_MASK_REG&#160;&#160;&#160;(uint8_t)<a class="el" href="group__reg__bits.html#ga842a6568877c432e0602aa58a3c1e090">NRF24L01_SETUP_AW_REG_BITS_AW</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>&lt; Mask for all defined bits[1:0] in AW register </p>
+
+</div>
+</div>
 <a id="ga842a6568877c432e0602aa58a3c1e090"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga842a6568877c432e0602aa58a3c1e090">&#9670;&nbsp;</a></span>NRF24L01_SETUP_AW_REG_BITS_AW</h2>
 
@@ -1085,6 +1328,26 @@ Special Feature Register (FEATURE)</h2></td></tr>
 </div><div class="memdoc">
 
 <p>AW[1:0] bits in SETUP_AW register. </p>
+
+</div>
+</div>
+<a id="gaed2587ff5be89d74eb9e2b8bd104087c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaed2587ff5be89d74eb9e2b8bd104087c">&#9670;&nbsp;</a></span>NRF24L01_SETUP_RETR_MASK_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NRF24L01_SETUP_RETR_MASK_REG</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">                                                    (uint8_t)(                                \</div>
+<div class="line">                                                    <a class="code" href="group__reg__bits.html#ga172d9d8a92a7d01c2bb099c119924097">NRF24L01_SETUP_RETR_REG_BITS_ARD</a>    | \</div>
+<div class="line">                                                    <a class="code" href="group__reg__bits.html#ga37ad5787c92303338675bf2567b452e2">NRF24L01_SETUP_RETR_REG_BITS_ARC</a>      \</div>
+<div class="line">                                                )</div>
+</div><!-- fragment -->
+<p>&lt; Mask for all defined bits[7:0] in SETUP_RETR register </p>
 
 </div>
 </div>
@@ -1117,6 +1380,51 @@ Special Feature Register (FEATURE)</h2></td></tr>
 </div><div class="memdoc">
 
 <p>ARD[7:4] bits in SETUP_RETR register. </p>
+
+</div>
+</div>
+<a id="ga65308c300f8760ae900a7ee93bad1f31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga65308c300f8760ae900a7ee93bad1f31">&#9670;&nbsp;</a></span>NRF24L01_STATUS_MASK_IRQ_FLAGS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NRF24L01_STATUS_MASK_IRQ_FLAGS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">                                                    (uint8_t)(                                \</div>
+<div class="line">                                                    <a class="code" href="group__reg__bits.html#ga87cdeb4d1a693f8a60a474cdc726a541">NRF24L01_STATUS_REG_BIT_RX_DR</a>       | \</div>
+<div class="line">                                                    <a class="code" href="group__reg__bits.html#ga9d52b8ddcff97ff40c2809687da106d8">NRF24L01_STATUS_REG_BIT_TX_DS</a>       | \</div>
+<div class="line">                                                    <a class="code" href="group__reg__bits.html#ga420b4a05f738b72880dbcef809dc9ce0">NRF24L01_STATUS_REG_BIT_MAX_RT</a>        \</div>
+<div class="line">                                                )</div>
+</div><!-- fragment -->
+<p>RX_DR[6] interrupt flag bit in STATUS register. </p>
+
+</div>
+</div>
+<a id="ga9b3f68550ed4db25487d9d8d1ebc2584"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9b3f68550ed4db25487d9d8d1ebc2584">&#9670;&nbsp;</a></span>NRF24L01_STATUS_MASK_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NRF24L01_STATUS_MASK_REG</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">                                                    (uint8_t)(                                \</div>
+<div class="line">                                                    <a class="code" href="group__reg__bits.html#ga87cdeb4d1a693f8a60a474cdc726a541">NRF24L01_STATUS_REG_BIT_RX_DR</a>       | \</div>
+<div class="line">                                                    <a class="code" href="group__reg__bits.html#ga9d52b8ddcff97ff40c2809687da106d8">NRF24L01_STATUS_REG_BIT_TX_DS</a>       | \</div>
+<div class="line">                                                    <a class="code" href="group__reg__bits.html#ga420b4a05f738b72880dbcef809dc9ce0">NRF24L01_STATUS_REG_BIT_MAX_RT</a>      | \</div>
+<div class="line">                                                    <a class="code" href="group__reg__bits.html#gaaef3b9cc042253007cc2da9110a26311">NRF24L01_STATUS_REG_BITS_RX_P_NO</a>    | \</div>
+<div class="line">                                                    <a class="code" href="group__reg__bits.html#ga9bc0e8f67ae6f89af0797280511f28e1">NRF24L01_STATUS_REG_BIT_TX_FULL</a>       \</div>
+<div class="line">                                                )</div>
+</div><!-- fragment -->
+<p>&lt; Mask for all defined bits[6:0] in STATUS register </p>
+<p>Mask for IRQ[6:4] interrupt flag bits in STATUS register </p>
 
 </div>
 </div>
@@ -1201,6 +1509,38 @@ Special Feature Register (FEATURE)</h2></td></tr>
 </div>
 </div>
 </div><!-- contents -->
+<div class="ttc" id="agroup__reg__bits_html_ga86c93150a41fc94e5c71dcb94014f6af"><div class="ttname"><a href="group__reg__bits.html#ga86c93150a41fc94e5c71dcb94014f6af">NRF24L01_CONFIG_REG_BIT_CRCO</a></div><div class="ttdeci">#define NRF24L01_CONFIG_REG_BIT_CRCO</div><div class="ttdoc">CRCO[2] bit in CONFIG register.</div><div class="ttdef"><b>Definition:</b> nrf24l01_defs.h:231</div></div>
+<div class="ttc" id="agroup__reg__bits_html_ga37ad5787c92303338675bf2567b452e2"><div class="ttname"><a href="group__reg__bits.html#ga37ad5787c92303338675bf2567b452e2">NRF24L01_SETUP_RETR_REG_BITS_ARC</a></div><div class="ttdeci">#define NRF24L01_SETUP_RETR_REG_BITS_ARC</div><div class="ttdoc">ARC[3:0] bits in SETUP_RETR register.</div><div class="ttdef"><b>Definition:</b> nrf24l01_defs.h:276</div></div>
+<div class="ttc" id="agroup__reg__bits_html_gaef9765800247b3682b53571ec1befebe"><div class="ttname"><a href="group__reg__bits.html#gaef9765800247b3682b53571ec1befebe">NRF24L01_RF_SETUP_REG_BIT_PLL_LOCK</a></div><div class="ttdeci">#define NRF24L01_RF_SETUP_REG_BIT_PLL_LOCK</div><div class="ttdoc">PLL_LOCK[5] bit in RF_SETUP register.</div><div class="ttdef"><b>Definition:</b> nrf24l01_defs.h:292</div></div>
+<div class="ttc" id="agroup__reg__bits_html_gab47cc5e8cbc0ab4ce27d17922243c53d"><div class="ttname"><a href="group__reg__bits.html#gab47cc5e8cbc0ab4ce27d17922243c53d">NRF24L01_CONFIG_REG_BIT_EN_CRC</a></div><div class="ttdeci">#define NRF24L01_CONFIG_REG_BIT_EN_CRC</div><div class="ttdoc">EN_CRC[3] bit in CONFIG register.</div><div class="ttdef"><b>Definition:</b> nrf24l01_defs.h:230</div></div>
+<div class="ttc" id="agroup__reg__bits_html_gaf07a996a70a3bee7953b416d1a32b002"><div class="ttname"><a href="group__reg__bits.html#gaf07a996a70a3bee7953b416d1a32b002">NRF24L01_CONFIG_REG_BIT_MASK_RX_DR</a></div><div class="ttdeci">#define NRF24L01_CONFIG_REG_BIT_MASK_RX_DR</div><div class="ttdoc">RX_DR[6] bit in CONFIG register.</div><div class="ttdef"><b>Definition:</b> nrf24l01_defs.h:227</div></div>
+<div class="ttc" id="agroup__reg__bits_html_ga0055fa74ca23ed1298c775ed5d3c6f8a"><div class="ttname"><a href="group__reg__bits.html#ga0055fa74ca23ed1298c775ed5d3c6f8a">NRF24L01_EN_RXADDR_REG_BIT_ERX_P1</a></div><div class="ttdeci">#define NRF24L01_EN_RXADDR_REG_BIT_ERX_P1</div><div class="ttdoc">&lt; Mask for all defined bits[5:0] in EN_RXADDR register</div><div class="ttdef"><b>Definition:</b> nrf24l01_defs.h:258</div></div>
+<div class="ttc" id="agroup__reg__bits_html_ga53c3e47c67cd0f3ab4810ac49cec823d"><div class="ttname"><a href="group__reg__bits.html#ga53c3e47c67cd0f3ab4810ac49cec823d">NRF24L01_RF_SETUP_REG_BITS_RF_PWR</a></div><div class="ttdeci">#define NRF24L01_RF_SETUP_REG_BITS_RF_PWR</div><div class="ttdoc">RF_PWR[2:1] bits in RF_SETUP register.</div><div class="ttdef"><b>Definition:</b> nrf24l01_defs.h:294</div></div>
+<div class="ttc" id="agroup__reg__bits_html_ga9d52b8ddcff97ff40c2809687da106d8"><div class="ttname"><a href="group__reg__bits.html#ga9d52b8ddcff97ff40c2809687da106d8">NRF24L01_STATUS_REG_BIT_TX_DS</a></div><div class="ttdeci">#define NRF24L01_STATUS_REG_BIT_TX_DS</div><div class="ttdoc">TX_DS[5] interrupt flag bit in STATUS register.</div><div class="ttdef"><b>Definition:</b> nrf24l01_defs.h:304</div></div>
+<div class="ttc" id="agroup__reg__bits_html_gaaef3b9cc042253007cc2da9110a26311"><div class="ttname"><a href="group__reg__bits.html#gaaef3b9cc042253007cc2da9110a26311">NRF24L01_STATUS_REG_BITS_RX_P_NO</a></div><div class="ttdeci">#define NRF24L01_STATUS_REG_BITS_RX_P_NO</div><div class="ttdoc">RX_P_NO[3:1] pipe number bits in STATUS register.</div><div class="ttdef"><b>Definition:</b> nrf24l01_defs.h:306</div></div>
+<div class="ttc" id="agroup__reg__bits_html_gaba57489490c88664da4969efbd8bebcf"><div class="ttname"><a href="group__reg__bits.html#gaba57489490c88664da4969efbd8bebcf">NRF24L01_OBSERVE_TX_REG_BITS_PLOS_CNT</a></div><div class="ttdeci">#define NRF24L01_OBSERVE_TX_REG_BITS_PLOS_CNT</div><div class="ttdoc">PLOS_CNT[7:4] lost packet count bits in OBSERVE_TX register.</div><div class="ttdef"><b>Definition:</b> nrf24l01_defs.h:315</div></div>
+<div class="ttc" id="agroup__reg__bits_html_gac2b508cebf1521e07d4a03657443bf9f"><div class="ttname"><a href="group__reg__bits.html#gac2b508cebf1521e07d4a03657443bf9f">NRF24L01_EN_AA_REG_BIT_ENAA_P0</a></div><div class="ttdeci">#define NRF24L01_EN_AA_REG_BIT_ENAA_P0</div><div class="ttdoc">ENAA_P0[0] bit in EN_AA register.</div><div class="ttdef"><b>Definition:</b> nrf24l01_defs.h:246</div></div>
+<div class="ttc" id="agroup__reg__bits_html_ga8b58638de626b7edbbbb339295c39d71"><div class="ttname"><a href="group__reg__bits.html#ga8b58638de626b7edbbbb339295c39d71">NRF24L01_OBSERVE_TX_REG_BITS_ARC_CNT</a></div><div class="ttdeci">#define NRF24L01_OBSERVE_TX_REG_BITS_ARC_CNT</div><div class="ttdoc">ARC_CNT[3:0] resent packet count bits in OBSERVE_TX register.</div><div class="ttdef"><b>Definition:</b> nrf24l01_defs.h:316</div></div>
+<div class="ttc" id="agroup__reg__bits_html_gaf4f3994a6d6ab185a8924c6abf8eaa9e"><div class="ttname"><a href="group__reg__bits.html#gaf4f3994a6d6ab185a8924c6abf8eaa9e">NRF24L01_CONFIG_REG_BIT_MASK_TX_DS</a></div><div class="ttdeci">#define NRF24L01_CONFIG_REG_BIT_MASK_TX_DS</div><div class="ttdoc">TX_DS[5] bit in CONFIG register.</div><div class="ttdef"><b>Definition:</b> nrf24l01_defs.h:228</div></div>
+<div class="ttc" id="agroup__reg__bits_html_gab3e77e8cf2f8480c38d5f0911d09db0b"><div class="ttname"><a href="group__reg__bits.html#gab3e77e8cf2f8480c38d5f0911d09db0b">NRF24L01_EN_RXADDR_REG_BIT_ERX_P0</a></div><div class="ttdeci">#define NRF24L01_EN_RXADDR_REG_BIT_ERX_P0</div><div class="ttdoc">&lt; Mask for all defined bits[5:0] in EN_RXADDR register</div><div class="ttdef"><b>Definition:</b> nrf24l01_defs.h:259</div></div>
+<div class="ttc" id="agroup__reg__bits_html_ga420b4a05f738b72880dbcef809dc9ce0"><div class="ttname"><a href="group__reg__bits.html#ga420b4a05f738b72880dbcef809dc9ce0">NRF24L01_STATUS_REG_BIT_MAX_RT</a></div><div class="ttdeci">#define NRF24L01_STATUS_REG_BIT_MAX_RT</div><div class="ttdoc">MAX_RT[4] interrupt flag bit in STATUS register.</div><div class="ttdef"><b>Definition:</b> nrf24l01_defs.h:305</div></div>
+<div class="ttc" id="agroup__reg__bits_html_gacbf49029ffa1a2ebc51a1d701318734e"><div class="ttname"><a href="group__reg__bits.html#gacbf49029ffa1a2ebc51a1d701318734e">NRF24L01_EN_AA_REG_BIT_ENAA_P5</a></div><div class="ttdeci">#define NRF24L01_EN_AA_REG_BIT_ENAA_P5</div><div class="ttdoc">ENAA_P5[5] bit in EN_AA register.</div><div class="ttdef"><b>Definition:</b> nrf24l01_defs.h:241</div></div>
+<div class="ttc" id="agroup__reg__bits_html_ga495f104a00541af9187c9609b81f425e"><div class="ttname"><a href="group__reg__bits.html#ga495f104a00541af9187c9609b81f425e">NRF24L01_RF_SETUP_REG_BIT_RF_DR</a></div><div class="ttdeci">#define NRF24L01_RF_SETUP_REG_BIT_RF_DR</div><div class="ttdoc">RF_DR[4] bit in RF_SETUP register.</div><div class="ttdef"><b>Definition:</b> nrf24l01_defs.h:293</div></div>
+<div class="ttc" id="agroup__reg__bits_html_gaaa23d4f4f3baf923f14efaf6c4a81634"><div class="ttname"><a href="group__reg__bits.html#gaaa23d4f4f3baf923f14efaf6c4a81634">NRF24L01_CONFIG_REG_BIT_PWR_UP</a></div><div class="ttdeci">#define NRF24L01_CONFIG_REG_BIT_PWR_UP</div><div class="ttdoc">PWR_UP[1] bit in CONFIG register.</div><div class="ttdef"><b>Definition:</b> nrf24l01_defs.h:232</div></div>
+<div class="ttc" id="agroup__reg__bits_html_ga5583dfd06a0bf72e08fa6d70fbf5bec2"><div class="ttname"><a href="group__reg__bits.html#ga5583dfd06a0bf72e08fa6d70fbf5bec2">NRF24L01_CONFIG_REG_BIT_MASK_MAX_RT</a></div><div class="ttdeci">#define NRF24L01_CONFIG_REG_BIT_MASK_MAX_RT</div><div class="ttdoc">MAX_RT[4] bit in CONFIG register.</div><div class="ttdef"><b>Definition:</b> nrf24l01_defs.h:229</div></div>
+<div class="ttc" id="agroup__reg__bits_html_gaaa8ba84687af61aa404bc4c55d8bea58"><div class="ttname"><a href="group__reg__bits.html#gaaa8ba84687af61aa404bc4c55d8bea58">NRF24L01_CONFIG_REG_BIT_PRIM_RX</a></div><div class="ttdeci">#define NRF24L01_CONFIG_REG_BIT_PRIM_RX</div><div class="ttdoc">PRIM_RX[0] bit in CONFIG register.</div><div class="ttdef"><b>Definition:</b> nrf24l01_defs.h:233</div></div>
+<div class="ttc" id="agroup__reg__bits_html_ga87cdeb4d1a693f8a60a474cdc726a541"><div class="ttname"><a href="group__reg__bits.html#ga87cdeb4d1a693f8a60a474cdc726a541">NRF24L01_STATUS_REG_BIT_RX_DR</a></div><div class="ttdeci">#define NRF24L01_STATUS_REG_BIT_RX_DR</div><div class="ttdoc">RX_DR[6] interrupt flag bit in STATUS register.</div><div class="ttdef"><b>Definition:</b> nrf24l01_defs.h:303</div></div>
+<div class="ttc" id="agroup__reg__bits_html_ga667807ef7dcd76644bf962e2f9201214"><div class="ttname"><a href="group__reg__bits.html#ga667807ef7dcd76644bf962e2f9201214">NRF24L01_EN_RXADDR_REG_BIT_ERX_P3</a></div><div class="ttdeci">#define NRF24L01_EN_RXADDR_REG_BIT_ERX_P3</div><div class="ttdoc">&lt; Mask for all defined bits[5:0] in EN_RXADDR register</div><div class="ttdef"><b>Definition:</b> nrf24l01_defs.h:256</div></div>
+<div class="ttc" id="agroup__reg__bits_html_ga110a62b986c828e8fb33224456bc7701"><div class="ttname"><a href="group__reg__bits.html#ga110a62b986c828e8fb33224456bc7701">NRF24L01_EN_RXADDR_REG_BIT_ERX_P5</a></div><div class="ttdeci">#define NRF24L01_EN_RXADDR_REG_BIT_ERX_P5</div><div class="ttdoc">&lt; Mask for all defined bits[5:0] in EN_RXADDR register</div><div class="ttdef"><b>Definition:</b> nrf24l01_defs.h:254</div></div>
+<div class="ttc" id="agroup__reg__bits_html_ga1f955ff7e6783511cef35bcafb90ef2c"><div class="ttname"><a href="group__reg__bits.html#ga1f955ff7e6783511cef35bcafb90ef2c">NRF24L01_EN_AA_REG_BIT_ENAA_P4</a></div><div class="ttdeci">#define NRF24L01_EN_AA_REG_BIT_ENAA_P4</div><div class="ttdoc">ENAA_P4[4] bit in EN_AA register.</div><div class="ttdef"><b>Definition:</b> nrf24l01_defs.h:242</div></div>
+<div class="ttc" id="agroup__reg__bits_html_ga172d9d8a92a7d01c2bb099c119924097"><div class="ttname"><a href="group__reg__bits.html#ga172d9d8a92a7d01c2bb099c119924097">NRF24L01_SETUP_RETR_REG_BITS_ARD</a></div><div class="ttdeci">#define NRF24L01_SETUP_RETR_REG_BITS_ARD</div><div class="ttdoc">ARD[7:4] bits in SETUP_RETR register.</div><div class="ttdef"><b>Definition:</b> nrf24l01_defs.h:275</div></div>
+<div class="ttc" id="agroup__reg__bits_html_gaf19a2bbb619d22d23361d6fb337ee696"><div class="ttname"><a href="group__reg__bits.html#gaf19a2bbb619d22d23361d6fb337ee696">NRF24L01_EN_RXADDR_REG_BIT_ERX_P2</a></div><div class="ttdeci">#define NRF24L01_EN_RXADDR_REG_BIT_ERX_P2</div><div class="ttdoc">&lt; Mask for all defined bits[5:0] in EN_RXADDR register</div><div class="ttdef"><b>Definition:</b> nrf24l01_defs.h:257</div></div>
+<div class="ttc" id="agroup__reg__bits_html_ga4b0b5a0edf62ea3223e1a7c442155a64"><div class="ttname"><a href="group__reg__bits.html#ga4b0b5a0edf62ea3223e1a7c442155a64">NRF24L01_EN_AA_REG_BIT_ENAA_P1</a></div><div class="ttdeci">#define NRF24L01_EN_AA_REG_BIT_ENAA_P1</div><div class="ttdoc">ENAA_P1[1] bit in EN_AA register.</div><div class="ttdef"><b>Definition:</b> nrf24l01_defs.h:245</div></div>
+<div class="ttc" id="agroup__reg__bits_html_gabd053e5d74243e0631e0c7c2d490cfa4"><div class="ttname"><a href="group__reg__bits.html#gabd053e5d74243e0631e0c7c2d490cfa4">NRF24L01_EN_AA_REG_BIT_ENAA_P3</a></div><div class="ttdeci">#define NRF24L01_EN_AA_REG_BIT_ENAA_P3</div><div class="ttdoc">ENAA_P3[3] bit in EN_AA register.</div><div class="ttdef"><b>Definition:</b> nrf24l01_defs.h:243</div></div>
+<div class="ttc" id="agroup__reg__bits_html_ga796c669655b7fe2c98ac33159dc09b7d"><div class="ttname"><a href="group__reg__bits.html#ga796c669655b7fe2c98ac33159dc09b7d">NRF24L01_RF_SETUP_REG_BIT_LNA_HCURR</a></div><div class="ttdeci">#define NRF24L01_RF_SETUP_REG_BIT_LNA_HCURR</div><div class="ttdoc">LNA_HCURR[0] bit in RF_SETUP register.</div><div class="ttdef"><b>Definition:</b> nrf24l01_defs.h:295</div></div>
+<div class="ttc" id="agroup__reg__bits_html_ga69624aff4d39f013e27d2de3f0570c96"><div class="ttname"><a href="group__reg__bits.html#ga69624aff4d39f013e27d2de3f0570c96">NRF24L01_EN_AA_REG_BIT_ENAA_P2</a></div><div class="ttdeci">#define NRF24L01_EN_AA_REG_BIT_ENAA_P2</div><div class="ttdoc">ENAA_P2[2] bit in EN_AA register.</div><div class="ttdef"><b>Definition:</b> nrf24l01_defs.h:244</div></div>
+<div class="ttc" id="agroup__reg__bits_html_ga9bc0e8f67ae6f89af0797280511f28e1"><div class="ttname"><a href="group__reg__bits.html#ga9bc0e8f67ae6f89af0797280511f28e1">NRF24L01_STATUS_REG_BIT_TX_FULL</a></div><div class="ttdeci">#define NRF24L01_STATUS_REG_BIT_TX_FULL</div><div class="ttdoc">TX_FULL[0] flag bit in STATUS register.</div><div class="ttdef"><b>Definition:</b> nrf24l01_defs.h:307</div></div>
+<div class="ttc" id="agroup__reg__bits_html_ga35644cd0fae11474735e7d1c6fa02d46"><div class="ttname"><a href="group__reg__bits.html#ga35644cd0fae11474735e7d1c6fa02d46">NRF24L01_EN_RXADDR_REG_BIT_ERX_P4</a></div><div class="ttdeci">#define NRF24L01_EN_RXADDR_REG_BIT_ERX_P4</div><div class="ttdoc">&lt; Mask for all defined bits[5:0] in EN_RXADDR register</div><div class="ttdef"><b>Definition:</b> nrf24l01_defs.h:255</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
