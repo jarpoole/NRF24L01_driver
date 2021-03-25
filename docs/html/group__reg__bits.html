@@ -265,12 +265,15 @@ Transmission Observation Register (OBSERVE_TX)</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
 Carrier Detect Register (CD)</h2></td></tr>
-<tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrp206f956f3ce7e2d07d4ea2b2a46f0a26"></a>Contains the carrier detect bit which is used to detect channel interference</p>
+<tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrp206f956f3ce7e2d07d4ea2b2a46f0a26"></a>Provides a register mask</p>
 <p><a href="nRF24L01_product_specifications.pdf#page=55&amp;search=%22CD%22"><b><u>View details in datasheet</u></b></a> for more information </p>
 </td></tr>
 <tr class="memitem:gab0f3db1fbf3ef0b7f9ac2d5079186118"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__reg__bits.html#gab0f3db1fbf3ef0b7f9ac2d5079186118">NRF24L01_CD_REG_BIT_CD</a>&#160;&#160;&#160;(uint8_t)0x01</td></tr>
 <tr class="memdesc:gab0f3db1fbf3ef0b7f9ac2d5079186118"><td class="mdescLeft">&#160;</td><td class="mdescRight">CD[0] bit in CD register.  <a href="group__reg__bits.html#gab0f3db1fbf3ef0b7f9ac2d5079186118">More...</a><br /></td></tr>
 <tr class="separator:gab0f3db1fbf3ef0b7f9ac2d5079186118"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1bed277a8a0f3095f24098066a045557"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__reg__bits.html#ga1bed277a8a0f3095f24098066a045557">NRF24L01_CD_MASK_REG</a>&#160;&#160;&#160;(uint8_t)<a class="el" href="group__reg__bits.html#gab0f3db1fbf3ef0b7f9ac2d5079186118">NRF24L01_CD_REG_BIT_CD</a></td></tr>
+<tr class="memdesc:ga1bed277a8a0f3095f24098066a045557"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; Mask for all defined bits[0:0] in CD register  <a href="group__reg__bits.html#ga1bed277a8a0f3095f24098066a045557">More...</a><br /></td></tr>
+<tr class="separator:ga1bed277a8a0f3095f24098066a045557"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
 RX Pipe 0 Payload Width Register (RX_PW_P0)</h2></td></tr>
@@ -386,6 +389,22 @@ Special Feature Register (FEATURE)</h2></td></tr>
 <p>These definitions should be used when trying to control a specific property of the NRF24L01 which could be represented by one of more bits. For definitions designed for masking see <a class="el" href="group__reg__masks.html">NRF24L01 SPI Register Mask Definitions</a></p>
 <p>The naming convention for all definitions is <b>NRF24L01_r_REG_BIT_x</b> where <b>r</b> is the register name where the bit is found and <b>x</b> is the name assigned to the register bit by the datasheet If register contains a bit field then REG_BIT is pluralized to REG_BITS </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ga1bed277a8a0f3095f24098066a045557"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1bed277a8a0f3095f24098066a045557">&#9670;&nbsp;</a></span>NRF24L01_CD_MASK_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NRF24L01_CD_MASK_REG&#160;&#160;&#160;(uint8_t)<a class="el" href="group__reg__bits.html#gab0f3db1fbf3ef0b7f9ac2d5079186118">NRF24L01_CD_REG_BIT_CD</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>&lt; Mask for all defined bits[0:0] in CD register </p>
+
+</div>
+</div>
 <a id="gab0f3db1fbf3ef0b7f9ac2d5079186118"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gab0f3db1fbf3ef0b7f9ac2d5079186118">&#9670;&nbsp;</a></span>NRF24L01_CD_REG_BIT_CD</h2>
 
