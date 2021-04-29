@@ -40,6 +40,7 @@ jobs:
         with:
           packages: coverxygen imgkit
           
+      # See https://github.com/psycofdj/coverxygen for more information
       - name: run coverxygen
         run: |
           mkdir ${GITHUB_WORKSPACE}/docs/coverage-html
@@ -48,7 +49,7 @@ jobs:
         
       - name: generate code coverage report
         run: |
-          genhtml --no-prefix --no-function-coverage --no-branch-coverage ${GITHUB_WORKSPACE}/docs/coverage-html/documentation-coverage.info
+          genhtml --no-prefix --no-function-coverage --no-branch-coverage ${GITHUB_WORKSPACE}/docs/coverage-html/documentation-coverage.info -o ${GITHUB_WORKSPACE}/docs/coverage-html/
           
       - name: run imgkit
         run: |
