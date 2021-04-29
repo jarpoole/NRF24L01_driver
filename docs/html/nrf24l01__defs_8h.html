@@ -165,8 +165,10 @@ Macros</h2></td></tr>
 <tr class="memitem:a7fc704e6c8eb97bf92c75a74fc153ee9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#a7fc704e6c8eb97bf92c75a74fc153ee9">NRF24L01_MAGIC_NUMBER_ACTIVATE</a>&#160;&#160;&#160;(uint8_t)0x73</td></tr>
 <tr class="separator:a7fc704e6c8eb97bf92c75a74fc153ee9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57117b9936536cdaa2546fe9ee1b3bdb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#a57117b9936536cdaa2546fe9ee1b3bdb">NRF24L01_IS_RX_PIPE</a>(pipe)&#160;&#160;&#160;( ((pipe) &gt;= <a class="el" href="nrf24l01__defs_8h.html#ac835ed70d839160974a8a370302ceda4ad5ec0fa4882bf22516a1a91a13602bf0">NRF24L01_PIPE0</a> &amp;&amp; (pipe) &lt;= <a class="el" href="nrf24l01__defs_8h.html#ac835ed70d839160974a8a370302ceda4a65805e1f8ef3a998c7fc40ed3f9e23c7">NRF24L01_PIPE5</a>) || ((pipe) == <a class="el" href="nrf24l01__defs_8h.html#ac835ed70d839160974a8a370302ceda4a3810a4e625c1effcdfb39c6be793df93">NRF24L01_ALL_RX_PIPES</a>) )</td></tr>
+<tr class="memdesc:a57117b9936536cdaa2546fe9ee1b3bdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates to true if the given pipe is for receiving bytes.  <a href="nrf24l01__defs_8h.html#a57117b9936536cdaa2546fe9ee1b3bdb">More...</a><br /></td></tr>
 <tr class="separator:a57117b9936536cdaa2546fe9ee1b3bdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a119fd1295521a28a56b4bc79e5e5a586"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#a119fd1295521a28a56b4bc79e5e5a586">NRF24L01_IS_TX_PIPE</a>(pipe)&#160;&#160;&#160;( (pipe) == <a class="el" href="nrf24l01__defs_8h.html#ac835ed70d839160974a8a370302ceda4ab0c07f44da36bff2c76a195d0554f7bb">NRF24L01_PIPETX</a> )</td></tr>
+<tr class="memdesc:a119fd1295521a28a56b4bc79e5e5a586"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates to true if the given pipe is for transmitting bytes.  <a href="nrf24l01__defs_8h.html#a119fd1295521a28a56b4bc79e5e5a586">More...</a><br /></td></tr>
 <tr class="separator:a119fd1295521a28a56b4bc79e5e5a586"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">General Commands</div></td></tr>
 <tr><td colspan="2"><div class="groupText"><p>NRF24L01 general command definitions</p>
@@ -688,6 +690,7 @@ Enumerations</h2></td></tr>
 <a class="el" href="nrf24l01__defs_8h.html#aeb660fd5ed8bfc4a9d5ea587fd9207f0acc6319524a5c12224f82c0685041727d">NRF24L01_ERR_READ</a>
 <br />
  }</td></tr>
+<tr class="memdesc:aeb660fd5ed8bfc4a9d5ea587fd9207f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error codes for NRF24L01.  <a href="nrf24l01__defs_8h.html#aeb660fd5ed8bfc4a9d5ea587fd9207f0">More...</a><br /></td></tr>
 <tr class="separator:aeb660fd5ed8bfc4a9d5ea587fd9207f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac835ed70d839160974a8a370302ceda4"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01__defs_8h.html#ac835ed70d839160974a8a370302ceda4">nrf24l01_pipe_t</a> { <br />
 &#160;&#160;<a class="el" href="nrf24l01__defs_8h.html#ac835ed70d839160974a8a370302ceda4ad5ec0fa4882bf22516a1a91a13602bf0">NRF24L01_PIPE0</a> = (uint8_t)0x00, 
@@ -1103,6 +1106,14 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Evaluates to true if the given pipe is for receiving bytes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pipe</td><td>: Should be a value of type <code>nrf24l01_pipe_t</code> </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a119fd1295521a28a56b4bc79e5e5a586"></a>
@@ -1120,6 +1131,14 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Evaluates to true if the given pipe is for transmitting bytes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pipe</td><td>: Should be a value of type <code>nrf24l01_pipe_t</code> </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -2165,14 +2184,23 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Error codes for NRF24L01. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aeb660fd5ed8bfc4a9d5ea587fd9207f0adb5c2e034ea26a6bd62836f397d57da8"></a>NRF24L01_OK&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aeb660fd5ed8bfc4a9d5ea587fd9207f0af8f197594ace7d7bb7a25c2cee1e73b2"></a>NRF24L01_ERR_UNKNOWN&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aeb660fd5ed8bfc4a9d5ea587fd9207f0a1cd95beaf07b94c7c9adf61125ba163b"></a>NRF24L01_ERR_INVALID_ARG&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aeb660fd5ed8bfc4a9d5ea587fd9207f0ae9697fb586a1ea351e3615618967a366"></a>NRF24L01_ERR_INVALID_STATE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aeb660fd5ed8bfc4a9d5ea587fd9207f0a204f448363988978b4fbf2e67ae27fd5"></a>NRF24L01_ERR_DEVICE_NOT_FOUND&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aeb660fd5ed8bfc4a9d5ea587fd9207f0a33a4154f489794a3b2ae517df941cf04"></a>NRF24L01_ERR_WRITE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aeb660fd5ed8bfc4a9d5ea587fd9207f0acc6319524a5c12224f82c0685041727d"></a>NRF24L01_ERR_READ&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aeb660fd5ed8bfc4a9d5ea587fd9207f0adb5c2e034ea26a6bd62836f397d57da8"></a>NRF24L01_OK&#160;</td><td class="fielddoc"><p>Driver operation successful. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aeb660fd5ed8bfc4a9d5ea587fd9207f0af8f197594ace7d7bb7a25c2cee1e73b2"></a>NRF24L01_ERR_UNKNOWN&#160;</td><td class="fielddoc"><p>An unknown driver occured. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aeb660fd5ed8bfc4a9d5ea587fd9207f0a1cd95beaf07b94c7c9adf61125ba163b"></a>NRF24L01_ERR_INVALID_ARG&#160;</td><td class="fielddoc"><p>One (or more) arguments passed to the API are invalid. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aeb660fd5ed8bfc4a9d5ea587fd9207f0ae9697fb586a1ea351e3615618967a366"></a>NRF24L01_ERR_INVALID_STATE&#160;</td><td class="fielddoc"><p>Driver or device is in an invalid state. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aeb660fd5ed8bfc4a9d5ea587fd9207f0a204f448363988978b4fbf2e67ae27fd5"></a>NRF24L01_ERR_DEVICE_NOT_FOUND&#160;</td><td class="fielddoc"><p>Device cannot be found on SPI bus. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aeb660fd5ed8bfc4a9d5ea587fd9207f0a33a4154f489794a3b2ae517df941cf04"></a>NRF24L01_ERR_WRITE&#160;</td><td class="fielddoc"><p>SPI write failed. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aeb660fd5ed8bfc4a9d5ea587fd9207f0acc6319524a5c12224f82c0685041727d"></a>NRF24L01_ERR_READ&#160;</td><td class="fielddoc"><p>SPI read failed. </p>
+</td></tr>
 </table>
 
 </div>
@@ -2310,17 +2338,17 @@ Enumerations</h2></td></tr>
 <p>Enumeration of RX pipe addresses and TX address. </p>
 <p>Found in datasheet as <a href="nRF24L01_product_specifications.pdf#page=55&search=%22RX_P_NO%22">RX_P_NO[3:1] bits in STATUS register</a>  </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac835ed70d839160974a8a370302ceda4ad5ec0fa4882bf22516a1a91a13602bf0"></a>NRF24L01_PIPE0&#160;</td><td class="fielddoc"><p>pipe0 </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac835ed70d839160974a8a370302ceda4ad5ec0fa4882bf22516a1a91a13602bf0"></a>NRF24L01_PIPE0&#160;</td><td class="fielddoc"><p>RX pipe0. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ac835ed70d839160974a8a370302ceda4ab7ea674d21993c2ba0de2a3ebc3a1888"></a>NRF24L01_PIPE1&#160;</td><td class="fielddoc"><p>pipe1 </p>
+<tr><td class="fieldname"><a id="ac835ed70d839160974a8a370302ceda4ab7ea674d21993c2ba0de2a3ebc3a1888"></a>NRF24L01_PIPE1&#160;</td><td class="fielddoc"><p>RX pipe1. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ac835ed70d839160974a8a370302ceda4a2974a4e64baed0535bb7b5e0ac03f81d"></a>NRF24L01_PIPE2&#160;</td><td class="fielddoc"><p>pipe2 </p>
+<tr><td class="fieldname"><a id="ac835ed70d839160974a8a370302ceda4a2974a4e64baed0535bb7b5e0ac03f81d"></a>NRF24L01_PIPE2&#160;</td><td class="fielddoc"><p>RX pipe2. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ac835ed70d839160974a8a370302ceda4ae96b441bb9dec288e1c4d48e4d073158"></a>NRF24L01_PIPE3&#160;</td><td class="fielddoc"><p>pipe3 </p>
+<tr><td class="fieldname"><a id="ac835ed70d839160974a8a370302ceda4ae96b441bb9dec288e1c4d48e4d073158"></a>NRF24L01_PIPE3&#160;</td><td class="fielddoc"><p>RX pipe3. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ac835ed70d839160974a8a370302ceda4a82887ccca2045f6ee03ea0ca6e2e1748"></a>NRF24L01_PIPE4&#160;</td><td class="fielddoc"><p>pipe4 </p>
+<tr><td class="fieldname"><a id="ac835ed70d839160974a8a370302ceda4a82887ccca2045f6ee03ea0ca6e2e1748"></a>NRF24L01_PIPE4&#160;</td><td class="fielddoc"><p>RX pipe4. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ac835ed70d839160974a8a370302ceda4a65805e1f8ef3a998c7fc40ed3f9e23c7"></a>NRF24L01_PIPE5&#160;</td><td class="fielddoc"><p>pipe5 </p>
+<tr><td class="fieldname"><a id="ac835ed70d839160974a8a370302ceda4a65805e1f8ef3a998c7fc40ed3f9e23c7"></a>NRF24L01_PIPE5&#160;</td><td class="fielddoc"><p>RX pipe5. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="ac835ed70d839160974a8a370302ceda4ab0c07f44da36bff2c76a195d0554f7bb"></a>NRF24L01_PIPETX&#160;</td><td class="fielddoc"><p>TX address (not a pipe in fact) </p>
 </td></tr>
