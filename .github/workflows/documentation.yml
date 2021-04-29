@@ -49,6 +49,7 @@ jobs:
       - name: list documentation outputs (debugging)
         run: |
           ls ${GITHUB_WORKSPACE}/docs/
+          lcov --summary ${GITHUB_WORKSPACE}/docs/coverage-html/documentation-coverage.info
         
       - name: generate code coverage report
         run: |
