@@ -38,10 +38,14 @@ jobs:
         uses: BSFishy/pip-action@v1
         with:
           packages: coverxygen
-      
+          
+      - name: list documentation outputs (debugging)
+        run: |
+          ls ${GITHUB_WORKSPACE}/docs/
+          
       - name: run coverxygen
         run: |
-          python3 -m coverxygen --xml-dir ${GITHUB_WORKSPACE}/docs --src-dir ${GITHUB_WORKSPACE} --output documentation-coverage.info
+          python3 -m coverxygen --xml-dir ${GITHUB_WORKSPACE}/docs/xml --src-dir ${GITHUB_WORKSPACE} --output documentation-coverage.info
           
       - name: deploy documentation
         uses: JamesIves/github-pages-deploy-action@4.0.0
