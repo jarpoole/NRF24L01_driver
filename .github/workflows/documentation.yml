@@ -35,7 +35,7 @@ jobs:
         run: |
           sudo apt-get install lcov wkhtmltopdf
           
-      - name: install coverxygen 
+      - name: install coverxygen and imgkit
         uses: BSFishy/pip-action@v1
         with:
           packages: coverxygen imgkit
@@ -44,7 +44,7 @@ jobs:
         run: |
           mkdir ${GITHUB_WORKSPACE}/docs/coverage-html
           cd ${GITHUB_WORKSPACE}/docs/coverage-html
-          python3 -m coverxygen --xml-dir ${GITHUB_WORKSPACE}/docs/xml --src-dir ${GITHUB_WORKSPACE} --output ${GITHUB_WORKSPACE}/docs/coverage-html/documentation-coverage.info
+          python3 -m coverxygen --verbose --xml-dir ${GITHUB_WORKSPACE}/docs/xml --src-dir ${GITHUB_WORKSPACE} --output ${GITHUB_WORKSPACE}/docs/coverage-html/documentation-coverage.info
         
       - name: list documentation outputs (debugging)
         run: |
