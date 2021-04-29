@@ -23,6 +23,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      # Uses Doxygen to generate the website HTML for github pages and coverage XML for later parsing
       - name: build documentation
         run: |
           sudo apt-get install doxygen
@@ -30,18 +31,33 @@ jobs:
           chmod +x build.sh
           ./build.sh
           
-      - name: install lcov
+      - name: install lcov and wkhtmltopdf
         run: |
-          sudo apt-get install lcov
+          sudo apt-get install lcov wkhtmltopdf
           
-      - name: install coverxygen 
+      - name: install coverxygen and imgkit
         uses: BSFishy/pip-action@v1
         with:
-          packages: coverxygen
-      
+          packages: coverxygen imgkit
+          
       - name: run coverxygen
         run: |
-          python3 -m coverxygen --xml-dir ${GITHUB_WORKSPACE}/docs --src-dir ${GITHUB_WORKSPACE} --output documentation-coverage.info
+          mkdir ${GITHUB_WORKSPACE}/docs/coverage-html
+          cd ${GITHUB_WORKSPACE}/docs/coverage-html
+          python3 -m coverxygen --format json-v3 --kind all --verbose --xml-dir ${GITHUB_WORKSPACE}/docs/xml --src-dir ${GITHUB_WORKSPACE} --output -
+        
+      - name: list documentation outputs (debugging)
+        run: |
+          ls ${GITHUB_WORKSPACE}/docs/
+          lcov --summary ${GITHUB_WORKSPACE}/docs/coverage-html/documentation-coverage.info
+        
+      - name: generate code coverage report
+        run: |
+          genhtml --no-prefix --no-function-coverage --no-branch-coverage ${GITHUB_WORKSPACE}/docs/coverage-html/documentation-coverage.info
+          
+      - name: run imgkit
+        run: |
+          python3 -c "import imgkit; imgkit.from_url('http://google.com', '${GITHUB_WORKSPACE}/docs/coverage.jpg')"
           
       - name: deploy documentation
         uses: JamesIves/github-pages-deploy-action@4.0.0
