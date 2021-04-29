@@ -30,6 +30,14 @@ jobs:
           chmod +x build.sh
           ./build.sh
           
+      - name: install lcov
+        run: |
+          sudo apt-get install lcov
+          
+      - uses: BSFishy/pip-action@v1
+        with:
+          packages: coverxygen
+          
       - name: deploy documentation
         uses: JamesIves/github-pages-deploy-action@4.0.0
         with:
