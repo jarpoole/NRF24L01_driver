@@ -46,11 +46,6 @@ jobs:
           cd ${GITHUB_WORKSPACE}/docs/coverage-html
           python3 -m coverxygen --format lcov --kind all --verbose --xml-dir ${GITHUB_WORKSPACE}/docs/xml --src-dir ${GITHUB_WORKSPACE} --output ${GITHUB_WORKSPACE}/docs/coverage-html/documentation-coverage.info
         
-      - name: list documentation outputs (debugging)
-        run: |
-          ls ${GITHUB_WORKSPACE}/docs/
-          lcov --summary ${GITHUB_WORKSPACE}/docs/coverage-html/documentation-coverage.info
-        
       - name: generate code coverage report
         run: |
           genhtml --no-prefix --no-function-coverage --no-branch-coverage ${GITHUB_WORKSPACE}/docs/coverage-html/documentation-coverage.info
@@ -58,6 +53,10 @@ jobs:
       - name: run imgkit
         run: |
           python3 -c "import imgkit; imgkit.from_url('http://google.com', '${GITHUB_WORKSPACE}/docs/coverage.jpg')"
+          
+      - name: list documentation outputs (debugging)
+        run: |
+          ls ${GITHUB_WORKSPACE}/docs/
           
       - name: deploy documentation
         uses: JamesIves/github-pages-deploy-action@4.0.0
@@ -70,4 +69,7 @@ jobs:
         uses: EndBug/add-and-commit@v7
         with:
           add: '${GITHUB_WORKSPACE}/docs/coverage.jpg'
+          branch: main
+          default_author: github_actions 
+          
       
