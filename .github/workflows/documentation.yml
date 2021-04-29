@@ -51,7 +51,7 @@ jobs:
       - name: generate code coverage report
         run: |
           mkdir ${GITHUB_WORKSPACE}/docs/coverage-html
-          genhtml --no-function-coverage --no-branch-coverage ${GITHUB_WORKSPACE}/docs/documentation-coverage.info -o ${GITHUB_WORKSPACE}/docs/coverage-html
+          genhtml --no-prefix --no-function-coverage --no-branch-coverage ${GITHUB_WORKSPACE}/docs/documentation-coverage.info -o ${GITHUB_WORKSPACE}/docs/coverage-html
           
       - name: run imgkit
         run: |
