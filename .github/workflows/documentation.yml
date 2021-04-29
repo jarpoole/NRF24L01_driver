@@ -52,7 +52,7 @@ jobs:
         
       - name: generate code coverage report
         run: |
-          genhtml --no-prefix --no-function-coverage --no-branch-coverage ${GITHUB_WORKSPACE}/docs/documentation-coverage.info
+          genhtml --no-prefix --no-function-coverage --no-branch-coverage ${GITHUB_WORKSPACE}/docs/coverage-html/documentation-coverage.info
           
       - name: run imgkit
         run: |
