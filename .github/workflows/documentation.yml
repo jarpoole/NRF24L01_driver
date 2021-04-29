@@ -44,7 +44,7 @@ jobs:
         run: |
           mkdir ${GITHUB_WORKSPACE}/docs/coverage-html
           cd ${GITHUB_WORKSPACE}/docs/coverage-html
-          python3 -m coverxygen --format lcov --verbose --xml-dir ${GITHUB_WORKSPACE}/docs/xml --src-dir ${GITHUB_WORKSPACE} --output -
+          python3 -m coverxygen --format lcov --verbose --xml-dir ${GITHUB_WORKSPACE}/docs/xml --src-dir ${GITHUB_WORKSPACE} --output ${GITHUB_WORKSPACE}/docs/coverage-html/documentation-coverage.info
         
       - name: list documentation outputs (debugging)
         run: |
