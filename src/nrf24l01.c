@@ -729,7 +729,10 @@ nrf24l01_err_t nrf24l01_flush_rx(nrf24l01_platform_t* platform) {
 	return err;
 }
 
-// Clear any pending IRQ flags
+/** @brief Clears any pending IRQ flags
+ * 
+ *  @param[in] platform : Driver instance configuration struct pointer
+ */
 nrf24l01_err_t nrf24l01_clear_irq_flags(nrf24l01_platform_t* platform) {
 	nrf24l01_err_t err = NRF24L01_OK;
 	
@@ -742,41 +745,52 @@ nrf24l01_err_t nrf24l01_clear_irq_flags(nrf24l01_platform_t* platform) {
 	return err;
 }
 
-// Write TX payload
-// input:
-//   data - pointer to the buffer with payload data, FIFO is 32 bytes long
-//   len - payload length in bytes
+/** @brief Writes a TX payload to the FIFO and triggers a transmission
+ * 
+ *  @param[in] data     : Pointer to a buffer with the TX payload data, remember the TX FIFO is 32 bytes long
+ *  @param[in] len      : Length of buffer to transmit (in bytes)
+ *  @param[in] platform : Driver instance configuration struct pointer
+ * 
+ *  @retval NRF24L01_ERR_INVALID_ARG -> Pointer to data buffer is null or size of data packet is too large
+ *  @retval NRF24L01_ERR_UNKNOWN     -> Device communication failed
+ *  @retval NRF24L01_OK              -> Payload write was successful
+ */
 nrf24l01_err_t nrf24l01_write_payload(uint8_t* data, uint8_t len, nrf24l01_platform_t* platform) {
-	nrf24l01_err_t err;
+	NRF24L01_FPTR_RTN_T platform_err;
 
 	if(data == NULL){
-		err = NRF24L01_ERR_INVALID_ARG;
-		return err;
+		return NRF24L01_ERR_INVALID_ARG;
 	}else if(len > 32){
-		err = NRF24L01_ERR_INVALID_ARG;
-		return err;
+		return NRF24L01_ERR_INVALID_ARG;
 	}
 
-	NRF24L01_FPTR_RTN_T spi_err = platform->spi_exchange(NRF24L01_CMD_W_TX_PAYLOAD, NULL, data, len, platform->user_ptr);
-	if(spi_err != 0){
-		err = NRF24L01_ERR_WRITE;
-	}else{
-		err = NRF24L01_OK;
-	}
-	
-	platform->gpio_chip_enable(true, platform->user_ptr);
-	platform->delay_us(NRF24L01_CE_TX_MINIMUM_PULSE_US);
-	platform->gpio_chip_enable(false, platform->user_ptr);
-	return err;
-}
-
-
-static nrf24l01_err_t nrf24l01_get_rx_dpl(uint8_t* width, nrf24l01_platform_t* platform) {
-	NRF24L01_FPTR_RTN_T spi_err = platform->spi_exchange(NRF24L01_FEATURE_CMD_R_RX_PL_WID, width, NULL, sizeof(uint8_t), platform->user_ptr);
-	if(spi_err != 0){
-		return NRF24L01_ERR_WRITE;
+	platform_err |= platform->spi_exchange(NRF24L01_CMD_W_TX_PAYLOAD, NULL, data, len, platform->user_ptr);
+	platform_err |= platform->gpio_chip_enable(true, platform->user_ptr);
+	platform_err |= platform->delay_us(NRF24L01_CE_TX_MINIMUM_PULSE_US);
+	platform_err |= platform->gpio_chip_enable(false, platform->user_ptr);
+	if(platform_err != 0){
+		return NRF24L01_ERR_UNKNOWN;
 	}
 	return NRF24L01_OK;
+}
+
+/** @brief Gets the configured RX dynamic payload width
+ * 
+ *  @param[out] width    : Pointer to a location where the DPL will be stored
+ *  @param[in]  platform : Driver instance configuration struct pointer
+ * 
+ *  @retval NRF24L01_ERR_INVALID_ARG -> Pointer to DLP width is null
+ *  @retval NRF24L01_ERR_READ        -> Device communication failed
+ *  @retval NRF24L01_OK              -> Read successful, width is valid
+ */
+static nrf24l01_err_t nrf24l01_get_rx_dpl(uint8_t* width, nrf24l01_platform_t* platform) {
+	nrf24l01_err_t err;
+	
+	if(width == NULL){
+		return NRF24L01_ERR_INVALID_ARG;
+	}
+	err = nrf24l01_read_reg(NRF24L01_FEATURE_CMD_R_RX_PL_WID, &width, platform);
+	return err;
 }
 
 nrf24l01_err_t nrf24l01_read_payload(nrf24l01_pipe_t* pipe, uint8_t* rx_data, uint8_t* len, bool dpl, nrf24l01_platform_t* platform) {
@@ -1421,6 +1435,11 @@ nrf24l01_err_t nrf24l01_print_fifo_status_register(nrf24l01_platform_t* platform
 
 
 
+
+
+
+
+
 /** @brief Check for interrupt function pointer which should be called often by the user
  *  to ensure that radio events are triggered
  *
@@ -1458,8 +1477,6 @@ void nrf24l01_loop(nrf24l01_platform_t* platform){
 		return;
 	}
 }
-
-
 
 nrf24l01_err_t nrf24l01_register_rx_dr_callback(nrf24l01_rx_dr_callback_fptr_t callback, void* user_ptr, nrf24l01_platform_t* platform){
 	platform->callbacks.rx_dr_callback = callback;
