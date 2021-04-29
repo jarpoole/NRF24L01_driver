@@ -22,6 +22,8 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+        with:
+          path: "~"
 
       - name: build documentation
         run: |
@@ -34,9 +36,14 @@ jobs:
         run: |
           sudo apt-get install lcov
           
-      - uses: BSFishy/pip-action@v1
+      - name: install coverxygen 
+        uses: BSFishy/pip-action@v1
         with:
           packages: coverxygen
+      
+      - name: run coverxygen
+        run: |
+          python3 -m coverxygen --xml-dir ${GITHUB_WORKSPACE}/docs --src-dir ${GITHUB_WORKSPACE} --output documentation-coverage.info
           
       - name: deploy documentation
         uses: JamesIves/github-pages-deploy-action@4.0.0
