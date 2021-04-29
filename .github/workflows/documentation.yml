@@ -38,6 +38,15 @@ jobs:
         uses: BSFishy/pip-action@v1
         with:
           packages: coverxygen
+      
+      - name: install imgkit 
+        uses: BSFishy/pip-action@v1
+        with:
+          packages: imgkit
+          
+      - name: install wkhtmltopdf
+        run: |
+          sudo apt-get install wkhtmltopdf
           
       - name: list documentation outputs (debugging)
         run: |
@@ -46,6 +55,15 @@ jobs:
       - name: run coverxygen
         run: |
           python3 -m coverxygen --xml-dir ${GITHUB_WORKSPACE}/docs/xml --src-dir ${GITHUB_WORKSPACE} --output documentation-coverage.info
+        
+      - name: generate code coverage report
+        run: |
+          mkdir ${GITHUB_WORKSPACE}/docs/coverage-html
+          genhtml --no-function-coverage --no-branch-coverage documentation-coverage.info -o ${GITHUB_WORKSPACE}/docs/coverage-html
+          
+      - name: run imgkit
+        run: |
+          python3 -c "import imgkit; imgkit.from_url('http://google.com', '${GITHUB_WORKSPACE}/docs/coverage.jpg')"
           
       - name: deploy documentation
         uses: JamesIves/github-pages-deploy-action@4.0.0
