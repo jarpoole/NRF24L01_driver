@@ -91,6 +91,10 @@
 #ifndef NRF24L01_DEFS_H
 #define NRF24L01_DEFS_H
 
+#ifdef __cplusplus
+extern "C"{
+#endif // __cplusplus
+
 #ifndef NRF24L01_FPTR_RTN_T
 	#warning "Plaform specific function pointer return type not specified, defaulting to int8_t"
 	#define NRF24L01_FPTR_RTN_T int8_t
@@ -130,7 +134,7 @@
 		/****************************************************************************************************************/
 
 	#endif
-#endif
+#endif // NRF24L01_ENABLE_DEBUG_LOGGING
 
 
 /** @name General Commands
@@ -428,26 +432,26 @@
 /// @{
 
 ///< Mask for all defined bits[6:0] in CONFIG register 
-#define NRF24L01_CONFIG_MASK_REG              	(uint8_t)(                                \
-													NRF24L01_CONFIG_REG_BIT_MASK_RX_DR  | \
-													NRF24L01_CONFIG_REG_BIT_MASK_TX_DS  | \
-													NRF24L01_CONFIG_REG_BIT_MASK_MAX_RT | \
-													NRF24L01_CONFIG_REG_BIT_EN_CRC      | \
-													NRF24L01_CONFIG_REG_BIT_CRCO        | \
-													NRF24L01_CONFIG_REG_BIT_PWR_UP      | \
-													NRF24L01_CONFIG_REG_BIT_PRIM_RX       \
-											  	)
+#define NRF24L01_CONFIG_MASK_REG        (uint8_t)(                                \
+											NRF24L01_CONFIG_REG_BIT_MASK_RX_DR  | \
+											NRF24L01_CONFIG_REG_BIT_MASK_TX_DS  | \
+											NRF24L01_CONFIG_REG_BIT_MASK_MAX_RT | \
+											NRF24L01_CONFIG_REG_BIT_EN_CRC      | \
+											NRF24L01_CONFIG_REG_BIT_CRCO        | \
+											NRF24L01_CONFIG_REG_BIT_PWR_UP      | \
+											NRF24L01_CONFIG_REG_BIT_PRIM_RX       \
+										)
 ///< Mask for INTERRUPT[6:4] bits in CONFIG register 
-#define NRF24L01_CONFIG_MASK_INTERRUPT_MASKS  	(uint8_t)(                                \
-													NRF24L01_CONFIG_REG_BIT_MASK_RX_DR  | \
-													NRF24L01_CONFIG_REG_BIT_MASK_TX_DS  | \
-													NRF24L01_CONFIG_REG_BIT_MASK_MAX_RT   \
-											  	)
+#define NRF24L01_CONFIG_MASK_INTERRUPT_MASKS (uint8_t)(                           \
+											NRF24L01_CONFIG_REG_BIT_MASK_RX_DR  | \
+											NRF24L01_CONFIG_REG_BIT_MASK_TX_DS  | \
+											NRF24L01_CONFIG_REG_BIT_MASK_MAX_RT   \
+										)
 ///< Mask for CRC[3:2] bits in CONFIG register 
-#define NRF24L01_CONFIG_MASK_CRC   			 	(uint8_t)(                                \
-													NRF24L01_CONFIG_REG_BIT_EN_CRC      | \
-													NRF24L01_CONFIG_REG_BIT_CRCO          \
-											  	)
+#define NRF24L01_CONFIG_MASK_CRC   		(uint8_t)(                                \
+											NRF24L01_CONFIG_REG_BIT_EN_CRC      | \
+											NRF24L01_CONFIG_REG_BIT_CRCO          \
+										)
 /// @}
 
 
@@ -458,14 +462,14 @@
 /// @{
 
 ///< Mask for all defined bits[5:0] in EN_AA register 
-#define NRF24L01_EN_AA_MASK_REG              	(uint8_t)(                                \
-													NRF24L01_EN_AA_REG_BIT_ENAA_P5      | \
-													NRF24L01_EN_AA_REG_BIT_ENAA_P4      | \
-													NRF24L01_EN_AA_REG_BIT_ENAA_P3      | \
-													NRF24L01_EN_AA_REG_BIT_ENAA_P2      | \
-													NRF24L01_EN_AA_REG_BIT_ENAA_P1      | \
-													NRF24L01_EN_AA_REG_BIT_ENAA_P0        \
-												)
+#define NRF24L01_EN_AA_MASK_REG         (uint8_t)(                                \
+											NRF24L01_EN_AA_REG_BIT_ENAA_P5      | \
+											NRF24L01_EN_AA_REG_BIT_ENAA_P4      | \
+											NRF24L01_EN_AA_REG_BIT_ENAA_P3      | \
+											NRF24L01_EN_AA_REG_BIT_ENAA_P2      | \
+											NRF24L01_EN_AA_REG_BIT_ENAA_P1      | \
+											NRF24L01_EN_AA_REG_BIT_ENAA_P0        \
+										)
 /// @}
 
 
@@ -476,14 +480,14 @@
 /// @{
 
 ///< Mask for all defined bits[5:0] in EN_RXADDR register 
-#define NRF24L01_EN_RXADDR_MASK_REG             (uint8_t)(                                \
-													NRF24L01_EN_RXADDR_REG_BIT_ERX_P5   | \
-													NRF24L01_EN_RXADDR_REG_BIT_ERX_P4   | \
-													NRF24L01_EN_RXADDR_REG_BIT_ERX_P3   | \
-													NRF24L01_EN_RXADDR_REG_BIT_ERX_P2   | \
-													NRF24L01_EN_RXADDR_REG_BIT_ERX_P1   | \
-													NRF24L01_EN_RXADDR_REG_BIT_ERX_P0     \
-												)
+#define NRF24L01_EN_RXADDR_MASK_REG     (uint8_t)(                                \
+											NRF24L01_EN_RXADDR_REG_BIT_ERX_P5   | \
+											NRF24L01_EN_RXADDR_REG_BIT_ERX_P4   | \
+											NRF24L01_EN_RXADDR_REG_BIT_ERX_P3   | \
+											NRF24L01_EN_RXADDR_REG_BIT_ERX_P2   | \
+											NRF24L01_EN_RXADDR_REG_BIT_ERX_P1   | \
+											NRF24L01_EN_RXADDR_REG_BIT_ERX_P0     \
+										)
 /// @}
 
 
@@ -494,7 +498,7 @@
 /// @{
 
 ///< Mask for all defined bits[1:0] in AW register
-#define NRF24L01_SETUP_AW_MASK_REG              (uint8_t)NRF24L01_SETUP_AW_REG_BITS_AW
+#define NRF24L01_SETUP_AW_MASK_REG      (uint8_t)NRF24L01_SETUP_AW_REG_BITS_AW
 /// @}
 
 
@@ -505,10 +509,10 @@
 /// @{
 
 ///< Mask for all defined bits[7:0] in SETUP_RETR register 
-#define NRF24L01_SETUP_RETR_MASK_REG            (uint8_t)(                                \
-													NRF24L01_SETUP_RETR_REG_BITS_ARD    | \
-													NRF24L01_SETUP_RETR_REG_BITS_ARC      \
-												)
+#define NRF24L01_SETUP_RETR_MASK_REG    (uint8_t)(                                \
+											NRF24L01_SETUP_RETR_REG_BITS_ARD    | \
+											NRF24L01_SETUP_RETR_REG_BITS_ARC      \
+										)
 /// @}
 
 
@@ -519,7 +523,7 @@
 /// @{
 
 ///< Mask for all defined bits[6:0] in RF_CH register 
-#define NRF24L01_RF_CH_MASK_REG                 (uint8_t)NRF24L01_RF_CH_REG_BITS_RF_CH
+#define NRF24L01_RF_CH_MASK_REG         (uint8_t)NRF24L01_RF_CH_REG_BITS_RF_CH
 /// @}
 
 
@@ -530,12 +534,12 @@
 /// @{
 
 ///< Mask for all defined bits[4:0] in RF_SETUP register 
-#define NRF24L01_RF_SETUP_MASK_REG              (uint8_t)(                                \
-													NRF24L01_RF_SETUP_REG_BIT_PLL_LOCK  | \
-													NRF24L01_RF_SETUP_REG_BIT_RF_DR     | \
-													NRF24L01_RF_SETUP_REG_BITS_RF_PWR   | \
-													NRF24L01_RF_SETUP_REG_BIT_LNA_HCURR   \
-												)
+#define NRF24L01_RF_SETUP_MASK_REG      (uint8_t)(                                \
+											NRF24L01_RF_SETUP_REG_BIT_PLL_LOCK  | \
+											NRF24L01_RF_SETUP_REG_BIT_RF_DR     | \
+											NRF24L01_RF_SETUP_REG_BITS_RF_PWR   | \
+											NRF24L01_RF_SETUP_REG_BIT_LNA_HCURR   \
+										)
 /// @}
 
 
@@ -546,19 +550,19 @@
 /// @{
 
 ///< Mask for all defined bits[6:0] in STATUS register 
-#define NRF24L01_STATUS_MASK_REG 				(uint8_t)(                                \
-													NRF24L01_STATUS_REG_BIT_RX_DR       | \
-													NRF24L01_STATUS_REG_BIT_TX_DS       | \
-													NRF24L01_STATUS_REG_BIT_MAX_RT      | \
-													NRF24L01_STATUS_REG_BITS_RX_P_NO    | \
-													NRF24L01_STATUS_REG_BIT_TX_FULL       \
-												)
+#define NRF24L01_STATUS_MASK_REG 		(uint8_t)(                                \
+											NRF24L01_STATUS_REG_BIT_RX_DR       | \
+											NRF24L01_STATUS_REG_BIT_TX_DS       | \
+											NRF24L01_STATUS_REG_BIT_MAX_RT      | \
+											NRF24L01_STATUS_REG_BITS_RX_P_NO    | \
+											NRF24L01_STATUS_REG_BIT_TX_FULL       \
+										)
 ///< Mask for IRQ[6:4] interrupt flag bits in STATUS register
-#define NRF24L01_STATUS_MASK_IRQ_FLAGS			(uint8_t)(                                \
-													NRF24L01_STATUS_REG_BIT_RX_DR       | \
-													NRF24L01_STATUS_REG_BIT_TX_DS       | \
-													NRF24L01_STATUS_REG_BIT_MAX_RT        \
-												)
+#define NRF24L01_STATUS_MASK_IRQ_FLAGS	(uint8_t)(                                \
+											NRF24L01_STATUS_REG_BIT_RX_DR       | \
+											NRF24L01_STATUS_REG_BIT_TX_DS       | \
+											NRF24L01_STATUS_REG_BIT_MAX_RT        \
+										)
 /// @}
 
 
@@ -749,15 +753,15 @@ typedef enum {
 	NRF24L01_TX_FIFO  = (uint8_t)0x01,  ///< TX_FIFO
 } nrf24l01_fifo_type_t;
 
-// Error codes for NRF24L01
+/// Error codes for NRF24L01
 typedef enum {
-    NRF24L01_OK = 0,
-    NRF24L01_ERR_UNKNOWN,
-    NRF24L01_ERR_INVALID_ARG,
-	NRF24L01_ERR_INVALID_STATE,
-    NRF24L01_ERR_DEVICE_NOT_FOUND,
-    NRF24L01_ERR_WRITE,
-    NRF24L01_ERR_READ,
+    NRF24L01_OK = 0,               ///< Driver operation successful
+    NRF24L01_ERR_UNKNOWN,          ///< An unknown driver occured
+    NRF24L01_ERR_INVALID_ARG,      ///< One (or more) arguments passed to the API are invalid
+	NRF24L01_ERR_INVALID_STATE,    ///< Driver or device is in an invalid state
+    NRF24L01_ERR_DEVICE_NOT_FOUND, ///< Device cannot be found on SPI bus
+    NRF24L01_ERR_WRITE,            ///< SPI write failed
+    NRF24L01_ERR_READ,             ///< SPI read failed
 } nrf24l01_err_t;
 
 /** @brief Enumeration of RX pipe addresses and TX address
@@ -765,18 +769,27 @@ typedef enum {
  *  Found in datasheet as @htmlonly <a href="nRF24L01_product_specifications.pdf#page=55&search=%22RX_P_NO%22">RX_P_NO[3:1] bits in STATUS register</a> @endhtmlonly
  */ 
 typedef enum {
-	NRF24L01_PIPE0        = (uint8_t)0x00,  ///< pipe0
-	NRF24L01_PIPE1        = (uint8_t)0x01,  ///< pipe1
-	NRF24L01_PIPE2        = (uint8_t)0x02,  ///< pipe2
-	NRF24L01_PIPE3        = (uint8_t)0x03,  ///< pipe3
-	NRF24L01_PIPE4        = (uint8_t)0x04,  ///< pipe4
-	NRF24L01_PIPE5        = (uint8_t)0x05,  ///< pipe5
+	NRF24L01_PIPE0        = (uint8_t)0x00,  ///< RX pipe0
+	NRF24L01_PIPE1        = (uint8_t)0x01,  ///< RX pipe1
+	NRF24L01_PIPE2        = (uint8_t)0x02,  ///< RX pipe2
+	NRF24L01_PIPE3        = (uint8_t)0x03,  ///< RX pipe3
+	NRF24L01_PIPE4        = (uint8_t)0x04,  ///< RX pipe4
+	NRF24L01_PIPE5        = (uint8_t)0x05,  ///< RX pipe5
 	NRF24L01_PIPETX       = (uint8_t)0x06,  ///< TX address (not a pipe in fact)
 	NRF24L01_PIPE_UNKNOWN = (uint8_t)0x07,  ///< pipe unknown (usually signifies rx pipe is empty)
 	NRF24L01_ALL_RX_PIPES,                  ///< Used in the API to configure all RX pipes at the same time
 } nrf24l01_pipe_t;
 
+/** @brief Evaluates to true if the given pipe is for receiving bytes
+ * 
+ *  @param[in] pipe : Should be a value of type `nrf24l01_pipe_t`
+ */ 
 #define NRF24L01_IS_RX_PIPE(pipe)    ( ((pipe) >= NRF24L01_PIPE0 && (pipe) <= NRF24L01_PIPE5) || ((pipe) == NRF24L01_ALL_RX_PIPES) )
+
+/** @brief Evaluates to true if the given pipe is for transmitting bytes
+ * 
+ *  @param[in] pipe : Should be a value of type `nrf24l01_pipe_t`
+ */ 
 #define NRF24L01_IS_TX_PIPE(pipe)    ( (pipe) == NRF24L01_PIPETX )
 
 
@@ -827,8 +840,7 @@ typedef enum {
 } ack_payload_mode_t;
 
 
-/**
- *  @brief Hardware initialization function pointer which should be used to configure the
+/** @brief Hardware initialization function pointer which should be used to configure the
  *  hardware before communication is attempted
  *  
  *  Responsibilities
@@ -842,65 +854,59 @@ typedef enum {
 typedef NRF24L01_FPTR_RTN_T (*nrf24l01_platform_init_fptr_t)(void* user_ptr);
 
 
-/**
- * @brief SPI Bus deinitialization function pointer which should be used to release the
- * hardware when the driver is deinitialized
+/** @brief SPI Bus deinitialization function pointer which should be used to release the
+ *  hardware when the driver is deinitialized
  *
- * @param[in] user_ptr      : Pointer to user-defined hardware configuration struct
+ *  @param[in] user_ptr      : Pointer to user-defined hardware configuration struct
  *
- * @retval 0        -> Success
- * @retval Non-zero -> Fail
+ *  @retval 0        -> Success
+ *  @retval Non-zero -> Fail
  */
 typedef NRF24L01_FPTR_RTN_T (*nrf24l01_platform_deinit_fptr_t)(void* user_ptr);
 
 
-/**
- * @brief SPI Bus exchange function pointer which should be mapped to
- * the platform specific write functions of the user
+/** @brief SPI Bus exchange function pointer which should be mapped to
+ *  the platform specific write functions of the user
  *
- * @param[in] command      : NRF24L01-specific command byte which should be sent 
- *                           before rx_data and/or tx_data
- * @param[in] rx_data      : Pointer to data buffer into which data which will be
- *                           read. Implementation must handle the case where this
- *                           value is NULL. When non-NULL, this buffer must have a
- * 							 size of 'len'
- * @param[in] tx_data      : Pointer to data buffer in which data to be written
- *                           is stored. Implementation must handle the case where this
- *                           value is NULL. When non-NULL, this buffer must have a
- * 							 size of 'len'
- * @param[in] len          : Number of bytes of data to be read/written.
- * @param[in] user_ptr     : Pointer to user-defined hardware configuration struct
+ *  @param[in] command      : NRF24L01-specific command byte which should be sent 
+ *                            before rx_data and/or tx_data
+ *  @param[in] rx_data      : Pointer to data buffer into which data which will be
+ *                            read. Implementation must handle the case where this
+ *                            value is NULL. When non-NULL, this buffer must have a
+ * 							  size of 'len'
+ *  @param[in] tx_data      : Pointer to data buffer in which data to be written
+ *                            is stored. Implementation must handle the case where this
+ *                            value is NULL. When non-NULL, this buffer must have a
+ * 							  size of 'len'
+ *  @param[in] len          : Number of bytes of data to be read/written.
+ *  @param[in] user_ptr     : Pointer to user-defined hardware configuration struct
  *
- * @retval 0        -> Success
- * @retval Non-zero -> Fail
+ *  @retval 0        -> Success
+ *  @retval Non-zero -> Fail
  */
 typedef NRF24L01_FPTR_RTN_T (*nrf24l01_spi_exchange_fptr_t)(uint8_t command, uint8_t* rx_data, uint8_t* tx_data, uint8_t len, void* user_ptr);
 
 
-/**
- * @brief Set the state of Chip enable GPIO function pointer
+/** @brief Set the state of Chip enable GPIO function pointer
  *
- * @param[in] state         : Desired state of the chip enable GPIO
- * @param[in] user_ptr      : Pointer to user-defined hardware configuration struct
+ *  @param[in] state         : Desired state of the chip enable GPIO
+ *  @param[in] user_ptr      : Pointer to user-defined hardware configuration struct
  *
- * @retval 0        -> Success
- * @retval Non-zero -> Fail
+ *  @retval 0        -> Success
+ *  @retval Non-zero -> Fail
  */
 typedef NRF24L01_FPTR_RTN_T (*nrf24l01_gpio_chip_enable_fptr_t)(bool state, void* user_ptr);
 
 
-/**
- * @brief Microsecond delay function pointer which should be mapped to
- * the platform specific delay function of the user
+/** @brief Microsecond delay function pointer which should be mapped to
+ *  the platform specific delay function of the user
  *
- * @param[in] delay      : Number of microseconds to delay
+ *  @param[in] delay      : Number of microseconds to delay
  *
- * @retval 0        -> Success
- * @retval Non-zero -> Fail
+ *  @retval 0        -> Success
+ *  @retval Non-zero -> Fail
  */
 typedef NRF24L01_FPTR_RTN_T (*nrf24l01_delay_us_fptr_t)(uint32_t delay);
-
-
 
 
 /** @brief User supplied RX data received callback function pointer
@@ -957,7 +963,12 @@ struct nrf24l01_platform_t{
 	void*                               user_ptr;                 ///< (optional) Pointer to a user-defined hardware configuration struct
 };
 
+
+#ifdef __cplusplus
+}
 #endif
+
+#endif // NRF24L01_DEFS_H
 
 
 

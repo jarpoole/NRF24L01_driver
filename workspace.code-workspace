@@ -1,0 +1,13 @@
+{
+	"extensions": {
+		"recommendations": [
+			"ms-vscode.cpptools"
+		]
+	},
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {}
+}

@@ -46,7 +46,7 @@ nrf24l01_err_t nrf24l01_flush_tx(nrf24l01_platform_t*);
 nrf24l01_err_t nrf24l01_get_status(uint8_t*, nrf24l01_platform_t*);
 nrf24l01_err_t nrf24l01_get_fifo_status(nrf24l01_fifo_type_t, nrf24l01_fifo_status_t*, nrf24l01_platform_t*);
 nrf24l01_err_t nrf24l01_reset_packet_loss_counter(nrf24l01_platform_t*);
-nrf24l01_err_t nrf24l01_get_retransmit_counters(nrf24l01_ar_count_t*, nrf24l01_ar_lost_t*, nrf24l01_platform_t*);
+nrf24l01_err_t nrf24l01_get_retransmit_counters(nrf24l01_ar_lost_t*, nrf24l01_ar_count_t*, nrf24l01_platform_t*);
 
 // Device state
 nrf24l01_err_t nrf24l01_get_power_mode(nrf24l01_power_mode_t*, nrf24l01_platform_t*);
@@ -103,13 +103,13 @@ nrf24l01_err_t nrf24l01_set_address(nrf24l01_pipe_t, const uint8_t*, uint8_t, nr
 /*** Debug API **************************************************************************************************/
 
 #ifdef NRF24L01_ENABLE_PRINT_CONFIG
-void nrf24l01_print_config(nrf24l01_platform_t*);
-void nrf24l01_print_status_register(nrf24l01_platform_t*);
-void nrf24l01_print_fifo_status_register(nrf24l01_platform_t*);
+nrf24l01_err_t nrf24l01_print_config(nrf24l01_platform_t*);
+nrf24l01_err_t nrf24l01_print_status_register(nrf24l01_platform_t*);
+nrf24l01_err_t nrf24l01_print_fifo_status_register(nrf24l01_platform_t*);
 #else
-void nrf24l01_print_config(nrf24l01_platform_t* platform){ return; };
-void nrf24l01_print_status_register(nrf24l01_platform_t* platform){ return; };
-void nrf24l01_print_fifo_status_register(nrf24l01_platform_t* platform) { return; };
+nrf24l01_err_t nrf24l01_print_config(nrf24l01_platform_t* platform){ return; };
+nrf24l01_err_t nrf24l01_print_status_register(nrf24l01_platform_t* platform){ return; };
+nrf24l01_err_t nrf24l01_print_fifo_status_register(nrf24l01_platform_t* platform) { return; };
 #endif // NRF24L01_ENABLE_PRINT_CONFIG
 
 /****************************************************************************************************************/
