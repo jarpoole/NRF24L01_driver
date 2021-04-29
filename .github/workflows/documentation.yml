@@ -48,13 +48,13 @@ jobs:
         run: |
           sudo apt-get install wkhtmltopdf
           
-      - name: list documentation outputs (debugging)
-        run: |
-          ls ${GITHUB_WORKSPACE}/docs/
-          
       - name: run coverxygen
         run: |
           python3 -m coverxygen --xml-dir ${GITHUB_WORKSPACE}/docs/xml --src-dir ${GITHUB_WORKSPACE} --output documentation-coverage.info
+        
+      - name: list documentation outputs (debugging)
+        run: |
+          ls ${GITHUB_WORKSPACE}/docs/
         
       - name: generate code coverage report
         run: |
