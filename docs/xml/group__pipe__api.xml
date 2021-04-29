@@ -1,0 +1,375 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="group__pipe__api" kind="group">
+    <compoundname>pipe_api</compoundname>
+    <title>Pipe_api</title>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__pipe__api_1ga736b0f56f587c118863e9fda079d1bdc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_set_pipe_mode</definition>
+        <argsstring>(nrf24l01_pipe_t, nrf24l01_pipe_mode_t, nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_set_pipe_mode</name>
+        <param>
+          <type><ref refid="nrf24l01__defs_8h_1ac835ed70d839160974a8a370302ceda4" kindref="member">nrf24l01_pipe_t</ref></type>
+          <defname>pipe</defname>
+        </param>
+        <param>
+          <type><ref refid="nrf24l01__defs_8h_1a0f8a4b75aa513292f26f863101323039" kindref="member">nrf24l01_pipe_mode_t</ref></type>
+          <defname>mode</defname>
+        </param>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+          <defname>platform</defname>
+        </param>
+        <briefdescription>
+<para>Enables or disables an RX pipe. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>All pipes can be modified simultaneously using NRF24L01_ALL_RX_PIPES</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pipe</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: The pipe to change </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: The desired pipe mode </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">platform</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Driver instance configuration struct pointer <linebreak/>
+ </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="75" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="436" bodyend="461" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="75" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__pipe__api_1ga82df3ae97ab1943d6c8846af91530c20" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_set_pipe_aa_mode</definition>
+        <argsstring>(nrf24l01_pipe_t, nrf24l01_pipe_aa_mode_t, nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_set_pipe_aa_mode</name>
+        <param>
+          <type><ref refid="nrf24l01__defs_8h_1ac835ed70d839160974a8a370302ceda4" kindref="member">nrf24l01_pipe_t</ref></type>
+          <defname>pipe</defname>
+        </param>
+        <param>
+          <type><ref refid="nrf24l01__defs_8h_1a2018aa2bf9fb336d58f323b71be8f086" kindref="member">nrf24l01_pipe_aa_mode_t</ref></type>
+          <defname>aa_mode</defname>
+        </param>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+          <defname>platform</defname>
+        </param>
+        <briefdescription>
+<para>Configures the auto retransmit mode (a.k.a. enhanced ShockBurst) for the specified RX pipe. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>All pipes can be modified simultaneously using NRF24L01_ALL_RX_PIPES</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pipe</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: The pipe to change </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aa_mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: The desired auto retransmit mode </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">platform</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Driver instance configuration struct pointer <linebreak/>
+ </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="76" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="471" bodyend="496" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="76" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__pipe__api_1ga278481ec6a4aa4db0fc5953b6aceae8b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_set_pipe_rx_payload_size</definition>
+        <argsstring>(nrf24l01_pipe_t, uint8_t, nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_set_pipe_rx_payload_size</name>
+        <param>
+          <type><ref refid="nrf24l01__defs_8h_1ac835ed70d839160974a8a370302ceda4" kindref="member">nrf24l01_pipe_t</ref></type>
+          <defname>pipe</defname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <defname>payload_len</defname>
+        </param>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+          <defname>platform</defname>
+        </param>
+        <briefdescription>
+<para>Configures the RX payload size for a specific pipe. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>All pipes can be modified simultaneously using NRF24L01_ALL_RX_PIPES</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pipe</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: The pipe to change </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">payload_len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: The desired RX payload length (1 to 32 bytes) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">platform</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Driver instance configuration struct pointer <linebreak/>
+ </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="77" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="208" bodyend="224" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="77" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__pipe__api_1ga993a327bc069340404c5dbb7a7dd443f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_write_payload</definition>
+        <argsstring>(uint8_t *, uint8_t, nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_write_payload</name>
+        <param>
+          <type>uint8_t *</type>
+          <defname>data</defname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <defname>len</defname>
+        </param>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+          <defname>platform</defname>
+        </param>
+        <briefdescription>
+<para>Writes a TX payload to the FIFO and triggers a transmission. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Pointer to a buffer with the TX payload data, remember the TX FIFO is 32 bytes long </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Length of buffer to transmit (in bytes) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">platform</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Driver instance configuration struct pointer</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>NRF24L01_ERR_INVALID_ARG</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>-&gt; Pointer to data buffer is null or size of data packet is too large </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NRF24L01_ERR_UNKNOWN</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>-&gt; Device communication failed </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NRF24L01_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>-&gt; Payload write was successful </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="80" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="758" bodyend="775" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="80" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__pipe__api_1ga813ffbf96c9a76b15d463154085df739" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_get_rx_pipe</definition>
+        <argsstring>(nrf24l01_pipe_t *, nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_get_rx_pipe</name>
+        <param>
+          <type><ref refid="nrf24l01__defs_8h_1ac835ed70d839160974a8a370302ceda4" kindref="member">nrf24l01_pipe_t</ref> *</type>
+          <defname>pipe</defname>
+        </param>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+          <defname>platform</defname>
+        </param>
+        <briefdescription>
+<para>Gets the pipe number for the payload available in the RX FIFO. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">pipe</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: A pointer where the pipe number or 0x07 if the RX FIFO is empty </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">platform</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Driver instance configuration struct pointer <linebreak/>
+ </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="84" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="632" bodyend="645" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="84" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__pipe__api_1ga0ddaef29411d56ad52cebfa48ed37fb9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_read_payload</definition>
+        <argsstring>(nrf24l01_pipe_t *, uint8_t *, uint8_t *, bool, nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_read_payload</name>
+        <param>
+          <type><ref refid="nrf24l01__defs_8h_1ac835ed70d839160974a8a370302ceda4" kindref="member">nrf24l01_pipe_t</ref> *</type>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+        </param>
+        <param>
+          <type>bool</type>
+        </param>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="85" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="796" bodyend="842" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="85" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__pipe__api_1gaf7370e9534ccbede12d2a8b185180a98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_set_pipe_dpl_mode</definition>
+        <argsstring>(nrf24l01_pipe_t, nrf24l01_dpl_mode_t, nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_set_pipe_dpl_mode</name>
+        <param>
+          <type><ref refid="nrf24l01__defs_8h_1ac835ed70d839160974a8a370302ceda4" kindref="member">nrf24l01_pipe_t</ref></type>
+          <defname>pipe</defname>
+        </param>
+        <param>
+          <type><ref refid="nrf24l01__defs_8h_1a0713efe0e232d8adca8016d007b1d28e" kindref="member">nrf24l01_dpl_mode_t</ref></type>
+          <defname>dpl_mode</defname>
+        </param>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+          <defname>platform</defname>
+        </param>
+        <briefdescription>
+<para>Sets the DPL mode for a specific RX pipe. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>All pipes can be modified simultaneously using NRF24L01_ALL_RX_PIPES</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pipe</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: The pipe to change </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dpl_mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: The desired DPL mode </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">platform</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Driver instance configuration struct pointer <linebreak/>
+ </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="88" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="506" bodyend="531" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="88" declcolumn="16"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

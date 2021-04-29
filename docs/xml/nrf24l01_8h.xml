@@ -1,0 +1,1783 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="nrf24l01_8h" kind="file" language="C++">
+    <compoundname>nrf24l01.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includes local="no">stdbool.h</includes>
+    <includes local="no">stddef.h</includes>
+    <includes local="no">string.h</includes>
+    <includes local="yes">../../nrf24l01_config.h</includes>
+    <includes refid="nrf24l01__defs_8h" local="yes">nrf24l01_defs.h</includes>
+    <includedby refid="nrf24l01_8c" local="yes">/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>stdbool.h</label>
+      </node>
+      <node id="6">
+        <label>../../nrf24l01_config.h</label>
+      </node>
+      <node id="2">
+        <label>stdint.h</label>
+      </node>
+      <node id="4">
+        <label>stddef.h</label>
+      </node>
+      <node id="5">
+        <label>string.h</label>
+      </node>
+      <node id="1">
+        <label>/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h</label>
+        <link refid="nrf24l01_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>nrf24l01_defs.h</label>
+        <link refid="nrf24l01__defs_8h"/>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c</label>
+        <link refid="nrf24l01_8c"/>
+      </node>
+      <node id="1">
+        <label>/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h</label>
+        <link refid="nrf24l01_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__device__api_1ga43b4c85fafbbee705aaafb59066c221c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_init</definition>
+        <argsstring>(nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_init</name>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="21" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="123" bodyend="159" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="21" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__device__api_1ga11b69f162283c2228eabdb56c8d6fba8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_deinit</definition>
+        <argsstring>(nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_deinit</name>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="22" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="162" bodyend="169" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="22" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__device__api_1ga7fbfdbe1cb58e64a0f91e6e85f87151a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_check_connectivity</definition>
+        <argsstring>(nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_check_connectivity</name>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+          <defname>platform</defname>
+        </param>
+        <briefdescription>
+<para>Checks if the nRF24L01(+) is present on the SPI bus. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">platform</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Driver instance configuration struct pointer <linebreak/>
+</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>NRF24L01_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>-&gt; NRF24L01(+) is online and responding <linebreak/>
+ </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NRF24L01_ERR_DEVICE_NOT_FOUND</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>-&gt; NRF24L01(+) cannot be reached <linebreak/>
+ </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="23" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="178" bodyend="198" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="23" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__device__api_1ga37b83343cd8e35b223e2dbc0fca0bbf1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_get_irq_flags</definition>
+        <argsstring>(uint8_t *, nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_get_irq_flags</name>
+        <param>
+          <type>uint8_t *</type>
+          <defname>flags</defname>
+        </param>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+          <defname>platform</defname>
+        </param>
+        <briefdescription>
+<para>Gets any pending IRQ flags. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The RX data received interrupt is signaled by NRF24L01_STATUS_REG_BIT_RX_DR The Tx data sent interrupt is signaled by NRF24L01_STATUS_REG_BIT_TX_DS The maximum retries interrupt is signaled by NRF24L01_STATUS_REG_BIT_MAX_RT</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">flags</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: A pointer to the state of the IRQ flags, will be a bitwise ORing of NRF24L01_STATUS_REG_BIT_x values </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">platform</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Driver instance configuration struct pointer <linebreak/>
+ </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="26" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="562" bodyend="575" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="26" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__device__api_1gac353f88e185c79871e9ee5708843cd81" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_set_irq_mask</definition>
+        <argsstring>(nrf24l01_interrupt_mask_t, nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_set_irq_mask</name>
+        <param>
+          <type><ref refid="nrf24l01__defs_8h_1aeee83db10040c4a2672da6bed2f7ab0d" kindref="member">nrf24l01_interrupt_mask_t</ref></type>
+          <defname>mask</defname>
+        </param>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+          <defname>platform</defname>
+        </param>
+        <briefdescription>
+<para>Enables/disables device interrupts. Completely replaces previous configuration. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>An RX data received interrupt can be enabled with NRF24L01_CONFIG_REG_BIT_MASK_RX_DR A Tx data sent interrupt can be enabled with NRF24L01_CONFIG_REG_BIT_MASK_TX_DS A maximum retries interrupt can be enabled with NRF24L01_CONFIG_REG_BIT_MASK_MAX_RT</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">mask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: The new IRQ configuration, should be a bitwise ORing of NRF24L01_CONFIG_REG_BIT_MASK_x values </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">platform</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Driver instance configuration struct pointer <linebreak/>
+ </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="27" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="586" bodyend="597" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="27" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__device__api_1ga2845ee5e7f262e9758a08c325dd65d77" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_clear_irq_flags</definition>
+        <argsstring>(nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_clear_irq_flags</name>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+          <defname>platform</defname>
+        </param>
+        <briefdescription>
+<para>Clears any pending IRQ flags. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">platform</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Driver instance configuration struct pointer </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="28" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="736" bodyend="746" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="28" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__device__api_1ga6be0b13e069c4e270640b34c65c6c58b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_register_rx_dr_callback</definition>
+        <argsstring>(nrf24l01_rx_dr_callback_fptr_t, void *, nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_register_rx_dr_callback</name>
+        <param>
+          <type><ref refid="nrf24l01__defs_8h_1a870b44260a83ed804d9c94dfecc8be8a" kindref="member">nrf24l01_rx_dr_callback_fptr_t</ref></type>
+        </param>
+        <param>
+          <type>void *</type>
+        </param>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="29" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="1481" bodyend="1486" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="29" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__device__api_1gaf4b8f3c50c981110f0c6fbc1df354bfa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_register_tx_ds_callback</definition>
+        <argsstring>(nrf24l01_tx_ds_callback_fptr_t, void *, nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_register_tx_ds_callback</name>
+        <param>
+          <type><ref refid="nrf24l01__defs_8h_1acbaf981637ef9ef2e0d15fc2886135b5" kindref="member">nrf24l01_tx_ds_callback_fptr_t</ref></type>
+        </param>
+        <param>
+          <type>void *</type>
+        </param>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="30" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="1488" bodyend="1493" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="30" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__device__api_1gae94ce0fe9852c9730abee9a4dda8fa18" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_register_max_rt_callback</definition>
+        <argsstring>(nrf24l01_max_rt_callback_fptr_t, void *, nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_register_max_rt_callback</name>
+        <param>
+          <type><ref refid="nrf24l01__defs_8h_1af3a3bced5aa40c9e8ea6ea75fd56b1b7" kindref="member">nrf24l01_max_rt_callback_fptr_t</ref></type>
+        </param>
+        <param>
+          <type>void *</type>
+        </param>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="31" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="1495" bodyend="1500" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="31" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__device__api_1ga4247b61e05c9d3d3aa3c4fc98ec88d3e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_set_tx_power</definition>
+        <argsstring>(nrf24l01_tx_power_t, nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_set_tx_power</name>
+        <param>
+          <type><ref refid="nrf24l01__defs_8h_1a1f6226bf9c94a81ffa0edc12beb3bb58" kindref="member">nrf24l01_tx_power_t</ref></type>
+          <defname>tx_power</defname>
+        </param>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+          <defname>platform</defname>
+        </param>
+        <briefdescription>
+<para>Configures the transmitter rf output power. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">tx_power</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: The desired transmitter power </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">platform</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Driver instance configuration struct pointer <linebreak/>
+ </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="34" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="397" bodyend="408" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="34" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__device__api_1gab36d02b77d5aeec5a9d9e2d6ccb7ea3e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_set_rf_channel</definition>
+        <argsstring>(nrf24l01_rf_channel_t, nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_set_rf_channel</name>
+        <param>
+          <type><ref refid="nrf24l01__defs_8h_1a791d706e5a3e69a3c41d48690c91b3d8" kindref="member">nrf24l01_rf_channel_t</ref></type>
+          <defname>channel</defname>
+        </param>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+          <defname>platform</defname>
+        </param>
+        <briefdescription>
+<para>Configures the transceiver frequency channel. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The resultant frequency will be (2400 + channel)MHz</para>
+<para>IMPORTANT: This method has the side effect of resetting the PLOS_CNT[7:4] bits in the OBSERVER_TX register</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">channel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: The desired radio frequency channel from 0 to 127 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">platform</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Driver instance configuration struct pointer <linebreak/>
+ </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="35" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="313" bodyend="321" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="35" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__device__api_1ga167a2c4a6119ee820085f361a13384ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_set_data_rate</definition>
+        <argsstring>(nrf24l01_data_rate_t, nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_set_data_rate</name>
+        <param>
+          <type><ref refid="nrf24l01__defs_8h_1af1238bb8b104118e000aac333af1720f" kindref="member">nrf24l01_data_rate_t</ref></type>
+          <defname>data_rate</defname>
+        </param>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+          <defname>platform</defname>
+        </param>
+        <briefdescription>
+<para>Configures the transceiver data rate. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">data_rate</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: The desired data rate </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">platform</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Driver instance configuration struct pointer <linebreak/>
+ </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="36" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="415" bodyend="426" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="36" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__device__api_1ga4384b25820eef7cc03ac4236f9fa4987" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_set_auto_retransmission</definition>
+        <argsstring>(nrf24l01_ar_delay_t, nrf24l01_ar_count_t, nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_set_auto_retransmission</name>
+        <param>
+          <type><ref refid="nrf24l01__defs_8h_1a6a3953f2ff4a6ee45e73583401c6d0b2" kindref="member">nrf24l01_ar_delay_t</ref></type>
+          <defname>ard</defname>
+        </param>
+        <param>
+          <type><ref refid="nrf24l01__defs_8h_1a8a0764a624e1e8c98cd9ce392f823bc3" kindref="member">nrf24l01_ar_count_t</ref></type>
+          <defname>arc</defname>
+        </param>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+          <defname>platform</defname>
+        </param>
+        <briefdescription>
+<para>Configures the automatic retransmission parameters. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Setting zero for <computeroutput>arc</computeroutput> means that automatic retransmission is completely disabled</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ard</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: The desired auto retransmit delay </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">arc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: The desired number of auto retransmits, from 0 to 15 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">platform</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Driver instance configuration struct pointer <linebreak/>
+ </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="37" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="331" bodyend="336" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="37" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__device__api_1ga9067b01f853f8693967181f740585b59" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_set_crc_scheme</definition>
+        <argsstring>(nrf24l01_crc_scheme_t, nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_set_crc_scheme</name>
+        <param>
+          <type><ref refid="nrf24l01__defs_8h_1ae9c5f6baca22b039351da8bae1ec02b7" kindref="member">nrf24l01_crc_scheme_t</ref></type>
+          <defname>scheme</defname>
+        </param>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+          <defname>platform</defname>
+        </param>
+        <briefdescription>
+<para>Configures the transceiver CRC scheme. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>IMPORTANT: The device will forcibly turn on the CRC in case auto acknowledgment is enabled for at least one RX pipe</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">scheme</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: The desired CRC scheme </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">platform</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Driver instance configuration struct pointer <linebreak/>
+ </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="38" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="291" bodyend="302" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="38" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__device__api_1gab160cda0ba47143dea9daf8f5203fb07" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_get_address_width</definition>
+        <argsstring>(nrf24l01_address_width_t *, nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_get_address_width</name>
+        <param>
+          <type><ref refid="nrf24l01__defs_8h_1a31b08d7577c5f71132a568693a91278d" kindref="member">nrf24l01_address_width_t</ref> *</type>
+          <defname>addr_width</defname>
+        </param>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+          <defname>platform</defname>
+        </param>
+        <briefdescription>
+<para>Get the configured address width. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>this setting is common for all pipes</para>
+<para><parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>addr_width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- RX/TX address field width, value from 3 to 5 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="39" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="677" bodyend="694" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="39" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__device__api_1ga10e39671edfdaac81580661d842bcff7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_set_address_width</definition>
+        <argsstring>(nrf24l01_address_width_t, nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_set_address_width</name>
+        <param>
+          <type><ref refid="nrf24l01__defs_8h_1a31b08d7577c5f71132a568693a91278d" kindref="member">nrf24l01_address_width_t</ref></type>
+          <defname>addr_width</defname>
+        </param>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+          <defname>platform</defname>
+        </param>
+        <briefdescription>
+<para>Configures the common address width for all channels. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">addr_width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: The desired address width from 3 to 5 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">platform</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Driver instance configuration struct pointer <linebreak/>
+ </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="40" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="343" bodyend="356" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="40" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__device__api_1ga5d09412a7080b39e8e90178812186186" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_flush_rx</definition>
+        <argsstring>(nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_flush_rx</name>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+          <defname>platform</defname>
+        </param>
+        <briefdescription>
+<para>Flushes the RX FIFO. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">platform</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Driver instance configuration struct pointer </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="44" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="726" bodyend="730" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="44" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__device__api_1gaa09fd11c251226eeb47a6adab2e23e14" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_flush_tx</definition>
+        <argsstring>(nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_flush_tx</name>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+          <defname>platform</defname>
+        </param>
+        <briefdescription>
+<para>Flushes the TX FIFO. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">platform</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Driver instance configuration struct pointer </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="45" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="716" bodyend="720" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="45" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__device__api_1ga9b8d9da5cacf067188e1e8e40779fdb9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_get_status</definition>
+        <argsstring>(uint8_t *, nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_get_status</name>
+        <param>
+          <type>uint8_t *</type>
+          <defname>status</defname>
+        </param>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+          <defname>platform</defname>
+        </param>
+        <briefdescription>
+<para>Gets the value of the STATUS register. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Value can be interpreted using NRF24L01_STATUS_REG_BIT_x definitions</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">status</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: A pointer to the status register value </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">platform</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Driver instance configuration struct pointer <linebreak/>
+ </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="46" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="540" bodyend="551" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="46" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__device__api_1gafce2a2c81545064ecb508cb054ac2656" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_get_fifo_status</definition>
+        <argsstring>(nrf24l01_fifo_type_t, nrf24l01_fifo_status_t *, nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_get_fifo_status</name>
+        <param>
+          <type><ref refid="nrf24l01__defs_8h_1ad0ece904a0fd6784cf7675ce277c5221" kindref="member">nrf24l01_fifo_type_t</ref></type>
+          <defname>fifo_type</defname>
+        </param>
+        <param>
+          <type><ref refid="nrf24l01__defs_8h_1ab8fdf71a787afdec43916b7568ee8cd2" kindref="member">nrf24l01_fifo_status_t</ref> *</type>
+          <defname>fifo_status</defname>
+        </param>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+          <defname>platform</defname>
+        </param>
+        <briefdescription>
+<para>Gets the status of the RX or TX FIFO. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">fifo_type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Select either the RX or the TX FIFO </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">fifo_status</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: A pointer where the FIFO status, on of data available, full, empty or error, will be stored </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">platform</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Driver instance configuration struct pointer <linebreak/>
+ </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="47" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="605" bodyend="625" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="47" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__device__api_1ga7ea991dfff7035b1f64c5588f8617e6c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_reset_packet_loss_counter</definition>
+        <argsstring>(nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_reset_packet_loss_counter</name>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+          <defname>platform</defname>
+        </param>
+        <briefdescription>
+<para>Resets the packet lost counter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The packet loss counter is the PLOS_CNT bits in the OBSERVER_TX register</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">platform</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Driver instance configuration struct pointer </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="48" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="702" bodyend="710" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="48" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__device__api_1gad51002ad00e00a3ca0128d7c35a1f0c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_get_retransmit_counters</definition>
+        <argsstring>(nrf24l01_ar_lost_t *, nrf24l01_ar_count_t *, nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_get_retransmit_counters</name>
+        <param>
+          <type><ref refid="nrf24l01__defs_8h_1a6515f2bdcb1e022ceefb96f440b789d4" kindref="member">nrf24l01_ar_lost_t</ref> *</type>
+          <defname>ar_lost</defname>
+        </param>
+        <param>
+          <type><ref refid="nrf24l01__defs_8h_1a8a0764a624e1e8c98cd9ce392f823bc3" kindref="member">nrf24l01_ar_count_t</ref> *</type>
+          <defname>ar_count</defname>
+        </param>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+          <defname>platform</defname>
+        </param>
+        <briefdescription>
+<para>Retrieves the auto retransmit statistic. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">ar_lost</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: A pointer where the number of lost packets is stored The max value is 15, can be reset by a write to RF_CH register </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">ar_count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: A pointer where the auto re-transmit counter is stored The max value is 15, resets when a new transmission starts </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">platform</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Driver instance configuration struct pointer <linebreak/>
+ </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="49" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="655" bodyend="669" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="49" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__device__api_1ga4fe974914a65700f5141b34204c0fe3a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_get_power_mode</definition>
+        <argsstring>(nrf24l01_power_mode_t *, nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_get_power_mode</name>
+        <param>
+          <type><ref refid="nrf24l01__defs_8h_1a2969b80f1595f56480834439ce99a90f" kindref="member">nrf24l01_power_mode_t</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="52" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="866" bodyend="879" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="52" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__device__api_1ga9952bf8024954a3be966dedba265e2d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_set_power_mode</definition>
+        <argsstring>(nrf24l01_power_mode_t, nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_set_power_mode</name>
+        <param>
+          <type><ref refid="nrf24l01__defs_8h_1a2969b80f1595f56480834439ce99a90f" kindref="member">nrf24l01_power_mode_t</ref></type>
+          <defname>mode</defname>
+        </param>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+          <defname>platform</defname>
+        </param>
+        <briefdescription>
+<para>Configures the transceiver power mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: The desired power mode between PWR_UP and PWR_DOWN </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">platform</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Driver instance configuration struct pointer <linebreak/>
+ </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="53" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="231" bodyend="252" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="53" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__device__api_1gad67547d2ab76b760f3d0ee9161f3690c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_get_operational_mode</definition>
+        <argsstring>(nrf24l01_operational_mode_t *, nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_get_operational_mode</name>
+        <param>
+          <type><ref refid="nrf24l01__defs_8h_1a2e35d6210bc14e3010061dcc840f3174" kindref="member">nrf24l01_operational_mode_t</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="54" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="881" bodyend="894" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="54" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__device__api_1gaf037709d39e6e20cd6f7e300d2bc68ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_set_operational_mode</definition>
+        <argsstring>(nrf24l01_operational_mode_t, nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_set_operational_mode</name>
+        <param>
+          <type><ref refid="nrf24l01__defs_8h_1a2e35d6210bc14e3010061dcc840f3174" kindref="member">nrf24l01_operational_mode_t</ref></type>
+          <defname>mode</defname>
+        </param>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+          <defname>platform</defname>
+        </param>
+        <briefdescription>
+<para>Configures the transceiver operational mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: The desired operational mode between RX and TX </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">platform</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Driver instance configuration struct pointer <linebreak/>
+ </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="55" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="271" bodyend="282" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="55" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__device__api_1gae02a0fb3c6ba0f88fb4dd84e3bd2fd65" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_get_feature_mode</definition>
+        <argsstring>(nrf24l01_feature_mode_t *, nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_get_feature_mode</name>
+        <param>
+          <type><ref refid="nrf24l01__defs_8h_1a303e1160123b0cc33747411d6ccf5fa6" kindref="member">nrf24l01_feature_mode_t</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="58" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="896" bodyend="929" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="58" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__device__api_1ga786f79fce0ce9929961915f323cd658e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_set_feature_mode</definition>
+        <argsstring>(nrf24l01_feature_mode_t, nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_set_feature_mode</name>
+        <param>
+          <type><ref refid="nrf24l01__defs_8h_1a303e1160123b0cc33747411d6ccf5fa6" kindref="member">nrf24l01_feature_mode_t</ref></type>
+          <defname>feature_mode</defname>
+        </param>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+          <defname>platform</defname>
+        </param>
+        <briefdescription>
+<para>Enables/disables special devices features. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">feature_mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Desired feature mode </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">platform</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Driver instance configuration struct </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="59" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="936" bodyend="958" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="59" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__device__api_1gaf904545f9f8a909e438a972d51dfda7a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_set_ack_payload_mode</definition>
+        <argsstring>(ack_payload_mode_t, nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_set_ack_payload_mode</name>
+        <param>
+          <type><ref refid="nrf24l01__defs_8h_1a7c4d5923051f2412599ab4b292fea85c" kindref="member">ack_payload_mode_t</ref></type>
+        </param>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="60" column="16" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="60" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__device__api_1ga9f4b25fc294cb8550f3572b54b08fe58" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_set_dpl_mode</definition>
+        <argsstring>(nrf24l01_dpl_mode_t, nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_set_dpl_mode</name>
+        <param>
+          <type><ref refid="nrf24l01__defs_8h_1a0713efe0e232d8adca8016d007b1d28e" kindref="member">nrf24l01_dpl_mode_t</ref></type>
+          <defname>dpl_mode</defname>
+        </param>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+          <defname>platform</defname>
+        </param>
+        <briefdescription>
+<para>Enables/disables dynamic payload length. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">dpl_mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Desired DLP mode </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">platform</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Driver instance configuration struct </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="61" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="965" bodyend="978" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="61" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__device__api_1ga2b949886212d64e3fbd76ec30cfab889" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_set_dta_mode</definition>
+        <argsstring>(nrf24l01_dta_mode_t, nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_set_dta_mode</name>
+        <param>
+          <type><ref refid="nrf24l01__defs_8h_1ab35b7caced2022669af8c4b24b5a913a" kindref="member">nrf24l01_dta_mode_t</ref></type>
+        </param>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="62" column="16" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="62" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__device__api_1ga0b9873c723dbf81f23b615c25983b72d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_get_features</definition>
+        <argsstring>(uint8_t *, nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_get_features</name>
+        <param>
+          <type>uint8_t *</type>
+        </param>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="64" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="862" bodyend="864" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="64" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__pipe__api_1ga736b0f56f587c118863e9fda079d1bdc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_set_pipe_mode</definition>
+        <argsstring>(nrf24l01_pipe_t, nrf24l01_pipe_mode_t, nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_set_pipe_mode</name>
+        <param>
+          <type><ref refid="nrf24l01__defs_8h_1ac835ed70d839160974a8a370302ceda4" kindref="member">nrf24l01_pipe_t</ref></type>
+          <defname>pipe</defname>
+        </param>
+        <param>
+          <type><ref refid="nrf24l01__defs_8h_1a0f8a4b75aa513292f26f863101323039" kindref="member">nrf24l01_pipe_mode_t</ref></type>
+          <defname>mode</defname>
+        </param>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+          <defname>platform</defname>
+        </param>
+        <briefdescription>
+<para>Enables or disables an RX pipe. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>All pipes can be modified simultaneously using NRF24L01_ALL_RX_PIPES</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pipe</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: The pipe to change </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: The desired pipe mode </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">platform</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Driver instance configuration struct pointer <linebreak/>
+ </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="75" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="436" bodyend="461" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="75" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__pipe__api_1ga82df3ae97ab1943d6c8846af91530c20" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_set_pipe_aa_mode</definition>
+        <argsstring>(nrf24l01_pipe_t, nrf24l01_pipe_aa_mode_t, nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_set_pipe_aa_mode</name>
+        <param>
+          <type><ref refid="nrf24l01__defs_8h_1ac835ed70d839160974a8a370302ceda4" kindref="member">nrf24l01_pipe_t</ref></type>
+          <defname>pipe</defname>
+        </param>
+        <param>
+          <type><ref refid="nrf24l01__defs_8h_1a2018aa2bf9fb336d58f323b71be8f086" kindref="member">nrf24l01_pipe_aa_mode_t</ref></type>
+          <defname>aa_mode</defname>
+        </param>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+          <defname>platform</defname>
+        </param>
+        <briefdescription>
+<para>Configures the auto retransmit mode (a.k.a. enhanced ShockBurst) for the specified RX pipe. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>All pipes can be modified simultaneously using NRF24L01_ALL_RX_PIPES</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pipe</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: The pipe to change </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aa_mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: The desired auto retransmit mode </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">platform</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Driver instance configuration struct pointer <linebreak/>
+ </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="76" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="471" bodyend="496" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="76" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__pipe__api_1ga278481ec6a4aa4db0fc5953b6aceae8b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_set_pipe_rx_payload_size</definition>
+        <argsstring>(nrf24l01_pipe_t, uint8_t, nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_set_pipe_rx_payload_size</name>
+        <param>
+          <type><ref refid="nrf24l01__defs_8h_1ac835ed70d839160974a8a370302ceda4" kindref="member">nrf24l01_pipe_t</ref></type>
+          <defname>pipe</defname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <defname>payload_len</defname>
+        </param>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+          <defname>platform</defname>
+        </param>
+        <briefdescription>
+<para>Configures the RX payload size for a specific pipe. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>All pipes can be modified simultaneously using NRF24L01_ALL_RX_PIPES</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pipe</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: The pipe to change </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">payload_len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: The desired RX payload length (1 to 32 bytes) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">platform</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Driver instance configuration struct pointer <linebreak/>
+ </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="77" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="208" bodyend="224" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="77" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__pipe__api_1ga993a327bc069340404c5dbb7a7dd443f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_write_payload</definition>
+        <argsstring>(uint8_t *, uint8_t, nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_write_payload</name>
+        <param>
+          <type>uint8_t *</type>
+          <defname>data</defname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <defname>len</defname>
+        </param>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+          <defname>platform</defname>
+        </param>
+        <briefdescription>
+<para>Writes a TX payload to the FIFO and triggers a transmission. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Pointer to a buffer with the TX payload data, remember the TX FIFO is 32 bytes long </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Length of buffer to transmit (in bytes) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">platform</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Driver instance configuration struct pointer</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>NRF24L01_ERR_INVALID_ARG</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>-&gt; Pointer to data buffer is null or size of data packet is too large </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NRF24L01_ERR_UNKNOWN</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>-&gt; Device communication failed </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>NRF24L01_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>-&gt; Payload write was successful </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="80" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="758" bodyend="775" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="80" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__pipe__api_1ga813ffbf96c9a76b15d463154085df739" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_get_rx_pipe</definition>
+        <argsstring>(nrf24l01_pipe_t *, nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_get_rx_pipe</name>
+        <param>
+          <type><ref refid="nrf24l01__defs_8h_1ac835ed70d839160974a8a370302ceda4" kindref="member">nrf24l01_pipe_t</ref> *</type>
+          <defname>pipe</defname>
+        </param>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+          <defname>platform</defname>
+        </param>
+        <briefdescription>
+<para>Gets the pipe number for the payload available in the RX FIFO. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">pipe</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: A pointer where the pipe number or 0x07 if the RX FIFO is empty </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">platform</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Driver instance configuration struct pointer <linebreak/>
+ </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="84" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="632" bodyend="645" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="84" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__pipe__api_1ga0ddaef29411d56ad52cebfa48ed37fb9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_read_payload</definition>
+        <argsstring>(nrf24l01_pipe_t *, uint8_t *, uint8_t *, bool, nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_read_payload</name>
+        <param>
+          <type><ref refid="nrf24l01__defs_8h_1ac835ed70d839160974a8a370302ceda4" kindref="member">nrf24l01_pipe_t</ref> *</type>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+        </param>
+        <param>
+          <type>bool</type>
+        </param>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="85" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="796" bodyend="842" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="85" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="group__pipe__api_1gaf7370e9534ccbede12d2a8b185180a98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_set_pipe_dpl_mode</definition>
+        <argsstring>(nrf24l01_pipe_t, nrf24l01_dpl_mode_t, nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_set_pipe_dpl_mode</name>
+        <param>
+          <type><ref refid="nrf24l01__defs_8h_1ac835ed70d839160974a8a370302ceda4" kindref="member">nrf24l01_pipe_t</ref></type>
+          <defname>pipe</defname>
+        </param>
+        <param>
+          <type><ref refid="nrf24l01__defs_8h_1a0713efe0e232d8adca8016d007b1d28e" kindref="member">nrf24l01_dpl_mode_t</ref></type>
+          <defname>dpl_mode</defname>
+        </param>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+          <defname>platform</defname>
+        </param>
+        <briefdescription>
+<para>Sets the DPL mode for a specific RX pipe. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>All pipes can be modified simultaneously using NRF24L01_ALL_RX_PIPES</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pipe</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: The pipe to change </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dpl_mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: The desired DPL mode </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">platform</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Driver instance configuration struct pointer <linebreak/>
+ </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="88" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="506" bodyend="531" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="88" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="nrf24l01_8h_1a0d4846399bb76424fc894348f0cd4f14" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_start_listening</definition>
+        <argsstring>(nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_start_listening</name>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="93" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="254" bodyend="259" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="93" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="nrf24l01_8h_1a2c46ba5569ed05dd5747ad2853ce3c51" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_stop_listening</definition>
+        <argsstring>(nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_stop_listening</name>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="94" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="260" bodyend="264" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="94" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="nrf24l01_8h_1af42df863e295873efd13ddb4ccbde454" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void nrf24l01_loop</definition>
+        <argsstring>(nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_loop</name>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+          <defname>platform</defname>
+        </param>
+        <briefdescription>
+<para>Check for interrupt function pointer which should be called often by the user to ensure that radio events are triggered. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">platform</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Driver instance configuration struct </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="97" column="6" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="1448" bodyend="1479" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="97" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="nrf24l01_8h_1a7e90e2cbb613fa083a4b752997432761" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_set_address</definition>
+        <argsstring>(nrf24l01_pipe_t, const uint8_t *, uint8_t, nrf24l01_platform_t *)</argsstring>
+        <name>nrf24l01_set_address</name>
+        <param>
+          <type><ref refid="nrf24l01__defs_8h_1ac835ed70d839160974a8a370302ceda4" kindref="member">nrf24l01_pipe_t</ref></type>
+          <defname>pipe</defname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <defname>addr</defname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <defname>addr_width</defname>
+        </param>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+          <defname>platform</defname>
+        </param>
+        <briefdescription>
+<para>Sets the static RX address for a specified pipe. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For pipes[2..5] only thefirst byte of address will be written because these pipes share the same first four (most significant) address bytes</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pipe</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: The pipe to modify </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: A pointer to a buffer containing the desired address </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">addr_width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: The desired address length </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">platform</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Driver instance configuration struct pointer <linebreak/>
+ </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="99" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="368" bodyend="390" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="99" declcolumn="16"/>
+      </memberdef>
+      <memberdef kind="function" id="nrf24l01_8h_1a1ababe4f46706474ab74a578213634b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_print_config</definition>
+        <argsstring>(nrf24l01_platform_t *platform)</argsstring>
+        <name>nrf24l01_print_config</name>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+          <declname>platform</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="110" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" bodystart="110" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="nrf24l01_8h_1a0ce97b01864bd694119d2f27ec9d4854" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_print_status_register</definition>
+        <argsstring>(nrf24l01_platform_t *platform)</argsstring>
+        <name>nrf24l01_print_status_register</name>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+          <declname>platform</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="111" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" bodystart="111" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="nrf24l01_8h_1abb70671845ef71edbbd5b14ef0e963cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
+        <definition>nrf24l01_err_t nrf24l01_print_fifo_status_register</definition>
+        <argsstring>(nrf24l01_platform_t *platform)</argsstring>
+        <name>nrf24l01_print_fifo_status_register</name>
+        <param>
+          <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+          <declname>platform</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="112" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" bodystart="112" bodyend="112"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>NRF24L01_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NRF24L01_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stddef.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>User<sp/>provided<sp/>config<sp/>directory<sp/>in<sp/>directory<sp/>above<sp/>submodule</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../../nrf24l01_config.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Driver<sp/>constants<sp/>and<sp/>types</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="nrf24l01__defs_8h" kindref="compound">nrf24l01_defs.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">/***<sp/>Device<sp/>API<sp/>***************************************************************************************************/</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//<sp/>General</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="group__device__api_1ga43b4c85fafbbee705aaafb59066c221c" kindref="member">nrf24l01_init</ref>(<ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="group__device__api_1ga11b69f162283c2228eabdb56c8d6fba8" kindref="member">nrf24l01_deinit</ref>(<ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="group__device__api_1ga7fbfdbe1cb58e64a0f91e6e85f87151a" kindref="member">nrf24l01_check_connectivity</ref>(<ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Interrupts</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="group__device__api_1ga37b83343cd8e35b223e2dbc0fca0bbf1" kindref="member">nrf24l01_get_irq_flags</ref>(uint8_t*,<sp/><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="group__device__api_1gac353f88e185c79871e9ee5708843cd81" kindref="member">nrf24l01_set_irq_mask</ref>(<ref refid="nrf24l01__defs_8h_1aeee83db10040c4a2672da6bed2f7ab0d" kindref="member">nrf24l01_interrupt_mask_t</ref>,<sp/><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="group__device__api_1ga2845ee5e7f262e9758a08c325dd65d77" kindref="member">nrf24l01_clear_irq_flags</ref>(<ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="group__device__api_1ga6be0b13e069c4e270640b34c65c6c58b" kindref="member">nrf24l01_register_rx_dr_callback</ref>(<ref refid="nrf24l01__defs_8h_1a870b44260a83ed804d9c94dfecc8be8a" kindref="member">nrf24l01_rx_dr_callback_fptr_t</ref>,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*,<sp/><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="group__device__api_1gaf4b8f3c50c981110f0c6fbc1df354bfa" kindref="member">nrf24l01_register_tx_ds_callback</ref>(<ref refid="nrf24l01__defs_8h_1acbaf981637ef9ef2e0d15fc2886135b5" kindref="member">nrf24l01_tx_ds_callback_fptr_t</ref>,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*,<sp/><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="group__device__api_1gae94ce0fe9852c9730abee9a4dda8fa18" kindref="member">nrf24l01_register_max_rt_callback</ref>(<ref refid="nrf24l01__defs_8h_1af3a3bced5aa40c9e8ea6ea75fd56b1b7" kindref="member">nrf24l01_max_rt_callback_fptr_t</ref>,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*,<sp/><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="comment">//<sp/>RF<sp/>+<sp/>protocol</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="group__device__api_1ga4247b61e05c9d3d3aa3c4fc98ec88d3e" kindref="member">nrf24l01_set_tx_power</ref>(<ref refid="nrf24l01__defs_8h_1a1f6226bf9c94a81ffa0edc12beb3bb58" kindref="member">nrf24l01_tx_power_t</ref>,<sp/><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="group__device__api_1gab36d02b77d5aeec5a9d9e2d6ccb7ea3e" kindref="member">nrf24l01_set_rf_channel</ref>(<ref refid="nrf24l01__defs_8h_1a791d706e5a3e69a3c41d48690c91b3d8" kindref="member">nrf24l01_rf_channel_t</ref>,<sp/><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="group__device__api_1ga167a2c4a6119ee820085f361a13384ad" kindref="member">nrf24l01_set_data_rate</ref>(<ref refid="nrf24l01__defs_8h_1af1238bb8b104118e000aac333af1720f" kindref="member">nrf24l01_data_rate_t</ref>,<sp/><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="group__device__api_1ga4384b25820eef7cc03ac4236f9fa4987" kindref="member">nrf24l01_set_auto_retransmission</ref>(<ref refid="nrf24l01__defs_8h_1a6a3953f2ff4a6ee45e73583401c6d0b2" kindref="member">nrf24l01_ar_delay_t</ref>,<sp/><ref refid="nrf24l01__defs_8h_1a8a0764a624e1e8c98cd9ce392f823bc3" kindref="member">nrf24l01_ar_count_t</ref>,<sp/><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="group__device__api_1ga9067b01f853f8693967181f740585b59" kindref="member">nrf24l01_set_crc_scheme</ref>(<ref refid="nrf24l01__defs_8h_1ae9c5f6baca22b039351da8bae1ec02b7" kindref="member">nrf24l01_crc_scheme_t</ref>,<sp/><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="group__device__api_1gab160cda0ba47143dea9daf8f5203fb07" kindref="member">nrf24l01_get_address_width</ref>(<ref refid="nrf24l01__defs_8h_1a31b08d7577c5f71132a568693a91278d" kindref="member">nrf24l01_address_width_t</ref>*,<sp/><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="group__device__api_1ga10e39671edfdaac81580661d842bcff7" kindref="member">nrf24l01_set_address_width</ref>(<ref refid="nrf24l01__defs_8h_1a31b08d7577c5f71132a568693a91278d" kindref="member">nrf24l01_address_width_t</ref>,<sp/><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="comment">//<sp/>nrf24l01_err_t<sp/>nrf24l01_get_carrier_detect(nrf24l01_address_width_t,<sp/>nrf24l01_platform_t*);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Host<sp/>SPI<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="group__device__api_1ga5d09412a7080b39e8e90178812186186" kindref="member">nrf24l01_flush_rx</ref>(<ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="group__device__api_1gaa09fd11c251226eeb47a6adab2e23e14" kindref="member">nrf24l01_flush_tx</ref>(<ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="group__device__api_1ga9b8d9da5cacf067188e1e8e40779fdb9" kindref="member">nrf24l01_get_status</ref>(uint8_t*,<sp/><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="group__device__api_1gafce2a2c81545064ecb508cb054ac2656" kindref="member">nrf24l01_get_fifo_status</ref>(<ref refid="nrf24l01__defs_8h_1ad0ece904a0fd6784cf7675ce277c5221" kindref="member">nrf24l01_fifo_type_t</ref>,<sp/><ref refid="nrf24l01__defs_8h_1ab8fdf71a787afdec43916b7568ee8cd2" kindref="member">nrf24l01_fifo_status_t</ref>*,<sp/><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="group__device__api_1ga7ea991dfff7035b1f64c5588f8617e6c" kindref="member">nrf24l01_reset_packet_loss_counter</ref>(<ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="group__device__api_1gad51002ad00e00a3ca0128d7c35a1f0c7" kindref="member">nrf24l01_get_retransmit_counters</ref>(<ref refid="nrf24l01__defs_8h_1a6515f2bdcb1e022ceefb96f440b789d4" kindref="member">nrf24l01_ar_lost_t</ref>*,<sp/><ref refid="nrf24l01__defs_8h_1a8a0764a624e1e8c98cd9ce392f823bc3" kindref="member">nrf24l01_ar_count_t</ref>*,<sp/><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Device<sp/>state</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="group__device__api_1ga4fe974914a65700f5141b34204c0fe3a" kindref="member">nrf24l01_get_power_mode</ref>(<ref refid="nrf24l01__defs_8h_1a2969b80f1595f56480834439ce99a90f" kindref="member">nrf24l01_power_mode_t</ref>*,<sp/><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="group__device__api_1ga9952bf8024954a3be966dedba265e2d2" kindref="member">nrf24l01_set_power_mode</ref>(<ref refid="nrf24l01__defs_8h_1a2969b80f1595f56480834439ce99a90f" kindref="member">nrf24l01_power_mode_t</ref>,<sp/><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="group__device__api_1gad67547d2ab76b760f3d0ee9161f3690c" kindref="member">nrf24l01_get_operational_mode</ref>(<ref refid="nrf24l01__defs_8h_1a2e35d6210bc14e3010061dcc840f3174" kindref="member">nrf24l01_operational_mode_t</ref>*,<sp/><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="group__device__api_1gaf037709d39e6e20cd6f7e300d2bc68ea" kindref="member">nrf24l01_set_operational_mode</ref>(<ref refid="nrf24l01__defs_8h_1a2e35d6210bc14e3010061dcc840f3174" kindref="member">nrf24l01_operational_mode_t</ref>,<sp/><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Features</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="group__device__api_1gae02a0fb3c6ba0f88fb4dd84e3bd2fd65" kindref="member">nrf24l01_get_feature_mode</ref>(<ref refid="nrf24l01__defs_8h_1a303e1160123b0cc33747411d6ccf5fa6" kindref="member">nrf24l01_feature_mode_t</ref>*,<sp/><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="group__device__api_1ga786f79fce0ce9929961915f323cd658e" kindref="member">nrf24l01_set_feature_mode</ref>(<ref refid="nrf24l01__defs_8h_1a303e1160123b0cc33747411d6ccf5fa6" kindref="member">nrf24l01_feature_mode_t</ref>,<sp/><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="group__device__api_1gaf904545f9f8a909e438a972d51dfda7a" kindref="member">nrf24l01_set_ack_payload_mode</ref>(<ref refid="nrf24l01__defs_8h_1a7c4d5923051f2412599ab4b292fea85c" kindref="member">ack_payload_mode_t</ref>,<sp/><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="group__device__api_1ga9f4b25fc294cb8550f3572b54b08fe58" kindref="member">nrf24l01_set_dpl_mode</ref>(<ref refid="nrf24l01__defs_8h_1a0713efe0e232d8adca8016d007b1d28e" kindref="member">nrf24l01_dpl_mode_t</ref>,<sp/><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="group__device__api_1ga2b949886212d64e3fbd76ec30cfab889" kindref="member">nrf24l01_set_dta_mode</ref>(<ref refid="nrf24l01__defs_8h_1ab35b7caced2022669af8c4b24b5a913a" kindref="member">nrf24l01_dta_mode_t</ref>,<sp/><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="group__device__api_1ga0b9873c723dbf81f23b615c25983b72d" kindref="member">nrf24l01_get_features</ref>(uint8_t*,<sp/><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="comment">/****************************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="comment">/***<sp/>Pipe<sp/>API<sp/>***************************************************************************************************/</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Configure</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="group__pipe__api_1ga736b0f56f587c118863e9fda079d1bdc" kindref="member">nrf24l01_set_pipe_mode</ref>(<ref refid="nrf24l01__defs_8h_1ac835ed70d839160974a8a370302ceda4" kindref="member">nrf24l01_pipe_t</ref>,<sp/><ref refid="nrf24l01__defs_8h_1a0f8a4b75aa513292f26f863101323039" kindref="member">nrf24l01_pipe_mode_t</ref>,<sp/><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="group__pipe__api_1ga82df3ae97ab1943d6c8846af91530c20" kindref="member">nrf24l01_set_pipe_aa_mode</ref>(<ref refid="nrf24l01__defs_8h_1ac835ed70d839160974a8a370302ceda4" kindref="member">nrf24l01_pipe_t</ref>,<sp/><ref refid="nrf24l01__defs_8h_1a2018aa2bf9fb336d58f323b71be8f086" kindref="member">nrf24l01_pipe_aa_mode_t</ref>,<sp/><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="group__pipe__api_1ga278481ec6a4aa4db0fc5953b6aceae8b" kindref="member">nrf24l01_set_pipe_rx_payload_size</ref>(<ref refid="nrf24l01__defs_8h_1ac835ed70d839160974a8a370302ceda4" kindref="member">nrf24l01_pipe_t</ref>,<sp/>uint8_t,<sp/><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Transmit</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="group__pipe__api_1ga993a327bc069340404c5dbb7a7dd443f" kindref="member">nrf24l01_write_payload</ref>(uint8_t*,<sp/>uint8_t,<sp/><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="comment">//nrf24l01_err_t<sp/>nrf24l01_write_ack_payload(nrf24l01_rx_result,<sp/>uint8_t*,<sp/>uint8_t,<sp/>nrf24l01_platform_t*);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Receive</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="group__pipe__api_1ga813ffbf96c9a76b15d463154085df739" kindref="member">nrf24l01_get_rx_pipe</ref>(<ref refid="nrf24l01__defs_8h_1ac835ed70d839160974a8a370302ceda4" kindref="member">nrf24l01_pipe_t</ref>*,<sp/><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="group__pipe__api_1ga0ddaef29411d56ad52cebfa48ed37fb9" kindref="member">nrf24l01_read_payload</ref>(<ref refid="nrf24l01__defs_8h_1ac835ed70d839160974a8a370302ceda4" kindref="member">nrf24l01_pipe_t</ref>*,<sp/>uint8_t*,<sp/>uint8_t*,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">,<sp/><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*);<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Read<sp/>from<sp/>the<sp/>pipe<sp/>which<sp/>received<sp/>the<sp/>packet</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="comment">//Features</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="group__pipe__api_1gaf7370e9534ccbede12d2a8b185180a98" kindref="member">nrf24l01_set_pipe_dpl_mode</ref>(<ref refid="nrf24l01__defs_8h_1ac835ed70d839160974a8a370302ceda4" kindref="member">nrf24l01_pipe_t</ref>,<sp/><ref refid="nrf24l01__defs_8h_1a0713efe0e232d8adca8016d007b1d28e" kindref="member">nrf24l01_dpl_mode_t</ref>,<sp/><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="comment">/****************************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="nrf24l01_8h_1a0d4846399bb76424fc894348f0cd4f14" kindref="member">nrf24l01_start_listening</ref>(<ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="nrf24l01_8h_1a2c46ba5569ed05dd5747ad2853ce3c51" kindref="member">nrf24l01_stop_listening</ref>(<ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="nrf24l01_8h_1af42df863e295873efd13ddb4ccbde454" kindref="member">nrf24l01_loop</ref>(<ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="nrf24l01_8h_1a7e90e2cbb613fa083a4b752997432761" kindref="member">nrf24l01_set_address</ref>(<ref refid="nrf24l01__defs_8h_1ac835ed70d839160974a8a370302ceda4" kindref="member">nrf24l01_pipe_t</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t*,<sp/>uint8_t,<sp/><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="comment">/***<sp/>Debug<sp/>API<sp/>**************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>NRF24L01_ENABLE_PRINT_CONFIG</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="nrf24l01_8h_1a1ababe4f46706474ab74a578213634b7" kindref="member">nrf24l01_print_config</ref>(<ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="nrf24l01_8h_1a0ce97b01864bd694119d2f27ec9d4854" kindref="member">nrf24l01_print_status_register</ref>(<ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="nrf24l01_8h_1abb70671845ef71edbbd5b14ef0e963cc" kindref="member">nrf24l01_print_fifo_status_register</ref>(<ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110" refid="nrf24l01_8h_1a1ababe4f46706474ab74a578213634b7" refkind="member"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="nrf24l01_8h_1a1ababe4f46706474ab74a578213634b7" kindref="member">nrf24l01_print_config</ref>(<ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*<sp/>platform){<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;<sp/>};</highlight></codeline>
+<codeline lineno="111" refid="nrf24l01_8h_1a0ce97b01864bd694119d2f27ec9d4854" refkind="member"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="nrf24l01_8h_1a0ce97b01864bd694119d2f27ec9d4854" kindref="member">nrf24l01_print_status_register</ref>(<ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*<sp/>platform){<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;<sp/>};</highlight></codeline>
+<codeline lineno="112" refid="nrf24l01_8h_1abb70671845ef71edbbd5b14ef0e963cc" refkind="member"><highlight class="normal"><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref><sp/><ref refid="nrf24l01_8h_1abb70671845ef71edbbd5b14ef0e963cc" kindref="member">nrf24l01_print_fifo_status_register</ref>(<ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref>*<sp/>platform)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;<sp/>};</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>NRF24L01_ENABLE_PRINT_CONFIG</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="comment">/****************************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>NRF24L01_H</highlight></codeline>
+    </programlisting>
+    <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"/>
+  </compounddef>
+</doxygen>
