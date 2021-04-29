@@ -50,7 +50,7 @@ jobs:
           
       - name: run coverxygen
         run: |
-          python3 -m coverxygen --xml-dir ${GITHUB_WORKSPACE}/docs/xml --src-dir ${GITHUB_WORKSPACE} --output documentation-coverage.info
+          python3 -m coverxygen --xml-dir ${GITHUB_WORKSPACE}/docs/xml --src-dir ${GITHUB_WORKSPACE} --output ${GITHUB_WORKSPACE}/docs/documentation-coverage.info
         
       - name: list documentation outputs (debugging)
         run: |
@@ -58,7 +58,8 @@ jobs:
         
       - name: generate code coverage report
         run: |
-          genhtml --no-function-coverage --no-branch-coverage documentation-coverage.info -o ${GITHUB_WORKSPACE}/docs/coverage-html
+          mkdir ${GITHUB_WORKSPACE}/docs/coverage-html
+          genhtml --no-function-coverage --no-branch-coverage ${GITHUB_WORKSPACE}/docs/documentation-coverage.info -o ${GITHUB_WORKSPACE}/docs/coverage-html
           
       - name: run imgkit
         run: |
