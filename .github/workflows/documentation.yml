@@ -52,7 +52,7 @@ jobs:
           
       - name: run imgkit
         run: |
-          python3 -c "import imgkit; imgkit.from_file('${{GITHUB_WORKSPACE}}/docs/coverage-html/index.html', '${{GITHUB_WORKSPACE}}/docs/coverage.jpg')"
+          python3 -c "import imgkit; imgkit.from_file('${{github.workspace}}/docs/coverage-html/index.html', '${{github.workspace}}/docs/coverage.jpg')"
           
       - name: list documentation outputs (debugging)
         run: |
