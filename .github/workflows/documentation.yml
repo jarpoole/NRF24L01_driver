@@ -59,7 +59,7 @@ jobs:
       - name: Run coverxygen-frontend
         uses: jarpoole/coverxygen-frontend@v0.1.0
         with:
-          
+          coverxygen-in: '${{github.workspace}}/docs/coverage-html/documentation-coverage.info'
           
       - name: list documentation outputs (debugging)
         run: |
