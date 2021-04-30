@@ -44,8 +44,6 @@ jobs:
       # See https://github.com/psycofdj/coverxygen for more information
       - name: Run coverxygen
         run: |
-          mkdir ${GITHUB_WORKSPACE}/docs/coverage-html
-          cd ${GITHUB_WORKSPACE}/docs/coverage-html
           python3 -m coverxygen --format lcov --kind all --verbose --xml-dir ${GITHUB_WORKSPACE}/docs/xml --src-dir ${GITHUB_WORKSPACE} --output ${GITHUB_WORKSPACE}/docs/coverage-html/documentation-coverage.info
         
       - name: Generate code coverage report
