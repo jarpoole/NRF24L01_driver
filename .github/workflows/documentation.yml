@@ -56,6 +56,11 @@ jobs:
         run: |
           python3 -c "import imgkit; imgkit.from_file('${{github.workspace}}/docs/coverage-html/index.html', '${{github.workspace}}/docs/images/coverage.jpg')"
           
+      - name: Run coverxygen-frontend
+        uses: jarpoole/coverxygen-frontend@v0.1.0
+        with:
+          
+          
       - name: list documentation outputs (debugging)
         run: |
           ls ${GITHUB_WORKSPACE}/docs/
