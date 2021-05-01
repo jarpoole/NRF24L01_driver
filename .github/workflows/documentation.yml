@@ -51,7 +51,7 @@ jobs:
      #     genhtml --no-prefix --no-function-coverage --no-branch-coverage ${GITHUB_WORKSPACE}/docs/coverage-html/documentation-coverage.info -o ${GITHUB_WORKSPACE}/docs/coverage-html/
           
       - name: Run coverxygen-frontend
-        uses: jarpoole/coverxygen-frontend@v0.1.12
+        uses: jarpoole/coverxygen-frontend@v0.1.13
         with:
           src: '${{github.workspace}}/docs/coverage-html/documentation-coverage.json'
           html: '${{github.workspace}}/docs/coverage-html/summary.html'
