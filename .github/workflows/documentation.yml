@@ -55,7 +55,7 @@ jobs:
      #     python3 -c "import imgkit; imgkit.from_file('${{github.workspace}}/docs/coverage-html/index.html', '${{github.workspace}}/docs/images/coverage.jpg')"
           
       - name: Run coverxygen-frontend
-        uses: jarpoole/coverxygen-frontend@v0.1.6
+        uses: jarpoole/coverxygen-frontend@v0.1.7
         with:
           src: '${{github.workspace}}/docs/coverage-html/documentation-coverage.json'
           summary: '${{github.workspace}}/docs/coverage-html/summary.html'
