@@ -44,20 +44,21 @@ jobs:
       # See https://github.com/psycofdj/coverxygen for more information
       - name: Run coverxygen
         run: |
-          python3 -m coverxygen --format lcov --kind all --verbose --xml-dir ${GITHUB_WORKSPACE}/docs/xml --src-dir ${GITHUB_WORKSPACE} --output ${GITHUB_WORKSPACE}/docs/coverage-html/documentation-coverage.info
+          python3 -m coverxygen --format json-v3 --kind all --xml-dir ${GITHUB_WORKSPACE}/docs/xml --src-dir ${GITHUB_WORKSPACE} --output ${GITHUB_WORKSPACE}/docs/coverage-html/documentation-coverage.json
         
-      - name: Generate code coverage report
-        run: |
-          genhtml --no-prefix --no-function-coverage --no-branch-coverage ${GITHUB_WORKSPACE}/docs/coverage-html/documentation-coverage.info -o ${GITHUB_WORKSPACE}/docs/coverage-html/
+     # - name: Generate code coverage report
+     #   run: |
+     #     genhtml --no-prefix --no-function-coverage --no-branch-coverage ${GITHUB_WORKSPACE}/docs/coverage-html/documentation-coverage.info -o ${GITHUB_WORKSPACE}/docs/coverage-html/
           
-      - name: Run imgkit
-        run: |
-          python3 -c "import imgkit; imgkit.from_file('${{github.workspace}}/docs/coverage-html/index.html', '${{github.workspace}}/docs/images/coverage.jpg')"
+     # - name: Run imgkit
+     #   run: |
+     #     python3 -c "import imgkit; imgkit.from_file('${{github.workspace}}/docs/coverage-html/index.html', '${{github.workspace}}/docs/images/coverage.jpg')"
           
       - name: Run coverxygen-frontend
-        uses: jarpoole/coverxygen-frontend@v0.1.1
+        uses: jarpoole/coverxygen-frontend@v0.1.3
         with:
-          coverxygen-in: '${{github.workspace}}/docs/coverage-html/documentation-coverage.info'
+          src: '${{github.workspace}}/docs/coverage-html/documentation-coverage.json'
+          summary: '${{github.workspace}}/docs/coverage-html/summary.html'
           
       - name: list documentation outputs (debugging)
         run: |
