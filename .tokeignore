@@ -1,0 +1,8 @@
+# Tokei ignore file
+#
+# Used to ignore files when counting the number of lines, 
+# comments, and files in the source
+#
+# https://github.com/XAMPPRocky/tokei#excluding-folders
+
+./docs
