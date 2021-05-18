@@ -1,4 +1,5 @@
 
+![](https://img.shields.io/tokei/lines/github/jarpoole/NRF24L01_driver)
 
 ## Summary
 Platform independent driver for the NRF24L01(+) complient with ANSI C99. Tested on the ESP32 using ESP-IDF release/v4.3
