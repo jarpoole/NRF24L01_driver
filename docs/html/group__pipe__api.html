@@ -87,6 +87,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga813ffbf96c9a76b15d463154085df739"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the pipe number for the payload available in the RX FIFO.  <a href="group__pipe__api.html#ga813ffbf96c9a76b15d463154085df739">More...</a><br /></td></tr>
 <tr class="separator:ga813ffbf96c9a76b15d463154085df739"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0ddaef29411d56ad52cebfa48ed37fb9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="nrf24l01__defs_8h.html#aeb660fd5ed8bfc4a9d5ea587fd9207f0">nrf24l01_err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pipe__api.html#ga0ddaef29411d56ad52cebfa48ed37fb9">nrf24l01_read_payload</a> (<a class="el" href="nrf24l01__defs_8h.html#ac835ed70d839160974a8a370302ceda4">nrf24l01_pipe_t</a> *, uint8_t *, uint8_t *, bool, <a class="el" href="structnrf24l01__platform__t.html">nrf24l01_platform_t</a> *)</td></tr>
+<tr class="memdesc:ga0ddaef29411d56ad52cebfa48ed37fb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a payload.  <a href="group__pipe__api.html#ga0ddaef29411d56ad52cebfa48ed37fb9">More...</a><br /></td></tr>
 <tr class="separator:ga0ddaef29411d56ad52cebfa48ed37fb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf7370e9534ccbede12d2a8b185180a98"><td class="memItemLeft" align="right" valign="top"><a class="el" href="nrf24l01__defs_8h.html#aeb660fd5ed8bfc4a9d5ea587fd9207f0">nrf24l01_err_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pipe__api.html#gaf7370e9534ccbede12d2a8b185180a98">nrf24l01_set_pipe_dpl_mode</a> (<a class="el" href="nrf24l01__defs_8h.html#ac835ed70d839160974a8a370302ceda4">nrf24l01_pipe_t</a>, <a class="el" href="nrf24l01__defs_8h.html#a0713efe0e232d8adca8016d007b1d28e">nrf24l01_dpl_mode_t</a>, <a class="el" href="structnrf24l01__platform__t.html">nrf24l01_platform_t</a> *)</td></tr>
 <tr class="memdesc:gaf7370e9534ccbede12d2a8b185180a98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the DPL mode for a specific RX pipe.  <a href="group__pipe__api.html#gaf7370e9534ccbede12d2a8b185180a98">More...</a><br /></td></tr>
@@ -142,31 +143,31 @@ Functions</h2></td></tr>
           <td class="memname"><a class="el" href="nrf24l01__defs_8h.html#aeb660fd5ed8bfc4a9d5ea587fd9207f0">nrf24l01_err_t</a> nrf24l01_read_payload </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="nrf24l01__defs_8h.html#ac835ed70d839160974a8a370302ceda4">nrf24l01_pipe_t</a> *&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>pipe</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint8_t *&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>rx_data</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint8_t *&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>len</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>dpl</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="structnrf24l01__platform__t.html">nrf24l01_platform_t</a> *&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>platform</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -175,6 +176,19 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Read a payload. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">pipe</td><td>: A pointer where the pipe number will be stored </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">rx_data</td><td>: A pointer to a buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">len</td><td>: A pointer to the length of the data </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dpl</td><td>: </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">platform</td><td>: Driver instance configuration struct pointer <br  />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
