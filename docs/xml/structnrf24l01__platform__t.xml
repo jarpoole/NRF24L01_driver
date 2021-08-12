@@ -1,0 +1,237 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="structnrf24l01__platform__t" kind="struct" language="C++" prot="public">
+    <compoundname>nrf24l01_platform_t</compoundname>
+    <includes refid="nrf24l01__defs_8h" local="no">nrf24l01_defs.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structnrf24l01__platform__t_1abf435d5e55ddbb219f2954779cc8adb6" prot="public" static="no" mutable="no">
+        <type><ref refid="nrf24l01__defs_8h_1a535ba1bc087e8da8f29f88960d0a64dd" kindref="member">nrf24l01_delay_us_fptr_t</ref></type>
+        <definition>nrf24l01_delay_us_fptr_t nrf24l01_platform_t::delay_us</definition>
+        <argsstring></argsstring>
+        <name>delay_us</name>
+        <briefdescription>
+<para>Pointer to a platform specific microsecond delay function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="949" column="37" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="949" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnrf24l01__platform__t_1a9f4dc215cd41cb34f4f6208e01c81f9a" prot="public" static="no" mutable="no">
+        <type><ref refid="nrf24l01__defs_8h_1a44097761b67767d2703b6a4240625202" kindref="member">nrf24l01_gpio_chip_enable_fptr_t</ref></type>
+        <definition>nrf24l01_gpio_chip_enable_fptr_t nrf24l01_platform_t::gpio_chip_enable</definition>
+        <argsstring></argsstring>
+        <name>gpio_chip_enable</name>
+        <briefdescription>
+<para>Pointer to the platform specific chip enable GPIO control function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="950" column="37" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="950" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnrf24l01__platform__t_1abe203f817fe86f25764587b59baa568f" prot="public" static="no" mutable="no">
+        <type><ref refid="nrf24l01__defs_8h_1a9d35a298e2d3ba026f62779ba5988120" kindref="member">nrf24l01_platform_init_fptr_t</ref></type>
+        <definition>nrf24l01_platform_init_fptr_t nrf24l01_platform_t::platform_init</definition>
+        <argsstring></argsstring>
+        <name>platform_init</name>
+        <briefdescription>
+<para>Pointer to the platform specific hardware initialization function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="951" column="37" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="951" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnrf24l01__platform__t_1ae5b99c252f64ff39fa24ef88ec33800a" prot="public" static="no" mutable="no">
+        <type><ref refid="nrf24l01__defs_8h_1a5197eefaacf7da11248254a9e3290124" kindref="member">nrf24l01_platform_deinit_fptr_t</ref></type>
+        <definition>nrf24l01_platform_deinit_fptr_t nrf24l01_platform_t::platform_deinit</definition>
+        <argsstring></argsstring>
+        <name>platform_deinit</name>
+        <briefdescription>
+<para>Pointer to the platform specific hardware deinitialization function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="952" column="37" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="952" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnrf24l01__platform__t_1adad84cbfcf4873ff02e12c9c0a156acf" prot="public" static="no" mutable="no">
+        <type><ref refid="nrf24l01__defs_8h_1a86465ecff5d0e2cb8872cca95c310e06" kindref="member">nrf24l01_spi_exchange_fptr_t</ref></type>
+        <definition>nrf24l01_spi_exchange_fptr_t nrf24l01_platform_t::spi_exchange</definition>
+        <argsstring></argsstring>
+        <name>spi_exchange</name>
+        <briefdescription>
+<para>Pointer to the platform specific SPI full-duplex transfer function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="953" column="37" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="953" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnrf24l01__platform__t_1a14b4c6c1143a2d9fbe68c87883265808" prot="public" static="no" mutable="no">
+        <type><ref refid="nrf24l01__defs_8h_1a47eddbd6cc5e2128f56ec7994b9e066c" kindref="member">nrf24l01_check_for_interrupt_fptr_t</ref></type>
+        <definition>nrf24l01_check_for_interrupt_fptr_t nrf24l01_platform_t::check_for_interrupt</definition>
+        <argsstring></argsstring>
+        <name>check_for_interrupt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="954" column="37" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="954" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnrf24l01__platform__t_1a000143d3495d4fe39a6ca1fb3a43ceb4" prot="public" static="no" mutable="no">
+        <type><ref refid="nrf24l01__defs_8h_1a870b44260a83ed804d9c94dfecc8be8a" kindref="member">nrf24l01_rx_dr_callback_fptr_t</ref></type>
+        <definition>nrf24l01_rx_dr_callback_fptr_t nrf24l01_platform_t::rx_dr_callback</definition>
+        <argsstring></argsstring>
+        <name>rx_dr_callback</name>
+        <briefdescription>
+<para>Callback function pointer to be called when RX data is received and the IRQ interrupt is asserted. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="956" column="33" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="956" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnrf24l01__platform__t_1a6f944428baa03e7864a0a7088e162424" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* nrf24l01_platform_t::rx_dr_callback_user_ptr</definition>
+        <argsstring></argsstring>
+        <name>rx_dr_callback_user_ptr</name>
+        <briefdescription>
+<para>User-defined pointer to be passed along when calling rx_dr_callback. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="957" column="32" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="957" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnrf24l01__platform__t_1acc6e5dabd30ec87d7eea688d2bfcca8c" prot="public" static="no" mutable="no">
+        <type><ref refid="nrf24l01__defs_8h_1acbaf981637ef9ef2e0d15fc2886135b5" kindref="member">nrf24l01_tx_ds_callback_fptr_t</ref></type>
+        <definition>nrf24l01_tx_ds_callback_fptr_t nrf24l01_platform_t::tx_ds_callback</definition>
+        <argsstring></argsstring>
+        <name>tx_ds_callback</name>
+        <briefdescription>
+<para>Callback function pointer to be called when TX data is sent and the IRQ interrupt is asserted. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="958" column="33" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="958" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnrf24l01__platform__t_1ac4efe0276c326f5f3711c0c27e9784e8" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* nrf24l01_platform_t::tx_ds_callback_user_ptr</definition>
+        <argsstring></argsstring>
+        <name>tx_ds_callback_user_ptr</name>
+        <briefdescription>
+<para>User-defined pointer to be passed along when calling tx_ds_callback. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="959" column="32" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="959" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnrf24l01__platform__t_1abbe06f5152b49ef00761ae87b980179f" prot="public" static="no" mutable="no">
+        <type><ref refid="nrf24l01__defs_8h_1af3a3bced5aa40c9e8ea6ea75fd56b1b7" kindref="member">nrf24l01_max_rt_callback_fptr_t</ref></type>
+        <definition>nrf24l01_max_rt_callback_fptr_t nrf24l01_platform_t::max_rt_callback</definition>
+        <argsstring></argsstring>
+        <name>max_rt_callback</name>
+        <briefdescription>
+<para>Callback function pointer to be called when the maximum number of packet transmission retries has been exceeded and the IRQ interrupt is asserted. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="960" column="33" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="960" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnrf24l01__platform__t_1a11a29e75b9ef15f922bed46c7d054b71" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* nrf24l01_platform_t::max_rt_callback_user_ptr</definition>
+        <argsstring></argsstring>
+        <name>max_rt_callback_user_ptr</name>
+        <briefdescription>
+<para>User-defined pointer to be passed along when calling max_rt_callback. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="961" column="32" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="961" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnrf24l01__platform__t_1ae4382e8da69d0b669320b5009fb2df42" prot="public" static="no" mutable="no">
+        <type>struct nrf24l01_platform_t::@1</type>
+        <definition>struct nrf24l01_platform_t::@1 nrf24l01_platform_t::callbacks</definition>
+        <argsstring></argsstring>
+        <name>callbacks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="962" column="11"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnrf24l01__platform__t_1af4704b28d567c9987d1a3928b8b92336" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* nrf24l01_platform_t::user_ptr</definition>
+        <argsstring></argsstring>
+        <name>user_ptr</name>
+        <briefdescription>
+<para>(optional) Pointer to a user-defined hardware configuration struct </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="963" column="36" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="963" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Driver instance configuration information. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Encapsulates an entire NRF24L01 driver instance to avoid the need for dynamic memory allocation. The application is responsible for keeping this structure in scope while the driver instance is in use </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>nrf24l01_platform_t</label>
+        <link refid="structnrf24l01__platform__t"/>
+        <childnode refid="1" relation="usage">
+          <edgelabel>rx_dr_callback</edgelabel>
+          <edgelabel>max_rt_callback</edgelabel>
+          <edgelabel>tx_ds_callback</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="948" column="26" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="948" bodyend="964"/>
+    <listofallmembers>
+      <member refid="structnrf24l01__platform__t_1ae4382e8da69d0b669320b5009fb2df42" prot="public" virt="non-virtual"><scope>nrf24l01_platform_t</scope><name>callbacks</name></member>
+      <member refid="structnrf24l01__platform__t_1a14b4c6c1143a2d9fbe68c87883265808" prot="public" virt="non-virtual"><scope>nrf24l01_platform_t</scope><name>check_for_interrupt</name></member>
+      <member refid="structnrf24l01__platform__t_1abf435d5e55ddbb219f2954779cc8adb6" prot="public" virt="non-virtual"><scope>nrf24l01_platform_t</scope><name>delay_us</name></member>
+      <member refid="structnrf24l01__platform__t_1a9f4dc215cd41cb34f4f6208e01c81f9a" prot="public" virt="non-virtual"><scope>nrf24l01_platform_t</scope><name>gpio_chip_enable</name></member>
+      <member refid="structnrf24l01__platform__t_1abbe06f5152b49ef00761ae87b980179f" prot="public" virt="non-virtual"><scope>nrf24l01_platform_t</scope><name>max_rt_callback</name></member>
+      <member refid="structnrf24l01__platform__t_1a11a29e75b9ef15f922bed46c7d054b71" prot="public" virt="non-virtual"><scope>nrf24l01_platform_t</scope><name>max_rt_callback_user_ptr</name></member>
+      <member refid="structnrf24l01__platform__t_1ae5b99c252f64ff39fa24ef88ec33800a" prot="public" virt="non-virtual"><scope>nrf24l01_platform_t</scope><name>platform_deinit</name></member>
+      <member refid="structnrf24l01__platform__t_1abe203f817fe86f25764587b59baa568f" prot="public" virt="non-virtual"><scope>nrf24l01_platform_t</scope><name>platform_init</name></member>
+      <member refid="structnrf24l01__platform__t_1a000143d3495d4fe39a6ca1fb3a43ceb4" prot="public" virt="non-virtual"><scope>nrf24l01_platform_t</scope><name>rx_dr_callback</name></member>
+      <member refid="structnrf24l01__platform__t_1a6f944428baa03e7864a0a7088e162424" prot="public" virt="non-virtual"><scope>nrf24l01_platform_t</scope><name>rx_dr_callback_user_ptr</name></member>
+      <member refid="structnrf24l01__platform__t_1adad84cbfcf4873ff02e12c9c0a156acf" prot="public" virt="non-virtual"><scope>nrf24l01_platform_t</scope><name>spi_exchange</name></member>
+      <member refid="structnrf24l01__platform__t_1acc6e5dabd30ec87d7eea688d2bfcca8c" prot="public" virt="non-virtual"><scope>nrf24l01_platform_t</scope><name>tx_ds_callback</name></member>
+      <member refid="structnrf24l01__platform__t_1ac4efe0276c326f5f3711c0c27e9784e8" prot="public" virt="non-virtual"><scope>nrf24l01_platform_t</scope><name>tx_ds_callback_user_ptr</name></member>
+      <member refid="structnrf24l01__platform__t_1af4704b28d567c9987d1a3928b8b92336" prot="public" virt="non-virtual"><scope>nrf24l01_platform_t</scope><name>user_ptr</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

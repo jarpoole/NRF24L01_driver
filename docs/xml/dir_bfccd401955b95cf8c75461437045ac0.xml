@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_bfccd401955b95cf8c75461437045ac0" kind="dir">
+    <compoundname>/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc</compoundname>
+    <innerfile refid="nrf24l01_8h">nrf24l01.h</innerfile>
+    <innerfile refid="nrf24l01__defs_8h">nrf24l01_defs.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/"/>
+  </compounddef>
+</doxygen>
