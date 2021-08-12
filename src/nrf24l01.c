@@ -115,6 +115,26 @@ static nrf24l01_err_t nrf24l01_multi_write_reg(uint8_t reg_addr, uint8_t* data, 
 	}
 	return NRF24L01_OK;
 }
+/** @brief Gets the configured RX dynamic payload width
+ * 
+ *  @param[out] width    : Pointer to a location where the DPL will be stored
+ *  @param[in]  platform : Driver instance configuration struct pointer
+ * 
+ *  @retval NRF24L01_ERR_INVALID_ARG -> Pointer to DLP width is null
+ *  @retval NRF24L01_ERR_READ        -> Device communication failed
+ *  @retval NRF24L01_OK              -> Read successful, width is valid
+ */
+static nrf24l01_err_t nrf24l01_get_rx_dpl(uint8_t* width, nrf24l01_platform_t* platform) {
+	nrf24l01_err_t err;
+	
+	if(width == NULL){
+		return NRF24L01_ERR_INVALID_ARG;
+	}
+	err = nrf24l01_read_reg(NRF24L01_FEATURE_CMD_R_RX_PL_WID, &width, platform);
+	return err;
+}
+
+
 
 
 
@@ -197,87 +217,286 @@ nrf24l01_err_t nrf24l01_check_connectivity(nrf24l01_platform_t* platform) {
 	return err;
 }
 
-/** @brief Configures the RX payload size for a specific pipe
+/** @brief Gets any pending IRQ flags
+ *  
+ *  The RX data received interrupt is signaled by NRF24L01_STATUS_REG_BIT_RX_DR
+ *  The Tx data sent interrupt is signaled by NRF24L01_STATUS_REG_BIT_TX_DS
+ *  The maximum retries interrupt is signaled by NRF24L01_STATUS_REG_BIT_MAX_RT
  * 
- *  All pipes can be modified simultaneously using NRF24L01_ALL_RX_PIPES
- *
- *  @param[in] pipe        : The pipe to change
- *  @param[in] payload_len : The desired RX payload length (1 to 32 bytes)
- *  @param[in] platform    : Driver instance configuration struct pointer                    
+ *  @param[out] flags    : A pointer to the state of the IRQ flags, will be a bitwise ORing of NRF24L01_STATUS_REG_BIT_x values
+ *  @param[in]  platform : Driver instance configuration struct pointer                    
  */
-nrf24l01_err_t nrf24l01_set_pipe_rx_payload_size(nrf24l01_pipe_t pipe, uint8_t payload_len, nrf24l01_platform_t* platform){
-	if(payload_len > NRF24L01_RX_FIFO_WIDTH || payload_len == 0){
-		return NRF24L01_ERR_INVALID_ARG;
-	}else if( !NRF24L01_IS_RX_PIPE(pipe) ){
-		return NRF24L01_ERR_INVALID_ARG;
-	}
+nrf24l01_err_t nrf24l01_get_irq_flags(uint8_t* flags, nrf24l01_platform_t* platform) {
+	nrf24l01_err_t err;
+	uint8_t temp;
 
-	if(pipe == NRF24L01_ALL_RX_PIPES){
-		nrf24l01_err_t err = NRF24L01_OK;
-		for(uint8_t pipe_index = NRF24L01_PIPE0; pipe_index <= NRF24L01_PIPE5; pipe_index++){
-			err |= nrf24l01_write_reg(NRF24L01_RX_PW_PIPE[pipe_index], payload_len, platform);
-		}
+	if(flags == NULL){
+		err = NRF24L01_ERR_INVALID_ARG;
 		return err;
-	}else{
-		return nrf24l01_write_reg(NRF24L01_RX_PW_PIPE[pipe], payload_len, platform);
 	}
-}
-
-/** @brief Configures the transceiver power mode
- *
- *  @param[in] mode     : The desired power mode between PWR_UP and PWR_DOWN
- *  @param[in] platform : Driver instance configuration struct pointer                    
- */
-nrf24l01_err_t nrf24l01_set_power_mode(nrf24l01_power_mode_t mode, nrf24l01_platform_t* platform) {
-	nrf24l01_err_t err = NRF24L01_OK;
-	uint8_t reg;
-
-	err |= nrf24l01_read_reg(NRF24L01_REG_ADDR_CONFIG, &reg, platform);
-	if (mode == NRF24L01_PWR_UP) {
-		// Set the PWR_UP bit of CONFIG register to wake the transceiver
-		// It goes into Stanby-I mode with consumption about 26uA
-		reg |= NRF24L01_CONFIG_REG_BIT_PWR_UP;
-		err |= nrf24l01_write_reg(NRF24L01_REG_ADDR_CONFIG, reg, platform);
-		
-		platform->delay_us(NRF24L01_POWER_UP_US);
-	} else {
-		platform->gpio_chip_enable(false, platform->user_ptr);
-
-		// Clear the PWR_UP bit of CONFIG register to put the transceiver
-		// into power down mode with consumption about 900nA
-		reg &= ~NRF24L01_CONFIG_REG_BIT_PWR_UP;
-		err |= nrf24l01_write_reg(NRF24L01_REG_ADDR_CONFIG, reg, platform);
+	err = nrf24l01_read_reg(NRF24L01_REG_ADDR_STATUS, &temp, platform);
+	if(err == NRF24L01_OK){
+		*flags = temp & NRF24L01_STATUS_MASK_IRQ_FLAGS;
 	}
 	return err;
 }
 
-nrf24l01_err_t nrf24l01_start_listening(nrf24l01_platform_t* platform){
-	NRF24L01_FPTR_RTN_T platform_err = 0;
-	platform_err |= platform->gpio_chip_enable(true, platform->user_ptr);
-	platform_err |= platform->delay_us(NRF24L01_TIMING_RF_SETTLING);
-	return ( (platform_err == 0) ? NRF24L01_OK : NRF24L01_ERR_UNKNOWN );
-}
-nrf24l01_err_t nrf24l01_stop_listening(nrf24l01_platform_t* platform){
-	NRF24L01_FPTR_RTN_T platform_err = 0;
-	platform_err |= platform->gpio_chip_enable(false, platform->user_ptr);
-	return ( (platform_err == 0) ? NRF24L01_OK : NRF24L01_ERR_UNKNOWN );
-}
-
-/** @brief Configures the transceiver operational mode
- *
- *  @param[in] mode     : The desired operational mode between RX and TX
+/** @brief Enables/disables device interrupts. Completely replaces previous configuration
+ * 
+ *  An RX data received interrupt can be enabled with NRF24L01_CONFIG_REG_BIT_MASK_RX_DR
+ *  A Tx data sent interrupt can be enabled with NRF24L01_CONFIG_REG_BIT_MASK_TX_DS
+ *  A maximum retries interrupt can be enabled with NRF24L01_CONFIG_REG_BIT_MASK_MAX_RT
+ * 
+ *  @param[in] mask     : The new IRQ configuration, should be a bitwise ORing of NRF24L01_CONFIG_REG_BIT_MASK_x values
  *  @param[in] platform : Driver instance configuration struct pointer                    
  */
-nrf24l01_err_t nrf24l01_set_operational_mode(nrf24l01_operational_mode_t mode, nrf24l01_platform_t* platform) {
+nrf24l01_err_t nrf24l01_set_irq_mask(nrf24l01_interrupt_mask_t mask, nrf24l01_platform_t* platform){
 	nrf24l01_err_t err = NRF24L01_OK;
 	uint8_t reg;
 
-	// Configure PRIM_RX bit of the CONFIG register
+	// The PLOS counter is reset after write to RF_CH register
 	err |= nrf24l01_read_reg(NRF24L01_REG_ADDR_CONFIG, &reg, platform);
-	reg &= ~NRF24L01_CONFIG_REG_BIT_PRIM_RX;
-	reg |= (mode & NRF24L01_CONFIG_REG_BIT_PRIM_RX);
+	reg &= ~NRF24L01_CONFIG_MASK_INTERRUPT_MASKS;
+	reg |= (mask & NRF24L01_CONFIG_MASK_INTERRUPT_MASKS);
 	err |= nrf24l01_write_reg(NRF24L01_REG_ADDR_CONFIG, reg, platform);
 
+	return err;
+}
+
+/** @brief Clears any pending IRQ flags
+ * 
+ *  @param[in] platform : Driver instance configuration struct pointer
+ */
+nrf24l01_err_t nrf24l01_clear_irq_flags(nrf24l01_platform_t* platform) {
+	nrf24l01_err_t err = NRF24L01_OK;
+	
+	// Clear RX_DR, TX_DS and MAX_RT bits of the STATUS register
+	uint8_t reg;
+	err |= nrf24l01_read_reg(NRF24L01_REG_ADDR_STATUS, &reg, platform);
+	reg |= NRF24L01_STATUS_MASK_IRQ_FLAGS;
+	err |= nrf24l01_write_reg(NRF24L01_REG_ADDR_STATUS, reg, platform);
+
+	return err;
+}
+
+nrf24l01_err_t nrf24l01_register_rx_dr_callback(nrf24l01_rx_dr_callback_fptr_t callback, void* user_ptr, nrf24l01_platform_t* platform){
+	platform->callbacks.rx_dr_callback = callback;
+	platform->callbacks.rx_dr_callback_user_ptr = user_ptr;
+
+	return NRF24L01_OK;
+}
+
+nrf24l01_err_t nrf24l01_register_tx_ds_callback(nrf24l01_tx_ds_callback_fptr_t callback, void* user_ptr, nrf24l01_platform_t* platform){
+	platform->callbacks.tx_ds_callback = callback;
+	platform->callbacks.tx_ds_callback_user_ptr = user_ptr;
+
+	return NRF24L01_OK;
+}
+
+nrf24l01_err_t nrf24l01_register_max_rt_callback(nrf24l01_max_rt_callback_fptr_t callback, void* user_ptr, nrf24l01_platform_t* platform){
+	platform->callbacks.max_rt_callback = callback;
+	platform->callbacks.max_rt_callback_user_ptr = user_ptr;
+
+	return NRF24L01_OK;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/** @brief Gets the configured transmitter rf output power
+ *
+ *  @param[out] tx_power : A pointer to the configured transmitter power
+ *  @param[in]  platform : Driver instance configuration struct pointer                    
+ */
+nrf24l01_err_t nrf24l01_get_tx_power(nrf24l01_tx_power_t* tx_power, nrf24l01_platform_t* platform){
+	if(tx_power == NULL || platform == NULL){
+		return NRF24L01_ERR_INVALID_ARG;
+	}
+
+	nrf24l01_err_t err;
+	uint8_t reg;
+
+	err = nrf24l01_read_reg(NRF24L01_REG_ADDR_RF_SETUP, &reg, platform);
+	if(err != NRF24L01_OK){
+		return err;
+	}
+	nrf24l01_tx_power_t tx_power_bits = reg & NRF24L01_RF_SETUP_REG_BITS_RF_PWR;
+	if(tx_power_bits == NRF24L01_TX_PWR_18DBM_REG_BITS){
+		*tx_power = NRF24L01_TX_PWR_18DBM;
+	}else if(tx_power_bits == NRF24L01_TX_PWR_12DBM_REG_BITS){
+		*tx_power = NRF24L01_TX_PWR_12DBM;
+	}else if(tx_power_bits == NRF24L01_TX_PWR_6DBM_REG_BITS){
+		*tx_power = NRF24L01_TX_PWR_6DBM;
+	}else if(tx_power_bits == NRF24L01_TX_PWR_0DBM_REG_BITS){
+		*tx_power = NRF24L01_TX_PWR_0DBM;
+	}
+	return err;
+}
+
+/** @brief Configures the transmitter rf output power
+ *
+ *  @param[in] tx_power : The desired transmitter power
+ *  @param[in] platform : Driver instance configuration struct pointer                    
+ */
+nrf24l01_err_t nrf24l01_set_tx_power(nrf24l01_tx_power_t tx_power, nrf24l01_platform_t* platform) {
+	nrf24l01_err_t err = NRF24L01_OK;
+	uint8_t reg;
+
+	err |= nrf24l01_read_reg(NRF24L01_REG_ADDR_RF_SETUP, &reg, platform);
+	reg &= ~NRF24L01_RF_SETUP_REG_BITS_RF_PWR; // Clear the previous value
+    if(tx_power == NRF24L01_TX_PWR_18DBM){
+		reg |= NRF24L01_TX_PWR_18DBM_REG_BITS;
+	}else if(tx_power == NRF24L01_TX_PWR_12DBM){
+		reg |= NRF24L01_TX_PWR_12DBM_REG_BITS;
+	}else if(tx_power == NRF24L01_TX_PWR_6DBM){
+		reg |= NRF24L01_TX_PWR_6DBM_REG_BITS;
+	}else if(tx_power == NRF24L01_TX_PWR_0DBM){
+		reg |= NRF24L01_TX_PWR_0DBM_REG_BITS;
+	}else{
+		return NRF24L01_ERR_INVALID_ARG;
+	}
+	err |= nrf24l01_write_reg(NRF24L01_REG_ADDR_RF_SETUP, reg, platform);
+
+	return err;
+}
+
+/** @brief Configures the transceiver frequency channel
+ *
+ *  The resultant frequency will be (2400 + channel)MHz  
+ *  If the device data rate is configured to 2MBPS which requires 2MHz of bandwidth,
+ *  only the even channels should be used to avoid channel overlap
+ * 
+ *  IMPORTANT: This method has the side effect of resetting the PLOS_CNT[7:4] bits in the OBSERVER_TX register
+ * 
+ *  @param[in] channel  : The desired radio frequency channel from 0 to 127
+ *  @param[in] platform : Driver instance configuration struct pointer
+ * 
+ *  @retval NRF24L01_ERR_INVALID_ARG -> Channel is greater than 127 or data rate is 2MBPS and the channel is odd
+ *  @retval NRF24L01_OK              -> Channel successfully configured
+ */
+nrf24l01_err_t nrf24l01_set_rf_channel(uint8_t channel, nrf24l01_platform_t* platform) {
+	nrf24l01_err_t err = NRF24L01_OK;
+
+	nrf24l01_data_rate_t data_rate;
+	err |= nrf24l01_get_data_rate(&data_rate, platform);
+	if(err != NRF24L01_OK){
+		return err;
+	}
+	if( (data_rate == NRF24L01_DR_2MBPS) && (channel % 2 != 0) ){
+		return NRF24L01_ERR_INVALID_ARG;
+	}
+	if(channel > 127){
+		return NRF24L01_ERR_INVALID_ARG;
+	}
+	err |= nrf24l01_write_reg(NRF24L01_REG_ADDR_RF_CH, channel, platform);
+	return err;
+}
+
+/** @brief Gets the configured transceiver data rate
+ *
+ *  @param[out] data_rate : A pointer to the configured data rate
+ *  @param[in]  platform  : Driver instance configuration struct pointer                    
+ */
+nrf24l01_err_t nrf24l01_get_data_rate(nrf24l01_data_rate_t* data_rate, nrf24l01_platform_t* platform) {
+	nrf24l01_err_t err;
+	uint8_t reg;
+
+	err = nrf24l01_read_reg(NRF24L01_REG_ADDR_RF_SETUP, &reg, platform);
+	if(err != NRF24L01_OK){
+		return err;
+	}
+
+	if(reg & NRF24L01_RF_SETUP_REG_BIT_RF_DR){
+		*data_rate = NRF24L01_DR_2MBPS;
+	}else{
+		*data_rate = NRF24L01_DR_1MBPS;
+	}
+	return err;
+}
+
+/** @brief Configures the transceiver data rate
+ *
+ *  @param[in] data_rate : The desired data rate
+ *  @param[in] platform  : Driver instance configuration struct pointer                    
+ */
+nrf24l01_err_t nrf24l01_set_data_rate(nrf24l01_data_rate_t data_rate, nrf24l01_platform_t* platform) {
+	nrf24l01_err_t err = NRF24L01_OK;
+	uint8_t reg;
+
+	err |= nrf24l01_read_reg(NRF24L01_REG_ADDR_RF_SETUP, &reg, platform);
+	if(data_rate == NRF24L01_DR_1MBPS){
+		reg &= ~NRF24L01_RF_SETUP_REG_BIT_RF_DR;
+	}else if(data_rate == NRF24L01_DR_2MBPS){
+		reg |= NRF24L01_RF_SETUP_REG_BIT_RF_DR;
+	}
+	err |= nrf24l01_write_reg(NRF24L01_REG_ADDR_RF_SETUP, reg, platform);
+
+	return err;
+}
+
+/** @brief Gets the current low noise amplifier mode
+ *
+ *  @param[out] lna_mode : A pointer to the configured LNA rate
+ *  @param[in]  platform : Driver instance configuration struct pointer                    
+ */
+nrf24l01_err_t nrf24l01_get_lna_mode(nrf24l01_lna_mode_t* lna_mode, nrf24l01_platform_t* platform){
+	if(lna_mode == NULL || platform == NULL){
+		return NRF24L01_ERR_INVALID_ARG;
+	}
+	nrf24l01_err_t err = NRF24L01_OK;
+	uint8_t reg;
+	err = nrf24l01_read_reg(NRF24L01_REG_ADDR_RF_SETUP, &reg, platform);
+	if(err != NRF24L01_OK){
+		return err;
+	}
+	if(reg & NRF24L01_RF_SETUP_REG_BIT_LNA_HCURR){
+		*lna_mode = NRF24L01_LNA_ON;
+	}else{
+		*lna_mode = NRF24L01_LNA_OFF;
+	}
+	return err;
+}
+
+/** @brief Configures the low noise amplifier mode
+ *
+ *  @param[in] lna_mode : The desired LNA mode
+ *  @param[in] platform : Driver instance configuration struct pointer                    
+ */
+nrf24l01_err_t nrf24l01_set_lna_mode(nrf24l01_lna_mode_t lna_mode, nrf24l01_platform_t* platform){
+	nrf24l01_err_t err = NRF24L01_OK;
+	uint8_t reg;
+
+	err |= nrf24l01_read_reg(NRF24L01_REG_ADDR_RF_SETUP, &reg, platform);
+	if(lna_mode == NRF24L01_LNA_OFF){
+		reg &= ~NRF24L01_RF_SETUP_REG_BIT_LNA_HCURR;
+	}else if(lna_mode == NRF24L01_LNA_ON){
+		reg |= NRF24L01_RF_SETUP_REG_BIT_LNA_HCURR;
+	}
+	err |= nrf24l01_write_reg(NRF24L01_REG_ADDR_RF_SETUP, reg, platform);
+
+	return err;
+}
+
+/** @brief Configures the automatic retransmission parameters
+ *
+ *  Setting zero for `arc` means that automatic retransmission is completely disabled 
+ * 
+ *  @param[in] ard      : The desired auto retransmit delay
+ *  @param[in] arc      : The desired number of auto retransmits, from 0 to 15
+ *  @param[in] platform : Driver instance configuration struct pointer                    
+ */
+nrf24l01_err_t nrf24l01_set_auto_retransmission(nrf24l01_ar_delay_t ard, nrf24l01_ar_count_t arc, nrf24l01_platform_t* platform) {
+	// Set auto retransmit settings (SETUP_RETR register)
+	nrf24l01_err_t err;
+	err = nrf24l01_write_reg(NRF24L01_REG_ADDR_SETUP_RETR, (uint8_t)((ard << 4) | (arc & NRF24L01_SETUP_RETR_REG_BITS_ARC)), platform);
 	return err;
 }
 
@@ -301,37 +520,26 @@ nrf24l01_err_t nrf24l01_set_crc_scheme(nrf24l01_crc_scheme_t scheme, nrf24l01_pl
 	return err;
 }
 
-/** @brief Configures the transceiver frequency channel
- *
- *  The resultant frequency will be (2400 + channel)MHz
+/** @brief Get the configured address width which is common to all pipes
  * 
- *  IMPORTANT: This method has the side effect of resetting the PLOS_CNT[7:4] bits in the OBSERVER_TX register
- * 
- *  @param[in] channel  : The desired radio frequency channel from 0 to 127
- *  @param[in] platform : Driver instance configuration struct pointer                    
+ *  @param[out] addr_width : A pointer to the configured address width from 3 to 5
+ *  @param[in]  platform   : Driver instance configuration struct pointer 
  */
-nrf24l01_err_t nrf24l01_set_rf_channel(uint8_t channel, nrf24l01_platform_t* platform) {
+nrf24l01_err_t nrf24l01_get_address_width(nrf24l01_address_width_t* addr_width, nrf24l01_platform_t* platform){
 	nrf24l01_err_t err;
+	uint8_t temp;
+	err = nrf24l01_read_reg(NRF24L01_REG_ADDR_SETUP_AW, &temp, platform);
+	temp = temp & NRF24L01_SETUP_AW_REG_BITS_AW;
 
-	if(channel > 127){
-		return NRF24L01_ERR_INVALID_ARG;
+	if(temp == NRF24L01_ADDR_WIDTH_3_BYTES){
+		*addr_width = 3;
+	}else if(temp == NRF24L01_ADDR_WIDTH_4_BYTES){
+		*addr_width = 4;
+	}else if(temp == NRF24L01_ADDR_WIDTH_5_BYTES){
+		*addr_width = 5;
+	}else{
+		err = NRF24L01_ERR_READ;
 	}
-	err = nrf24l01_write_reg(NRF24L01_REG_ADDR_RF_CH, channel, platform);
-	return err;
-}
-
-/** @brief Configures the automatic retransmission parameters
- *
- *  Setting zero for `arc` means that automatic retransmission is completely disabled 
- * 
- *  @param[in] ard      : The desired auto retransmit delay
- *  @param[in] arc      : The desired number of auto retransmits, from 0 to 15
- *  @param[in] platform : Driver instance configuration struct pointer                    
- */
-nrf24l01_err_t nrf24l01_set_auto_retransmission(nrf24l01_ar_delay_t ard, nrf24l01_ar_count_t arc, nrf24l01_platform_t* platform) {
-	// Set auto retransmit settings (SETUP_RETR register)
-	nrf24l01_err_t err;
-	err = nrf24l01_write_reg(NRF24L01_REG_ADDR_SETUP_RETR, (uint8_t)((ard << 4) | (arc & NRF24L01_SETUP_RETR_REG_BITS_ARC)), platform);
 	return err;
 }
 
@@ -363,67 +571,441 @@ nrf24l01_err_t nrf24l01_set_address_width(nrf24l01_address_width_t addr_width, n
  *  @param[in] pipe       : The pipe to modify
  *  @param[in] addr       : A pointer to a buffer containing the desired address
  *  @param[in] addr_width : The desired address length
- *  @param[in] platform   : Driver instance configuration struct pointer                    
+ *  @param[in] platform   : Driver instance configuration struct pointer      
+ * 
+ *  @retval NRF24L01_ERR_INVALID_STATE -> Address width is too small to hold this address
+ *  @retval NRF24L01_ERR_INVALID_ARG   -> Invalid pipe/length pairing, NULL argument     
  */
 nrf24l01_err_t nrf24l01_set_address(nrf24l01_pipe_t pipe, const uint8_t* addr, nrf24l01_address_width_t addr_width, nrf24l01_platform_t* platform) {
 	nrf24l01_err_t err;
-	
-	if(pipe == NRF24L01_PIPE0 || pipe == NRF24L01_PIPE1 || pipe == NRF24L01_PIPETX){
+	if(addr == NULL || platform == NULL){
+		err = NRF24L01_ERR_INVALID_ARG;
+	}
+	else if(pipe == NRF24L01_PIPE0 || pipe == NRF24L01_PIPE1 || pipe == NRF24L01_PIPETX){
 		// Get the devices configured address width
 		nrf24l01_address_width_t config_addr_width;
-		err = nrf24l01_get_address_width(&config_addr_width, platform);
-		if(config_addr_width != addr_width){
-			err = NRF24L01_ERR_INVALID_ARG; 
+		nrf24l01_err_t get_ar_err = nrf24l01_get_address_width(&config_addr_width, platform);
+		if(get_ar_err != NRF24L01_OK){
+			err = get_ar_err;
+		}else if(config_addr_width != addr_width){
+			err = NRF24L01_ERR_INVALID_STATE; 
 		}else{
 			// Write address in reverse order (LSByte first)
 			err = nrf24l01_multi_write_reg(NRF24L01_ADDR_REGS[pipe], addr, addr_width, platform);
 		}
 	}
 	else if(pipe == NRF24L01_PIPE2 || pipe == NRF24L01_PIPE3 || pipe == NRF24L01_PIPE4 || pipe == NRF24L01_PIPE5){
-		// Write address LSBbyte only (first byte from the addr buffer)
-		err = nrf24l01_write_reg(NRF24L01_ADDR_REGS[pipe], *addr, platform);
+		if(addr_width != 1){
+			err = NRF24L01_ERR_INVALID_ARG;
+		}else{
+			// Write address LSBbyte only (first byte from the addr buffer)
+			err = nrf24l01_write_reg(NRF24L01_ADDR_REGS[pipe], *addr, platform);
+		}
 	}else{
-		// Incorrect pipe number
+		// Invalid pipe number
 		err = NRF24L01_ERR_INVALID_ARG;
 	}
 	return err;
 }
 
-/** @brief Configures the transmitter rf output power
- *
- *  @param[in] tx_power  : The desired transmitter power
- *  @param[in] platform  : Driver instance configuration struct pointer                    
+/** @brief Uses the carrier detect module to check for interference
+ * 
+ * 	This method is synchronous and will block for at least 258us. Implementation specifics are described in Appendix E of the datasheet.
+ *  If the device is currently a PTX, this method will temporarily switch it to PRX to perform the carrier detection
+ *  
+ *  @param[out] interference :
+ *  @param[in]  platform     : Driver instance configuration struct pointer
  */
-nrf24l01_err_t nrf24l01_set_tx_power(nrf24l01_tx_power_t tx_power, nrf24l01_platform_t* platform) {
+nrf24l01_err_t nrf24l01_check_for_interference(bool* interference, nrf24l01_platform_t* platform){
 	nrf24l01_err_t err = NRF24L01_OK;
 	uint8_t reg;
 
-	// Configure RF_PWR[2:1] bits of the RF_SETUP register
-	err |= nrf24l01_read_reg(NRF24L01_REG_ADDR_RF_SETUP, &reg, platform);
-	reg &= ~NRF24L01_RF_SETUP_REG_BITS_RF_PWR;
-	reg |= tx_power;
-	err |= nrf24l01_write_reg(NRF24L01_REG_ADDR_RF_SETUP, reg, platform);
+	nrf24l01_operational_mode_t previous_operational_mode;
+	err = nrf24l01_get_operational_mode(&previous_operational_mode, platform);
+	if(previous_operational_mode == NRF24L01_MODE_TX){
+		nrf24l01_set_operational_mode(NRF24L01_MODE_RX, platform);
+	}
+	platform->delay_us(NRF24L01_TIMING_RF_SETTLING + NRF24L01_TIMING_CD_FILTER_DELAY);
+
+	err |= nrf24l01_read_reg(NRF24L01_REG_ADDR_CD, &reg, platform);
+	*interference = (bool)(reg & NRF24L01_CD_REG_BIT_CD);
+
+	if(previous_operational_mode == NRF24L01_MODE_TX){
+		nrf24l01_set_operational_mode(NRF24L01_MODE_TX, platform);
+	}
+	return err;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/** @brief Flushes the RX FIFO
+ * 
+ *  @param[in] platform : Driver instance configuration struct pointer
+ */
+nrf24l01_err_t nrf24l01_flush_rx(nrf24l01_platform_t* platform) {
+	nrf24l01_err_t err;
+	err = nrf24l01_write_reg(NRF24L01_CMD_FLUSH_RX, NRF24L01_CMD_NOP, platform);
+	return err;
+}
+
+/** @brief Flushes the TX FIFO
+ * 
+ *  @param[in] platform : Driver instance configuration struct pointer
+ */
+nrf24l01_err_t nrf24l01_flush_tx(nrf24l01_platform_t* platform) {
+	nrf24l01_err_t err;
+	err = nrf24l01_write_reg(NRF24L01_CMD_FLUSH_TX, NRF24L01_CMD_NOP, platform);
+	return err;
+}
+
+/** @brief Gets the value of the STATUS register
+ * 
+ *  Value can be interpreted using NRF24L01_STATUS_REG_BIT_x definitions
+ * 
+ *  @param[out] status   : A pointer to the status register value
+ *  @param[in]  platform : Driver instance configuration struct pointer                    
+ */
+nrf24l01_err_t nrf24l01_get_status(uint8_t* status, nrf24l01_platform_t* platform) {
+	nrf24l01_err_t err;
+
+	if(status == NULL){
+		err = NRF24L01_ERR_INVALID_ARG;
+		return err;
+	}
+	// The status register is shifted out on MISO regardless of address provided on MOSI so the status register address is provided primarily for debugging visibility here
+	err = nrf24l01_read_reg(NRF24L01_REG_ADDR_STATUS, status, platform);
 
 	return err;
 }
 
-/** @brief Configures the transceiver data rate
- *
- *  @param[in] data_rate : The desired data rate
- *  @param[in] platform  : Driver instance configuration struct pointer                    
+/** @brief Gets the status of the RX or TX FIFO
+ * 
+ *  @param[in]  fifo_type   : Select either the RX or the TX FIFO
+ *  @param[out] fifo_status : A pointer where the FIFO status, on of data available, full, empty or error, will be stored
+ *  @param[in]  platform    : Driver instance configuration struct pointer                    
  */
-nrf24l01_err_t nrf24l01_set_data_rate(nrf24l01_data_rate_t data_rate, nrf24l01_platform_t* platform) {
+nrf24l01_err_t nrf24l01_get_fifo_status(nrf24l01_fifo_type_t fifo_type, nrf24l01_fifo_status_t* fifo_status, nrf24l01_platform_t* platform){
+	nrf24l01_err_t err;
+	uint8_t temp;
+
+	if(fifo_status == NULL){
+		return NRF24L01_ERR_INVALID_ARG;
+	}
+	err = nrf24l01_read_reg(NRF24L01_REG_ADDR_FIFO_STATUS, &temp, platform);
+	if(err == NRF24L01_OK){
+		if(fifo_type == NRF24L01_RX_FIFO){
+			*fifo_status = temp & NRF24L01_FIFO_STATUS_MASK_RX_FLAGS;
+		}else if(fifo_type == NRF24L01_TX_FIFO){
+			*fifo_status = (temp & NRF24L01_FIFO_STATUS_MASK_TX_FLAGS) >> 4;
+		}else{
+			return NRF24L01_ERR_INVALID_ARG;
+		}
+		return NRF24L01_OK;
+	}else{
+		return err;
+	}
+}
+
+/** @brief Resets the packet lost counter
+ * 
+ *  The packet loss counter is the PLOS_CNT bits in the OBSERVER_TX register
+ * 
+ *  @param[in] platform : Driver instance configuration struct pointer
+ */
+nrf24l01_err_t nrf24l01_reset_packet_loss_counter(nrf24l01_platform_t* platform) {
 	nrf24l01_err_t err = NRF24L01_OK;
 	uint8_t reg;
 
-	// Configure RF_DR_LOW[5] and RF_DR_HIGH[3] bits of the RF_SETUP register
-	err |= nrf24l01_read_reg(NRF24L01_REG_ADDR_RF_SETUP, &reg, platform);
-	reg &= ~NRF24L01_RF_SETUP_REG_BIT_RF_DR;
-	reg |= data_rate;
-	err |= nrf24l01_write_reg(NRF24L01_REG_ADDR_RF_SETUP, reg, platform);
+	// The PLOS counter is reset after write to RF_CH register
+	err |= nrf24l01_read_reg(NRF24L01_REG_ADDR_RF_CH, &reg, platform);
+	err |= nrf24l01_write_reg(NRF24L01_REG_ADDR_RF_CH, reg, platform);
+	return err;
+}
+
+/** @brief Retrieves the auto retransmit statistic
+ * 
+ *  @param[out] ar_lost  : A pointer where the number of lost packets is stored
+ *                         The max value is 15, can be reset by a write to RF_CH register
+ *  @param[out] ar_count : A pointer where the auto re-transmit counter is stored
+ *                         The max value is 15, resets when a new transmission starts
+ *  @param[in]  platform : Driver instance configuration struct pointer                    
+ */
+nrf24l01_err_t nrf24l01_get_retransmit_counters(nrf24l01_ar_lost_t* ar_lost, nrf24l01_ar_count_t* ar_count, nrf24l01_platform_t* platform) {
+	nrf24l01_err_t err;
+	uint8_t counters;
+
+	if(ar_count == NULL || ar_lost == NULL){
+		return NRF24L01_ERR_INVALID_ARG;
+	}
+	err = nrf24l01_read_reg(NRF24L01_REG_ADDR_OBSERVE_TX, &counters, platform);
+	if(err != NRF24L01_OK){
+		return err;
+	}
+	*ar_lost =  (NRF24L01_OBSERVE_TX_REG_BITS_PLOS_CNT & counters) >> 4; // upper nibble
+	*ar_count = NRF24L01_OBSERVE_TX_REG_BITS_ARC_CNT & counters;         // lower nibble
+	return NRF24L01_OK;
+}
+
+
+
+
+
+
+
+
+
+
+/** @brief Gets the transceiver power mode
+ *
+ *  @param[out] power_mode : A pointer to the configured power mode between PWR_UP and PWR_DOWN
+ *  @param[in]  platform   : Driver instance configuration struct pointer                    
+ */
+nrf24l01_err_t nrf24l01_get_power_mode(nrf24l01_power_mode_t* power_mode, nrf24l01_platform_t* platform){
+	nrf24l01_err_t err;
+	uint8_t reg;
+	
+	err = nrf24l01_read_reg(NRF24L01_REG_ADDR_CONFIG, &reg, platform);
+	if(err == NRF24L01_OK){
+		if(reg & NRF24L01_CONFIG_REG_BIT_PWR_UP){
+			*power_mode = NRF24L01_PWR_UP;
+		}else{
+			*power_mode = NRF24L01_PWR_DOWN;
+		}
+	}
+	return err;
+}
+
+/** @brief Configures the transceiver power mode
+ * 
+ *  `PWR_DOWN` places the device in the Power Down state
+ *  `PWR_UP` places the device in the STANDBY-I state
+ *
+ *  @param[in] power_mode : The desired power mode between PWR_UP and PWR_DOWN
+ *  @param[in] platform   : Driver instance configuration struct pointer                    
+ */
+nrf24l01_err_t nrf24l01_set_power_mode(nrf24l01_power_mode_t power_mode, nrf24l01_platform_t* platform) {
+	nrf24l01_err_t err = NRF24L01_OK;
+	uint8_t reg;
+
+	err |= nrf24l01_read_reg(NRF24L01_REG_ADDR_CONFIG, &reg, platform);
+	if (power_mode == NRF24L01_PWR_UP) {
+		// Set the PWR_UP bit of CONFIG register to wake the transceiver
+		// It goes into Stanby-I mode with consumption about 26uA
+		reg |= NRF24L01_CONFIG_REG_BIT_PWR_UP;
+		err |= nrf24l01_write_reg(NRF24L01_REG_ADDR_CONFIG, reg, platform);
+		
+		platform->delay_us(NRF24L01_POWER_UP_US);
+	} else {
+		platform->gpio_chip_enable(false, platform->user_ptr);
+
+		// Clear the PWR_UP bit of CONFIG register to put the transceiver
+		// into power down mode with consumption about 900nA
+		reg &= ~NRF24L01_CONFIG_REG_BIT_PWR_UP;
+		err |= nrf24l01_write_reg(NRF24L01_REG_ADDR_CONFIG, reg, platform);
+	}
+	return err;
+}
+
+/** @brief Gets the transceiver operational mode
+ *
+ *  @param[out] operational_mode : A pointer to the configured operational mode between RX and TX
+ *  @param[in]  platform         : Driver instance configuration struct pointer                    
+ */
+nrf24l01_err_t nrf24l01_get_operational_mode(nrf24l01_operational_mode_t* operational_mode, nrf24l01_platform_t* platform){
+	nrf24l01_err_t err;
+	uint8_t reg;
+
+	err = nrf24l01_read_reg(NRF24L01_REG_ADDR_CONFIG, &reg, platform);
+	if(err == NRF24L01_OK){
+		if(reg & NRF24L01_CONFIG_REG_BIT_PRIM_RX){
+			*operational_mode = NRF24L01_MODE_RX;
+		}else{
+			*operational_mode = NRF24L01_MODE_TX;
+		}
+	}
+	return err;
+}
+
+/** @brief Configures the transceiver operational mode
+ *
+ *  @param[in] operational_mode : The desired operational mode between RX and TX
+ *  @param[in] platform         : Driver instance configuration struct pointer                    
+ */
+nrf24l01_err_t nrf24l01_set_operational_mode(nrf24l01_operational_mode_t operational_mode, nrf24l01_platform_t* platform) {
+	nrf24l01_err_t err = NRF24L01_OK;
+	uint8_t reg;
+
+	// Configure PRIM_RX bit of the CONFIG register
+	err |= nrf24l01_read_reg(NRF24L01_REG_ADDR_CONFIG, &reg, platform);
+	reg &= ~NRF24L01_CONFIG_REG_BIT_PRIM_RX;
+	reg |= (operational_mode & NRF24L01_CONFIG_REG_BIT_PRIM_RX);
+	err |= nrf24l01_write_reg(NRF24L01_REG_ADDR_CONFIG, reg, platform);
 
 	return err;
 }
+
+/** @brief PLaces the device in RX listening mode
+ *
+ *  User should first call `nrf24l01_set_operational_mode` with the `NRF24L01_MODE_RX` option
+ * 
+ *  @param[in] platform : Driver instance configuration struct pointer                    
+ */
+nrf24l01_err_t nrf24l01_start_listening(nrf24l01_platform_t* platform){
+	NRF24L01_FPTR_RTN_T platform_err = 0;
+	platform_err |= platform->gpio_chip_enable(true, platform->user_ptr);
+	platform_err |= platform->delay_us(NRF24L01_TIMING_RF_SETTLING);
+	return ( (platform_err == 0) ? NRF24L01_OK : NRF24L01_ERR_UNKNOWN );
+}
+
+/** @brief Returns the device to STANDBY-I mode
+ *
+ *  @param[in] platform : Driver instance configuration struct pointer                    
+ */
+nrf24l01_err_t nrf24l01_stop_listening(nrf24l01_platform_t* platform){
+	NRF24L01_FPTR_RTN_T platform_err = 0;
+	platform_err |= platform->gpio_chip_enable(false, platform->user_ptr);
+	return ( (platform_err == 0) ? NRF24L01_OK : NRF24L01_ERR_UNKNOWN );
+}
+
+
+
+
+
+
+
+
+
+
+
+/** @brief Gets the feature availability
+ * 
+ *  There is no direct way to query if the NRF24L01 extra features have been activated or not. Therefore the following
+ *  workaround will be used
+ *   - Read the state of the `FEATURES` register (will be all zero if features deactivated)
+ *   - Attempt to change `EN_DYN_ACK` (bit 0) of the `FEATURES` register since it doesn't change the system state in any way 
+ *     except the make an additional command available
+ *   - Read back the `FEATURES` register to see if the bit changed
+ *   - If the `FEATURES` register changed, write the original value back
+ *
+ *  @param[out] feature_mode : A pointer to current feature mode
+ *  @param[in]  platform     : Driver instance configuration struct pointer                    
+ */
+nrf24l01_err_t nrf24l01_get_feature_mode(nrf24l01_feature_mode_t* feature_mode, nrf24l01_platform_t* platform) {
+	nrf24l01_err_t err = NRF24L01_OK;
+	if(feature_mode == NULL){
+		return NRF24L01_ERR_INVALID_ARG;
+	}
+	// Backup the FEATURES register
+	uint8_t features_reg_backup;
+	err |= nrf24l01_read_reg(NRF24L01_FEATURE_REG_ADDR_FEATURE, &features_reg_backup, platform);
+	//Toggle the EN_DYN_ACK bit
+	err |= nrf24l01_write_reg(NRF24L01_FEATURE_REG_ADDR_FEATURE, features_reg_backup ^ NRF24L01_FEATURE_REG_BIT_EN_DYN_ACK, platform);
+	// Read back the FEATURES
+	uint8_t features_reg_result;
+	err |= nrf24l01_read_reg(NRF24L01_FEATURE_REG_ADDR_FEATURE, &features_reg_result, platform);
+	// Check for modification
+	if(features_reg_result != features_reg_backup){
+		*feature_mode = NRF24L01_FEATURES_ON;
+	}else{
+		*feature_mode = NRF24L01_FEATURES_OFF;
+	}
+	//Restore the previous state of the features register
+	err |= nrf24l01_write_reg(NRF24L01_FEATURE_REG_ADDR_FEATURE, features_reg_backup, platform);
+	return err;
+}
+
+/** @brief Enables/disables special devices features
+ * 
+ *  @param[in] feature_mode : Desired feature mode
+ *  @param[in] platform     : Driver instance configuration struct
+ */
+nrf24l01_err_t nrf24l01_set_feature_mode(nrf24l01_feature_mode_t feature_mode, nrf24l01_platform_t* platform){
+	nrf24l01_err_t err;
+
+	//Check if we are in power down or standby mode
+	nrf24l01_power_mode_t power_mode;
+	err = nrf24l01_get_power_mode(&power_mode, platform);
+	if(power_mode != NRF24L01_PWR_DOWN){
+		return NRF24L01_ERR_INVALID_STATE;
+	}else if(err != NRF24L01_OK){
+		return err;
+	}
+	//Change the feature mode if needed
+	nrf24l01_feature_mode_t current_feature_mode;
+	err = nrf24l01_get_feature_mode(&current_feature_mode, platform);
+	if(err != NRF24L01_OK){
+		return err;
+	}else if(feature_mode != current_feature_mode){
+		//Toggle the feature activation using the ACTIVATE command
+		uint8_t magic_number = NRF24L01_MAGIC_NUMBER_ACTIVATE;
+		NRF24L01_FPTR_RTN_T spi_err = platform->spi_exchange(NRF24L01_CMD_ACTIVATE, NULL, &magic_number, sizeof(magic_number), platform->user_ptr);
+		if(spi_err != 0){
+			return NRF24L01_ERR_WRITE;
+		}
+	}
+	return NRF24L01_OK;
+}
+
+/** @brief Enables/disables dynamic payload length
+ * 
+ *  @param[in] dpl_mode : Desired DLP mode
+ *  @param[in] platform : Driver instance configuration struct
+ */
+nrf24l01_err_t nrf24l01_set_dpl_mode(nrf24l01_dpl_mode_t dpl_mode, nrf24l01_platform_t* platform){
+	nrf24l01_err_t err = NRF24L01_OK;
+	uint8_t features_reg;
+	err |= nrf24l01_read_reg(NRF24L01_FEATURE_REG_ADDR_FEATURE, &features_reg, platform);
+	if(dpl_mode == NRF24L01_DPL_ON){
+		features_reg |= NRF24L01_FEATURE_REG_BIT_EN_DPL;
+	}else{
+		features_reg &= ~NRF24L01_FEATURE_REG_BIT_EN_DPL;
+	}
+	err |= nrf24l01_write_reg(NRF24L01_FEATURE_REG_ADDR_FEATURE, features_reg, platform);
+	return err;
+}
+
+/** @brief Enables/disables support for payloads within ACK messages
+ * 
+ *  @param[in] ack_payload_mode : Desired payload within ACK mode
+ *  @param[in] platform         : Driver instance configuration struct
+ */
+nrf24l01_err_t nrf24l01_set_ack_payload_mode(ack_payload_mode_t ack_payload_mode, nrf24l01_platform_t* platform){
+	//TODO
+	return NRF24L01_ERR_UNKNOWN;
+}
+
+/** @brief Enables/disables support for dynamic transmit acknowledgements
+ * 
+ *  @param[in] dta_mode : Desired DTA mode
+ *  @param[in] platform : Driver instance configuration struct
+ */
+nrf24l01_err_t nrf24l01_set_dta_mode(nrf24l01_dta_mode_t dta_mode, nrf24l01_platform_t* platform){
+	//TODO
+	return NRF24L01_ERR_UNKNOWN;
+}
+
+nrf24l01_err_t nrf24l01_get_features(uint8_t* features, nrf24l01_platform_t* platform) {
+    return nrf24l01_read_reg(NRF24L01_FEATURE_REG_ADDR_FEATURE, features, platform);
+}
+
+
+
+
+
+
+
+
+
 
 /** @brief Enables or disables an RX pipe
  * 
@@ -476,7 +1058,6 @@ nrf24l01_err_t nrf24l01_set_pipe_aa_mode(nrf24l01_pipe_t pipe, nrf24l01_pipe_aa_
 	if( !NRF24L01_IS_RX_PIPE(pipe) ){
 		return NRF24L01_ERR_INVALID_ARG;
 	}
-
 	if(pipe == NRF24L01_ALL_RX_PIPES){
 		changes = NRF24L01_EN_AA_MASK_REG;
 	}else{
@@ -495,133 +1076,59 @@ nrf24l01_err_t nrf24l01_set_pipe_aa_mode(nrf24l01_pipe_t pipe, nrf24l01_pipe_aa_
 	return err;
 }
 
-/** @brief Sets the DPL mode for a specific RX pipe
+/** @brief Configures the RX payload size for a specific pipe
  * 
  *  All pipes can be modified simultaneously using NRF24L01_ALL_RX_PIPES
  *
- *  @param[in] pipe     : The pipe to change
- *  @param[in] dpl_mode : The desired DPL mode
- *  @param[in] platform : Driver instance configuration struct pointer                    
+ *  @param[in] pipe        : The pipe to change
+ *  @param[in] payload_len : The desired RX payload length (1 to 32 bytes)
+ *  @param[in] platform    : Driver instance configuration struct pointer                    
  */
-nrf24l01_err_t nrf24l01_set_pipe_dpl_mode(nrf24l01_pipe_t pipe, nrf24l01_dpl_mode_t dpl_mode, nrf24l01_platform_t* platform){
-	nrf24l01_err_t err = NRF24L01_OK;
-	uint8_t reg;
-	uint8_t changes;
-
-	if( !NRF24L01_IS_RX_PIPE(pipe) ){
+nrf24l01_err_t nrf24l01_set_pipe_rx_payload_size(nrf24l01_pipe_t pipe, uint8_t payload_len, nrf24l01_platform_t* platform){
+	if(payload_len > NRF24L01_RX_FIFO_WIDTH || payload_len == 0){
+		return NRF24L01_ERR_INVALID_ARG;
+	}else if( !NRF24L01_IS_RX_PIPE(pipe) ){
 		return NRF24L01_ERR_INVALID_ARG;
 	}
 
 	if(pipe == NRF24L01_ALL_RX_PIPES){
-		changes = NRF24L01_DYNPD_MASK_REG;
-	}else{
-		changes = (1 << pipe);
-	}
-	err |= nrf24l01_read_reg(NRF24L01_FEATURE_REG_ADDR_DYNPD, &reg, platform);
-	if(dpl_mode == NRF24L01_DPL_ON){
-		reg |= changes;
-	}else if(dpl_mode == NRF24L01_DPL_OFF){
-		reg &= ~changes;
-	}else{
-		return NRF24L01_ERR_INVALID_ARG;
-	}
-	err |= nrf24l01_write_reg(NRF24L01_FEATURE_REG_ADDR_DYNPD, reg, platform);
-
-	return err;
-}
-
-/** @brief Gets the value of the STATUS register
- * 
- *  Value can be interpreted using NRF24L01_STATUS_REG_BIT_x definitions
- * 
- *  @param[out] status   : A pointer to the status register value
- *  @param[in]  platform : Driver instance configuration struct pointer                    
- */
-nrf24l01_err_t nrf24l01_get_status(uint8_t* status, nrf24l01_platform_t* platform) {
-	nrf24l01_err_t err;
-
-	if(status == NULL){
-		err = NRF24L01_ERR_INVALID_ARG;
-		return err;
-	}
-	// The status register is shifted out on MISO regardless of address provided on MOSI so the status register address is provided primarily for debugging visibility here
-	err = nrf24l01_read_reg(NRF24L01_REG_ADDR_STATUS, status, platform);
-
-	return err;
-}
-
-/** @brief Gets any pending IRQ flags
- *  
- *  The RX data received interrupt is signaled by NRF24L01_STATUS_REG_BIT_RX_DR
- *  The Tx data sent interrupt is signaled by NRF24L01_STATUS_REG_BIT_TX_DS
- *  The maximum retries interrupt is signaled by NRF24L01_STATUS_REG_BIT_MAX_RT
- * 
- *  @param[out] flags    : A pointer to the state of the IRQ flags, will be a bitwise ORing of NRF24L01_STATUS_REG_BIT_x values
- *  @param[in]  platform : Driver instance configuration struct pointer                    
- */
-nrf24l01_err_t nrf24l01_get_irq_flags(uint8_t* flags, nrf24l01_platform_t* platform) {
-	nrf24l01_err_t err;
-	uint8_t temp;
-
-	if(flags == NULL){
-		err = NRF24L01_ERR_INVALID_ARG;
-		return err;
-	}
-	err = nrf24l01_read_reg(NRF24L01_REG_ADDR_STATUS, &temp, platform);
-	if(err == NRF24L01_OK){
-		*flags = temp & NRF24L01_STATUS_MASK_IRQ_FLAGS;
-	}
-	return err;
-}
-
-/** @brief Enables/disables device interrupts. Completely replaces previous configuration
- * 
- *  An RX data received interrupt can be enabled with NRF24L01_CONFIG_REG_BIT_MASK_RX_DR
- *  A Tx data sent interrupt can be enabled with NRF24L01_CONFIG_REG_BIT_MASK_TX_DS
- *  A maximum retries interrupt can be enabled with NRF24L01_CONFIG_REG_BIT_MASK_MAX_RT
- * 
- *  @param[in] mask     : The new IRQ configuration, should be a bitwise ORing of NRF24L01_CONFIG_REG_BIT_MASK_x values
- *  @param[in] platform : Driver instance configuration struct pointer                    
- */
-nrf24l01_err_t nrf24l01_set_irq_mask(nrf24l01_interrupt_mask_t mask, nrf24l01_platform_t* platform){
-	nrf24l01_err_t err = NRF24L01_OK;
-	uint8_t reg;
-
-	// The PLOS counter is reset after write to RF_CH register
-	err |= nrf24l01_read_reg(NRF24L01_REG_ADDR_CONFIG, &reg, platform);
-	reg &= ~NRF24L01_CONFIG_MASK_INTERRUPT_MASKS;
-	reg |= (mask & NRF24L01_CONFIG_MASK_INTERRUPT_MASKS);
-	err |= nrf24l01_write_reg(NRF24L01_REG_ADDR_CONFIG, reg, platform);
-
-	return err;
-}
-
-/** @brief Gets the status of the RX or TX FIFO
- * 
- *  @param[in]  fifo_type   : Select either the RX or the TX FIFO
- *  @param[out] fifo_status : A pointer where the FIFO status, on of data available, full, empty or error, will be stored
- *  @param[in]  platform    : Driver instance configuration struct pointer                    
- */
-nrf24l01_err_t nrf24l01_get_fifo_status(nrf24l01_fifo_type_t fifo_type, nrf24l01_fifo_status_t* fifo_status, nrf24l01_platform_t* platform){
-	nrf24l01_err_t err;
-	uint8_t temp;
-
-	if(fifo_status == NULL){
-		return NRF24L01_ERR_INVALID_ARG;
-	}
-	err = nrf24l01_read_reg(NRF24L01_REG_ADDR_FIFO_STATUS, &temp, platform);
-	if(err == NRF24L01_OK){
-		if(fifo_type == NRF24L01_RX_FIFO){
-			*fifo_status = temp & NRF24L01_FIFO_STATUS_MASK_RX_FLAGS;
-		}else if(fifo_type == NRF24L01_TX_FIFO){
-			*fifo_status = (temp & NRF24L01_FIFO_STATUS_MASK_TX_FLAGS) >> 4;
-		}else{
-			return NRF24L01_ERR_INVALID_ARG;
+		nrf24l01_err_t err = NRF24L01_OK;
+		for(uint8_t pipe_index = NRF24L01_PIPE0; pipe_index <= NRF24L01_PIPE5; pipe_index++){
+			err |= nrf24l01_write_reg(NRF24L01_RX_PW_PIPE[pipe_index], payload_len, platform);
 		}
-		return NRF24L01_OK;
-	}else{
 		return err;
+	}else{
+		return nrf24l01_write_reg(NRF24L01_RX_PW_PIPE[pipe], payload_len, platform);
 	}
+}
+
+/** @brief Writes a TX payload to the FIFO and triggers a transmission
+ * 
+ *  @param[in] data     : Pointer to a buffer with the TX payload data, remember the TX FIFO is 32 bytes long
+ *  @param[in] len      : Length of buffer to transmit (in bytes)
+ *  @param[in] platform : Driver instance configuration struct pointer
+ * 
+ *  @retval NRF24L01_ERR_INVALID_ARG -> Pointer to data buffer is null or size of data packet is too large
+ *  @retval NRF24L01_ERR_UNKNOWN     -> Device communication failed
+ *  @retval NRF24L01_OK              -> Payload write was successful
+ */
+nrf24l01_err_t nrf24l01_write_payload(uint8_t* data, uint8_t len, nrf24l01_platform_t* platform) {
+	NRF24L01_FPTR_RTN_T platform_err = 0;
+
+	if(data == NULL){
+		return NRF24L01_ERR_INVALID_ARG;
+	}else if(len > 32){
+		return NRF24L01_ERR_INVALID_ARG;
+	}
+
+	platform_err |= platform->spi_exchange(NRF24L01_CMD_W_TX_PAYLOAD, NULL, data, len, platform->user_ptr);
+	platform_err |= platform->gpio_chip_enable(true, platform->user_ptr);
+	platform_err |= platform->delay_us(NRF24L01_CE_TX_MINIMUM_PULSE_US);
+	platform_err |= platform->gpio_chip_enable(false, platform->user_ptr);
+	if(platform_err != 0){
+		return NRF24L01_ERR_UNKNOWN;
+	}
+	return NRF24L01_OK;
 }
 
 /** @brief Gets the pipe number for the payload available in the RX FIFO
@@ -644,157 +1151,15 @@ nrf24l01_err_t nrf24l01_get_rx_pipe(nrf24l01_pipe_t* pipe, nrf24l01_platform_t* 
 	return NRF24L01_OK;
 }
 
-/** @brief Retrieves the auto retransmit statistic
+/** @brief Read a payload
  * 
- *  @param[out] ar_lost  : A pointer where the number of lost packets is stored
- *                         The max value is 15, can be reset by a write to RF_CH register
- *  @param[out] ar_count : A pointer where the auto re-transmit counter is stored
- *                         The max value is 15, resets when a new transmission starts
+ *  @param[out] pipe     : A pointer where the pipe number will be stored
+ *  @param[out] rx_data  : A pointer to a buffer
+ *  @param[out] len      : A pointer to the length of the data
+ *  @param[in]  dpl      :
  *  @param[in]  platform : Driver instance configuration struct pointer                    
  */
-nrf24l01_err_t nrf24l01_get_retransmit_counters(nrf24l01_ar_lost_t* ar_lost, nrf24l01_ar_count_t* ar_count, nrf24l01_platform_t* platform) {
-	nrf24l01_err_t err;
-	uint8_t counters;
-
-	if(ar_count == NULL || ar_lost == NULL){
-		return NRF24L01_ERR_INVALID_ARG;
-	}
-	err = nrf24l01_read_reg(NRF24L01_REG_ADDR_OBSERVE_TX, &counters, platform);
-	if(err != NRF24L01_OK){
-		return err;
-	}
-	*ar_lost =  (NRF24L01_OBSERVE_TX_REG_BITS_PLOS_CNT & counters) >> 4; // upper nibble
-	*ar_count = NRF24L01_OBSERVE_TX_REG_BITS_ARC_CNT & counters;         // lower nibble
-	return NRF24L01_OK;
-}
-
-/** @brief Get the configured address width
- * 
- *  this setting is common for all pipes
- * 
- *  @retval addr_width - RX/TX address field width, value from 3 to 5
- */
-nrf24l01_err_t nrf24l01_get_address_width(nrf24l01_address_width_t* addr_width, nrf24l01_platform_t* platform){
-	nrf24l01_err_t err;
-
-	uint8_t temp;
-	err = nrf24l01_read_reg(NRF24L01_REG_ADDR_SETUP_AW, &temp, platform);
-	temp = temp & NRF24L01_SETUP_AW_REG_BITS_AW;
-
-	if(temp == NRF24L01_ADDR_WIDTH_3_BYTES){
-		*addr_width = 3;
-	}else if(temp == NRF24L01_ADDR_WIDTH_4_BYTES){
-		*addr_width = 4;
-	}else if(temp == NRF24L01_ADDR_WIDTH_5_BYTES){
-		*addr_width = 5;
-	}else{
-		err = NRF24L01_ERR_READ;
-	}
-	return err;
-}
-
-/** @brief Resets the packet lost counter
- * 
- *  The packet loss counter is the PLOS_CNT bits in the OBSERVER_TX register
- * 
- *  @param[in] platform : Driver instance configuration struct pointer
- */
-nrf24l01_err_t nrf24l01_reset_packet_loss_counter(nrf24l01_platform_t* platform) {
-	nrf24l01_err_t err = NRF24L01_OK;
-	uint8_t reg;
-
-	// The PLOS counter is reset after write to RF_CH register
-	err |= nrf24l01_read_reg(NRF24L01_REG_ADDR_RF_CH, &reg, platform);
-	err |= nrf24l01_write_reg(NRF24L01_REG_ADDR_RF_CH, reg, platform);
-	return err;
-}
-
-/** @brief Flushes the TX FIFO
- * 
- *  @param[in] platform : Driver instance configuration struct pointer
- */
-nrf24l01_err_t nrf24l01_flush_tx(nrf24l01_platform_t* platform) {
-	nrf24l01_err_t err;
-	err = nrf24l01_write_reg(NRF24L01_CMD_FLUSH_TX, NRF24L01_CMD_NOP, platform);
-	return err;
-}
-
-/** @brief Flushes the RX FIFO
- * 
- *  @param[in] platform : Driver instance configuration struct pointer
- */
-nrf24l01_err_t nrf24l01_flush_rx(nrf24l01_platform_t* platform) {
-	nrf24l01_err_t err;
-	err = nrf24l01_write_reg(NRF24L01_CMD_FLUSH_RX, NRF24L01_CMD_NOP, platform);
-	return err;
-}
-
-/** @brief Clears any pending IRQ flags
- * 
- *  @param[in] platform : Driver instance configuration struct pointer
- */
-nrf24l01_err_t nrf24l01_clear_irq_flags(nrf24l01_platform_t* platform) {
-	nrf24l01_err_t err = NRF24L01_OK;
-	
-	// Clear RX_DR, TX_DS and MAX_RT bits of the STATUS register
-	uint8_t reg;
-	err |= nrf24l01_read_reg(NRF24L01_REG_ADDR_STATUS, &reg, platform);
-	reg |= NRF24L01_STATUS_MASK_IRQ_FLAGS;
-	err |= nrf24l01_write_reg(NRF24L01_REG_ADDR_STATUS, reg, platform);
-
-	return err;
-}
-
-/** @brief Writes a TX payload to the FIFO and triggers a transmission
- * 
- *  @param[in] data     : Pointer to a buffer with the TX payload data, remember the TX FIFO is 32 bytes long
- *  @param[in] len      : Length of buffer to transmit (in bytes)
- *  @param[in] platform : Driver instance configuration struct pointer
- * 
- *  @retval NRF24L01_ERR_INVALID_ARG -> Pointer to data buffer is null or size of data packet is too large
- *  @retval NRF24L01_ERR_UNKNOWN     -> Device communication failed
- *  @retval NRF24L01_OK              -> Payload write was successful
- */
-nrf24l01_err_t nrf24l01_write_payload(uint8_t* data, uint8_t len, nrf24l01_platform_t* platform) {
-	NRF24L01_FPTR_RTN_T platform_err;
-
-	if(data == NULL){
-		return NRF24L01_ERR_INVALID_ARG;
-	}else if(len > 32){
-		return NRF24L01_ERR_INVALID_ARG;
-	}
-
-	platform_err |= platform->spi_exchange(NRF24L01_CMD_W_TX_PAYLOAD, NULL, data, len, platform->user_ptr);
-	platform_err |= platform->gpio_chip_enable(true, platform->user_ptr);
-	platform_err |= platform->delay_us(NRF24L01_CE_TX_MINIMUM_PULSE_US);
-	platform_err |= platform->gpio_chip_enable(false, platform->user_ptr);
-	if(platform_err != 0){
-		return NRF24L01_ERR_UNKNOWN;
-	}
-	return NRF24L01_OK;
-}
-
-/** @brief Gets the configured RX dynamic payload width
- * 
- *  @param[out] width    : Pointer to a location where the DPL will be stored
- *  @param[in]  platform : Driver instance configuration struct pointer
- * 
- *  @retval NRF24L01_ERR_INVALID_ARG -> Pointer to DLP width is null
- *  @retval NRF24L01_ERR_READ        -> Device communication failed
- *  @retval NRF24L01_OK              -> Read successful, width is valid
- */
-static nrf24l01_err_t nrf24l01_get_rx_dpl(uint8_t* width, nrf24l01_platform_t* platform) {
-	nrf24l01_err_t err;
-	
-	if(width == NULL){
-		return NRF24L01_ERR_INVALID_ARG;
-	}
-	err = nrf24l01_read_reg(NRF24L01_FEATURE_CMD_R_RX_PL_WID, &width, platform);
-	return err;
-}
-
 nrf24l01_err_t nrf24l01_read_payload(nrf24l01_pipe_t* pipe, uint8_t* rx_data, uint8_t* len, bool dpl, nrf24l01_platform_t* platform) {
-
 	nrf24l01_err_t err;
 
 	// Extract a payload pipe number from the STATUS register
@@ -841,6 +1206,60 @@ nrf24l01_err_t nrf24l01_read_payload(nrf24l01_pipe_t* pipe, uint8_t* rx_data, ui
 	return NRF24L01_OK;
 }
 
+/** @brief Sets the DPL mode for a specific RX pipe
+ * 
+ *  All pipes can be modified simultaneously using NRF24L01_ALL_RX_PIPES
+ *
+ *  @param[in] pipe     : The pipe to change
+ *  @param[in] dpl_mode : The desired DPL mode
+ *  @param[in] platform : Driver instance configuration struct pointer                    
+ */
+nrf24l01_err_t nrf24l01_set_pipe_dpl_mode(nrf24l01_pipe_t pipe, nrf24l01_dpl_mode_t dpl_mode, nrf24l01_platform_t* platform){
+	nrf24l01_err_t err = NRF24L01_OK;
+	uint8_t reg;
+	uint8_t changes;
+
+	if( !NRF24L01_IS_RX_PIPE(pipe) ){
+		return NRF24L01_ERR_INVALID_ARG;
+	}
+
+	if(pipe == NRF24L01_ALL_RX_PIPES){
+		changes = NRF24L01_DYNPD_MASK_REG;
+	}else{
+		changes = (1 << pipe);
+	}
+	err |= nrf24l01_read_reg(NRF24L01_FEATURE_REG_ADDR_DYNPD, &reg, platform);
+	if(dpl_mode == NRF24L01_DPL_ON){
+		reg |= changes;
+	}else if(dpl_mode == NRF24L01_DPL_OFF){
+		reg &= ~changes;
+	}else{
+		return NRF24L01_ERR_INVALID_ARG;
+	}
+	err |= nrf24l01_write_reg(NRF24L01_FEATURE_REG_ADDR_DYNPD, reg, platform);
+
+	return err;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 // Read top level payload available in the RX FIFO
 // input:
@@ -858,149 +1277,6 @@ nrf24l01_err_t nrf24l01_read_dynamic_length_payload(nrf24l01_pipe_t* pipe, uint8
 }
 */
 
-
-nrf24l01_err_t nrf24l01_get_features(uint8_t* features, nrf24l01_platform_t* platform) {
-    return nrf24l01_read_reg(NRF24L01_FEATURE_REG_ADDR_FEATURE, features, platform);
-}
-
-nrf24l01_err_t nrf24l01_get_power_mode(nrf24l01_power_mode_t* power_mode, nrf24l01_platform_t* platform){
-	nrf24l01_err_t err;
-
-	uint8_t reg;
-	err = nrf24l01_read_reg(NRF24L01_REG_ADDR_CONFIG, &reg, platform);
-	if(err == NRF24L01_OK){
-		if(reg & NRF24L01_CONFIG_REG_BIT_PWR_UP){
-			*power_mode = NRF24L01_PWR_UP;
-		}else{
-			*power_mode = NRF24L01_PWR_DOWN;
-		}
-	}
-	return err;
-}
-
-nrf24l01_err_t nrf24l01_get_operational_mode(nrf24l01_operational_mode_t* operational_mode, nrf24l01_platform_t* platform){
-	nrf24l01_err_t err;
-
-	uint8_t reg;
-	err = nrf24l01_read_reg(NRF24L01_REG_ADDR_CONFIG, &reg, platform);
-	if(err == NRF24L01_OK){
-		if(reg & NRF24L01_CONFIG_REG_BIT_PRIM_RX){
-			*operational_mode = NRF24L01_MODE_RX;
-		}else{
-			*operational_mode = NRF24L01_MODE_TX;
-		}
-	}
-	return err;
-}
-
-nrf24l01_err_t nrf24l01_get_feature_mode(nrf24l01_feature_mode_t* feature_mode, nrf24l01_platform_t* platform) {
-	// There is no direct way to query if the NRF24L01 extra features have been activated or not
-	//    Read the state of the FEATURES register (will be all zero if features deactivated)
-	//    Attempt to change EN_DYN_ACK (bit 0) of the FEATURES register since it doesn't change the system state in any way except the make an additional command available
-	//    Read back the FEATURES register to see if the bit changed
-	//    If FEATURES register changed, write the original value back
-
-	if(feature_mode == NULL){
-		return NRF24L01_ERR_INVALID_ARG;
-	}
-	nrf24l01_err_t err = NRF24L01_OK;
-
-	// Backupt the features register
-	uint8_t features_reg_backup;
-	err |= nrf24l01_read_reg(NRF24L01_FEATURE_REG_ADDR_FEATURE, &features_reg_backup, platform);
-
-	//Toggle a bit
-	err |= nrf24l01_write_reg(NRF24L01_FEATURE_REG_ADDR_FEATURE, features_reg_backup ^ NRF24L01_FEATURE_REG_BIT_EN_DYN_ACK, platform);
-
-	uint8_t features_reg_result;
-	err |= nrf24l01_read_reg(NRF24L01_FEATURE_REG_ADDR_FEATURE, &features_reg_result, platform);
-
-	if(features_reg_result != features_reg_backup){
-		*feature_mode = NRF24L01_FEATURES_ON;
-	}else{
-		*feature_mode = NRF24L01_FEATURES_OFF;
-	}
-
-	//Restore the previous state of the features register
-	err |= nrf24l01_write_reg(NRF24L01_FEATURE_REG_ADDR_FEATURE, features_reg_backup, platform);
-
-	return err;
-
-}
-
-/** @brief Enables/disables special devices features
- * 
- *  @param[in] feature_mode : Desired feature mode
- *  @param[in] platform     : Driver instance configuration struct
- */
-nrf24l01_err_t nrf24l01_set_feature_mode(nrf24l01_feature_mode_t feature_mode, nrf24l01_platform_t* platform){
-	
-	//Check if we are in power down or standby mode
-	nrf24l01_power_mode_t power_mode;
-	nrf24l01_get_power_mode(&power_mode, platform);
-	if(power_mode != NRF24L01_PWR_DOWN){
-		return NRF24L01_ERR_INVALID_STATE;
-	}
-
-	//Change the feature mode if needed
-	nrf24l01_feature_mode_t current_feature_mode;
-	nrf24l01_get_feature_mode(&current_feature_mode, platform);
-	if(feature_mode != current_feature_mode){
-		//Toggle the feature activation using the ACTIVATE command
-
-		uint8_t magic_number = NRF24L01_MAGIC_NUMBER_ACTIVATE;
-		NRF24L01_FPTR_RTN_T spi_err = platform->spi_exchange(NRF24L01_CMD_ACTIVATE, NULL, &magic_number, sizeof(magic_number), platform->user_ptr);
-		if(spi_err != 0){
-			return NRF24L01_ERR_WRITE;
-		}
-	}
-	return NRF24L01_OK;
-}
-
-/** @brief Enables/disables dynamic payload length
- * 
- *  @param[in] dpl_mode : Desired DLP mode
- *  @param[in] platform : Driver instance configuration struct
- */
-nrf24l01_err_t nrf24l01_set_dpl_mode(nrf24l01_dpl_mode_t dpl_mode, nrf24l01_platform_t* platform){
-
-	nrf24l01_err_t err = NRF24L01_OK;
-
-	uint8_t features_reg;
-	err |= nrf24l01_read_reg(NRF24L01_FEATURE_REG_ADDR_FEATURE, &features_reg, platform);
-	if(dpl_mode == NRF24L01_DPL_ON){
-		features_reg |= NRF24L01_FEATURE_REG_BIT_EN_DPL;
-	}else{
-		features_reg &= ~NRF24L01_FEATURE_REG_BIT_EN_DPL;
-	}
-	err |= nrf24l01_write_reg(NRF24L01_FEATURE_REG_ADDR_FEATURE, features_reg, platform);
-	return err;
-}
-
-/*
-nrf24l01_err_t nrf24l01_write_ack_payload(nrf24l01_pipe_t pipe, uint8_t* payload, uint8_t len, nrf24l01_platform_t* platform) {
-	
-	nrf24l01_CSN_L();
-	nrf24l01_LL_RW(NRF24L01_CMD_W_ACK_PAYLOAD | pipe);
-	while (length--) {
-		nrf24l01_LL_RW((uint8_t)* payload++);
-	}
-	nrf24l01_CSN_H();
-	
-
-	
-	nrf24l01_err_t err;
-	if(data == NULL){
-		err = NRF24L01_INVALID_ARG;
-		return err;
-	}
-	err = nrf24l01_multi_write_reg(NRF24L01_CMD_W_TX_PAYLOAD, data, len, platform);
-	return err;
-	
-
-	return NRF24L01_OK;
-}
-*/
 
 
 /*
@@ -1021,6 +1297,7 @@ nrf24l01_err_t nrf24l01_set_payload_with_ack_mode(uint8_t mode, nrf24l01_platfor
 	return err;
 }
 */
+
 
 
 
@@ -1440,6 +1717,16 @@ nrf24l01_err_t nrf24l01_print_fifo_status_register(nrf24l01_platform_t* platform
 
 
 
+
+
+
+
+
+
+
+
+
+
 /** @brief Check for interrupt function pointer which should be called often by the user
  *  to ensure that radio events are triggered
  *
@@ -1478,23 +1765,41 @@ void nrf24l01_loop(nrf24l01_platform_t* platform){
 	}
 }
 
-nrf24l01_err_t nrf24l01_register_rx_dr_callback(nrf24l01_rx_dr_callback_fptr_t callback, void* user_ptr, nrf24l01_platform_t* platform){
-	platform->callbacks.rx_dr_callback = callback;
-	platform->callbacks.rx_dr_callback_user_ptr = user_ptr;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+nrf24l01_err_t nrf24l01_write_ack_payload(nrf24l01_pipe_t pipe, uint8_t* payload, uint8_t len, nrf24l01_platform_t* platform) {
+	
+	nrf24l01_CSN_L();
+	nrf24l01_LL_RW(NRF24L01_CMD_W_ACK_PAYLOAD | pipe);
+	while (length--) {
+		nrf24l01_LL_RW((uint8_t)* payload++);
+	}
+	nrf24l01_CSN_H();
+
+	nrf24l01_err_t err;
+	if(data == NULL){
+		err = NRF24L01_INVALID_ARG;
+		return err;
+	}
+	err = nrf24l01_multi_write_reg(NRF24L01_CMD_W_TX_PAYLOAD, data, len, platform);
+	return err;
+	
 
 	return NRF24L01_OK;
 }
-
-nrf24l01_err_t nrf24l01_register_tx_ds_callback(nrf24l01_tx_ds_callback_fptr_t callback, void* user_ptr, nrf24l01_platform_t* platform){
-	platform->callbacks.tx_ds_callback = callback;
-	platform->callbacks.tx_ds_callback_user_ptr = user_ptr;
-
-	return NRF24L01_OK;
-}
-
-nrf24l01_err_t nrf24l01_register_max_rt_callback(nrf24l01_max_rt_callback_fptr_t callback, void* user_ptr, nrf24l01_platform_t* platform){
-	platform->callbacks.max_rt_callback = callback;
-	platform->callbacks.max_rt_callback_user_ptr = user_ptr;
-
-	return NRF24L01_OK;
-}
+*/

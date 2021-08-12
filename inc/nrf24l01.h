@@ -31,14 +31,22 @@ nrf24l01_err_t nrf24l01_register_tx_ds_callback(nrf24l01_tx_ds_callback_fptr_t, 
 nrf24l01_err_t nrf24l01_register_max_rt_callback(nrf24l01_max_rt_callback_fptr_t, void*, nrf24l01_platform_t*);
 
 // RF + protocol
+nrf24l01_err_t nrf24l01_get_tx_power(nrf24l01_tx_power_t*, nrf24l01_platform_t*);
 nrf24l01_err_t nrf24l01_set_tx_power(nrf24l01_tx_power_t, nrf24l01_platform_t*);
+nrf24l01_err_t nrf24l01_get_rf_channel(nrf24l01_rf_channel_t*, nrf24l01_platform_t*);
 nrf24l01_err_t nrf24l01_set_rf_channel(nrf24l01_rf_channel_t, nrf24l01_platform_t*);
+nrf24l01_err_t nrf24l01_get_data_rate(nrf24l01_data_rate_t*, nrf24l01_platform_t*);
 nrf24l01_err_t nrf24l01_set_data_rate(nrf24l01_data_rate_t, nrf24l01_platform_t*);
+nrf24l01_err_t nrf24l01_get_lna_mode(nrf24l01_lna_mode_t*, nrf24l01_platform_t*);
+nrf24l01_err_t nrf24l01_set_lna_mode(nrf24l01_lna_mode_t, nrf24l01_platform_t*);
+nrf24l01_err_t nrf24l01_get_auto_retransmission(nrf24l01_ar_delay_t*, nrf24l01_ar_count_t*, nrf24l01_platform_t*);
 nrf24l01_err_t nrf24l01_set_auto_retransmission(nrf24l01_ar_delay_t, nrf24l01_ar_count_t, nrf24l01_platform_t*);
+nrf24l01_err_t nrf24l01_get_crc_scheme(nrf24l01_crc_scheme_t*, nrf24l01_platform_t*);
 nrf24l01_err_t nrf24l01_set_crc_scheme(nrf24l01_crc_scheme_t, nrf24l01_platform_t*);
 nrf24l01_err_t nrf24l01_get_address_width(nrf24l01_address_width_t*, nrf24l01_platform_t*);
 nrf24l01_err_t nrf24l01_set_address_width(nrf24l01_address_width_t, nrf24l01_platform_t*);
-// nrf24l01_err_t nrf24l01_get_carrier_detect(nrf24l01_address_width_t, nrf24l01_platform_t*);
+nrf24l01_err_t nrf24l01_set_address(nrf24l01_pipe_t, const uint8_t*, uint8_t, nrf24l01_platform_t*);
+nrf24l01_err_t nrf24l01_check_for_interference(bool*, nrf24l01_platform_t*);
 
 // Host SPI interface
 nrf24l01_err_t nrf24l01_flush_rx(nrf24l01_platform_t*);
@@ -53,12 +61,14 @@ nrf24l01_err_t nrf24l01_get_power_mode(nrf24l01_power_mode_t*, nrf24l01_platform
 nrf24l01_err_t nrf24l01_set_power_mode(nrf24l01_power_mode_t, nrf24l01_platform_t*);
 nrf24l01_err_t nrf24l01_get_operational_mode(nrf24l01_operational_mode_t*, nrf24l01_platform_t*);
 nrf24l01_err_t nrf24l01_set_operational_mode(nrf24l01_operational_mode_t, nrf24l01_platform_t*);
+nrf24l01_err_t nrf24l01_start_listening(nrf24l01_platform_t*);
+nrf24l01_err_t nrf24l01_stop_listening(nrf24l01_platform_t*);
 
 // Features
 nrf24l01_err_t nrf24l01_get_feature_mode(nrf24l01_feature_mode_t*, nrf24l01_platform_t*);
 nrf24l01_err_t nrf24l01_set_feature_mode(nrf24l01_feature_mode_t, nrf24l01_platform_t*);
-nrf24l01_err_t nrf24l01_set_ack_payload_mode(ack_payload_mode_t, nrf24l01_platform_t*);
 nrf24l01_err_t nrf24l01_set_dpl_mode(nrf24l01_dpl_mode_t, nrf24l01_platform_t*);
+nrf24l01_err_t nrf24l01_set_ack_payload_mode(ack_payload_mode_t, nrf24l01_platform_t*);
 nrf24l01_err_t nrf24l01_set_dta_mode(nrf24l01_dta_mode_t, nrf24l01_platform_t*);
 
 nrf24l01_err_t nrf24l01_get_features(uint8_t*, nrf24l01_platform_t*);
@@ -90,13 +100,7 @@ nrf24l01_err_t nrf24l01_set_pipe_dpl_mode(nrf24l01_pipe_t, nrf24l01_dpl_mode_t, 
 /// @}
 /****************************************************************************************************************/
 
-nrf24l01_err_t nrf24l01_start_listening(nrf24l01_platform_t*);
-nrf24l01_err_t nrf24l01_stop_listening(nrf24l01_platform_t*);
-
-
 void nrf24l01_loop(nrf24l01_platform_t*);
-
-nrf24l01_err_t nrf24l01_set_address(nrf24l01_pipe_t, const uint8_t*, uint8_t, nrf24l01_platform_t*);
 
 
 

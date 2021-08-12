@@ -71,7 +71,9 @@
  * 
  *   - `NRF24L01_FPTR_RTN_T`        used to specify the return type for the platform specific SPI functions
  * 								    If this option is not provided, a signed 8-bit integer type is assumed
- * 
+ *   
+ *   - `NRF24L01_EXTERNAL_CLOCK`    should be defined if the NRF24L01 is using an external clock source to
+ *                                  optimize timing
  * 
  * 
  *  @section terms   Important terminology
@@ -461,7 +463,7 @@ extern "C"{
  */ 
 /// @{
 
-///< Mask for all defined bits[5:0] in EN_AA register 
+/// Mask for all defined bits[5:0] in EN_AA register 
 #define NRF24L01_EN_AA_MASK_REG         (uint8_t)(                                \
 											NRF24L01_EN_AA_REG_BIT_ENAA_P5      | \
 											NRF24L01_EN_AA_REG_BIT_ENAA_P4      | \
@@ -479,7 +481,7 @@ extern "C"{
  */ 
 /// @{
 
-///< Mask for all defined bits[5:0] in EN_RXADDR register 
+/// Mask for all defined bits[5:0] in EN_RXADDR register 
 #define NRF24L01_EN_RXADDR_MASK_REG     (uint8_t)(                                \
 											NRF24L01_EN_RXADDR_REG_BIT_ERX_P5   | \
 											NRF24L01_EN_RXADDR_REG_BIT_ERX_P4   | \
@@ -497,7 +499,7 @@ extern "C"{
  */ 
 /// @{
 
-///< Mask for all defined bits[1:0] in AW register
+/// Mask for all defined bits[1:0] in AW register
 #define NRF24L01_SETUP_AW_MASK_REG      (uint8_t)NRF24L01_SETUP_AW_REG_BITS_AW
 /// @}
 
@@ -508,7 +510,7 @@ extern "C"{
  */
 /// @{
 
-///< Mask for all defined bits[7:0] in SETUP_RETR register 
+/// Mask for all defined bits[7:0] in SETUP_RETR register 
 #define NRF24L01_SETUP_RETR_MASK_REG    (uint8_t)(                                \
 											NRF24L01_SETUP_RETR_REG_BITS_ARD    | \
 											NRF24L01_SETUP_RETR_REG_BITS_ARC      \
@@ -522,7 +524,7 @@ extern "C"{
  */
 /// @{
 
-///< Mask for all defined bits[6:0] in RF_CH register 
+/// Mask for all defined bits[6:0] in RF_CH register 
 #define NRF24L01_RF_CH_MASK_REG         (uint8_t)NRF24L01_RF_CH_REG_BITS_RF_CH
 /// @}
 
@@ -533,7 +535,7 @@ extern "C"{
  */
 /// @{
 
-///< Mask for all defined bits[4:0] in RF_SETUP register 
+/// Mask for all defined bits[4:0] in RF_SETUP register 
 #define NRF24L01_RF_SETUP_MASK_REG      (uint8_t)(                                \
 											NRF24L01_RF_SETUP_REG_BIT_PLL_LOCK  | \
 											NRF24L01_RF_SETUP_REG_BIT_RF_DR     | \
@@ -549,7 +551,7 @@ extern "C"{
  */
 /// @{
 
-///< Mask for all defined bits[6:0] in STATUS register 
+/// Mask for all defined bits[6:0] in STATUS register 
 #define NRF24L01_STATUS_MASK_REG 		(uint8_t)(                                \
 											NRF24L01_STATUS_REG_BIT_RX_DR       | \
 											NRF24L01_STATUS_REG_BIT_TX_DS       | \
@@ -557,7 +559,7 @@ extern "C"{
 											NRF24L01_STATUS_REG_BITS_RX_P_NO    | \
 											NRF24L01_STATUS_REG_BIT_TX_FULL       \
 										)
-///< Mask for IRQ[6:4] interrupt flag bits in STATUS register
+/// Mask for IRQ[6:4] interrupt flag bits in STATUS register
 #define NRF24L01_STATUS_MASK_IRQ_FLAGS	(uint8_t)(                                \
 											NRF24L01_STATUS_REG_BIT_RX_DR       | \
 											NRF24L01_STATUS_REG_BIT_TX_DS       | \
@@ -572,7 +574,7 @@ extern "C"{
  */
 /// @{
 
-///< Mask for all defined bits[7:0] in OBSERVE_TX register 
+/// Mask for all defined bits[7:0] in OBSERVE_TX register 
 #define NRF24L01_OBSERVE_TX_MASK_REG            (uint8_t)(                                  \
 													NRF24L01_OBSERVE_TX_REG_BITS_PLOS_CNT | \
 													NRF24L01_OBSERVE_TX_REG_BITS_ARC_CNT    \
@@ -586,7 +588,7 @@ extern "C"{
  */
 /// @{
 
-///< Mask for all defined bits[0:0] in CD register 
+/// Mask for all defined bits[0:0] in CD register 
 #define NRF24L01_CD_MASK_REG                    (uint8_t)NRF24L01_CD_REG_BIT_CD
 /// @}
 
@@ -599,7 +601,7 @@ extern "C"{
 #define NRF24L01_RX_PW_P5_MASK_REG              (uint8_t)NRF24L01_RX_PW_P5_REG_BITS_RX_PW_P5 
 
 
-///< Mask for all defined bits in FIFO_STATUS register
+/// Mask for all defined bits in FIFO_STATUS register
 #define NRF24L01_FIFO_STATUS_MASK_REG 			(uint8_t)(                                   \
 													NRF24L01_FIFO_STATUS_REG_BIT_TX_REUSE  | \
 													NRF24L01_FIFO_STATUS_REG_BIT_TX_FULL   | \
@@ -607,19 +609,19 @@ extern "C"{
 													NRF24L01_FIFO_STATUS_REG_BIT_RX_FULL   | \
 													NRF24L01_FIFO_STATUS_REG_BIT_RX_EMPTY    \
 												)
-///< Mask for RX_FIFO[1:0] status bits in FIFO_STATUS register
+/// Mask for RX_FIFO[1:0] status bits in FIFO_STATUS register
 #define NRF24L01_FIFO_STATUS_MASK_RX_FLAGS      (uint8_t)(                                   \
 													NRF24L01_FIFO_STATUS_REG_BIT_RX_FULL   | \
 													NRF24L01_FIFO_STATUS_REG_BIT_RX_EMPTY    \
 												)
-///< Mask for TX_FIFO[6:4] status bits in FIFO_STATUS register
+/// Mask for TX_FIFO[6:4] status bits in FIFO_STATUS register
 #define NRF24L01_FIFO_STATUS_MASK_TX_FLAGS      (uint8_t)(                                   \
 													NRF24L01_FIFO_STATUS_REG_BIT_TX_REUSE  | \
 													NRF24L01_FIFO_STATUS_REG_BIT_TX_FULL   | \
 													NRF24L01_FIFO_STATUS_REG_BIT_TX_EMPTY    \
 												)
 
-///< Mask for DPL_Px[5:0] bits in DYNPD feature register 
+/// Mask for DPL_Px[5:0] bits in DYNPD feature register 
 #define NRF24L01_DYNPD_MASK_REG             	(uint8_t)(                            \
 													NRF24L01_DYNPD_REG_BIT_DPL_P5   | \
 													NRF24L01_DYNPD_REG_BIT_DPL_P4   | \
@@ -639,6 +641,7 @@ extern "C"{
 /// @} reg_masks
 
 
+// Comand masks
 #define NRF24L01_COMMAND_MASK_REG_ADDR    (uint8_t)0x1F  ///< Mask for AAAAA[4:0] register address bits for CMD_RREG and CMD_WREG commands
 #define NRF24L01_COMMAND_MASK_PIPE        (uint8_t)0x07  ///< Mask for PPP[2:0] pipe specifier bits for W_ACK_PAYLOAD command
 
@@ -650,21 +653,29 @@ extern "C"{
 #define	NRF24L01_ADDR_WIDTH_5_BYTES       (uint8_t)0x03  ///< 5 Byte RX/TX address field width
  
 // RF_PWR
-#define	NRF24L01_TX_PWR_18DBM              (uint8_t)0x00  ///< -18dBm
-#define	NRF24L01_TX_PWR_12DBM              (uint8_t)0x02  ///< -12dBm
-#define	NRF24L01_TX_PWR_6DBM               (uint8_t)0x04  ///< -6dBm
-#define	NRF24L01_TX_PWR_0DBM               (uint8_t)0x06  ///<  0dBm
+#define	NRF24L01_TX_PWR_18DBM_REG_BITS    (uint8_t)0x00  ///< -18dBm (minimum)
+#define	NRF24L01_TX_PWR_12DBM_REG_BITS    (uint8_t)0x02  ///< -12dBm 
+#define	NRF24L01_TX_PWR_6DBM_REG_BITS     (uint8_t)0x04  ///< -6dBm
+#define	NRF24L01_TX_PWR_0DBM_REG_BITS     (uint8_t)0x06  ///<  0dBm  (maximum)
 
-// Timing requirements
-#define NRF24L01_CE_TX_MINIMUM_PULSE_US   10   // In microseconds
-#define NRF24L01_POWER_UP_US              5000 // In microseconds
-#define NRF24L01_TIMING_RF_SETTLING       130  // In microseconds
+/** @name Timing requirements
+ *  @details <a href="nRF24L01_product_specifications.pdf#nameddest=6.1.7%20Timing%20Information"><b><u>View details in datasheet</u></b></a> for more information
+ */ 
+#define NRF24L01_CE_TX_MINIMUM_PULSE_US   10   ///< Minimum time the CE pin must be asserted for
+#define NRF24L01_TIMING_RF_SETTLING       130  ///< Maximum time required for TX start-up from STANDBY_I mode, RX start-up from STANDBY_I mode, and when changing from TX to RX or RX to TX
+#define NRF24L01_TIMING_CD_FILTER_DELAY   128  ///< Time required for carrier detect to update the register
+#ifdef NRF24L01_EXTERNAL_CLOCK
+	#define NRF24L01_POWER_UP_US          150  ///< Maximum time required to start-up from power down mode
+#else
+	#define NRF24L01_POWER_UP_US          1500 ///< Maximum time required to start-up from power down mode
+#endif
+
 
 // Sizes
-#define NRF24L01_TX_FIFO_WIDTH            32  ///< Each TX FIFO entry is 32 bytes wide
-#define NRF24L01_TX_FIFO_DEPTH            3   ///< The TX FIFO is 3 entries deep
-#define NRF24L01_RX_FIFO_WIDTH            32  ///< Each TX FIFO entry is 32 bytes wide
-#define NRF24L01_RX_FIFO_DEPTH            3   ///< The RX FIFO is 3 entries deep
+#define NRF24L01_TX_FIFO_WIDTH            32   ///< Each TX FIFO entry is 32 bytes wide
+#define NRF24L01_TX_FIFO_DEPTH            3    ///< The TX FIFO is 3 entries deep
+#define NRF24L01_RX_FIFO_WIDTH            32   ///< Each TX FIFO entry is 32 bytes wide
+#define NRF24L01_RX_FIFO_DEPTH            3    ///< The RX FIFO is 3 entries deep
 
 // Magic numbers
 #define NRF24L01_MAGIC_NUMBER_ACTIVATE    (uint8_t)0x73
@@ -706,24 +717,31 @@ enum {
 };
 typedef uint8_t nrf24l01_interrupt_mask_t;
 
-// Retransmit count
+/// Retransmit count
 typedef uint8_t nrf24l01_ar_count_t;
 
-// Number of lost autoretransmit packets
+/// Number of lost autoretransmit packets
 typedef uint8_t nrf24l01_ar_lost_t;
 
 // Data rate
 typedef enum {
-	NRF24L01_DR_1MBPS    = (uint8_t)0x00,  ///< 1Mbps data rate
-	NRF24L01_DR_2MBPS    = (uint8_t)0x08,  ///< 2Mbps data rate
+	NRF24L01_DR_1MBPS,  ///< 1Mbps data rate
+	NRF24L01_DR_2MBPS,  ///< 2Mbps data rate
 } nrf24l01_data_rate_t;
+
+/// LNA mode
+/// Used to trade 1.5dBm in RX sensitivity for a 0.8mA reduction in power consumption
+typedef enum {
+	NRF24L01_LNA_OFF,  ///< LNA disabled, power savings active
+	NRF24L01_LNA_ON,   ///< LNA enabled (default), maximum sensitivity
+} nrf24l01_lna_mode_t;
 
 // RF output power in TX mode
 typedef enum {
-	NRF24L01_TXPWR_18DBM = (uint8_t)0x00,  ///< -18dBm
-	NRF24L01_TXPWR_12DBM = (uint8_t)0x02,  ///< -12dBm
-	NRF24L01_TXPWR_6DBM  = (uint8_t)0x04,  ///< -6dBm
-	NRF24L01_TXPWR_0DBM  = (uint8_t)0x06,  ///<  0dBm
+	NRF24L01_TX_PWR_18DBM,  ///< -18dBm
+	NRF24L01_TX_PWR_12DBM,  ///< -12dBm
+	NRF24L01_TX_PWR_6DBM,   ///< -6dBm
+	NRF24L01_TX_PWR_0DBM,   ///<  0dBm
 } nrf24l01_tx_power_t;
 
 // CRC encoding scheme
@@ -755,7 +773,7 @@ typedef enum {
 
 /// Error codes for NRF24L01
 typedef enum {
-    NRF24L01_OK = 0,               ///< Driver operation successful
+    NRF24L01_OK = 0,               ///< Driver operation successful (must be 0 to allow for bitwise ORing of error returns)
     NRF24L01_ERR_UNKNOWN,          ///< An unknown driver occured
     NRF24L01_ERR_INVALID_ARG,      ///< One (or more) arguments passed to the API are invalid
 	NRF24L01_ERR_INVALID_STATE,    ///< Driver or device is in an invalid state
@@ -794,50 +812,58 @@ typedef enum {
 
 
 
-// nRF24L01 power control
+/// Specifies the transceiver power state
 typedef enum {
-	NRF24L01_PWR_DOWN = (uint8_t)0x00,  ///< Power down
-	NRF24L01_PWR_UP   = (uint8_t)0x02,  ///< Power up
+	NRF24L01_PWR_DOWN,      ///< Power down
+	NRF24L01_PWR_UP,        ///< Power up
 } nrf24l01_power_mode_t;
 
-// Transceiver mode
+/// Specifies the transceiver mode
 typedef enum {
-	NRF24L01_MODE_RX = (uint8_t)0x01,  ///< PRX
-	NRF24L01_MODE_TX = (uint8_t)0x00,  ///< PTX
+	NRF24L01_MODE_RX,       ///< Transceiver is acting as PRX (primary receiver)
+	NRF24L01_MODE_TX,       ///< Transceiver is acting as PTX (primary transmitter)
 } nrf24l01_operational_mode_t;
 
-// Describes if pipe is active or not
+/// Specifies if a pipe is active or not
 typedef enum {
-	NRF24L01_PIPE_DISABLED,
-	NRF24L01_PIPE_ENABLED,
+	NRF24L01_PIPE_DISABLED, ///< Pipe is disabled
+	NRF24L01_PIPE_ENABLED,  ///< Pipe is enabled
 } nrf24l01_pipe_mode_t;
 
-// State of auto acknowledgment for specified pipe
+/// Contains the auto acknowledgment mode for a specific pipe
 typedef enum {
-	NRF24L01_AA_OFF = (uint8_t)0x00,
-	NRF24L01_AA_ON  = (uint8_t)0x01,
+	NRF24L01_AA_OFF,        ///< AA (Enhanced Shockburst) disabled
+	NRF24L01_AA_ON,         ///< AA (Enhanced Shockburst) enabled
 } nrf24l01_pipe_aa_mode_t;
 
-// State of the NRF24L01 special features
+
+
+/// Specifies if the NRF24L01 special features are enabled or disabled
 typedef enum {
-	NRF24L01_FEATURES_OFF = (uint8_t)0x00,
-	NRF24L01_FEATURES_ON  = (uint8_t)0x01,
+	NRF24L01_FEATURES_OFF,    ///< Special features disabled
+	NRF24L01_FEATURES_ON,     ///< Special features enabled
 } nrf24l01_feature_mode_t;
 
+/// Specifies if dynamic payload lengths are enabled or disabled
 typedef enum {
-	NRF24L01_DPL_OFF = (uint8_t)0x00,
-	NRF24L01_DPL_ON  = (uint8_t)0x01,
+	NRF24L01_DPL_OFF,         ///< DPL disabled
+	NRF24L01_DPL_ON,          ///< DPL enabled
 } nrf24l01_dpl_mode_t;
 
+/// Specifies if ACK payloads are enabled or disabled
 typedef enum {
-	NRF24L01_DTA_OFF = (uint8_t)0x00, 
-	NRF24L01_DTA_ON  = (uint8_t)0x01,
+	NRF24L01_ACK_PAYLOAD_OFF, ///< Payloads with ACK are disabled
+	NRF24L01_ACK_PAYLOAD_ON,  ///< Payloads with ACK are enabled
+} ack_payload_mode_t;
+
+/// Specifies if dynamic transmit acknowledgements are enabled or disabled. When DTA is enabled, the PTX can set the NO_ACK flag
+/// by transmitting using the W_TX_PAYLOAD_NOACK command. This allows the PTX tp immediately transition to STANDBY-I instead of 
+/// waiting for an ACK from the PRX to conserve power 
+typedef enum {
+	NRF24L01_DTA_OFF,         ///< DTA is disabled
+	NRF24L01_DTA_ON,          ///< DTA is enabled, W_TX_PAYLOAD_NOACK command is available
 } nrf24l01_dta_mode_t;
 
-typedef enum {
-	NRF24L01_ACK_PAYLOAD_OFF = (uint8_t)0x00, 
-	NRF24L01_ACK_PAYLOAD_ON  = (uint8_t)0x01,
-} ack_payload_mode_t;
 
 
 /** @brief Hardware initialization function pointer which should be used to configure the
