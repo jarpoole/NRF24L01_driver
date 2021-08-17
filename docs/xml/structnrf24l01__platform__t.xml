@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="949" column="37" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="949" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="915" column="41" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="915" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structnrf24l01__platform__t_1a9f4dc215cd41cb34f4f6208e01c81f9a" prot="public" static="no" mutable="no">
         <type><ref refid="nrf24l01__defs_8h_1a44097761b67767d2703b6a4240625202" kindref="member">nrf24l01_gpio_chip_enable_fptr_t</ref></type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="950" column="37" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="950" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="916" column="41" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="916" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structnrf24l01__platform__t_1abe203f817fe86f25764587b59baa568f" prot="public" static="no" mutable="no">
         <type><ref refid="nrf24l01__defs_8h_1a9d35a298e2d3ba026f62779ba5988120" kindref="member">nrf24l01_platform_init_fptr_t</ref></type>
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="951" column="37" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="951" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="917" column="41" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="917" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structnrf24l01__platform__t_1ae5b99c252f64ff39fa24ef88ec33800a" prot="public" static="no" mutable="no">
         <type><ref refid="nrf24l01__defs_8h_1a5197eefaacf7da11248254a9e3290124" kindref="member">nrf24l01_platform_deinit_fptr_t</ref></type>
@@ -58,7 +58,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="952" column="37" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="952" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="918" column="41" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="918" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structnrf24l01__platform__t_1adad84cbfcf4873ff02e12c9c0a156acf" prot="public" static="no" mutable="no">
         <type><ref refid="nrf24l01__defs_8h_1a86465ecff5d0e2cb8872cca95c310e06" kindref="member">nrf24l01_spi_exchange_fptr_t</ref></type>
@@ -72,7 +72,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="953" column="37" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="953" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="919" column="41" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="919" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structnrf24l01__platform__t_1a14b4c6c1143a2d9fbe68c87883265808" prot="public" static="no" mutable="no">
         <type><ref refid="nrf24l01__defs_8h_1a47eddbd6cc5e2128f56ec7994b9e066c" kindref="member">nrf24l01_check_for_interrupt_fptr_t</ref></type>
@@ -85,7 +85,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="954" column="37" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="954" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="920" column="41" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="920" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structnrf24l01__platform__t_1a000143d3495d4fe39a6ca1fb3a43ceb4" prot="public" static="no" mutable="no">
         <type><ref refid="nrf24l01__defs_8h_1a870b44260a83ed804d9c94dfecc8be8a" kindref="member">nrf24l01_rx_dr_callback_fptr_t</ref></type>
@@ -99,7 +99,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="956" column="33" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="956" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="922" column="41" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="922" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structnrf24l01__platform__t_1a6f944428baa03e7864a0a7088e162424" prot="public" static="no" mutable="no">
         <type>void *</type>
@@ -113,7 +113,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="957" column="32" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="957" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="923" column="40" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="923" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structnrf24l01__platform__t_1acc6e5dabd30ec87d7eea688d2bfcca8c" prot="public" static="no" mutable="no">
         <type><ref refid="nrf24l01__defs_8h_1acbaf981637ef9ef2e0d15fc2886135b5" kindref="member">nrf24l01_tx_ds_callback_fptr_t</ref></type>
@@ -127,7 +127,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="958" column="33" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="958" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="924" column="41" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="924" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structnrf24l01__platform__t_1ac4efe0276c326f5f3711c0c27e9784e8" prot="public" static="no" mutable="no">
         <type>void *</type>
@@ -141,7 +141,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="959" column="32" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="959" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="925" column="40" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="925" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structnrf24l01__platform__t_1abbe06f5152b49ef00761ae87b980179f" prot="public" static="no" mutable="no">
         <type><ref refid="nrf24l01__defs_8h_1af3a3bced5aa40c9e8ea6ea75fd56b1b7" kindref="member">nrf24l01_max_rt_callback_fptr_t</ref></type>
@@ -155,7 +155,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="960" column="33" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="960" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="926" column="41" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="926" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structnrf24l01__platform__t_1a11a29e75b9ef15f922bed46c7d054b71" prot="public" static="no" mutable="no">
         <type>void *</type>
@@ -169,7 +169,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="961" column="32" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="961" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="927" column="40" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="927" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structnrf24l01__platform__t_1ae4382e8da69d0b669320b5009fb2df42" prot="public" static="no" mutable="no">
         <type>struct nrf24l01_platform_t::@1</type>
@@ -182,7 +182,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="962" column="11"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="928" column="15"/>
       </memberdef>
       <memberdef kind="variable" id="structnrf24l01__platform__t_1af4704b28d567c9987d1a3928b8b92336" prot="public" static="no" mutable="no">
         <type>void *</type>
@@ -196,7 +196,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="963" column="36" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="963" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="929" column="10" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="929" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -216,7 +216,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="948" column="26" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="948" bodyend="964"/>
+    <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="914" column="26" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="914" bodyend="930"/>
     <listofallmembers>
       <member refid="structnrf24l01__platform__t_1ae4382e8da69d0b669320b5009fb2df42" prot="public" virt="non-virtual"><scope>nrf24l01_platform_t</scope><name>callbacks</name></member>
       <member refid="structnrf24l01__platform__t_1a14b4c6c1143a2d9fbe68c87883265808" prot="public" virt="non-virtual"><scope>nrf24l01_platform_t</scope><name>check_for_interrupt</name></member>

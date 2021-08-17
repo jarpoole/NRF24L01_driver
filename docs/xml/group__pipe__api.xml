@@ -56,7 +56,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="75" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="436" bodyend="461" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="75" declcolumn="16"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="85" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="960" bodyend="985" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="85" declcolumn="16"/>
       </memberdef>
       <memberdef kind="function" id="group__pipe__api_1ga82df3ae97ab1943d6c8846af91530c20" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
@@ -110,7 +110,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="76" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="471" bodyend="496" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="76" declcolumn="16"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="86" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="995" bodyend="1019" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="86" declcolumn="16"/>
       </memberdef>
       <memberdef kind="function" id="group__pipe__api_1ga278481ec6a4aa4db0fc5953b6aceae8b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
@@ -164,7 +164,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="77" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="208" bodyend="224" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="77" declcolumn="16"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="87" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="1029" bodyend="1045" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="87" declcolumn="16"/>
       </memberdef>
       <memberdef kind="function" id="group__pipe__api_1ga993a327bc069340404c5dbb7a7dd443f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
@@ -241,7 +241,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="80" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="758" bodyend="775" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="80" declcolumn="16"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="90" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="1057" bodyend="1074" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="90" declcolumn="16"/>
       </memberdef>
       <memberdef kind="function" id="group__pipe__api_1ga813ffbf96c9a76b15d463154085df739" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
@@ -282,7 +282,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="84" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="632" bodyend="645" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="84" declcolumn="16"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="94" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="1081" bodyend="1094" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="94" declcolumn="16"/>
       </memberdef>
       <memberdef kind="function" id="group__pipe__api_1ga0ddaef29411d56ad52cebfa48ed37fb9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
@@ -291,26 +291,75 @@
         <name>nrf24l01_read_payload</name>
         <param>
           <type><ref refid="nrf24l01__defs_8h_1ac835ed70d839160974a8a370302ceda4" kindref="member">nrf24l01_pipe_t</ref> *</type>
+          <defname>pipe</defname>
         </param>
         <param>
           <type>uint8_t *</type>
+          <defname>rx_data</defname>
         </param>
         <param>
           <type>uint8_t *</type>
+          <defname>len</defname>
         </param>
         <param>
           <type>bool</type>
+          <defname>dpl</defname>
         </param>
         <param>
           <type><ref refid="structnrf24l01__platform__t" kindref="compound">nrf24l01_platform_t</ref> *</type>
+          <defname>platform</defname>
         </param>
         <briefdescription>
+<para>Read a payload. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">pipe</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: A pointer where the pipe number will be stored </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">rx_data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: A pointer to a buffer </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: A pointer to the length of the data </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">dpl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">platform</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Driver instance configuration struct pointer <linebreak/>
+ </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="85" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="796" bodyend="842" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="85" declcolumn="16"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="95" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="1104" bodyend="1149" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="95" declcolumn="16"/>
       </memberdef>
       <memberdef kind="function" id="group__pipe__api_1gaf7370e9534ccbede12d2a8b185180a98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="nrf24l01__defs_8h_1aeb660fd5ed8bfc4a9d5ea587fd9207f0" kindref="member">nrf24l01_err_t</ref></type>
@@ -364,7 +413,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="88" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="506" bodyend="531" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="88" declcolumn="16"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" line="98" column="16" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c" bodystart="1159" bodyend="1184" declfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h" declline="98" declcolumn="16"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

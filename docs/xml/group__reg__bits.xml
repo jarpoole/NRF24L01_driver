@@ -18,7 +18,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="231" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="231" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="224" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="224" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1gaf4f3994a6d6ab185a8924c6abf8eaa9e" prot="public" static="no">
         <name>NRF24L01_CONFIG_REG_BIT_MASK_TX_DS</name>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="232" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="232" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="225" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="225" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1ga5583dfd06a0bf72e08fa6d70fbf5bec2" prot="public" static="no">
         <name>NRF24L01_CONFIG_REG_BIT_MASK_MAX_RT</name>
@@ -42,7 +42,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="233" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="233" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="226" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="226" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1gab47cc5e8cbc0ab4ce27d17922243c53d" prot="public" static="no">
         <name>NRF24L01_CONFIG_REG_BIT_EN_CRC</name>
@@ -54,7 +54,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="234" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="234" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="227" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="227" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1ga86c93150a41fc94e5c71dcb94014f6af" prot="public" static="no">
         <name>NRF24L01_CONFIG_REG_BIT_CRCO</name>
@@ -66,7 +66,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="235" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="235" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="228" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="228" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1gaaa23d4f4f3baf923f14efaf6c4a81634" prot="public" static="no">
         <name>NRF24L01_CONFIG_REG_BIT_PWR_UP</name>
@@ -78,7 +78,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="236" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="236" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="229" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="229" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1gaaa8ba84687af61aa404bc4c55d8bea58" prot="public" static="no">
         <name>NRF24L01_CONFIG_REG_BIT_PRIM_RX</name>
@@ -90,19 +90,18 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="237" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="237" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="230" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="230" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1gad4b0e603d7d7516285f0dd714c46d30f" prot="public" static="no">
         <name>NRF24L01_CONFIG_MASK_REG</name>
-        <initializer>											(uint8_t)(                                \
-											<ref refid="group__reg__bits_1gaf07a996a70a3bee7953b416d1a32b002" kindref="member">NRF24L01_CONFIG_REG_BIT_MASK_RX_DR</ref>  | \
-											<ref refid="group__reg__bits_1gaf4f3994a6d6ab185a8924c6abf8eaa9e" kindref="member">NRF24L01_CONFIG_REG_BIT_MASK_TX_DS</ref>  | \
-											<ref refid="group__reg__bits_1ga5583dfd06a0bf72e08fa6d70fbf5bec2" kindref="member">NRF24L01_CONFIG_REG_BIT_MASK_MAX_RT</ref> | \
-											<ref refid="group__reg__bits_1gab47cc5e8cbc0ab4ce27d17922243c53d" kindref="member">NRF24L01_CONFIG_REG_BIT_EN_CRC</ref>      | \
-											<ref refid="group__reg__bits_1ga86c93150a41fc94e5c71dcb94014f6af" kindref="member">NRF24L01_CONFIG_REG_BIT_CRCO</ref>        | \
-											<ref refid="group__reg__bits_1gaaa23d4f4f3baf923f14efaf6c4a81634" kindref="member">NRF24L01_CONFIG_REG_BIT_PWR_UP</ref>      | \
-											<ref refid="group__reg__bits_1gaaa8ba84687af61aa404bc4c55d8bea58" kindref="member">NRF24L01_CONFIG_REG_BIT_PRIM_RX</ref>       \
-										)</initializer>
+        <initializer>    (uint8_t)( \
+    <ref refid="group__reg__bits_1gaf07a996a70a3bee7953b416d1a32b002" kindref="member">NRF24L01_CONFIG_REG_BIT_MASK_RX_DR</ref> |                   \
+    <ref refid="group__reg__bits_1gaf4f3994a6d6ab185a8924c6abf8eaa9e" kindref="member">NRF24L01_CONFIG_REG_BIT_MASK_TX_DS</ref> |                   \
+    <ref refid="group__reg__bits_1ga5583dfd06a0bf72e08fa6d70fbf5bec2" kindref="member">NRF24L01_CONFIG_REG_BIT_MASK_MAX_RT</ref> |                  \
+    <ref refid="group__reg__bits_1gab47cc5e8cbc0ab4ce27d17922243c53d" kindref="member">NRF24L01_CONFIG_REG_BIT_EN_CRC</ref> |                       \
+    <ref refid="group__reg__bits_1ga86c93150a41fc94e5c71dcb94014f6af" kindref="member">NRF24L01_CONFIG_REG_BIT_CRCO</ref> |                         \
+    <ref refid="group__reg__bits_1gaaa23d4f4f3baf923f14efaf6c4a81634" kindref="member">NRF24L01_CONFIG_REG_BIT_PWR_UP</ref> |                       \
+    <ref refid="group__reg__bits_1gaaa8ba84687af61aa404bc4c55d8bea58" kindref="member">NRF24L01_CONFIG_REG_BIT_PRIM_RX</ref>)</initializer>
         <briefdescription>
 <para>&lt; Mask for all defined bits[6:0] in CONFIG register </para>
         </briefdescription>
@@ -111,15 +110,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="435" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="435" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="425" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="425" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1gacb6a1aa06e4ebbc4cb47b95733673b71" prot="public" static="no">
         <name>NRF24L01_CONFIG_MASK_INTERRUPT_MASKS</name>
-        <initializer>											(uint8_t)(                           \
-											<ref refid="group__reg__bits_1gaf07a996a70a3bee7953b416d1a32b002" kindref="member">NRF24L01_CONFIG_REG_BIT_MASK_RX_DR</ref>  | \
-											<ref refid="group__reg__bits_1gaf4f3994a6d6ab185a8924c6abf8eaa9e" kindref="member">NRF24L01_CONFIG_REG_BIT_MASK_TX_DS</ref>  | \
-											<ref refid="group__reg__bits_1ga5583dfd06a0bf72e08fa6d70fbf5bec2" kindref="member">NRF24L01_CONFIG_REG_BIT_MASK_MAX_RT</ref>   \
-										)</initializer>
+        <initializer>    (uint8_t)( \
+    <ref refid="group__reg__bits_1gaf07a996a70a3bee7953b416d1a32b002" kindref="member">NRF24L01_CONFIG_REG_BIT_MASK_RX_DR</ref> |                \
+    <ref refid="group__reg__bits_1gaf4f3994a6d6ab185a8924c6abf8eaa9e" kindref="member">NRF24L01_CONFIG_REG_BIT_MASK_TX_DS</ref> |                \
+    <ref refid="group__reg__bits_1ga5583dfd06a0bf72e08fa6d70fbf5bec2" kindref="member">NRF24L01_CONFIG_REG_BIT_MASK_MAX_RT</ref>)</initializer>
         <briefdescription>
 <para>Mask for CRC[3:2] bits in CONFIG register. </para>
         </briefdescription>
@@ -127,14 +125,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="445" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="445" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="434" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="434" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1gad6d7c9521fa1081e2e8fe0a58174da57" prot="public" static="no">
         <name>NRF24L01_CONFIG_MASK_CRC</name>
-        <initializer>											(uint8_t)(                                \
-											<ref refid="group__reg__bits_1gab47cc5e8cbc0ab4ce27d17922243c53d" kindref="member">NRF24L01_CONFIG_REG_BIT_EN_CRC</ref>      | \
-											<ref refid="group__reg__bits_1ga86c93150a41fc94e5c71dcb94014f6af" kindref="member">NRF24L01_CONFIG_REG_BIT_CRCO</ref>          \
-										)</initializer>
+        <initializer>    (uint8_t)( \
+    <ref refid="group__reg__bits_1gab47cc5e8cbc0ab4ce27d17922243c53d" kindref="member">NRF24L01_CONFIG_REG_BIT_EN_CRC</ref> |        \
+    <ref refid="group__reg__bits_1ga86c93150a41fc94e5c71dcb94014f6af" kindref="member">NRF24L01_CONFIG_REG_BIT_CRCO</ref>)</initializer>
         <briefdescription>
 <para>RX_DR[6] bit in CONFIG register. </para>
         </briefdescription>
@@ -142,7 +139,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="451" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="451" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="439" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="439" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -160,7 +157,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="245" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="245" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="238" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="238" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1ga1f955ff7e6783511cef35bcafb90ef2c" prot="public" static="no">
         <name>NRF24L01_EN_AA_REG_BIT_ENAA_P4</name>
@@ -172,7 +169,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="246" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="246" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="239" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="239" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1gabd053e5d74243e0631e0c7c2d490cfa4" prot="public" static="no">
         <name>NRF24L01_EN_AA_REG_BIT_ENAA_P3</name>
@@ -184,7 +181,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="247" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="247" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="240" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="240" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1ga69624aff4d39f013e27d2de3f0570c96" prot="public" static="no">
         <name>NRF24L01_EN_AA_REG_BIT_ENAA_P2</name>
@@ -196,7 +193,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="248" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="248" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="241" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="241" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1ga4b0b5a0edf62ea3223e1a7c442155a64" prot="public" static="no">
         <name>NRF24L01_EN_AA_REG_BIT_ENAA_P1</name>
@@ -208,7 +205,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="249" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="249" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="242" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="242" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1gac2b508cebf1521e07d4a03657443bf9f" prot="public" static="no">
         <name>NRF24L01_EN_AA_REG_BIT_ENAA_P0</name>
@@ -220,26 +217,25 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="250" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="250" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="243" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="243" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1ga05bf3963b795f309058d9a92ca8a5520" prot="public" static="no">
         <name>NRF24L01_EN_AA_MASK_REG</name>
-        <initializer>											(uint8_t)(                                \
-											<ref refid="group__reg__bits_1gacbf49029ffa1a2ebc51a1d701318734e" kindref="member">NRF24L01_EN_AA_REG_BIT_ENAA_P5</ref>      | \
-											<ref refid="group__reg__bits_1ga1f955ff7e6783511cef35bcafb90ef2c" kindref="member">NRF24L01_EN_AA_REG_BIT_ENAA_P4</ref>      | \
-											<ref refid="group__reg__bits_1gabd053e5d74243e0631e0c7c2d490cfa4" kindref="member">NRF24L01_EN_AA_REG_BIT_ENAA_P3</ref>      | \
-											<ref refid="group__reg__bits_1ga69624aff4d39f013e27d2de3f0570c96" kindref="member">NRF24L01_EN_AA_REG_BIT_ENAA_P2</ref>      | \
-											<ref refid="group__reg__bits_1ga4b0b5a0edf62ea3223e1a7c442155a64" kindref="member">NRF24L01_EN_AA_REG_BIT_ENAA_P1</ref>      | \
-											<ref refid="group__reg__bits_1gac2b508cebf1521e07d4a03657443bf9f" kindref="member">NRF24L01_EN_AA_REG_BIT_ENAA_P0</ref>        \
-										)</initializer>
+        <initializer>    (uint8_t)( \
+    <ref refid="group__reg__bits_1gacbf49029ffa1a2ebc51a1d701318734e" kindref="member">NRF24L01_EN_AA_REG_BIT_ENAA_P5</ref> |       \
+    <ref refid="group__reg__bits_1ga1f955ff7e6783511cef35bcafb90ef2c" kindref="member">NRF24L01_EN_AA_REG_BIT_ENAA_P4</ref> |       \
+    <ref refid="group__reg__bits_1gabd053e5d74243e0631e0c7c2d490cfa4" kindref="member">NRF24L01_EN_AA_REG_BIT_ENAA_P3</ref> |       \
+    <ref refid="group__reg__bits_1ga69624aff4d39f013e27d2de3f0570c96" kindref="member">NRF24L01_EN_AA_REG_BIT_ENAA_P2</ref> |       \
+    <ref refid="group__reg__bits_1ga4b0b5a0edf62ea3223e1a7c442155a64" kindref="member">NRF24L01_EN_AA_REG_BIT_ENAA_P1</ref> |       \
+    <ref refid="group__reg__bits_1gac2b508cebf1521e07d4a03657443bf9f" kindref="member">NRF24L01_EN_AA_REG_BIT_ENAA_P0</ref>)</initializer>
         <briefdescription>
-<para>&lt; Mask for all defined bits[5:0] in EN_AA register </para>
+<para>Mask for all defined bits[5:0] in EN_AA register. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="465" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="465" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="451" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="451" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -251,92 +247,91 @@
         <name>NRF24L01_EN_RXADDR_REG_BIT_ERX_P5</name>
         <initializer>(uint8_t)0x20</initializer>
         <briefdescription>
-<para>&lt; Mask for all defined bits[5:0] in EN_RXADDR register </para>
+<para>Mask for all defined bits[5:0] in EN_RXADDR register. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="258" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="258" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="251" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="251" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1ga35644cd0fae11474735e7d1c6fa02d46" prot="public" static="no">
         <name>NRF24L01_EN_RXADDR_REG_BIT_ERX_P4</name>
         <initializer>(uint8_t)0x10</initializer>
         <briefdescription>
-<para>&lt; Mask for all defined bits[5:0] in EN_RXADDR register </para>
+<para>Mask for all defined bits[5:0] in EN_RXADDR register. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="259" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="259" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="252" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="252" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1ga667807ef7dcd76644bf962e2f9201214" prot="public" static="no">
         <name>NRF24L01_EN_RXADDR_REG_BIT_ERX_P3</name>
         <initializer>(uint8_t)0x08</initializer>
         <briefdescription>
-<para>&lt; Mask for all defined bits[5:0] in EN_RXADDR register </para>
+<para>Mask for all defined bits[5:0] in EN_RXADDR register. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="260" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="260" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="253" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="253" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1gaf19a2bbb619d22d23361d6fb337ee696" prot="public" static="no">
         <name>NRF24L01_EN_RXADDR_REG_BIT_ERX_P2</name>
         <initializer>(uint8_t)0x04</initializer>
         <briefdescription>
-<para>&lt; Mask for all defined bits[5:0] in EN_RXADDR register </para>
+<para>Mask for all defined bits[5:0] in EN_RXADDR register. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="261" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="261" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="254" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="254" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1ga0055fa74ca23ed1298c775ed5d3c6f8a" prot="public" static="no">
         <name>NRF24L01_EN_RXADDR_REG_BIT_ERX_P1</name>
         <initializer>(uint8_t)0x02</initializer>
         <briefdescription>
-<para>&lt; Mask for all defined bits[5:0] in EN_RXADDR register </para>
+<para>Mask for all defined bits[5:0] in EN_RXADDR register. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="262" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="262" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="255" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="255" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1gab3e77e8cf2f8480c38d5f0911d09db0b" prot="public" static="no">
         <name>NRF24L01_EN_RXADDR_REG_BIT_ERX_P0</name>
         <initializer>(uint8_t)0x01</initializer>
         <briefdescription>
-<para>&lt; Mask for all defined bits[5:0] in EN_RXADDR register </para>
+<para>Mask for all defined bits[5:0] in EN_RXADDR register. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="263" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="263" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="256" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="256" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1ga82d253030685cb1f3f422f17f396e98c" prot="public" static="no">
         <name>NRF24L01_EN_RXADDR_MASK_REG</name>
-        <initializer>											(uint8_t)(                                \
-											<ref refid="group__reg__bits_1ga110a62b986c828e8fb33224456bc7701" kindref="member">NRF24L01_EN_RXADDR_REG_BIT_ERX_P5</ref>   | \
-											<ref refid="group__reg__bits_1ga35644cd0fae11474735e7d1c6fa02d46" kindref="member">NRF24L01_EN_RXADDR_REG_BIT_ERX_P4</ref>   | \
-											<ref refid="group__reg__bits_1ga667807ef7dcd76644bf962e2f9201214" kindref="member">NRF24L01_EN_RXADDR_REG_BIT_ERX_P3</ref>   | \
-											<ref refid="group__reg__bits_1gaf19a2bbb619d22d23361d6fb337ee696" kindref="member">NRF24L01_EN_RXADDR_REG_BIT_ERX_P2</ref>   | \
-											<ref refid="group__reg__bits_1ga0055fa74ca23ed1298c775ed5d3c6f8a" kindref="member">NRF24L01_EN_RXADDR_REG_BIT_ERX_P1</ref>   | \
-											<ref refid="group__reg__bits_1gab3e77e8cf2f8480c38d5f0911d09db0b" kindref="member">NRF24L01_EN_RXADDR_REG_BIT_ERX_P0</ref>     \
-										)</initializer>
+        <initializer>    (uint8_t)( \
+    <ref refid="group__reg__bits_1ga110a62b986c828e8fb33224456bc7701" kindref="member">NRF24L01_EN_RXADDR_REG_BIT_ERX_P5</ref> |        \
+    <ref refid="group__reg__bits_1ga35644cd0fae11474735e7d1c6fa02d46" kindref="member">NRF24L01_EN_RXADDR_REG_BIT_ERX_P4</ref> |        \
+    <ref refid="group__reg__bits_1ga667807ef7dcd76644bf962e2f9201214" kindref="member">NRF24L01_EN_RXADDR_REG_BIT_ERX_P3</ref> |        \
+    <ref refid="group__reg__bits_1gaf19a2bbb619d22d23361d6fb337ee696" kindref="member">NRF24L01_EN_RXADDR_REG_BIT_ERX_P2</ref> |        \
+    <ref refid="group__reg__bits_1ga0055fa74ca23ed1298c775ed5d3c6f8a" kindref="member">NRF24L01_EN_RXADDR_REG_BIT_ERX_P1</ref> |        \
+    <ref refid="group__reg__bits_1gab3e77e8cf2f8480c38d5f0911d09db0b" kindref="member">NRF24L01_EN_RXADDR_REG_BIT_ERX_P0</ref>)</initializer>
         <briefdescription>
-<para>&lt; Mask for all defined bits[5:0] in EN_RXADDR register </para>
+<para>Mask for all defined bits[5:0] in EN_RXADDR register. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="483" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="483" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="467" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="467" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -354,19 +349,19 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="271" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="271" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="264" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="264" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1ga041619332e10394c0c2ce2b00f89bbc8" prot="public" static="no">
         <name>NRF24L01_SETUP_AW_MASK_REG</name>
-        <initializer>(uint8_t)<ref refid="group__reg__bits_1ga842a6568877c432e0602aa58a3c1e090" kindref="member">NRF24L01_SETUP_AW_REG_BITS_AW</ref></initializer>
+        <initializer>(uint8_t) <ref refid="group__reg__bits_1ga842a6568877c432e0602aa58a3c1e090" kindref="member">NRF24L01_SETUP_AW_REG_BITS_AW</ref></initializer>
         <briefdescription>
-<para>&lt; Mask for all defined bits[1:0] in AW register </para>
+<para>Mask for all defined bits[1:0] in AW register. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="501" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="501" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="483" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="483" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -384,7 +379,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="279" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="279" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="272" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="272" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1ga37ad5787c92303338675bf2567b452e2" prot="public" static="no">
         <name>NRF24L01_SETUP_RETR_REG_BITS_ARC</name>
@@ -396,22 +391,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="280" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="280" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="273" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="273" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1gaed2587ff5be89d74eb9e2b8bd104087c" prot="public" static="no">
         <name>NRF24L01_SETUP_RETR_MASK_REG</name>
-        <initializer>											(uint8_t)(                                \
-											<ref refid="group__reg__bits_1ga172d9d8a92a7d01c2bb099c119924097" kindref="member">NRF24L01_SETUP_RETR_REG_BITS_ARD</ref>    | \
-											<ref refid="group__reg__bits_1ga37ad5787c92303338675bf2567b452e2" kindref="member">NRF24L01_SETUP_RETR_REG_BITS_ARC</ref>      \
-										)</initializer>
+        <initializer>    (uint8_t)( \
+    <ref refid="group__reg__bits_1ga172d9d8a92a7d01c2bb099c119924097" kindref="member">NRF24L01_SETUP_RETR_REG_BITS_ARD</ref> |          \
+    <ref refid="group__reg__bits_1ga37ad5787c92303338675bf2567b452e2" kindref="member">NRF24L01_SETUP_RETR_REG_BITS_ARC</ref>)</initializer>
         <briefdescription>
-<para>&lt; Mask for all defined bits[7:0] in SETUP_RETR register </para>
+<para>Mask for all defined bits[7:0] in SETUP_RETR register. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="512" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="512" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="493" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="493" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -429,19 +423,19 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="288" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="288" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="281" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="281" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1ga2fa80a1d3906f9b5b8733ead96c3133e" prot="public" static="no">
         <name>NRF24L01_RF_CH_MASK_REG</name>
-        <initializer>(uint8_t)<ref refid="group__reg__bits_1gae876cf8ae818b8ce339491beaa187f75" kindref="member">NRF24L01_RF_CH_REG_BITS_RF_CH</ref></initializer>
+        <initializer>(uint8_t) <ref refid="group__reg__bits_1gae876cf8ae818b8ce339491beaa187f75" kindref="member">NRF24L01_RF_CH_REG_BITS_RF_CH</ref></initializer>
         <briefdescription>
-<para>&lt; Mask for all defined bits[6:0] in RF_CH register </para>
+<para>Mask for all defined bits[6:0] in RF_CH register. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="526" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="526" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="505" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="505" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -459,7 +453,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="296" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="296" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="289" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="289" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1ga495f104a00541af9187c9609b81f425e" prot="public" static="no">
         <name>NRF24L01_RF_SETUP_REG_BIT_RF_DR</name>
@@ -471,7 +465,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="297" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="297" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="290" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="290" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1ga53c3e47c67cd0f3ab4810ac49cec823d" prot="public" static="no">
         <name>NRF24L01_RF_SETUP_REG_BITS_RF_PWR</name>
@@ -483,7 +477,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="298" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="298" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="291" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="291" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1ga796c669655b7fe2c98ac33159dc09b7d" prot="public" static="no">
         <name>NRF24L01_RF_SETUP_REG_BIT_LNA_HCURR</name>
@@ -495,24 +489,23 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="299" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="299" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="292" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="292" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1ga3d14c145be751bbc3a81afe59a976373" prot="public" static="no">
         <name>NRF24L01_RF_SETUP_MASK_REG</name>
-        <initializer>											(uint8_t)(                                \
-											<ref refid="group__reg__bits_1gaef9765800247b3682b53571ec1befebe" kindref="member">NRF24L01_RF_SETUP_REG_BIT_PLL_LOCK</ref>  | \
-											<ref refid="group__reg__bits_1ga495f104a00541af9187c9609b81f425e" kindref="member">NRF24L01_RF_SETUP_REG_BIT_RF_DR</ref>     | \
-											<ref refid="group__reg__bits_1ga53c3e47c67cd0f3ab4810ac49cec823d" kindref="member">NRF24L01_RF_SETUP_REG_BITS_RF_PWR</ref>   | \
-											<ref refid="group__reg__bits_1ga796c669655b7fe2c98ac33159dc09b7d" kindref="member">NRF24L01_RF_SETUP_REG_BIT_LNA_HCURR</ref>   \
-										)</initializer>
+        <initializer>    (uint8_t)( \
+    <ref refid="group__reg__bits_1gaef9765800247b3682b53571ec1befebe" kindref="member">NRF24L01_RF_SETUP_REG_BIT_PLL_LOCK</ref> |      \
+    <ref refid="group__reg__bits_1ga495f104a00541af9187c9609b81f425e" kindref="member">NRF24L01_RF_SETUP_REG_BIT_RF_DR</ref> |         \
+    <ref refid="group__reg__bits_1ga53c3e47c67cd0f3ab4810ac49cec823d" kindref="member">NRF24L01_RF_SETUP_REG_BITS_RF_PWR</ref> |       \
+    <ref refid="group__reg__bits_1ga796c669655b7fe2c98ac33159dc09b7d" kindref="member">NRF24L01_RF_SETUP_REG_BIT_LNA_HCURR</ref>)</initializer>
         <briefdescription>
-<para>&lt; Mask for all defined bits[4:0] in RF_SETUP register </para>
+<para>Mask for all defined bits[4:0] in RF_SETUP register. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="537" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="537" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="515" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="515" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -530,7 +523,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="307" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="307" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="300" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="300" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1ga9d52b8ddcff97ff40c2809687da106d8" prot="public" static="no">
         <name>NRF24L01_STATUS_REG_BIT_TX_DS</name>
@@ -542,7 +535,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="308" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="308" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="301" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="301" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1ga420b4a05f738b72880dbcef809dc9ce0" prot="public" static="no">
         <name>NRF24L01_STATUS_REG_BIT_MAX_RT</name>
@@ -554,7 +547,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="309" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="309" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="302" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="302" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1gaaef3b9cc042253007cc2da9110a26311" prot="public" static="no">
         <name>NRF24L01_STATUS_REG_BITS_RX_P_NO</name>
@@ -566,7 +559,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="310" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="310" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="303" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="303" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1ga9bc0e8f67ae6f89af0797280511f28e1" prot="public" static="no">
         <name>NRF24L01_STATUS_REG_BIT_TX_FULL</name>
@@ -578,42 +571,39 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="311" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="311" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="304" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="304" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1ga9b3f68550ed4db25487d9d8d1ebc2584" prot="public" static="no">
         <name>NRF24L01_STATUS_MASK_REG</name>
-        <initializer>											(uint8_t)(                                \
-											<ref refid="group__reg__bits_1ga87cdeb4d1a693f8a60a474cdc726a541" kindref="member">NRF24L01_STATUS_REG_BIT_RX_DR</ref>       | \
-											<ref refid="group__reg__bits_1ga9d52b8ddcff97ff40c2809687da106d8" kindref="member">NRF24L01_STATUS_REG_BIT_TX_DS</ref>       | \
-											<ref refid="group__reg__bits_1ga420b4a05f738b72880dbcef809dc9ce0" kindref="member">NRF24L01_STATUS_REG_BIT_MAX_RT</ref>      | \
-											<ref refid="group__reg__bits_1gaaef3b9cc042253007cc2da9110a26311" kindref="member">NRF24L01_STATUS_REG_BITS_RX_P_NO</ref>    | \
-											<ref refid="group__reg__bits_1ga9bc0e8f67ae6f89af0797280511f28e1" kindref="member">NRF24L01_STATUS_REG_BIT_TX_FULL</ref>       \
-										)</initializer>
+        <initializer>    (uint8_t)( \
+    <ref refid="group__reg__bits_1ga87cdeb4d1a693f8a60a474cdc726a541" kindref="member">NRF24L01_STATUS_REG_BIT_RX_DR</ref> |         \
+    <ref refid="group__reg__bits_1ga9d52b8ddcff97ff40c2809687da106d8" kindref="member">NRF24L01_STATUS_REG_BIT_TX_DS</ref> |         \
+    <ref refid="group__reg__bits_1ga420b4a05f738b72880dbcef809dc9ce0" kindref="member">NRF24L01_STATUS_REG_BIT_MAX_RT</ref> |        \
+    <ref refid="group__reg__bits_1gaaef3b9cc042253007cc2da9110a26311" kindref="member">NRF24L01_STATUS_REG_BITS_RX_P_NO</ref> |      \
+    <ref refid="group__reg__bits_1ga9bc0e8f67ae6f89af0797280511f28e1" kindref="member">NRF24L01_STATUS_REG_BIT_TX_FULL</ref>)</initializer>
         <briefdescription>
-<para>&lt; Mask for all defined bits[6:0] in STATUS register </para>
+<para>Mask for all defined bits[6:0] in STATUS register. </para>
         </briefdescription>
         <detaileddescription>
-<para>Mask for IRQ[6:4] interrupt flag bits in STATUS register </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="553" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="553" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="529" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="529" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1ga65308c300f8760ae900a7ee93bad1f31" prot="public" static="no">
         <name>NRF24L01_STATUS_MASK_IRQ_FLAGS</name>
-        <initializer>											(uint8_t)(                                \
-											<ref refid="group__reg__bits_1ga87cdeb4d1a693f8a60a474cdc726a541" kindref="member">NRF24L01_STATUS_REG_BIT_RX_DR</ref>       | \
-											<ref refid="group__reg__bits_1ga9d52b8ddcff97ff40c2809687da106d8" kindref="member">NRF24L01_STATUS_REG_BIT_TX_DS</ref>       | \
-											<ref refid="group__reg__bits_1ga420b4a05f738b72880dbcef809dc9ce0" kindref="member">NRF24L01_STATUS_REG_BIT_MAX_RT</ref>        \
-										)</initializer>
+        <initializer>    (uint8_t)( \
+    <ref refid="group__reg__bits_1ga87cdeb4d1a693f8a60a474cdc726a541" kindref="member">NRF24L01_STATUS_REG_BIT_RX_DR</ref> |               \
+    <ref refid="group__reg__bits_1ga9d52b8ddcff97ff40c2809687da106d8" kindref="member">NRF24L01_STATUS_REG_BIT_TX_DS</ref> |               \
+    <ref refid="group__reg__bits_1ga420b4a05f738b72880dbcef809dc9ce0" kindref="member">NRF24L01_STATUS_REG_BIT_MAX_RT</ref>)</initializer>
         <briefdescription>
-<para>RX_DR[6] interrupt flag bit in STATUS register. </para>
+<para>Mask for IRQ[6:4] interrupt flag bits in STATUS register. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="561" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="561" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="536" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="536" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -631,7 +621,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="319" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="319" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="312" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="312" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1ga8b58638de626b7edbbbb339295c39d71" prot="public" static="no">
         <name>NRF24L01_OBSERVE_TX_REG_BITS_ARC_CNT</name>
@@ -643,22 +633,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="320" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="320" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="313" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="313" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1ga58da17119f4d8a23ba58ca18eefa590f" prot="public" static="no">
         <name>NRF24L01_OBSERVE_TX_MASK_REG</name>
-        <initializer>													(uint8_t)(                                  \
-													<ref refid="group__reg__bits_1gaba57489490c88664da4969efbd8bebcf" kindref="member">NRF24L01_OBSERVE_TX_REG_BITS_PLOS_CNT</ref> | \
-													<ref refid="group__reg__bits_1ga8b58638de626b7edbbbb339295c39d71" kindref="member">NRF24L01_OBSERVE_TX_REG_BITS_ARC_CNT</ref>    \
-												)</initializer>
+        <initializer>    (uint8_t)( \
+    <ref refid="group__reg__bits_1gaba57489490c88664da4969efbd8bebcf" kindref="member">NRF24L01_OBSERVE_TX_REG_BITS_PLOS_CNT</ref> |     \
+    <ref refid="group__reg__bits_1ga8b58638de626b7edbbbb339295c39d71" kindref="member">NRF24L01_OBSERVE_TX_REG_BITS_ARC_CNT</ref>)</initializer>
         <briefdescription>
-<para>&lt; Mask for all defined bits[7:0] in OBSERVE_TX register </para>
+<para>Mask for all defined bits[7:0] in OBSERVE_TX register. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="576" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="576" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="549" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="549" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -676,19 +665,19 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="328" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="328" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="321" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="321" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1ga1bed277a8a0f3095f24098066a045557" prot="public" static="no">
         <name>NRF24L01_CD_MASK_REG</name>
-        <initializer>(uint8_t)<ref refid="group__reg__bits_1gab0f3db1fbf3ef0b7f9ac2d5079186118" kindref="member">NRF24L01_CD_REG_BIT_CD</ref></initializer>
+        <initializer>(uint8_t) <ref refid="group__reg__bits_1gab0f3db1fbf3ef0b7f9ac2d5079186118" kindref="member">NRF24L01_CD_REG_BIT_CD</ref></initializer>
         <briefdescription>
-<para>&lt; Mask for all defined bits[0:0] in CD register </para>
+<para>Mask for all defined bits[0:0] in CD register. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="590" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="590" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="561" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="561" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -706,7 +695,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="336" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="336" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="329" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="329" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -724,7 +713,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="344" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="344" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="337" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="337" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -742,7 +731,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="352" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="352" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="345" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="345" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -760,7 +749,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="360" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="360" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="353" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="353" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -778,7 +767,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="368" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="368" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="361" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="361" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -796,7 +785,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="376" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="376" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="369" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="369" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -814,7 +803,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="384" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="384" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="377" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="377" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1gae7baf256acf0559807dc0caf2479a4e2" prot="public" static="no">
         <name>NRF24L01_FIFO_STATUS_REG_BIT_TX_FULL</name>
@@ -826,7 +815,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="385" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="385" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="378" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="378" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1ga8a7a179f3f0746249c7a1dc354fac1a6" prot="public" static="no">
         <name>NRF24L01_FIFO_STATUS_REG_BIT_TX_EMPTY</name>
@@ -838,7 +827,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="386" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="386" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="379" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="379" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1ga5fb8820dd499ab41d2f03eefa4c4a4ab" prot="public" static="no">
         <name>NRF24L01_FIFO_STATUS_REG_BIT_RX_FULL</name>
@@ -850,7 +839,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="387" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="387" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="380" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="380" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1gafc82f1b356f7e93f59691d7055faf111" prot="public" static="no">
         <name>NRF24L01_FIFO_STATUS_REG_BIT_RX_EMPTY</name>
@@ -862,7 +851,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="388" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="388" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="381" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="381" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -879,7 +868,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="396" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="396" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="389" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="389" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1ga624204a11f1a8bf5cc8f706f85da1ca7" prot="public" static="no">
         <name>NRF24L01_DYNPD_REG_BIT_DPL_P4</name>
@@ -890,7 +879,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="397" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="397" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="390" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="390" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1ga5b907ad1b65bae1c84c1025741a305c0" prot="public" static="no">
         <name>NRF24L01_DYNPD_REG_BIT_DPL_P3</name>
@@ -901,7 +890,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="398" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="398" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="391" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="391" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1gaab81cb4636b051ee82d369429c3dfc97" prot="public" static="no">
         <name>NRF24L01_DYNPD_REG_BIT_DPL_P2</name>
@@ -912,7 +901,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="399" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="399" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="392" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="392" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1gab81a4fe1bfdb985b3d70c6177d0193ea" prot="public" static="no">
         <name>NRF24L01_DYNPD_REG_BIT_DPL_P1</name>
@@ -923,7 +912,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="400" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="400" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="393" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="393" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1ga53517492dc16ee2f186aec29b00208f1" prot="public" static="no">
         <name>NRF24L01_DYNPD_REG_BIT_DPL_P0</name>
@@ -934,7 +923,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="401" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="401" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="394" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="394" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="user-defined">
@@ -952,7 +941,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="409" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="409" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="402" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="402" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1ga28198919ed370728c240b5b54a724a5a" prot="public" static="no">
         <name>NRF24L01_FEATURE_REG_BIT_EN_ACK_PAY</name>
@@ -964,7 +953,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="410" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="410" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="403" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="403" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__reg__bits_1ga40bc85952ef764e0e62b756e3a86bd2f" prot="public" static="no">
         <name>NRF24L01_FEATURE_REG_BIT_EN_DYN_ACK</name>
@@ -976,7 +965,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="411" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="411" bodyend="-1"/>
+        <location file="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" line="404" column="9" bodyfile="/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h" bodystart="404" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

@@ -26,13 +26,22 @@
     <member refid="group__device__api_1ga6be0b13e069c4e270640b34c65c6c58b" kind="function"><name>nrf24l01_register_rx_dr_callback</name></member>
     <member refid="group__device__api_1gaf4b8f3c50c981110f0c6fbc1df354bfa" kind="function"><name>nrf24l01_register_tx_ds_callback</name></member>
     <member refid="group__device__api_1gae94ce0fe9852c9730abee9a4dda8fa18" kind="function"><name>nrf24l01_register_max_rt_callback</name></member>
+    <member refid="group__device__api_1gad4bf78d42a2ed57ce156c41998c57197" kind="function"><name>nrf24l01_get_tx_power</name></member>
     <member refid="group__device__api_1ga4247b61e05c9d3d3aa3c4fc98ec88d3e" kind="function"><name>nrf24l01_set_tx_power</name></member>
+    <member refid="group__device__api_1gac32a3381395fdffe40a657d5db1df781" kind="function"><name>nrf24l01_get_rf_channel</name></member>
     <member refid="group__device__api_1gab36d02b77d5aeec5a9d9e2d6ccb7ea3e" kind="function"><name>nrf24l01_set_rf_channel</name></member>
+    <member refid="group__device__api_1ga40d4ab4b00980c0a86b5812c79615c97" kind="function"><name>nrf24l01_get_data_rate</name></member>
     <member refid="group__device__api_1ga167a2c4a6119ee820085f361a13384ad" kind="function"><name>nrf24l01_set_data_rate</name></member>
+    <member refid="group__device__api_1ga1bfae5432f5ae9397c65fc0d97a1ef73" kind="function"><name>nrf24l01_get_lna_mode</name></member>
+    <member refid="group__device__api_1ga2cb6664f6fa5a69cc6c0a62b36b26173" kind="function"><name>nrf24l01_set_lna_mode</name></member>
+    <member refid="group__device__api_1gab7b3490d1f778151312e5db0dcdc5c6b" kind="function"><name>nrf24l01_get_auto_retransmission</name></member>
     <member refid="group__device__api_1ga4384b25820eef7cc03ac4236f9fa4987" kind="function"><name>nrf24l01_set_auto_retransmission</name></member>
+    <member refid="group__device__api_1ga534aa1be3da811f29bb7ba4409c4d136" kind="function"><name>nrf24l01_get_crc_scheme</name></member>
     <member refid="group__device__api_1ga9067b01f853f8693967181f740585b59" kind="function"><name>nrf24l01_set_crc_scheme</name></member>
     <member refid="group__device__api_1gab160cda0ba47143dea9daf8f5203fb07" kind="function"><name>nrf24l01_get_address_width</name></member>
     <member refid="group__device__api_1ga10e39671edfdaac81580661d842bcff7" kind="function"><name>nrf24l01_set_address_width</name></member>
+    <member refid="group__device__api_1ga7e90e2cbb613fa083a4b752997432761" kind="function"><name>nrf24l01_set_address</name></member>
+    <member refid="group__device__api_1gad9e4fc6b78c3e96d3376006d0aa8393e" kind="function"><name>nrf24l01_check_for_interference</name></member>
     <member refid="group__device__api_1ga5d09412a7080b39e8e90178812186186" kind="function"><name>nrf24l01_flush_rx</name></member>
     <member refid="group__device__api_1gaa09fd11c251226eeb47a6adab2e23e14" kind="function"><name>nrf24l01_flush_tx</name></member>
     <member refid="group__device__api_1ga9b8d9da5cacf067188e1e8e40779fdb9" kind="function"><name>nrf24l01_get_status</name></member>
@@ -43,10 +52,12 @@
     <member refid="group__device__api_1ga9952bf8024954a3be966dedba265e2d2" kind="function"><name>nrf24l01_set_power_mode</name></member>
     <member refid="group__device__api_1gad67547d2ab76b760f3d0ee9161f3690c" kind="function"><name>nrf24l01_get_operational_mode</name></member>
     <member refid="group__device__api_1gaf037709d39e6e20cd6f7e300d2bc68ea" kind="function"><name>nrf24l01_set_operational_mode</name></member>
+    <member refid="group__device__api_1ga0d4846399bb76424fc894348f0cd4f14" kind="function"><name>nrf24l01_start_listening</name></member>
+    <member refid="group__device__api_1ga2c46ba5569ed05dd5747ad2853ce3c51" kind="function"><name>nrf24l01_stop_listening</name></member>
     <member refid="group__device__api_1gae02a0fb3c6ba0f88fb4dd84e3bd2fd65" kind="function"><name>nrf24l01_get_feature_mode</name></member>
     <member refid="group__device__api_1ga786f79fce0ce9929961915f323cd658e" kind="function"><name>nrf24l01_set_feature_mode</name></member>
-    <member refid="group__device__api_1gaf904545f9f8a909e438a972d51dfda7a" kind="function"><name>nrf24l01_set_ack_payload_mode</name></member>
     <member refid="group__device__api_1ga9f4b25fc294cb8550f3572b54b08fe58" kind="function"><name>nrf24l01_set_dpl_mode</name></member>
+    <member refid="group__device__api_1gaf904545f9f8a909e438a972d51dfda7a" kind="function"><name>nrf24l01_set_ack_payload_mode</name></member>
     <member refid="group__device__api_1ga2b949886212d64e3fbd76ec30cfab889" kind="function"><name>nrf24l01_set_dta_mode</name></member>
     <member refid="group__device__api_1ga0b9873c723dbf81f23b615c25983b72d" kind="function"><name>nrf24l01_get_features</name></member>
     <member refid="group__pipe__api_1ga736b0f56f587c118863e9fda079d1bdc" kind="function"><name>nrf24l01_set_pipe_mode</name></member>
@@ -56,10 +67,7 @@
     <member refid="group__pipe__api_1ga813ffbf96c9a76b15d463154085df739" kind="function"><name>nrf24l01_get_rx_pipe</name></member>
     <member refid="group__pipe__api_1ga0ddaef29411d56ad52cebfa48ed37fb9" kind="function"><name>nrf24l01_read_payload</name></member>
     <member refid="group__pipe__api_1gaf7370e9534ccbede12d2a8b185180a98" kind="function"><name>nrf24l01_set_pipe_dpl_mode</name></member>
-    <member refid="nrf24l01_8h_1a0d4846399bb76424fc894348f0cd4f14" kind="function"><name>nrf24l01_start_listening</name></member>
-    <member refid="nrf24l01_8h_1a2c46ba5569ed05dd5747ad2853ce3c51" kind="function"><name>nrf24l01_stop_listening</name></member>
     <member refid="nrf24l01_8h_1af42df863e295873efd13ddb4ccbde454" kind="function"><name>nrf24l01_loop</name></member>
-    <member refid="nrf24l01_8h_1a7e90e2cbb613fa083a4b752997432761" kind="function"><name>nrf24l01_set_address</name></member>
     <member refid="nrf24l01_8h_1a1ababe4f46706474ab74a578213634b7" kind="function"><name>nrf24l01_print_config</name></member>
     <member refid="nrf24l01_8h_1a0ce97b01864bd694119d2f27ec9d4854" kind="function"><name>nrf24l01_print_status_register</name></member>
     <member refid="nrf24l01_8h_1abb70671845ef71edbbd5b14ef0e963cc" kind="function"><name>nrf24l01_print_fifo_status_register</name></member>
@@ -171,31 +179,10 @@
     <member refid="group__reg__bits_1ga4b85a513bebb44da033bb14ceb9f0a78" kind="define"><name>NRF24L01_FEATURE_REG_BIT_EN_DPL</name></member>
     <member refid="group__reg__bits_1ga28198919ed370728c240b5b54a724a5a" kind="define"><name>NRF24L01_FEATURE_REG_BIT_EN_ACK_PAY</name></member>
     <member refid="group__reg__bits_1ga40bc85952ef764e0e62b756e3a86bd2f" kind="define"><name>NRF24L01_FEATURE_REG_BIT_EN_DYN_ACK</name></member>
-    <member refid="nrf24l01__defs_8h_1af225fdd9e1094009aec9eae23523138d" kind="define"><name>NRF24L01_FPTR_RTN_T</name></member>
-    <member refid="group__reg__masks_1gae50f69a3e72e9808c870d92582e6487b" kind="define"><name>NRF24L01_RX_PW_P0_MASK_REG</name></member>
-    <member refid="group__reg__masks_1gaefbb94c758edbd4a4b8b2440df595eaa" kind="define"><name>NRF24L01_RX_PW_P1_MASK_REG</name></member>
-    <member refid="group__reg__masks_1ga8319e11869023d015d6e8704c708a9cf" kind="define"><name>NRF24L01_RX_PW_P2_MASK_REG</name></member>
-    <member refid="group__reg__masks_1ga9d351694874655eaa9e96b525e8547e1" kind="define"><name>NRF24L01_RX_PW_P3_MASK_REG</name></member>
-    <member refid="group__reg__masks_1ga26dda8b375e7dea8b778f166bdba1c61" kind="define"><name>NRF24L01_RX_PW_P4_MASK_REG</name></member>
-    <member refid="group__reg__masks_1ga2c40fc97a4e727d5b2e557599cd744ea" kind="define"><name>NRF24L01_RX_PW_P5_MASK_REG</name></member>
-    <member refid="group__reg__masks_1ga5d111b14ef0248315017c75d3644533b" kind="define"><name>NRF24L01_FIFO_STATUS_MASK_REG</name></member>
-    <member refid="group__reg__masks_1ga126c535baa29906a93377d73a7606b88" kind="define"><name>NRF24L01_FIFO_STATUS_MASK_RX_FLAGS</name></member>
-    <member refid="group__reg__masks_1ga6ebc498d12f20e62032b4e09895eed72" kind="define"><name>NRF24L01_FIFO_STATUS_MASK_TX_FLAGS</name></member>
-    <member refid="group__reg__masks_1ga20ca31bba48c198e02249c3c9e44bbb6" kind="define"><name>NRF24L01_DYNPD_MASK_REG</name></member>
-    <member refid="group__reg__masks_1gadef555b549150409d5dbeca12f4cbbea" kind="define"><name>NRF24L01_FEATURE_MASK_REG</name></member>
-    <member refid="nrf24l01__defs_8h_1a022e4f4b24fde7306e66310daa1332c4" kind="define"><name>NRF24L01_COMMAND_MASK_REG_ADDR</name></member>
-    <member refid="nrf24l01__defs_8h_1a9cdb55dc4a1146cfd4330c8eed20779c" kind="define"><name>NRF24L01_COMMAND_MASK_PIPE</name></member>
-    <member refid="nrf24l01__defs_8h_1a12208e9bca3e4fe9709a44140f7efdbf" kind="define"><name>NRF24L01_ADDR_WIDTH_INVALID</name></member>
-    <member refid="nrf24l01__defs_8h_1aea609a6ce51d1f9e024d15a6409ddb43" kind="define"><name>NRF24L01_ADDR_WIDTH_3_BYTES</name></member>
-    <member refid="nrf24l01__defs_8h_1ae278fa0025abdb9ef338087dbebf0103" kind="define"><name>NRF24L01_ADDR_WIDTH_4_BYTES</name></member>
-    <member refid="nrf24l01__defs_8h_1aaf0a26f356b7e3dd6825ce696bb2ccfe" kind="define"><name>NRF24L01_ADDR_WIDTH_5_BYTES</name></member>
-    <member refid="nrf24l01__defs_8h_1aec6cf643e37a7039c542e969a5bc810d" kind="define"><name>NRF24L01_TX_PWR_18DBM</name></member>
-    <member refid="nrf24l01__defs_8h_1af1d02c0e1c4e0418293b84e5ef3830ea" kind="define"><name>NRF24L01_TX_PWR_12DBM</name></member>
-    <member refid="nrf24l01__defs_8h_1a836b7e271e504395207756e042ed916d" kind="define"><name>NRF24L01_TX_PWR_6DBM</name></member>
-    <member refid="nrf24l01__defs_8h_1ae8a74f6cf9bc25b1b63f6fcf77279b9e" kind="define"><name>NRF24L01_TX_PWR_0DBM</name></member>
     <member refid="nrf24l01__defs_8h_1abf29d18479a25f17627dd33091093277" kind="define"><name>NRF24L01_CE_TX_MINIMUM_PULSE_US</name></member>
-    <member refid="nrf24l01__defs_8h_1af3fc300f15bd4b882e67625ead1071a9" kind="define"><name>NRF24L01_POWER_UP_US</name></member>
     <member refid="nrf24l01__defs_8h_1ac34b70054d15296dde5c198c147f66c4" kind="define"><name>NRF24L01_TIMING_RF_SETTLING</name></member>
+    <member refid="nrf24l01__defs_8h_1ad85af7f8559570387982eb3bf7d392d4" kind="define"><name>NRF24L01_TIMING_CD_FILTER_DELAY</name></member>
+    <member refid="nrf24l01__defs_8h_1af3fc300f15bd4b882e67625ead1071a9" kind="define"><name>NRF24L01_POWER_UP_US</name></member>
     <member refid="nrf24l01__defs_8h_1a1cb8f1a8cddbe978f058503c113a5b8e" kind="define"><name>NRF24L01_TX_FIFO_WIDTH</name></member>
     <member refid="nrf24l01__defs_8h_1a142a834dbfc4ceb8c2c556e9624f29f2" kind="define"><name>NRF24L01_TX_FIFO_DEPTH</name></member>
     <member refid="nrf24l01__defs_8h_1a9f7fd381aaa6ab49343fc6d33c36159c" kind="define"><name>NRF24L01_RX_FIFO_WIDTH</name></member>
@@ -231,11 +218,14 @@
     <member refid="nrf24l01__defs_8h_1af1238bb8b104118e000aac333af1720f" kind="enum"><name>nrf24l01_data_rate_t</name></member>
     <member refid="nrf24l01__defs_8h_1af1238bb8b104118e000aac333af1720fa786bbeae7405d3bc55148fb53171ef38" kind="enumvalue"><name>NRF24L01_DR_1MBPS</name></member>
     <member refid="nrf24l01__defs_8h_1af1238bb8b104118e000aac333af1720fa07dc64a8ba3d3222f7ea35de2f81e01d" kind="enumvalue"><name>NRF24L01_DR_2MBPS</name></member>
+    <member refid="nrf24l01__defs_8h_1a2163b7ce96cc1b36ba7e915bc2a26d35" kind="enum"><name>nrf24l01_lna_mode_t</name></member>
+    <member refid="nrf24l01__defs_8h_1a2163b7ce96cc1b36ba7e915bc2a26d35a9d86f243981244ff568dd347bc67fa86" kind="enumvalue"><name>NRF24L01_LNA_OFF</name></member>
+    <member refid="nrf24l01__defs_8h_1a2163b7ce96cc1b36ba7e915bc2a26d35a5b0f5a060497720e72e6a499e883236e" kind="enumvalue"><name>NRF24L01_LNA_ON</name></member>
     <member refid="nrf24l01__defs_8h_1a1f6226bf9c94a81ffa0edc12beb3bb58" kind="enum"><name>nrf24l01_tx_power_t</name></member>
-    <member refid="nrf24l01__defs_8h_1a1f6226bf9c94a81ffa0edc12beb3bb58ab6ff3d31fe1ebac155c1c5b6d30119d7" kind="enumvalue"><name>NRF24L01_TXPWR_18DBM</name></member>
-    <member refid="nrf24l01__defs_8h_1a1f6226bf9c94a81ffa0edc12beb3bb58a37ecf35739726a6b860b9aaeaaaebe41" kind="enumvalue"><name>NRF24L01_TXPWR_12DBM</name></member>
-    <member refid="nrf24l01__defs_8h_1a1f6226bf9c94a81ffa0edc12beb3bb58ad1ed4ab70c88f3753a7c1f32b9ef60fc" kind="enumvalue"><name>NRF24L01_TXPWR_6DBM</name></member>
-    <member refid="nrf24l01__defs_8h_1a1f6226bf9c94a81ffa0edc12beb3bb58a1e95271bf74c9a33eb31ecc6a2f0698d" kind="enumvalue"><name>NRF24L01_TXPWR_0DBM</name></member>
+    <member refid="nrf24l01__defs_8h_1a1f6226bf9c94a81ffa0edc12beb3bb58a812161f6b684c49e26b7427842695c47" kind="enumvalue"><name>NRF24L01_TX_PWR_18DBM</name></member>
+    <member refid="nrf24l01__defs_8h_1a1f6226bf9c94a81ffa0edc12beb3bb58a412aa1f15eac43b6af3705d12f4c4585" kind="enumvalue"><name>NRF24L01_TX_PWR_12DBM</name></member>
+    <member refid="nrf24l01__defs_8h_1a1f6226bf9c94a81ffa0edc12beb3bb58a84167f90d7d3492d8bfc689275f5334a" kind="enumvalue"><name>NRF24L01_TX_PWR_6DBM</name></member>
+    <member refid="nrf24l01__defs_8h_1a1f6226bf9c94a81ffa0edc12beb3bb58ab8fe14f126acf6606b3092b615d2fd2c" kind="enumvalue"><name>NRF24L01_TX_PWR_0DBM</name></member>
     <member refid="nrf24l01__defs_8h_1ae9c5f6baca22b039351da8bae1ec02b7" kind="enum"><name>nrf24l01_crc_scheme_t</name></member>
     <member refid="nrf24l01__defs_8h_1ae9c5f6baca22b039351da8bae1ec02b7ae1ec15bf25fbcfbcb3fc84bc330b0a0c" kind="enumvalue"><name>NRF24L01_CRC_OFF</name></member>
     <member refid="nrf24l01__defs_8h_1ae9c5f6baca22b039351da8bae1ec02b7a89a58deb038ed360bdb6d7aa224ecbd3" kind="enumvalue"><name>NRF24L01_CRC_1BYTE</name></member>
@@ -284,12 +274,12 @@
     <member refid="nrf24l01__defs_8h_1a0713efe0e232d8adca8016d007b1d28e" kind="enum"><name>nrf24l01_dpl_mode_t</name></member>
     <member refid="nrf24l01__defs_8h_1a0713efe0e232d8adca8016d007b1d28ea649cd7927814b419258a569ec972a875" kind="enumvalue"><name>NRF24L01_DPL_OFF</name></member>
     <member refid="nrf24l01__defs_8h_1a0713efe0e232d8adca8016d007b1d28eacc4f714a758ddc2eb9adcec4956df542" kind="enumvalue"><name>NRF24L01_DPL_ON</name></member>
-    <member refid="nrf24l01__defs_8h_1ab35b7caced2022669af8c4b24b5a913a" kind="enum"><name>nrf24l01_dta_mode_t</name></member>
-    <member refid="nrf24l01__defs_8h_1ab35b7caced2022669af8c4b24b5a913aacbdc9d02a0ef22fbb649c54c88bea791" kind="enumvalue"><name>NRF24L01_DTA_OFF</name></member>
-    <member refid="nrf24l01__defs_8h_1ab35b7caced2022669af8c4b24b5a913aa5a72942623fc46a87a562c09514081ad" kind="enumvalue"><name>NRF24L01_DTA_ON</name></member>
     <member refid="nrf24l01__defs_8h_1a7c4d5923051f2412599ab4b292fea85c" kind="enum"><name>ack_payload_mode_t</name></member>
     <member refid="nrf24l01__defs_8h_1a7c4d5923051f2412599ab4b292fea85ca90d282a59368a31f3037c9568ce92903" kind="enumvalue"><name>NRF24L01_ACK_PAYLOAD_OFF</name></member>
     <member refid="nrf24l01__defs_8h_1a7c4d5923051f2412599ab4b292fea85cacfb6ebdc8b8d850bc0e662480fa5bcdb" kind="enumvalue"><name>NRF24L01_ACK_PAYLOAD_ON</name></member>
+    <member refid="nrf24l01__defs_8h_1ab35b7caced2022669af8c4b24b5a913a" kind="enum"><name>nrf24l01_dta_mode_t</name></member>
+    <member refid="nrf24l01__defs_8h_1ab35b7caced2022669af8c4b24b5a913aacbdc9d02a0ef22fbb649c54c88bea791" kind="enumvalue"><name>NRF24L01_DTA_OFF</name></member>
+    <member refid="nrf24l01__defs_8h_1ab35b7caced2022669af8c4b24b5a913aa5a72942623fc46a87a562c09514081ad" kind="enumvalue"><name>NRF24L01_DTA_ON</name></member>
     <member refid="nrf24l01__defs_8h_1abb06d0f3947c3b9dd67f7d7693854a22" kind="typedef"><name>nrf24l01_platform_t</name></member>
     <member refid="nrf24l01__defs_8h_1aeee83db10040c4a2672da6bed2f7ab0d" kind="typedef"><name>nrf24l01_interrupt_mask_t</name></member>
     <member refid="nrf24l01__defs_8h_1a8a0764a624e1e8c98cd9ce392f823bc3" kind="typedef"><name>nrf24l01_ar_count_t</name></member>
@@ -305,6 +295,28 @@
     <member refid="nrf24l01__defs_8h_1acbaf981637ef9ef2e0d15fc2886135b5" kind="typedef"><name>nrf24l01_tx_ds_callback_fptr_t</name></member>
     <member refid="nrf24l01__defs_8h_1af3a3bced5aa40c9e8ea6ea75fd56b1b7" kind="typedef"><name>nrf24l01_max_rt_callback_fptr_t</name></member>
     <member refid="nrf24l01__defs_8h_1a47eddbd6cc5e2128f56ec7994b9e066c" kind="typedef"><name>nrf24l01_check_for_interrupt_fptr_t</name></member>
+    <member refid="nrf24l01__defs_8h_1af225fdd9e1094009aec9eae23523138d" kind="define"><name>NRF24L01_FPTR_RTN_T</name></member>
+    <member refid="group__reg__masks_1gae50f69a3e72e9808c870d92582e6487b" kind="define"><name>NRF24L01_RX_PW_P0_MASK_REG</name></member>
+    <member refid="group__reg__masks_1gaefbb94c758edbd4a4b8b2440df595eaa" kind="define"><name>NRF24L01_RX_PW_P1_MASK_REG</name></member>
+    <member refid="group__reg__masks_1ga8319e11869023d015d6e8704c708a9cf" kind="define"><name>NRF24L01_RX_PW_P2_MASK_REG</name></member>
+    <member refid="group__reg__masks_1ga9d351694874655eaa9e96b525e8547e1" kind="define"><name>NRF24L01_RX_PW_P3_MASK_REG</name></member>
+    <member refid="group__reg__masks_1ga26dda8b375e7dea8b778f166bdba1c61" kind="define"><name>NRF24L01_RX_PW_P4_MASK_REG</name></member>
+    <member refid="group__reg__masks_1ga2c40fc97a4e727d5b2e557599cd744ea" kind="define"><name>NRF24L01_RX_PW_P5_MASK_REG</name></member>
+    <member refid="group__reg__masks_1ga5d111b14ef0248315017c75d3644533b" kind="define"><name>NRF24L01_FIFO_STATUS_MASK_REG</name></member>
+    <member refid="group__reg__masks_1ga126c535baa29906a93377d73a7606b88" kind="define"><name>NRF24L01_FIFO_STATUS_MASK_RX_FLAGS</name></member>
+    <member refid="group__reg__masks_1ga6ebc498d12f20e62032b4e09895eed72" kind="define"><name>NRF24L01_FIFO_STATUS_MASK_TX_FLAGS</name></member>
+    <member refid="group__reg__masks_1ga20ca31bba48c198e02249c3c9e44bbb6" kind="define"><name>NRF24L01_DYNPD_MASK_REG</name></member>
+    <member refid="group__reg__masks_1gadef555b549150409d5dbeca12f4cbbea" kind="define"><name>NRF24L01_FEATURE_MASK_REG</name></member>
+    <member refid="nrf24l01__defs_8h_1a022e4f4b24fde7306e66310daa1332c4" kind="define"><name>NRF24L01_COMMAND_MASK_REG_ADDR</name></member>
+    <member refid="nrf24l01__defs_8h_1a9cdb55dc4a1146cfd4330c8eed20779c" kind="define"><name>NRF24L01_COMMAND_MASK_PIPE</name></member>
+    <member refid="nrf24l01__defs_8h_1a12208e9bca3e4fe9709a44140f7efdbf" kind="define"><name>NRF24L01_ADDR_WIDTH_INVALID</name></member>
+    <member refid="nrf24l01__defs_8h_1aea609a6ce51d1f9e024d15a6409ddb43" kind="define"><name>NRF24L01_ADDR_WIDTH_3_BYTES</name></member>
+    <member refid="nrf24l01__defs_8h_1ae278fa0025abdb9ef338087dbebf0103" kind="define"><name>NRF24L01_ADDR_WIDTH_4_BYTES</name></member>
+    <member refid="nrf24l01__defs_8h_1aaf0a26f356b7e3dd6825ce696bb2ccfe" kind="define"><name>NRF24L01_ADDR_WIDTH_5_BYTES</name></member>
+    <member refid="nrf24l01__defs_8h_1a1976dec86cbd4a3414c381bc52f1c180" kind="define"><name>NRF24L01_TX_PWR_18DBM_REG_BITS</name></member>
+    <member refid="nrf24l01__defs_8h_1a6af7abe1e9c6fa44ec33826d8ccae947" kind="define"><name>NRF24L01_TX_PWR_12DBM_REG_BITS</name></member>
+    <member refid="nrf24l01__defs_8h_1a69349e82ba38a33db5f7d561446f1759" kind="define"><name>NRF24L01_TX_PWR_6DBM_REG_BITS</name></member>
+    <member refid="nrf24l01__defs_8h_1ab00589c26e6c00645f1c5ee4eabb0db4" kind="define"><name>NRF24L01_TX_PWR_0DBM_REG_BITS</name></member>
   </compound>
   <compound refid="nrf24l01_8c" kind="file"><name>nrf24l01.c</name>
     <member refid="nrf24l01_8c_1a0adde16a6253944083b670d5ae93dee1" kind="define"><name>NRF24L01_TEST_ADDR</name></member>
@@ -314,48 +326,55 @@
     <member refid="nrf24l01_8c_1a152c4093612f1a962e19aade9fbba86c" kind="function"><name>nrf24l01_write_reg</name></member>
     <member refid="nrf24l01_8c_1acc784e9708f84b3d01a6f58f3e177e79" kind="function"><name>nrf24l01_multi_read_reg</name></member>
     <member refid="nrf24l01_8c_1a9bd05819edf60b5298804db639b97815" kind="function"><name>nrf24l01_multi_write_reg</name></member>
+    <member refid="nrf24l01_8c_1a4298460d2b1e9909e77dbe47afd65cee" kind="function"><name>nrf24l01_get_rx_dpl</name></member>
     <member refid="group__device__api_1ga43b4c85fafbbee705aaafb59066c221c" kind="function"><name>nrf24l01_init</name></member>
     <member refid="group__device__api_1ga11b69f162283c2228eabdb56c8d6fba8" kind="function"><name>nrf24l01_deinit</name></member>
     <member refid="group__device__api_1ga7fbfdbe1cb58e64a0f91e6e85f87151a" kind="function"><name>nrf24l01_check_connectivity</name></member>
-    <member refid="group__pipe__api_1ga278481ec6a4aa4db0fc5953b6aceae8b" kind="function"><name>nrf24l01_set_pipe_rx_payload_size</name></member>
-    <member refid="group__device__api_1ga9952bf8024954a3be966dedba265e2d2" kind="function"><name>nrf24l01_set_power_mode</name></member>
-    <member refid="nrf24l01_8c_1a5db9b3e9fe566f46a1a3091c2cbce21e" kind="function"><name>nrf24l01_start_listening</name></member>
-    <member refid="nrf24l01_8c_1a90b382dde849873fda197cb0baac9241" kind="function"><name>nrf24l01_stop_listening</name></member>
-    <member refid="group__device__api_1gaf037709d39e6e20cd6f7e300d2bc68ea" kind="function"><name>nrf24l01_set_operational_mode</name></member>
-    <member refid="group__device__api_1ga9067b01f853f8693967181f740585b59" kind="function"><name>nrf24l01_set_crc_scheme</name></member>
-    <member refid="group__device__api_1gab36d02b77d5aeec5a9d9e2d6ccb7ea3e" kind="function"><name>nrf24l01_set_rf_channel</name></member>
-    <member refid="group__device__api_1ga4384b25820eef7cc03ac4236f9fa4987" kind="function"><name>nrf24l01_set_auto_retransmission</name></member>
-    <member refid="group__device__api_1ga10e39671edfdaac81580661d842bcff7" kind="function"><name>nrf24l01_set_address_width</name></member>
-    <member refid="nrf24l01_8c_1af28ce44c14f88b5812f85b1025292e80" kind="function"><name>nrf24l01_set_address</name></member>
-    <member refid="group__device__api_1ga4247b61e05c9d3d3aa3c4fc98ec88d3e" kind="function"><name>nrf24l01_set_tx_power</name></member>
-    <member refid="group__device__api_1ga167a2c4a6119ee820085f361a13384ad" kind="function"><name>nrf24l01_set_data_rate</name></member>
-    <member refid="group__pipe__api_1ga736b0f56f587c118863e9fda079d1bdc" kind="function"><name>nrf24l01_set_pipe_mode</name></member>
-    <member refid="group__pipe__api_1ga82df3ae97ab1943d6c8846af91530c20" kind="function"><name>nrf24l01_set_pipe_aa_mode</name></member>
-    <member refid="group__pipe__api_1gaf7370e9534ccbede12d2a8b185180a98" kind="function"><name>nrf24l01_set_pipe_dpl_mode</name></member>
-    <member refid="group__device__api_1ga9b8d9da5cacf067188e1e8e40779fdb9" kind="function"><name>nrf24l01_get_status</name></member>
     <member refid="group__device__api_1ga37b83343cd8e35b223e2dbc0fca0bbf1" kind="function"><name>nrf24l01_get_irq_flags</name></member>
     <member refid="group__device__api_1gac353f88e185c79871e9ee5708843cd81" kind="function"><name>nrf24l01_set_irq_mask</name></member>
-    <member refid="group__device__api_1gafce2a2c81545064ecb508cb054ac2656" kind="function"><name>nrf24l01_get_fifo_status</name></member>
-    <member refid="group__pipe__api_1ga813ffbf96c9a76b15d463154085df739" kind="function"><name>nrf24l01_get_rx_pipe</name></member>
-    <member refid="group__device__api_1gad51002ad00e00a3ca0128d7c35a1f0c7" kind="function"><name>nrf24l01_get_retransmit_counters</name></member>
-    <member refid="group__device__api_1gab160cda0ba47143dea9daf8f5203fb07" kind="function"><name>nrf24l01_get_address_width</name></member>
-    <member refid="group__device__api_1ga7ea991dfff7035b1f64c5588f8617e6c" kind="function"><name>nrf24l01_reset_packet_loss_counter</name></member>
-    <member refid="group__device__api_1gaa09fd11c251226eeb47a6adab2e23e14" kind="function"><name>nrf24l01_flush_tx</name></member>
-    <member refid="group__device__api_1ga5d09412a7080b39e8e90178812186186" kind="function"><name>nrf24l01_flush_rx</name></member>
     <member refid="group__device__api_1ga2845ee5e7f262e9758a08c325dd65d77" kind="function"><name>nrf24l01_clear_irq_flags</name></member>
-    <member refid="group__pipe__api_1ga993a327bc069340404c5dbb7a7dd443f" kind="function"><name>nrf24l01_write_payload</name></member>
-    <member refid="nrf24l01_8c_1a4298460d2b1e9909e77dbe47afd65cee" kind="function"><name>nrf24l01_get_rx_dpl</name></member>
-    <member refid="group__pipe__api_1ga0ddaef29411d56ad52cebfa48ed37fb9" kind="function"><name>nrf24l01_read_payload</name></member>
-    <member refid="group__device__api_1ga0b9873c723dbf81f23b615c25983b72d" kind="function"><name>nrf24l01_get_features</name></member>
-    <member refid="group__device__api_1ga4fe974914a65700f5141b34204c0fe3a" kind="function"><name>nrf24l01_get_power_mode</name></member>
-    <member refid="group__device__api_1gad67547d2ab76b760f3d0ee9161f3690c" kind="function"><name>nrf24l01_get_operational_mode</name></member>
-    <member refid="group__device__api_1gae02a0fb3c6ba0f88fb4dd84e3bd2fd65" kind="function"><name>nrf24l01_get_feature_mode</name></member>
-    <member refid="group__device__api_1ga786f79fce0ce9929961915f323cd658e" kind="function"><name>nrf24l01_set_feature_mode</name></member>
-    <member refid="group__device__api_1ga9f4b25fc294cb8550f3572b54b08fe58" kind="function"><name>nrf24l01_set_dpl_mode</name></member>
-    <member refid="nrf24l01_8c_1a1276cb39cab75cf822260204742fb0bc" kind="function"><name>nrf24l01_loop</name></member>
     <member refid="group__device__api_1ga6be0b13e069c4e270640b34c65c6c58b" kind="function"><name>nrf24l01_register_rx_dr_callback</name></member>
     <member refid="group__device__api_1gaf4b8f3c50c981110f0c6fbc1df354bfa" kind="function"><name>nrf24l01_register_tx_ds_callback</name></member>
     <member refid="group__device__api_1gae94ce0fe9852c9730abee9a4dda8fa18" kind="function"><name>nrf24l01_register_max_rt_callback</name></member>
+    <member refid="group__device__api_1gad4bf78d42a2ed57ce156c41998c57197" kind="function"><name>nrf24l01_get_tx_power</name></member>
+    <member refid="group__device__api_1ga4247b61e05c9d3d3aa3c4fc98ec88d3e" kind="function"><name>nrf24l01_set_tx_power</name></member>
+    <member refid="group__device__api_1gab36d02b77d5aeec5a9d9e2d6ccb7ea3e" kind="function"><name>nrf24l01_set_rf_channel</name></member>
+    <member refid="group__device__api_1ga40d4ab4b00980c0a86b5812c79615c97" kind="function"><name>nrf24l01_get_data_rate</name></member>
+    <member refid="group__device__api_1ga167a2c4a6119ee820085f361a13384ad" kind="function"><name>nrf24l01_set_data_rate</name></member>
+    <member refid="group__device__api_1ga1bfae5432f5ae9397c65fc0d97a1ef73" kind="function"><name>nrf24l01_get_lna_mode</name></member>
+    <member refid="group__device__api_1ga2cb6664f6fa5a69cc6c0a62b36b26173" kind="function"><name>nrf24l01_set_lna_mode</name></member>
+    <member refid="group__device__api_1ga4384b25820eef7cc03ac4236f9fa4987" kind="function"><name>nrf24l01_set_auto_retransmission</name></member>
+    <member refid="group__device__api_1ga9067b01f853f8693967181f740585b59" kind="function"><name>nrf24l01_set_crc_scheme</name></member>
+    <member refid="group__device__api_1gab160cda0ba47143dea9daf8f5203fb07" kind="function"><name>nrf24l01_get_address_width</name></member>
+    <member refid="group__device__api_1ga10e39671edfdaac81580661d842bcff7" kind="function"><name>nrf24l01_set_address_width</name></member>
+    <member refid="group__device__api_1ga7e90e2cbb613fa083a4b752997432761" kind="function"><name>nrf24l01_set_address</name></member>
+    <member refid="group__device__api_1gad9e4fc6b78c3e96d3376006d0aa8393e" kind="function"><name>nrf24l01_check_for_interference</name></member>
+    <member refid="group__device__api_1ga5d09412a7080b39e8e90178812186186" kind="function"><name>nrf24l01_flush_rx</name></member>
+    <member refid="group__device__api_1gaa09fd11c251226eeb47a6adab2e23e14" kind="function"><name>nrf24l01_flush_tx</name></member>
+    <member refid="group__device__api_1ga9b8d9da5cacf067188e1e8e40779fdb9" kind="function"><name>nrf24l01_get_status</name></member>
+    <member refid="group__device__api_1gafce2a2c81545064ecb508cb054ac2656" kind="function"><name>nrf24l01_get_fifo_status</name></member>
+    <member refid="group__device__api_1ga7ea991dfff7035b1f64c5588f8617e6c" kind="function"><name>nrf24l01_reset_packet_loss_counter</name></member>
+    <member refid="group__device__api_1gad51002ad00e00a3ca0128d7c35a1f0c7" kind="function"><name>nrf24l01_get_retransmit_counters</name></member>
+    <member refid="group__device__api_1ga4fe974914a65700f5141b34204c0fe3a" kind="function"><name>nrf24l01_get_power_mode</name></member>
+    <member refid="group__device__api_1ga9952bf8024954a3be966dedba265e2d2" kind="function"><name>nrf24l01_set_power_mode</name></member>
+    <member refid="group__device__api_1gad67547d2ab76b760f3d0ee9161f3690c" kind="function"><name>nrf24l01_get_operational_mode</name></member>
+    <member refid="group__device__api_1gaf037709d39e6e20cd6f7e300d2bc68ea" kind="function"><name>nrf24l01_set_operational_mode</name></member>
+    <member refid="group__device__api_1ga0d4846399bb76424fc894348f0cd4f14" kind="function"><name>nrf24l01_start_listening</name></member>
+    <member refid="group__device__api_1ga2c46ba5569ed05dd5747ad2853ce3c51" kind="function"><name>nrf24l01_stop_listening</name></member>
+    <member refid="group__device__api_1gae02a0fb3c6ba0f88fb4dd84e3bd2fd65" kind="function"><name>nrf24l01_get_feature_mode</name></member>
+    <member refid="group__device__api_1ga786f79fce0ce9929961915f323cd658e" kind="function"><name>nrf24l01_set_feature_mode</name></member>
+    <member refid="group__device__api_1ga9f4b25fc294cb8550f3572b54b08fe58" kind="function"><name>nrf24l01_set_dpl_mode</name></member>
+    <member refid="group__device__api_1gaf904545f9f8a909e438a972d51dfda7a" kind="function"><name>nrf24l01_set_ack_payload_mode</name></member>
+    <member refid="group__device__api_1ga2b949886212d64e3fbd76ec30cfab889" kind="function"><name>nrf24l01_set_dta_mode</name></member>
+    <member refid="group__device__api_1ga0b9873c723dbf81f23b615c25983b72d" kind="function"><name>nrf24l01_get_features</name></member>
+    <member refid="group__pipe__api_1ga736b0f56f587c118863e9fda079d1bdc" kind="function"><name>nrf24l01_set_pipe_mode</name></member>
+    <member refid="group__pipe__api_1ga82df3ae97ab1943d6c8846af91530c20" kind="function"><name>nrf24l01_set_pipe_aa_mode</name></member>
+    <member refid="group__pipe__api_1ga278481ec6a4aa4db0fc5953b6aceae8b" kind="function"><name>nrf24l01_set_pipe_rx_payload_size</name></member>
+    <member refid="group__pipe__api_1ga993a327bc069340404c5dbb7a7dd443f" kind="function"><name>nrf24l01_write_payload</name></member>
+    <member refid="group__pipe__api_1ga813ffbf96c9a76b15d463154085df739" kind="function"><name>nrf24l01_get_rx_pipe</name></member>
+    <member refid="group__pipe__api_1ga0ddaef29411d56ad52cebfa48ed37fb9" kind="function"><name>nrf24l01_read_payload</name></member>
+    <member refid="group__pipe__api_1gaf7370e9534ccbede12d2a8b185180a98" kind="function"><name>nrf24l01_set_pipe_dpl_mode</name></member>
+    <member refid="nrf24l01_8c_1a1276cb39cab75cf822260204742fb0bc" kind="function"><name>nrf24l01_loop</name></member>
   </compound>
   <compound refid="group__reg__bits" kind="group"><name>reg_bits</name>
     <member refid="group__reg__bits_1gaf07a996a70a3bee7953b416d1a32b002" kind="define"><name>NRF24L01_CONFIG_REG_BIT_MASK_RX_DR</name></member>
@@ -463,13 +482,22 @@
     <member refid="group__device__api_1ga6be0b13e069c4e270640b34c65c6c58b" kind="function"><name>nrf24l01_register_rx_dr_callback</name></member>
     <member refid="group__device__api_1gaf4b8f3c50c981110f0c6fbc1df354bfa" kind="function"><name>nrf24l01_register_tx_ds_callback</name></member>
     <member refid="group__device__api_1gae94ce0fe9852c9730abee9a4dda8fa18" kind="function"><name>nrf24l01_register_max_rt_callback</name></member>
+    <member refid="group__device__api_1gad4bf78d42a2ed57ce156c41998c57197" kind="function"><name>nrf24l01_get_tx_power</name></member>
     <member refid="group__device__api_1ga4247b61e05c9d3d3aa3c4fc98ec88d3e" kind="function"><name>nrf24l01_set_tx_power</name></member>
+    <member refid="group__device__api_1gac32a3381395fdffe40a657d5db1df781" kind="function"><name>nrf24l01_get_rf_channel</name></member>
     <member refid="group__device__api_1gab36d02b77d5aeec5a9d9e2d6ccb7ea3e" kind="function"><name>nrf24l01_set_rf_channel</name></member>
+    <member refid="group__device__api_1ga40d4ab4b00980c0a86b5812c79615c97" kind="function"><name>nrf24l01_get_data_rate</name></member>
     <member refid="group__device__api_1ga167a2c4a6119ee820085f361a13384ad" kind="function"><name>nrf24l01_set_data_rate</name></member>
+    <member refid="group__device__api_1ga1bfae5432f5ae9397c65fc0d97a1ef73" kind="function"><name>nrf24l01_get_lna_mode</name></member>
+    <member refid="group__device__api_1ga2cb6664f6fa5a69cc6c0a62b36b26173" kind="function"><name>nrf24l01_set_lna_mode</name></member>
+    <member refid="group__device__api_1gab7b3490d1f778151312e5db0dcdc5c6b" kind="function"><name>nrf24l01_get_auto_retransmission</name></member>
     <member refid="group__device__api_1ga4384b25820eef7cc03ac4236f9fa4987" kind="function"><name>nrf24l01_set_auto_retransmission</name></member>
+    <member refid="group__device__api_1ga534aa1be3da811f29bb7ba4409c4d136" kind="function"><name>nrf24l01_get_crc_scheme</name></member>
     <member refid="group__device__api_1ga9067b01f853f8693967181f740585b59" kind="function"><name>nrf24l01_set_crc_scheme</name></member>
     <member refid="group__device__api_1gab160cda0ba47143dea9daf8f5203fb07" kind="function"><name>nrf24l01_get_address_width</name></member>
     <member refid="group__device__api_1ga10e39671edfdaac81580661d842bcff7" kind="function"><name>nrf24l01_set_address_width</name></member>
+    <member refid="group__device__api_1ga7e90e2cbb613fa083a4b752997432761" kind="function"><name>nrf24l01_set_address</name></member>
+    <member refid="group__device__api_1gad9e4fc6b78c3e96d3376006d0aa8393e" kind="function"><name>nrf24l01_check_for_interference</name></member>
     <member refid="group__device__api_1ga5d09412a7080b39e8e90178812186186" kind="function"><name>nrf24l01_flush_rx</name></member>
     <member refid="group__device__api_1gaa09fd11c251226eeb47a6adab2e23e14" kind="function"><name>nrf24l01_flush_tx</name></member>
     <member refid="group__device__api_1ga9b8d9da5cacf067188e1e8e40779fdb9" kind="function"><name>nrf24l01_get_status</name></member>
@@ -480,10 +508,12 @@
     <member refid="group__device__api_1ga9952bf8024954a3be966dedba265e2d2" kind="function"><name>nrf24l01_set_power_mode</name></member>
     <member refid="group__device__api_1gad67547d2ab76b760f3d0ee9161f3690c" kind="function"><name>nrf24l01_get_operational_mode</name></member>
     <member refid="group__device__api_1gaf037709d39e6e20cd6f7e300d2bc68ea" kind="function"><name>nrf24l01_set_operational_mode</name></member>
+    <member refid="group__device__api_1ga0d4846399bb76424fc894348f0cd4f14" kind="function"><name>nrf24l01_start_listening</name></member>
+    <member refid="group__device__api_1ga2c46ba5569ed05dd5747ad2853ce3c51" kind="function"><name>nrf24l01_stop_listening</name></member>
     <member refid="group__device__api_1gae02a0fb3c6ba0f88fb4dd84e3bd2fd65" kind="function"><name>nrf24l01_get_feature_mode</name></member>
     <member refid="group__device__api_1ga786f79fce0ce9929961915f323cd658e" kind="function"><name>nrf24l01_set_feature_mode</name></member>
-    <member refid="group__device__api_1gaf904545f9f8a909e438a972d51dfda7a" kind="function"><name>nrf24l01_set_ack_payload_mode</name></member>
     <member refid="group__device__api_1ga9f4b25fc294cb8550f3572b54b08fe58" kind="function"><name>nrf24l01_set_dpl_mode</name></member>
+    <member refid="group__device__api_1gaf904545f9f8a909e438a972d51dfda7a" kind="function"><name>nrf24l01_set_ack_payload_mode</name></member>
     <member refid="group__device__api_1ga2b949886212d64e3fbd76ec30cfab889" kind="function"><name>nrf24l01_set_dta_mode</name></member>
     <member refid="group__device__api_1ga0b9873c723dbf81f23b615c25983b72d" kind="function"><name>nrf24l01_get_features</name></member>
   </compound>

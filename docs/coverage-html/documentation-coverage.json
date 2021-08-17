@@ -1,8 +1,8 @@
 {
   "total": {
-    "documented_symbol_count": 347,
-    "symbol_count": 485,
-    "coverage_rate": 0.7154639175257732
+    "documented_symbol_count": 429,
+    "symbol_count": 515,
+    "coverage_rate": 0.8330097087378641
   },
   "kinds": {
     "variable": {
@@ -16,9 +16,9 @@
       "coverage_rate": 1.0
     },
     "function": {
-      "documented_symbol_count": 87,
-      "symbol_count": 131,
-      "coverage_rate": 0.6641221374045801
+      "documented_symbol_count": 127,
+      "symbol_count": 157,
+      "coverage_rate": 0.8089171974522293
     },
     "file": {
       "documented_symbol_count": 1,
@@ -26,24 +26,24 @@
       "coverage_rate": 0.3333333333333333
     },
     "define": {
-      "documented_symbol_count": 199,
-      "symbol_count": 231,
-      "coverage_rate": 0.8614718614718615
+      "documented_symbol_count": 204,
+      "symbol_count": 232,
+      "coverage_rate": 0.8793103448275862
     },
     "enum": {
-      "documented_symbol_count": 2,
-      "symbol_count": 17,
-      "coverage_rate": 0.11764705882352941
+      "documented_symbol_count": 18,
+      "symbol_count": 18,
+      "coverage_rate": 1.0
     },
     "enumvalue": {
-      "documented_symbol_count": 36,
-      "symbol_count": 70,
-      "coverage_rate": 0.5142857142857142
+      "documented_symbol_count": 50,
+      "symbol_count": 72,
+      "coverage_rate": 0.6944444444444444
     },
     "typedef": {
-      "documented_symbol_count": 8,
+      "documented_symbol_count": 15,
       "symbol_count": 15,
-      "coverage_rate": 0.5333333333333333
+      "coverage_rate": 1.0
     },
     "page": {
       "documented_symbol_count": 1,
@@ -57,1785 +57,1813 @@
         "symbol": "nrf24l01_delay_us_fptr_t nrf24l01_platform_t::delay_us",
         "documented": true,
         "kind": "variable",
-        "line": 949,
+        "line": 915,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "nrf24l01_gpio_chip_enable_fptr_t nrf24l01_platform_t::gpio_chip_enable",
         "documented": true,
         "kind": "variable",
-        "line": 950,
+        "line": 916,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "nrf24l01_platform_init_fptr_t nrf24l01_platform_t::platform_init",
         "documented": true,
         "kind": "variable",
-        "line": 951,
+        "line": 917,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "nrf24l01_platform_deinit_fptr_t nrf24l01_platform_t::platform_deinit",
         "documented": true,
         "kind": "variable",
-        "line": 952,
+        "line": 918,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "nrf24l01_spi_exchange_fptr_t nrf24l01_platform_t::spi_exchange",
         "documented": true,
         "kind": "variable",
-        "line": 953,
+        "line": 919,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "nrf24l01_check_for_interrupt_fptr_t nrf24l01_platform_t::check_for_interrupt",
         "documented": false,
         "kind": "variable",
-        "line": 954,
+        "line": 920,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "nrf24l01_rx_dr_callback_fptr_t nrf24l01_platform_t::rx_dr_callback",
         "documented": true,
         "kind": "variable",
-        "line": 956,
+        "line": 922,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "void* nrf24l01_platform_t::rx_dr_callback_user_ptr",
         "documented": true,
         "kind": "variable",
-        "line": 957,
+        "line": 923,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "nrf24l01_tx_ds_callback_fptr_t nrf24l01_platform_t::tx_ds_callback",
         "documented": true,
         "kind": "variable",
-        "line": 958,
+        "line": 924,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "void* nrf24l01_platform_t::tx_ds_callback_user_ptr",
         "documented": true,
         "kind": "variable",
-        "line": 959,
+        "line": 925,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "nrf24l01_max_rt_callback_fptr_t nrf24l01_platform_t::max_rt_callback",
         "documented": true,
         "kind": "variable",
-        "line": 960,
+        "line": 926,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "void* nrf24l01_platform_t::max_rt_callback_user_ptr",
         "documented": true,
         "kind": "variable",
-        "line": 961,
+        "line": 927,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "struct nrf24l01_platform_t::@1 nrf24l01_platform_t::callbacks",
         "documented": false,
         "kind": "variable",
-        "line": 962,
+        "line": 928,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "void* nrf24l01_platform_t::user_ptr",
         "documented": true,
         "kind": "variable",
-        "line": 963,
+        "line": 929,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "nrf24l01_platform_t",
         "documented": true,
         "kind": "struct",
-        "line": 948,
+        "line": 914,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_CMD_R_REGISTER",
         "documented": true,
         "kind": "define",
-        "line": 147,
+        "line": 145,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_CMD_W_REGISTER",
         "documented": true,
         "kind": "define",
-        "line": 148,
+        "line": 146,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_CMD_R_RX_PAYLOAD",
         "documented": true,
         "kind": "define",
-        "line": 149,
+        "line": 147,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_CMD_W_TX_PAYLOAD",
         "documented": true,
         "kind": "define",
-        "line": 150,
+        "line": 148,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_CMD_FLUSH_TX",
         "documented": true,
         "kind": "define",
-        "line": 151,
+        "line": 149,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_CMD_FLUSH_RX",
         "documented": true,
         "kind": "define",
-        "line": 152,
+        "line": 150,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_CMD_REUSE_TX_PL",
         "documented": true,
         "kind": "define",
-        "line": 153,
+        "line": 151,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_CMD_ACTIVATE",
         "documented": true,
         "kind": "define",
-        "line": 154,
+        "line": 152,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_CMD_NOP",
         "documented": true,
         "kind": "define",
-        "line": 155,
+        "line": 153,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_FEATURE_CMD_R_RX_PL_WID",
         "documented": true,
         "kind": "define",
-        "line": 165,
+        "line": 163,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_FEATURE_CMD_W_ACK_PAYLOAD",
         "documented": true,
         "kind": "define",
-        "line": 166,
+        "line": 164,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_FEATURE_CMD_W_TX_PAYLOAD_NOACK",
         "documented": true,
         "kind": "define",
-        "line": 167,
+        "line": 165,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_REG_ADDR_CONFIG",
         "documented": true,
         "kind": "define",
-        "line": 177,
+        "line": 174,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_REG_ADDR_EN_AA",
         "documented": true,
         "kind": "define",
-        "line": 178,
+        "line": 175,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_REG_ADDR_EN_RXADDR",
         "documented": true,
         "kind": "define",
-        "line": 179,
+        "line": 176,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_REG_ADDR_SETUP_AW",
         "documented": true,
         "kind": "define",
-        "line": 180,
+        "line": 177,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_REG_ADDR_SETUP_RETR",
         "documented": true,
         "kind": "define",
-        "line": 181,
+        "line": 178,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_REG_ADDR_RF_CH",
         "documented": true,
         "kind": "define",
-        "line": 182,
+        "line": 179,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_REG_ADDR_RF_SETUP",
         "documented": true,
         "kind": "define",
-        "line": 183,
+        "line": 180,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_REG_ADDR_STATUS",
         "documented": true,
         "kind": "define",
-        "line": 184,
+        "line": 181,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_REG_ADDR_OBSERVE_TX",
         "documented": true,
         "kind": "define",
-        "line": 185,
+        "line": 182,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_REG_ADDR_CD",
         "documented": true,
         "kind": "define",
-        "line": 186,
+        "line": 183,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_REG_ADDR_RX_ADDR_P0",
         "documented": true,
         "kind": "define",
-        "line": 187,
+        "line": 184,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_REG_ADDR_RX_ADDR_P1",
         "documented": true,
         "kind": "define",
-        "line": 188,
+        "line": 185,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_REG_ADDR_RX_ADDR_P2",
         "documented": true,
         "kind": "define",
-        "line": 189,
+        "line": 186,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_REG_ADDR_RX_ADDR_P3",
         "documented": true,
         "kind": "define",
-        "line": 190,
+        "line": 187,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_REG_ADDR_RX_ADDR_P4",
         "documented": true,
         "kind": "define",
-        "line": 191,
+        "line": 188,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_REG_ADDR_RX_ADDR_P5",
         "documented": true,
         "kind": "define",
-        "line": 192,
+        "line": 189,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_REG_ADDR_TX_ADDR",
         "documented": true,
         "kind": "define",
-        "line": 193,
+        "line": 190,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_REG_ADDR_RX_PW_P0",
         "documented": true,
         "kind": "define",
-        "line": 194,
+        "line": 191,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_REG_ADDR_RX_PW_P1",
         "documented": true,
         "kind": "define",
-        "line": 195,
+        "line": 192,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_REG_ADDR_RX_PW_P2",
         "documented": true,
         "kind": "define",
-        "line": 196,
+        "line": 193,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_REG_ADDR_RX_PW_P3",
         "documented": true,
         "kind": "define",
-        "line": 197,
+        "line": 194,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_REG_ADDR_RX_PW_P4",
         "documented": true,
         "kind": "define",
-        "line": 198,
+        "line": 195,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_REG_ADDR_RX_PW_P5",
         "documented": true,
         "kind": "define",
-        "line": 199,
+        "line": 196,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_REG_ADDR_FIFO_STATUS",
         "documented": true,
         "kind": "define",
-        "line": 200,
+        "line": 197,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_FEATURE_REG_ADDR_DYNPD",
         "documented": true,
         "kind": "define",
-        "line": 209,
+        "line": 206,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_FEATURE_REG_ADDR_FEATURE",
         "documented": true,
         "kind": "define",
-        "line": 210,
+        "line": 207,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_CONFIG_REG_BIT_MASK_RX_DR",
         "documented": true,
         "kind": "define",
-        "line": 231,
+        "line": 224,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_CONFIG_REG_BIT_MASK_TX_DS",
         "documented": true,
         "kind": "define",
-        "line": 232,
+        "line": 225,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_CONFIG_REG_BIT_MASK_MAX_RT",
         "documented": true,
         "kind": "define",
-        "line": 233,
+        "line": 226,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_CONFIG_REG_BIT_EN_CRC",
         "documented": true,
         "kind": "define",
-        "line": 234,
+        "line": 227,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_CONFIG_REG_BIT_CRCO",
         "documented": true,
         "kind": "define",
-        "line": 235,
+        "line": 228,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_CONFIG_REG_BIT_PWR_UP",
         "documented": true,
         "kind": "define",
-        "line": 236,
+        "line": 229,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_CONFIG_REG_BIT_PRIM_RX",
         "documented": true,
         "kind": "define",
-        "line": 237,
+        "line": 230,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_CONFIG_MASK_REG",
         "documented": true,
         "kind": "define",
-        "line": 435,
+        "line": 425,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_CONFIG_MASK_INTERRUPT_MASKS",
         "documented": true,
         "kind": "define",
-        "line": 445,
+        "line": 434,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_CONFIG_MASK_CRC",
         "documented": true,
         "kind": "define",
-        "line": 451,
+        "line": 439,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_EN_AA_REG_BIT_ENAA_P5",
         "documented": true,
         "kind": "define",
-        "line": 245,
+        "line": 238,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_EN_AA_REG_BIT_ENAA_P4",
         "documented": true,
         "kind": "define",
-        "line": 246,
+        "line": 239,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_EN_AA_REG_BIT_ENAA_P3",
         "documented": true,
         "kind": "define",
-        "line": 247,
+        "line": 240,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_EN_AA_REG_BIT_ENAA_P2",
         "documented": true,
         "kind": "define",
-        "line": 248,
+        "line": 241,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_EN_AA_REG_BIT_ENAA_P1",
         "documented": true,
         "kind": "define",
-        "line": 249,
+        "line": 242,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_EN_AA_REG_BIT_ENAA_P0",
         "documented": true,
         "kind": "define",
-        "line": 250,
+        "line": 243,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_EN_AA_MASK_REG",
         "documented": true,
         "kind": "define",
-        "line": 465,
+        "line": 451,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_EN_RXADDR_REG_BIT_ERX_P5",
         "documented": true,
         "kind": "define",
-        "line": 258,
+        "line": 251,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_EN_RXADDR_REG_BIT_ERX_P4",
         "documented": true,
         "kind": "define",
-        "line": 259,
+        "line": 252,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_EN_RXADDR_REG_BIT_ERX_P3",
         "documented": true,
         "kind": "define",
-        "line": 260,
+        "line": 253,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_EN_RXADDR_REG_BIT_ERX_P2",
         "documented": true,
         "kind": "define",
-        "line": 261,
+        "line": 254,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_EN_RXADDR_REG_BIT_ERX_P1",
         "documented": true,
         "kind": "define",
-        "line": 262,
+        "line": 255,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_EN_RXADDR_REG_BIT_ERX_P0",
         "documented": true,
         "kind": "define",
-        "line": 263,
+        "line": 256,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_EN_RXADDR_MASK_REG",
         "documented": true,
         "kind": "define",
-        "line": 483,
+        "line": 467,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_SETUP_AW_REG_BITS_AW",
         "documented": true,
         "kind": "define",
-        "line": 271,
+        "line": 264,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_SETUP_AW_MASK_REG",
         "documented": true,
         "kind": "define",
-        "line": 501,
+        "line": 483,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_SETUP_RETR_REG_BITS_ARD",
         "documented": true,
         "kind": "define",
-        "line": 279,
+        "line": 272,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_SETUP_RETR_REG_BITS_ARC",
         "documented": true,
         "kind": "define",
-        "line": 280,
+        "line": 273,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_SETUP_RETR_MASK_REG",
         "documented": true,
         "kind": "define",
-        "line": 512,
+        "line": 493,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_RF_CH_REG_BITS_RF_CH",
         "documented": true,
         "kind": "define",
-        "line": 288,
+        "line": 281,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_RF_CH_MASK_REG",
         "documented": true,
         "kind": "define",
-        "line": 526,
+        "line": 505,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_RF_SETUP_REG_BIT_PLL_LOCK",
         "documented": true,
         "kind": "define",
-        "line": 296,
+        "line": 289,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_RF_SETUP_REG_BIT_RF_DR",
         "documented": true,
         "kind": "define",
-        "line": 297,
+        "line": 290,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_RF_SETUP_REG_BITS_RF_PWR",
         "documented": true,
         "kind": "define",
-        "line": 298,
+        "line": 291,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_RF_SETUP_REG_BIT_LNA_HCURR",
         "documented": true,
         "kind": "define",
-        "line": 299,
+        "line": 292,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_RF_SETUP_MASK_REG",
         "documented": true,
         "kind": "define",
-        "line": 537,
+        "line": 515,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_STATUS_REG_BIT_RX_DR",
         "documented": true,
         "kind": "define",
-        "line": 307,
+        "line": 300,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_STATUS_REG_BIT_TX_DS",
         "documented": true,
         "kind": "define",
-        "line": 308,
+        "line": 301,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_STATUS_REG_BIT_MAX_RT",
         "documented": true,
         "kind": "define",
-        "line": 309,
+        "line": 302,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_STATUS_REG_BITS_RX_P_NO",
         "documented": true,
         "kind": "define",
-        "line": 310,
+        "line": 303,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_STATUS_REG_BIT_TX_FULL",
         "documented": true,
         "kind": "define",
-        "line": 311,
+        "line": 304,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_STATUS_MASK_REG",
         "documented": true,
         "kind": "define",
-        "line": 553,
+        "line": 529,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_STATUS_MASK_IRQ_FLAGS",
         "documented": true,
         "kind": "define",
-        "line": 561,
+        "line": 536,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_OBSERVE_TX_REG_BITS_PLOS_CNT",
         "documented": true,
         "kind": "define",
-        "line": 319,
+        "line": 312,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_OBSERVE_TX_REG_BITS_ARC_CNT",
         "documented": true,
         "kind": "define",
-        "line": 320,
+        "line": 313,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_OBSERVE_TX_MASK_REG",
         "documented": true,
         "kind": "define",
-        "line": 576,
+        "line": 549,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_CD_REG_BIT_CD",
         "documented": true,
         "kind": "define",
-        "line": 328,
+        "line": 321,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_CD_MASK_REG",
         "documented": true,
         "kind": "define",
-        "line": 590,
+        "line": 561,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_RX_PW_P0_REG_BITS_RX_PW_P0",
         "documented": true,
         "kind": "define",
-        "line": 336,
+        "line": 329,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_RX_PW_P1_REG_BITS_RX_PW_P1",
         "documented": true,
         "kind": "define",
-        "line": 344,
+        "line": 337,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_RX_PW_P2_REG_BITS_RX_PW_P2",
         "documented": true,
         "kind": "define",
-        "line": 352,
+        "line": 345,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_RX_PW_P3_REG_BITS_RX_PW_P3",
         "documented": true,
         "kind": "define",
-        "line": 360,
+        "line": 353,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_RX_PW_P4_REG_BITS_RX_PW_P4",
         "documented": true,
         "kind": "define",
-        "line": 368,
+        "line": 361,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_RX_PW_P5_REG_BITS_RX_PW_P5",
         "documented": true,
         "kind": "define",
-        "line": 376,
+        "line": 369,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_FIFO_STATUS_REG_BIT_TX_REUSE",
         "documented": true,
         "kind": "define",
-        "line": 384,
+        "line": 377,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_FIFO_STATUS_REG_BIT_TX_FULL",
         "documented": true,
         "kind": "define",
-        "line": 385,
+        "line": 378,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_FIFO_STATUS_REG_BIT_TX_EMPTY",
         "documented": true,
         "kind": "define",
-        "line": 386,
+        "line": 379,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_FIFO_STATUS_REG_BIT_RX_FULL",
         "documented": true,
         "kind": "define",
-        "line": 387,
+        "line": 380,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_FIFO_STATUS_REG_BIT_RX_EMPTY",
         "documented": true,
         "kind": "define",
-        "line": 388,
+        "line": 381,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_DYNPD_REG_BIT_DPL_P5",
         "documented": false,
         "kind": "define",
-        "line": 396,
+        "line": 389,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_DYNPD_REG_BIT_DPL_P4",
         "documented": false,
         "kind": "define",
-        "line": 397,
+        "line": 390,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_DYNPD_REG_BIT_DPL_P3",
         "documented": false,
         "kind": "define",
-        "line": 398,
+        "line": 391,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_DYNPD_REG_BIT_DPL_P2",
         "documented": false,
         "kind": "define",
-        "line": 399,
+        "line": 392,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_DYNPD_REG_BIT_DPL_P1",
         "documented": false,
         "kind": "define",
-        "line": 400,
+        "line": 393,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_DYNPD_REG_BIT_DPL_P0",
         "documented": false,
         "kind": "define",
-        "line": 401,
+        "line": 394,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_FEATURE_REG_BIT_EN_DPL",
         "documented": true,
         "kind": "define",
-        "line": 409,
+        "line": 402,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_FEATURE_REG_BIT_EN_ACK_PAY",
         "documented": true,
         "kind": "define",
-        "line": 410,
+        "line": 403,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_FEATURE_REG_BIT_EN_DYN_ACK",
         "documented": true,
         "kind": "define",
-        "line": 411,
+        "line": 404,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
-        "symbol": "NRF24L01_FPTR_RTN_T",
-        "documented": false,
-        "kind": "define",
-        "line": 100,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_RX_PW_P0_MASK_REG",
-        "documented": false,
-        "kind": "define",
-        "line": 594,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_RX_PW_P1_MASK_REG",
-        "documented": false,
-        "kind": "define",
-        "line": 595,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_RX_PW_P2_MASK_REG",
-        "documented": false,
-        "kind": "define",
-        "line": 596,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_RX_PW_P3_MASK_REG",
-        "documented": false,
-        "kind": "define",
-        "line": 597,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_RX_PW_P4_MASK_REG",
-        "documented": false,
-        "kind": "define",
-        "line": 598,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_RX_PW_P5_MASK_REG",
+        "symbol": "NRF24L01_CE_TX_MINIMUM_PULSE_US",
         "documented": true,
-        "kind": "define",
-        "line": 599,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_FIFO_STATUS_MASK_REG",
-        "documented": true,
-        "kind": "define",
-        "line": 603,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_FIFO_STATUS_MASK_RX_FLAGS",
-        "documented": true,
-        "kind": "define",
-        "line": 611,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_FIFO_STATUS_MASK_TX_FLAGS",
-        "documented": true,
-        "kind": "define",
-        "line": 616,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_DYNPD_MASK_REG",
-        "documented": false,
         "kind": "define",
         "line": 623,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
-        "symbol": "NRF24L01_FEATURE_MASK_REG",
-        "documented": false,
-        "kind": "define",
-        "line": 633,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_COMMAND_MASK_REG_ADDR",
+        "symbol": "NRF24L01_TIMING_RF_SETTLING",
         "documented": true,
         "kind": "define",
-        "line": 642,
+        "line": 624,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
-        "symbol": "NRF24L01_COMMAND_MASK_PIPE",
+        "symbol": "NRF24L01_TIMING_CD_FILTER_DELAY",
         "documented": true,
         "kind": "define",
-        "line": 643,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_ADDR_WIDTH_INVALID",
-        "documented": true,
-        "kind": "define",
-        "line": 647,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_ADDR_WIDTH_3_BYTES",
-        "documented": true,
-        "kind": "define",
-        "line": 648,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_ADDR_WIDTH_4_BYTES",
-        "documented": true,
-        "kind": "define",
-        "line": 649,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_ADDR_WIDTH_5_BYTES",
-        "documented": true,
-        "kind": "define",
-        "line": 650,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_TX_PWR_18DBM",
-        "documented": true,
-        "kind": "define",
-        "line": 653,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_TX_PWR_12DBM",
-        "documented": true,
-        "kind": "define",
-        "line": 654,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_TX_PWR_6DBM",
-        "documented": true,
-        "kind": "define",
-        "line": 655,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_TX_PWR_0DBM",
-        "documented": true,
-        "kind": "define",
-        "line": 656,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_CE_TX_MINIMUM_PULSE_US",
-        "documented": false,
-        "kind": "define",
-        "line": 659,
+        "line": 625,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_POWER_UP_US",
-        "documented": false,
+        "documented": true,
         "kind": "define",
-        "line": 660,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_TIMING_RF_SETTLING",
-        "documented": false,
-        "kind": "define",
-        "line": 661,
+        "line": 629,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_TX_FIFO_WIDTH",
         "documented": true,
         "kind": "define",
-        "line": 664,
+        "line": 633,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_TX_FIFO_DEPTH",
         "documented": true,
         "kind": "define",
-        "line": 665,
+        "line": 634,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_RX_FIFO_WIDTH",
         "documented": true,
         "kind": "define",
-        "line": 666,
+        "line": 635,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_RX_FIFO_DEPTH",
         "documented": true,
         "kind": "define",
-        "line": 667,
+        "line": 636,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_MAGIC_NUMBER_ACTIVATE",
-        "documented": false,
+        "documented": true,
         "kind": "define",
-        "line": 670,
+        "line": 639,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_IS_RX_PIPE",
         "documented": true,
         "kind": "define",
-        "line": 787,
+        "line": 761,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_IS_TX_PIPE",
         "documented": true,
         "kind": "define",
-        "line": 793,
+        "line": 767,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "nrf24l01_ar_delay_t",
-        "documented": false,
+        "documented": true,
         "kind": "enum",
-        "line": 678,
+        "line": 645,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_ARD_NONE",
         "documented": true,
         "kind": "enumvalue",
-        "line": 678,
+        "line": 645,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_ARD_250US",
         "documented": false,
         "kind": "enumvalue",
-        "line": 678,
+        "line": 645,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_ARD_500US",
         "documented": false,
         "kind": "enumvalue",
-        "line": 678,
+        "line": 645,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_ARD_750US",
         "documented": false,
         "kind": "enumvalue",
-        "line": 678,
+        "line": 645,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_ARD_1000US",
         "documented": false,
         "kind": "enumvalue",
-        "line": 678,
+        "line": 645,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_ARD_1250US",
         "documented": false,
         "kind": "enumvalue",
-        "line": 678,
+        "line": 645,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_ARD_1500US",
         "documented": false,
         "kind": "enumvalue",
-        "line": 678,
+        "line": 645,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_ARD_1750US",
         "documented": false,
         "kind": "enumvalue",
-        "line": 678,
+        "line": 645,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_ARD_2000US",
         "documented": false,
         "kind": "enumvalue",
-        "line": 678,
+        "line": 645,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_ARD_2250US",
         "documented": false,
         "kind": "enumvalue",
-        "line": 678,
+        "line": 645,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_ARD_2500US",
         "documented": false,
         "kind": "enumvalue",
-        "line": 678,
+        "line": 645,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_ARD_2750US",
         "documented": false,
         "kind": "enumvalue",
-        "line": 678,
+        "line": 645,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_ARD_3000US",
         "documented": false,
         "kind": "enumvalue",
-        "line": 678,
+        "line": 645,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_ARD_3250US",
         "documented": false,
         "kind": "enumvalue",
-        "line": 678,
+        "line": 645,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_ARD_3500US",
         "documented": false,
         "kind": "enumvalue",
-        "line": 678,
+        "line": 645,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_ARD_3750US",
         "documented": false,
         "kind": "enumvalue",
-        "line": 678,
+        "line": 645,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_ARD_4000US",
         "documented": false,
         "kind": "enumvalue",
-        "line": 678,
+        "line": 645,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "@0",
-        "documented": false,
+        "documented": true,
         "kind": "enum",
-        "line": 699,
+        "line": 666,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "RX_DR_INTERRUPT_ENABLE",
         "documented": false,
         "kind": "enumvalue",
-        "line": 699,
+        "line": 666,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "RX_DR_INTERRUPT_DISABLE",
         "documented": false,
         "kind": "enumvalue",
-        "line": 699,
+        "line": 666,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "TX_DS_INTERRUPT_ENABLE",
         "documented": false,
         "kind": "enumvalue",
-        "line": 699,
+        "line": 666,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "TX_DS_INTERRUPT_DISABLE",
         "documented": false,
         "kind": "enumvalue",
-        "line": 699,
+        "line": 666,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "MAX_RT_INTERRUPT_ENABLE",
         "documented": false,
         "kind": "enumvalue",
-        "line": 699,
+        "line": 666,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "MAX_RT_INTERRUPT_DISABLE",
         "documented": false,
         "kind": "enumvalue",
-        "line": 699,
+        "line": 666,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "nrf24l01_data_rate_t",
-        "documented": false,
+        "documented": true,
         "kind": "enum",
-        "line": 716,
+        "line": 683,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_DR_1MBPS",
         "documented": true,
         "kind": "enumvalue",
-        "line": 716,
+        "line": 683,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_DR_2MBPS",
         "documented": true,
         "kind": "enumvalue",
-        "line": 716,
+        "line": 683,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "nrf24l01_lna_mode_t",
+        "documented": true,
+        "kind": "enum",
+        "line": 690,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_LNA_OFF",
+        "documented": true,
+        "kind": "enumvalue",
+        "line": 690,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_LNA_ON",
+        "documented": true,
+        "kind": "enumvalue",
+        "line": 690,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "nrf24l01_tx_power_t",
-        "documented": false,
+        "documented": true,
         "kind": "enum",
-        "line": 722,
+        "line": 696,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
-        "symbol": "NRF24L01_TXPWR_18DBM",
+        "symbol": "NRF24L01_TX_PWR_18DBM",
         "documented": true,
         "kind": "enumvalue",
-        "line": 722,
+        "line": 696,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
-        "symbol": "NRF24L01_TXPWR_12DBM",
+        "symbol": "NRF24L01_TX_PWR_12DBM",
         "documented": true,
         "kind": "enumvalue",
-        "line": 722,
+        "line": 696,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
-        "symbol": "NRF24L01_TXPWR_6DBM",
+        "symbol": "NRF24L01_TX_PWR_6DBM",
         "documented": true,
         "kind": "enumvalue",
-        "line": 722,
+        "line": 696,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
-        "symbol": "NRF24L01_TXPWR_0DBM",
+        "symbol": "NRF24L01_TX_PWR_0DBM",
         "documented": true,
         "kind": "enumvalue",
-        "line": 722,
+        "line": 696,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "nrf24l01_crc_scheme_t",
-        "documented": false,
+        "documented": true,
         "kind": "enum",
-        "line": 730,
+        "line": 704,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_CRC_OFF",
         "documented": true,
         "kind": "enumvalue",
-        "line": 730,
+        "line": 704,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_CRC_1BYTE",
         "documented": true,
         "kind": "enumvalue",
-        "line": 730,
+        "line": 704,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_CRC_2BYTE",
         "documented": true,
         "kind": "enumvalue",
-        "line": 730,
+        "line": 704,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "nrf24l01_fifo_status_t",
-        "documented": false,
+        "documented": true,
         "kind": "enum",
-        "line": 743,
+        "line": 717,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_STATUS_FIFO_DATA",
         "documented": true,
         "kind": "enumvalue",
-        "line": 743,
+        "line": 717,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_STATUS_FIFO_EMPTY",
         "documented": true,
         "kind": "enumvalue",
-        "line": 743,
+        "line": 717,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_STATUS_FIFO_FULL",
         "documented": true,
         "kind": "enumvalue",
-        "line": 743,
+        "line": 717,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_STATUS_FIFO_ERROR",
         "documented": true,
         "kind": "enumvalue",
-        "line": 743,
+        "line": 717,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "nrf24l01_fifo_type_t",
-        "documented": false,
+        "documented": true,
         "kind": "enum",
-        "line": 751,
+        "line": 725,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_RX_FIFO",
         "documented": true,
         "kind": "enumvalue",
-        "line": 751,
+        "line": 725,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_TX_FIFO",
         "documented": true,
         "kind": "enumvalue",
-        "line": 751,
+        "line": 725,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "nrf24l01_err_t",
         "documented": true,
         "kind": "enum",
-        "line": 757,
+        "line": 731,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_OK",
         "documented": true,
         "kind": "enumvalue",
-        "line": 757,
+        "line": 731,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_ERR_UNKNOWN",
         "documented": true,
         "kind": "enumvalue",
-        "line": 757,
+        "line": 731,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_ERR_INVALID_ARG",
         "documented": true,
         "kind": "enumvalue",
-        "line": 757,
+        "line": 731,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_ERR_INVALID_STATE",
         "documented": true,
         "kind": "enumvalue",
-        "line": 757,
+        "line": 731,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_ERR_DEVICE_NOT_FOUND",
         "documented": true,
         "kind": "enumvalue",
-        "line": 757,
+        "line": 731,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_ERR_WRITE",
         "documented": true,
         "kind": "enumvalue",
-        "line": 757,
+        "line": 731,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_ERR_READ",
         "documented": true,
         "kind": "enumvalue",
-        "line": 757,
+        "line": 731,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "nrf24l01_pipe_t",
         "documented": true,
         "kind": "enum",
-        "line": 771,
+        "line": 745,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_PIPE0",
         "documented": true,
         "kind": "enumvalue",
-        "line": 771,
+        "line": 745,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_PIPE1",
         "documented": true,
         "kind": "enumvalue",
-        "line": 771,
+        "line": 745,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_PIPE2",
         "documented": true,
         "kind": "enumvalue",
-        "line": 771,
+        "line": 745,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_PIPE3",
         "documented": true,
         "kind": "enumvalue",
-        "line": 771,
+        "line": 745,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_PIPE4",
         "documented": true,
         "kind": "enumvalue",
-        "line": 771,
+        "line": 745,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_PIPE5",
         "documented": true,
         "kind": "enumvalue",
-        "line": 771,
+        "line": 745,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_PIPETX",
         "documented": true,
         "kind": "enumvalue",
-        "line": 771,
+        "line": 745,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_PIPE_UNKNOWN",
         "documented": true,
         "kind": "enumvalue",
-        "line": 771,
+        "line": 745,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_ALL_RX_PIPES",
         "documented": true,
         "kind": "enumvalue",
-        "line": 771,
+        "line": 745,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "nrf24l01_power_mode_t",
-        "documented": false,
+        "documented": true,
         "kind": "enum",
-        "line": 798,
+        "line": 770,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_PWR_DOWN",
         "documented": true,
         "kind": "enumvalue",
-        "line": 798,
+        "line": 770,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_PWR_UP",
         "documented": true,
         "kind": "enumvalue",
-        "line": 798,
+        "line": 770,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "nrf24l01_operational_mode_t",
-        "documented": false,
+        "documented": true,
         "kind": "enum",
-        "line": 804,
+        "line": 776,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_MODE_RX",
         "documented": true,
         "kind": "enumvalue",
-        "line": 804,
+        "line": 776,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_MODE_TX",
         "documented": true,
         "kind": "enumvalue",
-        "line": 804,
+        "line": 776,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "nrf24l01_pipe_mode_t",
-        "documented": false,
+        "documented": true,
         "kind": "enum",
-        "line": 810,
+        "line": 782,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_PIPE_DISABLED",
-        "documented": false,
+        "documented": true,
         "kind": "enumvalue",
-        "line": 810,
+        "line": 782,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_PIPE_ENABLED",
-        "documented": false,
+        "documented": true,
         "kind": "enumvalue",
-        "line": 810,
+        "line": 782,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "nrf24l01_pipe_aa_mode_t",
-        "documented": false,
+        "documented": true,
         "kind": "enum",
-        "line": 816,
+        "line": 788,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_AA_OFF",
-        "documented": false,
+        "documented": true,
         "kind": "enumvalue",
-        "line": 816,
+        "line": 788,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_AA_ON",
-        "documented": false,
+        "documented": true,
         "kind": "enumvalue",
-        "line": 816,
+        "line": 788,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "nrf24l01_feature_mode_t",
-        "documented": false,
+        "documented": true,
         "kind": "enum",
-        "line": 822,
+        "line": 794,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_FEATURES_OFF",
-        "documented": false,
+        "documented": true,
         "kind": "enumvalue",
-        "line": 822,
+        "line": 794,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_FEATURES_ON",
-        "documented": false,
+        "documented": true,
         "kind": "enumvalue",
-        "line": 822,
+        "line": 794,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "nrf24l01_dpl_mode_t",
-        "documented": false,
+        "documented": true,
         "kind": "enum",
-        "line": 827,
+        "line": 800,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_DPL_OFF",
-        "documented": false,
+        "documented": true,
         "kind": "enumvalue",
-        "line": 827,
+        "line": 800,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_DPL_ON",
-        "documented": false,
+        "documented": true,
         "kind": "enumvalue",
-        "line": 827,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "nrf24l01_dta_mode_t",
-        "documented": false,
-        "kind": "enum",
-        "line": 832,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_DTA_OFF",
-        "documented": false,
-        "kind": "enumvalue",
-        "line": 832,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_DTA_ON",
-        "documented": false,
-        "kind": "enumvalue",
-        "line": 832,
+        "line": 800,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "ack_payload_mode_t",
-        "documented": false,
+        "documented": true,
         "kind": "enum",
-        "line": 837,
+        "line": 806,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_ACK_PAYLOAD_OFF",
-        "documented": false,
+        "documented": true,
         "kind": "enumvalue",
-        "line": 837,
+        "line": 806,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_ACK_PAYLOAD_ON",
-        "documented": false,
+        "documented": true,
         "kind": "enumvalue",
-        "line": 837,
+        "line": 806,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "nrf24l01_dta_mode_t",
+        "documented": true,
+        "kind": "enum",
+        "line": 814,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_DTA_OFF",
+        "documented": true,
+        "kind": "enumvalue",
+        "line": 814,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_DTA_ON",
+        "documented": true,
+        "kind": "enumvalue",
+        "line": 814,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "typedef struct nrf24l01_platform_t nrf24l01_platform_t",
-        "documented": false,
+        "documented": true,
         "kind": "typedef",
         "line": 1,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "typedef uint8_t nrf24l01_interrupt_mask_t",
-        "documented": false,
+        "documented": true,
         "kind": "typedef",
-        "line": 707,
+        "line": 674,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "typedef uint8_t nrf24l01_ar_count_t",
-        "documented": false,
+        "documented": true,
         "kind": "typedef",
-        "line": 710,
+        "line": 677,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "typedef uint8_t nrf24l01_ar_lost_t",
-        "documented": false,
+        "documented": true,
         "kind": "typedef",
-        "line": 713,
+        "line": 680,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "typedef uint8_t nrf24l01_rf_channel_t",
-        "documented": false,
+        "documented": true,
         "kind": "typedef",
-        "line": 737,
+        "line": 711,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "typedef uint8_t nrf24l01_address_width_t",
-        "documented": false,
+        "documented": true,
         "kind": "typedef",
-        "line": 740,
+        "line": 714,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "typedef NRF24L01_FPTR_RTN_T(* nrf24l01_platform_init_fptr_t) (void *user_ptr)",
         "documented": true,
         "kind": "typedef",
-        "line": 854,
+        "line": 830,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "typedef NRF24L01_FPTR_RTN_T(* nrf24l01_platform_deinit_fptr_t) (void *user_ptr)",
         "documented": true,
         "kind": "typedef",
-        "line": 865,
+        "line": 840,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "typedef NRF24L01_FPTR_RTN_T(* nrf24l01_spi_exchange_fptr_t) (uint8_t command, uint8_t *rx_data, uint8_t *tx_data, uint8_t len, void *user_ptr)",
         "documented": true,
         "kind": "typedef",
-        "line": 887,
+        "line": 861,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "typedef NRF24L01_FPTR_RTN_T(* nrf24l01_gpio_chip_enable_fptr_t) (bool state, void *user_ptr)",
         "documented": true,
         "kind": "typedef",
-        "line": 898,
+        "line": 871,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "typedef NRF24L01_FPTR_RTN_T(* nrf24l01_delay_us_fptr_t) (uint32_t delay)",
         "documented": true,
         "kind": "typedef",
-        "line": 909,
+        "line": 881,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "typedef void(* nrf24l01_rx_dr_callback_fptr_t) (uint8_t message_size, nrf24l01_pipe_t pipe, void *user_ptr, nrf24l01_platform_t *platform)",
         "documented": true,
         "kind": "typedef",
-        "line": 919,
+        "line": 890,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "typedef void(* nrf24l01_tx_ds_callback_fptr_t) (nrf24l01_pipe_t pipe, void *user_ptr, nrf24l01_platform_t *platform)",
         "documented": true,
         "kind": "typedef",
-        "line": 928,
+        "line": 898,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "typedef void(* nrf24l01_max_rt_callback_fptr_t) (void *user_ptr, nrf24l01_platform_t *platform)",
         "documented": true,
         "kind": "typedef",
-        "line": 936,
+        "line": 905,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "typedef NRF24L01_FPTR_RTN_T(* nrf24l01_check_for_interrupt_fptr_t) (void *user_ptr)",
-        "documented": false,
+        "documented": true,
         "kind": "typedef",
-        "line": 939,
+        "line": 907,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_FPTR_RTN_T",
+        "documented": false,
+        "kind": "define",
+        "line": 99,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_RX_PW_P0_MASK_REG",
+        "documented": false,
+        "kind": "define",
+        "line": 564,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_RX_PW_P1_MASK_REG",
+        "documented": false,
+        "kind": "define",
+        "line": 565,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_RX_PW_P2_MASK_REG",
+        "documented": false,
+        "kind": "define",
+        "line": 566,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_RX_PW_P3_MASK_REG",
+        "documented": false,
+        "kind": "define",
+        "line": 567,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_RX_PW_P4_MASK_REG",
+        "documented": false,
+        "kind": "define",
+        "line": 568,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_RX_PW_P5_MASK_REG",
+        "documented": false,
+        "kind": "define",
+        "line": 569,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_FIFO_STATUS_MASK_REG",
+        "documented": true,
+        "kind": "define",
+        "line": 572,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_FIFO_STATUS_MASK_RX_FLAGS",
+        "documented": true,
+        "kind": "define",
+        "line": 579,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_FIFO_STATUS_MASK_TX_FLAGS",
+        "documented": true,
+        "kind": "define",
+        "line": 583,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_DYNPD_MASK_REG",
+        "documented": true,
+        "kind": "define",
+        "line": 589,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_FEATURE_MASK_REG",
+        "documented": false,
+        "kind": "define",
+        "line": 597,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_COMMAND_MASK_REG_ADDR",
+        "documented": true,
+        "kind": "define",
+        "line": 605,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_COMMAND_MASK_PIPE",
+        "documented": true,
+        "kind": "define",
+        "line": 606,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_ADDR_WIDTH_INVALID",
+        "documented": true,
+        "kind": "define",
+        "line": 609,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_ADDR_WIDTH_3_BYTES",
+        "documented": true,
+        "kind": "define",
+        "line": 610,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_ADDR_WIDTH_4_BYTES",
+        "documented": true,
+        "kind": "define",
+        "line": 611,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_ADDR_WIDTH_5_BYTES",
+        "documented": true,
+        "kind": "define",
+        "line": 612,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_TX_PWR_18DBM_REG_BITS",
+        "documented": true,
+        "kind": "define",
+        "line": 615,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_TX_PWR_12DBM_REG_BITS",
+        "documented": true,
+        "kind": "define",
+        "line": 616,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_TX_PWR_6DBM_REG_BITS",
+        "documented": true,
+        "kind": "define",
+        "line": 617,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_TX_PWR_0DBM_REG_BITS",
+        "documented": true,
+        "kind": "define",
+        "line": 618,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
@@ -1849,644 +1877,644 @@
         "symbol": "NRF24L01_CONFIG_REG_BIT_MASK_RX_DR",
         "documented": true,
         "kind": "define",
-        "line": 231,
+        "line": 224,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_CONFIG_REG_BIT_MASK_TX_DS",
         "documented": true,
         "kind": "define",
-        "line": 232,
+        "line": 225,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_CONFIG_REG_BIT_MASK_MAX_RT",
         "documented": true,
         "kind": "define",
-        "line": 233,
+        "line": 226,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_CONFIG_REG_BIT_EN_CRC",
         "documented": true,
         "kind": "define",
-        "line": 234,
+        "line": 227,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_CONFIG_REG_BIT_CRCO",
         "documented": true,
         "kind": "define",
-        "line": 235,
+        "line": 228,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_CONFIG_REG_BIT_PWR_UP",
         "documented": true,
         "kind": "define",
-        "line": 236,
+        "line": 229,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_CONFIG_REG_BIT_PRIM_RX",
         "documented": true,
         "kind": "define",
-        "line": 237,
+        "line": 230,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_CONFIG_MASK_REG",
         "documented": true,
         "kind": "define",
-        "line": 435,
+        "line": 425,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_CONFIG_MASK_INTERRUPT_MASKS",
         "documented": true,
         "kind": "define",
-        "line": 445,
+        "line": 434,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_CONFIG_MASK_CRC",
         "documented": true,
         "kind": "define",
-        "line": 451,
+        "line": 439,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_EN_AA_REG_BIT_ENAA_P5",
         "documented": true,
         "kind": "define",
-        "line": 245,
+        "line": 238,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_EN_AA_REG_BIT_ENAA_P4",
         "documented": true,
         "kind": "define",
-        "line": 246,
+        "line": 239,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_EN_AA_REG_BIT_ENAA_P3",
         "documented": true,
         "kind": "define",
-        "line": 247,
+        "line": 240,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_EN_AA_REG_BIT_ENAA_P2",
         "documented": true,
         "kind": "define",
-        "line": 248,
+        "line": 241,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_EN_AA_REG_BIT_ENAA_P1",
         "documented": true,
         "kind": "define",
-        "line": 249,
+        "line": 242,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_EN_AA_REG_BIT_ENAA_P0",
         "documented": true,
         "kind": "define",
-        "line": 250,
+        "line": 243,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_EN_AA_MASK_REG",
-        "documented": true,
-        "kind": "define",
-        "line": 465,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_EN_RXADDR_REG_BIT_ERX_P5",
-        "documented": true,
-        "kind": "define",
-        "line": 258,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_EN_RXADDR_REG_BIT_ERX_P4",
-        "documented": true,
-        "kind": "define",
-        "line": 259,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_EN_RXADDR_REG_BIT_ERX_P3",
-        "documented": true,
-        "kind": "define",
-        "line": 260,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_EN_RXADDR_REG_BIT_ERX_P2",
-        "documented": true,
-        "kind": "define",
-        "line": 261,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_EN_RXADDR_REG_BIT_ERX_P1",
-        "documented": true,
-        "kind": "define",
-        "line": 262,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_EN_RXADDR_REG_BIT_ERX_P0",
-        "documented": true,
-        "kind": "define",
-        "line": 263,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_EN_RXADDR_MASK_REG",
-        "documented": true,
-        "kind": "define",
-        "line": 483,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_SETUP_AW_REG_BITS_AW",
-        "documented": true,
-        "kind": "define",
-        "line": 271,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_SETUP_AW_MASK_REG",
-        "documented": true,
-        "kind": "define",
-        "line": 501,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_SETUP_RETR_REG_BITS_ARD",
-        "documented": true,
-        "kind": "define",
-        "line": 279,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_SETUP_RETR_REG_BITS_ARC",
-        "documented": true,
-        "kind": "define",
-        "line": 280,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_SETUP_RETR_MASK_REG",
-        "documented": true,
-        "kind": "define",
-        "line": 512,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_RF_CH_REG_BITS_RF_CH",
-        "documented": true,
-        "kind": "define",
-        "line": 288,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_RF_CH_MASK_REG",
-        "documented": true,
-        "kind": "define",
-        "line": 526,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_RF_SETUP_REG_BIT_PLL_LOCK",
-        "documented": true,
-        "kind": "define",
-        "line": 296,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_RF_SETUP_REG_BIT_RF_DR",
-        "documented": true,
-        "kind": "define",
-        "line": 297,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_RF_SETUP_REG_BITS_RF_PWR",
-        "documented": true,
-        "kind": "define",
-        "line": 298,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_RF_SETUP_REG_BIT_LNA_HCURR",
-        "documented": true,
-        "kind": "define",
-        "line": 299,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_RF_SETUP_MASK_REG",
-        "documented": true,
-        "kind": "define",
-        "line": 537,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_STATUS_REG_BIT_RX_DR",
-        "documented": true,
-        "kind": "define",
-        "line": 307,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_STATUS_REG_BIT_TX_DS",
-        "documented": true,
-        "kind": "define",
-        "line": 308,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_STATUS_REG_BIT_MAX_RT",
-        "documented": true,
-        "kind": "define",
-        "line": 309,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_STATUS_REG_BITS_RX_P_NO",
-        "documented": true,
-        "kind": "define",
-        "line": 310,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_STATUS_REG_BIT_TX_FULL",
-        "documented": true,
-        "kind": "define",
-        "line": 311,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_STATUS_MASK_REG",
-        "documented": true,
-        "kind": "define",
-        "line": 553,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_STATUS_MASK_IRQ_FLAGS",
-        "documented": true,
-        "kind": "define",
-        "line": 561,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_OBSERVE_TX_REG_BITS_PLOS_CNT",
-        "documented": true,
-        "kind": "define",
-        "line": 319,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_OBSERVE_TX_REG_BITS_ARC_CNT",
-        "documented": true,
-        "kind": "define",
-        "line": 320,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_OBSERVE_TX_MASK_REG",
-        "documented": true,
-        "kind": "define",
-        "line": 576,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_CD_REG_BIT_CD",
-        "documented": true,
-        "kind": "define",
-        "line": 328,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_CD_MASK_REG",
-        "documented": true,
-        "kind": "define",
-        "line": 590,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_RX_PW_P0_REG_BITS_RX_PW_P0",
-        "documented": true,
-        "kind": "define",
-        "line": 336,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_RX_PW_P1_REG_BITS_RX_PW_P1",
-        "documented": true,
-        "kind": "define",
-        "line": 344,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_RX_PW_P2_REG_BITS_RX_PW_P2",
-        "documented": true,
-        "kind": "define",
-        "line": 352,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_RX_PW_P3_REG_BITS_RX_PW_P3",
-        "documented": true,
-        "kind": "define",
-        "line": 360,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_RX_PW_P4_REG_BITS_RX_PW_P4",
-        "documented": true,
-        "kind": "define",
-        "line": 368,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_RX_PW_P5_REG_BITS_RX_PW_P5",
-        "documented": true,
-        "kind": "define",
-        "line": 376,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_FIFO_STATUS_REG_BIT_TX_REUSE",
-        "documented": true,
-        "kind": "define",
-        "line": 384,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_FIFO_STATUS_REG_BIT_TX_FULL",
-        "documented": true,
-        "kind": "define",
-        "line": 385,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_FIFO_STATUS_REG_BIT_TX_EMPTY",
-        "documented": true,
-        "kind": "define",
-        "line": 386,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_FIFO_STATUS_REG_BIT_RX_FULL",
-        "documented": true,
-        "kind": "define",
-        "line": 387,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_FIFO_STATUS_REG_BIT_RX_EMPTY",
-        "documented": true,
-        "kind": "define",
-        "line": 388,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_DYNPD_REG_BIT_DPL_P5",
-        "documented": false,
-        "kind": "define",
-        "line": 396,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_DYNPD_REG_BIT_DPL_P4",
-        "documented": false,
-        "kind": "define",
-        "line": 397,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_DYNPD_REG_BIT_DPL_P3",
-        "documented": false,
-        "kind": "define",
-        "line": 398,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_DYNPD_REG_BIT_DPL_P2",
-        "documented": false,
-        "kind": "define",
-        "line": 399,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_DYNPD_REG_BIT_DPL_P1",
-        "documented": false,
-        "kind": "define",
-        "line": 400,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_DYNPD_REG_BIT_DPL_P0",
-        "documented": false,
-        "kind": "define",
-        "line": 401,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_FEATURE_REG_BIT_EN_DPL",
-        "documented": true,
-        "kind": "define",
-        "line": 409,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_FEATURE_REG_BIT_EN_ACK_PAY",
-        "documented": true,
-        "kind": "define",
-        "line": 410,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_FEATURE_REG_BIT_EN_DYN_ACK",
-        "documented": true,
-        "kind": "define",
-        "line": 411,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_CONFIG_MASK_REG",
-        "documented": true,
-        "kind": "define",
-        "line": 435,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_CONFIG_MASK_INTERRUPT_MASKS",
-        "documented": true,
-        "kind": "define",
-        "line": 445,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
-      },
-      {
-        "symbol": "NRF24L01_CONFIG_MASK_CRC",
         "documented": true,
         "kind": "define",
         "line": 451,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
-        "symbol": "NRF24L01_EN_AA_MASK_REG",
+        "symbol": "NRF24L01_EN_RXADDR_REG_BIT_ERX_P5",
         "documented": true,
         "kind": "define",
-        "line": 465,
+        "line": 251,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_EN_RXADDR_REG_BIT_ERX_P4",
+        "documented": true,
+        "kind": "define",
+        "line": 252,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_EN_RXADDR_REG_BIT_ERX_P3",
+        "documented": true,
+        "kind": "define",
+        "line": 253,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_EN_RXADDR_REG_BIT_ERX_P2",
+        "documented": true,
+        "kind": "define",
+        "line": 254,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_EN_RXADDR_REG_BIT_ERX_P1",
+        "documented": true,
+        "kind": "define",
+        "line": 255,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_EN_RXADDR_REG_BIT_ERX_P0",
+        "documented": true,
+        "kind": "define",
+        "line": 256,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_EN_RXADDR_MASK_REG",
         "documented": true,
         "kind": "define",
-        "line": 483,
+        "line": 467,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_SETUP_AW_REG_BITS_AW",
+        "documented": true,
+        "kind": "define",
+        "line": 264,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_SETUP_AW_MASK_REG",
         "documented": true,
         "kind": "define",
-        "line": 501,
+        "line": 483,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_SETUP_RETR_REG_BITS_ARD",
+        "documented": true,
+        "kind": "define",
+        "line": 272,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_SETUP_RETR_REG_BITS_ARC",
+        "documented": true,
+        "kind": "define",
+        "line": 273,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_SETUP_RETR_MASK_REG",
         "documented": true,
         "kind": "define",
-        "line": 512,
+        "line": 493,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_RF_CH_REG_BITS_RF_CH",
+        "documented": true,
+        "kind": "define",
+        "line": 281,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_RF_CH_MASK_REG",
         "documented": true,
         "kind": "define",
-        "line": 526,
+        "line": 505,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_RF_SETUP_REG_BIT_PLL_LOCK",
+        "documented": true,
+        "kind": "define",
+        "line": 289,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_RF_SETUP_REG_BIT_RF_DR",
+        "documented": true,
+        "kind": "define",
+        "line": 290,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_RF_SETUP_REG_BITS_RF_PWR",
+        "documented": true,
+        "kind": "define",
+        "line": 291,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_RF_SETUP_REG_BIT_LNA_HCURR",
+        "documented": true,
+        "kind": "define",
+        "line": 292,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_RF_SETUP_MASK_REG",
         "documented": true,
         "kind": "define",
-        "line": 537,
+        "line": 515,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_STATUS_REG_BIT_RX_DR",
+        "documented": true,
+        "kind": "define",
+        "line": 300,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_STATUS_REG_BIT_TX_DS",
+        "documented": true,
+        "kind": "define",
+        "line": 301,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_STATUS_REG_BIT_MAX_RT",
+        "documented": true,
+        "kind": "define",
+        "line": 302,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_STATUS_REG_BITS_RX_P_NO",
+        "documented": true,
+        "kind": "define",
+        "line": 303,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_STATUS_REG_BIT_TX_FULL",
+        "documented": true,
+        "kind": "define",
+        "line": 304,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_STATUS_MASK_REG",
         "documented": true,
         "kind": "define",
-        "line": 553,
+        "line": 529,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_STATUS_MASK_IRQ_FLAGS",
         "documented": true,
         "kind": "define",
-        "line": 561,
+        "line": 536,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_OBSERVE_TX_REG_BITS_PLOS_CNT",
+        "documented": true,
+        "kind": "define",
+        "line": 312,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_OBSERVE_TX_REG_BITS_ARC_CNT",
+        "documented": true,
+        "kind": "define",
+        "line": 313,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_OBSERVE_TX_MASK_REG",
         "documented": true,
         "kind": "define",
-        "line": 576,
+        "line": 549,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_CD_REG_BIT_CD",
+        "documented": true,
+        "kind": "define",
+        "line": 321,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_CD_MASK_REG",
         "documented": true,
         "kind": "define",
-        "line": 590,
+        "line": 561,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_RX_PW_P0_REG_BITS_RX_PW_P0",
+        "documented": true,
+        "kind": "define",
+        "line": 329,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_RX_PW_P1_REG_BITS_RX_PW_P1",
+        "documented": true,
+        "kind": "define",
+        "line": 337,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_RX_PW_P2_REG_BITS_RX_PW_P2",
+        "documented": true,
+        "kind": "define",
+        "line": 345,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_RX_PW_P3_REG_BITS_RX_PW_P3",
+        "documented": true,
+        "kind": "define",
+        "line": 353,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_RX_PW_P4_REG_BITS_RX_PW_P4",
+        "documented": true,
+        "kind": "define",
+        "line": 361,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_RX_PW_P5_REG_BITS_RX_PW_P5",
+        "documented": true,
+        "kind": "define",
+        "line": 369,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_FIFO_STATUS_REG_BIT_TX_REUSE",
+        "documented": true,
+        "kind": "define",
+        "line": 377,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_FIFO_STATUS_REG_BIT_TX_FULL",
+        "documented": true,
+        "kind": "define",
+        "line": 378,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_FIFO_STATUS_REG_BIT_TX_EMPTY",
+        "documented": true,
+        "kind": "define",
+        "line": 379,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_FIFO_STATUS_REG_BIT_RX_FULL",
+        "documented": true,
+        "kind": "define",
+        "line": 380,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_FIFO_STATUS_REG_BIT_RX_EMPTY",
+        "documented": true,
+        "kind": "define",
+        "line": 381,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_DYNPD_REG_BIT_DPL_P5",
+        "documented": false,
+        "kind": "define",
+        "line": 389,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_DYNPD_REG_BIT_DPL_P4",
+        "documented": false,
+        "kind": "define",
+        "line": 390,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_DYNPD_REG_BIT_DPL_P3",
+        "documented": false,
+        "kind": "define",
+        "line": 391,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_DYNPD_REG_BIT_DPL_P2",
+        "documented": false,
+        "kind": "define",
+        "line": 392,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_DYNPD_REG_BIT_DPL_P1",
+        "documented": false,
+        "kind": "define",
+        "line": 393,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_DYNPD_REG_BIT_DPL_P0",
+        "documented": false,
+        "kind": "define",
+        "line": 394,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_FEATURE_REG_BIT_EN_DPL",
+        "documented": true,
+        "kind": "define",
+        "line": 402,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_FEATURE_REG_BIT_EN_ACK_PAY",
+        "documented": true,
+        "kind": "define",
+        "line": 403,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_FEATURE_REG_BIT_EN_DYN_ACK",
+        "documented": true,
+        "kind": "define",
+        "line": 404,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_CONFIG_MASK_REG",
+        "documented": true,
+        "kind": "define",
+        "line": 425,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_CONFIG_MASK_INTERRUPT_MASKS",
+        "documented": true,
+        "kind": "define",
+        "line": 434,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_CONFIG_MASK_CRC",
+        "documented": true,
+        "kind": "define",
+        "line": 439,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_EN_AA_MASK_REG",
+        "documented": true,
+        "kind": "define",
+        "line": 451,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_EN_RXADDR_MASK_REG",
+        "documented": true,
+        "kind": "define",
+        "line": 467,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_SETUP_AW_MASK_REG",
+        "documented": true,
+        "kind": "define",
+        "line": 483,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_SETUP_RETR_MASK_REG",
+        "documented": true,
+        "kind": "define",
+        "line": 493,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_RF_CH_MASK_REG",
+        "documented": true,
+        "kind": "define",
+        "line": 505,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_RF_SETUP_MASK_REG",
+        "documented": true,
+        "kind": "define",
+        "line": 515,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_STATUS_MASK_REG",
+        "documented": true,
+        "kind": "define",
+        "line": 529,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_STATUS_MASK_IRQ_FLAGS",
+        "documented": true,
+        "kind": "define",
+        "line": 536,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_OBSERVE_TX_MASK_REG",
+        "documented": true,
+        "kind": "define",
+        "line": 549,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
+      },
+      {
+        "symbol": "NRF24L01_CD_MASK_REG",
+        "documented": true,
+        "kind": "define",
+        "line": 561,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_RX_PW_P0_MASK_REG",
         "documented": false,
         "kind": "define",
-        "line": 594,
+        "line": 564,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_RX_PW_P1_MASK_REG",
         "documented": false,
         "kind": "define",
-        "line": 595,
+        "line": 565,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_RX_PW_P2_MASK_REG",
         "documented": false,
         "kind": "define",
-        "line": 596,
+        "line": 566,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_RX_PW_P3_MASK_REG",
         "documented": false,
         "kind": "define",
-        "line": 597,
+        "line": 567,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_RX_PW_P4_MASK_REG",
         "documented": false,
         "kind": "define",
-        "line": 598,
+        "line": 568,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_RX_PW_P5_MASK_REG",
-        "documented": true,
+        "documented": false,
         "kind": "define",
-        "line": 599,
+        "line": 569,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_FIFO_STATUS_MASK_REG",
         "documented": true,
         "kind": "define",
-        "line": 603,
+        "line": 572,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_FIFO_STATUS_MASK_RX_FLAGS",
         "documented": true,
         "kind": "define",
-        "line": 611,
+        "line": 579,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_FIFO_STATUS_MASK_TX_FLAGS",
         "documented": true,
         "kind": "define",
-        "line": 616,
+        "line": 583,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_DYNPD_MASK_REG",
-        "documented": false,
+        "documented": true,
         "kind": "define",
-        "line": 623,
+        "line": 589,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       },
       {
         "symbol": "NRF24L01_FEATURE_MASK_REG",
         "documented": false,
         "kind": "define",
-        "line": 633,
+        "line": 597,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01_defs.h"
       }
     ],
@@ -2495,322 +2523,378 @@
         "symbol": "nrf24l01_err_t nrf24l01_init",
         "documented": false,
         "kind": "function",
-        "line": 21,
+        "line": 22,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
         "symbol": "nrf24l01_err_t nrf24l01_deinit",
         "documented": false,
         "kind": "function",
-        "line": 22,
+        "line": 23,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
         "symbol": "nrf24l01_err_t nrf24l01_check_connectivity",
         "documented": true,
         "kind": "function",
-        "line": 23,
+        "line": 24,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
         "symbol": "nrf24l01_err_t nrf24l01_get_irq_flags",
         "documented": true,
         "kind": "function",
-        "line": 26,
+        "line": 27,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
         "symbol": "nrf24l01_err_t nrf24l01_set_irq_mask",
         "documented": true,
         "kind": "function",
-        "line": 27,
+        "line": 28,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
         "symbol": "nrf24l01_err_t nrf24l01_clear_irq_flags",
         "documented": true,
         "kind": "function",
-        "line": 28,
+        "line": 29,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
         "symbol": "nrf24l01_err_t nrf24l01_register_rx_dr_callback",
         "documented": false,
         "kind": "function",
-        "line": 29,
+        "line": 30,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
         "symbol": "nrf24l01_err_t nrf24l01_register_tx_ds_callback",
         "documented": false,
         "kind": "function",
-        "line": 30,
+        "line": 31,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
         "symbol": "nrf24l01_err_t nrf24l01_register_max_rt_callback",
         "documented": false,
         "kind": "function",
-        "line": 31,
+        "line": 32,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
-        "symbol": "nrf24l01_err_t nrf24l01_set_tx_power",
-        "documented": true,
-        "kind": "function",
-        "line": 34,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
-      },
-      {
-        "symbol": "nrf24l01_err_t nrf24l01_set_rf_channel",
+        "symbol": "nrf24l01_err_t nrf24l01_get_tx_power",
         "documented": true,
         "kind": "function",
         "line": 35,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
-        "symbol": "nrf24l01_err_t nrf24l01_set_data_rate",
+        "symbol": "nrf24l01_err_t nrf24l01_set_tx_power",
         "documented": true,
         "kind": "function",
         "line": 36,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
-        "symbol": "nrf24l01_err_t nrf24l01_set_auto_retransmission",
-        "documented": true,
+        "symbol": "nrf24l01_err_t nrf24l01_get_rf_channel",
+        "documented": false,
         "kind": "function",
         "line": 37,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
-        "symbol": "nrf24l01_err_t nrf24l01_set_crc_scheme",
+        "symbol": "nrf24l01_err_t nrf24l01_set_rf_channel",
         "documented": true,
         "kind": "function",
         "line": 38,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
-        "symbol": "nrf24l01_err_t nrf24l01_get_address_width",
+        "symbol": "nrf24l01_err_t nrf24l01_get_data_rate",
         "documented": true,
         "kind": "function",
         "line": 39,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
-        "symbol": "nrf24l01_err_t nrf24l01_set_address_width",
+        "symbol": "nrf24l01_err_t nrf24l01_set_data_rate",
         "documented": true,
         "kind": "function",
         "line": 40,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
-        "symbol": "nrf24l01_err_t nrf24l01_flush_rx",
+        "symbol": "nrf24l01_err_t nrf24l01_get_lna_mode",
+        "documented": true,
+        "kind": "function",
+        "line": 41,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_set_lna_mode",
+        "documented": true,
+        "kind": "function",
+        "line": 42,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_get_auto_retransmission",
+        "documented": false,
+        "kind": "function",
+        "line": 43,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_set_auto_retransmission",
         "documented": true,
         "kind": "function",
         "line": 44,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
-        "symbol": "nrf24l01_err_t nrf24l01_flush_tx",
-        "documented": true,
+        "symbol": "nrf24l01_err_t nrf24l01_get_crc_scheme",
+        "documented": false,
         "kind": "function",
         "line": 45,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
-        "symbol": "nrf24l01_err_t nrf24l01_get_status",
+        "symbol": "nrf24l01_err_t nrf24l01_set_crc_scheme",
         "documented": true,
         "kind": "function",
         "line": 46,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
-        "symbol": "nrf24l01_err_t nrf24l01_get_fifo_status",
+        "symbol": "nrf24l01_err_t nrf24l01_get_address_width",
         "documented": true,
         "kind": "function",
         "line": 47,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
-        "symbol": "nrf24l01_err_t nrf24l01_reset_packet_loss_counter",
+        "symbol": "nrf24l01_err_t nrf24l01_set_address_width",
         "documented": true,
         "kind": "function",
         "line": 48,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
-        "symbol": "nrf24l01_err_t nrf24l01_get_retransmit_counters",
+        "symbol": "nrf24l01_err_t nrf24l01_set_address",
         "documented": true,
         "kind": "function",
         "line": 49,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
-        "symbol": "nrf24l01_err_t nrf24l01_get_power_mode",
-        "documented": false,
+        "symbol": "nrf24l01_err_t nrf24l01_check_for_interference",
+        "documented": true,
         "kind": "function",
-        "line": 52,
+        "line": 50,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
-        "symbol": "nrf24l01_err_t nrf24l01_set_power_mode",
+        "symbol": "nrf24l01_err_t nrf24l01_flush_rx",
         "documented": true,
         "kind": "function",
         "line": 53,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
-        "symbol": "nrf24l01_err_t nrf24l01_get_operational_mode",
-        "documented": false,
+        "symbol": "nrf24l01_err_t nrf24l01_flush_tx",
+        "documented": true,
         "kind": "function",
         "line": 54,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
-        "symbol": "nrf24l01_err_t nrf24l01_set_operational_mode",
+        "symbol": "nrf24l01_err_t nrf24l01_get_status",
         "documented": true,
         "kind": "function",
         "line": 55,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
-        "symbol": "nrf24l01_err_t nrf24l01_get_feature_mode",
-        "documented": false,
+        "symbol": "nrf24l01_err_t nrf24l01_get_fifo_status",
+        "documented": true,
+        "kind": "function",
+        "line": 56,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_reset_packet_loss_counter",
+        "documented": true,
+        "kind": "function",
+        "line": 57,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_get_retransmit_counters",
+        "documented": true,
         "kind": "function",
         "line": 58,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
-        "symbol": "nrf24l01_err_t nrf24l01_set_feature_mode",
-        "documented": true,
-        "kind": "function",
-        "line": 59,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
-      },
-      {
-        "symbol": "nrf24l01_err_t nrf24l01_set_ack_payload_mode",
-        "documented": false,
-        "kind": "function",
-        "line": 60,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
-      },
-      {
-        "symbol": "nrf24l01_err_t nrf24l01_set_dpl_mode",
+        "symbol": "nrf24l01_err_t nrf24l01_get_power_mode",
         "documented": true,
         "kind": "function",
         "line": 61,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
-        "symbol": "nrf24l01_err_t nrf24l01_set_dta_mode",
-        "documented": false,
+        "symbol": "nrf24l01_err_t nrf24l01_set_power_mode",
+        "documented": true,
         "kind": "function",
         "line": 62,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_get_operational_mode",
+        "documented": true,
+        "kind": "function",
+        "line": 63,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_set_operational_mode",
+        "documented": true,
+        "kind": "function",
+        "line": 64,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_start_listening",
+        "documented": true,
+        "kind": "function",
+        "line": 65,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_stop_listening",
+        "documented": true,
+        "kind": "function",
+        "line": 66,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_get_feature_mode",
+        "documented": true,
+        "kind": "function",
+        "line": 69,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_set_feature_mode",
+        "documented": true,
+        "kind": "function",
+        "line": 70,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_set_dpl_mode",
+        "documented": true,
+        "kind": "function",
+        "line": 71,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_set_ack_payload_mode",
+        "documented": true,
+        "kind": "function",
+        "line": 72,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_set_dta_mode",
+        "documented": true,
+        "kind": "function",
+        "line": 73,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
         "symbol": "nrf24l01_err_t nrf24l01_get_features",
         "documented": false,
         "kind": "function",
-        "line": 64,
+        "line": 75,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
         "symbol": "nrf24l01_err_t nrf24l01_set_pipe_mode",
         "documented": true,
         "kind": "function",
-        "line": 75,
+        "line": 85,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
         "symbol": "nrf24l01_err_t nrf24l01_set_pipe_aa_mode",
         "documented": true,
         "kind": "function",
-        "line": 76,
+        "line": 86,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
         "symbol": "nrf24l01_err_t nrf24l01_set_pipe_rx_payload_size",
         "documented": true,
         "kind": "function",
-        "line": 77,
+        "line": 87,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
         "symbol": "nrf24l01_err_t nrf24l01_write_payload",
         "documented": true,
         "kind": "function",
-        "line": 80,
+        "line": 90,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
         "symbol": "nrf24l01_err_t nrf24l01_get_rx_pipe",
         "documented": true,
         "kind": "function",
-        "line": 84,
+        "line": 94,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
         "symbol": "nrf24l01_err_t nrf24l01_read_payload",
-        "documented": false,
+        "documented": true,
         "kind": "function",
-        "line": 85,
+        "line": 95,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
         "symbol": "nrf24l01_err_t nrf24l01_set_pipe_dpl_mode",
         "documented": true,
         "kind": "function",
-        "line": 88,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
-      },
-      {
-        "symbol": "nrf24l01_err_t nrf24l01_start_listening",
-        "documented": false,
-        "kind": "function",
-        "line": 93,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
-      },
-      {
-        "symbol": "nrf24l01_err_t nrf24l01_stop_listening",
-        "documented": false,
-        "kind": "function",
-        "line": 94,
+        "line": 98,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
         "symbol": "void nrf24l01_loop",
         "documented": true,
         "kind": "function",
-        "line": 97,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
-      },
-      {
-        "symbol": "nrf24l01_err_t nrf24l01_set_address",
-        "documented": true,
-        "kind": "function",
-        "line": 99,
+        "line": 103,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
         "symbol": "nrf24l01_err_t nrf24l01_print_config",
         "documented": false,
         "kind": "function",
-        "line": 110,
+        "line": 112,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
         "symbol": "nrf24l01_err_t nrf24l01_print_status_register",
         "documented": false,
         "kind": "function",
-        "line": 111,
+        "line": 113,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
         "symbol": "nrf24l01_err_t nrf24l01_print_fifo_status_register",
         "documented": false,
         "kind": "function",
-        "line": 112,
+        "line": 114,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
@@ -2824,273 +2908,350 @@
         "symbol": "nrf24l01_err_t nrf24l01_init",
         "documented": false,
         "kind": "function",
-        "line": 21,
+        "line": 22,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
         "symbol": "nrf24l01_err_t nrf24l01_deinit",
         "documented": false,
         "kind": "function",
-        "line": 22,
+        "line": 23,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
         "symbol": "nrf24l01_err_t nrf24l01_check_connectivity",
         "documented": true,
         "kind": "function",
-        "line": 23,
+        "line": 24,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
         "symbol": "nrf24l01_err_t nrf24l01_get_irq_flags",
         "documented": true,
         "kind": "function",
-        "line": 26,
+        "line": 27,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
         "symbol": "nrf24l01_err_t nrf24l01_set_irq_mask",
         "documented": true,
         "kind": "function",
-        "line": 27,
+        "line": 28,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
         "symbol": "nrf24l01_err_t nrf24l01_clear_irq_flags",
         "documented": true,
         "kind": "function",
-        "line": 28,
+        "line": 29,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
         "symbol": "nrf24l01_err_t nrf24l01_register_rx_dr_callback",
         "documented": false,
         "kind": "function",
-        "line": 29,
+        "line": 30,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
         "symbol": "nrf24l01_err_t nrf24l01_register_tx_ds_callback",
         "documented": false,
         "kind": "function",
-        "line": 30,
+        "line": 31,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
         "symbol": "nrf24l01_err_t nrf24l01_register_max_rt_callback",
         "documented": false,
         "kind": "function",
-        "line": 31,
+        "line": 32,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
-        "symbol": "nrf24l01_err_t nrf24l01_set_tx_power",
-        "documented": true,
-        "kind": "function",
-        "line": 34,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
-      },
-      {
-        "symbol": "nrf24l01_err_t nrf24l01_set_rf_channel",
+        "symbol": "nrf24l01_err_t nrf24l01_get_tx_power",
         "documented": true,
         "kind": "function",
         "line": 35,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
-        "symbol": "nrf24l01_err_t nrf24l01_set_data_rate",
+        "symbol": "nrf24l01_err_t nrf24l01_set_tx_power",
         "documented": true,
         "kind": "function",
         "line": 36,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
-        "symbol": "nrf24l01_err_t nrf24l01_set_auto_retransmission",
-        "documented": true,
+        "symbol": "nrf24l01_err_t nrf24l01_get_rf_channel",
+        "documented": false,
         "kind": "function",
         "line": 37,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
-        "symbol": "nrf24l01_err_t nrf24l01_set_crc_scheme",
+        "symbol": "nrf24l01_err_t nrf24l01_set_rf_channel",
         "documented": true,
         "kind": "function",
         "line": 38,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
-        "symbol": "nrf24l01_err_t nrf24l01_get_address_width",
+        "symbol": "nrf24l01_err_t nrf24l01_get_data_rate",
         "documented": true,
         "kind": "function",
         "line": 39,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
-        "symbol": "nrf24l01_err_t nrf24l01_set_address_width",
+        "symbol": "nrf24l01_err_t nrf24l01_set_data_rate",
         "documented": true,
         "kind": "function",
         "line": 40,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
-        "symbol": "nrf24l01_err_t nrf24l01_flush_rx",
+        "symbol": "nrf24l01_err_t nrf24l01_get_lna_mode",
+        "documented": true,
+        "kind": "function",
+        "line": 41,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_set_lna_mode",
+        "documented": true,
+        "kind": "function",
+        "line": 42,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_get_auto_retransmission",
+        "documented": false,
+        "kind": "function",
+        "line": 43,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_set_auto_retransmission",
         "documented": true,
         "kind": "function",
         "line": 44,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
-        "symbol": "nrf24l01_err_t nrf24l01_flush_tx",
-        "documented": true,
+        "symbol": "nrf24l01_err_t nrf24l01_get_crc_scheme",
+        "documented": false,
         "kind": "function",
         "line": 45,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
-        "symbol": "nrf24l01_err_t nrf24l01_get_status",
+        "symbol": "nrf24l01_err_t nrf24l01_set_crc_scheme",
         "documented": true,
         "kind": "function",
         "line": 46,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
-        "symbol": "nrf24l01_err_t nrf24l01_get_fifo_status",
+        "symbol": "nrf24l01_err_t nrf24l01_get_address_width",
         "documented": true,
         "kind": "function",
         "line": 47,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
-        "symbol": "nrf24l01_err_t nrf24l01_reset_packet_loss_counter",
+        "symbol": "nrf24l01_err_t nrf24l01_set_address_width",
         "documented": true,
         "kind": "function",
         "line": 48,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
-        "symbol": "nrf24l01_err_t nrf24l01_get_retransmit_counters",
+        "symbol": "nrf24l01_err_t nrf24l01_set_address",
         "documented": true,
         "kind": "function",
         "line": 49,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
-        "symbol": "nrf24l01_err_t nrf24l01_get_power_mode",
-        "documented": false,
+        "symbol": "nrf24l01_err_t nrf24l01_check_for_interference",
+        "documented": true,
         "kind": "function",
-        "line": 52,
+        "line": 50,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
-        "symbol": "nrf24l01_err_t nrf24l01_set_power_mode",
+        "symbol": "nrf24l01_err_t nrf24l01_flush_rx",
         "documented": true,
         "kind": "function",
         "line": 53,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
-        "symbol": "nrf24l01_err_t nrf24l01_get_operational_mode",
-        "documented": false,
+        "symbol": "nrf24l01_err_t nrf24l01_flush_tx",
+        "documented": true,
         "kind": "function",
         "line": 54,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
-        "symbol": "nrf24l01_err_t nrf24l01_set_operational_mode",
+        "symbol": "nrf24l01_err_t nrf24l01_get_status",
         "documented": true,
         "kind": "function",
         "line": 55,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
-        "symbol": "nrf24l01_err_t nrf24l01_get_feature_mode",
-        "documented": false,
+        "symbol": "nrf24l01_err_t nrf24l01_get_fifo_status",
+        "documented": true,
+        "kind": "function",
+        "line": 56,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_reset_packet_loss_counter",
+        "documented": true,
+        "kind": "function",
+        "line": 57,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_get_retransmit_counters",
+        "documented": true,
         "kind": "function",
         "line": 58,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
-        "symbol": "nrf24l01_err_t nrf24l01_set_feature_mode",
-        "documented": true,
-        "kind": "function",
-        "line": 59,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
-      },
-      {
-        "symbol": "nrf24l01_err_t nrf24l01_set_ack_payload_mode",
-        "documented": false,
-        "kind": "function",
-        "line": 60,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
-      },
-      {
-        "symbol": "nrf24l01_err_t nrf24l01_set_dpl_mode",
+        "symbol": "nrf24l01_err_t nrf24l01_get_power_mode",
         "documented": true,
         "kind": "function",
         "line": 61,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
-        "symbol": "nrf24l01_err_t nrf24l01_set_dta_mode",
-        "documented": false,
+        "symbol": "nrf24l01_err_t nrf24l01_set_power_mode",
+        "documented": true,
         "kind": "function",
         "line": 62,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_get_operational_mode",
+        "documented": true,
+        "kind": "function",
+        "line": 63,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_set_operational_mode",
+        "documented": true,
+        "kind": "function",
+        "line": 64,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_start_listening",
+        "documented": true,
+        "kind": "function",
+        "line": 65,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_stop_listening",
+        "documented": true,
+        "kind": "function",
+        "line": 66,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_get_feature_mode",
+        "documented": true,
+        "kind": "function",
+        "line": 69,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_set_feature_mode",
+        "documented": true,
+        "kind": "function",
+        "line": 70,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_set_dpl_mode",
+        "documented": true,
+        "kind": "function",
+        "line": 71,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_set_ack_payload_mode",
+        "documented": true,
+        "kind": "function",
+        "line": 72,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_set_dta_mode",
+        "documented": true,
+        "kind": "function",
+        "line": 73,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
         "symbol": "nrf24l01_err_t nrf24l01_get_features",
         "documented": false,
         "kind": "function",
-        "line": 64,
+        "line": 75,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
         "symbol": "nrf24l01_err_t nrf24l01_set_pipe_mode",
         "documented": true,
         "kind": "function",
-        "line": 75,
+        "line": 85,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
         "symbol": "nrf24l01_err_t nrf24l01_set_pipe_aa_mode",
         "documented": true,
         "kind": "function",
-        "line": 76,
+        "line": 86,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
         "symbol": "nrf24l01_err_t nrf24l01_set_pipe_rx_payload_size",
         "documented": true,
         "kind": "function",
-        "line": 77,
+        "line": 87,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
         "symbol": "nrf24l01_err_t nrf24l01_write_payload",
         "documented": true,
         "kind": "function",
-        "line": 80,
+        "line": 90,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
         "symbol": "nrf24l01_err_t nrf24l01_get_rx_pipe",
         "documented": true,
         "kind": "function",
-        "line": 84,
+        "line": 94,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
         "symbol": "nrf24l01_err_t nrf24l01_read_payload",
-        "documented": false,
+        "documented": true,
         "kind": "function",
-        "line": 85,
+        "line": 95,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       },
       {
         "symbol": "nrf24l01_err_t nrf24l01_set_pipe_dpl_mode",
         "documented": true,
         "kind": "function",
-        "line": 88,
+        "line": 98,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/inc/nrf24l01.h"
       }
     ],
@@ -3120,322 +3281,371 @@
         "symbol": "static nrf24l01_err_t nrf24l01_read_reg",
         "documented": true,
         "kind": "function",
-        "line": 71,
+        "line": 70,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
       },
       {
         "symbol": "static nrf24l01_err_t nrf24l01_write_reg",
         "documented": false,
         "kind": "function",
-        "line": 84,
+        "line": 83,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
       },
       {
         "symbol": "static nrf24l01_err_t nrf24l01_multi_read_reg",
         "documented": false,
         "kind": "function",
-        "line": 93,
+        "line": 92,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
       },
       {
         "symbol": "static nrf24l01_err_t nrf24l01_multi_write_reg",
         "documented": false,
         "kind": "function",
-        "line": 106,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
-      },
-      {
-        "symbol": "nrf24l01_err_t nrf24l01_init",
-        "documented": false,
-        "kind": "function",
-        "line": 123,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
-      },
-      {
-        "symbol": "nrf24l01_err_t nrf24l01_deinit",
-        "documented": false,
-        "kind": "function",
-        "line": 162,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
-      },
-      {
-        "symbol": "nrf24l01_err_t nrf24l01_check_connectivity",
-        "documented": true,
-        "kind": "function",
-        "line": 178,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
-      },
-      {
-        "symbol": "nrf24l01_err_t nrf24l01_set_pipe_rx_payload_size",
-        "documented": true,
-        "kind": "function",
-        "line": 208,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
-      },
-      {
-        "symbol": "nrf24l01_err_t nrf24l01_set_power_mode",
-        "documented": true,
-        "kind": "function",
-        "line": 231,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
-      },
-      {
-        "symbol": "nrf24l01_err_t nrf24l01_start_listening",
-        "documented": false,
-        "kind": "function",
-        "line": 254,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
-      },
-      {
-        "symbol": "nrf24l01_err_t nrf24l01_stop_listening",
-        "documented": false,
-        "kind": "function",
-        "line": 260,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
-      },
-      {
-        "symbol": "nrf24l01_err_t nrf24l01_set_operational_mode",
-        "documented": true,
-        "kind": "function",
-        "line": 271,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
-      },
-      {
-        "symbol": "nrf24l01_err_t nrf24l01_set_crc_scheme",
-        "documented": true,
-        "kind": "function",
-        "line": 291,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
-      },
-      {
-        "symbol": "nrf24l01_err_t nrf24l01_set_rf_channel",
-        "documented": true,
-        "kind": "function",
-        "line": 313,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
-      },
-      {
-        "symbol": "nrf24l01_err_t nrf24l01_set_auto_retransmission",
-        "documented": true,
-        "kind": "function",
-        "line": 331,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
-      },
-      {
-        "symbol": "nrf24l01_err_t nrf24l01_set_address_width",
-        "documented": true,
-        "kind": "function",
-        "line": 343,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
-      },
-      {
-        "symbol": "nrf24l01_err_t nrf24l01_set_address",
-        "documented": true,
-        "kind": "function",
-        "line": 368,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
-      },
-      {
-        "symbol": "nrf24l01_err_t nrf24l01_set_tx_power",
-        "documented": true,
-        "kind": "function",
-        "line": 397,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
-      },
-      {
-        "symbol": "nrf24l01_err_t nrf24l01_set_data_rate",
-        "documented": true,
-        "kind": "function",
-        "line": 415,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
-      },
-      {
-        "symbol": "nrf24l01_err_t nrf24l01_set_pipe_mode",
-        "documented": true,
-        "kind": "function",
-        "line": 436,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
-      },
-      {
-        "symbol": "nrf24l01_err_t nrf24l01_set_pipe_aa_mode",
-        "documented": true,
-        "kind": "function",
-        "line": 471,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
-      },
-      {
-        "symbol": "nrf24l01_err_t nrf24l01_set_pipe_dpl_mode",
-        "documented": true,
-        "kind": "function",
-        "line": 506,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
-      },
-      {
-        "symbol": "nrf24l01_err_t nrf24l01_get_status",
-        "documented": true,
-        "kind": "function",
-        "line": 540,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
-      },
-      {
-        "symbol": "nrf24l01_err_t nrf24l01_get_irq_flags",
-        "documented": true,
-        "kind": "function",
-        "line": 562,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
-      },
-      {
-        "symbol": "nrf24l01_err_t nrf24l01_set_irq_mask",
-        "documented": true,
-        "kind": "function",
-        "line": 586,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
-      },
-      {
-        "symbol": "nrf24l01_err_t nrf24l01_get_fifo_status",
-        "documented": true,
-        "kind": "function",
-        "line": 605,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
-      },
-      {
-        "symbol": "nrf24l01_err_t nrf24l01_get_rx_pipe",
-        "documented": true,
-        "kind": "function",
-        "line": 632,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
-      },
-      {
-        "symbol": "nrf24l01_err_t nrf24l01_get_retransmit_counters",
-        "documented": true,
-        "kind": "function",
-        "line": 655,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
-      },
-      {
-        "symbol": "nrf24l01_err_t nrf24l01_get_address_width",
-        "documented": true,
-        "kind": "function",
-        "line": 677,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
-      },
-      {
-        "symbol": "nrf24l01_err_t nrf24l01_reset_packet_loss_counter",
-        "documented": true,
-        "kind": "function",
-        "line": 702,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
-      },
-      {
-        "symbol": "nrf24l01_err_t nrf24l01_flush_tx",
-        "documented": true,
-        "kind": "function",
-        "line": 716,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
-      },
-      {
-        "symbol": "nrf24l01_err_t nrf24l01_flush_rx",
-        "documented": true,
-        "kind": "function",
-        "line": 726,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
-      },
-      {
-        "symbol": "nrf24l01_err_t nrf24l01_clear_irq_flags",
-        "documented": true,
-        "kind": "function",
-        "line": 736,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
-      },
-      {
-        "symbol": "nrf24l01_err_t nrf24l01_write_payload",
-        "documented": true,
-        "kind": "function",
-        "line": 758,
+        "line": 105,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
       },
       {
         "symbol": "static nrf24l01_err_t nrf24l01_get_rx_dpl",
         "documented": true,
         "kind": "function",
-        "line": 786,
+        "line": 126,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
       },
       {
-        "symbol": "nrf24l01_err_t nrf24l01_read_payload",
+        "symbol": "nrf24l01_err_t nrf24l01_init",
         "documented": false,
         "kind": "function",
-        "line": 796,
+        "line": 138,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
       },
       {
-        "symbol": "nrf24l01_err_t nrf24l01_get_features",
+        "symbol": "nrf24l01_err_t nrf24l01_deinit",
         "documented": false,
         "kind": "function",
-        "line": 862,
+        "line": 177,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
       },
       {
-        "symbol": "nrf24l01_err_t nrf24l01_get_power_mode",
-        "documented": false,
-        "kind": "function",
-        "line": 866,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
-      },
-      {
-        "symbol": "nrf24l01_err_t nrf24l01_get_operational_mode",
-        "documented": false,
-        "kind": "function",
-        "line": 881,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
-      },
-      {
-        "symbol": "nrf24l01_err_t nrf24l01_get_feature_mode",
-        "documented": false,
-        "kind": "function",
-        "line": 896,
-        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
-      },
-      {
-        "symbol": "nrf24l01_err_t nrf24l01_set_feature_mode",
+        "symbol": "nrf24l01_err_t nrf24l01_check_connectivity",
         "documented": true,
         "kind": "function",
-        "line": 936,
+        "line": 193,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
       },
       {
-        "symbol": "nrf24l01_err_t nrf24l01_set_dpl_mode",
+        "symbol": "nrf24l01_err_t nrf24l01_get_irq_flags",
         "documented": true,
         "kind": "function",
-        "line": 965,
+        "line": 224,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
       },
       {
-        "symbol": "void nrf24l01_loop",
+        "symbol": "nrf24l01_err_t nrf24l01_set_irq_mask",
         "documented": true,
         "kind": "function",
-        "line": 1448,
+        "line": 248,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_clear_irq_flags",
+        "documented": true,
+        "kind": "function",
+        "line": 265,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
       },
       {
         "symbol": "nrf24l01_err_t nrf24l01_register_rx_dr_callback",
         "documented": false,
         "kind": "function",
-        "line": 1481,
+        "line": 277,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
       },
       {
         "symbol": "nrf24l01_err_t nrf24l01_register_tx_ds_callback",
         "documented": false,
         "kind": "function",
-        "line": 1488,
+        "line": 284,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
       },
       {
         "symbol": "nrf24l01_err_t nrf24l01_register_max_rt_callback",
         "documented": false,
         "kind": "function",
-        "line": 1495,
+        "line": 291,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_get_tx_power",
+        "documented": true,
+        "kind": "function",
+        "line": 303,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_set_tx_power",
+        "documented": true,
+        "kind": "function",
+        "line": 333,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_set_rf_channel",
+        "documented": true,
+        "kind": "function",
+        "line": 369,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_get_data_rate",
+        "documented": true,
+        "kind": "function",
+        "line": 392,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_set_data_rate",
+        "documented": true,
+        "kind": "function",
+        "line": 414,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_get_lna_mode",
+        "documented": true,
+        "kind": "function",
+        "line": 434,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_set_lna_mode",
+        "documented": true,
+        "kind": "function",
+        "line": 457,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_set_auto_retransmission",
+        "documented": true,
+        "kind": "function",
+        "line": 480,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_set_crc_scheme",
+        "documented": true,
+        "kind": "function",
+        "line": 494,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_get_address_width",
+        "documented": true,
+        "kind": "function",
+        "line": 512,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_set_address_width",
+        "documented": true,
+        "kind": "function",
+        "line": 535,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_set_address",
+        "documented": true,
+        "kind": "function",
+        "line": 563,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_check_for_interference",
+        "documented": true,
+        "kind": "function",
+        "line": 601,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_flush_rx",
+        "documented": true,
+        "kind": "function",
+        "line": 625,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_flush_tx",
+        "documented": true,
+        "kind": "function",
+        "line": 635,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_get_status",
+        "documented": true,
+        "kind": "function",
+        "line": 648,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_get_fifo_status",
+        "documented": true,
+        "kind": "function",
+        "line": 667,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_reset_packet_loss_counter",
+        "documented": true,
+        "kind": "function",
+        "line": 695,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_get_retransmit_counters",
+        "documented": true,
+        "kind": "function",
+        "line": 713,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_get_power_mode",
+        "documented": true,
+        "kind": "function",
+        "line": 734,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_set_power_mode",
+        "documented": true,
+        "kind": "function",
+        "line": 757,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_get_operational_mode",
+        "documented": true,
+        "kind": "function",
+        "line": 785,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_set_operational_mode",
+        "documented": true,
+        "kind": "function",
+        "line": 805,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_start_listening",
+        "documented": true,
+        "kind": "function",
+        "line": 824,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_stop_listening",
+        "documented": true,
+        "kind": "function",
+        "line": 835,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_get_feature_mode",
+        "documented": true,
+        "kind": "function",
+        "line": 854,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_set_feature_mode",
+        "documented": true,
+        "kind": "function",
+        "line": 883,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_set_dpl_mode",
+        "documented": true,
+        "kind": "function",
+        "line": 915,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_set_ack_payload_mode",
+        "documented": true,
+        "kind": "function",
+        "line": 933,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_set_dta_mode",
+        "documented": true,
+        "kind": "function",
+        "line": 943,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_get_features",
+        "documented": false,
+        "kind": "function",
+        "line": 948,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_set_pipe_mode",
+        "documented": true,
+        "kind": "function",
+        "line": 960,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_set_pipe_aa_mode",
+        "documented": true,
+        "kind": "function",
+        "line": 995,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_set_pipe_rx_payload_size",
+        "documented": true,
+        "kind": "function",
+        "line": 1029,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_write_payload",
+        "documented": true,
+        "kind": "function",
+        "line": 1057,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_get_rx_pipe",
+        "documented": true,
+        "kind": "function",
+        "line": 1081,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_read_payload",
+        "documented": true,
+        "kind": "function",
+        "line": 1104,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
+      },
+      {
+        "symbol": "nrf24l01_err_t nrf24l01_set_pipe_dpl_mode",
+        "documented": true,
+        "kind": "function",
+        "line": 1159,
+        "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
+      },
+      {
+        "symbol": "void nrf24l01_loop",
+        "documented": true,
+        "kind": "function",
+        "line": 1631,
         "file": "/home/runner/work/NRF24L01_driver/NRF24L01_driver/src/nrf24l01.c"
       },
       {
