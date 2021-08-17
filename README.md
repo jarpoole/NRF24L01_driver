@@ -14,3 +14,9 @@ Documentation health is updated on commit:
 ## Inspiration
 To my knowledge, a platform-independent driver for the NRF24L01(+) is not available although there are plenty of samples on Arduino.
 Based on code provided at https://github.com/elmot/nrf24l01-lib and https://github.com/LonelyWolf/stm32/tree/master/nrf24l01
+
+## Install Tools
+Install all the vsCode extensions specified in the `extensions.recommendations` recommended section of `workspace.code-workspace`
+
+Install `CppCheck`
+ - Windows: Use Chocolatey by running `choco install cppcheck`

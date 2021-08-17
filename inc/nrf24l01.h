@@ -1,17 +1,18 @@
 #ifndef NRF24L01_H
 #define NRF24L01_H
 
-#include <stdint.h>
 #include <stdbool.h>
 #include <stddef.h>
+#include <stdint.h>
 #include <string.h>
 
-// User provided config directory in directory above submodule
-#include "../../nrf24l01_config.h"
+#ifndef NRF24L01_TEST_ENVIRONMENT
+    // User provided config directory in directory above submodule
+    #include "../../nrf24l01_config.h"
+#endif
 
 // Driver constants and types
 #include "nrf24l01_defs.h"
-
 
 /*** Device API ***************************************************************************************************/
 /// @addtogroup device_api
@@ -75,7 +76,6 @@ nrf24l01_err_t nrf24l01_get_features(uint8_t*, nrf24l01_platform_t*);
 
 /// @}
 /****************************************************************************************************************/
-    
 
 /*** Pipe API ***************************************************************************************************/
 /// @addtogroup pipe_api
@@ -92,7 +92,7 @@ nrf24l01_err_t nrf24l01_write_payload(uint8_t*, uint8_t, nrf24l01_platform_t*);
 
 // Receive
 nrf24l01_err_t nrf24l01_get_rx_pipe(nrf24l01_pipe_t*, nrf24l01_platform_t*);
-nrf24l01_err_t nrf24l01_read_payload(nrf24l01_pipe_t*, uint8_t*, uint8_t*, bool, nrf24l01_platform_t*);     // Read from the pipe which received the packet
+nrf24l01_err_t nrf24l01_read_payload(nrf24l01_pipe_t*, uint8_t*, uint8_t*, bool, nrf24l01_platform_t*); // Read from the pipe which received the packet
 
 //Features
 nrf24l01_err_t nrf24l01_set_pipe_dpl_mode(nrf24l01_pipe_t, nrf24l01_dpl_mode_t, nrf24l01_platform_t*);
@@ -102,8 +102,6 @@ nrf24l01_err_t nrf24l01_set_pipe_dpl_mode(nrf24l01_pipe_t, nrf24l01_dpl_mode_t, 
 
 void nrf24l01_loop(nrf24l01_platform_t*);
 
-
-
 /*** Debug API **************************************************************************************************/
 
 #ifdef NRF24L01_ENABLE_PRINT_CONFIG
@@ -111,8 +109,8 @@ nrf24l01_err_t nrf24l01_print_config(nrf24l01_platform_t*);
 nrf24l01_err_t nrf24l01_print_status_register(nrf24l01_platform_t*);
 nrf24l01_err_t nrf24l01_print_fifo_status_register(nrf24l01_platform_t*);
 #else
-nrf24l01_err_t nrf24l01_print_config(nrf24l01_platform_t* platform){ return; };
-nrf24l01_err_t nrf24l01_print_status_register(nrf24l01_platform_t* platform){ return; };
+nrf24l01_err_t nrf24l01_print_config(nrf24l01_platform_t* platform) { return; };
+nrf24l01_err_t nrf24l01_print_status_register(nrf24l01_platform_t* platform) { return; };
 nrf24l01_err_t nrf24l01_print_fifo_status_register(nrf24l01_platform_t* platform) { return; };
 #endif // NRF24L01_ENABLE_PRINT_CONFIG
 
