@@ -1,7 +1,7 @@
 {
 	"extensions": {
 		"recommendations": [
-			"ms-vscode.cpptools", // Adds support for formatting
+			"ms-vscode.cpptools",    // Adds support for formatting
 			"jbenden.c-cpp-flylint", // Adds support for linting
 		]
 	},
@@ -51,11 +51,10 @@
 
 
 		// Configure C/C++ Advanced Lint
-		"c-cpp-flylint.enable": true,
+		"c-cpp-flylint.enable": false, //Disable all linters
 		"c-cpp-flylint.run": "onSave",
 		"c-cpp-flylint.defines": ["NRF24L01_TEST_ENVIRONMENT"],
 		"c-cpp-flylint.includePaths": ["."],
-
 		"c-cpp-flylint.cppcheck.enable": true,
 		"c-cpp-flylint.cppcheck.standard": ["c99"],
 		"c-cpp-flylint.cppcheck.language": "c",
