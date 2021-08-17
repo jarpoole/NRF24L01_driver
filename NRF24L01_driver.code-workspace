@@ -35,7 +35,8 @@
 		"files.associations": {
 			"*.h":"c",
 			"*.c":"c",
-			//"*.inc": "c"
+			"*.inc": "c",
+			".clang-format": "yaml",
 		},
 		"[c]": { // Specific settings for c-language files
 			"editor.formatOnSave": true,

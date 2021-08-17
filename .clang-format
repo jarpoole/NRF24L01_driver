@@ -11,16 +11,11 @@ AlignConsecutiveAssignments: Consecutive
 AlignConsecutiveDeclarations: Consecutive
 AlignTrailingComments: true
 AlignAfterOpenBracket: true
+AlignArrayOfStructures: Left
+AlignConsecutiveBitFields: AcrossEmptyLinesAndComments 
 IndentPPDirectives: BeforeHash
 
-# AlignConsecutiveMacros: true
-# AlignConsecutiveAssignments: true
-# AlignAfterOpenBracket:
-# AlignArrayOfStructures :
-# AlignConsecutiveBitFields :
-# AlignConsecutiveDeclarations: true
 # AlignEscapedNewlines:
-# AlignTrailingComments:
 # BinPackArguments: false
 # BinPackParameters: false
 # ExperimentalAutoDetectBinPacking: false
