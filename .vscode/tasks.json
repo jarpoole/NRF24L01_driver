@@ -1,0 +1,18 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Install Cppcheck linting tool",
+      "type": "shell",
+      "command": "npm run webpack",
+      "windows": {
+        "command": "choco install cppcheck"
+      },
+      "presentation": {
+        "reveal": "never",
+        "panel": "new"
+      },
+      "runOptions": { "runOn": "folderOpen" }
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+    "files.associations": {
+        "*.h": "c",
+        "*.c": "c",
+        "*.inc": "c",
+        ".clang-format": "yaml",
+        "*.json": "jsonc"
+    },
+    // Configure Editor
+    "editor.tabSize": 4, // Use 4 spaces per tab
+    "editor.insertSpaces": true, // Insert spaces when tab key is pressed
+    "[c]": {
+        // Specific settings for c-language files
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "[jsonc]": {
+        "editor.quickSuggestions": {
+            "strings": true
+        },
+        "editor.suggest.insertMode": "replace",
+        "gitlens.codeLens.scopes": ["document"],
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+
+    // Configure Cpptools
+    "C_Cpp.formatting": "clangFormat", // Select Clang-format as the formatting engine
+    "C_Cpp.clang_format_style": "file",
+    "C_Cpp.clang_format_fallbackStyle": "none",
+    "C_Cpp.default.defines": ["NRF24L01_TEST_ENVIRONMENT"],
+
+    // Configure C/C++ Advanced Lint
+    "c-cpp-flylint.enable": false, //Disable all linters
+    "c-cpp-flylint.run": "onSave",
+    "c-cpp-flylint.defines": ["NRF24L01_TEST_ENVIRONMENT"],
+    "c-cpp-flylint.includePaths": ["."],
+    "c-cpp-flylint.cppcheck.enable": true,
+    "c-cpp-flylint.cppcheck.standard": ["c99"],
+    "c-cpp-flylint.cppcheck.language": "c",
+    "c-cpp-flylint.cppcheck.executable": "C:\\Program Files\\Cppcheck\\cppcheck.exe"
+    //"c-cpp-flylint.cppcheck.inconclusive":true,
+    //"c-cpp-flylint.cppcheck.verbose": true,
+    //"c-cpp-flylint.cppcheck.force": true,
+}

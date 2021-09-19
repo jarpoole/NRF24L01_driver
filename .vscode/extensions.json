@@ -1,0 +1,7 @@
+{
+    "recommendations": [
+        "ms-vscode.cpptools",     // Adds support for formatting C source files
+        "jbenden.c-cpp-flylint",  // Adds support for linting C source files
+        "esbenp.prettier-vscode", // Adds support for formatting json
+    ]
+}
