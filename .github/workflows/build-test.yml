@@ -1,0 +1,14 @@
+name: CI/CD 
+on: [pull-request, workflow_dispatch]
+jobs:
+  test:
+    runs-on: [self-hosted, nrf24l01]
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        
+      - name: Build
+        run: |
+          echo "Hello world"
+          
