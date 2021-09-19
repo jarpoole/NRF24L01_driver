@@ -6,3 +6,4 @@
 # https://github.com/XAMPPRocky/tokei#excluding-folders
 
 docs/
+test/
