@@ -1,5 +1,5 @@
 name: CI/CD 
-on: [pull-request, workflow_dispatch]
+on: [pull_request, workflow_dispatch]
 jobs:
   test:
     runs-on: [self-hosted, nrf24l01]
