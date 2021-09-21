@@ -59,19 +59,29 @@
  */
 #define SPI_CS_MODE 0
 
-/**
+/** Select the device chip enable pin
  * 
- * 
+ *  Options:
+ *    Any of RPI_V2_GPIO_P1_x
  */
-#define DEVICE0_CE  RPI_V2_GPIO_P1_37 // GPIO 26 on raspberry pi diagram
-#define DEVICE1_CE  0
+#define RADIO0_CE   RPI_V2_GPIO_P1_15 // GPIO 22 on raspberry pi diagram
+#define RADIO1_CE   RPI_V2_GPIO_P1_16 // GPIO 23 on raspberry pi diagram
+
+/** Select the host notification interrupt pin
+ * 
+ *  Options:
+ *    Any of RPI_V2_GPIO_P1_x
+ */
+#define RADIO0_IRQ  RPI_V2_GPIO_P1_18 // GPIO 24 on raspberry pi diagram
+#define RADIO1_IRQ  RPI_V2_GPIO_P1_22 // GPIO 25 on raspberry pi diagram
 
 /** Struct for multi-device support
  * 
  */
 typedef struct {
-    uint8_t ce_pin; ///<
-    uint8_t cs;     ///< One of `BCM2835_SPI_CS0` or `BCM2835_SPI_CS1`
+    uint8_t cs;      ///< One of `BCM2835_SPI_CS0` or `BCM2835_SPI_CS1`
+    uint8_t ce_pin;  ///< One of `DEVICE0_CE` or `DEVICE1_CE`
+    uint8_t irq_pin; ///< One of `DEVICE0_IRQ` or `DEVICE1_IRQ`
 } raspi_nrf24l01_t;
 
 // Forward declare the IO helper functions
@@ -112,7 +122,7 @@ int main(void) {
     bcm2835_spi_setBitOrder(BCM2835_SPI_BIT_ORDER_MSBFIRST);
 
     // Configure the NRF24L01+ driver
-    nrf24l01_platform_t device0 = {
+    nrf24l01_platform_t radio0 = {
         .gpio_chip_enable    = raspi_gpio_chip_enable_nrf24l01,
         .delay_us            = raspi_delay_us_nrf24l01,
         .platform_init       = raspi_platform_init_nrf24l01,
@@ -120,11 +130,12 @@ int main(void) {
         .spi_exchange        = raspi_spi_exchange_data_nrf24l01,
         .check_for_interrupt = raspi_check_for_interrupt_nrf24l01,
         .user_ptr            = &(raspi_nrf24l01_t){
-            .ce_pin = DEVICE0_CE,
-            .cs     = BCM2835_SPI_CS0,
+            .ce_pin  = RADIO0_CE,
+            .irq_pin = RADIO0_IRQ,
+            .cs      = BCM2835_SPI_CS0,
         },
     };
-    nrf24l01_platform_t device1 = {
+    nrf24l01_platform_t radio1 = {
         .gpio_chip_enable    = raspi_gpio_chip_enable_nrf24l01,
         .delay_us            = raspi_delay_us_nrf24l01,
         .platform_init       = raspi_platform_init_nrf24l01,
@@ -132,19 +143,20 @@ int main(void) {
         .spi_exchange        = raspi_spi_exchange_data_nrf24l01,
         .check_for_interrupt = raspi_check_for_interrupt_nrf24l01,
         .user_ptr            = &(raspi_nrf24l01_t){
-            .ce_pin = DEVICE1_CE,
-            .cs     = BCM2835_SPI_CS1,
+            .ce_pin  = RADIO1_CE,
+            .irq_pin = RADIO1_IRQ,
+            .cs      = BCM2835_SPI_CS1,
         },
     };
     nrf24l01_err_t err = NRF24L01_OK;
-    err |= nrf24l01_init(&device0);
+    err |= nrf24l01_init(&radio0);
     //err |= nrf24l01_init(&device1);
 
     while (true) {
 
         printf("Checking connectivity...\n");
         //nrf24l01_err_t err = nrf24l01_set_address_width(5, &device0);
-        err = nrf24l01_check_connectivity(&device0);
+        err = nrf24l01_check_connectivity(&radio0);
         printf("Result: %d\n", err);
 
         bcm2835_delay(3000);
@@ -157,8 +169,8 @@ int main(void) {
 }
 
 static int8_t raspi_gpio_chip_enable_nrf24l01(bool state, void* user_ptr) {
-    raspi_nrf24l01_t* device = (raspi_nrf24l01_t*)user_ptr;
-    bcm2835_gpio_write(device->ce_pin, state);
+    raspi_nrf24l01_t* radio = (raspi_nrf24l01_t*)user_ptr;
+    bcm2835_gpio_write(radio->ce_pin, state);
     return 0;
 }
 static int8_t raspi_delay_us_nrf24l01(uint32_t delay) {
@@ -166,16 +178,32 @@ static int8_t raspi_delay_us_nrf24l01(uint32_t delay) {
     return 0;
 }
 static int8_t raspi_platform_init_nrf24l01(void* user_ptr) {
-    raspi_nrf24l01_t* device = (raspi_nrf24l01_t*)user_ptr;
-    bcm2835_gpio_fsel(device->ce_pin, BCM2835_GPIO_FSEL_OUTP);
-    bcm2835_gpio_set_pud(device->ce_pin, BCM2835_GPIO_PUD_DOWN);
+    raspi_nrf24l01_t* radio = (raspi_nrf24l01_t*)user_ptr;
+
+    // Configure chip enable pin
+    bcm2835_gpio_fsel(radio->ce_pin, BCM2835_GPIO_FSEL_OUTP);
+    bcm2835_gpio_set_pud(radio->ce_pin, BCM2835_GPIO_PUD_DOWN);
+
+    // Configure host interrupt pin
+    bcm2835_gpio_set_pud(radio->irq_pin, BCM2835_GPIO_PUD_UP);
+    bcm2835_gpio_afen(radio->irq_pin);
     return 0;
 }
 static int8_t raspi_platform_deinit_nrf24l01(void* user_ptr) {
-    raspi_nrf24l01_t* device = (raspi_nrf24l01_t*)user_ptr;
-    bcm2835_gpio_write(device->ce_pin, LOW);
-    bcm2835_gpio_set_pud(device->ce_pin, BCM2835_GPIO_PUD_OFF);
+    raspi_nrf24l01_t* radio = (raspi_nrf24l01_t*)user_ptr;
+    bcm2835_gpio_write(radio->ce_pin, LOW);
+    bcm2835_gpio_set_pud(radio->ce_pin, BCM2835_GPIO_PUD_OFF);
     return 0;
+}
+static int8_t raspi_check_for_interrupt_nrf24l01(void* user_ptr) {
+    raspi_nrf24l01_t* radio  = (raspi_nrf24l01_t*)user_ptr;
+    uint8_t           result = bcm2835_gpio_eds(radio->irq_pin);
+    if (result == 1) {
+        bcm2835_gpio_set_eds(radio->irq_pin);
+        return 0;
+    } else {
+        return -1;
+    }
 }
 static int8_t raspi_spi_exchange_data_nrf24l01(uint8_t command, uint8_t* rx_data, uint8_t* tx_data, uint8_t len, void* user_ptr) {
 
@@ -201,10 +229,10 @@ static int8_t raspi_spi_exchange_data_nrf24l01(uint8_t command, uint8_t* rx_data
     } else if (user_ptr == NULL) {
         return -1; //Must provide the device location data
     }
-    raspi_nrf24l01_t* device = (raspi_nrf24l01_t*)user_ptr;
+    raspi_nrf24l01_t* radio = (raspi_nrf24l01_t*)user_ptr;
 
     // Set with CS pin to use for the upcoming transfer
-    bcm2835_spi_chipSelect(device->cs);
+    bcm2835_spi_chipSelect(radio->cs);
 
     uint8_t data_buffer[len + 1]; // VLA, requires C99
     data_buffer[0] = command;
@@ -237,8 +265,5 @@ static int8_t raspi_spi_exchange_data_nrf24l01(uint8_t command, uint8_t* rx_data
     printf("*********************SPI TRANSACTION END*********************\n");
 #endif // NRF24L01_INTEGRATION_TEST_DEBUG
 
-    return 0;
-}
-static int8_t raspi_check_for_interrupt_nrf24l01(void* user_ptr) {
     return 0;
 }
