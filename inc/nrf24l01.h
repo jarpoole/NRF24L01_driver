@@ -104,15 +104,9 @@ void nrf24l01_loop(nrf24l01_platform_t*);
 
 /*** Debug API **************************************************************************************************/
 
-#ifdef NRF24L01_ENABLE_PRINT_CONFIG
 nrf24l01_err_t nrf24l01_print_config(nrf24l01_platform_t*);
 nrf24l01_err_t nrf24l01_print_status_register(nrf24l01_platform_t*);
 nrf24l01_err_t nrf24l01_print_fifo_status_register(nrf24l01_platform_t*);
-#else
-nrf24l01_err_t nrf24l01_print_config(nrf24l01_platform_t* platform) { return; };
-nrf24l01_err_t nrf24l01_print_status_register(nrf24l01_platform_t* platform) { return; };
-nrf24l01_err_t nrf24l01_print_fifo_status_register(nrf24l01_platform_t* platform) { return; };
-#endif // NRF24L01_ENABLE_PRINT_CONFIG
 
 /****************************************************************************************************************/
 

@@ -549,7 +549,7 @@ nrf24l01_err_t nrf24l01_set_address_width(nrf24l01_address_width_t addr_width, n
 
 /** @brief Sets the static RX address for a specified pipe
  * 
- *  For pipes[2..5] only  thefirst byte of address will be written because these pipes 
+ *  For pipes[2..5] only the first byte of address will be written because these pipes 
  *  share the same first four (most significant) address bytes
  * 
  *  @param[in] pipe       : The pipe to modify
@@ -1621,6 +1621,10 @@ nrf24l01_err_t nrf24l01_print_fifo_status_register(nrf24l01_platform_t* platform
 }
 
 // clang-format on
+#else
+nrf24l01_err_t nrf24l01_print_config(nrf24l01_platform_t* platform) { return NRF24L01_OK; };
+nrf24l01_err_t nrf24l01_print_status_register(nrf24l01_platform_t* platform) { return NRF24L01_OK; };
+nrf24l01_err_t nrf24l01_print_fifo_status_register(nrf24l01_platform_t* platform) { return NRF24L01_OK; };
 #endif // NRF24L01_ENABLE_PRINT_CONFIG
 
 /** @brief Check for interrupt function pointer which should be called often by the user
