@@ -36,7 +36,9 @@ jobs:
       # 5. Add the user which owns the github runner process to the gpio group
       #       sudo usermod -aG gpio jared
       
-      
+      - name: Get directory
+        run: |
+          pwd
       
       - name: Build
         run: |
