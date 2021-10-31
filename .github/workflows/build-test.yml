@@ -14,5 +14,5 @@ jobs:
 
       - name: Run
         run: |
-          cat ${{ RUNNER_RASPBERRY3B_UBUNTU_SECRET }} | sudo -k -S ./integration_test
+          cat ${{ secrets.RUNNER_RASPBERRY3B_UBUNTU_SECRET }} | sudo -k -S ./integration_test
           
