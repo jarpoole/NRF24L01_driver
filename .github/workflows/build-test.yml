@@ -14,5 +14,7 @@ jobs:
 
       - name: Run
         run: |
+          pwd
+          ls
           echo ${{ secrets.RUNNER_RASPBERRY3B_UBUNTU_SECRET }} | sudo -k -S ./integration_test
           
