@@ -7,41 +7,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       
-      # To successfully run the build script the runner needs 'build-essential' installed
-      # Since this dependency cannot be installed from the action due to the lack of root 
-      # permissions, run following command from SSH:
-      #       sudo apt-get install build-essential -y
-      #
-      # By default on the Raspberry Pi the SPI controller is not available from userspace.
-      # 1. Create a new group for SPI access
-      #       sudo groupadd spi
-      # 2. Identify the name of the spi controllers
-      #       ls /dev | grep spi
-      # 3. Transfer ownership of the SPI controllers to the new spi group
-      #       sudo chown :spi /dev/spidev0.0
-      #       sudo chown :spi /dev/spidev0.1
-      # 4. Add read/write permissions to the SPI controllers
-      #       sudo chmod g+rw /dev/spidev0.0
-      #       sudo chmod g+rw /dev/spidev0.1
-      # 5. Add the user which owns the github runner process to the spi group
-      #       sudo usermod -aG spi jared
-      #
-      # Additionally, the GPIO controller is not available from userspace
-      # 1. Create a new group for GPIO access
-      #       sudo groupadd gpio
-      # 3. Transfer ownership of the GPIO controller to the new gpio group
-      #       sudo chown :gpio /dev/gpiomem
-      # 4. Add read/write permissions to the GPIO controller
-      #       sudo chmod g+rw /dev/gpiomem
-      # 5. Add the user which owns the github runner process to the gpio group
-      #       sudo usermod -aG gpio jared
-      
-      - name: Get directory
-        run: |
-          pwd
-      
       - name: Build
         run: |
           cd test/integration
           make
+
+      - name: Run
+        run: |
+          cat ${{ RUNNER_RASPBERRY3B_UBUNTU_SECRET }} | sudo -k -S ./integration_test
           

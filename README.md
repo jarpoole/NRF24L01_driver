@@ -20,3 +20,84 @@ Install all the vsCode extensions specified in the `.vscode/extensions.json` fil
 
 Install `CppCheck`
  - Windows: Use Chocolatey by running `choco install cppcheck`
+
+# Automated testing 
+To successfully run the build script the runner needs 'build-essential' installed. 
+Since this dependency cannot be installed from the action due to the lack of root 
+permissions, run following command from SSH:
+      sudo apt-get install build-essential -y
+
+Additionally, the GPIO controller is not available from userspace
+
+# Configuring Self-Hosted GitHub Runner
+
+By default on the Raspberry Pi the SPI and GPIO controllers are not available from userspace.
+
+## Running as Root
+
+## Using LibCap (Not working)
+The author of the bcm2835 library recommends using `LibCap` if the program needs to run without root. See the section called 
+`Running as root` within the [Documentation](https://www.airspayce.com/mikem/bcm2835/).
+
+Unfortunately this method will not persist across rebuilds and the project needed to be completely rebuilt on each invokation of the CI pipeline.
+
+## By Permissions (Not working)
+### Granting Permissions for SPI
+1. Create a new group for SPI access
+    ```
+    sudo groupadd spi
+    ```
+2. Identify the name of the spi controllers
+    ```
+    ls /dev | grep spi
+    ```
+3. Transfer ownership of the SPI controllers to the new spi group
+    ```
+    sudo chown :spi /dev/spidev0.0
+    sudo chown :spi /dev/spidev0.1
+    ```
+4. Add read/write permissions to the SPI controllers
+    ```
+    sudo chmod g+rw /dev/spidev0.0
+    sudo chmod g+rw /dev/spidev0.1
+    ```
+5. Add the user which owns the github runner process to the spi group
+    ```
+    sudo usermod -aG spi jared
+    ```
+### Granting Permissions for GPIO
+
+1. Create a new group for GPIO access
+    ```
+    sudo groupadd gpio
+    ```
+3. Transfer ownership of the GPIO controller to the new gpio group
+    ```
+    sudo chown :gpio /dev/gpiomem
+    ```
+4. Add read/write permissions to the GPIO controller
+    ```
+    sudo chmod g+rw /dev/gpiomem
+    ```
+5. Add the user which owns the github runner process to the gpio group
+    ```
+    sudo usermod -aG gpio <username>
+    ```
+
+### Persistence
+Likely the above changes will not persist a reboot. The solution is to create additional `udev` rules which will run on boot.
+1. Change to the `udev` rules directory
+    ```
+    cd /etc/udev/rules.d
+    ```
+2. Create a new file 
+    ```
+    vi local.rules
+    ```
+3. Add the rules
+    ```
+    ACTION=="add", KERNEL=="gpio*", MODE="0660", OWNER="root", GROUP="gpio" 
+    ACTION=="add", KERNEL=="mem", MODE="0660", OWNER="root", GROUP="gpio" 
+    ACTION=="add", KERNEL=="spidev0.0", MODE="0660", OWNER="root", GROUP="spi" 
+    ACTION=="add", KERNEL=="spidev0.1", MODE="0660", OWNER="root", GROUP="spi" 
+    ```

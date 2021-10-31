@@ -1,5 +1,4 @@
-// Enable
-#define NRF24L01_INTEGRATION_TEST_DEBUG
+
 
 /** The integration tests in this file rely heavily on a BCM2835 driver from Mike McCauley
  *  
@@ -8,11 +7,17 @@
  *  See https://raspberry-projects.com/pi/programming-in-c/io-pins/bcm2835-by-mike-mccauley for installation
  */
 
-#define NRF24L01_TEST_ENVIRONMENT
-#include "../../inc/nrf24l01.h"
-
 #include <bcm2835.h>
 #include <stdio.h>
+#include <time.h>
+
+// Set the integration test debug level (one of NO_LOG, ERROR_LEVEL, INFO_LEVEL, DEBUG_LEVEL)
+#define LOG_LEVEL 4
+#include "logger.h"
+
+// Enable test mode in the nrf24l01 driver during the include process
+#define NRF24L01_TEST_ENVIRONMENT
+#include "../../inc/nrf24l01.h"
 
 /** Select a SPI clock for testing. The maximum supported NRF24L01+ clock is 8MHz. 
  *  Therefore choose `BCM2835_SPI_CLOCK_DIVIDER_32` for a clock rate of 7.8125MHz
@@ -93,18 +98,18 @@ static int8_t raspi_spi_exchange_data_nrf24l01(uint8_t, uint8_t*, uint8_t*, uint
 static int8_t raspi_check_for_interrupt_nrf24l01(void*);
 
 int main(void) {
-    printf("Starting tests...\n");
+    LOG_INFO("Starting tests...");
 
     int init = bcm2835_init();
     if (init != 1) {
-        printf("`bcm2835_init` failed...");
+        LOG_ERROR("'bcm2835_init' failed...");
         exit(1);
     }
 
     // Setup SPI pins
     int begin = bcm2835_spi_begin();
     if (begin != 1) {
-        printf("`bcm2835_spi_begin` failed...");
+        LOG_ERROR("'bcm2835_spi_begin' failed...");
         exit(1);
     }
 
@@ -152,15 +157,23 @@ int main(void) {
     err |= nrf24l01_init(&radio0);
     //err |= nrf24l01_init(&device1);
 
-    while (true) {
+    //nrf24l01_err_t err = nrf24l01_set_address_width(5, &device0);
 
-        printf("Checking connectivity...\n");
-        //nrf24l01_err_t err = nrf24l01_set_address_width(5, &device0);
-        err = nrf24l01_check_connectivity(&radio0);
-        printf("Result: %d\n", err);
-
-        bcm2835_delay(3000);
+    // Check that both Radios are accessible over SPI
+    LOG_INFO("Checking connectivity...");
+    nrf24l01_err_t radio0_connected = nrf24l01_check_connectivity(&radio0);
+    if (radio0_connected != NRF24L01_OK) {
+        LOG_ERROR("Radio0 unavailable (code %d)", err);
+        exit(1);
     }
+    nrf24l01_err_t radio1_connected = nrf24l01_check_connectivity(&radio0);
+    if (radio1_connected != NRF24L01_OK) {
+        LOG_ERROR("Radio0 unavailable (code %d)", err);
+        exit(1);
+    }
+    LOG_INFO("Connectivity good");
+
+    bcm2835_delay(3000);
 
     //Return SPI pins to default inputs state
     bcm2835_spi_end();
@@ -207,22 +220,17 @@ static int8_t raspi_check_for_interrupt_nrf24l01(void* user_ptr) {
 }
 static int8_t raspi_spi_exchange_data_nrf24l01(uint8_t command, uint8_t* rx_data, uint8_t* tx_data, uint8_t len, void* user_ptr) {
 
-#ifdef NRF24L01_INTEGRATION_TEST_DEBUG
-    printf("\n********************SPI TRANSACTION START********************\n");
-#endif // NRF24L01_INTEGRATION_TEST_DEBUG
-
-#ifdef NRF24L01_INTEGRATION_TEST_DEBUG
-    printf("Command = 0x%02X, Length = %d\n", command, len);
+    LOG_VERBOSE("\n********************SPI TRANSACTION START********************\n");
+    LOG_VERBOSE("Command = 0x%02X, Length = %d\n", command, len);
     if (tx_data != NULL) {
-        printf("Write = [");
+        LOG_VERBOSE("Write = [");
         for (int i = 0; i < len; i++) {
-            printf("0x%02X, ", tx_data[i]);
+            LOG_VERBOSE("0x%02X, ", tx_data[i]);
         }
-        printf("]\n");
+        LOG_VERBOSE("]\n");
     } else {
-        printf("Write = NULL\n");
+        LOG_VERBOSE("Write = NULL\n");
     }
-#endif // NRF24L01_INTEGRATION_TEST_DEBUG
 
     if (rx_data == NULL && tx_data == NULL) {
         return -1; //Must provide either rx or tx memory
@@ -249,21 +257,16 @@ static int8_t raspi_spi_exchange_data_nrf24l01(uint8_t command, uint8_t* rx_data
         memcpy(rx_data, &data_buffer[1], len);
     }
 
-#ifdef NRF24L01_INTEGRATION_TEST_DEBUG
     if (rx_data != NULL) {
-        printf("Read = [");
+        LOG_VERBOSE("Read = [");
         for (int i = 0; i < len; i++) {
-            printf("0x%02X, ", rx_data[i]);
+            LOG_VERBOSE("0x%02X, ", rx_data[i]);
         }
-        printf("]\n");
+        LOG_VERBOSE("]\n");
     } else {
-        printf("Read = NULL\n");
+        LOG_VERBOSE("Read = NULL\n");
     }
-#endif // NRF24L01_INTEGRATION_TEST_DEBUG
-
-#ifdef NRF24L01_INTEGRATION_TEST_DEBUG
-    printf("*********************SPI TRANSACTION END*********************\n");
-#endif // NRF24L01_INTEGRATION_TEST_DEBUG
+    LOG_VERBOSE("*********************SPI TRANSACTION END*********************\n");
 
     return 0;
 }

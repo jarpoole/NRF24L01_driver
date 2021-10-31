@@ -437,7 +437,7 @@ Copyright (C) 2012 Free Software Foundation, Inc.
 This config.status script is free software; the Free Software Foundation
 gives unlimited permission to copy, distribute and modify it."
 
-ac_pwd='/home/jared/NRF24L01_driver/test/bcm2835-1.69'
+ac_pwd='/home/jared/NRF24L01_driver/test/driver/bcm2835-1.69'
 srcdir='.'
 INSTALL='/usr/bin/install -c'
 MKDIR_P='/usr/bin/mkdir -p'
@@ -655,12 +655,12 @@ S["mkdir_p"]="$(MKDIR_P)"
 S["MKDIR_P"]="/usr/bin/mkdir -p"
 S["INSTALL_STRIP_PROGRAM"]="$(install_sh) -c -s"
 S["STRIP"]=""
-S["install_sh"]="${SHELL} /home/jared/NRF24L01_driver/test/bcm2835-1.69/install-sh"
-S["MAKEINFO"]="${SHELL} /home/jared/NRF24L01_driver/test/bcm2835-1.69/missing makeinfo"
-S["AUTOHEADER"]="${SHELL} /home/jared/NRF24L01_driver/test/bcm2835-1.69/missing autoheader"
-S["AUTOMAKE"]="${SHELL} /home/jared/NRF24L01_driver/test/bcm2835-1.69/missing automake-1.16"
-S["AUTOCONF"]="${SHELL} /home/jared/NRF24L01_driver/test/bcm2835-1.69/missing autoconf"
-S["ACLOCAL"]="${SHELL} /home/jared/NRF24L01_driver/test/bcm2835-1.69/missing aclocal-1.16"
+S["install_sh"]="${SHELL} /home/jared/NRF24L01_driver/test/driver/bcm2835-1.69/install-sh"
+S["MAKEINFO"]="${SHELL} /home/jared/NRF24L01_driver/test/driver/bcm2835-1.69/missing makeinfo"
+S["AUTOHEADER"]="${SHELL} /home/jared/NRF24L01_driver/test/driver/bcm2835-1.69/missing autoheader"
+S["AUTOMAKE"]="${SHELL} /home/jared/NRF24L01_driver/test/driver/bcm2835-1.69/missing automake-1.16"
+S["AUTOCONF"]="${SHELL} /home/jared/NRF24L01_driver/test/driver/bcm2835-1.69/missing autoconf"
+S["ACLOCAL"]="${SHELL} /home/jared/NRF24L01_driver/test/driver/bcm2835-1.69/missing aclocal-1.16"
 S["VERSION"]="1.69"
 S["PACKAGE"]="bcm2835"
 S["CYGPATH_W"]="echo"
