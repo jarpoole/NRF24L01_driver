@@ -62,7 +62,7 @@ jobs:
           python3 -c "import imgkit; imgkit.from_file('${{github.workspace}}/docs/coverage-html/summary.html', '${{github.workspace}}/docs/images/coverage.jpg')"
           
       - name: Deploy documentation
-        uses: JamesIves/github-pages-deploy-action@4.1.5
+        uses: JamesIves/github-pages-deploy-action@v4.2.4
         with:
           branch: documentation # The branch the action should deploy to.
           target-folder: docs/html
