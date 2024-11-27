@@ -5,7 +5,7 @@ jobs:
     runs-on: [self-hosted, nrf24l01]
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3.1.0
       
       - name: Build
         run: |
